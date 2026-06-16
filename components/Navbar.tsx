@@ -7,12 +7,22 @@ import type { User } from '@supabase/supabase-js'
 
 export default function Navbar() {
   const [user, setUser] = useState<User | null>(null)
+  const [username, setUsername] = useState<string | null>(null)
 
   useEffect(() => {
     const supabase = createClient()
-    supabase.auth.getUser().then(({ data }) => setUser(data.user))
+
+    const loadUser = async (u: User | null) => {
+      setUser(u)
+      if (!u) { setUsername(null); return }
+      const { data } = await supabase.from('profiles').select('username').eq('id', u.id).single()
+      setUsername(data?.username ?? null)
+    }
+
+    supabase.auth.getUser().then(({ data }) => loadUser(data.user))
+
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
-      setUser(session?.user ?? null)
+      loadUser(session?.user ?? null)
     })
     return () => subscription.unsubscribe()
   }, [])
@@ -36,9 +46,11 @@ export default function Navbar() {
               <Link href="/trips/new" className="rounded-md bg-orange-500 px-3 py-1.5 font-medium text-white hover:bg-orange-400 transition-colors">
                 + New Trip
               </Link>
-              <Link href={`/profile/${user.email?.split('@')[0]}`} className="text-zinc-400 hover:text-white transition-colors">
-                Profile
-              </Link>
+              {username && (
+                <Link href={`/profile/${username}`} className="text-zinc-400 hover:text-white transition-colors">
+                  @{username}
+                </Link>
+              )}
               <button onClick={signOut} className="text-zinc-500 hover:text-white transition-colors">
                 Sign out
               </button>
