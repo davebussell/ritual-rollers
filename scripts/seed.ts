@@ -124,7 +124,7 @@ const TRIPS = [
   {
     ownerIndex: 5, // tommy
     title: 'New Zealand South Island',
-    description: 'Fiords, glaciers, and filming locations you'll recognise from every fantasy film.',
+    description: "Fiords, glaciers, and filming locations you'll recognise from every fantasy film.",
     photos: [
       { lat: -43.5321, lng: 172.6362, caption: 'Christchurch botanical garden', daysAgo: 120 },
       { lat: -44.0200, lng: 170.4637, caption: 'Lake Tekapo — Church of the Good Shepherd', daysAgo: 119 },
