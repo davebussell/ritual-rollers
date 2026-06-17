@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Globe, TrendingUp, Clock } from 'lucide-react'
 import { REGIONS, REGION_COLORS, REGION_EMOJI, type Region } from '@/lib/regions'
 import { getCountryInfo } from '@/lib/country-names'
 import type { TripWithAnchor } from '@/lib/types'
@@ -136,10 +138,10 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
               <div className="flex flex-wrap gap-1.5">
                 <button
                   onClick={() => handleRegionFilter('all')}
-                  className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                  className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium transition-all ${
                     activeRegion === 'all' ? 'bg-orange-500 text-white' : 'bg-zinc-800 text-zinc-400 hover:text-white'
                   }`}>
-                  🌐 All ({trips.length})
+                  <Globe className="h-3 w-3" /> All ({trips.length})
                 </button>
                 {REGIONS.filter(r => regionCounts[r] > 0).map(r => (
                   <button key={r}
@@ -152,16 +154,15 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
                   </button>
                 ))}
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-600">Sort:</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-xs text-zinc-600 mr-1">Sort:</span>
                 <button onClick={() => setSort('trending')}
-                  className={`text-xs font-medium transition-colors ${sort === 'trending' ? 'text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
-                  Trending
+                  className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-all ${sort === 'trending' ? 'bg-zinc-800 text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
+                  <TrendingUp className="h-3 w-3" /> Trending
                 </button>
-                <span className="text-zinc-700">·</span>
                 <button onClick={() => setSort('newest')}
-                  className={`text-xs font-medium transition-colors ${sort === 'newest' ? 'text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
-                  Newest
+                  className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-all ${sort === 'newest' ? 'bg-zinc-800 text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
+                  <Clock className="h-3 w-3" /> Newest
                 </button>
                 <span className="ml-auto text-xs text-zinc-600">{filtered.length} trips</span>
               </div>
@@ -175,14 +176,15 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
                   <Link href="/trips/new" className="mt-2 text-orange-400 hover:underline text-xs">Be the first →</Link>
                 </div>
               ) : (
-                <div className="divide-y divide-zinc-800/50">
-                  {filtered.map(trip => (
+                <AnimatePresence mode="popLayout">
+                  {filtered.map((trip, i) => (
                     <div key={trip.id}
                       ref={el => { if (el) cardRefs.current.set(trip.id, el) }}
                       onMouseEnter={() => handleCardHover(trip)}
                       onMouseLeave={() => handleCardHover(null)}>
                       <ExploreTripCard
                         trip={trip}
+                        index={i}
                         currentUserId={currentUserId}
                         isActive={activeTrip?.id === trip.id}
                         userUpvoted={upvoted.has(trip.id)}
@@ -194,7 +196,7 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
                       />
                     </div>
                   ))}
-                </div>
+                </AnimatePresence>
               )}
             </div>
 
