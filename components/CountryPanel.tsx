@@ -47,7 +47,9 @@ export default function CountryPanel({ countryId, countryName, trips, currentUse
     setTimeout(() => setClaimAnim(false), 800)
   }
 
-  const countryTrips = trips.filter(t => t.countryCode === alpha2)
+  const countryTrips = trips
+    .filter(t => t.countryCode === alpha2)
+    .sort((a, b) => b.upvotes_count - a.upvotes_count)
 
   return (
     <div className="flex flex-col h-full overflow-hidden">
@@ -122,7 +124,7 @@ export default function CountryPanel({ countryId, countryName, trips, currentUse
         {countryTrips.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-40 text-center px-4">
             <p className="text-zinc-600 text-sm">No trips yet in {countryName}</p>
-            <p className="text-zinc-700 text-xs mt-1">Add your first adventure above</p>
+            <p className="text-zinc-700 text-xs mt-1">Be the first to add one above</p>
           </div>
         ) : (
           <div className="divide-y divide-zinc-800/50">
@@ -147,6 +149,12 @@ export default function CountryPanel({ countryId, countryName, trips, currentUse
                     <p className="text-xs text-zinc-500 mt-0.5">
                       @{trip.profiles?.username} · {trip.allPhotos.length} stops
                     </p>
+                  </div>
+                  <div className="shrink-0 flex flex-col items-center text-xs text-zinc-600 px-1">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                    </svg>
+                    <span>{trip.upvotes_count}</span>
                   </div>
                 </Link>
               )
