@@ -18,8 +18,10 @@ export default function ExploreTripCard({ trip, currentUserId, isActive, userUpv
   const [upvoted, setUpvoted] = useState(userUpvoted)
   const [count, setCount] = useState(trip.upvotes_count)
 
-  const coverUrl = trip.trip_photos?.[0]?.storage_path
-    ? `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/trip-photos/${trip.trip_photos[0].storage_path}`
+  const sp = trip.trip_photos?.[0]?.storage_path
+  const coverUrl = sp
+    ? sp.startsWith('https://') ? sp
+      : `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/trip-photos/${sp}`
     : null
 
   const regionColor = trip.region ? REGION_COLORS[trip.region] : '#f97316'

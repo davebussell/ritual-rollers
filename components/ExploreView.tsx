@@ -4,9 +4,11 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { REGIONS, REGION_COLORS, REGION_EMOJI, type Region } from '@/lib/regions'
+import { getCountryInfo } from '@/lib/country-names'
 import type { TripWithAnchor } from '@/lib/types'
 import PassportWidget from './PassportWidget'
 import ExploreTripCard from './ExploreTripCard'
+import CountryPanel from './CountryPanel'
 
 const AdventureMap = dynamic(() => import('./AdventureMap'), { ssr: false })
 
@@ -19,9 +21,7 @@ interface Props {
 const PASSPORT_KEY = 'rr_passport'
 const PASSPORT_DATE_KEY = 'rr_passport_date'
 
-function todayStr() {
-  return new Date().toISOString().slice(0, 10)
-}
+function todayStr() { return new Date().toISOString().slice(0, 10) }
 
 function loadPassport(): Set<Region> {
   if (typeof window === 'undefined') return new Set()
@@ -32,14 +32,12 @@ function loadPassport(): Set<Region> {
       localStorage.setItem(PASSPORT_DATE_KEY, todayStr())
       return new Set()
     }
-    const stored = JSON.parse(localStorage.getItem(PASSPORT_KEY) ?? '[]') as Region[]
-    return new Set(stored)
+    return new Set(JSON.parse(localStorage.getItem(PASSPORT_KEY) ?? '[]') as Region[])
   } catch { return new Set() }
 }
 
-function savePassport(regions: Set<Region>) {
-  if (typeof window === 'undefined') return
-  localStorage.setItem(PASSPORT_KEY, JSON.stringify([...regions]))
+function savePassport(r: Set<Region>) {
+  localStorage.setItem(PASSPORT_KEY, JSON.stringify([...r]))
   localStorage.setItem(PASSPORT_DATE_KEY, todayStr())
 }
 
@@ -51,12 +49,11 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
   const [newStamp, setNewStamp] = useState<Region | null>(null)
   const [toast, setToast] = useState<string | null>(null)
   const [upvoted, setUpvoted] = useState<Set<string>>(new Set(upvotedIds))
+  const [selectedCountry, setSelectedCountry] = useState<{ id: number; name: string } | null>(null)
   const cardListRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<Map<string, HTMLDivElement>>(new Map())
 
-  useEffect(() => {
-    setExploredRegions(loadPassport())
-  }, [])
+  useEffect(() => { setExploredRegions(loadPassport()) }, [])
 
   const earnStamp = useCallback((region: Region | null) => {
     if (!region || exploredRegions.has(region)) return
@@ -70,16 +67,6 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
     setTimeout(() => setNewStamp(null), 1000)
   }, [exploredRegions])
 
-  const handleTripClick = useCallback((trip: TripWithAnchor) => {
-    setActiveTrip(trip)
-    earnStamp(trip.region)
-    // Scroll the card into view
-    const el = cardRefs.current.get(trip.id)
-    if (el && cardListRef.current) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-    }
-  }, [earnStamp])
-
   const handleCardHover = useCallback((trip: TripWithAnchor | null) => {
     setActiveTrip(trip)
     if (trip) earnStamp(trip.region)
@@ -87,7 +74,19 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
 
   const handleRegionFilter = (region: Region | 'all') => {
     setActiveRegion(region)
+    setSelectedCountry(null)
     if (region !== 'all') earnStamp(region)
+  }
+
+  const handleCountrySelect = (countryId: number, countryName: string) => {
+    if (countryId === -1) {
+      setSelectedCountry(null)
+      return
+    }
+    const info = getCountryInfo(countryId)
+    setSelectedCountry({ id: countryId, name: countryName })
+    setToast(`${info?.flag ?? ''} Exploring ${countryName}`)
+    setTimeout(() => setToast(null), 2500)
   }
 
   const filtered = trips
@@ -106,113 +105,110 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
   return (
     <div className="flex h-[calc(100vh-57px)] flex-col md:flex-row overflow-hidden">
 
-      {/* ── Map panel ─────────────────────────────────────────── */}
+      {/* Map */}
       <div className="h-72 shrink-0 md:h-auto md:flex-1">
         <AdventureMap
           activeRegion={activeRegion}
           tripRegions={new Set(trips.map(t => t.region).filter(Boolean) as Region[])}
           onRegionSelect={handleRegionFilter}
           onRegionExplored={earnStamp}
+          onCountrySelect={handleCountrySelect}
+          selectedCountryId={selectedCountry?.id ?? null}
         />
       </div>
 
-      {/* ── Right panel ───────────────────────────────────────── */}
+      {/* Right panel */}
       <div className="flex w-full flex-col md:w-96 md:shrink-0 border-l border-zinc-800 bg-zinc-950 overflow-hidden">
 
-        {/* Filter bar */}
-        <div className="shrink-0 border-b border-zinc-800 px-3 py-3 space-y-2">
-          {/* Region chips */}
-          <div className="flex flex-wrap gap-1.5">
-            <button
-              onClick={() => handleRegionFilter('all')}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                activeRegion === 'all'
-                  ? 'bg-orange-500 text-white'
-                  : 'bg-zinc-800 text-zinc-400 hover:text-white'
-              }`}
-            >
-              🌐 All ({trips.length})
-            </button>
-            {REGIONS.filter(r => regionCounts[r] > 0).map(r => (
-              <button
-                key={r}
-                onClick={() => handleRegionFilter(r)}
-                style={activeRegion === r ? { backgroundColor: REGION_COLORS[r] } : {}}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                  activeRegion === r
-                    ? 'text-white'
-                    : 'bg-zinc-800 text-zinc-400 hover:text-white'
-                }`}
-              >
-                {REGION_EMOJI[r]} {r} ({regionCounts[r]})
-              </button>
-            ))}
-          </div>
-
-          {/* Sort toggle */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-zinc-600">Sort:</span>
-            <button
-              onClick={() => setSort('trending')}
-              className={`text-xs font-medium transition-colors ${sort === 'trending' ? 'text-orange-400' : 'text-zinc-500 hover:text-white'}`}
-            >
-              Trending
-            </button>
-            <span className="text-zinc-700">·</span>
-            <button
-              onClick={() => setSort('newest')}
-              className={`text-xs font-medium transition-colors ${sort === 'newest' ? 'text-orange-400' : 'text-zinc-500 hover:text-white'}`}
-            >
-              Newest
-            </button>
-            <span className="ml-auto text-xs text-zinc-600">{filtered.length} trips</span>
-          </div>
-        </div>
-
-        {/* Trip cards */}
-        <div ref={cardListRef} className="flex-1 overflow-y-auto">
-          {filtered.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-40 text-zinc-600 text-sm">
-              <p>No trips in this region yet.</p>
-              <Link href="/trips/new" className="mt-2 text-orange-400 hover:underline text-xs">Be the first →</Link>
+        {selectedCountry ? (
+          /* Country view — replaces trip list */
+          <CountryPanel
+            countryId={selectedCountry.id}
+            countryName={selectedCountry.name}
+            trips={trips}
+            currentUserId={currentUserId}
+          />
+        ) : (
+          /* Normal trip list */
+          <>
+            {/* Filter bar */}
+            <div className="shrink-0 border-b border-zinc-800 px-3 py-3 space-y-2">
+              <div className="flex flex-wrap gap-1.5">
+                <button
+                  onClick={() => handleRegionFilter('all')}
+                  className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                    activeRegion === 'all' ? 'bg-orange-500 text-white' : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                  }`}>
+                  🌐 All ({trips.length})
+                </button>
+                {REGIONS.filter(r => regionCounts[r] > 0).map(r => (
+                  <button key={r}
+                    onClick={() => handleRegionFilter(r)}
+                    style={activeRegion === r ? { backgroundColor: REGION_COLORS[r] } : {}}
+                    className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                      activeRegion === r ? 'text-white' : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                    }`}>
+                    {REGION_EMOJI[r]} {r} ({regionCounts[r]})
+                  </button>
+                ))}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-zinc-600">Sort:</span>
+                <button onClick={() => setSort('trending')}
+                  className={`text-xs font-medium transition-colors ${sort === 'trending' ? 'text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
+                  Trending
+                </button>
+                <span className="text-zinc-700">·</span>
+                <button onClick={() => setSort('newest')}
+                  className={`text-xs font-medium transition-colors ${sort === 'newest' ? 'text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
+                  Newest
+                </button>
+                <span className="ml-auto text-xs text-zinc-600">{filtered.length} trips</span>
+              </div>
             </div>
-          ) : (
-            <div className="divide-y divide-zinc-800/50">
-              {filtered.map(trip => (
-                <div
-                  key={trip.id}
-                  ref={el => { if (el) cardRefs.current.set(trip.id, el) }}
-                  onMouseEnter={() => handleCardHover(trip)}
-                  onMouseLeave={() => handleCardHover(null)}
-                >
-                  <ExploreTripCard
-                    trip={trip}
-                    currentUserId={currentUserId}
-                    isActive={activeTrip?.id === trip.id}
-                    userUpvoted={upvoted.has(trip.id)}
-                    onUpvoteChange={(id, state) => {
-                      setUpvoted(prev => {
-                        const next = new Set(prev)
-                        state ? next.add(id) : next.delete(id)
-                        return next
-                      })
-                    }}
-                  />
+
+            {/* Trip cards */}
+            <div ref={cardListRef} className="flex-1 overflow-y-auto">
+              {filtered.length === 0 ? (
+                <div className="flex flex-col items-center justify-center h-40 text-zinc-600 text-sm">
+                  <p>No trips in this region yet.</p>
+                  <Link href="/trips/new" className="mt-2 text-orange-400 hover:underline text-xs">Be the first →</Link>
                 </div>
-              ))}
+              ) : (
+                <div className="divide-y divide-zinc-800/50">
+                  {filtered.map(trip => (
+                    <div key={trip.id}
+                      ref={el => { if (el) cardRefs.current.set(trip.id, el) }}
+                      onMouseEnter={() => handleCardHover(trip)}
+                      onMouseLeave={() => handleCardHover(null)}>
+                      <ExploreTripCard
+                        trip={trip}
+                        currentUserId={currentUserId}
+                        isActive={activeTrip?.id === trip.id}
+                        userUpvoted={upvoted.has(trip.id)}
+                        onUpvoteChange={(id, state) => setUpvoted(prev => {
+                          const next = new Set(prev)
+                          state ? next.add(id) : next.delete(id)
+                          return next
+                        })}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
-        </div>
 
-        {/* Passport widget */}
-        <div className="shrink-0">
-          <PassportWidget exploredRegions={exploredRegions} newStamp={newStamp} />
-        </div>
+            {/* Passport */}
+            <div className="shrink-0">
+              <PassportWidget exploredRegions={exploredRegions} newStamp={newStamp} />
+            </div>
+          </>
+        )}
       </div>
 
       {/* Toast */}
       {toast && (
-        <div className="fixed bottom-6 right-6 z-50 rounded-xl bg-zinc-900 border border-zinc-700 px-4 py-3 text-sm text-white shadow-2xl animate-slide-up">
+        <div className="fixed bottom-6 right-6 z-50 rounded-xl bg-zinc-900 border border-zinc-700 px-4 py-3 text-sm text-white shadow-2xl">
           {toast}
         </div>
       )}

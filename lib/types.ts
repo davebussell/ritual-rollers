@@ -39,5 +39,6 @@ export interface TripWithAnchor extends Trip {
   anchorLat: number | null
   anchorLng: number | null
   region: Region | null
+  countryCode: string | null
   allPhotos: { lat: number; lng: number; storage_path: string }[]
 }

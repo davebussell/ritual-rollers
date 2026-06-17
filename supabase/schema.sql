@@ -18,8 +18,12 @@ create table public.trips (
   cover_photo_id uuid,
   is_public boolean default true,
   upvotes_count int default 0,
+  country_code varchar(2),
   created_at timestamptz default now()
 );
+
+-- Migration: add country_code if running against existing DB
+-- alter table public.trips add column if not exists country_code varchar(2);
 
 -- Trip photos
 create table public.trip_photos (
