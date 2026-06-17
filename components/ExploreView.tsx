@@ -8,7 +8,7 @@ import type { TripWithAnchor } from '@/lib/types'
 import PassportWidget from './PassportWidget'
 import ExploreTripCard from './ExploreTripCard'
 
-const ExploreMap = dynamic(() => import('./ExploreMap'), { ssr: false })
+const AdventureMap = dynamic(() => import('./AdventureMap'), { ssr: false })
 
 interface Props {
   trips: TripWithAnchor[]
@@ -107,15 +107,12 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
     <div className="flex h-[calc(100vh-57px)] flex-col md:flex-row overflow-hidden">
 
       {/* ── Map panel ─────────────────────────────────────────── */}
-      <div className="h-60 shrink-0 md:h-auto md:flex-1">
-        <ExploreMap
-          trips={trips}
-          activeTrip={activeTrip}
-          onTripClick={handleTripClick}
-          onRegionExplored={(tripId) => {
-            const trip = trips.find(t => t.id === tripId)
-            if (trip) earnStamp(trip.region)
-          }}
+      <div className="h-72 shrink-0 md:h-auto md:flex-1">
+        <AdventureMap
+          activeRegion={activeRegion}
+          tripRegions={new Set(trips.map(t => t.region).filter(Boolean) as Region[])}
+          onRegionSelect={handleRegionFilter}
+          onRegionExplored={earnStamp}
         />
       </div>
 

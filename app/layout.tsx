@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${geist.className} bg-zinc-950 text-white min-h-screen`}>
+      <body className={`${geist.className} bg-zinc-950 text-white min-h-screen`} suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
       </body>
