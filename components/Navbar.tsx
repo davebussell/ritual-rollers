@@ -40,6 +40,7 @@ export default function Navbar() {
         </Link>
         <div className="flex items-center gap-4 text-sm">
           <Link href="/" className="text-zinc-400 hover:text-white transition-colors">Explore</Link>
+          <Link href="/import" className="text-zinc-400 hover:text-white transition-colors">Import</Link>
           {user ? (
             <>
               <Link href="/feed" className="text-zinc-400 hover:text-white transition-colors">Feed</Link>
