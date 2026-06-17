@@ -41,8 +41,10 @@ declare module 'react-simple-maps' {
   export function Geography(props: {
     geography: GeoFeature
     onClick?: (event: React.MouseEvent) => void
+    onMouseEnter?: (event: React.MouseEvent) => void
+    onMouseLeave?: (event: React.MouseEvent) => void
     style?: {
-      default?: GeographyStyle
+      default?: GeographyStyle & { transform?: string; transformOrigin?: string; transition?: string }
       hover?: GeographyStyle
       pressed?: GeographyStyle
     }
