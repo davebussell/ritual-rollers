@@ -2,9 +2,9 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { Map, Upload, Compass, LogOut, User, Plus } from 'lucide-react'
+import { Map, Upload, Compass, LogOut, User, Plus, BookOpen, Users } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 
 export default function Navbar() {
@@ -12,6 +12,7 @@ export default function Navbar() {
   const [username, setUsername] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -22,8 +23,10 @@ export default function Navbar() {
   useEffect(() => {
     const supabase = createClient()
     const loadUser = async (u: SupaUser | null) => {
-      setUser(u)
-      if (!u) { setUsername(null); return }
+      // Treat anonymous sessions the same as logged-out for nav purposes
+      const isAnon = !!(u as (SupaUser & { is_anonymous?: boolean }) | null)?.is_anonymous
+      setUser(isAnon ? null : u)
+      if (!u || isAnon) { setUsername(null); return }
       const { data } = await supabase.from('profiles').select('username').eq('id', u.id).single()
       setUsername(data?.username ?? null)
     }
@@ -49,12 +52,18 @@ export default function Navbar() {
     }`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        {/* Logo — always resets to home feed */}
+        <Link href="/" onClick={e => { e.preventDefault(); router.push('/'); router.refresh() }}
+          className="flex items-center gap-2.5 group">
           <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500 transition-transform group-hover:scale-110">
             <Compass className="h-4 w-4 text-white" strokeWidth={2.5} />
           </div>
-          <span className="text-lg font-bold tracking-tight text-white">Ritual Rollers</span>
+          <div className="flex flex-col leading-none">
+            <span className="text-[15px] font-bold tracking-tight text-white">Ritual Rollers</span>
+            <span className="text-[10px] font-medium tracking-wide text-zinc-500 hidden sm:block">
+              explore the world through photos
+            </span>
+          </div>
         </Link>
 
         {/* Nav links */}
@@ -62,8 +71,14 @@ export default function Navbar() {
           <NavLink href="/" active={isActive('/')} icon={<Map className="h-3.5 w-3.5" />}>
             Explore
           </NavLink>
+          <NavLink href="/feed" active={isActive('/feed')} icon={<Users className="h-3.5 w-3.5" />}>
+            Feed
+          </NavLink>
           <NavLink href="/import" active={isActive('/import')} icon={<Upload className="h-3.5 w-3.5" />}>
             Import
+          </NavLink>
+          <NavLink href="/guide" active={isActive('/guide')} icon={<BookOpen className="h-3.5 w-3.5" />}>
+            Guide
           </NavLink>
 
           {user ? (

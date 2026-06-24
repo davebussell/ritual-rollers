@@ -3,12 +3,9 @@ import { cookies } from 'next/headers'
 
 export async function createClient() {
   const cookieStore = await cookies()
-  const rawUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
-  const url = rawUrl.startsWith('https://') ? rawUrl : 'https://placeholder.supabase.co'
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? 'placeholder'
   return createServerClient(
-    url,
-    key,
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
     {
       cookies: {
         getAll() { return cookieStore.getAll() },

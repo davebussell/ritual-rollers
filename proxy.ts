@@ -6,9 +6,8 @@ const PROTECTED = ['/feed', '/trips/new', '/profile/edit']
 export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
-  const rawUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
-  const supabaseUrl = rawUrl.startsWith('https://') ? rawUrl : 'https://placeholder.supabase.co'
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? 'placeholder'
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
 
   const supabase = createServerClient(
     supabaseUrl,

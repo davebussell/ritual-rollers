@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { ChevronUp, MapPin, Camera } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { REGION_COLORS } from '@/lib/regions'
+import { getActivity } from '@/lib/activities'
 import type { TripWithAnchor } from '@/lib/types'
 
 interface Props {
@@ -87,7 +88,7 @@ export default function ExploreTripCard({
               <span>@{trip.profiles?.username}</span>
             </p>
           </div>
-          <div className="flex items-center gap-1.5 mt-1">
+          <div className="flex flex-wrap items-center gap-1 mt-1">
             {trip.region && (
               <span className="flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-medium"
                 style={{ backgroundColor: `${regionColor}18`, color: regionColor }}>
@@ -95,6 +96,16 @@ export default function ExploreTripCard({
                 {trip.region}
               </span>
             )}
+            {(trip.activity_tags ?? []).slice(0, 2).map(tag => {
+              const a = getActivity(tag)
+              if (!a) return null
+              return (
+                <span key={tag} className="rounded-md px-1.5 py-0.5 text-[10px] font-medium"
+                  style={{ backgroundColor: `${a.color}18`, color: a.color }}>
+                  {a.emoji} {a.label}
+                </span>
+              )
+            })}
           </div>
         </div>
 

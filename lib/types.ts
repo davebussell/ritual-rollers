@@ -17,6 +17,7 @@ export interface Trip {
   is_public: boolean
   upvotes_count: number
   created_at: string
+  activity_tags?: string[] | null
   profiles?: Profile
   trip_photos?: TripPhoto[]
 }
@@ -40,5 +41,6 @@ export interface TripWithAnchor extends Trip {
   anchorLng: number | null
   region: Region | null
   countryCode: string | null
+  activity_tags: string[] | null
   allPhotos: { lat: number; lng: number; storage_path: string }[]
 }

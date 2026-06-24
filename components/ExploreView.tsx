@@ -4,7 +4,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Globe, TrendingUp, Clock } from 'lucide-react'
+import { Globe, TrendingUp, Clock, Tag } from 'lucide-react'
+import { ACTIVITIES, getActivity } from '@/lib/activities'
 import { REGIONS, REGION_COLORS, REGION_EMOJI, type Region } from '@/lib/regions'
 import { getCountryInfo } from '@/lib/country-names'
 import type { TripWithAnchor } from '@/lib/types'
@@ -46,6 +47,7 @@ function savePassport(r: Set<Region>) {
 export default function ExploreView({ trips, currentUserId, upvotedIds }: Props) {
   const [activeRegion, setActiveRegion] = useState<Region | 'all'>('all')
   const [sort, setSort] = useState<'trending' | 'newest'>('trending')
+  const [activeActivity, setActiveActivity] = useState<string | null>(null)
   const [activeTrip, setActiveTrip] = useState<TripWithAnchor | null>(null)
   const [exploredRegions, setExploredRegions] = useState<Set<Region>>(new Set())
   const [newStamp, setNewStamp] = useState<Region | null>(null)
@@ -93,6 +95,7 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
 
   const filtered = trips
     .filter(t => activeRegion === 'all' || t.region === activeRegion)
+    .filter(t => !activeActivity || (t.activity_tags ?? []).includes(activeActivity))
     .sort((a, b) =>
       sort === 'trending'
         ? b.upvotes_count - a.upvotes_count
@@ -110,6 +113,7 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
       {/* Map */}
       <div className="h-72 shrink-0 md:h-auto md:flex-1">
         <AdventureMap
+          trips={trips}
           activeRegion={activeRegion}
           tripRegions={new Set(trips.map(t => t.region).filter(Boolean) as Region[])}
           onRegionSelect={handleRegionFilter}
@@ -154,6 +158,35 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
                   </button>
                 ))}
               </div>
+              {/* Activity filter — only show activities that have trips */}
+              {(() => {
+                const activeActivities = ACTIVITIES.filter(a =>
+                  trips.some(t => (t.activity_tags ?? []).includes(a.id))
+                )
+                if (activeActivities.length === 0) return null
+                return (
+                  <div className="flex flex-wrap gap-1 pt-1 border-t border-zinc-800/60">
+                    <button
+                      onClick={() => setActiveActivity(null)}
+                      className={`flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-medium transition-all ${
+                        !activeActivity ? 'bg-zinc-700 text-white' : 'text-zinc-600 hover:text-zinc-300'
+                      }`}>
+                      <Tag className="h-2.5 w-2.5" /> All
+                    </button>
+                    {activeActivities.map(a => (
+                      <button key={a.id}
+                        onClick={() => setActiveActivity(activeActivity === a.id ? null : a.id)}
+                        className="flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-medium transition-all"
+                        style={activeActivity === a.id ? {
+                          background: `${a.color}25`, color: a.color, border: `1px solid ${a.color}50`
+                        } : { color: '#52525b' }}>
+                        {a.emoji} {a.label}
+                      </button>
+                    ))}
+                  </div>
+                )
+              })()}
+
               <div className="flex items-center gap-1.5">
                 <span className="text-xs text-zinc-600 mr-1">Sort:</span>
                 <button onClick={() => setSort('trending')}

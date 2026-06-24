@@ -19,11 +19,42 @@ create table public.trips (
   is_public boolean default true,
   upvotes_count int default 0,
   country_code varchar(2),
+  activity_tags text[] default '{}',
   created_at timestamptz default now()
 );
 
 -- Migration: add country_code if running against existing DB
 -- alter table public.trips add column if not exists country_code varchar(2);
+
+-- Migration: add activity_tags array
+-- alter table public.trips add column if not exists activity_tags text[] default '{}';
+
+-- Trip collaborators (users tagged on a trip)
+create table public.trip_collaborators (
+  id uuid primary key default gen_random_uuid(),
+  trip_id uuid not null references public.trips(id) on delete cascade,
+  user_id uuid not null references public.profiles(id) on delete cascade,
+  created_at timestamptz default now(),
+  unique(trip_id, user_id)
+);
+
+-- Enable RLS
+alter table public.trip_collaborators enable row level security;
+
+-- Policies: readable by anyone who can see the trip, insertable by trip owner
+create policy "collabs_read" on public.trip_collaborators for select using (
+  exists (select 1 from public.trips t where t.id = trip_id and (t.is_public = true or t.owner_id = auth.uid()))
+);
+create policy "collabs_insert" on public.trip_collaborators for insert with check (
+  exists (select 1 from public.trips t where t.id = trip_id and t.owner_id = auth.uid())
+);
+create policy "collabs_delete" on public.trip_collaborators for delete using (
+  exists (select 1 from public.trips t where t.id = trip_id and t.owner_id = auth.uid())
+);
+
+-- Migration: add is_recreation and recreation_ref to trips
+-- alter table public.trips add column if not exists is_recreation boolean default false;
+-- alter table public.trips add column if not exists recreation_ref text;
 
 -- Trip photos
 create table public.trip_photos (
@@ -69,8 +100,14 @@ declare
 begin
   base_username := coalesce(
     new.raw_user_meta_data->>'username',
-    split_part(new.email, '@', 1)
+    split_part(new.email, '@', 1),
+    'explorer_' || substr(new.id::text, 1, 8)
   );
+
+  -- Ensure username is non-empty (anonymous users have no email)
+  if base_username = '' then
+    base_username := 'explorer_' || substr(new.id::text, 1, 8);
+  end if;
   -- Ensure username is unique by appending a number if needed
   final_username := base_username;
   loop
@@ -142,6 +179,11 @@ create policy "upvotes_delete" on public.upvotes for delete using (auth.uid() = 
 
 -- Storage bucket (run in Supabase dashboard or via API)
 -- Create bucket named "trip-photos" with public access
+
+-- Anonymous auth (required for guest posting)
+-- Supabase dashboard → Authentication → Settings → Enable Anonymous sign-ins (toggle ON)
+-- This lets visitors publish trips without an account; anonymous sessions can later be
+-- linked to a real account via supabase.auth.linkIdentity() or a normal sign-up flow.
 
 -- Auth settings (Supabase dashboard → Authentication → Providers)
 -- Enable "Email" provider, turn ON "Enable magic link" (passwordless)
