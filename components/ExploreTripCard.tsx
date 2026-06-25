@@ -1,12 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronUp, MapPin, Camera } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { REGION_COLORS } from '@/lib/regions'
 import { getActivity } from '@/lib/activities'
+import { fetchWikiSummary, locationLabel } from '@/lib/wikipedia'
 import type { TripWithAnchor } from '@/lib/types'
 
 interface Props {
@@ -23,6 +24,14 @@ export default function ExploreTripCard({
 }: Props) {
   const [upvoted, setUpvoted] = useState(userUpvoted)
   const [count, setCount] = useState(trip.upvotes_count)
+  const [wikiThumb, setWikiThumb] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (trip.trip_photos?.length) return // only fetch wiki thumb when no user photos
+    const label = locationLabel(trip.country_code)
+    if (!label) return
+    fetchWikiSummary(label).then(w => { if (w?.thumbnail) setWikiThumb(w.thumbnail) })
+  }, [trip.country_code, trip.trip_photos?.length])
 
   const sp = trip.trip_photos?.[0]?.storage_path
   const coverUrl = sp
@@ -61,6 +70,14 @@ export default function ExploreTripCard({
           {coverUrl ? (
             <img src={coverUrl} alt={trip.title}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          ) : wikiThumb ? (
+            <div className="relative h-full w-full">
+              <img src={wikiThumb} alt={trip.title}
+                className="h-full w-full object-cover opacity-50 transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 flex items-end justify-start p-1">
+                <span className="rounded text-[8px] text-zinc-500 bg-zinc-900/60 px-1">via Wikipedia</span>
+              </div>
+            </div>
           ) : (
             <div className="flex h-full w-full items-center justify-center text-zinc-700">
               <Camera className="h-5 w-5" />

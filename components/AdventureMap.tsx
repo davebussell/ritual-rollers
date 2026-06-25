@@ -1,12 +1,14 @@
 'use client'
 
-import { memo, useCallback, useMemo, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
-import { ChevronUp, X, Camera, MapPin } from 'lucide-react'
+import { ChevronUp, X, Camera, MapPin, BookOpen } from 'lucide-react'
 import { REGION_COLORS, type Region } from '@/lib/regions'
 import { getCountryContinent } from '@/lib/countries'
 import { getCountryInfo } from '@/lib/country-names'
+import { fetchWikiSummary } from '@/lib/wikipedia'
+import type { WikiSummary } from '@/lib/wikipedia'
 import type { TripWithAnchor } from '@/lib/types'
 import type { GeoFeature } from 'react-simple-maps'
 
@@ -120,7 +122,14 @@ export default function AdventureMap({
   const [visible, setVisible] = useState(true)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [selectedCluster, setSelectedCluster] = useState<ClusterGroup | null>(null)
+  const [countryWiki, setCountryWiki] = useState<WikiSummary | null>(null)
   const mapRef = useRef<HTMLDivElement>(null)
+
+  // Fetch Wikipedia info when zoomed into a country
+  useEffect(() => {
+    if (view.level !== 'country') { setCountryWiki(null); return }
+    fetchWikiSummary((view as { countryName: string }).countryName).then(setCountryWiki)
+  }, [view])
 
   const fade = useCallback((next: ViewState) => {
     setVisible(false); setSelectedCluster(null)
@@ -327,15 +336,36 @@ export default function AdventureMap({
               transform: 'translate(-50%, calc(-100% - 20px))',
             }}>
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-zinc-800 px-3 py-2.5">
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-300">
-                <MapPin className="h-3 w-3" style={{ color: regionColor }} />
-                <span>{selectedCluster.count} trip{selectedCluster.count !== 1 ? 's' : ''} in this area</span>
+            <div className="border-b border-zinc-800">
+              {/* Wiki destination banner */}
+              {countryWiki?.thumbnail && (
+                <div className="relative h-24 w-full overflow-hidden">
+                  <img src={countryWiki.thumbnail} alt={countryWiki.title}
+                    className="h-full w-full object-cover opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
+                  <div className="absolute bottom-2 left-3 right-8">
+                    <p className="text-xs font-bold text-white">{countryWiki.title}</p>
+                    <p className="text-[10px] text-zinc-400 line-clamp-2 leading-relaxed mt-0.5">
+                      {countryWiki.extract.split('. ').slice(0, 2).join('. ')}.
+                    </p>
+                  </div>
+                  <a href={countryWiki.pageUrl} target="_blank" rel="noopener noreferrer"
+                    onClick={e => e.stopPropagation()}
+                    className="absolute bottom-2 right-2 rounded-md bg-zinc-900/80 p-1 text-zinc-400 hover:text-orange-400 transition-colors">
+                    <BookOpen className="h-3 w-3" />
+                  </a>
+                </div>
+              )}
+              <div className="flex items-center justify-between px-3 py-2.5">
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-300">
+                  <MapPin className="h-3 w-3" style={{ color: regionColor }} />
+                  <span>{selectedCluster.count} trip{selectedCluster.count !== 1 ? 's' : ''} in this area</span>
+                </div>
+                <button onClick={() => setSelectedCluster(null)}
+                  className="rounded-md p-0.5 text-zinc-600 hover:text-white transition-colors">
+                  <X className="h-3.5 w-3.5" />
+                </button>
               </div>
-              <button onClick={() => setSelectedCluster(null)}
-                className="rounded-md p-0.5 text-zinc-600 hover:text-white transition-colors">
-                <X className="h-3.5 w-3.5" />
-              </button>
             </div>
 
             {/* Trip list */}
@@ -412,6 +442,29 @@ export default function AdventureMap({
       {view.level === 'country' && clusters.length > 0 && (
         <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 rounded-full border border-zinc-800 bg-zinc-950/80 px-3 py-1 text-[11px] text-zinc-500 backdrop-blur">
           {clusters.reduce((n, c) => n + c.count, 0)} trips plotted · click a pin to explore
+        </div>
+      )}
+
+      {/* Wikipedia country info — bottom left in country view */}
+      {view.level === 'country' && countryWiki && !selectedCluster && (
+        <div className="absolute bottom-4 left-4 z-20 w-64 rounded-xl border border-zinc-800 bg-zinc-950/90 backdrop-blur overflow-hidden shadow-xl">
+          {countryWiki.thumbnail && (
+            <div className="relative h-20 w-full overflow-hidden">
+              <img src={countryWiki.thumbnail} alt={countryWiki.title}
+                className="h-full w-full object-cover opacity-50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent" />
+            </div>
+          )}
+          <div className="px-3 py-2.5">
+            <p className="text-xs font-bold text-white">{countryWiki.title}</p>
+            <p className="mt-1 text-[10px] text-zinc-400 leading-relaxed line-clamp-3">
+              {countryWiki.extract.split('. ').slice(0, 2).join('. ')}.
+            </p>
+            <a href={countryWiki.pageUrl} target="_blank" rel="noopener noreferrer"
+              className="mt-1.5 inline-flex items-center gap-1 text-[10px] text-orange-400 hover:text-orange-300 transition-colors">
+              <BookOpen className="h-2.5 w-2.5" /> Read on Wikipedia
+            </a>
+          </div>
         </div>
       )}
 

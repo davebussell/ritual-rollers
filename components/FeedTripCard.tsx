@@ -1,12 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronUp, Camera, Clock, Zap, Star } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { REGION_COLORS, REGION_EMOJI } from '@/lib/regions'
 import { formatTimeAgo } from '@/lib/feed-score'
+import { fetchWikiSummary, locationLabel } from '@/lib/wikipedia'
+import WikiDestinationCard from '@/components/WikiDestinationCard'
 import type { ScoredTrip } from '@/lib/feed-score'
 
 interface Props {
@@ -20,7 +22,15 @@ interface Props {
 export default function FeedTripCard({ trip, index, featured, currentUserId, userUpvoted: initialUpvoted }: Props) {
   const [upvoted, setUpvoted] = useState(initialUpvoted)
   const [count, setCount] = useState(trip.upvotes_count)
+  const [wikiThumb, setWikiThumb] = useState<string | null>(null)
   const supabase = createClient()
+
+  useEffect(() => {
+    if (trip.trip_photos?.length) return
+    const label = locationLabel((trip as any).country_code)
+    if (!label) return
+    fetchWikiSummary(label).then(w => { if (w?.thumbnail) setWikiThumb(w.thumbnail) })
+  }, [(trip as any).country_code, trip.trip_photos?.length])
 
   const toggleUpvote = async (e: React.MouseEvent) => {
     e.preventDefault()
@@ -56,7 +66,14 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
         <div className={`relative overflow-hidden bg-zinc-800 ${featured ? 'aspect-[2/1]' : 'aspect-video'}`}>
           {cover
             ? <img src={cover} alt={trip.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            : <div className="flex h-full w-full items-center justify-center text-zinc-700"><Camera className="h-10 w-10" /></div>}
+            : wikiThumb
+              ? <div className="relative h-full w-full">
+                  <img src={wikiThumb} alt={trip.title} className="h-full w-full object-cover opacity-40 transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 flex items-end justify-start p-2">
+                    <span className="rounded text-[9px] text-zinc-400 bg-zinc-900/70 px-1.5 py-0.5">Destination preview via Wikipedia</span>
+                  </div>
+                </div>
+              : <div className="flex h-full w-full items-center justify-center text-zinc-700"><Camera className="h-10 w-10" /></div>}
 
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
@@ -113,6 +130,12 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
 
           {featured && trip.description && (
             <p className="mt-2 text-sm text-zinc-500 line-clamp-2">{trip.description}</p>
+          )}
+
+          {featured && (trip as any).country_code && (
+            <div className="mt-3">
+              <WikiDestinationCard countryCode={(trip as any).country_code} compact />
+            </div>
           )}
 
           {/* Footer */}
