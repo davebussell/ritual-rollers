@@ -28,10 +28,10 @@ export default function ExploreTripCard({
 
   useEffect(() => {
     if (trip.trip_photos?.length) return // only fetch wiki thumb when no user photos
-    const label = locationLabel(trip.country_code)
+    const label = locationLabel(trip.countryCode)
     if (!label) return
     fetchWikiSummary(label).then(w => { if (w?.thumbnail) setWikiThumb(w.thumbnail) })
-  }, [trip.country_code, trip.trip_photos?.length])
+  }, [trip.countryCode, trip.trip_photos?.length])
 
   const sp = trip.trip_photos?.[0]?.storage_path
   const coverUrl = sp

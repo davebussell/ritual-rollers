@@ -24,6 +24,7 @@ export default async function FeedPage() {
   let rawTrips: Array<{
     id: string; owner_id: string; title: string; description: string | null
     is_public: boolean; upvotes_count: number; created_at: string
+    country_code: string | null
     profiles: { username: string; avatar_url: string | null } | null
     trip_photos: Array<{ storage_path: string; lat: number | null; lng: number | null; sequence_order: number }>
     trip_collaborators: Array<{ user_id: string; profiles: { username: string } | null }>

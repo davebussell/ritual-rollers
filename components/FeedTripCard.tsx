@@ -27,10 +27,10 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
 
   useEffect(() => {
     if (trip.trip_photos?.length) return
-    const label = locationLabel((trip as any).country_code)
+    const label = locationLabel(trip.country_code)
     if (!label) return
     fetchWikiSummary(label).then(w => { if (w?.thumbnail) setWikiThumb(w.thumbnail) })
-  }, [(trip as any).country_code, trip.trip_photos?.length])
+  }, [trip.country_code, trip.trip_photos?.length])
 
   const toggleUpvote = async (e: React.MouseEvent) => {
     e.preventDefault()
@@ -132,9 +132,9 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
             <p className="mt-2 text-sm text-zinc-500 line-clamp-2">{trip.description}</p>
           )}
 
-          {featured && (trip as any).country_code && (
+          {featured && trip.country_code && (
             <div className="mt-3">
-              <WikiDestinationCard countryCode={(trip as any).country_code} compact />
+              <WikiDestinationCard countryCode={trip.country_code} compact />
             </div>
           )}
 

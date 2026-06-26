@@ -11,6 +11,7 @@ export interface ScoredTrip {
   profiles?: { username: string; avatar_url: string | null } | null
   trip_photos?: Array<{ storage_path: string; lat: number | null; lng: number | null; sequence_order: number }>
   collaborators?: Array<{ user_id: string; profiles: { username: string } | null }>
+  country_code?: string | null
   region: Region | null
   isNovelRegion: boolean
   feedScore: number
