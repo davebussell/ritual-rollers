@@ -2,22 +2,23 @@
 
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { UserPlus, UserCheck } from 'lucide-react'
 
-interface Props {
+interface FollowButtonProps {
   currentUserId: string | null
   targetUserId: string
   initialFollowing: boolean
 }
 
-export default function FollowButton({ currentUserId, targetUserId, initialFollowing }: Props) {
-  const supabase = createClient()
+export default function FollowButton({ currentUserId, targetUserId, initialFollowing }: FollowButtonProps) {
   const [following, setFollowing] = useState(initialFollowing)
   const [loading, setLoading] = useState(false)
+  const supabase = createClient()
 
-  if (currentUserId === targetUserId) return null
+  if (!currentUserId || currentUserId === targetUserId) return null
 
-  const toggle = async () => {
-    if (!currentUserId) { window.location.href = '/auth/login'; return }
+  async function toggle() {
+    if (!currentUserId) return
     setLoading(true)
     if (following) {
       await supabase.from('follows').delete().match({ follower_id: currentUserId, following_id: targetUserId })
@@ -30,15 +31,13 @@ export default function FollowButton({ currentUserId, targetUserId, initialFollo
   }
 
   return (
-    <button
-      onClick={toggle}
-      disabled={loading}
-      className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors disabled:opacity-50 ${
+    <button onClick={toggle} disabled={loading}
+      className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all active:scale-95 disabled:opacity-50 ${
         following
-          ? 'border border-zinc-600 text-zinc-300 hover:border-red-500 hover:text-red-400'
+          ? 'border border-zinc-700 bg-zinc-900 text-zinc-300 hover:border-red-500/50 hover:text-red-400'
           : 'bg-orange-500 text-white hover:bg-orange-400'
-      }`}
-    >
+      }`}>
+      {following ? <UserCheck className="h-4 w-4" /> : <UserPlus className="h-4 w-4" />}
       {following ? 'Following' : 'Follow'}
     </button>
   )
