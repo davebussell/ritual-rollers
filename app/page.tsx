@@ -12,7 +12,7 @@ export default async function HomePage() {
 
   const { data: rawTrips } = await supabase
     .from('trips')
-    .select('*, profiles(*), trip_photos(lat, lng, storage_path, sequence_order)')
+    .select('*, profiles(*), trip_photos!trip_photos_trip_id_fkey(lat, lng, storage_path, sequence_order)')
     .eq('is_public', true)
     .order('upvotes_count', { ascending: false })
     .order('created_at', { ascending: false })

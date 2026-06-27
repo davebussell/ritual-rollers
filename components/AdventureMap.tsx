@@ -13,7 +13,7 @@ import type { TripWithAnchor } from '@/lib/types'
 import type { GeoFeature } from 'react-simple-maps'
 
 const GEO_URL = '/world-110m.json'
-const UNLOCKED_CONTINENTS: Region[] = ['North America']
+const UNLOCKED_CONTINENTS: Region[] = ['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Oceania']
 
 const CONTINENT_BOUNDS: Record<Region, { center: [number, number]; scale: number }> = {
   'North America': { center: [-95, 48], scale: 500 },
@@ -190,8 +190,7 @@ export default function AdventureMap({
   const tooltip = useMemo(() => {
     if (!hoveredId || view.level === 'country') return null
     if (view.level === 'world') {
-      const unlocked = UNLOCKED_CONTINENTS.includes(hoveredId as Region)
-      return { text: unlocked ? `✦ ${hoveredId} — click to explore` : `🔒 ${hoveredId} — coming soon`, color: unlocked ? REGION_COLORS[hoveredId as Region] : '#52526e', border: unlocked ? REGION_COLORS[hoveredId as Region] : '#3f3f60' }
+      return { text: `✦ ${hoveredId} — click to explore`, color: REGION_COLORS[hoveredId as Region] ?? '#f97316', border: REGION_COLORS[hoveredId as Region] ?? '#f97316' }
     }
     if (view.level === 'continent') {
       const info = getCountryInfo(Number(hoveredId))

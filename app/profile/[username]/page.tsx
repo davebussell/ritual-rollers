@@ -20,7 +20,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
 
   const [{ data: tripsRaw }, { count: followersCount }, { count: followingCount }, { data: followRow }] = await Promise.all([
     supabase.from('trips')
-      .select('*, trip_photos(id, storage_path, lat, lng, sequence_order, caption), trip_collaborators(user_id, profiles(username))')
+      .select('*, trip_photos!trip_photos_trip_id_fkey(id, storage_path, lat, lng, sequence_order, caption), trip_collaborators(user_id, profiles(username))')
       .eq('owner_id', profile.id).eq('is_public', true).order('created_at', { ascending: false }),
     supabase.from('follows').select('*', { count: 'exact', head: true }).eq('following_id', profile.id),
     supabase.from('follows').select('*', { count: 'exact', head: true }).eq('follower_id', profile.id),
