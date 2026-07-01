@@ -35,7 +35,7 @@ export default async function FeedPage() {
       .from('trips')
       .select(`
         *,
-        profiles(username, avatar_url),
+        profiles!trips_owner_id_fkey(username, avatar_url),
         trip_photos!trip_photos_trip_id_fkey(storage_path, lat, lng, sequence_order),
         trip_collaborators(user_id, profiles(username))
       `)

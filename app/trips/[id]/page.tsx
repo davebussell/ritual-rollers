@@ -18,7 +18,7 @@ export default async function TripPage({ params }: { params: Promise<{ id: strin
 
   const { data: trip } = await supabase
     .from('trips')
-    .select(`*, profiles(*), trip_photos!trip_photos_trip_id_fkey(*, profiles(username, avatar_url)), trip_collaborators(user_id, profiles(username, avatar_url))`)
+    .select(`*, profiles!trips_owner_id_fkey(*), trip_photos!trip_photos_trip_id_fkey(*, profiles(username, avatar_url)), trip_collaborators(user_id, profiles(username, avatar_url))`)
     .eq('id', id)
     .single()
 
