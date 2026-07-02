@@ -89,3 +89,43 @@ body::after {
 .animate-shimmer {
   animation: shimmer 1.8s linear infinite;
 }
+
+/* ── Adventure map ambience ─────────────────────────────── */
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50%      { opacity: 0.7; }
+}
+
+.rr-star {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes dash-march {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -20; }
+}
+
+.rr-arc {
+  animation: dash-march 1.6s linear infinite;
+}
+
+@keyframes nebula-drift {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+.rr-nebula {
+  animation: nebula-drift 8s ease-in-out infinite alternate;
+}
+
+/* Photo pins: hover lift, scaled around their own center */
+.rr-photo-pin {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+.rr-photo-pin:hover {
+  transform: scale(1.15);
+}

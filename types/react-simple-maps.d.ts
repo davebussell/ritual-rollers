@@ -38,6 +38,29 @@ declare module 'react-simple-maps' {
     properties: Record<string, unknown>
   }
 
+  export function Marker(props: {
+    coordinates: [number, number]
+    children?: ReactNode
+    className?: string
+    style?: { default?: CSSProperties; hover?: CSSProperties; pressed?: CSSProperties }
+    onClick?: (event: React.MouseEvent) => void
+    onMouseEnter?: (event: React.MouseEvent) => void
+    onMouseLeave?: (event: React.MouseEvent) => void
+  }): JSX.Element
+
+  export function Line(props: {
+    from: [number, number]
+    to: [number, number]
+    stroke?: string
+    strokeWidth?: number
+    strokeOpacity?: number
+    strokeDasharray?: string
+    strokeLinecap?: string
+    fill?: string
+    className?: string
+    style?: CSSProperties
+  }): JSX.Element
+
   export function Geography(props: {
     geography: GeoFeature
     onClick?: (event: React.MouseEvent) => void

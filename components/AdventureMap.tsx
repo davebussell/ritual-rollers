@@ -2,11 +2,13 @@
 
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
+import { motion } from 'framer-motion'
+import { ComposableMap, Geographies, Geography, Line, Marker } from 'react-simple-maps'
 import { ChevronUp, X, Camera, MapPin, BookOpen } from 'lucide-react'
 import { REGION_COLORS, type Region } from '@/lib/regions'
 import { getCountryContinent } from '@/lib/countries'
-import { getCountryInfo } from '@/lib/country-names'
+import { COUNTRIES, getCountryInfo } from '@/lib/country-names'
+import MapTicker from '@/components/MapTicker'
 import { countryStats, heatT, regionStats } from '@/lib/engagement'
 import { fetchWikiSummary } from '@/lib/wikipedia'
 import type { WikiSummary } from '@/lib/wikipedia'
@@ -91,6 +93,104 @@ function computeClusters(
   return groups
 }
 
+// ── Photo pin helpers ─────────────────────────────────────────────
+
+// Greedy lat/lng clustering for pin layers — top-upvoted trip anchors each group
+interface GeoCluster {
+  top: TripWithAnchor
+  count: number
+  lng: number
+  lat: number
+}
+
+function clusterByDegrees(trips: TripWithAnchor[], deg: number): GeoCluster[] {
+  const anchored = trips
+    .filter(t => t.anchorLat != null && t.anchorLng != null)
+    .sort((a, b) => b.upvotes_count - a.upvotes_count)
+  const assigned = new Set<string>()
+  const out: GeoCluster[] = []
+  for (const t of anchored) {
+    if (assigned.has(t.id)) continue
+    let count = 1
+    assigned.add(t.id)
+    for (const q of anchored) {
+      if (assigned.has(q.id)) continue
+      if (Math.abs(t.anchorLat! - q.anchorLat!) < deg && Math.abs(t.anchorLng! - q.anchorLng!) < deg) {
+        count += 1
+        assigned.add(q.id)
+      }
+    }
+    out.push({ top: t, count, lng: t.anchorLng!, lat: t.anchorLat! })
+  }
+  return out
+}
+
+function coverUrlOf(trip: TripWithAnchor): string | null {
+  const sp = trip.trip_photos?.[0]?.storage_path
+  if (!sp) return null
+  return sp.startsWith('https://') ? sp
+    : `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/trip-photos/${sp}`
+}
+
+// alpha2 → ISO numeric id, built once from the country registry
+let alpha2ToNumeric: Map<string, number> | null = null
+function numericIdForAlpha2(alpha2: string): number | null {
+  if (!alpha2ToNumeric) {
+    alpha2ToNumeric = new Map()
+    for (const [id, info] of Object.entries(COUNTRIES)) alpha2ToNumeric.set(info.alpha2, Number(id))
+  }
+  return alpha2ToNumeric.get(alpha2) ?? null
+}
+
+// Circular photo pin: cover image clipped in a ring, region-colored stroke
+const PhotoPin = memo(function PhotoPin({ id, coverUrl, r, ringColor, count, selected, onClick, onEnter, onLeave }: {
+  id: string
+  coverUrl: string | null
+  r: number
+  ringColor: string
+  count: number
+  selected?: boolean
+  onClick: (e: React.MouseEvent) => void
+  onEnter: () => void
+  onLeave: () => void
+}) {
+  const clipId = `rr-clip-${id}`
+  const badgeR = Math.max(5.5, r * 0.42)
+  const badgeOff = r * 0.78
+  return (
+    <g className="rr-photo-pin" style={{ cursor: 'pointer' }}
+      onClick={onClick} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      <defs>
+        <clipPath id={clipId}><circle cx={0} cy={0} r={r} /></clipPath>
+      </defs>
+      {/* Soft drop shadow */}
+      <circle cx={0} cy={1.5} r={r + 2.5} fill="#000000" opacity={0.4} />
+      {/* Region ring */}
+      <circle cx={0} cy={0} r={r + 1.5} fill="#09090b" stroke={ringColor} strokeWidth={selected ? 3 : 2} />
+      {/* Cover photo */}
+      {coverUrl ? (
+        <image href={coverUrl} x={-r} y={-r} width={r * 2} height={r * 2}
+          clipPath={`url(#${clipId})`} preserveAspectRatio="xMidYMid slice" />
+      ) : (
+        <circle cx={0} cy={0} r={r} fill={`${ringColor}66`} />
+      )}
+      {/* Inner white ring */}
+      <circle cx={0} cy={0} r={r} fill="none" stroke="white" strokeWidth={1} strokeOpacity={0.9} />
+      {/* Count badge for clusters */}
+      {count > 1 && (
+        <g>
+          <circle cx={badgeOff} cy={-badgeOff} r={badgeR} fill="#f97316" stroke="#09090b" strokeWidth={1.5} />
+          <text x={badgeOff} y={-badgeOff} textAnchor="middle" dominantBaseline="central"
+            fontSize={badgeR} fontWeight="700" fill="white"
+            style={{ fontFamily: 'var(--font-jbmono)' }}>
+            +{count - 1}
+          </text>
+        </g>
+      )}
+    </g>
+  )
+})
+
 type ViewState =
   | { level: 'world' }
   | { level: 'continent'; region: Region }
@@ -126,7 +226,6 @@ export default function AdventureMap({
   trips, activeRegion, tripRegions, onRegionSelect, onRegionExplored, onCountrySelect, selectedCountryId,
 }: Props) {
   const [view, setView] = useState<ViewState>({ level: 'world' })
-  const [visible, setVisible] = useState(true)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [selectedCluster, setSelectedCluster] = useState<ClusterGroup | null>(null)
   const [countryWiki, setCountryWiki] = useState<WikiSummary | null>(null)
@@ -138,9 +237,13 @@ export default function AdventureMap({
     fetchWikiSummary((view as { countryName: string }).countryName).then(setCountryWiki)
   }, [view])
 
+  // View changes are choreographed by AnimatePresence — just swap immediately
   const fade = useCallback((next: ViewState) => {
-    setVisible(false); setSelectedCluster(null)
-    setTimeout(() => { setView(next); setVisible(true) }, 220)
+    setSelectedCluster(null)
+    // Clear hover too: the hovered pin/geography unmounts on drill, so its
+    // onMouseLeave never fires and a stale tooltip would survive the level change
+    setHoveredId(null)
+    setView(next)
   }, [])
 
   const handleGeoClick = useCallback((geo: GeoFeature, v: ViewState) => {
@@ -189,6 +292,69 @@ export default function AdventureMap({
     return computeClusters(countryTrips, projectionConfig.center, projectionConfig.scale)
   }, [view, trips, projectionConfig])
 
+  // Photo-pin clusters — world (~4°) and continent (~1.5°) levels
+  const worldPins = useMemo(() =>
+    view.level === 'world' ? clusterByDegrees(trips, 4) : [],
+    [view, trips])
+
+  const continentPins = useMemo(() =>
+    view.level === 'continent'
+      ? clusterByDegrees(trips.filter(t => t.region === view.region), 1.5)
+      : [],
+    [view, trips])
+
+  // Travel arcs — consecutive trips by creation date, world view only
+  const arcs = useMemo(() => {
+    if (view.level !== 'world') return []
+    const seq = trips
+      .filter(t => t.anchorLat != null && t.anchorLng != null)
+      .sort((a, b) => a.created_at.localeCompare(b.created_at))
+    const out: { from: TripWithAnchor; to: TripWithAnchor }[] = []
+    for (let i = 0; i < seq.length - 1 && out.length < 12; i++) {
+      out.push({ from: seq[i], to: seq[i + 1] })
+    }
+    return out
+  }, [view, trips])
+
+  const worldStats = useMemo(() => ({
+    trips: trips.length,
+    regions: new Set(trips.map(t => t.region).filter(Boolean)).size,
+    upvotes: trips.reduce((s, t) => s + t.upvotes_count, 0),
+  }), [trips])
+
+  const tickerTrips = useMemo(() => trips.map(t => ({
+    id: t.id,
+    title: t.title,
+    upvotes_count: t.upvotes_count,
+    region: t.region,
+    username: t.profiles?.username ?? 'explorer',
+  })), [trips])
+
+  // World pin click → drill into the trip's continent
+  const handlePinRegionClick = useCallback((trip: TripWithAnchor) => {
+    const r = trip.region
+    if (!r || !UNLOCKED_CONTINENTS.includes(r)) return
+    onRegionSelect(r); onRegionExplored(r)
+    fade({ level: 'continent', region: r })
+  }, [fade, onRegionSelect, onRegionExplored])
+
+  // Continent pin click → drill into the trip's country
+  const handlePinCountryClick = useCallback((trip: TripWithAnchor) => {
+    if (!trip.countryCode) return
+    const numericId = numericIdForAlpha2(trip.countryCode)
+    if (numericId == null) return
+    const name = getCountryInfo(numericId)?.name ?? `Country ${numericId}`
+    onCountrySelect(numericId, name)
+    fade({ level: 'country', countryId: numericId, countryName: name })
+  }, [fade, onCountrySelect])
+
+  // Render the hovered pin last so it rises above its neighbours
+  const sortForHover = useCallback((pins: GeoCluster[]): GeoCluster[] => {
+    if (!hoveredId?.startsWith('trip:')) return pins
+    const id = hoveredId.slice(5)
+    return [...pins].sort((a, b) => (a.top.id === id ? 1 : 0) - (b.top.id === id ? 1 : 0))
+  }, [hoveredId])
+
   // Engagement heat — per-region and per-country (alpha2) stats
   const heat = useMemo(() => {
     const regions = regionStats(trips)
@@ -228,14 +394,25 @@ export default function AdventureMap({
   const regionColor = region ? REGION_COLORS[region] : '#f97316'
 
   const tooltip = useMemo(() => {
-    if (!hoveredId || view.level === 'country') return null
+    if (!hoveredId) return null
+    // Photo pin hover — any level
+    if (hoveredId.startsWith('trip:')) {
+      const t = trips.find(x => x.id === hoveredId.slice(5))
+      if (!t) return null
+      const color = t.region ? REGION_COLORS[t.region] : '#f97316'
+      return {
+        text: `📍 ${t.title} — ${t.upvotes_count}▲ @${t.profiles?.username ?? 'explorer'}`,
+        color, border: color, mono: true,
+      }
+    }
+    if (view.level === 'country') return null
     if (view.level === 'world') {
       const color = REGION_COLORS[hoveredId as Region] ?? '#f97316'
       const stats = heat.regions.get(hoveredId)
       const text = stats
         ? `✦ ${hoveredId} — ${stats.trips} expedition${stats.trips !== 1 ? 's' : ''} · ${stats.upvotes} upvote${stats.upvotes !== 1 ? 's' : ''}`
         : `✦ ${hoveredId} — click to explore`
-      return { text, color, border: color }
+      return { text, color, border: color, mono: false }
     }
     if (view.level === 'continent') {
       const info = getCountryInfo(Number(hoveredId))
@@ -245,10 +422,10 @@ export default function AdventureMap({
           ? `${info.flag} ${info.name} — ${stats.trips} expedition${stats.trips !== 1 ? 's' : ''} · ${stats.upvotes} upvote${stats.upvotes !== 1 ? 's' : ''}`
           : `${info.flag} ${info.name} — click to explore`
         : hoveredId
-      return { text, color: REGION_COLORS[view.region], border: REGION_COLORS[view.region] }
+      return { text, color: REGION_COLORS[view.region], border: REGION_COLORS[view.region], mono: false }
     }
     return null
-  }, [hoveredId, view, heat])
+  }, [hoveredId, view, heat, trips])
 
   // Sorted trips for selected cluster popup
   const clusterTrips = useMemo(() =>
@@ -262,11 +439,30 @@ export default function AdventureMap({
     <div ref={mapRef} className="relative h-full w-full bg-[#080810] select-none overflow-hidden">
       {/* Stars */}
       <svg className="pointer-events-none absolute inset-0 w-full h-full" aria-hidden>
-        {STARS.map((s, i) => <circle key={i} cx={s.cx} cy={s.cy} r={s.r} fill="white" opacity={s.opacity} />)}
+        {STARS.map((s, i) => (
+          <circle key={i} className="rr-star" cx={s.cx} cy={s.cy} r={s.r} fill="white" opacity={s.opacity}
+            style={{ animationDelay: `${(i * 0.37) % 5}s` }} />
+        ))}
       </svg>
 
-      {/* Map */}
-      <div className="h-full w-full" style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.22s ease' }}>
+      {/* Nebula wash */}
+      <div className="rr-nebula pointer-events-none absolute inset-0 blur-3xl" aria-hidden
+        style={{
+          background:
+            'radial-gradient(ellipse at 22% 20%, rgba(249, 115, 22, 0.08), transparent 55%), ' +
+            'radial-gradient(ellipse at 78% 80%, rgba(99, 102, 241, 0.06), transparent 55%)',
+        }} />
+
+      {/* Map — the new level dives in on every view change (keyed remount).
+          No exit animation: AnimatePresence exit proved unreliable here and
+          leaked a hidden ComposableMap per level change. */}
+        <motion.div
+          key={view.level === 'world' ? 'world' : view.level === 'continent' ? `continent:${view.region}` : `country:${view.countryId}`}
+          className="h-full w-full"
+          initial={{ opacity: 0, scale: 0.72 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        >
         <ComposableMap
           projection={view.level === 'world' ? 'geoNaturalEarth1' : 'geoMercator'}
           projectionConfig={projectionConfig}
@@ -322,34 +518,44 @@ export default function AdventureMap({
                     )
                   })}
 
-                  {/* Trip-count chips at country centroids — continent view */}
-                  {view.level === 'continent' && shown.map((geo: GeoFeature) => {
-                    const numId = Number(geo.id)
-                    const info = getCountryInfo(numId)
-                    const stats = info ? heat.countries.get(info.alpha2) : undefined
-                    if (!info || !stats) return null
-                    const [bx, by] = mercatorProject(
-                      info.proj.center[0], info.proj.center[1],
-                      projectionConfig.center, projectionConfig.scale,
-                    )
-                    return (
-                      <g key={`chip-${numId}`} style={{ cursor: 'pointer' }}
-                        onClick={() => handleGeoClick(geo, view)}
-                        onMouseEnter={() => setHoveredId(String(numId))}
-                        onMouseLeave={() => setHoveredId(null)}>
-                        <circle cx={bx} cy={by} r={8} fill={regionColor} stroke="#09090b" strokeWidth={1.5} />
-                        <text x={bx} y={by} textAnchor="middle" dominantBaseline="central"
-                          fontSize={8} fontWeight="700" fill="white"
-                          style={{ fontFamily: 'var(--font-jbmono)' }}>
-                          {stats.trips}
-                        </text>
-                      </g>
-                    )
-                  })}
                 </>
               )
             }}
           </Geographies>
+
+          {/* Travel arcs — world view */}
+          {view.level === 'world' && arcs.map((a, i) => (
+            <Line key={`arc-${i}`} className="rr-arc"
+              from={[a.from.anchorLng!, a.from.anchorLat!]}
+              to={[a.to.anchorLng!, a.to.anchorLat!]}
+              stroke={a.from.region ? REGION_COLORS[a.from.region] : '#f97316'}
+              strokeWidth={1} strokeOpacity={0.3} strokeDasharray="4 6"
+              strokeLinecap="round" fill="none"
+              style={{ pointerEvents: 'none' }} />
+          ))}
+
+          {/* Photo pins — world view */}
+          {view.level === 'world' && sortForHover(worldPins).map(c => (
+            <Marker key={c.top.id} coordinates={[c.lng, c.lat]}>
+              <PhotoPin id={`w-${c.top.id}`} coverUrl={coverUrlOf(c.top)} r={9}
+                ringColor={c.top.region ? REGION_COLORS[c.top.region] : '#f97316'}
+                count={c.count}
+                onClick={e => { e.stopPropagation(); handlePinRegionClick(c.top) }}
+                onEnter={() => setHoveredId(`trip:${c.top.id}`)}
+                onLeave={() => setHoveredId(null)} />
+            </Marker>
+          ))}
+
+          {/* Photo pins — continent view */}
+          {view.level === 'continent' && sortForHover(continentPins).map(c => (
+            <Marker key={c.top.id} coordinates={[c.lng, c.lat]}>
+              <PhotoPin id={`c-${c.top.id}`} coverUrl={coverUrlOf(c.top)} r={13}
+                ringColor={regionColor} count={c.count}
+                onClick={e => { e.stopPropagation(); handlePinCountryClick(c.top) }}
+                onEnter={() => setHoveredId(`trip:${c.top.id}`)}
+                onLeave={() => setHoveredId(null)} />
+            </Marker>
+          ))}
 
           {/* Trip cluster layer — country view only */}
           {view.level === 'country' && (
@@ -357,11 +563,9 @@ export default function AdventureMap({
               {clusters.map(cluster => {
                 const isSelected = selectedCluster?.id === cluster.id
                 const isSingle = cluster.count === 1
-                // Radius scales with the cluster's total upvotes, up to ~1.6x
-                const upTotal = clusterHeat.totals.get(cluster.id) ?? 0
-                const k = 1 + 0.6 * heatT(upTotal, clusterHeat.max)
-                const glowR = (isSingle ? 10 : 16) * k
-                const pinR = (isSingle ? 5 : 10) * k
+                const top = cluster.members.reduce((best, m) =>
+                  m.trip.upvotes_count > best.trip.upvotes_count ? m : best)
+                const pinR = isSingle ? 15 : 18
                 const isHottest = clusterHeat.hottestId === cluster.id
                 return (
                   <g key={cluster.id}>
@@ -383,48 +587,25 @@ export default function AdventureMap({
 
                     {/* Pulse ring — hottest cluster in view */}
                     {isHottest && (
-                      <circle cx={cluster.cx} cy={cluster.cy} r={glowR} fill="none"
+                      <circle cx={cluster.cx} cy={cluster.cy} r={pinR + 4} fill="none"
                         stroke={regionColor} strokeWidth={1.5}>
                         <animate attributeName="r"
-                          values={`${glowR};${glowR + 14}`} dur="2s" repeatCount="indefinite" />
+                          values={`${pinR + 4};${pinR + 18}`} dur="2s" repeatCount="indefinite" />
                         <animate attributeName="opacity"
                           values="0.55;0" dur="2s" repeatCount="indefinite" />
                       </circle>
                     )}
 
-                    {/* Cluster / single pin */}
-                    <g
-                      style={{ cursor: 'pointer' }}
-                      onClick={e => {
-                        e.stopPropagation()
-                        setSelectedCluster(isSelected ? null : cluster)
-                      }}>
-                      {/* Outer glow ring */}
-                      <circle
-                        cx={cluster.cx} cy={cluster.cy}
-                        r={glowR}
-                        fill={regionColor} fillOpacity={isSelected ? 0.18 : 0.08}
-                        stroke={regionColor} strokeOpacity={isSelected ? 0.6 : 0.3}
-                        strokeWidth={1} />
-                      {/* Inner pin */}
-                      <circle
-                        cx={cluster.cx} cy={cluster.cy}
-                        r={pinR}
-                        fill={isSelected ? regionColor : `${regionColor}cc`}
-                        stroke="white" strokeWidth={1.5} />
-                      {/* Count label for clusters */}
-                      {!isSingle && (
-                        <text x={cluster.cx} y={cluster.cy}
-                          textAnchor="middle" dominantBaseline="central"
-                          fontSize={8} fontWeight="700" fill="white">
-                          {cluster.count}
-                        </text>
-                      )}
-                      {/* Single pin dot */}
-                      {isSingle && (
-                        <circle cx={cluster.cx} cy={cluster.cy} r={2}
-                          fill="white" fillOpacity={0.9} />
-                      )}
+                    {/* Photo pin — top trip's cover anchors the cluster */}
+                    <g transform={`translate(${cluster.cx}, ${cluster.cy})`}>
+                      <PhotoPin id={`k-${cluster.id}`} coverUrl={coverUrlOf(top.trip)} r={pinR}
+                        ringColor={regionColor} count={cluster.count} selected={isSelected}
+                        onClick={e => {
+                          e.stopPropagation()
+                          setSelectedCluster(isSelected ? null : cluster)
+                        }}
+                        onEnter={() => setHoveredId(`trip:${top.trip.id}`)}
+                        onLeave={() => setHoveredId(null)} />
                     </g>
                   </g>
                 )
@@ -432,7 +613,7 @@ export default function AdventureMap({
             </g>
           )}
         </ComposableMap>
-      </div>
+        </motion.div>
 
       {/* Cluster popup */}
       {selectedCluster && view.level === 'country' && (
@@ -549,8 +730,27 @@ export default function AdventureMap({
         </div>
       )}
 
+      {/* World stats strip — bottom left, world view only */}
+      {view.level === 'world' && (
+        <div className="pointer-events-none absolute bottom-4 left-4 z-10">
+          <p className="font-expedition text-[8px] uppercase tracking-[0.25em] text-zinc-600">The World Right Now</p>
+          <p className="mt-1 font-expedition text-[9px] uppercase tracking-[0.25em] text-zinc-500">
+            <span className="text-orange-400">{worldStats.trips}</span> expeditions
+            {' · '}
+            <span className="text-orange-400">{worldStats.regions}</span> regions
+            {' · '}
+            <span className="text-orange-400">{worldStats.upvotes}</span> upvotes
+          </p>
+        </div>
+      )}
+
+      {/* Live activity ticker — world + continent views */}
+      {view.level !== 'country' && !selectedCluster && !tooltip && (
+        <MapTicker trips={tickerTrips} />
+      )}
+
       {/* Trip count badge — country view */}
-      {view.level === 'country' && clusters.length > 0 && (
+      {view.level === 'country' && clusters.length > 0 && !tooltip && (
         <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 rounded-full border border-zinc-800 bg-zinc-950/80 px-3 py-1 text-[11px] text-zinc-500 backdrop-blur">
           {clusters.reduce((n, c) => n + c.count, 0)} trips plotted · click a pin to explore
         </div>
@@ -594,7 +794,9 @@ export default function AdventureMap({
 
       {/* Tooltip */}
       {tooltip && !selectedCluster && (
-        <div className="pointer-events-none absolute bottom-10 left-1/2 z-20 -translate-x-1/2 rounded-full border px-4 py-1.5 text-xs font-medium backdrop-blur"
+        <div className={`pointer-events-none absolute bottom-10 left-1/2 z-20 -translate-x-1/2 rounded-full border px-4 py-1.5 backdrop-blur ${
+          tooltip.mono ? 'font-expedition text-[10px] uppercase tracking-[0.15em]' : 'text-xs font-medium'
+        }`}
           style={{ borderColor: tooltip.border, color: tooltip.color, background: '#0a0a14ee' }}>
           {tooltip.text}
         </div>
