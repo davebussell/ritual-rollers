@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { REGIONS, REGION_COLORS, REGION_EMOJI, type Region } from '@/lib/regions'
 
 interface Props {
@@ -31,51 +30,51 @@ export default function PassportWidget({ exploredRegions, newStamp }: Props) {
 
   return (
     <div className="border-t border-zinc-800/60 bg-zinc-950 px-3 pb-3 pt-3">
-      <div className="mb-2 flex items-center justify-between">
-        <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-600">
+      <div className="mb-1.5 flex items-center justify-between">
+        <p className="font-expedition text-[9px] uppercase tracking-[0.3em] text-zinc-600">
           Your Passport
         </p>
-        <p className="text-[10px] text-zinc-700">{earned}/{REGIONS.length} regions</p>
+        <p className="font-expedition text-[9px] uppercase tracking-widest text-zinc-700">
+          {earned}/{REGIONS.length} regions
+        </p>
       </div>
 
-      <div className="flex flex-wrap gap-1.5">
+      {/* Progress */}
+      <div className="mb-2.5 h-0.5 w-full overflow-hidden rounded-full bg-zinc-800">
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-500 transition-all duration-500"
+          style={{ width: `${(earned / REGIONS.length) * 100}%` }}
+        />
+      </div>
+
+      {/* Stamps */}
+      <div className="flex flex-wrap items-start gap-x-3 gap-y-2">
         {REGIONS.map(region => {
           const isEarned = exploredRegions.has(region)
           const isNew = animating === region
           const color = REGION_COLORS[region]
 
           return (
-            <motion.div
-              key={region}
-              animate={isNew ? { scale: [1, 1.3, 0.95, 1.1, 1] } : { scale: 1 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+            <div key={region}
               title={isEarned ? `${region} — explored!` : `${region} — not yet visited`}
-              className="relative flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium transition-all duration-300"
-              style={isEarned
-                ? { borderColor: `${color}60`, color, backgroundColor: `${color}12` }
-                : { borderColor: '#27272a', color: '#52525b' }}
-            >
-              <span>{REGION_EMOJI[region]}</span>
-              <span>{SHORT[region]}</span>
-              <AnimatePresence>
-                {isEarned && (
-                  <motion.span
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="text-[9px]"
-                  >✓</motion.span>
-                )}
-              </AnimatePresence>
-              {isNew && (
-                <motion.div
-                  initial={{ opacity: 0.8, scale: 1 }}
-                  animate={{ opacity: 0, scale: 2.5 }}
-                  transition={{ duration: 0.6 }}
-                  className="absolute inset-0 rounded-full"
-                  style={{ backgroundColor: color }}
-                />
-              )}
-            </motion.div>
+              className="flex flex-col items-center gap-1">
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed text-base transition-all duration-300 ${
+                  isNew ? 'animate-stamp-in' : ''
+                } ${isEarned ? '' : 'opacity-40'}`}
+                style={isEarned
+                  ? { borderColor: color, backgroundColor: `${color}12`, transform: 'rotate(-4deg)' }
+                  : { borderColor: '#27272a' }}
+              >
+                <span className={isEarned ? '' : 'opacity-60 grayscale'}>{REGION_EMOJI[region]}</span>
+              </div>
+              <span
+                className="font-expedition text-[8px] uppercase tracking-wider"
+                style={{ color: isEarned ? color : '#3f3f46' }}
+              >
+                {SHORT[region]}
+              </span>
+            </div>
           )
         })}
       </div>

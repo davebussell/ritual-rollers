@@ -66,7 +66,9 @@ export default function ExploreTripCard({
         }`}>
 
         {/* Cover */}
-        <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-xl bg-zinc-800">
+        <div
+          className="relative h-[72px] w-24 shrink-0 overflow-hidden rounded-xl bg-zinc-800 transition-shadow duration-300 group-hover:shadow-[0_0_0_1px_var(--region-glow),0_0_16px_var(--region-glow)]"
+          style={{ '--region-glow': `${regionColor}66` } as React.CSSProperties}>
           {coverUrl ? (
             <img src={coverUrl} alt={trip.title}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -98,16 +100,17 @@ export default function ExploreTripCard({
         {/* Info */}
         <div className="flex min-w-0 flex-1 flex-col justify-between py-0.5">
           <div>
-            <h3 className="truncate text-sm font-semibold leading-tight text-white group-hover:text-orange-100 transition-colors">
+            <h3 className="truncate font-display text-sm font-semibold leading-tight text-white group-hover:text-orange-100 transition-colors">
               {trip.title}
             </h3>
             <p className="mt-0.5 flex items-center gap-1 text-xs text-zinc-500">
+              <span className="h-[3px] w-[3px] shrink-0 rounded-full" style={{ backgroundColor: regionColor }} />
               <span>@{trip.profiles?.username}</span>
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-1 mt-1">
             {trip.region && (
-              <span className="flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-medium"
+              <span className="flex items-center gap-1 rounded-md px-1.5 py-0.5 font-expedition text-[9px] uppercase tracking-wider"
                 style={{ backgroundColor: `${regionColor}18`, color: regionColor }}>
                 <MapPin className="h-2.5 w-2.5" />
                 {trip.region}
@@ -117,7 +120,7 @@ export default function ExploreTripCard({
               const a = getActivity(tag)
               if (!a) return null
               return (
-                <span key={tag} className="rounded-md px-1.5 py-0.5 text-[10px] font-medium"
+                <span key={tag} className="rounded-md px-1.5 py-0.5 font-expedition text-[9px] uppercase tracking-wider"
                   style={{ backgroundColor: `${a.color}18`, color: a.color }}>
                   {a.emoji} {a.label}
                 </span>
@@ -130,9 +133,11 @@ export default function ExploreTripCard({
         <motion.button
           onClick={toggleUpvote}
           whileTap={{ scale: 0.85 }}
+          animate={upvoted ? { scale: [1, 1.25, 1] } : { scale: 1 }}
+          transition={{ duration: 0.3 }}
           className={`flex shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl px-2.5 py-1.5 text-xs font-medium transition-all ${
             upvoted
-              ? 'bg-orange-500/15 text-orange-400'
+              ? 'bg-orange-500/15 text-orange-400 shadow-lg shadow-orange-500/30'
               : 'text-zinc-600 hover:bg-zinc-800 hover:text-zinc-300'
           }`}>
           <ChevronUp className={`h-3.5 w-3.5 transition-transform ${upvoted ? '-translate-y-0.5' : ''}`} strokeWidth={2.5} />

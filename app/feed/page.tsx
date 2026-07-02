@@ -1,18 +1,21 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { getRegion, REGIONS, REGION_COLORS, REGION_EMOJI, type Region } from '@/lib/regions'
-import { scoreTrips } from '@/lib/feed-score'
+import type { ScoredTrip } from '@/lib/feed-score'
 import FeedTripCard from '@/components/FeedTripCard'
 import PageContainer from '@/components/PageContainer'
-import { Users, Compass, BookOpen } from 'lucide-react'
+import { Globe, UserCheck, Compass } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
-export default async function FeedPage() {
+export default async function FeedPage({ searchParams }: { searchParams: Promise<{ filter?: string }> }) {
+  const { filter } = await searchParams
   const supabase = await createClient()
   const { data: { user: rawUser } } = await supabase.auth.getUser()
   // Treat anonymous sessions as logged-out
   const user = (rawUser as (typeof rawUser & { is_anonymous?: boolean }) | null)?.is_anonymous ? null : rawUser
+
+  const followingMode = filter === 'following'
 
   const { data: followingRows } = user ? await supabase
     .from('follows')
@@ -21,30 +24,36 @@ export default async function FeedPage() {
 
   const followingIds = followingRows?.map(r => r.following_id) ?? []
 
-  let rawTrips: Array<{
+  type RawTrip = {
     id: string; owner_id: string; title: string; description: string | null
     is_public: boolean; upvotes_count: number; created_at: string
     country_code: string | null
     profiles: { username: string; avatar_url: string | null } | null
     trip_photos: Array<{ storage_path: string; lat: number | null; lng: number | null; sequence_order: number }>
     trip_collaborators: Array<{ user_id: string; profiles: { username: string } | null }>
-  }> = []
-
-  if (followingIds.length > 0) {
-    const { data } = await supabase
-      .from('trips')
-      .select(`
-        *,
-        profiles!trips_owner_id_fkey(username, avatar_url),
-        trip_photos!trip_photos_trip_id_fkey(storage_path, lat, lng, sequence_order),
-        trip_collaborators(user_id, profiles(username))
-      `)
-      .in('owner_id', followingIds)
-      .eq('is_public', true)
-      .order('created_at', { ascending: false })
-      .limit(50)
-    rawTrips = (data ?? []) as typeof rawTrips
   }
+
+  let query = supabase
+    .from('trips')
+    .select(`
+      *,
+      profiles!trips_owner_id_fkey(username, avatar_url),
+      trip_photos!trip_photos_trip_id_fkey(storage_path, lat, lng, sequence_order),
+      trip_collaborators(user_id, profiles(username))
+    `)
+    .eq('is_public', true)
+    .order('upvotes_count', { ascending: false })
+    .order('created_at', { ascending: false })
+    .limit(60)
+
+  if (followingMode && followingIds.length > 0) {
+    query = query.in('owner_id', followingIds)
+  }
+
+  const { data } = (!followingMode || followingIds.length > 0)
+    ? await query
+    : { data: [] }
+  const rawTrips = (data ?? []) as RawTrip[]
 
   const { data: upvotes } = user ? await supabase
     .from('upvotes')
@@ -52,50 +61,48 @@ export default async function FeedPage() {
     .eq('user_id', user.id) : { data: null }
   const upvotedIds = new Set(upvotes?.map(u => u.trip_id) ?? [])
 
-  // Compute region for each trip from anchor photo GPS
+  // Enrich with region + display fields (ranked by upvotes via the query order)
+  const now = Date.now()
   const withRegion = rawTrips.map(t => {
     const sorted = [...(t.trip_photos ?? [])].sort((a, b) => a.sequence_order - b.sequence_order)
     const anchor = sorted.find(p => p.lat != null && p.lng != null)
     const region: Region | null = anchor?.lat && anchor?.lng ? getRegion(anchor.lat, anchor.lng) : null
     return {
       ...t,
+      trip_photos: sorted,
       collaborators: t.trip_collaborators,
       region,
       isNovelRegion: false,
-      feedScore: 0,
-      hoursAgo: 0,
+      feedScore: t.upvotes_count,
+      hoursAgo: (now - new Date(t.created_at).getTime()) / (1000 * 60 * 60),
     }
   })
 
-  // Count trips per region to measure novelty
+  // Mark novel regions (< 3 trips in feed from this region)
   const regionCounts = REGIONS.reduce((acc, r) => {
     acc[r] = withRegion.filter(t => t.region === r).length
     return acc
   }, {} as Record<string, number>)
 
-  // Mark novel regions (< 5 trips in feed from this region)
-  const tripsWithNovelty = withRegion.map(t => ({
+  const scored: ScoredTrip[] = withRegion.map(t => ({
     ...t,
-    isNovelRegion: t.region ? (regionCounts[t.region] ?? 0) < 5 : false,
+    isNovelRegion: t.region ? (regionCounts[t.region] ?? 0) < 3 : false,
   }))
 
-  const scored = scoreTrips(tripsWithNovelty, regionCounts)
-
-  // Region diversity stats for header
   const regions = Array.from(new Set(scored.map(t => t.region).filter(Boolean))) as Region[]
 
   return (
     <PageContainer>
       {/* Header */}
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white">Friends Feed</h1>
+          <h1 className="text-2xl font-bold text-white">Feed</h1>
           <p className="mt-1 text-sm text-zinc-500">
-            {scored.length > 0
-              ? `${scored.length} trips · ranked by novelty & engagement`
-              : followingIds.length === 0
-                ? 'Follow explorers to see their journeys here'
-                : 'No recent trips from people you follow'}
+            {followingMode
+              ? followingIds.length === 0
+                ? 'Follow explorers to build your personal feed'
+                : `${scored.length} trips from accounts you follow · top upvoted first`
+              : `${scored.length} trips from the whole community · top upvoted first`}
           </p>
         </div>
         {regions.length > 0 && (
@@ -110,30 +117,61 @@ export default async function FeedPage() {
         )}
       </div>
 
-      {followingIds.length === 0 ? (
-        <div className="flex flex-col items-center gap-6 rounded-2xl border border-dashed border-zinc-800 py-24 text-center">
+      {/* Everyone / Following tabs */}
+      <div className="mb-8 flex w-fit rounded-xl border border-zinc-800 bg-zinc-900/60 p-1">
+        <Link href="/feed"
+          className={`flex items-center gap-1.5 rounded-lg px-4 py-1.5 text-sm font-semibold transition-all ${
+            !followingMode ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20' : 'text-zinc-400 hover:text-white'
+          }`}>
+          <Globe className="h-3.5 w-3.5" /> Everyone
+        </Link>
+        <Link href="/feed?filter=following"
+          className={`flex items-center gap-1.5 rounded-lg px-4 py-1.5 text-sm font-semibold transition-all ${
+            followingMode ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20' : 'text-zinc-400 hover:text-white'
+          }`}>
+          <UserCheck className="h-3.5 w-3.5" /> Following
+          {followingIds.length > 0 && (
+            <span className={`rounded-full px-1.5 text-[10px] ${followingMode ? 'bg-white/20' : 'bg-zinc-800'}`}>
+              {followingIds.length}
+            </span>
+          )}
+        </Link>
+      </div>
+
+      {followingMode && !user ? (
+        <div className="flex flex-col items-center gap-5 rounded-2xl border border-dashed border-zinc-800 py-24 text-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-800 text-zinc-600">
-            <Users className="h-8 w-8" />
+            <UserCheck className="h-8 w-8" />
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-white">Sign in to follow explorers</p>
+            <p className="mt-1 text-sm text-zinc-500">Your following feed lives here once you're signed in.</p>
+          </div>
+          <Link href="/auth/login"
+            className="rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 transition-all active:scale-95">
+            Sign in
+          </Link>
+        </div>
+      ) : followingMode && followingIds.length === 0 ? (
+        <div className="flex flex-col items-center gap-5 rounded-2xl border border-dashed border-zinc-800 py-24 text-center">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-800 text-zinc-600">
+            <UserCheck className="h-8 w-8" />
           </div>
           <div>
             <p className="text-lg font-semibold text-white">You're not following anyone yet</p>
-            <p className="mt-1 text-sm text-zinc-500">Find explorers to follow and their trips will appear here.</p>
+            <p className="mt-1 text-sm text-zinc-500">Find explorers in the community feed and follow them to curate this view.</p>
           </div>
-          <div className="flex gap-3">
-            <Link href="/"
-              className="flex items-center gap-2 rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 transition-all active:scale-95">
-              <Compass className="h-4 w-4" /> Explore the map
-            </Link>
-            <Link href="/guide"
-              className="flex items-center gap-2 rounded-xl border border-zinc-700 px-5 py-2.5 text-sm font-semibold text-zinc-300 hover:border-zinc-500 hover:text-white transition-all">
-              <BookOpen className="h-4 w-4" /> Read the guide
-            </Link>
-          </div>
+          <Link href="/feed"
+            className="flex items-center gap-2 rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 transition-all active:scale-95">
+            <Globe className="h-4 w-4" /> Browse everyone
+          </Link>
         </div>
       ) : scored.length === 0 ? (
         <div className="py-24 text-center text-zinc-500">
-          <p>No recent trips from people you follow.</p>
-          <Link href="/" className="mt-2 inline-block text-orange-400 hover:underline text-sm">Explore the map →</Link>
+          <p>No trips yet.</p>
+          <Link href="/" className="mt-2 inline-flex items-center gap-1 text-orange-400 hover:underline text-sm">
+            <Compass className="h-3.5 w-3.5" /> Explore the map →
+          </Link>
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

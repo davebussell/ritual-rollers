@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { Map, Upload, Compass, LogOut, User, Plus, BookOpen, Users } from 'lucide-react'
+import { Map, Upload, LogOut, User, Plus, BookOpen, Users } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 
 export default function Navbar() {
@@ -55,13 +55,31 @@ export default function Navbar() {
         {/* Logo — always resets to home feed */}
         <Link href="/" onClick={e => { e.preventDefault(); router.push('/'); router.refresh() }}
           className="flex items-center gap-2.5 group">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500 transition-transform group-hover:scale-110">
-            <Compass className="h-4 w-4 text-white" strokeWidth={2.5} />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-[15px] font-bold tracking-tight text-white">Ritual Rollers</span>
-            <span className="text-[10px] font-medium tracking-wide text-zinc-500 hidden sm:block">
-              explore the world through photos
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+            className="shrink-0 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" aria-hidden="true">
+            <defs>
+              <linearGradient id="rr-logo-grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#f97316" />
+                <stop offset="1" stopColor="#fbbf24" />
+              </linearGradient>
+            </defs>
+            <circle cx="14" cy="14" r="12" stroke="url(#rr-logo-grad)" strokeWidth="2" />
+            <g stroke="url(#rr-logo-grad)" strokeWidth="1.5" strokeLinecap="round">
+              <line x1="14" y1="4.5" x2="14" y2="10" />
+              <line x1="14" y1="18" x2="14" y2="23.5" />
+              <line x1="4.5" y1="14" x2="10" y2="14" />
+              <line x1="18" y1="14" x2="23.5" y2="14" />
+              <line x1="7.3" y1="7.3" x2="11.2" y2="11.2" />
+              <line x1="16.8" y1="16.8" x2="20.7" y2="20.7" />
+              <line x1="20.7" y1="7.3" x2="16.8" y2="11.2" />
+              <line x1="11.2" y1="16.8" x2="7.3" y2="20.7" />
+            </g>
+            <circle cx="14" cy="14" r="2.5" fill="url(#rr-logo-grad)" />
+          </svg>
+          <div className="flex flex-col gap-0.5 leading-none">
+            <span className="font-display text-[15px] font-extrabold tracking-wide text-white">RITUAL ROLLERS</span>
+            <span className="font-expedition text-[9px] uppercase tracking-[0.25em] text-zinc-500 hidden sm:block">
+              PIN IT. ROLL ON.
             </span>
           </div>
         </Link>
@@ -84,7 +102,7 @@ export default function Navbar() {
           {user ? (
             <>
               <Link href="/trips/new"
-                className="ml-2 flex items-center gap-1.5 rounded-lg bg-orange-500 px-3 py-1.5 text-sm font-semibold text-white transition-all hover:bg-orange-400 active:scale-95">
+                className="ml-2 flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:from-orange-400 hover:to-amber-400 active:scale-95">
                 <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
                 New trip
               </Link>
@@ -101,7 +119,7 @@ export default function Navbar() {
             </>
           ) : (
             <Link href="/auth/login"
-              className="ml-2 rounded-lg bg-orange-500 px-3 py-1.5 text-sm font-semibold text-white transition-all hover:bg-orange-400 active:scale-95">
+              className="ml-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:from-orange-400 hover:to-amber-400 active:scale-95">
               Sign in
             </Link>
           )}
@@ -121,7 +139,7 @@ function NavLink({ href, active, icon, children }: {
           ? 'bg-zinc-800 text-white'
           : 'text-zinc-400 hover:bg-zinc-800/60 hover:text-white'
       }`}>
-      {icon}
+      <span className={active ? 'text-orange-400' : ''}>{icon}</span>
       {children}
     </Link>
   )

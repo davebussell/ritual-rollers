@@ -34,6 +34,7 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
 
   const toggleUpvote = async (e: React.MouseEvent) => {
     e.preventDefault()
+    if (!currentUserId) { window.location.href = '/auth/login'; return }
     if (upvoted) {
       await supabase.from('upvotes').delete().match({ user_id: currentUserId, trip_id: trip.id })
       setUpvoted(false); setCount(c => c - 1)
@@ -57,10 +58,12 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.3 }}>
-      <Link href={`/trips/${trip.id}`}
-        className={`group block overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 hover:border-zinc-600 transition-all hover:shadow-xl hover:shadow-black/40 ${
+      <div
+        className={`group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 hover:border-zinc-600 transition-all hover:shadow-xl hover:shadow-black/40 ${
           featured ? 'md:col-span-2' : ''
         }`}>
+        {/* Stretched link covers the card; interactive children sit above it */}
+        <Link href={`/trips/${trip.id}`} aria-label={trip.title} className="absolute inset-0 z-[1]" />
 
         {/* Cover image */}
         <div className={`relative overflow-hidden bg-zinc-800 ${featured ? 'aspect-[2/1]' : 'aspect-video'}`}>
@@ -108,10 +111,9 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
           </h3>
 
           {/* Author + collaborators */}
-          <div className="mt-1.5 flex items-center gap-1 flex-wrap">
+          <div className="relative z-10 mt-1.5 flex w-fit items-center gap-1 flex-wrap">
             <Link href={`/profile/${trip.profiles?.username}`}
-              className="text-xs text-zinc-400 hover:text-orange-300 transition-colors"
-              onClick={e => e.stopPropagation()}>
+              className="text-xs text-zinc-400 hover:text-orange-300 transition-colors">
               @{trip.profiles?.username}
             </Link>
             {trip.collaborators && trip.collaborators.length > 0 && (
@@ -119,8 +121,7 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
                 <span className="text-zinc-700 text-xs">·</span>
                 {trip.collaborators.map(c => (
                   <Link key={c.user_id} href={`/profile/${c.profiles?.username}`}
-                    className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
-                    onClick={e => e.stopPropagation()}>
+                    className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors">
                     @{c.profiles?.username}
                   </Link>
                 ))}
@@ -133,7 +134,7 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
           )}
 
           {featured && trip.country_code && (
-            <div className="mt-3">
+            <div className="relative z-10 mt-3">
               <WikiDestinationCard countryCode={trip.country_code} compact />
             </div>
           )}
@@ -153,7 +154,7 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
                 </span>
               )}
               <button onClick={toggleUpvote}
-                className={`flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold transition-all active:scale-90 ${
+                className={`relative z-10 flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold transition-all active:scale-90 ${
                   upvoted ? 'bg-orange-500/20 text-orange-400' : 'text-zinc-500 hover:text-orange-400 hover:bg-orange-500/10'
                 }`}>
                 <ChevronUp className={`h-3.5 w-3.5 ${upvoted ? 'fill-orange-400' : ''}`} />
@@ -162,7 +163,7 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
             </div>
           </div>
         </div>
-      </Link>
+      </div>
     </motion.div>
   )
 }

@@ -7,6 +7,7 @@ import { ChevronUp, X, Camera, MapPin, BookOpen } from 'lucide-react'
 import { REGION_COLORS, type Region } from '@/lib/regions'
 import { getCountryContinent } from '@/lib/countries'
 import { getCountryInfo } from '@/lib/country-names'
+import { countryStats, heatT, regionStats } from '@/lib/engagement'
 import { fetchWikiSummary } from '@/lib/wikipedia'
 import type { WikiSummary } from '@/lib/wikipedia'
 import type { TripWithAnchor } from '@/lib/types'
@@ -40,6 +41,12 @@ function mercatorProject(lng: number, lat: number, center: [number, number], sca
     Math.log(Math.tan(Math.PI / 4 + center[1] * toRad / 2))
   ) + SVG_H / 2
   return [x, y]
+}
+
+// Map a 0..1 heat value onto a two-digit hex alpha suffix
+function heatAlpha(t: number, floor: number, ceil: number): string {
+  const clamped = Math.max(0, Math.min(1, t))
+  return Math.round(floor + (ceil - floor) * clamped).toString(16).padStart(2, '0')
 }
 
 interface ClusterMember { trip: TripWithAnchor; x: number; y: number }
@@ -182,6 +189,39 @@ export default function AdventureMap({
     return computeClusters(countryTrips, projectionConfig.center, projectionConfig.scale)
   }, [view, trips, projectionConfig])
 
+  // Engagement heat — per-region and per-country (alpha2) stats
+  const heat = useMemo(() => {
+    const regions = regionStats(trips)
+    let maxRegion = 0
+    regions.forEach(s => { if (s.score > maxRegion) maxRegion = s.score })
+    return { regions, maxRegion, countries: countryStats(trips) }
+  }, [trips])
+
+  // Hottest country score within the continent currently in view
+  const maxCountryScore = useMemo(() => {
+    if (view.level !== 'continent') return 0
+    let max = 0
+    for (const t of trips) {
+      if (t.region !== view.region || !t.countryCode) continue
+      const s = heat.countries.get(t.countryCode)
+      if (s && s.score > max) max = s.score
+    }
+    return max
+  }, [view, trips, heat])
+
+  // Per-cluster upvote totals + hottest cluster in view (country level)
+  const clusterHeat = useMemo(() => {
+    const totals = new Map<string, number>()
+    let max = 0
+    let hottestId: string | null = null
+    for (const c of clusters) {
+      const total = c.members.reduce((s, m) => s + m.trip.upvotes_count, 0)
+      totals.set(c.id, total)
+      if (total > max) { max = total; hottestId = c.id }
+    }
+    return { totals, max, hottestId }
+  }, [clusters])
+
   const region = view.level === 'continent' ? view.region
     : view.level === 'country' ? (getCountryContinent(view.countryId) ?? null)
     : null
@@ -190,14 +230,25 @@ export default function AdventureMap({
   const tooltip = useMemo(() => {
     if (!hoveredId || view.level === 'country') return null
     if (view.level === 'world') {
-      return { text: `✦ ${hoveredId} — click to explore`, color: REGION_COLORS[hoveredId as Region] ?? '#f97316', border: REGION_COLORS[hoveredId as Region] ?? '#f97316' }
+      const color = REGION_COLORS[hoveredId as Region] ?? '#f97316'
+      const stats = heat.regions.get(hoveredId)
+      const text = stats
+        ? `✦ ${hoveredId} — ${stats.trips} expedition${stats.trips !== 1 ? 's' : ''} · ${stats.upvotes} upvote${stats.upvotes !== 1 ? 's' : ''}`
+        : `✦ ${hoveredId} — click to explore`
+      return { text, color, border: color }
     }
     if (view.level === 'continent') {
       const info = getCountryInfo(Number(hoveredId))
-      return { text: info ? `${info.flag} ${info.name} — click to explore` : hoveredId, color: REGION_COLORS[view.region], border: REGION_COLORS[view.region] }
+      const stats = info ? heat.countries.get(info.alpha2) : undefined
+      const text = info
+        ? stats
+          ? `${info.flag} ${info.name} — ${stats.trips} expedition${stats.trips !== 1 ? 's' : ''} · ${stats.upvotes} upvote${stats.upvotes !== 1 ? 's' : ''}`
+          : `${info.flag} ${info.name} — click to explore`
+        : hoveredId
+      return { text, color: REGION_COLORS[view.region], border: REGION_COLORS[view.region] }
     }
     return null
-  }, [hoveredId, view])
+  }, [hoveredId, view, heat])
 
   // Sorted trips for selected cluster popup
   const clusterTrips = useMemo(() =>
@@ -222,38 +273,82 @@ export default function AdventureMap({
           style={{ width: '100%', height: '100%' }}
         >
           <Geographies geography={GEO_URL}>
-            {({ geographies }: { geographies: GeoFeature[] }) =>
-              geographies
-                .filter((geo: GeoFeature) => {
-                  const numId = Number(geo.id)
-                  const r = getCountryContinent(numId)
-                  if (!r) return false
-                  if (view.level === 'world') return true
-                  if (view.level === 'continent') return r === view.region
-                  return numId === (view as { countryId: number }).countryId
-                })
-                .map((geo: GeoFeature) => {
-                  const numId = Number(geo.id)
-                  const r = getCountryContinent(numId)!
-                  const color = REGION_COLORS[r]
-                  const hoverKey = view.level === 'world' ? r : String(numId)
-                  const hovered = hoveredId === hoverKey
-                  const locked = view.level === 'world' && !UNLOCKED_CONTINENTS.includes(r)
-                  const active = selectedCountryId === numId || activeRegion === r
-                  const fill = view.level === 'country' ? `${color}44`
-                    : locked ? '#1c1c2e' : active ? `${color}cc`
-                    : hovered ? `${color}99` : tripRegions.has(r) ? `${color}55` : `${color}33`
-                  return (
-                    <GeoShape key={geo.rsmKey} geo={geo} fill={fill}
-                      stroke={locked ? '#2a2a40' : hovered ? color : `${color}55`}
-                      strokeWidth={view.level === 'country' ? 0.8 : hovered ? 0.9 : 0.5}
-                      locked={locked}
-                      onClick={() => handleGeoClick(geo, view)}
-                      onEnter={() => setHoveredId(hoverKey)}
-                      onLeave={() => setHoveredId(null)} />
-                  )
-                })
-            }
+            {({ geographies }: { geographies: GeoFeature[] }) => {
+              const shown = geographies.filter((geo: GeoFeature) => {
+                const numId = Number(geo.id)
+                const r = getCountryContinent(numId)
+                if (!r) return false
+                if (view.level === 'world') return true
+                if (view.level === 'continent') return r === view.region
+                return numId === (view as { countryId: number }).countryId
+              })
+              return (
+                <>
+                  {shown.map((geo: GeoFeature) => {
+                    const numId = Number(geo.id)
+                    const r = getCountryContinent(numId)!
+                    const color = REGION_COLORS[r]
+                    const hoverKey = view.level === 'world' ? r : String(numId)
+                    const hovered = hoveredId === hoverKey
+                    const locked = view.level === 'world' && !UNLOCKED_CONTINENTS.includes(r)
+                    const active = selectedCountryId === numId || activeRegion === r
+                    const info = view.level === 'continent' ? getCountryInfo(numId) : null
+                    const cStats = info ? heat.countries.get(info.alpha2) : undefined
+                    let fill: string
+                    if (view.level === 'country') fill = `${color}44`
+                    else if (locked) fill = '#1c1c2e'
+                    else if (view.level === 'world') {
+                      // Heat-driven continent opacity: quiet 0x08 → hottest 0xcc
+                      const rStats = heat.regions.get(r)
+                      const alpha = tripRegions.has(r)
+                        ? heatAlpha(heatT(rStats?.score ?? 0, heat.maxRegion), 0x08, 0xcc)
+                        : '08'
+                      fill = active ? `${color}cc` : hovered ? `${color}99` : `${color}${alpha}`
+                    } else {
+                      // Continent choropleth: countries with trips 0x22 → 0xbb
+                      fill = selectedCountryId === numId ? `${color}cc`
+                        : hovered ? `${color}99`
+                        : cStats ? `${color}${heatAlpha(heatT(cStats.score, maxCountryScore), 0x22, 0xbb)}`
+                        : `${color}33`
+                    }
+                    return (
+                      <GeoShape key={geo.rsmKey} geo={geo} fill={fill}
+                        stroke={locked ? '#2a2a40' : hovered ? color : cStats ? `${color}99` : `${color}55`}
+                        strokeWidth={view.level === 'country' ? 0.8 : hovered ? 0.9 : cStats ? 0.7 : 0.5}
+                        locked={locked}
+                        onClick={() => handleGeoClick(geo, view)}
+                        onEnter={() => setHoveredId(hoverKey)}
+                        onLeave={() => setHoveredId(null)} />
+                    )
+                  })}
+
+                  {/* Trip-count chips at country centroids — continent view */}
+                  {view.level === 'continent' && shown.map((geo: GeoFeature) => {
+                    const numId = Number(geo.id)
+                    const info = getCountryInfo(numId)
+                    const stats = info ? heat.countries.get(info.alpha2) : undefined
+                    if (!info || !stats) return null
+                    const [bx, by] = mercatorProject(
+                      info.proj.center[0], info.proj.center[1],
+                      projectionConfig.center, projectionConfig.scale,
+                    )
+                    return (
+                      <g key={`chip-${numId}`} style={{ cursor: 'pointer' }}
+                        onClick={() => handleGeoClick(geo, view)}
+                        onMouseEnter={() => setHoveredId(String(numId))}
+                        onMouseLeave={() => setHoveredId(null)}>
+                        <circle cx={bx} cy={by} r={8} fill={regionColor} stroke="#09090b" strokeWidth={1.5} />
+                        <text x={bx} y={by} textAnchor="middle" dominantBaseline="central"
+                          fontSize={8} fontWeight="700" fill="white"
+                          style={{ fontFamily: 'var(--font-jbmono)' }}>
+                          {stats.trips}
+                        </text>
+                      </g>
+                    )
+                  })}
+                </>
+              )
+            }}
           </Geographies>
 
           {/* Trip cluster layer — country view only */}
@@ -262,6 +357,12 @@ export default function AdventureMap({
               {clusters.map(cluster => {
                 const isSelected = selectedCluster?.id === cluster.id
                 const isSingle = cluster.count === 1
+                // Radius scales with the cluster's total upvotes, up to ~1.6x
+                const upTotal = clusterHeat.totals.get(cluster.id) ?? 0
+                const k = 1 + 0.6 * heatT(upTotal, clusterHeat.max)
+                const glowR = (isSingle ? 10 : 16) * k
+                const pinR = (isSingle ? 5 : 10) * k
+                const isHottest = clusterHeat.hottestId === cluster.id
                 return (
                   <g key={cluster.id}>
                     {/* Connection lines from members to centroid */}
@@ -280,6 +381,17 @@ export default function AdventureMap({
                         stroke={regionColor} strokeWidth={0.5} strokeOpacity={0.8} />
                     ))}
 
+                    {/* Pulse ring — hottest cluster in view */}
+                    {isHottest && (
+                      <circle cx={cluster.cx} cy={cluster.cy} r={glowR} fill="none"
+                        stroke={regionColor} strokeWidth={1.5}>
+                        <animate attributeName="r"
+                          values={`${glowR};${glowR + 14}`} dur="2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity"
+                          values="0.55;0" dur="2s" repeatCount="indefinite" />
+                      </circle>
+                    )}
+
                     {/* Cluster / single pin */}
                     <g
                       style={{ cursor: 'pointer' }}
@@ -290,14 +402,14 @@ export default function AdventureMap({
                       {/* Outer glow ring */}
                       <circle
                         cx={cluster.cx} cy={cluster.cy}
-                        r={isSingle ? 10 : 16}
+                        r={glowR}
                         fill={regionColor} fillOpacity={isSelected ? 0.18 : 0.08}
                         stroke={regionColor} strokeOpacity={isSelected ? 0.6 : 0.3}
                         strokeWidth={1} />
                       {/* Inner pin */}
                       <circle
                         cx={cluster.cx} cy={cluster.cy}
-                        r={isSingle ? 5 : 10}
+                        r={pinR}
                         fill={isSelected ? regionColor : `${regionColor}cc`}
                         stroke="white" strokeWidth={1.5} />
                       {/* Count label for clusters */}
@@ -463,6 +575,19 @@ export default function AdventureMap({
               className="mt-1.5 inline-flex items-center gap-1 text-[10px] text-orange-400 hover:text-orange-300 transition-colors">
               <BookOpen className="h-2.5 w-2.5" /> Read on Wikipedia
             </a>
+          </div>
+        </div>
+      )}
+
+      {/* Heat legend — world + continent views */}
+      {view.level !== 'country' && !selectedCluster && (
+        <div className="pointer-events-none absolute bottom-4 right-4 z-20">
+          <p className="font-expedition text-[8px] uppercase tracking-[0.2em] text-zinc-600">Activity</p>
+          <div className="mt-1 h-1.5 w-24 rounded-full"
+            style={{ background: 'linear-gradient(to right, #71717a14, #f97316)' }} />
+          <div className="mt-1 flex w-24 items-center justify-between font-expedition text-[8px] tracking-[0.2em] text-zinc-600">
+            <span>QUIET</span>
+            <span>BUZZING</span>
           </div>
         </div>
       )}

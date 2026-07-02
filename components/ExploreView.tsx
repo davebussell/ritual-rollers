@@ -139,10 +139,14 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
           <>
             {/* Filter bar */}
             <div className="shrink-0 border-b border-zinc-800 px-3 py-3 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-expedition text-[9px] uppercase tracking-[0.3em] text-zinc-600">Expedition Log</span>
+                <span className="font-expedition text-[9px] uppercase tracking-widest text-zinc-600">{filtered.length} trips</span>
+              </div>
               <div className="flex flex-wrap gap-1.5">
                 <button
                   onClick={() => handleRegionFilter('all')}
-                  className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                  className={`flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-xs font-medium transition-all ${
                     activeRegion === 'all' ? 'bg-orange-500 text-white' : 'bg-zinc-800 text-zinc-400 hover:text-white'
                   }`}>
                   <Globe className="h-3 w-3" /> All ({trips.length})
@@ -150,9 +154,13 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
                 {REGIONS.filter(r => regionCounts[r] > 0).map(r => (
                   <button key={r}
                     onClick={() => handleRegionFilter(r)}
-                    style={activeRegion === r ? { backgroundColor: REGION_COLORS[r] } : {}}
-                    className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                      activeRegion === r ? 'text-white' : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                    style={activeRegion === r
+                      ? { backgroundColor: REGION_COLORS[r], boxShadow: `0 0 16px ${REGION_COLORS[r]}66` }
+                      : { '--region-color': REGION_COLORS[r] } as React.CSSProperties}
+                    className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${
+                      activeRegion === r
+                        ? 'border-transparent text-white'
+                        : 'border-transparent bg-zinc-800 text-zinc-400 hover:border-[var(--region-color)] hover:text-white'
                     }`}>
                     {REGION_EMOJI[r]} {r} ({regionCounts[r]})
                   </button>
@@ -188,7 +196,7 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
               })()}
 
               <div className="flex items-center gap-1.5">
-                <span className="text-xs text-zinc-600 mr-1">Sort:</span>
+                <span className="font-expedition text-[9px] uppercase tracking-widest text-zinc-600 mr-1">Sort:</span>
                 <button onClick={() => setSort('trending')}
                   className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-all ${sort === 'trending' ? 'bg-zinc-800 text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
                   <TrendingUp className="h-3 w-3" /> Trending
@@ -197,7 +205,6 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
                   className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-all ${sort === 'newest' ? 'bg-zinc-800 text-orange-400' : 'text-zinc-500 hover:text-white'}`}>
                   <Clock className="h-3 w-3" /> Newest
                 </button>
-                <span className="ml-auto text-xs text-zinc-600">{filtered.length} trips</span>
               </div>
             </div>
 
@@ -243,7 +250,7 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
 
       {/* Toast */}
       {toast && (
-        <div className="fixed bottom-6 right-6 z-50 rounded-xl bg-zinc-900 border border-zinc-700 px-4 py-3 text-sm text-white shadow-2xl">
+        <div className="animate-slide-up fixed bottom-6 right-6 z-50 rounded-xl bg-zinc-900 border border-orange-500/40 px-4 py-3 font-expedition text-[11px] uppercase tracking-widest text-white shadow-2xl">
           {toast}
         </div>
       )}
