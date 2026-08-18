@@ -1,15 +1,50 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import UpvoteButton from '@/components/UpvoteButton'
 import CommunityUpload from '@/components/CommunityUpload'
-import MapView from '@/components/MapView'
+import Journey from '@/components/Journey'
+import ShareButton from '@/components/ShareButton'
 import WikiDestinationCard from '@/components/WikiDestinationCard'
 import { getActivity } from '@/lib/activities'
 import { getRegion, REGION_COLORS, REGION_EMOJI } from '@/lib/regions'
 import { MapPin, Camera, Calendar, ChevronLeft } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ritualrollers.com'
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  try {
+    const supabase = await createClient()
+    const { data: trip } = await supabase
+      .from('trips')
+      .select('title, description, trip_photos!trip_photos_trip_id_fkey(storage_path, sequence_order)')
+      .eq('id', id)
+      .single()
+    if (!trip) return { title: 'Trip — Ritual Rollers' }
+    const photos = [...(trip.trip_photos ?? [])].sort((a, b) => a.sequence_order - b.sequence_order)
+    const cover = photos[0]?.storage_path
+      ? `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/trip-photos/${photos[0].storage_path}`
+      : null
+    const description = trip.description?.slice(0, 160) ?? 'A mapped photo journey on Ritual Rollers.'
+    return {
+      title: `${trip.title} — Ritual Rollers`,
+      description,
+      openGraph: {
+        title: trip.title,
+        description,
+        url: `${SITE_URL}/trips/${id}`,
+        ...(cover ? { images: [cover] } : {}),
+      },
+      twitter: { card: 'summary_large_image' },
+    }
+  } catch {
+    return { title: 'Trip — Ritual Rollers' }
+  }
+}
 
 export default async function TripPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -130,6 +165,14 @@ export default async function TripPage({ params }: { params: Promise<{ id: strin
       {/* ARTICLE BODY */}
       <div className="mx-auto max-w-5xl px-6 py-12 sm:px-12">
 
+        {/* Share row */}
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
+          <p className="font-expedition text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+            Hand this journey to your crew
+          </p>
+          <ShareButton url={`${SITE_URL}/trips/${trip.id}`} title={trip.title} />
+        </div>
+
         {/* Editorial intro */}
         {trip.description && (
           <div className="mb-12 border-l-2 pl-6" style={{ borderColor: regionColor }}>
@@ -173,13 +216,19 @@ export default async function TripPage({ params }: { params: Promise<{ id: strin
           </div>
         )}
 
-        {/* Map */}
-        {anchor && (
+        {/* The Journey — map + photo timeline */}
+        {photos.length > 0 && (
           <div className="mb-12">
-            <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-zinc-600">Where It Happened</p>
-            <div className="h-80 overflow-hidden rounded-2xl border border-zinc-800">
-              <MapView photos={photos} />
-            </div>
+            <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-zinc-600">The Journey</p>
+            <Journey photos={photoUrls.map(p => ({
+              id: p.id,
+              url: p.url,
+              lat: p.lat,
+              lng: p.lng,
+              taken_at: p.taken_at,
+              caption: p.caption,
+              sequence_order: p.sequence_order,
+            }))} />
           </div>
         )}
 

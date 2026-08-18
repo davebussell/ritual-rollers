@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Globe, TrendingUp, Clock, Tag } from 'lucide-react'
+import { Globe, TrendingUp, Clock, Tag, Plus, X } from 'lucide-react'
 import { ACTIVITIES, getActivity } from '@/lib/activities'
 import { REGIONS, REGION_COLORS, REGION_EMOJI, type Region } from '@/lib/regions'
 import { getCountryInfo } from '@/lib/country-names'
@@ -51,6 +51,7 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
   const [activeTrip, setActiveTrip] = useState<TripWithAnchor | null>(null)
   const [exploredRegions, setExploredRegions] = useState<Set<Region>>(new Set())
   const [newStamp, setNewStamp] = useState<Region | null>(null)
+  const [heroVisible, setHeroVisible] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
   const [upvoted, setUpvoted] = useState<Set<string>>(new Set(upvotedIds))
   const [selectedCountry, setSelectedCountry] = useState<{ id: number; name: string } | null>(null)
@@ -58,6 +59,16 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
   const cardRefs = useRef<Map<string, HTMLDivElement>>(new Map())
 
   useEffect(() => { setExploredRegions(loadPassport()) }, [])
+
+  // Upload hero — read dismissal after mount to avoid hydration mismatch
+  useEffect(() => {
+    try { setHeroVisible(localStorage.getItem('rr_hero_dismissed') !== '1') } catch { setHeroVisible(true) }
+  }, [])
+
+  const dismissHero = () => {
+    setHeroVisible(false)
+    try { localStorage.setItem('rr_hero_dismissed', '1') } catch {}
+  }
 
   const earnStamp = useCallback((region: Region | null) => {
     if (!region || exploredRegions.has(region)) return
@@ -111,7 +122,31 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
     <div className="flex h-[calc(100vh-57px)] flex-col md:flex-row overflow-hidden">
 
       {/* Map */}
-      <div className="h-72 shrink-0 md:h-auto md:flex-1">
+      <div className="relative h-72 shrink-0 md:h-auto md:flex-1">
+        {/* Upload-first hero */}
+        {heroVisible && (
+          <div className="absolute left-1/2 top-4 z-20 w-[calc(100%-2rem)] max-w-xl -translate-x-1/2">
+            <div className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-950/85 px-4 py-3 shadow-2xl backdrop-blur">
+              <p className="font-expedition text-[10px] uppercase tracking-[0.3em] text-zinc-400">
+                Turn your camera roll into a mapped story
+              </p>
+              <div className="flex items-center gap-2">
+                <Link href="/trips/new"
+                  className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-3.5 py-1.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:brightness-110 active:scale-95">
+                  <Plus className="h-3.5 w-3.5" strokeWidth={2.5} /> Upload a trip
+                </Link>
+                <Link href="/import"
+                  className="rounded-xl border border-zinc-700 px-3 py-1.5 text-sm text-zinc-300 transition-all hover:border-zinc-500 hover:text-white">
+                  Import an album
+                </Link>
+                <button onClick={dismissHero} aria-label="Dismiss"
+                  className="rounded-full p-1 text-zinc-600 transition-colors hover:text-white">
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
         <AdventureMap
           trips={trips}
           activeRegion={activeRegion}

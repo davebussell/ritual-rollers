@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/client'
 import { getOrCreateUser } from '@/lib/auth-or-anon'
 import PageContainer from '@/components/PageContainer'
 import PhotoUploader, { type PendingPhoto } from '@/components/PhotoUploader'
+import ShareButton from '@/components/ShareButton'
 import CollaboratorSearch, { type Collaborator } from '@/components/CollaboratorSearch'
 import ActivityTagPicker from '@/components/ActivityTagPicker'
 import { getCountryCode } from '@/lib/country-detect'
@@ -30,6 +31,7 @@ export default function NewTripPage() {
   const [userId, setUserId] = useState<string | null>(null)
   const [publishedTripId, setPublishedTripId] = useState<string | null>(null)
   const [publishedAnon, setPublishedAnon] = useState(false)
+  const [copiedUrl, setCopiedUrl] = useState(false)
 
   const publish = async () => {
     setError('')
@@ -108,57 +110,68 @@ export default function NewTripPage() {
 
     setPublishedTripId(trip.id)
     setPublishedAnon(isAnonymous)
-
-    if (!isAnonymous) {
-      router.push(`/trips/${trip.id}`)
-    }
   }
 
-  // Published as anonymous — show claim prompt instead of redirect
-  if (publishedTripId && publishedAnon) {
+  // Published — celebration + share screen
+  if (publishedTripId) {
+    const tripUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ritualrollers.com'}/trips/${publishedTripId}`
     return (
       <PageContainer>
-        <div className="mx-auto max-w-md py-20 text-center space-y-5">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-green-500/10 text-green-400 ring-2 ring-green-500/30 mx-auto">
-            <span className="text-3xl">✓</span>
-          </div>
+        <div className="mx-auto max-w-md py-16 text-center space-y-6">
+          <div className="text-5xl">🎉</div>
           <div>
-            <h1 className="text-2xl font-bold text-white">Trip is live!</h1>
+            <h1 className="font-display text-3xl font-black text-white">Your journey is live</h1>
             <p className="mt-2 text-zinc-400 text-sm">
-              Your photos are on the map. Right now you're posting as a guest.
+              Every photo pinned to the map. Now hand the link to your crew.
             </p>
           </div>
 
-          {/* Claim CTA */}
-          <div className="rounded-2xl border border-orange-500/25 bg-orange-500/8 px-6 py-5 text-left">
-            <div className="flex items-center gap-2 mb-2">
-              <UserPlus className="h-4 w-4 text-orange-400" />
-              <p className="text-sm font-bold text-orange-300">Create an account to claim this trip</p>
-            </div>
-            <p className="text-xs text-zinc-400 leading-relaxed mb-4">
-              Sign up now and your trip gets tied to your profile automatically — no re-uploading needed. You'll also earn your first Explorer Badge and start building your adventure passport.
-            </p>
-            <div className="flex gap-2">
-              <a href="/auth/signup"
-                className="flex-1 rounded-xl bg-orange-500 py-2.5 text-center text-sm font-bold text-white hover:bg-orange-400 transition-all">
-                Create account
-              </a>
-              <a href="/auth/login"
-                className="flex-1 rounded-xl border border-zinc-700 py-2.5 text-center text-sm font-medium text-zinc-300 hover:text-white hover:border-zinc-600 transition-all">
-                Sign in
-              </a>
-            </div>
+          {/* Share */}
+          <div className="flex justify-center">
+            <ShareButton url={tripUrl} title={title || 'My trip on Ritual Rollers'} />
           </div>
+          <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/60 px-3 py-2">
+            <input readOnly value={tripUrl} onFocus={e => e.target.select()}
+              className="flex-1 bg-transparent text-xs text-zinc-400 outline-none" />
+            <button
+              onClick={() => { navigator.clipboard.writeText(tripUrl); setCopiedUrl(true); setTimeout(() => setCopiedUrl(false), 2000) }}
+              className="shrink-0 rounded-lg bg-zinc-800 px-2.5 py-1 text-xs font-medium text-zinc-300 hover:bg-zinc-700 hover:text-white transition-all">
+              {copiedUrl ? 'Copied!' : 'Copy'}
+            </button>
+          </div>
+
+          {/* Claim CTA for guests */}
+          {publishedAnon && (
+            <div className="rounded-2xl border border-orange-500/25 bg-orange-500/8 px-6 py-5 text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <UserPlus className="h-4 w-4 text-orange-400" />
+                <p className="text-sm font-bold text-orange-300">Create an account to claim this trip</p>
+              </div>
+              <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                Sign up now and your trip gets tied to your profile automatically — no re-uploading needed. You'll also earn your first Explorer Badge and start building your adventure passport.
+              </p>
+              <div className="flex gap-2">
+                <a href="/auth/signup"
+                  className="flex-1 rounded-xl bg-orange-500 py-2.5 text-center text-sm font-bold text-white hover:bg-orange-400 transition-all">
+                  Create account
+                </a>
+                <a href="/auth/login"
+                  className="flex-1 rounded-xl border border-zinc-700 py-2.5 text-center text-sm font-medium text-zinc-300 hover:text-white hover:border-zinc-600 transition-all">
+                  Sign in
+                </a>
+              </div>
+            </div>
+          )}
 
           <div className="flex gap-3 justify-center pt-2">
             <button onClick={() => router.push(`/trips/${publishedTripId}`)}
-              className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
-              View trip →
+              className="text-sm font-semibold text-orange-400 hover:text-orange-300 transition-colors">
+              View your trip →
             </button>
             <span className="text-zinc-700">·</span>
-            <button onClick={() => router.push('/')}
+            <button onClick={() => window.location.reload()}
               className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
-              Back to map
+              Start another
             </button>
           </div>
         </div>

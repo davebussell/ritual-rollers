@@ -92,20 +92,24 @@ export default function Navbar() {
           <NavLink href="/feed" active={isActive('/feed')} icon={<Users className="h-3.5 w-3.5" />}>
             Feed
           </NavLink>
-          <NavLink href="/import" active={isActive('/import')} icon={<Upload className="h-3.5 w-3.5" />}>
-            Import
-          </NavLink>
           <NavLink href="/guide" active={isActive('/guide')} icon={<BookOpen className="h-3.5 w-3.5" />}>
             Guide
           </NavLink>
 
+          {/* Creation is the primary action — visible signed-in or out
+              (anonymous publishing is supported on /trips/new) */}
+          <Link href="/trips/new"
+            className="ml-2 flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:from-orange-400 hover:to-amber-400 active:scale-95">
+            <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
+            New trip
+          </Link>
+          <Link href="/import" title="Import album"
+            className="ml-1 flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white">
+            <Upload className="h-3.5 w-3.5" />
+          </Link>
+
           {user ? (
             <>
-              <Link href="/trips/new"
-                className="ml-2 flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:from-orange-400 hover:to-amber-400 active:scale-95">
-                <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
-                New trip
-              </Link>
               {username && (
                 <Link href={`/profile/${username}`}
                   className="ml-1 flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white">
@@ -119,7 +123,7 @@ export default function Navbar() {
             </>
           ) : (
             <Link href="/auth/login"
-              className="ml-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:from-orange-400 hover:to-amber-400 active:scale-95">
+              className="ml-1 rounded-lg border border-zinc-700 px-3 py-1.5 text-sm font-medium text-zinc-300 transition-all hover:border-zinc-500 hover:text-white active:scale-95">
               Sign in
             </Link>
           )}
