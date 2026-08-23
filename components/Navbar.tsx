@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { Map, Upload, LogOut, User, Plus, BookOpen, Users } from 'lucide-react'
+import { Map, Upload, LogOut, User, Plus, BookOpen, Compass } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 
 export default function Navbar() {
@@ -86,11 +86,11 @@ export default function Navbar() {
 
         {/* Nav links */}
         <div className="flex items-center gap-1">
-          <NavLink href="/" active={isActive('/')} icon={<Map className="h-3.5 w-3.5" />}>
+          <NavLink href="/explore" active={isActive('/explore') || isActive('/feed')} icon={<Compass className="h-3.5 w-3.5" />}>
             Explore
           </NavLink>
-          <NavLink href="/feed" active={isActive('/feed')} icon={<Users className="h-3.5 w-3.5" />}>
-            Feed
+          <NavLink href="/map" active={isActive('/map')} icon={<Map className="h-3.5 w-3.5" />}>
+            Map
           </NavLink>
           <NavLink href="/guide" active={isActive('/guide')} icon={<BookOpen className="h-3.5 w-3.5" />}>
             Guide
