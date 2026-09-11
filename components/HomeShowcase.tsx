@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, MapPin, Compass, Share2, Check, ChevronUp } from 'lucide-react'
 import Journey, { type JourneyPhoto } from '@/components/Journey'
@@ -38,8 +39,10 @@ const STAGES = [
 const TILT = [-4, 3, -2, 5]
 
 export default function HomeShowcase({ demoTrip, teasers }: Props) {
+  const router = useRouter()
   const [stage, setStage] = useState<Stage>(0)
   const [copied, setCopied] = useState(false)
+  const [zip, setZip] = useState('')
   const demoPhotos = demoTrip?.photos.slice(0, 4) ?? []
   const tripUrl = demoTrip ? `${typeof window !== 'undefined' ? window.location.origin : 'https://ritualrollers.com'}/trips/${demoTrip.id}` : ''
 
@@ -63,28 +66,53 @@ export default function HomeShowcase({ demoTrip, teasers }: Props) {
         {/* Hero */}
         <div className="mb-12 text-center">
           <p className="font-expedition text-[10px] uppercase tracking-[0.35em] text-orange-400">
-            Pin it. Roll on.
+            Roll with your buddies
           </p>
           <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-black leading-tight text-white sm:text-6xl">
-            Your camera roll already tells the story.
+            Ride whatever nature throws at you.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-base text-zinc-400 sm:text-lg">
-            Drop in your trip photos. We read the GPS and timestamps hiding inside them
-            and turn them into a mapped, step-by-step journey you can hand to anyone as a link.
+            Wind, water, mountain, river — punch in your zip code to scout what&apos;s rideable
+            near you, then roll it with your crew and turn the photos into a mapped story.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <form
+            onSubmit={e => {
+              e.preventDefault()
+              const q = zip.trim()
+              if (!q) return
+              router.push('/ride?q=' + encodeURIComponent(q))
+            }}
+            className="mx-auto mt-8 flex max-w-md items-center gap-2">
+            <input
+              type="text"
+              value={zip}
+              onChange={e => setZip(e.target.value)}
+              placeholder="ZIP or postal code"
+              className="min-w-0 flex-1 rounded-xl border border-zinc-700 bg-zinc-900/70 px-4 py-3 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-orange-500"
+            />
+            <button type="submit"
+              className="flex shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:brightness-110 active:scale-95">
+              <Compass className="h-4 w-4" strokeWidth={2.5} /> Find my ride
+            </button>
+          </form>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             <Link href="/trips/new"
-              className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/25 transition-all hover:brightness-110 active:scale-95">
-              <Plus className="h-4 w-4" strokeWidth={2.5} /> Upload a trip
+              className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-zinc-400 transition-colors hover:text-white">
+              <Plus className="h-3.5 w-3.5" /> Upload a trip
             </Link>
             <Link href="/explore"
-              className="flex items-center gap-2 rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-zinc-300 transition-all hover:border-zinc-500 hover:text-white">
-              <Compass className="h-4 w-4" /> Explore trips
+              className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-zinc-400 transition-colors hover:text-white">
+              <Compass className="h-3.5 w-3.5" /> Explore stories
             </Link>
           </div>
         </div>
 
         {/* Demo panel */}
+        {demoTrip && (
+          <p className="mb-3 text-center font-expedition text-[9px] uppercase tracking-[0.3em] text-zinc-600">
+            And every ride becomes a story —
+          </p>
+        )}
         {demoTrip && (
           <div className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40">
 

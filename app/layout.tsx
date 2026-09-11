@@ -9,7 +9,7 @@ const jbmono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jbmono' })
 
 export const metadata: Metadata = {
   title: 'Ritual Rollers — Adventures worth sharing',
-  description: 'Pin your photos to the map, retrace every journey, and explore the world\'s adventures one coordinate at a time.',
+  description: 'Ride wind, water, mountain and river with your crew — scout what\'s firing near you, roll it together, and turn the photos into a mapped story.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
