@@ -4,6 +4,8 @@ import { getRegion, REGION_COLORS, REGION_EMOJI, type Region } from '@/lib/regio
 import type { ScoredTrip } from '@/lib/feed-score'
 import FeedTripCard from '@/components/FeedTripCard'
 import PageContainer from '@/components/PageContainer'
+import { SampleNotice } from '@/components/SampleNotice'
+import { isSampleTrip, SAMPLE_NOTICE } from '@/lib/sample'
 import { Map, Sparkles, UserPlus } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
@@ -74,6 +76,7 @@ export default async function ExplorePage() {
 
   const crews = Array.from(new Set(scored.map(t => t.profiles?.username).filter(Boolean))) as string[]
   const regions = Array.from(new Set(scored.map(t => t.region).filter(Boolean))) as Region[]
+  const hasSample = scored.some(isSampleTrip)
 
   return (
     <PageContainer>
@@ -105,13 +108,17 @@ export default async function ExplorePage() {
         </div>
       </div>
 
+      {followingMode && hasSample && <SampleNotice className="mb-8" />}
+
       {/* Example-feed banner for visitors not following anyone */}
       {!followingMode && (
         <div className="mb-8 flex flex-wrap items-center gap-3 rounded-2xl border border-orange-500/20 bg-orange-500/5 px-4 py-3">
           <Sparkles className="h-4 w-4 shrink-0 text-orange-400" />
           <p className="flex-1 text-sm text-zinc-400">
             <span className="font-expedition text-[10px] uppercase tracking-[0.25em] text-orange-400">Example feed · </span>
-            This is what your feed looks like once you follow a few explorers — open any trip to review the full mapped story.
+            {hasSample
+              ? `${SAMPLE_NOTICE} Follow a few explorers and this becomes your crew's feed.`
+              : 'This is what your feed looks like once you follow a few explorers — open any trip to review the full mapped story.'}
           </p>
           {!user && (
             <Link href="/auth/signup"

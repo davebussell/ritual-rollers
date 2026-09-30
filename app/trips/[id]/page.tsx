@@ -7,6 +7,8 @@ import CommunityUpload from '@/components/CommunityUpload'
 import Journey from '@/components/Journey'
 import ShareButton from '@/components/ShareButton'
 import WikiDestinationCard from '@/components/WikiDestinationCard'
+import { SampleNotice, SampleBadge } from '@/components/SampleNotice'
+import { isSamplePath } from '@/lib/sample'
 import { getActivity } from '@/lib/activities'
 import { getRegion, REGION_COLORS, REGION_EMOJI } from '@/lib/regions'
 import { MapPin, Camera, Calendar, ChevronLeft } from 'lucide-react'
@@ -61,6 +63,7 @@ export default async function TripPage({ params }: { params: Promise<{ id: strin
 
   const photos = [...(trip.trip_photos ?? [])].sort((a, b) => a.sequence_order - b.sequence_order)
   const heroPhoto = photos[0]
+  const isSample = photos.some(p => isSamplePath(p.storage_path))
   const heroUrl = heroPhoto?.storage_path
     ? `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/trip-photos/${heroPhoto.storage_path}`
     : null
@@ -107,6 +110,7 @@ export default async function TripPage({ params }: { params: Promise<{ id: strin
         {/* Hero content */}
         <div className="absolute bottom-0 left-0 right-0 px-6 pb-10 sm:px-12">
           <div className="mb-4 flex flex-wrap items-center gap-2">
+            {isSample && <SampleBadge label="Sample listing" />}
             {region && (
               <span className="flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold backdrop-blur"
                 style={{ background: `${regionColor}30`, color: regionColor, border: `1px solid ${regionColor}50` }}>
@@ -164,6 +168,12 @@ export default async function TripPage({ params }: { params: Promise<{ id: strin
 
       {/* ARTICLE BODY */}
       <div className="mx-auto max-w-5xl px-6 py-12 sm:px-12">
+
+        {isSample && (
+          <SampleNotice className="mb-10">
+            This is a sample listing that shows how the feed works. It is not a real person or a real trip.
+          </SampleNotice>
+        )}
 
         {/* Share row */}
         <div className="mb-10 flex flex-wrap items-center justify-between gap-4">

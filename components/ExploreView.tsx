@@ -12,6 +12,8 @@ import type { TripWithAnchor } from '@/lib/types'
 import PassportWidget from './PassportWidget'
 import ExploreTripCard from './ExploreTripCard'
 import CountryPanel from './CountryPanel'
+import { SampleNotice } from './SampleNotice'
+import { isSampleTrip } from '@/lib/sample'
 
 const AdventureMap = dynamic(() => import('./AdventureMap'), { ssr: false })
 
@@ -160,6 +162,9 @@ export default function ExploreView({ trips, currentUserId, upvotedIds }: Props)
 
       {/* Right panel */}
       <div className="flex w-full flex-col md:w-96 md:shrink-0 border-l border-zinc-800 bg-zinc-950 overflow-hidden">
+        {trips.some(isSampleTrip) && (
+          <SampleNotice compact className="shrink-0 border-b border-zinc-800 px-3 py-2" />
+        )}
 
         {selectedCountry ? (
           /* Country view — replaces trip list */

@@ -6,12 +6,14 @@ import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, MapPin, Compass, Share2, Check, ChevronUp } from 'lucide-react'
 import Journey, { type JourneyPhoto } from '@/components/Journey'
+import { SampleNotice, SampleBadge } from '@/components/SampleNotice'
 
 export interface DemoTrip {
   id: string
   title: string
   username: string
   upvotes: number
+  sample: boolean
   photos: JourneyPhoto[]
 }
 
@@ -20,6 +22,7 @@ interface Teaser {
   title: string
   username: string
   upvotes: number
+  sample: boolean
   cover: string
 }
 
@@ -44,6 +47,7 @@ export default function HomeShowcase({ demoTrip, teasers }: Props) {
   const [copied, setCopied] = useState(false)
   const [zip, setZip] = useState('')
   const demoPhotos = demoTrip?.photos.slice(0, 4) ?? []
+  const hasSample = !!demoTrip?.sample || teasers.some(t => t.sample)
   const tripUrl = demoTrip ? `${typeof window !== 'undefined' ? window.location.origin : 'https://ritualrollers.com'}/trips/${demoTrip.id}` : ''
 
   // Auto-advance the demo, looping
@@ -106,6 +110,8 @@ export default function HomeShowcase({ demoTrip, teasers }: Props) {
             </Link>
           </div>
         </div>
+
+        {hasSample && <SampleNotice className="mb-8" />}
 
         {/* Demo panel */}
         {demoTrip && (
@@ -227,7 +233,7 @@ export default function HomeShowcase({ demoTrip, teasers }: Props) {
                             <ChevronUp className="h-3 w-3" />{demoTrip.upvotes}
                           </span>
                           <span className="font-expedition text-[8px] uppercase tracking-[0.2em] text-orange-400/80">
-                            Real trip · built from photos alone
+                            {demoTrip.sample ? 'Sample trip · shows how a story is built' : 'Real trip · built from photos alone'}
                           </span>
                         </p>
                       </div>
@@ -270,9 +276,10 @@ export default function HomeShowcase({ demoTrip, teasers }: Props) {
               {teasers.map(t => (
                 <Link key={t.id} href={`/trips/${t.id}`}
                   className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 transition-all hover:border-zinc-600">
-                  <div className="aspect-video overflow-hidden">
+                  <div className="relative aspect-video overflow-hidden">
                     <img src={t.cover} alt={t.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    {t.sample && <SampleBadge className="absolute left-2 top-2" />}
                   </div>
                   <div className="flex items-center justify-between px-3 py-2.5">
                     <div className="min-w-0">

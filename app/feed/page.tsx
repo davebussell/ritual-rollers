@@ -4,6 +4,8 @@ import { getRegion, REGIONS, REGION_COLORS, REGION_EMOJI, type Region } from '@/
 import type { ScoredTrip } from '@/lib/feed-score'
 import FeedTripCard from '@/components/FeedTripCard'
 import PageContainer from '@/components/PageContainer'
+import { SampleNotice } from '@/components/SampleNotice'
+import { isSampleTrip } from '@/lib/sample'
 import { Globe, UserCheck, Compass } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
@@ -90,6 +92,7 @@ export default async function FeedPage({ searchParams }: { searchParams: Promise
   }))
 
   const regions = Array.from(new Set(scored.map(t => t.region).filter(Boolean))) as Region[]
+  const hasSample = scored.some(isSampleTrip)
 
   return (
     <PageContainer>
@@ -174,6 +177,8 @@ export default async function FeedPage({ searchParams }: { searchParams: Promise
           </Link>
         </div>
       ) : (
+        <>
+        {hasSample && <SampleNotice className="mb-8" />}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {scored.map((trip, i) => (
             <FeedTripCard
@@ -186,6 +191,7 @@ export default async function FeedPage({ searchParams }: { searchParams: Promise
             />
           ))}
         </div>
+        </>
       )}
     </PageContainer>
   )

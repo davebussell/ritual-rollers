@@ -7,6 +7,8 @@ import { Compass, Navigation, Camera, ChevronUp } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import PageContainer from '@/components/PageContainer'
 import RideMap from '@/components/RideMap'
+import { SampleNotice, SampleBadge } from '@/components/SampleNotice'
+import { isSampleTrip } from '@/lib/sample'
 import {
   CATEGORY_META,
   geocodeZip,
@@ -42,6 +44,7 @@ interface StoryTrip {
   cover: string | null
   distanceKm: number | null
   farAfield: boolean
+  sample: boolean
 }
 
 function coverUrl(path: string | undefined): string | null {
@@ -98,6 +101,7 @@ export default function RideFinder({ initialQuery }: { initialQuery: string }) {
         cover: coverUrl(photos[0]?.storage_path),
         distanceKm,
         farAfield: false,
+        sample: isSampleTrip({ trip_photos: photos }),
       }
     })
 
@@ -383,6 +387,8 @@ export default function RideFinder({ initialQuery }: { initialQuery: string }) {
                 <p className="mt-1 text-xs text-zinc-500">Upload a trip and claim the spot</p>
               </Link>
             ) : (
+              <>
+              {stories.some(t => t.sample) && <SampleNotice className="mt-4" />}
               <div className="mt-4 grid gap-4 sm:grid-cols-3">
                 {stories.map(t => (
                   <Link
@@ -398,6 +404,7 @@ export default function RideFinder({ initialQuery }: { initialQuery: string }) {
                           From the wider world
                         </span>
                       )}
+                      {t.sample && <SampleBadge className="absolute right-2 top-2" />}
                     </div>
                     <div className="p-3">
                       <h3 className="line-clamp-2 text-sm font-bold text-white group-hover:text-orange-50 transition-colors">{t.title}</h3>
@@ -414,6 +421,7 @@ export default function RideFinder({ initialQuery }: { initialQuery: string }) {
                   </Link>
                 ))}
               </div>
+              </>
             )}
           </section>
         </div>

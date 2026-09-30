@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import type { Trip } from '@/lib/types'
+import { SampleBadge } from '@/components/SampleNotice'
+import { isSampleTrip } from '@/lib/sample'
 
 interface Props {
   trip: Trip
@@ -37,7 +39,8 @@ export default function TripCard({ trip, currentUserId, userUpvoted: initialUpvo
 
   return (
     <Link href={`/trips/${trip.id}`} className="group block rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-600 transition-colors">
-      <div className="aspect-video bg-zinc-800 overflow-hidden">
+      <div className="relative aspect-video bg-zinc-800 overflow-hidden">
+        {isSampleTrip(trip) && <SampleBadge className="absolute left-2 top-2 z-10" />}
         {coverUrl ? (
           <img src={coverUrl} alt={trip.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         ) : (

@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import HomeShowcase, { type DemoTrip } from '@/components/HomeShowcase'
+import { isSampleTrip } from '@/lib/sample'
 
 export const dynamic = 'force-dynamic'
 
@@ -32,6 +33,7 @@ export default async function HomePage() {
     title: demo.title,
     username: demo.profiles?.username ?? 'explorer',
     upvotes: demo.upvotes_count,
+    sample: isSampleTrip(demo),
     photos: [...demo.trip_photos]
       .sort((a, b) => a.sequence_order - b.sequence_order)
       .map(p => ({
@@ -54,6 +56,7 @@ export default async function HomePage() {
       title: t.title,
       username: t.profiles?.username ?? 'explorer',
       upvotes: t.upvotes_count,
+      sample: isSampleTrip(t),
       cover: STORAGE([...t.trip_photos].sort((a, b) => a.sequence_order - b.sequence_order)[0].storage_path),
     }))
 

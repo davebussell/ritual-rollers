@@ -9,6 +9,8 @@ import { REGION_COLORS } from '@/lib/regions'
 import { getActivity } from '@/lib/activities'
 import { fetchWikiSummary, locationLabel } from '@/lib/wikipedia'
 import type { TripWithAnchor } from '@/lib/types'
+import { SampleBadge } from '@/components/SampleNotice'
+import { isSampleTrip } from '@/lib/sample'
 
 interface Props {
   trip: TripWithAnchor
@@ -88,6 +90,7 @@ export default function ExploreTripCard({
           {isActive && (
             <div className="absolute inset-0 rounded-xl ring-2 ring-orange-500 ring-offset-1 ring-offset-zinc-900" />
           )}
+          {isSampleTrip(trip) && <SampleBadge className="absolute left-1 top-1" />}
           {/* Photo count badge */}
           {trip.allPhotos.length > 0 && (
             <div className="absolute bottom-1 right-1 flex items-center gap-0.5 rounded-md bg-black/60 px-1 py-0.5 text-[9px] text-white backdrop-blur-sm">

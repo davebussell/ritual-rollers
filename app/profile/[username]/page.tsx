@@ -6,6 +6,8 @@ import TripCard from '@/components/TripCard'
 import FollowButton from '@/components/FollowButton'
 import ProfileBadges from '@/components/ProfileBadges'
 import ProfileGallery from '@/components/ProfileGallery'
+import { SampleNotice } from '@/components/SampleNotice'
+import { isSampleTrip } from '@/lib/sample'
 import { MapPin, Camera, Trophy, Settings } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
@@ -49,6 +51,8 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
     const r = getRegion(anchor.lat, anchor.lng)
     return r ? [r] : []
   }))) as Region[]
+
+  const hasSample = trips.some(isSampleTrip)
 
   const totalUpvotes = trips.reduce((s, t) => s + (t.upvotes_count ?? 0), 0)
 
@@ -156,6 +160,8 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
             })}
           </div>
         )}
+
+        {hasSample && <SampleNotice className="mb-8" />}
 
         {/* Trips */}
         <div className="mb-4">

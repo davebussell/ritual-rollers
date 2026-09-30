@@ -9,6 +9,8 @@ import { REGION_COLORS, REGION_EMOJI } from '@/lib/regions'
 import { formatTimeAgo } from '@/lib/feed-score'
 import { fetchWikiSummary, locationLabel } from '@/lib/wikipedia'
 import WikiDestinationCard from '@/components/WikiDestinationCard'
+import { SampleBadge } from '@/components/SampleNotice'
+import { isSampleTrip } from '@/lib/sample'
 import type { ScoredTrip } from '@/lib/feed-score'
 
 interface Props {
@@ -94,6 +96,8 @@ export default function FeedTripCard({ trip, index, featured, currentUserId, use
               <Camera className="h-2.5 w-2.5" /> {photoCount}
             </div>
           )}
+
+          {isSampleTrip(trip) && <SampleBadge className="absolute bottom-3 right-3" />}
 
           {/* Region pill */}
           {trip.region && (
