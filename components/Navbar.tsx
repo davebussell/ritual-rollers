@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { Map, Upload, LogOut, User, Plus, BookOpen, Compass, Waves } from 'lucide-react'
+import { Map, Upload, LogOut, User, Plus, BookOpen, Compass } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 
 export default function Navbar() {
@@ -86,25 +86,22 @@ export default function Navbar() {
 
         {/* Nav links */}
         <div className="flex items-center gap-1">
-          <NavLink href="/ride" active={isActive('/ride')} icon={<Waves className="h-3.5 w-3.5" />}>
-            Ride
+          <NavLink href="/scout" active={pathname.startsWith('/scout')} icon={<Compass className="h-3.5 w-3.5" />}>
+            Scout
           </NavLink>
-          <NavLink href="/explore" active={isActive('/explore') || isActive('/feed')} icon={<Compass className="h-3.5 w-3.5" />}>
-            Explore
+          <NavLink href="/explore" active={isActive('/explore') || isActive('/feed')} icon={<BookOpen className="h-3.5 w-3.5" />}>
+            Stories
           </NavLink>
           <NavLink href="/map" active={isActive('/map')} icon={<Map className="h-3.5 w-3.5" />}>
             Map
           </NavLink>
-          <NavLink href="/guide" active={isActive('/guide')} icon={<BookOpen className="h-3.5 w-3.5" />}>
-            Guide
-          </NavLink>
 
-          {/* Creation is the primary action — visible signed-in or out
+          {/* Logging a ride is the contribution action — visible signed-in or out
               (anonymous publishing is supported on /trips/new) */}
           <Link href="/trips/new"
             className="ml-2 flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:from-orange-400 hover:to-amber-400 active:scale-95">
             <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
-            New trip
+            Log a ride
           </Link>
           <Link href="/import" title="Import album"
             className="ml-1 flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white">
