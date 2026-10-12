@@ -1,0 +1,105 @@
+'use client'
+
+// Living condition glyphs: the wave swells to the real height and period, the wind
+// streaks at the real speed, the road dashes march and change surface with the weather.
+// All motion is CSS (keyframes in globals.css) and stops under prefers-reduced-motion.
+
+const clamp = (x: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, x))
+
+function sinePath(width: number, wavelength: number, amp: number, mid: number): string {
+  const total = width + wavelength * 2
+  const step = wavelength / 16
+  let d = `M0 ${mid.toFixed(1)}`
+  for (let x = step; x <= total + step; x += step) {
+    const y = mid + amp * Math.sin((x / wavelength) * Math.PI * 2)
+    d += ` L${x.toFixed(1)} ${y.toFixed(1)}`
+  }
+  return d
+}
+
+export function WaveAnim({ heightM, periodS, coastal = true, className = '' }: {
+  heightM: number | null; periodS: number | null; coastal?: boolean; className?: string
+}) {
+  const h = coastal ? (heightM ?? 0) : 0.15
+  const amp = clamp(h * 5, 1.5, 15)
+  const wl = clamp((periodS ?? 6) * 9, 40, 130)
+  const dur = clamp((periodS ?? 6) * 0.45, 1.8, 7)
+  const W = 200, H = 48, mid = 24
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden
+      className={`rr-anim block h-full w-full ${className}`}>
+      <g style={{ ['--wl' as string]: `${(wl * 1.3).toFixed(1)}px`, animation: `rr-wave ${(dur * 1.7).toFixed(2)}s linear infinite` }}>
+        <path d={`${sinePath(W, wl * 1.3, amp * 0.6, mid + 7)} V${H} H0 Z`} fill="currentColor" opacity="0.22" />
+      </g>
+      <g style={{ ['--wl' as string]: `${wl.toFixed(1)}px`, animation: `rr-wave ${dur.toFixed(2)}s linear infinite` }}>
+        <path d={`${sinePath(W, wl, amp, mid)} V${H} H0 Z`} fill="currentColor" opacity="0.5" />
+      </g>
+    </svg>
+  )
+}
+
+export function WindAnim({ kph, className = '' }: { kph: number; className?: string }) {
+  const crossing = clamp(70 / Math.max(kph, 4), 0.8, 7) // seconds for a streak to cross
+  const opacity = clamp(kph / 35, 0.3, 1)
+  const streaks: [number, number][] = [[10, 70], [20, 44], [30, 92], [40, 56], [52, 36]]
+  return (
+    <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden
+      className={`rr-anim block h-full w-full ${className}`}>
+      {streaks.map(([y, len], i) => (
+        <line key={i} x1={-len} x2={0} y1={y} y2={y}
+          stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity={opacity * (0.55 + (i % 2) * 0.45)}
+          style={{ animation: `rr-streak ${crossing.toFixed(2)}s linear infinite`, animationDelay: `${(-(i * crossing) / streaks.length).toFixed(2)}s` }} />
+      ))}
+    </svg>
+  )
+}
+
+export type RoadState = 'dry' | 'wet' | 'snow'
+
+export function roadState(s: { tempC: number; precipMm: number; snowCm: number | null }): { state: RoadState; label: string } {
+  if ((s.snowCm ?? 0) > 0 || (s.tempC <= 1 && s.precipMm > 0)) return { state: 'snow', label: 'snow and ice — chains or stay put' }
+  if (s.precipMm >= 0.5) return { state: 'wet', label: `wet — ${s.precipMm.toFixed(1)} mm, ease off` }
+  if (s.tempC <= 2) return { state: 'dry', label: `dry at ${Math.round(s.tempC)} °C — watch for black ice` }
+  return { state: 'dry', label: `dry — ${Math.round(s.tempC)} °C` }
+}
+
+export function RoadAnim({ state, className = '' }: { state: RoadState; className?: string }) {
+  const asphalt = state === 'snow' ? '#dbe7ec' : state === 'wet' ? '#1d3540' : '#2f4a55'
+  const dash = state === 'snow' ? '#8fa8b3' : state === 'wet' ? '#e6f5f7' : '#ffe066'
+  const edge = state === 'snow' ? '#b8ccd4' : '#ffffff'
+  return (
+    <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden
+      className={`rr-anim block h-full w-full ${className}`}>
+      <rect x="0" y="14" width="200" height="32" rx="3" fill={asphalt} />
+      <line x1="0" x2="200" y1="18" y2="18" stroke={edge} strokeOpacity="0.5" strokeWidth="1.5" />
+      <line x1="0" x2="200" y1="42" y2="42" stroke={edge} strokeOpacity="0.5" strokeWidth="1.5" />
+      <line x1="0" x2="200" y1="30" y2="30" stroke={dash} strokeWidth="3" strokeDasharray="16 14"
+        style={{ animation: 'rr-dash 1.1s linear infinite' }} />
+      {state === 'wet' && [38, 112, 164].map((x, i) => (
+        <ellipse key={i} cx={x} cy={36 - (i % 2) * 8} rx={14 + i * 3} ry="3.5" fill="#7dd3fc" opacity="0.35" />
+      ))}
+      {state === 'snow' && [12, 48, 80, 118, 150, 186].map((x, i) => (
+        <circle key={i} cx={x} cy="-4" r={1.6 + (i % 3) * 0.5} fill="#ffffff"
+          style={{ animation: `rr-flake ${(2.2 + (i % 4) * 0.5).toFixed(1)}s linear infinite`, animationDelay: `${(-i * 0.6).toFixed(1)}s` }} />
+      ))}
+    </svg>
+  )
+}
+
+// Where the sun sits between sunrise and sunset, as a static arc
+export function SunArc({ localTime, sunrise, sunset, className = '' }: { localTime: string; sunrise: string; sunset: string; className?: string }) {
+  const mins = (t: string) => { const h = parseInt(t.slice(11, 13), 10), m = parseInt(t.slice(14, 16), 10); return Number.isFinite(h) && Number.isFinite(m) ? h * 60 + m : null }
+  const now = mins(localTime), rise = mins(sunrise), set = mins(sunset)
+  const t = now != null && rise != null && set != null && set > rise ? clamp((now - rise) / (set - rise), 0, 1) : 0.5
+  const up = now != null && rise != null && set != null ? now >= rise && now <= set : true
+  const x = 20 + t * 160
+  const y = 50 - Math.sin(t * Math.PI) * 34
+  return (
+    <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden className={`block h-full w-full ${className}`}>
+      <path d="M20 50 A80 80 0 0 1 180 50" fill="none" stroke="currentColor" strokeOpacity="0.25" strokeWidth="2" strokeDasharray="3 5" />
+      <line x1="10" x2="190" y1="50" y2="50" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
+      <circle cx={x} cy={y} r="6" fill={up ? '#fbbf24' : '#94a3b8'} />
+      {up && <circle cx={x} cy={y} r="11" fill="#fbbf24" opacity="0.2" />}
+    </svg>
+  )
+}

@@ -1,131 +1,150 @@
 @import "tailwindcss";
 
+/* ── Type ──────────────────────────────────────────────────────────────────
+   Instrument Serif carries the headlines; Inter does everything else, including
+   the small letter-spaced kickers that older components call `font-expedition`. */
 @theme inline {
-  --font-display: var(--font-bricolage);
-  --font-body: var(--font-geist);
-  --font-expedition: var(--font-jbmono);
+  --font-display: var(--font-serif);
+  --font-body: var(--font-inter);
+  --font-expedition: var(--font-inter);
+}
+
+/* ── Palette ───────────────────────────────────────────────────────────────
+   The codebase speaks in zinc. Rather than touch hundreds of classes, the zinc scale
+   is re-tuned to an airy mist-and-ink world: zinc-950 is the white page, zinc-900 a
+   cool mist tint, zinc-800 a hairline border, and the 500–300 steps are ink-teal text. */
+@theme {
+  --color-zinc-50: #10242c;
+  --color-zinc-100: #142c36;
+  --color-zinc-200: #1d3540;
+  --color-zinc-300: #2f4a55;
+  --color-zinc-400: #4a6572;
+  --color-zinc-500: #5b7480;
+  --color-zinc-600: #7a909a;
+  --color-zinc-700: #c3d3da;
+  --color-zinc-800: #dde8ec;
+  --color-zinc-900: #f3f8fa;
+  --color-zinc-950: #ffffff;
+  --color-teal-700: #0a6b77;
+  --color-teal-600: #0a7c8a;
+}
+
+:root {
+  --ink: #10242c;
 }
 
 body {
-  background: #09090b;
-  color: #fafafa;
+  background: #ffffff;
+  color: var(--ink);
+  font-feature-settings: "cv11", "ss01", "ss03";
 }
 
-/* Editorial voice: every heading sitewide gets the display face */
-h1, h2, h3 {
-  font-family: var(--font-bricolage);
-  letter-spacing: -0.02em;
+/* `text-white` meant "primary text" in the dark theme; it now means ink — except on a
+   strong fill (buttons, badges, photo overlays), where white stays white. */
+.text-white { color: var(--ink); }
+.hover\:text-white:hover { color: var(--ink); }
+.group-hover\:text-white:is(:where(.group):hover *) { color: var(--ink); }
+:is(.bg-orange-500, .bg-orange-400, .from-orange-500, .bg-emerald-500, .bg-cyan-500, .bg-blue-500, .bg-amber-500, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90).text-white,
+:is(.bg-orange-500, .bg-orange-400, .from-orange-500, .bg-emerald-500, .bg-cyan-500, .bg-blue-500, .bg-amber-500, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90) .text-white {
+  color: #ffffff;
 }
 
-/* Subtle film-grain overlay */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+/* A panel that stays night-mode (the world map): restore the dark zinc scale locally */
+.dark-panel {
+  --ink: #ffffff;
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
 }
 
-/* Thin custom scrollbars */
+/* Editorial voice: headlines in the serif at its one true weight; kickers opt out */
+h1:not(.font-expedition), h2:not(.font-expedition), h3:not(.font-expedition) {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Thin, light scrollbars */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3f3f46 #18181b;
+  scrollbar-color: #c3d3da #f3f8fa;
 }
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #18181b;
-}
-::-webkit-scrollbar-thumb {
-  background: #3f3f46;
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
-}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f3f8fa; }
+::-webkit-scrollbar-thumb { background: #c3d3da; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #9fb4bd; }
 
-/* Selection */
 ::selection {
   background: #f97316;
   color: #ffffff;
 }
 
+/* ── Motion ────────────────────────────────────────────────────────────── */
+
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes pulse-ring {
   0%   { transform: scale(0.6); opacity: 0.8; }
   100% { transform: scale(2.2); opacity: 0; }
 }
-
 @keyframes stamp-in {
   from { transform: scale(1.4) rotate(-6deg); opacity: 0; }
   to   { transform: scale(1) rotate(0deg); opacity: 1; }
 }
-
 @keyframes shimmer {
   from { background-position: -200% 0; }
   to   { background-position: 200% 0; }
 }
+.animate-slide-up  { animation: slide-up 0.25s ease-out forwards; }
+.animate-pulse-ring { animation: pulse-ring 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+.animate-stamp-in  { animation: stamp-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.animate-shimmer   { animation: shimmer 1.8s linear infinite; }
 
-.animate-slide-up {
-  animation: slide-up 0.25s ease-out forwards;
+/* Living condition glyphs (components/ConditionAnimations.tsx). Distances are in
+   each SVG's own viewBox units; --wl is set per element to one wavelength. */
+@keyframes rr-wave   { to { transform: translateX(calc(-1 * var(--wl))); } }
+@keyframes rr-streak { from { transform: translateX(0); } to { transform: translateX(300px); } }
+@keyframes rr-dash   { to { stroke-dashoffset: -30; } }
+@keyframes rr-flake  { from { transform: translateY(0); } to { transform: translateY(70px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .rr-anim * { animation: none !important; }
 }
 
-.animate-pulse-ring {
-  animation: pulse-ring 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-}
-
-.animate-stamp-in {
-  animation: stamp-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-.animate-shimmer {
-  animation: shimmer 1.8s linear infinite;
-}
-
-/* ── Adventure map ambience ─────────────────────────────── */
+/* ── Adventure map ambience (the night-mode world map) ─────────────────── */
 
 @keyframes twinkle {
   0%, 100% { opacity: 0.15; }
   50%      { opacity: 0.7; }
 }
-
-.rr-star {
-  animation: twinkle 4s ease-in-out infinite;
-}
+.rr-star { animation: twinkle 4s ease-in-out infinite; }
 
 @keyframes dash-march {
   from { stroke-dashoffset: 0; }
   to   { stroke-dashoffset: -20; }
 }
-
-.rr-arc {
-  animation: dash-march 1.6s linear infinite;
-}
+.rr-arc { animation: dash-march 1.6s linear infinite; }
 
 @keyframes nebula-drift {
   from { opacity: 0.5; }
   to   { opacity: 1; }
 }
+.rr-nebula { animation: nebula-drift 8s ease-in-out infinite alternate; }
 
-.rr-nebula {
-  animation: nebula-drift 8s ease-in-out infinite alternate;
-}
-
-/* Photo pins: hover lift, scaled around their own center */
 .rr-photo-pin {
   transform-box: fill-box;
   transform-origin: center;
   transition: transform 0.15s ease;
 }
-
-.rr-photo-pin:hover {
-  transform: scale(1.15);
-}
+.rr-photo-pin:hover { transform: scale(1.15); }

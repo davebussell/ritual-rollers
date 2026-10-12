@@ -28,9 +28,12 @@ export default async function HomePage() {
   // Live strip: the single best read at each iconic spot
   const strip: StripItem[] = FEATURED_SPOTS.map((spot, i) => {
     const snap = snapshots[i]
-    if (!snap) return { spot, top: null, tempC: null, sstC: null }
+    if (!snap) return { spot, top: null, tempC: null, sstC: null, windKph: null, waveM: null, periodS: null, coastal: false }
     const top = [...allVerdicts(snap)].sort((a, b) => STATUS_RANK[b.status] - STATUS_RANK[a.status] || b.score - a.score)[0]
-    return { spot, top: top && top.status !== 'quiet' ? top : null, tempC: snap.tempC, sstC: snap.sstC }
+    return {
+      spot, top: top && top.status !== 'quiet' ? top : null,
+      tempC: snap.tempC, sstC: snap.sstC, windKph: snap.windKph, waveM: snap.waveM, periodS: snap.periodS, coastal: snap.coastal,
+    }
   })
 
   type Raw = {

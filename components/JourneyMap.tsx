@@ -18,7 +18,7 @@ interface Props {
   onStepClick: (i: number) => void
 }
 
-const TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+const TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
 const TILE_ATTRIBUTION = '&copy; OpenStreetMap contributors &copy; CARTO'
 
 function markerHtml(step: JourneyStep, active: boolean): string {

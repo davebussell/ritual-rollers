@@ -1,16 +1,15 @@
 import Script from 'next/script'
 import type { Metadata } from 'next'
-import { Bricolage_Grotesque, Geist, JetBrains_Mono } from 'next/font/google'
+import { Instrument_Serif, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 
-const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-bricolage' })
-const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
-const jbmono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jbmono' })
+const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-serif' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 const SITE_URL = 'https://ritualrollers.com'
-const TITLE = 'Ritual Rollers — Adventures worth sharing'
-const DESCRIPTION = 'Ride wind, water, mountain and river with your crew — scout what\'s firing near you, roll it together, and turn the photos into a mapped story.'
+const TITLE = 'Ritual Rollers — What\'s rideable where you\'re headed'
+const DESCRIPTION = 'Type any place on Earth and get a live spot report: wind, waves, snow and sun, what\'s rideable now, the best windows this week, and what to pack — then roll it with your crew.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -58,7 +57,7 @@ const jsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${bricolage.variable} ${geist.variable} ${jbmono.variable} ${geist.className} bg-zinc-950 text-white min-h-screen`} suppressHydrationWarning>
+      <body className={`${serif.variable} ${inter.variable} ${inter.className} bg-zinc-950 text-white min-h-screen antialiased`} suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {/* Google tag (gtag.js) — Click Shift Portfolio */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-QK0ETT28BD" strategy="afterInteractive" />

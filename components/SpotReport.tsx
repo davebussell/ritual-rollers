@@ -7,6 +7,7 @@ import ScoutSearch from '@/components/ScoutSearch'
 import ShareButton from '@/components/ShareButton'
 import RideMap from '@/components/RideMap'
 import { SampleNotice } from '@/components/SampleNotice'
+import { WaveAnim, WindAnim, RoadAnim, SunArc, roadState } from '@/components/ConditionAnimations'
 import { CATEGORY_META, fetchLocalSpots, type GeoPoint, type LocalSpot, type SportCategory } from '@/lib/local-sports'
 import type { SpotForecast } from '@/lib/forecast'
 import {
@@ -89,6 +90,7 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
 
   const cur = forecast?.current
   const today = forecast?.daily[0]
+  const road = cur ? roadState(cur) : { state: 'dry' as const, label: '' }
   const weekWindMax = Math.max(1, ...(forecast?.daily.map(d => d.windMax) ?? [1]))
   const weekWaveMax = Math.max(0.5, ...(forecast?.daily.map(d => d.waveMax ?? 0) ?? [0.5]))
 
@@ -120,43 +122,51 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
 
       {forecast && cur && today && (
         <>
-          {/* Now */}
-          <section className="mt-8 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
-            <div className="grid grid-cols-2 md:grid-cols-4">
-              <div className="border-b border-r border-zinc-800 p-4 md:border-b-0">
+          {/* Now — living conditions */}
+          <section className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+              <div className="p-4 pb-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-expedition text-[10px] uppercase tracking-widest text-zinc-500">Wind</span>
-                  <Navigation className="h-4 w-4 text-cyan-400" style={{ transform: `rotate(${cur.windDirDeg + 180}deg)` }} />
+                  <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">Wind</span>
+                  <Navigation className="h-4 w-4 text-cyan-600" style={{ transform: `rotate(${cur.windDirDeg + 180}deg)` }} />
                 </div>
-                <div className="mt-2 font-display text-2xl font-bold text-white">{Math.round(cur.windKph)} km/h</div>
+                <div className="mt-1 font-display text-3xl text-white">{Math.round(cur.windKph)} <span className="text-base text-zinc-500">km/h</span></div>
                 <div className="text-xs text-zinc-500">gusts {Math.round(cur.gustKph)} · from {compassOf(cur.windDirDeg)}</div>
               </div>
-              <div className="border-b border-zinc-800 p-4 md:border-b-0 md:border-r">
-                <span className="font-expedition text-[10px] uppercase tracking-widest text-zinc-500">{forecast.coastal ? 'Sea' : 'Water'}</span>
+              <div className="h-12 text-cyan-500"><WindAnim kph={cur.windKph} /></div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+              <div className="p-4 pb-2">
+                <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">{forecast.coastal ? 'Waves' : 'Water'}</span>
                 {forecast.coastal ? (
                   <>
-                    <div className="mt-2 font-display text-2xl font-bold text-white">{cur.sstC != null ? `${cur.sstC.toFixed(1)} °C` : '—'}</div>
-                    <div className="text-xs text-zinc-500">
-                      {cur.waveM != null ? `${cur.waveM.toFixed(1)} m` : '—'}{cur.periodS != null ? ` @ ${Math.round(cur.periodS)} s` : ''}
-                    </div>
+                    <div className="mt-1 font-display text-3xl text-white">{cur.waveM != null ? cur.waveM.toFixed(1) : '—'} <span className="text-base text-zinc-500">m</span></div>
+                    <div className="text-xs text-zinc-500">{cur.periodS != null ? `${Math.round(cur.periodS)} s period` : 'no period'}{cur.sstC != null ? ` · sea ${cur.sstC.toFixed(1)} °C` : ''}</div>
                   </>
                 ) : (
                   <>
-                    <div className="mt-2 font-display text-2xl font-bold text-white">—</div>
-                    <div className="text-xs text-zinc-500">inland — no sea data</div>
+                    <div className="mt-1 font-display text-3xl text-white">flat</div>
+                    <div className="text-xs text-zinc-500">inland — lakes and rivers</div>
                   </>
                 )}
               </div>
-              <div className="border-r border-zinc-800 p-4">
-                <span className="font-expedition text-[10px] uppercase tracking-widest text-zinc-500">Daylight</span>
-                <div className="mt-2 font-display text-2xl font-bold text-white">{clockOf(today.sunrise)}</div>
-                <div className="text-xs text-zinc-500">sunrise · sets {clockOf(today.sunset)}</div>
+              <div className="h-12 text-blue-500"><WaveAnim heightM={cur.waveM} periodS={cur.periodS} coastal={forecast.coastal} /></div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+              <div className="p-4 pb-2">
+                <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">Road</span>
+                <div className="mt-1 font-display text-3xl capitalize text-white">{road.state === 'snow' ? 'Snowy' : road.state}</div>
+                <div className="text-xs text-zinc-500">{road.label}</div>
               </div>
-              <div className="p-4">
-                <span className="font-expedition text-[10px] uppercase tracking-widest text-zinc-500">Air</span>
-                <div className="mt-2 font-display text-2xl font-bold text-white">{Math.round(cur.tempC)} °C</div>
-                <div className="text-xs text-zinc-500">{cur.precipMm.toFixed(1)} mm · UV {cur.uv != null ? Math.round(cur.uv) : '—'}</div>
+              <div className="h-12"><RoadAnim state={road.state} /></div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+              <div className="p-4 pb-2">
+                <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">Daylight</span>
+                <div className="mt-1 font-display text-3xl text-white">{clockOf(today.sunrise)}<span className="text-base text-zinc-500"> → {clockOf(today.sunset)}</span></div>
+                <div className="text-xs text-zinc-500">{Math.round(cur.tempC)} °C air · {cur.precipMm.toFixed(1)} mm · UV {cur.uv != null ? Math.round(cur.uv) : '—'}</div>
               </div>
+              <div className="h-12 text-amber-500"><SunArc localTime={forecast.localTime} sunrise={today.sunrise} sunset={today.sunset} /></div>
             </div>
           </section>
 

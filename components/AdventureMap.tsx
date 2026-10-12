@@ -436,7 +436,7 @@ export default function AdventureMap({
   )
 
   return (
-    <div ref={mapRef} className="relative h-full w-full bg-[#080810] select-none overflow-hidden">
+    <div ref={mapRef} className="dark-panel relative h-full w-full bg-[#080810] select-none overflow-hidden">
       {/* Stars */}
       <svg className="pointer-events-none absolute inset-0 w-full h-full" aria-hidden>
         {STARS.map((s, i) => (

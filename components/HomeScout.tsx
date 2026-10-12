@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ChevronUp, Plus, Compass, Wrench, Users } from 'lucide-react'
 import ScoutSearch from '@/components/ScoutSearch'
+import { WaveAnim, WindAnim } from '@/components/ConditionAnimations'
 import { FEATURED_SPOTS, type FeaturedSpot } from '@/lib/featured-spots'
 import { countryFlag, type SportVerdict } from '@/lib/sports'
 
@@ -9,6 +10,10 @@ export interface StripItem {
   top: SportVerdict | null
   tempC: number | null
   sstC: number | null
+  windKph: number | null
+  waveM: number | null
+  periodS: number | null
+  coastal: boolean
 }
 
 export interface Teaser {
@@ -34,12 +39,14 @@ export default function HomeScout({ strip, teasers }: Props) {
 
         {/* Hero */}
         <div className="text-center">
-          <p className="font-expedition text-[10px] uppercase tracking-[0.35em] text-orange-400">Roll with your buddies</p>
-          <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-black leading-tight text-white sm:text-6xl">
-            What&apos;s rideable where you&apos;re headed?
+          <p className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> 16 sports · any place on Earth · live
+          </p>
+          <h1 className="mx-auto mt-6 max-w-3xl font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-7xl">
+            What&apos;s rideable <em className="italic text-orange-500">where you&apos;re headed?</em>
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-base text-zinc-400 sm:text-lg">
-            Wind, water, mountain, river. Type any place on Earth and get the live read: what&apos;s on right now,
+          <p className="mx-auto mt-6 max-w-xl text-lg text-zinc-400 sm:text-xl">
+            Wind, water, mountain, river. Type any place and get the live read: what&apos;s on right now,
             the best windows this week, and what to pack.
           </p>
           <div className="mt-8"><ScoutSearch size="hero" /></div>
@@ -65,13 +72,19 @@ export default function HomeScout({ strip, teasers }: Props) {
             <Link href="/scout" className="text-xs text-orange-400 hover:underline">Scout anywhere →</Link>
           </div>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {strip.map(({ spot, top, tempC, sstC }) => (
+            {strip.map(({ spot, top, tempC, sstC, windKph, waveM, periodS, coastal }) => (
               <Link key={spot.slug} href={`/scout/${spot.slug}`}
-                className={`group rounded-2xl border p-4 transition-all hover:border-zinc-600 ${
+                className={`group overflow-hidden rounded-2xl border transition-all hover:border-zinc-600 ${
                   top?.status === 'firing' ? 'border-orange-500/40 bg-orange-500/5' : 'border-zinc-800 bg-zinc-900/50'
                 }`}>
+                <div className="h-9 text-blue-500">
+                  {coastal
+                    ? <WaveAnim heightM={waveM} periodS={periodS} coastal />
+                    : <div className="text-cyan-500"><WindAnim kph={windKph ?? 0} /></div>}
+                </div>
+                <div className="p-4 pt-2">
                 <div className="flex items-center justify-between">
-                  <p className="font-display font-bold text-white">{countryFlag(spot.countryCode)} {spot.name}</p>
+                  <p className="font-display text-xl text-white">{countryFlag(spot.countryCode)} {spot.name}</p>
                   {top?.status === 'firing' && (
                     <span className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-2 py-0.5 font-expedition text-[9px] tracking-widest text-white">FIRING</span>
                   )}
@@ -86,6 +99,7 @@ export default function HomeScout({ strip, teasers }: Props) {
                   <p className="mt-3 text-sm text-zinc-500">{tempC != null ? `quiet · ${Math.round(tempC)} °C` : 'no read right now'}</p>
                 )}
                 {sstC != null && <p className="mt-1 text-xs text-zinc-500">sea {sstC.toFixed(1)} °C</p>}
+                </div>
               </Link>
             ))}
           </div>

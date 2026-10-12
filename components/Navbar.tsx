@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import Logo from '@/components/Logo'
 import { Map, Upload, LogOut, User, Plus, BookOpen, Compass } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 
@@ -55,31 +56,11 @@ export default function Navbar() {
         {/* Logo — always resets to home feed */}
         <Link href="/" onClick={e => { e.preventDefault(); router.push('/'); router.refresh() }}
           className="flex items-center gap-2.5 group">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
-            className="shrink-0 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110" aria-hidden="true">
-            <defs>
-              <linearGradient id="rr-logo-grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#f97316" />
-                <stop offset="1" stopColor="#fbbf24" />
-              </linearGradient>
-            </defs>
-            <circle cx="14" cy="14" r="12" stroke="url(#rr-logo-grad)" strokeWidth="2" />
-            <g stroke="url(#rr-logo-grad)" strokeWidth="1.5" strokeLinecap="round">
-              <line x1="14" y1="4.5" x2="14" y2="10" />
-              <line x1="14" y1="18" x2="14" y2="23.5" />
-              <line x1="4.5" y1="14" x2="10" y2="14" />
-              <line x1="18" y1="14" x2="23.5" y2="14" />
-              <line x1="7.3" y1="7.3" x2="11.2" y2="11.2" />
-              <line x1="16.8" y1="16.8" x2="20.7" y2="20.7" />
-              <line x1="20.7" y1="7.3" x2="16.8" y2="11.2" />
-              <line x1="11.2" y1="16.8" x2="7.3" y2="20.7" />
-            </g>
-            <circle cx="14" cy="14" r="2.5" fill="url(#rr-logo-grad)" />
-          </svg>
+          <Logo size={30} className="shrink-0 text-orange-500 transition-transform duration-500 group-hover:rotate-[360deg]" />
           <div className="flex flex-col gap-0.5 leading-none">
-            <span className="font-display text-[15px] font-extrabold tracking-wide text-white">RITUAL ROLLERS</span>
+            <span className="font-display text-[22px] tracking-tight text-white">Ritual <em className="italic text-orange-500">Rollers</em></span>
             <span className="font-expedition text-[9px] uppercase tracking-[0.25em] text-zinc-500 hidden sm:block">
-              PIN IT. ROLL ON.
+              Pin it. Roll on.
             </span>
           </div>
         </Link>
