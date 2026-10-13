@@ -1,15 +1,15 @@
 import Script from 'next/script'
 import type { Metadata } from 'next'
-import { Instrument_Serif, Inter } from 'next/font/google'
+import { Barlow_Condensed, Work_Sans } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 
-const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-serif' })
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const barlow = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-barlow' })
+const work = Work_Sans({ subsets: ['latin'], variable: '--font-work' })
 
 const SITE_URL = 'https://ritualrollers.com'
-const TITLE = 'Ritual Rollers — What\'s rideable where you\'re headed'
-const DESCRIPTION = 'Type any place on Earth and get a live spot report: wind, waves, snow and sun, what\'s rideable now, the best windows this week, and what to pack — then roll it with your crew.'
+const TITLE = 'Ritual Rollers — The Ritual of the Ride'
+const DESCRIPTION = 'Adventures worth sharing. Scout any spot on Earth — wind, waves, snow, road — see what\'s rideable, pack right, and roll it with your crew.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -57,7 +57,7 @@ const jsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${serif.variable} ${inter.variable} ${inter.className} bg-zinc-950 text-white min-h-screen antialiased`} suppressHydrationWarning>
+      <body className={`${barlow.variable} ${work.variable} ${work.className} tx-canvas bg-zinc-950 text-white min-h-screen antialiased`} suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {/* Google tag (gtag.js) — Click Shift Portfolio */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-QK0ETT28BD" strategy="afterInteractive" />

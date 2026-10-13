@@ -32,11 +32,13 @@ export default function ShareButton({ url, title, compact }: Props) {
   const encodedUrl = encodeURIComponent(url)
   const encodedTitle = encodeURIComponent(title)
 
+  const quick = 'grid h-9 w-9 place-items-center rounded-md border border-zinc-800 bg-zinc-900 text-zinc-500 transition-colors hover:border-zinc-700 hover:text-white'
+
   return (
     <div className="flex items-center gap-2">
       <button onClick={share}
-        className={`flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:brightness-110 active:scale-95 ${
-          compact ? 'px-3 py-1.5 text-sm' : 'px-4 py-2'
+        className={`tx-stitch relative flex items-center gap-2 rounded-md bg-orange-500 font-display font-bold uppercase tracking-wide text-white transition-all hover:bg-orange-400 active:scale-95 ${
+          compact ? 'px-3 py-1.5 text-base' : 'px-4 py-2 text-lg'
         }`}>
         {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
         {copied ? 'Link copied!' : 'Share this trip'}
@@ -44,18 +46,15 @@ export default function ShareButton({ url, title, compact }: Props) {
       {!compact && (
         <>
           <a href={`https://wa.me/?text=${encoded}`} target="_blank" rel="noopener noreferrer"
-            title="Share on WhatsApp"
-            className="grid h-9 w-9 place-items-center rounded-full bg-zinc-800 text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-white">
+            title="Share on WhatsApp" className={quick}>
             <MessageCircle className="h-4 w-4" />
           </a>
           <a href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`} target="_blank" rel="noopener noreferrer"
-            title="Share on X"
-            className="grid h-9 w-9 place-items-center rounded-full bg-zinc-800 text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-white">
+            title="Share on X" className={quick}>
             <span className="text-sm font-bold leading-none">𝕏</span>
           </a>
           <a href={`mailto:?subject=${encodedTitle}&body=${encoded}`}
-            title="Share by email"
-            className="grid h-9 w-9 place-items-center rounded-full bg-zinc-800 text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-white">
+            title="Share by email" className={quick}>
             <Mail className="h-4 w-4" />
           </a>
         </>

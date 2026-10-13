@@ -34,27 +34,27 @@ export default function HomeScout({ strip, teasers }: Props) {
   const firing = strip.filter(s => s.top?.status === 'firing').length
 
   return (
-    <div className="min-h-[calc(100vh-57px)] bg-zinc-950">
+    <div className="min-h-[calc(100vh-57px)] bg-zinc-950 tx-canvas">
       <div className="mx-auto max-w-5xl px-4 pb-20 pt-14 sm:px-8">
 
         {/* Hero */}
         <div className="text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> 16 sports · any place on Earth · live
+          <p className="tag inline-flex items-center gap-2 px-3 py-1 text-[11px] tracking-[0.18em]">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Every adventure needs a crew
           </p>
-          <h1 className="mx-auto mt-6 max-w-3xl font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-7xl">
-            What&apos;s rideable <em className="italic text-orange-500">where you&apos;re headed?</em>
+          <h1 className="mx-auto mt-6 max-w-4xl font-display text-6xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-white sm:text-8xl">
+            What&apos;s rideable <span className="text-orange-500">where you&apos;re headed?</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-zinc-400 sm:text-xl">
+          <p className="mx-auto mt-6 max-w-xl font-body text-lg text-zinc-500">
             Wind, water, mountain, river. Type any place and get the live read: what&apos;s on right now,
             the best windows this week, and what to pack.
           </p>
           <div className="mt-8"><ScoutSearch size="hero" /></div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm">
-            <Link href="/trips/new" className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium text-zinc-400 transition-colors hover:text-white">
+            <Link href="/trips/new" className="flex items-center gap-1.5 rounded-md px-3 py-1.5 font-body font-medium text-zinc-500 transition-colors hover:text-white">
               <Plus className="h-3.5 w-3.5" /> Log a ride
             </Link>
-            <Link href="/explore" className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium text-zinc-400 transition-colors hover:text-white">
+            <Link href="/explore" className="flex items-center gap-1.5 rounded-md px-3 py-1.5 font-body font-medium text-zinc-500 transition-colors hover:text-white">
               <Compass className="h-3.5 w-3.5" /> Read the stories
             </Link>
           </div>
@@ -64,18 +64,18 @@ export default function HomeScout({ strip, teasers }: Props) {
         <section className="mt-16">
           <div className="flex items-end justify-between">
             <div>
-              <p className="font-expedition text-[9px] uppercase tracking-[0.3em] text-zinc-600">Right now around the world</p>
-              <h2 className="mt-1 font-display text-2xl font-bold text-white">
+              <p className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Right now around the world</p>
+              <h2 className="mt-1 font-display text-3xl font-bold uppercase tracking-[0.02em] text-white">
                 {firing > 0 ? `${firing} of ${strip.length} iconic spots are firing` : 'Live reads from iconic spots'}
               </h2>
             </div>
-            <Link href="/scout" className="text-xs text-orange-400 hover:underline">Scout anywhere →</Link>
+            <Link href="/scout" className="font-expedition text-xs uppercase tracking-[0.18em] text-teal-700 hover:underline">Scout anywhere →</Link>
           </div>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {strip.map(({ spot, top, tempC, sstC, windKph, waveM, periodS, coastal }) => (
               <Link key={spot.slug} href={`/scout/${spot.slug}`}
-                className={`group overflow-hidden rounded-2xl border transition-all hover:border-zinc-600 ${
-                  top?.status === 'firing' ? 'border-orange-500/40 bg-orange-500/5' : 'border-zinc-800 bg-zinc-900/50'
+                className={`tx-stitch group relative overflow-hidden rounded-xl border bg-zinc-900 transition-all hover:border-zinc-700 ${
+                  top?.status === 'firing' ? 'border-orange-500' : 'border-zinc-800'
                 }`}>
                 <div className="h-9 text-blue-500">
                   {coastal
@@ -83,22 +83,22 @@ export default function HomeScout({ strip, teasers }: Props) {
                     : <div className="text-cyan-500"><WindAnim kph={windKph ?? 0} /></div>}
                 </div>
                 <div className="p-4 pt-2">
-                <div className="flex items-center justify-between">
-                  <p className="font-display text-xl text-white">{countryFlag(spot.countryCode)} {spot.name}</p>
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-display text-2xl font-bold uppercase tracking-[0.02em] text-white">{countryFlag(spot.countryCode)} {spot.name}</p>
                   {top?.status === 'firing' && (
-                    <span className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-2 py-0.5 font-expedition text-[9px] tracking-widest text-white">FIRING</span>
+                    <span className="rounded-md bg-orange-500 px-2 py-0.5 font-expedition text-[10px] uppercase tracking-[0.18em] text-white">FIRING</span>
                   )}
                   {top?.status === 'rideable' && (
-                    <span className="rounded-full border border-emerald-500/50 px-2 py-0.5 font-expedition text-[9px] tracking-widest text-emerald-400">RIDEABLE</span>
+                    <span className="rounded-md bg-emerald-500/30 px-2 py-0.5 font-expedition text-[10px] uppercase tracking-[0.18em] text-[#2E4631]">RIDEABLE</span>
                   )}
                 </div>
-                <p className="font-expedition text-[9px] uppercase tracking-widest text-zinc-600">{spot.tagline}</p>
+                <p className="font-expedition text-[10px] uppercase tracking-[0.18em] text-zinc-600">{spot.tagline}</p>
                 {top ? (
-                  <p className="mt-3 text-sm text-zinc-300"><span className="mr-1">{top.sport.emoji}</span>{top.sport.label} — {top.line}</p>
+                  <p className="mt-3 font-body text-sm text-zinc-300"><span className="mr-1">{top.sport.emoji}</span>{top.sport.label} — {top.line}</p>
                 ) : (
-                  <p className="mt-3 text-sm text-zinc-500">{tempC != null ? `quiet · ${Math.round(tempC)} °C` : 'no read right now'}</p>
+                  <p className="mt-3 font-body text-sm text-zinc-500">{tempC != null ? `quiet · ${Math.round(tempC)} °C` : 'no read right now'}</p>
                 )}
-                {sstC != null && <p className="mt-1 text-xs text-zinc-500">sea {sstC.toFixed(1)} °C</p>}
+                {sstC != null && <p className="mt-1 font-body text-xs text-zinc-500">sea {sstC.toFixed(1)} °C</p>}
                 </div>
               </Link>
             ))}
@@ -106,59 +106,63 @@ export default function HomeScout({ strip, teasers }: Props) {
         </section>
 
         {/* How it works */}
-        <section className="mt-16 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-5">
-            <Compass className="h-5 w-5 text-orange-400" />
-            <h3 className="mt-3 font-display text-lg font-bold text-white">Scout</h3>
-            <p className="mt-1 text-sm text-zinc-400">Live wind, waves, snow and sun for any place. Sixteen sports, each with its own read, the best windows this week, and what to pack.</p>
-            <p className="mt-3 font-expedition text-[9px] uppercase tracking-widest text-orange-400">Live now</p>
+        <div className="rule-plaid mt-16" />
+        <section className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="tx-stitch relative rounded-xl border border-orange-500 bg-zinc-900 p-5">
+            <Compass className="h-5 w-5 text-orange-600" />
+            <h3 className="mt-3 font-display text-2xl font-bold uppercase tracking-[0.02em] text-white">Scout</h3>
+            <p className="mt-1 font-body text-sm text-zinc-500">Live wind, waves, snow and sun for any place. Sixteen sports, each with its own read, the best windows this week, and what to pack.</p>
+            <p className="tag mt-4 inline-block px-2 py-0.5 text-[10px] tracking-[0.18em]">Live now</p>
           </div>
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-            <Wrench className="h-5 w-5 text-zinc-400" />
-            <h3 className="mt-3 font-display text-lg font-bold text-white">Gear</h3>
-            <p className="mt-1 text-sm text-zinc-400">Where to rent, buy or learn near the spot — seeded from map data, confirmed by riders who&apos;ve been.</p>
-            <p className="mt-3 font-expedition text-[9px] uppercase tracking-widest text-zinc-600">Rolling out next</p>
+          <div className="tx-stitch relative rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+            <Wrench className="h-5 w-5 text-zinc-500" />
+            <h3 className="mt-3 font-display text-2xl font-bold uppercase tracking-[0.02em] text-white">Gear</h3>
+            <p className="mt-1 font-body text-sm text-zinc-500">Where to rent, buy or learn near the spot — seeded from map data, confirmed by riders who&apos;ve been.</p>
+            <p className="tag mt-4 inline-block px-2 py-0.5 text-[10px] tracking-[0.18em]">Rolling out next</p>
           </div>
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-            <Users className="h-5 w-5 text-zinc-400" />
-            <h3 className="mt-3 font-display text-lg font-bold text-white">Crew</h3>
-            <p className="mt-1 text-sm text-zinc-400">Who&apos;s ridden here, who&apos;s going, and roll calls so you never ride a new spot alone.</p>
-            <p className="mt-3 font-expedition text-[9px] uppercase tracking-widest text-zinc-600">After that</p>
+          <div className="tx-stitch relative rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+            <Users className="h-5 w-5 text-zinc-500" />
+            <h3 className="mt-3 font-display text-2xl font-bold uppercase tracking-[0.02em] text-white">Crew</h3>
+            <p className="mt-1 font-body text-sm text-zinc-500">Who&apos;s ridden here, who&apos;s going, and roll calls so you never ride a new spot alone.</p>
+            <p className="tag mt-4 inline-block px-2 py-0.5 text-[10px] tracking-[0.18em]">After that</p>
           </div>
         </section>
 
         {/* Stories */}
         {teasers.length > 0 && (
-          <section className="mt-16">
-            <div className="mb-4 flex items-center justify-between">
-              <p className="font-expedition text-[9px] uppercase tracking-[0.3em] text-zinc-600">Fresh from the crews</p>
-              <Link href="/explore" className="text-xs text-orange-400 hover:underline">All stories →</Link>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {teasers.map(t => (
-                <Link key={t.id} href={`/trips/${t.id}`}
-                  className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 transition-all hover:border-zinc-600">
-                  <div className="relative aspect-video overflow-hidden">
-                    <img src={t.cover} alt={t.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    {t.sample && (
-                      <span className="absolute left-2 top-2 rounded-full bg-zinc-950/80 px-2 py-0.5 font-expedition text-[9px] uppercase tracking-widest text-amber-400 backdrop-blur">Sample</span>
-                    )}
-                  </div>
-                  <div className="flex items-center justify-between px-3 py-2.5">
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-semibold text-white">{t.title}</p>
-                      <p className="text-[11px] text-zinc-500">@{t.username}</p>
+          <>
+            <div className="rule-plaid mt-16" />
+            <section className="mt-10">
+              <div className="mb-4 flex items-center justify-between">
+                <p className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Fresh from the crews</p>
+                <Link href="/explore" className="font-expedition text-xs uppercase tracking-[0.18em] text-teal-700 hover:underline">All stories →</Link>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {teasers.map(t => (
+                  <Link key={t.id} href={`/trips/${t.id}`}
+                    className="group overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 transition-all hover:border-zinc-700">
+                    <div className="relative aspect-video overflow-hidden">
+                      <img src={t.cover} alt={t.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      {t.sample && (
+                        <span className="tag absolute left-2 top-2 px-2 py-0.5 text-[10px] tracking-[0.18em]">Sample</span>
+                      )}
                     </div>
-                    <span className="flex shrink-0 items-center gap-0.5 text-[11px] text-zinc-500"><ChevronUp className="h-3 w-3" />{t.upvotes}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <p className="mt-4 text-center text-xs text-zinc-600">
-              Every ride you log pins its photos to the spot for the next rider.{' '}
-              <Link href="/trips/new" className="text-orange-400 hover:underline">Log yours →</Link>
-            </p>
-          </section>
+                    <div className="flex items-center justify-between px-3 py-2.5">
+                      <div className="min-w-0">
+                        <p className="truncate font-display text-base font-bold uppercase tracking-[0.02em] text-white">{t.title}</p>
+                        <p className="font-body text-[11px] text-zinc-500">@{t.username}</p>
+                      </div>
+                      <span className="flex shrink-0 items-center gap-0.5 font-body text-[11px] text-zinc-500"><ChevronUp className="h-3 w-3" />{t.upvotes}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <p className="mt-8 text-center font-display text-2xl font-bold uppercase tracking-[0.02em] text-white sm:text-3xl">
+                Roll out. Share the story.{' '}
+                <Link href="/trips/new" className="text-orange-500 hover:underline">Log yours →</Link>
+              </p>
+            </section>
+          </>
         )}
       </div>
     </div>

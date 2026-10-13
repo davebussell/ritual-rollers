@@ -4,10 +4,10 @@
 export type Family = 'wind' | 'water' | 'mountain' | 'river'
 
 export const FAMILY_META: Record<Family, { label: string; color: string }> = {
-  wind: { label: 'Wind', color: '#06b6d4' },
-  water: { label: 'Water', color: '#3b82f6' },
-  mountain: { label: 'Mountain', color: '#a855f7' },
-  river: { label: 'River', color: '#10b981' },
+  wind: { label: 'Wind', color: '#5B8A8F' },
+  water: { label: 'Water', color: '#3C6E8F' },
+  mountain: { label: 'Mountain', color: '#8B5A2B' },
+  river: { label: 'River', color: '#3F5A42' },
 }
 
 export const FAMILY_ORDER: Family[] = ['wind', 'water', 'mountain', 'river']

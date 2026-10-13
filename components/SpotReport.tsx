@@ -40,9 +40,9 @@ const STATUS_RANK: Record<Status, number> = { firing: 2, rideable: 1, quiet: 0 }
 const CATEGORY_ORDER: SportCategory[] = ['wind', 'water', 'mountain', 'river']
 
 function StatusBadge({ status }: { status: Status }) {
-  if (status === 'firing') return <span className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-2 py-0.5 font-expedition text-[9px] tracking-widest text-white">FIRING</span>
-  if (status === 'rideable') return <span className="rounded-full border border-emerald-500/50 px-2 py-0.5 font-expedition text-[9px] tracking-widest text-emerald-400">RIDEABLE</span>
-  return <span className="rounded-full border border-zinc-700 px-2 py-0.5 font-expedition text-[9px] tracking-widest text-zinc-500">QUIET</span>
+  if (status === 'firing') return <span className="rounded-sm bg-orange-500 px-2 py-0.5 font-expedition text-[10px] font-semibold uppercase tracking-widest text-white">FIRING</span>
+  if (status === 'rideable') return <span className="rounded-sm border border-emerald-500 bg-emerald-500/15 px-2 py-0.5 font-expedition text-[10px] font-semibold uppercase tracking-widest text-[#2E4631]">RIDEABLE</span>
+  return <span className="rounded-sm border border-zinc-800 bg-zinc-900 px-2 py-0.5 font-expedition text-[10px] font-semibold uppercase tracking-widest text-zinc-500">QUIET</span>
 }
 
 function Skeleton({ className }: { className: string }) {
@@ -74,6 +74,14 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
   const [openSport, setOpenSport] = useState<string | null>(() => ranked[0]?.sport.id ?? null)
   const open = verdicts.find(v => v.sport.id === openSport) ?? null
 
+  // The logo's canvas patch follows the place: duck canvas on the coast (sand, wind, salt),
+  // forest inland (mountains, rivers, trees)
+  useEffect(() => {
+    if (!forecast) return
+    document.documentElement.style.setProperty('--rr-patch', forecast.coastal ? '#B7794A' : '#3F5A42')
+    return () => { document.documentElement.style.removeProperty('--rr-patch') }
+  }, [forecast])
+
   // Spots nearby — client-side, slow and best-effort
   const [spots, setSpots] = useState<LocalSpot[] | null | 'loading'>('loading')
   const [activeCategory, setActiveCategory] = useState<SportCategory | 'all'>('all')
@@ -100,11 +108,11 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
       {/* Header */}
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="font-expedition text-[10px] uppercase tracking-[0.3em] text-orange-500">Spot report</p>
-          <h1 className="mt-2 font-display text-3xl font-bold text-white sm:text-4xl">
+          <p className="tag inline-block px-3 py-1 text-[11px] tracking-[0.18em]">Spot report</p>
+          <h1 className="mt-3 font-display text-4xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-white sm:text-5xl">
             {flag && <span className="mr-2">{flag}</span>}{point.label}
           </h1>
-          <p className="mt-1 font-expedition text-[10px] uppercase tracking-widest text-zinc-600">
+          <p className="mt-2 font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">
             {forecast ? `updated ${clockOf(forecast.localTime)} local · open-meteo` : 'forecast unavailable right now'}
           </p>
         </div>
@@ -124,7 +132,7 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
         <>
           {/* Now — living conditions */}
           <section className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+            <div className="tx-stitch relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
               <div className="p-4 pb-2">
                 <div className="flex items-center justify-between">
                   <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">Wind</span>
@@ -135,7 +143,7 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
               </div>
               <div className="h-12 text-cyan-500"><WindAnim kph={cur.windKph} /></div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+            <div className="tx-stitch relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
               <div className="p-4 pb-2">
                 <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">{forecast.coastal ? 'Waves' : 'Water'}</span>
                 {forecast.coastal ? (
@@ -152,7 +160,7 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
               </div>
               <div className="h-12 text-blue-500"><WaveAnim heightM={cur.waveM} periodS={cur.periodS} coastal={forecast.coastal} /></div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+            <div className="tx-stitch relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
               <div className="p-4 pb-2">
                 <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">Road</span>
                 <div className="mt-1 font-display text-3xl capitalize text-white">{road.state === 'snow' ? 'Snowy' : road.state}</div>
@@ -160,7 +168,7 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
               </div>
               <div className="h-12"><RoadAnim state={road.state} /></div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+            <div className="tx-stitch relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
               <div className="p-4 pb-2">
                 <span className="font-expedition text-[11px] uppercase tracking-[0.14em] text-teal-700">Daylight</span>
                 <div className="mt-1 font-display text-3xl text-white">{clockOf(today.sunrise)}<span className="text-base text-zinc-500"> → {clockOf(today.sunset)}</span></div>
@@ -172,14 +180,14 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
 
           {/* Verdicts */}
           <section className="mt-8">
-            <h2 className="font-expedition text-[10px] uppercase tracking-[0.3em] text-zinc-500">What&apos;s rideable right now</h2>
+            <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">What&apos;s rideable right now</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               {FAMILY_ORDER.map(fam => {
                 const meta = FAMILY_META[fam]
                 const list = verdicts.filter(v => v.sport.family === fam)
                 return (
-                  <div key={fam} className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-3">
-                    <p className="mb-2 flex items-center gap-2 px-1 font-expedition text-[9px] uppercase tracking-[0.25em]" style={{ color: meta.color }}>
+                  <div key={fam} className="rounded-xl border border-zinc-800 bg-zinc-900 p-3">
+                    <p className="tag mb-2 inline-flex items-center gap-2 px-2 py-0.5 text-[10px] tracking-[0.18em]" style={{ color: meta.color, borderColor: meta.color }}>
                       <span className="h-1.5 w-1.5 rounded-full" style={{ background: meta.color }} /> {meta.label}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -188,8 +196,8 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
                         return (
                           <button key={vd.sport.id} onClick={() => setOpenSport(vd.sport.id)}
                             aria-pressed={active}
-                            className={`flex items-center gap-2 rounded-xl border px-2.5 py-1.5 text-left text-sm transition-all active:scale-95 ${
-                              active ? 'border-orange-500 bg-zinc-900 text-white' : 'border-zinc-800 bg-zinc-950/40 text-zinc-300 hover:border-zinc-600'
+                            className={`flex items-center gap-2 rounded-md border px-2.5 py-1.5 text-left font-body text-sm transition-all active:scale-95 ${
+                              active ? 'border-orange-500 bg-orange-500/10 text-white' : 'border-zinc-800 bg-zinc-950 text-zinc-300 hover:border-zinc-700'
                             } ${vd.status === 'quiet' ? 'opacity-70' : ''}`}>
                             <span>{vd.sport.emoji}</span>
                             <span className="font-semibold">{vd.sport.label}</span>
@@ -204,7 +212,7 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
             </div>
 
             {open && (
-              <div className="mt-4 rounded-2xl border border-orange-500/30 bg-orange-500/5 p-5">
+              <div className="tx-stitch relative mt-4 rounded-xl border border-zinc-800 border-l-4 border-l-orange-500 bg-zinc-900 p-5">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="text-2xl">{open.sport.emoji}</span>
                   <h3 className="font-display text-xl font-bold text-white">{open.sport.label}</h3>
@@ -235,7 +243,8 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
 
           {/* Week */}
           <section className="mt-8">
-            <h2 className="font-expedition text-[10px] uppercase tracking-[0.3em] text-zinc-500">This week</h2>
+            <div className="rule-plaid mb-6" aria-hidden />
+            <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">This week</h2>
             <div className="mt-4 overflow-x-auto">
               <div className="grid min-w-[560px] grid-cols-7 gap-2">
                 {forecast.daily.map((d, i) => {
@@ -273,8 +282,8 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
           </section>
 
           {/* Kit */}
-          <section className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-            <h2 className="font-expedition text-[10px] uppercase tracking-[0.3em] text-zinc-500">Kit for today</h2>
+          <section className="tx-stitch relative mt-8 rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+            <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Pack list</h2>
             <ul className="mt-3 grid gap-3 sm:grid-cols-2">
               {[
                 wetsuitFor(cur.sstC, cur.tempC),
@@ -282,11 +291,13 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
                 sunFor(cur.uv),
                 layersFor(cur.tempC, cur.windKph),
               ].filter(Boolean).map((k, i) => k && (
-                <li key={i} className="text-sm text-zinc-300">
+                <li key={i} className="font-body text-sm text-zinc-300">
+                  <span className="-mb-0.5 mr-2 inline-block h-3 w-3 rounded-[2px] border-2 border-zinc-700" aria-hidden />
                   <span className="font-semibold text-white">{k.lead}</span> → {k.detail}
                 </li>
               ))}
-              <li className="text-sm text-zinc-300">
+              <li className="font-body text-sm text-zinc-300">
+                <span className="-mb-0.5 mr-2 inline-block h-3 w-3 rounded-[2px] border-2 border-zinc-700" aria-hidden />
                 <span className="font-semibold text-white">Daylight {clockOf(today.sunrise)}–{clockOf(today.sunset)}</span> → golden hour from {clockOf(today.sunset).replace(/^(\d{2})/, m => String(Number(m) - 1).padStart(2, '0'))}
               </li>
             </ul>
@@ -297,7 +308,7 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
       {/* Spots nearby */}
       <section className="mt-10">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 className="font-expedition text-[10px] uppercase tracking-[0.3em] text-zinc-500">Spots within 40 km</h2>
+          <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Spots within 40 km</h2>
           {categoriesPresent.length > 1 && (
             <div className="flex flex-wrap gap-1.5">
               <button onClick={() => setActiveCategory('all')}
@@ -362,8 +373,9 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
 
       {/* Stories */}
       <section className="mt-10">
-        <h2 className="font-display text-xl font-bold text-white">
-          Stories near <span className="text-orange-400">{point.label}</span>
+        <div className="rule-plaid mb-6" aria-hidden />
+        <h2 className="font-display text-3xl font-bold uppercase tracking-[0.02em] text-white">
+          Stories near <span className="text-orange-500">{point.label}</span>
         </h2>
         {stories.some(s => s.sample) && <SampleNotice className="mt-3" />}
         {stories.length === 0 ? (
@@ -402,10 +414,10 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
         )}
         <div className="mt-6 flex items-center gap-3">
           <Link href="/trips/new"
-            className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:brightness-110 active:scale-95">
+            className="tx-stitch relative flex items-center gap-2 rounded-md bg-orange-500 px-4 py-2 font-display text-lg font-bold uppercase tracking-wide text-white transition-all hover:bg-orange-400 active:scale-95">
             <Plus className="h-4 w-4" strokeWidth={2.5} /> Log a ride here
           </Link>
-          <span className="text-xs text-zinc-600">Photos with GPS pin themselves to this spot.</span>
+          <span className="font-expedition text-[11px] uppercase tracking-[0.18em] text-zinc-600">Roll out. Share the story.</span>
         </div>
       </section>
     </div>

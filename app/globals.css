@@ -1,91 +1,197 @@
 @import "tailwindcss";
 
 /* ── Type ──────────────────────────────────────────────────────────────────
-   Instrument Serif carries the headlines; Inter does everything else, including
-   the small letter-spaced kickers that older components call `font-expedition`. */
+   Barlow Condensed carries the headlines and the small letter-spaced kickers that
+   components call `font-expedition`; Work Sans does the body copy. */
 @theme inline {
-  --font-display: var(--font-serif);
-  --font-body: var(--font-inter);
-  --font-expedition: var(--font-inter);
+  --font-display: var(--font-barlow);
+  --font-body: var(--font-work);
+  --font-expedition: var(--font-barlow);
 }
 
 /* ── Palette ───────────────────────────────────────────────────────────────
-   The codebase speaks in zinc. Rather than touch hundreds of classes, the zinc scale
-   is re-tuned to an airy mist-and-ink world: zinc-950 is the white page, zinc-900 a
-   cool mist tint, zinc-800 a hairline border, and the 500–300 steps are ink-teal text. */
+   Heritage workwear: duck canvas, mustard, buffalo plaid, sage, kraft paper.
+   The codebase speaks in zinc/orange/amber/teal/emerald/cyan/blue. Rather than touch
+   hundreds of classes, those scales are re-tuned here so the whole site re-skins at
+   once: zinc-950 is the paper page, zinc-900 a kraft surface, zinc-800 a seam
+   hairline, and the 500–50 steps run from muted brown to ink. */
 @theme {
-  --color-zinc-50: #10242c;
-  --color-zinc-100: #142c36;
-  --color-zinc-200: #1d3540;
-  --color-zinc-300: #2f4a55;
-  --color-zinc-400: #4a6572;
-  --color-zinc-500: #5b7480;
-  --color-zinc-600: #7a909a;
-  --color-zinc-700: #c3d3da;
-  --color-zinc-800: #dde8ec;
-  --color-zinc-900: #f3f8fa;
-  --color-zinc-950: #ffffff;
-  --color-teal-700: #0a6b77;
-  --color-teal-600: #0a7c8a;
+  /* Named palette — bg-kraft / text-forest / border-seam / bg-mustard / text-plaid-red */
+  --color-paper: #F5F0E6;
+  --color-kraft: #EDE4D3;
+  --color-kraft-deep: #E2D5BE;
+  --color-seam: #D6C8B0;
+  --color-seam-strong: #B8A88C;
+  --color-ink: #1F1A15;
+  --color-ink-2: #3A3129;
+  --color-muted: #6B5B48;
+  --color-faint: #8E7E6A;
+  --color-duck: #B7794A;
+  --color-duck-deep: #8B5A2B;
+  --color-mustard: #D9A21B;
+  --color-mustard-deep: #B8860B;
+  --color-plaid-red: #A3271F;
+  --color-plaid-black: #2A1F1B;
+  --color-sage: #8FA37E;
+  --color-sage-light: #A8BC95;
+  --color-forest: #3F5A42;
+  --color-forest-deep: #2E4631;
+
+  /* Zinc → paper/kraft/ink */
+  --color-zinc-50: #1F1A15;
+  --color-zinc-100: #241E19;
+  --color-zinc-200: #2B241E;
+  --color-zinc-300: #3A3129;
+  --color-zinc-400: #4F4337;
+  --color-zinc-500: #6B5B48;
+  --color-zinc-600: #8E7E6A;
+  --color-zinc-700: #B8A88C;
+  --color-zinc-800: #D6C8B0;
+  --color-zinc-900: #EDE4D3;
+  --color-zinc-950: #F5F0E6;
+
+  /* Orange/amber → mustard */
+  --color-orange-400: #E3B33F;
+  --color-orange-500: #D9A21B;
+  --color-orange-600: #B8860B;
+  --color-amber-400: #C9962A;
+  --color-amber-500: #B8860B;
+
+  /* Teal (kickers) → rust red / duck */
+  --color-teal-600: #8B5A2B;
+  --color-teal-700: #A3271F;
+
+  /* Emerald → sage */
+  --color-emerald-400: #6E8A60;
+  --color-emerald-500: #8FA37E;
+
+  /* Cyan (wind glyph) → slate teal */
+  --color-cyan-400: #6E9CA1;
+  --color-cyan-500: #5B8A8F;
+  --color-cyan-600: #4C777C;
+
+  /* Blue (wave glyph) → lake blue */
+  --color-blue-400: #5A8AA8;
+  --color-blue-500: #3C6E8F;
 }
 
 :root {
-  --ink: #10242c;
+  --ink: #1F1A15;
 }
 
 body {
-  background: #ffffff;
+  background: #F5F0E6;
   color: var(--ink);
-  font-feature-settings: "cv11", "ss01", "ss03";
 }
 
 /* `text-white` meant "primary text" in the dark theme; it now means ink — except on a
-   strong fill (buttons, badges, photo overlays), where white stays white. */
+   strong fill (forest, duck, plaid, photo overlays), where white stays white. */
 .text-white { color: var(--ink); }
 .hover\:text-white:hover { color: var(--ink); }
 .group-hover\:text-white:is(:where(.group):hover *) { color: var(--ink); }
-:is(.bg-orange-500, .bg-orange-400, .from-orange-500, .bg-emerald-500, .bg-cyan-500, .bg-blue-500, .bg-amber-500, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90).text-white,
-:is(.bg-orange-500, .bg-orange-400, .from-orange-500, .bg-emerald-500, .bg-cyan-500, .bg-blue-500, .bg-amber-500, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90) .text-white {
+:is(.bg-forest, .bg-forest-deep, .bg-duck-deep, .bg-plaid-red, .bg-plaid-black, .tx-plaid, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90).text-white,
+:is(.bg-forest, .bg-forest-deep, .bg-duck-deep, .bg-plaid-red, .bg-plaid-black, .tx-plaid, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90) .text-white {
   color: #ffffff;
 }
-
-/* A panel that stays night-mode (the world map): restore the dark zinc scale locally */
-.dark-panel {
-  --ink: #ffffff;
-  --color-zinc-50: #fafafa;
-  --color-zinc-100: #f4f4f5;
-  --color-zinc-200: #e4e4e7;
-  --color-zinc-300: #d4d4d8;
-  --color-zinc-400: #a1a1aa;
-  --color-zinc-500: #71717a;
-  --color-zinc-600: #52525b;
-  --color-zinc-700: #3f3f46;
-  --color-zinc-800: #27272a;
-  --color-zinc-900: #18181b;
-  --color-zinc-950: #09090b;
+/* Mustard fills read as ink, never white — a stitched label, not a glowing button */
+:is(.bg-orange-500, .bg-orange-400, .bg-orange-600, .from-orange-500, .bg-amber-500, .bg-mustard).text-white,
+:is(.bg-orange-500, .bg-orange-400, .bg-orange-600, .from-orange-500, .bg-amber-500, .bg-mustard) .text-white {
+  color: #1F1A15;
 }
 
-/* Editorial voice: headlines in the serif at its one true weight; kickers opt out */
+/* A panel that stays night-mode (the world map): a warm-dark scale, locally */
+.dark-panel {
+  --ink: #F5F0E6;
+  --color-zinc-50: #F5F0E6;
+  --color-zinc-100: #EDE4D3;
+  --color-zinc-200: #E2D5BE;
+  --color-zinc-300: #D6C8B0;
+  --color-zinc-400: #B8A88C;
+  --color-zinc-500: #8E7E6A;
+  --color-zinc-600: #6B5B48;
+  --color-zinc-700: #4F4337;
+  --color-zinc-800: #3A3129;
+  --color-zinc-900: #2B241E;
+  --color-zinc-950: #1F1A15;
+}
+
+/* Workwear voice: headlines in the condensed grotesk, bold; kickers opt out */
 h1:not(.font-expedition), h2:not(.font-expedition), h3:not(.font-expedition) {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-family: var(--font-barlow);
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-wrap: balance;
 }
 
-/* Thin, light scrollbars */
+/* ── Textures ──────────────────────────────────────────────────────────────
+   Duck-canvas weave, buffalo check, stitched labels. Class names are the contract. */
+
+/* Subtle canvas weave layered over the element's own background-color */
+.tx-canvas {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(31, 26, 21, 0.035) 0 1px, transparent 1px 2px),
+    repeating-linear-gradient(90deg, rgba(31, 26, 21, 0.035) 0 1px, transparent 1px 2px);
+}
+
+/* Buffalo check: red / black, 14px blocks */
+.tx-plaid {
+  background-color: #A3271F;
+  background-image:
+    linear-gradient(90deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%),
+    linear-gradient(0deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%);
+  background-size: 28px 28px, 28px 28px;
+  background-position: 0 0, 0 0;
+}
+
+/* A 6px plaid band — use as a divider */
+.rule-plaid {
+  display: block;
+  width: 100%;
+  height: 6px;
+  background-color: #A3271F;
+  background-image:
+    linear-gradient(90deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%),
+    linear-gradient(0deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%);
+  background-size: 28px 28px, 28px 28px;
+}
+
+/* Dashed stitched inset outline inside a card or label */
+.tx-stitch {
+  outline: 1px dashed #B8A88C;
+  outline-offset: -6px;
+}
+
+/* Small woven label */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #D6C8B0;
+  border-radius: 0.375rem;
+  background: #EDE4D3;
+  color: #1F1A15;
+  font-family: var(--font-barlow);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Thin, light scrollbars in kraft and seam */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #c3d3da #f3f8fa;
+  scrollbar-color: #D6C8B0 #EDE4D3;
 }
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #f3f8fa; }
-::-webkit-scrollbar-thumb { background: #c3d3da; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #9fb4bd; }
+::-webkit-scrollbar-track { background: #EDE4D3; }
+::-webkit-scrollbar-thumb { background: #D6C8B0; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #B8A88C; }
 
 ::selection {
-  background: #f97316;
-  color: #ffffff;
+  background: #D9A21B;
+  color: #1F1A15;
 }
 
 /* ── Motion ────────────────────────────────────────────────────────────── */

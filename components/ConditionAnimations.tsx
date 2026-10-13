@@ -64,9 +64,9 @@ export function roadState(s: { tempC: number; precipMm: number; snowCm: number |
 }
 
 export function RoadAnim({ state, className = '' }: { state: RoadState; className?: string }) {
-  const asphalt = state === 'snow' ? '#dbe7ec' : state === 'wet' ? '#1d3540' : '#2f4a55'
-  const dash = state === 'snow' ? '#8fa8b3' : state === 'wet' ? '#e6f5f7' : '#ffe066'
-  const edge = state === 'snow' ? '#b8ccd4' : '#ffffff'
+  const asphalt = state === 'snow' ? '#E2D5BE' : state === 'wet' ? '#2B241E' : '#3A3129'
+  const dash = state === 'snow' ? '#8E7E6A' : state === 'wet' ? '#F5F0E6' : '#D9A21B'
+  const edge = state === 'snow' ? '#B8A88C' : '#F5F0E6'
   return (
     <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden
       className={`rr-anim block h-full w-full ${className}`}>
@@ -76,10 +76,10 @@ export function RoadAnim({ state, className = '' }: { state: RoadState; classNam
       <line x1="0" x2="200" y1="30" y2="30" stroke={dash} strokeWidth="3" strokeDasharray="16 14"
         style={{ animation: 'rr-dash 1.1s linear infinite' }} />
       {state === 'wet' && [38, 112, 164].map((x, i) => (
-        <ellipse key={i} cx={x} cy={36 - (i % 2) * 8} rx={14 + i * 3} ry="3.5" fill="#7dd3fc" opacity="0.35" />
+        <ellipse key={i} cx={x} cy={36 - (i % 2) * 8} rx={14 + i * 3} ry="3.5" fill="#5A8AA8" opacity="0.35" />
       ))}
       {state === 'snow' && [12, 48, 80, 118, 150, 186].map((x, i) => (
-        <circle key={i} cx={x} cy="-4" r={1.6 + (i % 3) * 0.5} fill="#ffffff"
+        <circle key={i} cx={x} cy="-4" r={1.6 + (i % 3) * 0.5} fill="#F5F0E6"
           style={{ animation: `rr-flake ${(2.2 + (i % 4) * 0.5).toFixed(1)}s linear infinite`, animationDelay: `${(-i * 0.6).toFixed(1)}s` }} />
       ))}
     </svg>
@@ -98,8 +98,8 @@ export function SunArc({ localTime, sunrise, sunset, className = '' }: { localTi
     <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden className={`block h-full w-full ${className}`}>
       <path d="M20 50 A80 80 0 0 1 180 50" fill="none" stroke="currentColor" strokeOpacity="0.25" strokeWidth="2" strokeDasharray="3 5" />
       <line x1="10" x2="190" y1="50" y2="50" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" />
-      <circle cx={x} cy={y} r="6" fill={up ? '#fbbf24' : '#94a3b8'} />
-      {up && <circle cx={x} cy={y} r="11" fill="#fbbf24" opacity="0.2" />}
+      <circle cx={x} cy={y} r="6" fill={up ? '#D9A21B' : '#8E7E6A'} />
+      {up && <circle cx={x} cy={y} r="11" fill="#D9A21B" opacity="0.2" />}
     </svg>
   )
 }

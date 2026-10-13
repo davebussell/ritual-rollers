@@ -4,25 +4,25 @@ export const CATEGORY_META: Record<SportCategory, { label: string; emoji: string
   wind: {
     label: 'Wind',
     emoji: '🪁',
-    color: '#06b6d4',
+    color: '#5B8A8F',
     sports: ['Kitesurfing', 'Windsurfing', 'Sailing', 'Paragliding'],
   },
   water: {
     label: 'Water',
     emoji: '🌊',
-    color: '#3b82f6',
+    color: '#3C6E8F',
     sports: ['Surfing', 'Swimming', 'Diving', 'Marinas & launches'],
   },
   mountain: {
     label: 'Mountain',
     emoji: '🏔️',
-    color: '#a855f7',
+    color: '#8B5A2B',
     sports: ['Ski & snowboard', 'Climbing', 'Mountain biking'],
   },
   river: {
     label: 'River',
     emoji: '🛶',
-    color: '#10b981',
+    color: '#3F5A42',
     sports: ['Kayak & canoe', 'Whitewater', 'Boat launches'],
   },
 }
