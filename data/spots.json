@@ -77,27 +77,6 @@
     "confidence": "high"
   },
   {
-    "name": "Across the Lake Swim (Okanagan Lake)",
-    "slug": "across-the-lake-swim-kelowna-bc",
-    "sports": [
-      "swim"
-    ],
-    "country": "CA",
-    "region": "British Columbia",
-    "nearestTown": "Kelowna",
-    "lat": 49.887,
-    "lng": -119.499,
-    "venueType": "2.1 km lake crossing",
-    "bestMonths": [
-      "Jul"
-    ],
-    "skill": "all",
-    "why": "Canada's largest and longest-running open-water swim, held since 1949 from West Kelowna to City Park with free pre-event clinics.",
-    "heads_up": "Self-start format; afternoon lake wind",
-    "source": "https://acrossthelakeswim.com/",
-    "confidence": "high"
-  },
-  {
     "name": "Adirondack High Peaks",
     "slug": "adirondack-high-peaks-new-york",
     "sports": [
@@ -129,7 +108,7 @@
       "mtb"
     ],
     "country": "MX",
-    "region": "Ciudad de Mexico",
+    "region": "Ciudad de México",
     "nearestTown": "Mexico City",
     "lat": 19.2075,
     "lng": -99.2581,
@@ -276,30 +255,6 @@
     "heads_up": "Snowboards not allowed; canyon road closes for avalanche control",
     "source": "https://www.alta.com/",
     "confidence": "high"
-  },
-  {
-    "name": "Alta Lake / Whistler",
-    "slug": "whistler-alta-lake-sup",
-    "sports": [
-      "sup"
-    ],
-    "country": "CA",
-    "region": "British Columbia",
-    "nearestTown": "Whistler",
-    "lat": 50.112,
-    "lng": -122.983,
-    "venueType": "alpine lake",
-    "bestMonths": [
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep"
-    ],
-    "skill": "beginner",
-    "why": "Whistler's summer SUP centre, with Alta Lake rentals and the River of Golden Dreams paddle.",
-    "heads_up": "Cold glacial water; afternoon wind on the lake",
-    "source": "https://www.whistler.com/activities/paddleboarding/",
-    "confidence": "medium"
   },
   {
     "name": "Alyeska",
@@ -608,13 +563,17 @@
     "lng": -106.949,
     "venueType": "resort",
     "bestMonths": [
-      "Dec",
       "Jan",
       "Feb",
-      "Mar"
+      "Mar",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Dec"
     ],
     "skill": "all",
-    "why": "Four mountains on one ticket, host of the X Games, with Highland Bowl among the most celebrated inbounds hikes in the country.",
+    "why": "Four mountains on one ticket, host of the X Games, with Highland Bowl among the most celebrated inbounds hikes in the country, and an IMBA Gold-level Ride Center with Snowmass Bike Park and 300+ miles of valley singletrack.",
     "heads_up": "Expensive; Highland Bowl requires a 45-minute bootpack",
     "source": "https://www.aspensnowmass.com/",
     "confidence": "high"
@@ -641,32 +600,6 @@
     "why": "The birthplace of Trout Unlimited and the Au Sable riverboat, famous for the Hex hatch and the 'Holy Waters' flies-only stretch.",
     "heads_up": "Night fishing for Hex; flies-only catch-and-release on the Holy Waters",
     "source": "https://www.michigan.gov/dnr/things-to-do/fishing",
-    "confidence": "medium"
-  },
-  {
-    "name": "Bacalar Lagoon",
-    "slug": "bacalar-quintana-roo-sup",
-    "sports": [
-      "sup"
-    ],
-    "country": "MX",
-    "region": "Quintana Roo",
-    "nearestTown": "Bacalar",
-    "lat": 18.676,
-    "lng": -88.39,
-    "venueType": "freshwater lagoon",
-    "bestMonths": [
-      "Nov",
-      "Dec",
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr"
-    ],
-    "skill": "beginner",
-    "why": "The 'Lagoon of Seven Colours', a motor-restricted 42 km freshwater lagoon that is Mexico's most established flatwater SUP destination.",
-    "heads_up": "No sunscreen in stromatolite zones; midday heat; afternoon wind",
-    "source": "https://www.visitmexico.com/en/quintana-roo/bacalar",
     "confidence": "medium"
   },
   {
@@ -2110,7 +2043,8 @@
     "name": "Burlington / Lake Champlain",
     "slug": "burlington-lake-champlain",
     "sports": [
-      "sail"
+      "sail",
+      "dive"
     ],
     "country": "US",
     "region": "Vermont",
@@ -2125,8 +2059,8 @@
       "Sep"
     ],
     "skill": "all",
-    "why": "Lake Champlain's community sailing centre and yacht club host the Regatta for Lake Champlain and Etchells fleets with the Adirondacks as backdrop.",
-    "heads_up": "Sudden lake squalls",
+    "why": "Lake Champlain's community sailing centre and yacht club host the Regatta for Lake Champlain and Etchells fleets, and the state-run Underwater Historic Preserves put moored canal boats, steamboats and the horse ferry within reach of divers.",
+    "heads_up": "Sudden lake squalls; low visibility and cold water for divers",
     "source": "https://lcyc.info/node/1460",
     "confidence": "medium"
   },
@@ -2173,13 +2107,13 @@
       "Nov",
       "Dec",
       "Jan",
-      "May",
-      "Jun",
       "Feb",
-      "Mar"
+      "Mar",
+      "May",
+      "Jun"
     ],
     "skill": "all",
-    "why": "Cabo's bay marine park (Pelican Rock, Sand Falls, Land's End) is minutes from the marina, with Gordo Banks hammerheads for advanced divers.",
+    "why": "The 'Marlin Capital of the World' (Bisbee's Black and Blue, Mexico's largest sportfishing fleet), finish of the Baja Ha-Ha cruisers' rally and a bay marine park (Pelican Rock, Sand Falls, Land's End) minutes from the marina.",
     "heads_up": "Hurricane season Aug-Oct; crowded marina; rough seas on the Pacific side",
     "source": "https://www.bisbees.com/",
     "confidence": "medium"
@@ -2250,17 +2184,10 @@
       "Jun",
       "Jul",
       "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr"
+      "Sep"
     ],
     "skill": "all",
-    "why": "Discovery Passage sites like Row and Be Damned and Steep Island draw divers for Steller sea lions and dense invertebrate life, with charter operators on both sides of the channel.",
+    "why": "The 'Salmon Capital of the World' and home of Roderick Haig-Brown, with Tyee Club rowing tradition and Discovery Passage chinook, plus current-swept dive sites like Row and Be Damned with Steller sea lions.",
     "heads_up": "Strong tidal currents; changing DFO salmon closures",
     "source": "https://www.campbellriver.travel/things-to-do/fishing",
     "confidence": "medium"
@@ -3296,7 +3223,7 @@
       "Sep"
     ],
     "skill": "all",
-    "why": "Original home of the Mountain Bike Hall of Fame with alpine classics 401, Doctor Park and Teocalli Ridge and the Evolution Bike Park.",
+    "why": "Extreme Limits terrain gave birth to US freeskiing competition, and the town is the home of the Mountain Bike Hall of Fame with alpine classics 401, Doctor Park and Teocalli Ridge.",
     "heads_up": "High altitude; snow lingers on upper trails into July",
     "source": "https://www.skicb.com/",
     "confidence": "high"
@@ -3708,30 +3635,6 @@
     "confidence": "medium"
   },
   {
-    "name": "Desolation Wilderness / Lake Tahoe",
-    "slug": "desolation-wilderness-tahoe-california",
-    "sports": [
-      "hike"
-    ],
-    "country": "US",
-    "region": "California",
-    "nearestTown": "South Lake Tahoe",
-    "lat": 38.952,
-    "lng": -120.113,
-    "venueType": "granite alpine wilderness / rim trail",
-    "bestMonths": [
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct"
-    ],
-    "skill": "all",
-    "why": "Eagle Lake, Lake Aloha and the Tahoe Rim Trail make Tahoe's west shore the most popular wilderness hiking in Northern California.",
-    "heads_up": "Day-use permits at Eagle Falls; overnight quotas",
-    "source": "https://www.fs.usda.gov/recarea/ltbmu/recarea/?recid=11867",
-    "confidence": "medium"
-  },
-  {
     "name": "Devil's Den",
     "slug": "devils-den-florida",
     "sports": [
@@ -4065,32 +3968,6 @@
     "confidence": "medium"
   },
   {
-    "name": "East Cape (Los Barriles)",
-    "slug": "east-cape-los-barriles-baja",
-    "sports": [
-      "fish"
-    ],
-    "country": "MX",
-    "region": "Baja California Sur",
-    "nearestTown": "Los Barriles / Buena Vista",
-    "lat": 23.683,
-    "lng": -109.699,
-    "venueType": "beach and panga fishery",
-    "bestMonths": [
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct"
-    ],
-    "skill": "all",
-    "why": "The roosterfish-from-the-beach capital and a classic Sea of Cortez panga fishery for dorado, tuna and marlin with historic hotels like Rancho Leonero.",
-    "heads_up": "Heat and hurricanes in late summer; El Norte winds in winter",
-    "source": "https://www.flywatertravel.com/destinations/mexico/baja/east-cape-baja",
-    "confidence": "medium"
-  },
-  {
     "name": "Edgartown",
     "slug": "edgartown-massachusetts",
     "sports": [
@@ -4169,7 +4046,7 @@
       "wing"
     ],
     "country": "MX",
-    "region": "Yucatan",
+    "region": "Yucatán",
     "nearestTown": "El Cuyo",
     "lat": 21.514,
     "lng": -87.68,
@@ -4436,32 +4313,6 @@
     "heads_up": "Wind arrives midday; nearest services are small",
     "source": "https://visittheoregoncoast.com/cities/langlois/activities/floras-lake-windsurfing-kiteboarding",
     "confidence": "high"
-  },
-  {
-    "name": "Florida Keys (Islamorada)",
-    "slug": "florida-keys-islamorada",
-    "sports": [
-      "fish"
-    ],
-    "country": "US",
-    "region": "Florida",
-    "nearestTown": "Islamorada",
-    "lat": 24.924,
-    "lng": -80.628,
-    "venueType": "saltwater flats",
-    "bestMonths": [
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Sep",
-      "Oct"
-    ],
-    "skill": "advanced",
-    "why": "The 'Sport Fishing Capital of the World' and the birthplace of flats fly fishing for bonefish, tarpon and permit, with the deepest guide bench anywhere.",
-    "heads_up": "Expensive guides booked a year ahead; wind; cold fronts in winter",
-    "source": "https://www.fla-keys.com/islamorada/fishing/",
-    "confidence": "medium"
   },
   {
     "name": "Flower Garden Banks",
@@ -4966,30 +4817,6 @@
     "why": "Canada's premier XC site, 1,200 m above the Columbia Valley, host of the Canadian Nationals and the Willi Muller XC Challenge.",
     "heads_up": "Strong thermals and long glides into a narrow valley; FSR drive to launch; landing restrictions",
     "source": "https://www.tourismgolden.com/paragliding",
-    "confidence": "high"
-  },
-  {
-    "name": "Golden / Kicking Horse",
-    "slug": "golden-bc",
-    "sports": [
-      "mtb"
-    ],
-    "country": "CA",
-    "region": "British Columbia",
-    "nearestTown": "Golden",
-    "lat": 51.2892,
-    "lng": -117.0586,
-    "venueType": "lift-served bike park and trail network",
-    "bestMonths": [
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep"
-    ],
-    "skill": "advanced",
-    "why": "Kicking Horse gondola-served descents plus Mount 7 and the Moonraker trails make Golden a Rockies downhill and enduro hub.",
-    "heads_up": "Very steep, rocky DH terrain; short season",
-    "source": "https://en.wikipedia.org/wiki/Kicking_Horse_Resort",
     "confidence": "high"
   },
   {
@@ -5857,7 +5684,8 @@
     "name": "Holbox",
     "slug": "holbox-quintana-roo",
     "sports": [
-      "kite"
+      "kite",
+      "fish"
     ],
     "country": "MX",
     "region": "Quintana Roo",
@@ -5866,17 +5694,20 @@
     "lng": -87.35,
     "venueType": "shallow island flats",
     "bestMonths": [
-      "Nov",
-      "Dec",
       "Jan",
       "Feb",
       "Mar",
       "Apr",
-      "May"
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Nov",
+      "Dec"
     ],
-    "skill": "beginner",
-    "why": "Car-free island with IKO schools teaching since 2005 on the standing-depth flats at Playa Las Nubes and boat trips to Punta Mosquito for foilers.",
-    "heads_up": "Ferry access; unreliable wind in late summer",
+    "skill": "all",
+    "why": "Car-free island with IKO kite schools on the standing-depth flats at Playa Las Nubes since 2005, and the Yucatan's giant migratory tarpon fishery with 100-plus pound fish offshore each summer.",
+    "heads_up": "Ferry access; unreliable wind in late summer; summer rain and hurricane season for tarpon",
     "source": "https://app.ikointl.com/school/mexico/holbox/kukulkite",
     "confidence": "high"
   },
@@ -5974,18 +5805,18 @@
     "lng": -121.509,
     "venueType": "river gorge",
     "bestMonths": [
+      "Apr",
+      "May",
       "Jun",
       "Jul",
       "Aug",
       "Sep",
-      "Apr",
-      "May",
       "Oct"
     ],
     "skill": "all",
     "why": "The Columbia Gorge's thermal westerlies against the river current made Hood River the windsurfing capital of the world in the 1980s and it remains the mainland hub for kite, wing and foil brands, schools and events.",
-    "heads_up": "30+ knot wind and ship traffic; leash and PFD required; shuttle logistics",
-    "source": "https://www.totalsup.com/events/hood-river-gorge-paddle-challenge-2019/",
+    "heads_up": "Strong current and barge traffic; nukes to 30+ kn on big days; leash and PFD for downwinders",
+    "source": "https://www.cgwa.net",
     "confidence": "high"
   },
   {
@@ -6293,30 +6124,6 @@
     "confidence": "high"
   },
   {
-    "name": "Isla Holbox",
-    "slug": "isla-holbox-quintana-roo",
-    "sports": [
-      "fish"
-    ],
-    "country": "MX",
-    "region": "Quintana Roo",
-    "nearestTown": "Holbox / Chiquilá",
-    "lat": 21.523,
-    "lng": -87.378,
-    "venueType": "migratory tarpon fishery",
-    "bestMonths": [
-      "May",
-      "Jun",
-      "Jul",
-      "Aug"
-    ],
-    "skill": "intermediate",
-    "why": "The Yucatan's giant migratory tarpon fishery, with 100-plus pound fish offshore in summer and baby tarpon in the lagoons year-round.",
-    "heads_up": "Summer rain and hurricane season; ferry access only; 12-weight rods",
-    "source": "https://www.aardvarkmcleod.com/destination/isla-holbox/",
-    "confidence": "high"
-  },
-  {
     "name": "Isla Mujeres (whale sharks, MUSA)",
     "slug": "isla-mujeres-quintana-roo",
     "sports": [
@@ -6341,59 +6148,38 @@
     "confidence": "high"
   },
   {
-    "name": "Islamorada (Alligator Reef, Eagle wreck)",
-    "slug": "islamorada-florida",
+    "name": "Islamorada",
+    "slug": "islamorada-florida-keys",
     "sports": [
+      "kite",
+      "wing",
+      "fish",
       "dive"
     ],
     "country": "US",
     "region": "Florida",
     "nearestTown": "Islamorada",
-    "lat": 24.8509,
-    "lng": -80.6193,
-    "venueType": "coral reef and wrecks",
+    "lat": 24.924,
+    "lng": -80.628,
+    "venueType": "Keys flats, reef and sound-side launch",
     "bestMonths": [
+      "Jan",
+      "Feb",
+      "Mar",
       "Apr",
       "May",
       "Jun",
       "Jul",
       "Aug",
       "Sep",
-      "Oct"
-    ],
-    "skill": "all",
-    "why": "Core Upper Keys dive town with Alligator Reef lighthouse, the Eagle wreck and Davis Reef, served by multiple long-running charter operators.",
-    "heads_up": "Current on the Eagle; boat traffic",
-    "source": "https://www.fla-keys.com/diving/",
-    "confidence": "medium"
-  },
-  {
-    "name": "Islamorada (Whale Harbor)",
-    "slug": "islamorada-florida-keys",
-    "sports": [
-      "kite",
-      "wing"
-    ],
-    "country": "US",
-    "region": "Florida",
-    "nearestTown": "Islamorada",
-    "lat": 24.938,
-    "lng": -80.615,
-    "venueType": "ocean-side flats",
-    "bestMonths": [
       "Oct",
       "Nov",
-      "Dec",
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May"
+      "Dec"
     ],
     "skill": "all",
-    "why": "The Keys' flagship kite and wing launch at MM 83.5, host of the Wind Games race around Alligator Reef, with Anne's Beach as the beginner alternative.",
-    "heads_up": "Tight beach and $10 launch fee; boat traffic",
-    "source": "https://keysweekly.com/42/wind-games-bring-kiteboarders-wing-foilers-to-islamorada-this-weekend",
+    "why": "The 'Sport Fishing Capital of the World' and birthplace of flats fly fishing, the Keys' flagship kite and wing launch at Whale Harbor (Wind Games), and Alligator Reef and the Eagle wreck for divers, all from one town.",
+    "heads_up": "Guides book a year ahead; tight kite launch with $10 fee; current on the Eagle",
+    "source": "https://www.fla-keys.com/islamorada/fishing/",
     "confidence": "high"
   },
   {
@@ -6416,8 +6202,8 @@
       "Sep"
     ],
     "skill": "all",
-    "why": "Ten major wrecks including the Emperor, America and Kamloops in a national park, regarded as the finest cold-water wreck diving in the Great Lakes.",
-    "heads_up": "Remote; permit from the park; depths to 200 ft; near-freezing water",
+    "why": "The Greenstone Ridge is the classic 40-mile traverse of the least-visited national park, and ten major wrecks (Emperor, America, Kamloops) make it the finest cold-water wreck diving in the Great Lakes.",
+    "heads_up": "Ferry or seaplane access only; dive permit from the park; near-freezing water",
     "source": "https://www.nps.gov/isro/planyourvisit/hiking.htm",
     "confidence": "medium"
   },
@@ -6478,8 +6264,7 @@
     "slug": "jackson-hole-wyoming",
     "sports": [
       "ski",
-      "paraglide",
-      "mtb"
+      "paraglide"
     ],
     "country": "US",
     "region": "Wyoming",
@@ -6498,9 +6283,9 @@
       "Aug",
       "Sep"
     ],
-    "skill": "all",
-    "why": "Tram-accessed 4,000 ft vertical launch at Jackson Hole Mountain Resort with Jackson Hole Paragliding running tandems, instruction and the Jackson Hole Paragliding Club.",
-    "heads_up": "Summer tram season only (mid-May to early Oct); high altitude and strong midday conditions; resort rules",
+    "skill": "advanced",
+    "why": "4,139 ft of continuous vertical, Corbet's Couloir and a tram-served alpine with open-gate backcountry make it North America's benchmark big-mountain resort; the same tram serves a 4,000 ft paragliding launch in summer.",
+    "heads_up": "Steep terrain and serious avalanche exposure beyond the gates; summer tram season only for flying",
     "source": "https://www.jacksonhole.com/",
     "confidence": "high"
   },
@@ -6815,36 +6600,9 @@
       "Oct"
     ],
     "skill": "all",
-    "why": "Oahu's windsport hub: steady trades over a sandy bay with multiple schools and rental outfits teaching kite, wing and windsurf from the same beach.",
-    "heads_up": "Trade winds push offshore; no landing on Moku Nui's back side; parking rules",
+    "why": "Oahu's windsport hub: steady trades over a sandy bay with multiple schools and rental outfits teaching kite, wing and windsurf from the same beach, plus the classic paddle out to the Mokulua islets.",
+    "heads_up": "Launch zones regulated; trades push offshore; no landing on Moku Nui's back side",
     "source": "https://kitejungle.com/kite-places/hawaii",
-    "confidence": "high"
-  },
-  {
-    "name": "Kalalau Trail (Nā Pali Coast)",
-    "slug": "kalalau-trail-kauai",
-    "sports": [
-      "hike"
-    ],
-    "country": "US",
-    "region": "Hawaii",
-    "nearestTown": "Hanalei",
-    "lat": 22.2203,
-    "lng": -159.5826,
-    "venueType": "coastal cliff trail",
-    "bestMonths": [
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct"
-    ],
-    "skill": "advanced",
-    "why": "The 11-mile Kalalau Trail along the Nā Pali cliffs is Hawaii's most famous and most permit-restricted hike.",
-    "heads_up": "Hāʻena State Park entry and camping permits; Crawler's Ledge exposure and flash floods",
-    "source": "https://dlnr.hawaii.gov/dsp/parks/kauai/napali-coast-state-wilderness-park/",
     "confidence": "high"
   },
   {
@@ -7234,7 +6992,7 @@
     "confidence": "high"
   },
   {
-    "name": "Kicking Horse",
+    "name": "Kicking Horse / Golden",
     "slug": "kicking-horse-bc",
     "sports": [
       "ski",
@@ -7249,11 +7007,15 @@
     "bestMonths": [
       "Jan",
       "Feb",
-      "Mar"
+      "Mar",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep"
     ],
     "skill": "advanced",
-    "why": "Champagne-powder bowls, 85 inbounds chutes and the highest proportion of expert terrain of any Canadian resort.",
-    "heads_up": "Mostly black terrain; limited beginner options",
+    "why": "Champagne-powder bowls, 85 inbounds chutes and the highest proportion of expert terrain of any Canadian resort, plus gondola-served downhill and the Mount 7 and Moonraker trails that make Golden a Rockies enduro hub.",
+    "heads_up": "Mostly black terrain; limited beginner options; short bike-park season",
     "source": "https://kickinghorseresort.com/",
     "confidence": "medium"
   },
@@ -7454,8 +7216,8 @@
       "Oct"
     ],
     "skill": "all",
-    "why": "Dozens of 19th-century wrecks (Wolfe Islander II, Munson, Comet) at the head of the St. Lawrence, long considered one of the best freshwater wreck-diving centres in the world.",
-    "heads_up": "Cold freshwater; boat charters needed; some deep wrecks",
+    "why": "The 1976 Olympic sailing venue and self-styled Freshwater Sailing Capital of the World (CORK hosts 1,000+ boats a season), with dozens of 19th-century wrecks (Wolfe Islander II, Munson, Comet) off the harbour for divers.",
+    "heads_up": "Lake Ontario chop; cold water; boat charters needed for the wrecks",
     "source": "https://www.cork.org/looking-for-a-venue/",
     "confidence": "high"
   },
@@ -7830,7 +7592,8 @@
     "name": "Laguna Bacalar",
     "slug": "laguna-bacalar-quintana-roo",
     "sports": [
-      "kayak"
+      "kayak",
+      "sup"
     ],
     "country": "MX",
     "region": "Quintana Roo",
@@ -7847,9 +7610,9 @@
       "Apr"
     ],
     "skill": "beginner",
-    "why": "The Lagoon of Seven Colours, with cenotes and stromatolites, paddled from lakeside balnearios and rental docks.",
-    "heads_up": "Protect stromatolites; midday heat",
-    "source": "https://www.visitmexico.com",
+    "why": "The 'Lagoon of Seven Colours', a motor-restricted 42 km freshwater lagoon with cenotes and stromatolites, paddled by SUP and kayak from lakeside balnearios and rental docks; Mexico's most established flatwater paddling destination.",
+    "heads_up": "No sunscreen in stromatolite zones; midday heat; afternoon wind",
+    "source": "https://www.visitmexico.com/en/quintana-roo/bacalar",
     "confidence": "medium"
   },
   {
@@ -7877,30 +7640,6 @@
     "why": "The Lower Laguna Madre is the US's premier redfish and seatrout sight-fishing flat, with a dedicated skiff-guide culture.",
     "heads_up": "Wind; shallow prop-scar restrictions; summer heat",
     "source": "https://tpwd.texas.gov/fishboat/fish/recreational/lakes/laguna_madre/",
-    "confidence": "medium"
-  },
-  {
-    "name": "Lake Champlain Underwater Historic Preserves",
-    "slug": "lake-champlain-vermont",
-    "sports": [
-      "dive"
-    ],
-    "country": "US",
-    "region": "Vermont",
-    "nearestTown": "Burlington",
-    "lat": 44.4759,
-    "lng": -73.2121,
-    "venueType": "freshwater wreck preserve",
-    "bestMonths": [
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep"
-    ],
-    "skill": "intermediate",
-    "why": "A state-run preserve system with moored canal boats, steamboats and the horse ferry, managed with the Lake Champlain Maritime Museum.",
-    "heads_up": "Low visibility, cold; registration with the preserve program",
-    "source": "https://www.lcmm.org/",
     "confidence": "medium"
   },
   {
@@ -8053,11 +7792,12 @@
     "confidence": "medium"
   },
   {
-    "name": "Lake Tahoe (Emerald Bay)",
+    "name": "Lake Tahoe / Emerald Bay & Desolation Wilderness",
     "slug": "lake-tahoe-emerald-bay",
     "sports": [
       "dive",
-      "kayak"
+      "kayak",
+      "hike"
     ],
     "country": "US",
     "region": "California",
@@ -8069,39 +7809,14 @@
       "Jun",
       "Jul",
       "Aug",
-      "Sep"
-    ],
-    "skill": "all",
-    "why": "California's first underwater maritime heritage trail, with sunken barges and launches in Emerald Bay State Park at 6,200 ft in famously clear water.",
-    "heads_up": "Afternoon wind and cold 50°F water; aquatic-invasive inspections",
-    "source": "https://www.parks.ca.gov/?page_id=506",
-    "confidence": "medium"
-  },
-  {
-    "name": "Lake Tahoe (Tahoe Rim / Flume Trail)",
-    "slug": "lake-tahoe-california",
-    "sports": [
-      "swim",
-      "mtb"
-    ],
-    "country": "US",
-    "region": "Nevada",
-    "nearestTown": "Incline Village",
-    "lat": 39.1983,
-    "lng": -119.9307,
-    "venueType": "alpine trail network",
-    "bestMonths": [
-      "Jul",
-      "Aug",
-      "Jun",
       "Sep",
       "Oct"
     ],
-    "skill": "intermediate",
-    "why": "Host of the Trans Tahoe Relay since 1976 and a hub for length-of-lake marathon swims, with crystal water at 6,200 ft.",
-    "heads_up": "TRT sections alternate even/odd days for bikes; shuttle logistics",
-    "source": "https://www.swimmingworldmagazine.com/news/trans-tahoe-relay-2025-results-recap-top-teams-rivalries-and-whats-next",
-    "confidence": "high"
+    "skill": "all",
+    "why": "Emerald Bay anchors the Lake Tahoe Water Trail and California's first underwater maritime heritage trail, and the Eagle Lake, Lake Aloha and Tahoe Rim trails above it are the most popular wilderness hiking in Northern California.",
+    "heads_up": "Afternoon wind and cold 50F water; day-use permits at Eagle Falls, overnight quotas",
+    "source": "https://www.parks.ca.gov/?page_id=506",
+    "confidence": "medium"
   },
   {
     "name": "Lake Tahoe / Kings Beach and Sand Harbor",
@@ -8125,6 +7840,32 @@
     "why": "Host of Ta-Hoe Nalu, the world's oldest SUP race (since 2007), and the Thunderbird Paddling Festival at Sand Harbor.",
     "heads_up": "Altitude (6,200 ft); cold water; afternoon wind; AIS inspection for boards",
     "source": "https://www.supconnect.com/news/world-s-oldest-sup-race-celebrates-12th-annual-event",
+    "confidence": "high"
+  },
+  {
+    "name": "Lake Tahoe East Shore (Sand Harbor / Flume Trail)",
+    "slug": "lake-tahoe-california",
+    "sports": [
+      "swim",
+      "mtb"
+    ],
+    "country": "US",
+    "region": "Nevada",
+    "nearestTown": "Incline Village",
+    "lat": 39.1983,
+    "lng": -119.9307,
+    "venueType": "alpine lake and trail network",
+    "bestMonths": [
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct"
+    ],
+    "skill": "intermediate",
+    "why": "Host of the Trans Tahoe Relay since 1976 and a hub for length-of-lake marathon swims, with the Flume Trail and bike-legal Tahoe Rim Trail sections above Sand Harbor as bucket-list rides.",
+    "heads_up": "Altitude (6,200 ft); 55-62F water; TRT bike days alternate even/odd",
+    "source": "https://www.swimmingworldmagazine.com/news/trans-tahoe-relay-2025-results-recap-top-teams-rivalries-and-whats-next",
     "confidence": "high"
   },
   {
@@ -8621,8 +8362,12 @@
     "nearestTown": "Loreto",
     "lat": 26.011,
     "lng": -111.341,
-    "venueType": "island panga fishery",
+    "venueType": "island marine park and panga fishery",
     "bestMonths": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
       "May",
       "Jun",
       "Jul",
@@ -8630,25 +8375,22 @@
       "Sep",
       "Oct",
       "Nov",
-      "Dec",
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr"
+      "Dec"
     ],
     "skill": "all",
-    "why": "Multi-day paddling around Isla Danzante and Isla Carmen in Loreto Bay National Marine Park, with blue whales in winter and operators running since the 1980s.",
-    "heads_up": "Summer heat; marine park regulations; wind in winter",
-    "source": "https://www.frommers.com/destinations/loreto/active-pursuits/water-sports",
+    "why": "The dorado capital of Baja and a UNESCO marine park of five islands, with a decades-old panga guide fleet, established dive shops and multi-day sea-kayak operators running since the 1980s.",
+    "heads_up": "Norte winds Dec-Feb; summer heat; marine park regulations",
+    "source": "https://www.visitloreto.com/fishing",
     "confidence": "high"
   },
   {
-    "name": "Los Barriles",
+    "name": "Los Barriles / East Cape",
     "slug": "los-barriles-baja",
     "sports": [
       "kite",
       "windsurf",
-      "wing"
+      "wing",
+      "fish"
     ],
     "country": "MX",
     "region": "Baja California Sur",
@@ -8657,15 +8399,21 @@
     "lng": -109.695,
     "venueType": "bay beach",
     "bestMonths": [
-      "Nov",
-      "Dec",
       "Jan",
       "Feb",
-      "Mar"
+      "Mar",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
     ],
     "skill": "all",
-    "why": "The East Cape's original windsurf town (since the 1980s) and host of the Lord of the Wind kite and windsurf competition each January.",
-    "heads_up": "Shore break on big north days",
+    "why": "The East Cape's original windsurf town (since the 1980s), host of the Lord of the Wind kite and windsurf competition each January, and the roosterfish-from-the-beach capital with a classic Sea of Cortez panga fleet in summer.",
+    "heads_up": "Shore break on big north days; heat and hurricanes in late summer",
     "source": "https://www.sailingscuttlebutt.com/2016/02/22/lord-of-the-wind-2016-the-movie/",
     "confidence": "high"
   },
@@ -8693,7 +8441,7 @@
     ],
     "skill": "all",
     "why": "Mexico City's home crag with roughly 250 routes on Cerro Coconetla and forested hiking along the Magdalena river.",
-    "heads_up": "Altitude (2,900 m+); weekend crowds; rainy season Jun–Sep",
+    "heads_up": "Altitude (2,900 m+); weekend crowds; rainy season Jun-Sep",
     "source": "https://www.mountainproject.com/area/106027616/los-dinamos",
     "confidence": "medium"
   },
@@ -9827,7 +9575,7 @@
       "Sep"
     ],
     "skill": "all",
-    "why": "Longest-running UCI Mountain Bike World Cup venue in the world, with brutal rock-garden downhill and XC courses riders can lap on the gondola.",
+    "why": "Quebec City's premier mountain, host of World Cup skiing and the longest-running UCI Mountain Bike World Cup venue in the world, with gondola-lapped rock-garden downhill.",
     "heads_up": "Rocky, technical DH; limited beginner terrain",
     "source": "https://mont-sainte-anne.com/",
     "confidence": "high"
@@ -10100,29 +9848,6 @@
     "confidence": "high"
   },
   {
-    "name": "Mount Hood / Timberline Trail",
-    "slug": "mount-hood-timberline-oregon",
-    "sports": [
-      "hike"
-    ],
-    "country": "US",
-    "region": "Oregon",
-    "nearestTown": "Government Camp",
-    "lat": 45.331,
-    "lng": -121.711,
-    "venueType": "volcano circumnavigation trail",
-    "bestMonths": [
-      "Jul",
-      "Aug",
-      "Sep"
-    ],
-    "skill": "intermediate",
-    "why": "The 40-mile Timberline Trail around Mount Hood is Oregon's classic multi-day loop, starting at the historic Timberline Lodge.",
-    "heads_up": "Glacial river fords; snow lingers into July",
-    "source": "https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53316",
-    "confidence": "medium"
-  },
-  {
     "name": "Mount Lemmon",
     "slug": "mount-lemmon-arizona",
     "sports": [
@@ -10329,7 +10054,8 @@
     "name": "Mt. Hood (Timberline & Meadows)",
     "slug": "mt-hood-oregon",
     "sports": [
-      "ski"
+      "ski",
+      "hike"
     ],
     "country": "US",
     "region": "Oregon",
@@ -10343,11 +10069,12 @@
       "Mar",
       "Jun",
       "Jul",
-      "Aug"
+      "Aug",
+      "Sep"
     ],
     "skill": "all",
-    "why": "Timberline runs North America's only near year-round lift skiing on the Palmer snowfield, the home of summer race and freestyle camps.",
-    "heads_up": "Summer skiing is mornings only; Pacific NW rain at lower elevations",
+    "why": "Timberline runs North America's only near year-round lift skiing on the Palmer snowfield (home of summer race and freestyle camps), and the 40-mile Timberline Trail circles the volcano from the lodge.",
+    "heads_up": "Summer skiing is mornings only; glacial river fords on the Timberline Trail",
     "source": "https://www.timberlinelodge.com/",
     "confidence": "high"
   },
@@ -10380,10 +10107,11 @@
     "confidence": "medium"
   },
   {
-    "name": "Na Pali Coast",
+    "name": "Nā Pali Coast / Kalalau Trail",
     "slug": "na-pali-coast-kauai",
     "sports": [
-      "kayak"
+      "kayak",
+      "hike"
     ],
     "country": "US",
     "region": "Hawaii",
@@ -10392,17 +10120,19 @@
     "lng": -159.576,
     "venueType": "open-ocean sea cliffs",
     "bestMonths": [
+      "Apr",
       "May",
       "Jun",
       "Jul",
       "Aug",
-      "Sep"
+      "Sep",
+      "Oct"
     ],
     "skill": "advanced",
-    "why": "The 17-mile Haena-to-Polihale run under 3,000-foot cliffs is regarded as the premier sea-kayak day trip in the US, run by permitted Kauai outfitters in summer only.",
-    "heads_up": "Summer-only (winter swell); long exposed day with surf landings",
-    "source": "https://www.kayakkauai.com",
-    "confidence": "medium"
+    "why": "The 11-mile Kalalau Trail along the Nā Pali cliffs is Hawaii's most famous and most permit-restricted hike, and the summer-only 17-mile Haena-to-Polihale paddle beneath the same cliffs is regarded as the premier sea-kayak day trip in the US.",
+    "heads_up": "Hāʻena State Park entry and camping permits; Crawler's Ledge exposure; kayaking summer-only with surf landings",
+    "source": "https://dlnr.hawaii.gov/dsp/parks/kauai/napali-coast-state-wilderness-park/",
+    "confidence": "high"
   },
   {
     "name": "Nahanni River",
@@ -10613,20 +10343,20 @@
     "nearestTown": "Fayetteville",
     "lat": 38.064,
     "lng": -81.067,
-    "venueType": "Nuttall sandstone cliffs",
+    "venueType": "sandstone cliffs and class III-IV gorge",
     "bestMonths": [
       "Apr",
       "May",
       "Jun",
+      "Jul",
+      "Aug",
       "Sep",
       "Oct",
-      "Nov",
-      "Jul",
-      "Aug"
+      "Nov"
     ],
     "skill": "intermediate",
-    "why": "National park river with a dozen outfitters based in Fayetteville; the Lower New's big-volume class III-IV rapids are the East's most-rafted summer run.",
-    "heads_up": "High spring flows push it to class V; crowded summer weekends",
+    "why": "Over 1,600 hard sandstone trad and sport routes on Endless Wall plus the Lower New's big-volume class III-IV, the East's most-rafted summer run, all based from Fayetteville.",
+    "heads_up": "High spring flows push the river to class V; stiff climbing grades; crowded summer weekends",
     "source": "https://www.nps.gov/neri/planyourvisit/rock-climbing.htm",
     "confidence": "medium"
   },
@@ -11043,7 +10773,8 @@
     "name": "Okanagan Lake / Kelowna",
     "slug": "kelowna-okanagan-sup",
     "sports": [
-      "sup"
+      "sup",
+      "swim"
     ],
     "country": "CA",
     "region": "British Columbia",
@@ -11057,11 +10788,11 @@
       "Aug",
       "Sep"
     ],
-    "skill": "beginner",
-    "why": "BC's warm-water SUP destination, with the Kelowna Paddle Centre and a long lakeshore of rental outfitters.",
+    "skill": "all",
+    "why": "BC's warm-water paddling destination with the Kelowna Paddle Centre and a lakeshore of rental outfitters, and host of the Across the Lake Swim, Canada's largest and longest-running open-water swim (since 1949).",
     "heads_up": "Afternoon wind and chop; boat traffic near marinas",
-    "source": "https://www.tourismkelowna.com/things-to-do/outdoor-adventure/paddling/",
-    "confidence": "medium"
+    "source": "https://acrossthelakeswim.com/",
+    "confidence": "high"
   },
   {
     "name": "Old Rag / Shenandoah",
@@ -11913,7 +11644,7 @@
       "kite"
     ],
     "country": "MX",
-    "region": "Yucatan",
+    "region": "Yucatán",
     "nearestTown": "Progreso",
     "lat": 21.283,
     "lng": -89.663,
@@ -12304,8 +12035,8 @@
       "Sep"
     ],
     "skill": "advanced",
-    "why": "Big-mountain enduro destination (Frisby Ridge, Mt Macpherson, Boulder Mountain) with a growing resort bike park.",
-    "heads_up": "High altitude, strong summer thermals; resort rules and lift hours",
+    "why": "5,620 ft of vertical, the most in North America, with resort, cat and heli skiing from a single base, plus big-mountain enduro trails (Frisby Ridge, Mt Macpherson) and a gondola-accessed paragliding launch.",
+    "heads_up": "Long runs with serious tree-well risk; strong summer thermals for pilots",
     "source": "https://www.revelstokemountainresort.com/",
     "confidence": "high"
   },
@@ -13762,30 +13493,6 @@
     "confidence": "high"
   },
   {
-    "name": "Snowmass / Roaring Fork Valley",
-    "slug": "snowmass-colorado",
-    "sports": [
-      "mtb"
-    ],
-    "country": "US",
-    "region": "Colorado",
-    "nearestTown": "Aspen",
-    "lat": 39.1956,
-    "lng": -106.9513,
-    "venueType": "lift-served bike park and trail network",
-    "bestMonths": [
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep"
-    ],
-    "skill": "all",
-    "why": "IMBA Gold-level Ride Center with Snowmass Bike Park and 300+ miles of valley singletrack.",
-    "heads_up": "Expensive lodging; altitude",
-    "source": "https://en.wikipedia.org/wiki/Snowmass_(ski_area)",
-    "confidence": "high"
-  },
-  {
     "name": "Snowshoe Bike Park",
     "slug": "snowshoe-west-virginia",
     "sports": [
@@ -14131,7 +13838,7 @@
     ],
     "skill": "all",
     "why": "Seattle's core powder mountain, night skiing, and a renowned lift-served bike park in summer.",
-    "heads_up": "Short season (July-Sept); weekend-only operations",
+    "heads_up": "US-2 pass closures and parking fills early; bike park runs July-Sept",
     "source": "https://www.stevenspass.com/",
     "confidence": "high"
   },
@@ -14357,8 +14064,8 @@
       "Sep"
     ],
     "skill": "all",
-    "why": "America's first destination ski resort (1936) and birthplace of the chairlift, with Bald Mountain's 3,400 ft of fall-line groomers.",
-    "heads_up": "Strong summer thermals and high altitude; resort lift schedule",
+    "why": "America's first destination ski resort (1936) and birthplace of the chairlift, with Bald Mountain's 3,400 ft of fall-line groomers, an IMBA Gold-level Ride Center and tandem flights off Baldy.",
+    "heads_up": "Low natural snowfall, relies on snowmaking; altitude and strong summer thermals",
     "source": "https://www.sunvalley.com/",
     "confidence": "high"
   },
@@ -14368,7 +14075,7 @@
     "sports": [
       "dive"
     ],
-    "country": "CA",
+    "country": "US",
     "region": "Washington",
     "nearestTown": "Hoodsport",
     "lat": 47.437,
@@ -14701,8 +14408,8 @@
       "Sep"
     ],
     "skill": "all",
-    "why": "Hosts the Telluride Festival of Flight and has a long-standing community flying from 12,000 ft Gold Hill into the box canyon.",
-    "heads_up": "Very high altitude; narrow valley with limited LZs; afternoon storms",
+    "why": "A box-canyon mining town with free gondola access to 4,400 ft of vertical and Palmyra Peak hike-to terrain, lift-served summer trails, and the Telluride Festival of Flight from 12,000 ft Gold Hill.",
+    "heads_up": "Remote: long drives or small-plane flights; narrow valley with limited LZs for pilots",
     "source": "https://www.tellurideskiresort.com/",
     "confidence": "high"
   },
@@ -14734,7 +14441,8 @@
     "name": "Teton Pass",
     "slug": "teton-pass-wyoming",
     "sports": [
-      "ski"
+      "ski",
+      "mtb"
     ],
     "country": "US",
     "region": "Wyoming",
@@ -14746,11 +14454,14 @@
       "Dec",
       "Jan",
       "Feb",
-      "Mar"
+      "Mar",
+      "Jul",
+      "Aug",
+      "Sep"
     ],
     "skill": "advanced",
-    "why": "The most famous roadside backcountry skiing in the US, with the Mount Glory bootpack straight from the summit parking lot.",
-    "heads_up": "Avalanche terrain, no patrol, lot fills by 7am on powder days",
+    "why": "The most famous roadside backcountry skiing in the US, with the Mount Glory bootpack from the summit lot, and in summer the Lithium, Jimmy's Mom and Black Canyon descents that anchor Jackson Hole mountain biking.",
+    "heads_up": "Avalanche terrain, no patrol, lot fills by 7am on powder days; steep exposed trails in grizzly country",
     "source": "https://tetonbackcountryalliance.org/",
     "confidence": "high"
   },
@@ -15468,7 +15179,7 @@
     "confidence": "medium"
   },
   {
-    "name": "Valle de Bravo (El Peñón)",
+    "name": "Valle de Bravo",
     "slug": "valle-de-bravo-mexico",
     "sports": [
       "paraglide",
@@ -15480,19 +15191,19 @@
     "nearestTown": "Valle de Bravo",
     "lat": 19.0616,
     "lng": -100.091,
-    "venueType": "mountain thermal launch",
+    "venueType": "mountain thermal launch and reservoir",
     "bestMonths": [
+      "Oct",
       "Nov",
       "Dec",
       "Jan",
       "Feb",
       "Mar",
-      "Oct",
       "Apr"
     ],
     "skill": "all",
-    "why": "Mexico's inland sailing capital: Club Nautico Avandaro and La Pena host J/24 North Americans, Hobie nationals and 300-boat regattas on a daily afternoon thermal.",
-    "heads_up": "Strong midday thermals at 2,300 m; busy launch in peak season; flying by permit via local club",
+    "why": "North America's winter XC paragliding capital (Monarca Open and Paragliding World Cup at El Peñón), Mexico's inland sailing capital with 300-boat regattas on the daily thermal, and the Monte Alto trail network for riders.",
+    "heads_up": "Altitude (1,800-2,300 m); thermals and wind only after noon; busy launch in peak season",
     "source": "https://pwca.events/2025-mexican-pre-world-cup-valle-de-bravo",
     "confidence": "high"
   },
@@ -15668,9 +15379,9 @@
       "Sep"
     ],
     "skill": "all",
-    "why": "The 2.4-mile swim that inspired the Ironman swim leg, run every Labor Day weekend since 1970 from Sans Souci to Duke Kahanamoku Beach.",
+    "why": "The cradle of modern surfing and of stand-up paddling, where beach boys have taught Queens and Canoes for over a century; the Waikiki Roughwater Swim (since 1970) inspired the Ironman swim leg.",
     "heads_up": "Very crowded; long paddle to outer breaks; reef underfoot",
-    "source": "https://waikikiroughwaterswim.com/",
+    "source": "https://www.gohawaii.com/islands/oahu/regions/honolulu/waikiki",
     "confidence": "high"
   },
   {
@@ -15882,7 +15593,8 @@
     "slug": "whistler-bc",
     "sports": [
       "ski",
-      "mtb"
+      "mtb",
+      "sup"
     ],
     "country": "CA",
     "region": "British Columbia",
@@ -15903,7 +15615,7 @@
       "Oct"
     ],
     "skill": "all",
-    "why": "The world's benchmark lift-served bike park (A-Line, Dirt Merchant, Top of the World) plus 250+ km of valley trails and Crankworx every summer.",
+    "why": "The largest ski resort in North America (2010 Olympic host, over a mile of vertical) and the world's benchmark lift-served bike park (A-Line, Dirt Merchant, Top of the World) with Crankworx every summer and Alta Lake paddling.",
     "heads_up": "Big crowds, coastal rain at the village in warm storms",
     "source": "https://www.whistlerblackcomb.com/",
     "confidence": "high"
