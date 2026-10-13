@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronUp, Plus, Compass, Wrench, Users } from 'lucide-react'
+import { ChevronUp, Plus, Compass, Wrench, Users, Map } from 'lucide-react'
 import ScoutSearch from '@/components/ScoutSearch'
 import { WaveAnim, WindAnim } from '@/components/ConditionAnimations'
 import { FEATURED_SPOTS, type FeaturedSpot } from '@/lib/featured-spots'
@@ -46,16 +46,29 @@ export default function HomeScout({ strip, teasers }: Props) {
             What&apos;s rideable <span className="text-orange-500">where you&apos;re headed?</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl font-body text-lg text-zinc-500">
-            Wind, water, mountain, river. Type any place and get the live read: what&apos;s on right now,
-            the best windows this week, and what to pack.
+            Every established wind, water, mountain and river spot in North America — matched to what you ride,
+            when you&apos;re going and who you&apos;re going with.
           </p>
-          <div className="mt-8"><ScoutSearch size="hero" /></div>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link href="/finder"
+              className="tx-stitch relative flex w-full items-center justify-center gap-2 rounded-md bg-orange-500 px-7 py-3.5 font-display text-xl font-bold uppercase tracking-wide text-white transition-all hover:bg-orange-400 active:scale-95 sm:w-auto">
+              <Compass className="h-5 w-5" strokeWidth={2.5} /> Find a ride
+            </Link>
+            <Link href="/crew"
+              className="tx-stitch relative flex w-full items-center justify-center gap-2 rounded-md bg-forest px-7 py-3.5 font-display text-xl font-bold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-95 sm:w-auto">
+              <Users className="h-5 w-5" strokeWidth={2.5} /> Find your crew
+            </Link>
+          </div>
+          <div className="mx-auto mt-6 max-w-xl">
+            <p className="mb-2 font-expedition text-[11px] uppercase tracking-[0.18em] text-zinc-500">or scout any place in North America</p>
+            <ScoutSearch size="compact" />
+          </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm">
+            <Link href="/spots" className="flex items-center gap-1.5 rounded-md px-3 py-1.5 font-body font-medium text-zinc-500 transition-colors hover:text-white">
+              <Map className="h-3.5 w-3.5" /> Browse the index
+            </Link>
             <Link href="/trips/new" className="flex items-center gap-1.5 rounded-md px-3 py-1.5 font-body font-medium text-zinc-500 transition-colors hover:text-white">
               <Plus className="h-3.5 w-3.5" /> Log a ride
-            </Link>
-            <Link href="/explore" className="flex items-center gap-1.5 rounded-md px-3 py-1.5 font-body font-medium text-zinc-500 transition-colors hover:text-white">
-              <Compass className="h-3.5 w-3.5" /> Read the stories
             </Link>
           </div>
         </div>
@@ -64,7 +77,7 @@ export default function HomeScout({ strip, teasers }: Props) {
         <section className="mt-16">
           <div className="flex items-end justify-between">
             <div>
-              <p className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Right now around the world</p>
+              <p className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Right now across North America</p>
               <h2 className="mt-1 font-display text-3xl font-bold uppercase tracking-[0.02em] text-white">
                 {firing > 0 ? `${firing} of ${strip.length} iconic spots are firing` : 'Live reads from iconic spots'}
               </h2>

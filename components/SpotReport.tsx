@@ -10,6 +10,8 @@ import { SampleNotice } from '@/components/SampleNotice'
 import { WaveAnim, WindAnim, RoadAnim, SunArc, roadState } from '@/components/ConditionAnimations'
 import { CATEGORY_META, fetchLocalSpots, type GeoPoint, type LocalSpot, type SportCategory } from '@/lib/local-sports'
 import type { SpotForecast } from '@/lib/forecast'
+import type { IndexedSpot } from '@/lib/spots-index'
+import { MONTHS } from '@/lib/spots-index'
 import {
   SPORTS, FAMILY_META, FAMILY_ORDER,
   allVerdicts, bestWindows, daySummaries,
@@ -33,6 +35,8 @@ interface Props {
   point: GeoPoint
   forecast: SpotForecast | null
   stories: StoryCard[]
+  index?: IndexedSpot          // present when this is an entry in the curated spot index
+  basePath?: '/scout' | '/spots'
 }
 
 const SITE = 'https://ritualrollers.com'
@@ -53,9 +57,9 @@ function windowLabel(w: WindowHit): string {
   return `${weekdayOf(w.start)} ${hourLabel(w.start)}–${hourLabel(w.end)}`
 }
 
-export default function SpotReport({ slug, point, forecast, stories }: Props) {
+export default function SpotReport({ slug, point, forecast, stories, index, basePath = '/scout' }: Props) {
   const flag = countryFlag(point.countryCode)
-  const shareUrl = `${SITE}/scout/${slug}`
+  const shareUrl = `${SITE}${basePath}/${slug}`
 
   const verdicts = useMemo(() => (forecast ? allVerdicts(forecast.current) : []), [forecast])
   const ranked = useMemo(
@@ -121,6 +125,33 @@ export default function SpotReport({ slug, point, forecast, stories }: Props) {
           <ScoutSearch size="compact" />
         </div>
       </div>
+
+      {/* About this spot — only for entries in the curated index */}
+      {index && (
+        <section className="tx-stitch relative mt-8 rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="max-w-2xl">
+              <div className="flex flex-wrap items-center gap-1.5">
+                {index.sports.map(id => (
+                  <span key={id} className="tag px-2 py-0.5 text-[10px] tracking-[0.14em]">{SPORTS.find(s => s.id === id)?.emoji} {SPORTS.find(s => s.id === id)?.label}</span>
+                ))}
+                <span className="font-expedition text-[11px] uppercase tracking-[0.18em] text-zinc-500">· {index.venueType} · base: {index.nearestTown}</span>
+              </div>
+              <p className="mt-3 font-body text-base text-white">{index.why}</p>
+              <p className="mt-2 font-body text-sm text-zinc-500"><span className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Heads up · </span>{index.heads_up}</p>
+            </div>
+            <div className="shrink-0">
+              <p className="font-expedition text-[11px] uppercase tracking-[0.18em] text-zinc-500">Season · suits {index.skill === 'all' ? 'every level' : `${index.skill}s`}</p>
+              <div className="mt-2 flex gap-1">
+                {MONTHS.map(m => (
+                  <span key={m} title={m} className={`h-6 w-4 rounded-sm text-center font-expedition text-[9px] leading-6 ${index.bestMonths.includes(m) ? 'bg-orange-500 text-white' : 'bg-zinc-800 text-zinc-500'}`}>{m[0]}</span>
+                ))}
+              </div>
+              <a href={index.source} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-expedition text-[10px] uppercase tracking-[0.14em] text-teal-700 hover:underline">Source ↗</a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {!forecast && (
         <div className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 text-sm text-zinc-400">

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import Logo from '@/components/Logo'
-import { Map, Upload, LogOut, User, Plus, BookOpen, Compass } from 'lucide-react'
+import { Map, LogOut, User, Plus, BookOpen, Compass, Users } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 
 export default function Navbar() {
@@ -67,26 +67,30 @@ export default function Navbar() {
 
         {/* Nav links */}
         <div className="flex items-center gap-1">
+          <NavLink href="/spots" active={pathname.startsWith('/spots')} icon={<Map className="h-3.5 w-3.5" />}>
+            Spots
+          </NavLink>
           <NavLink href="/scout" active={pathname.startsWith('/scout')} icon={<Compass className="h-3.5 w-3.5" />}>
             Scout
           </NavLink>
           <NavLink href="/explore" active={isActive('/explore') || isActive('/feed')} icon={<BookOpen className="h-3.5 w-3.5" />}>
             Stories
           </NavLink>
-          <NavLink href="/map" active={isActive('/map')} icon={<Map className="h-3.5 w-3.5" />}>
-            Map
-          </NavLink>
 
-          {/* Logging a ride is the contribution action — visible signed-in or out
-              (anonymous publishing is supported on /trips/new) */}
-          <Link href="/trips/new"
+          {/* The two primary actions: find a ride, find your crew */}
+          <Link href="/finder"
             className="tx-stitch ml-2 flex items-center gap-1.5 rounded-md bg-orange-500 px-3.5 py-2 font-display text-[14px] font-bold uppercase tracking-wide text-white transition-all hover:bg-orange-400 active:scale-95">
-            <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
-            Log a ride
+            <Compass className="h-3.5 w-3.5" strokeWidth={2.5} />
+            Find a ride
           </Link>
-          <Link href="/import" title="Import album"
-            className="ml-1 flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white">
-            <Upload className="h-3.5 w-3.5" />
+          <Link href="/crew"
+            className="tx-stitch ml-1.5 flex items-center gap-1.5 rounded-md bg-forest px-3.5 py-2 font-display text-[14px] font-bold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-95">
+            <Users className="h-3.5 w-3.5" strokeWidth={2.5} />
+            Find your crew
+          </Link>
+          <Link href="/trips/new" title="Log a ride"
+            className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white">
+            <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
           </Link>
 
           {user ? (

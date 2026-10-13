@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
-import { createClient } from '@/lib/supabase/server'
 import ScoutSearch from '@/components/ScoutSearch'
-import SpotReport, { type StoryCard } from '@/components/SpotReport'
+import SpotReport from '@/components/SpotReport'
 import { featuredBySlug } from '@/lib/featured-spots'
-import { fromSlug, geocodePlace, haversineKm, type GeoPoint } from '@/lib/local-sports'
+import { fromSlug, geocodePlace, type GeoPoint } from '@/lib/local-sports'
 import { fetchSpotForecast } from '@/lib/forecast'
+import { fetchStoriesNear } from '@/lib/stories-near'
 import { allVerdicts, type Status } from '@/lib/sports'
-import { isSampleTrip } from '@/lib/sample'
+import { isNorthAmerica } from '@/lib/spots-index'
 
 export const dynamic = 'force-dynamic'
 
-const STORY_RADIUS_KM = 400
 const STATUS_RANK: Record<Status, number> = { firing: 2, rideable: 1, quiet: 0 }
 
 async function resolvePlace(slug: string): Promise<GeoPoint | null> {
@@ -49,41 +48,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-async function fetchStories(point: GeoPoint): Promise<StoryCard[]> {
-  const supabase = await createClient()
-  const { data } = await supabase
-    .from('trips')
-    .select('id,title,upvotes_count,profiles!trips_owner_id_fkey(username),trip_photos!trip_photos_trip_id_fkey(storage_path,lat,lng,sequence_order)')
-    .eq('is_public', true)
-    .order('upvotes_count', { ascending: false })
-    .limit(60)
-
-  type Row = {
-    id: string; title: string; upvotes_count: number
-    profiles: { username: string | null } | null
-    trip_photos: { storage_path: string; lat: number | null; lng: number | null; sequence_order: number | null }[] | null
-  }
-  const rows = ((data ?? []) as unknown) as Row[]
-  const cards = rows.map(row => {
-    const photos = [...(row.trip_photos ?? [])].sort((a, b) => (a.sequence_order ?? 0) - (b.sequence_order ?? 0))
-    const anchor = photos.find(p => p.lat != null && p.lng != null)
-    const cover = photos[0]?.storage_path
-    return {
-      id: row.id,
-      title: row.title,
-      upvotes: row.upvotes_count,
-      username: row.profiles?.username ?? null,
-      cover: cover ? (cover.startsWith('https://') ? cover : `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/trip-photos/${cover}`) : null,
-      distanceKm: anchor ? haversineKm(point.lat, point.lng, anchor.lat as number, anchor.lng as number) : null,
-      sample: isSampleTrip({ trip_photos: photos }),
-    }
-  })
-  return cards
-    .filter(c => c.distanceKm != null && c.distanceKm <= STORY_RADIUS_KM)
-    .sort((a, b) => (a.distanceKm ?? 0) - (b.distanceKm ?? 0))
-    .slice(0, 6)
-}
-
 export default async function SpotPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const point = await resolvePlace(slug)
@@ -91,17 +55,31 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
   if (!point) {
     return (
       <div className="mx-auto max-w-xl px-4 py-20 text-center">
-        <p className="font-expedition text-[10px] uppercase tracking-[0.3em] text-orange-500">Spot report</p>
-        <h1 className="mt-3 font-display text-3xl font-bold text-white">Can&apos;t place &ldquo;{fromSlug(slug)}&rdquo;</h1>
-        <p className="mt-3 text-zinc-400">Try the town name with its country, a US zip, or a Canadian postal code.</p>
+        <p className="tag inline-block px-3 py-1 text-[11px] tracking-[0.18em]">Spot report</p>
+        <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.02em] text-white">Can&apos;t place &ldquo;{fromSlug(slug)}&rdquo;</h1>
+        <p className="mt-3 font-body text-zinc-500">Try the town name with its state or province, a US zip, or a Canadian postal code.</p>
         <div className="mt-6 flex justify-center"><ScoutSearch size="hero" initial={fromSlug(slug)} autoFocus /></div>
+      </div>
+    )
+  }
+
+  // North America only for now — the index is curated continent by continent
+  if (!isNorthAmerica(point.countryCode)) {
+    return (
+      <div className="mx-auto max-w-xl px-4 py-20 text-center">
+        <p className="tag inline-block px-3 py-1 text-[11px] tracking-[0.18em]">Spot report</p>
+        <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.02em] text-white">{point.label} is off the map for now</h1>
+        <p className="mt-3 font-body text-zinc-500">
+          We&apos;re scouting North America first — the US, Canada and Mexico — and adding spots only where a sport is truly established. Other continents follow.
+        </p>
+        <div className="mt-6 flex justify-center"><ScoutSearch size="hero" autoFocus /></div>
       </div>
     )
   }
 
   const [forecast, stories] = await Promise.all([
     fetchSpotForecast(point.lat, point.lng),
-    fetchStories(point),
+    fetchStoriesNear(point),
   ])
 
   return <SpotReport slug={slug} point={point} forecast={forecast} stories={stories} />
