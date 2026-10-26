@@ -5,6 +5,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import type { Map as LeafletMap, LayerGroup } from 'leaflet'
+import { TILE_URL, TILE_OPTIONS } from '@/lib/tiles'
 
 export interface MapPin {
   id: string
@@ -23,8 +24,6 @@ interface Props {
   activeId?: string | null
 }
 
-const TILE_URL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-const TILE_ATTRIBUTION = '&copy; OpenStreetMap contributors &copy; CARTO'
 
 const centerHtml = `
   <div style="position:relative;width:16px;height:16px">
@@ -58,7 +57,7 @@ export default function ParksMap({ center, pins, activeId = null }: Props) {
       if (cancelled || !containerRef.current) return
       const map = L.map(containerRef.current, { scrollWheelZoom: false })
       mapRef.current = map
-      L.tileLayer(TILE_URL, { attribution: TILE_ATTRIBUTION, maxZoom: 19 }).addTo(map)
+      L.tileLayer(TILE_URL, TILE_OPTIONS).addTo(map)
       L.marker([center.lat, center.lng], {
         icon: L.divIcon({ html: centerHtml, className: 'rr-center-pin', iconSize: [16, 16], iconAnchor: [8, 8] }),
         zIndexOffset: 2000,

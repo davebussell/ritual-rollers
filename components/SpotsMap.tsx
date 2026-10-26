@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { Map as LeafletMap, LayerGroup } from 'leaflet'
 import { KIND_META } from '@/lib/sports'
 import type { IndexedSpot } from '@/lib/spots-index'
+import { TILE_URL, TILE_OPTIONS } from '@/lib/tiles'
 
 interface Props {
   spots: IndexedSpot[]
@@ -13,8 +14,6 @@ interface Props {
   onSelect?: (slug: string) => void
 }
 
-const TILE_URL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-const TILE_ATTRIBUTION = '&copy; OpenStreetMap contributors &copy; CARTO'
 const NA_BOUNDS: [[number, number], [number, number]] = [[14, -168], [72, -52]]
 
 function escapeHtml(s: string): string {
@@ -43,7 +42,7 @@ export default function SpotsMap({ spots, activeSlug = null, onSelect }: Props) 
       if (cancelled || !containerRef.current) return
       const map = L.map(containerRef.current, { scrollWheelZoom: false })
       mapRef.current = map
-      L.tileLayer(TILE_URL, { attribution: TILE_ATTRIBUTION, maxZoom: 19 }).addTo(map)
+      L.tileLayer(TILE_URL, TILE_OPTIONS).addTo(map)
       layerRef.current = L.layerGroup().addTo(map)
       map.fitBounds(NA_BOUNDS, { padding: [10, 10] })
       setReady(true)

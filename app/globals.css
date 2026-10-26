@@ -255,3 +255,6 @@ h1:not(.font-expedition), h2:not(.font-expedition), h3:not(.font-expedition) {
   transition: transform 0.15s ease;
 }
 .rr-photo-pin:hover { transform: scale(1.15); }
+
+/* OpenStreetMap tiles, muted to sit on the paper palette (lib/tiles.ts) */
+.rr-tiles { filter: saturate(0.45) sepia(0.12) contrast(0.96) brightness(1.02); }

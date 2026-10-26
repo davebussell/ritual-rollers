@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import type { Map as LeafletMap, Marker as LeafletMarker } from 'leaflet'
+import { TILE_URL, TILE_OPTIONS } from '@/lib/tiles'
 
 export interface JourneyStep {
   id: string
@@ -18,8 +19,6 @@ interface Props {
   onStepClick: (i: number) => void
 }
 
-const TILE_URL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-const TILE_ATTRIBUTION = '&copy; OpenStreetMap contributors &copy; CARTO'
 
 function markerHtml(step: JourneyStep, active: boolean): string {
   const ring = active ? '#ffffff' : '#f97316'
@@ -59,7 +58,7 @@ export default function JourneyMap({ steps, activeStep, onStepClick }: Props) {
       })
       mapRef.current = map
 
-      L.tileLayer(TILE_URL, { attribution: TILE_ATTRIBUTION, maxZoom: 19 }).addTo(map)
+      L.tileLayer(TILE_URL, TILE_OPTIONS).addTo(map)
 
       L.polyline(steps.map(s => [s.lat, s.lng]), {
         color: '#f97316', weight: 2.5, opacity: 0.75, dashArray: '6 8',
