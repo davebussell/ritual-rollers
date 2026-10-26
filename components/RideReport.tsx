@@ -200,7 +200,7 @@ export default function RideReport(props: Props) {
               <p className="mt-3 font-body text-base text-white">{index.why}</p>
               {index.heads_up && <p className="mt-2 font-body text-sm text-zinc-500"><span className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Heads up · </span>{index.heads_up}</p>}
             </div>
-            <dl className="grid shrink-0 grid-cols-2 gap-x-5 gap-y-2 font-body text-sm sm:grid-cols-1">
+            <dl className="grid w-full grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-5 gap-y-2 font-body text-sm sm:w-auto sm:shrink-0 sm:grid-cols-1">
               <div><dt className="font-expedition text-[10px] uppercase tracking-[0.18em] text-zinc-500">Who rides it</dt>
                 <dd className="text-white">{index.disciplines.map(d => DISCIPLINE_BY_ID[d]?.short ?? d).join(' · ') || '—'}</dd></div>
               <div><dt className="font-expedition text-[10px] uppercase tracking-[0.18em] text-zinc-500">Level</dt>
@@ -241,7 +241,7 @@ export default function RideReport(props: Props) {
           {/* Now */}
           <section className="mt-8">
             <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Right now</h2>
-            <div className={`mt-3 grid gap-4 ${dirt ? 'md:grid-cols-2' : ''}`}>
+            <div className={`mt-3 grid grid-cols-1 gap-4 ${dirt ? 'md:grid-cols-2' : ''}`}>
               <NowCard label={mode === 'place' ? 'Concrete & asphalt — skateparks, plazas, pump tracks' : undefined}
                 read={main.current} dry={main.dry} rain24={main.rain24} localTime={forecast.localTime} dirt={mode !== 'place' && dirtSpot} indoor={indoor} />
               {dirt && dirt.current && (
@@ -260,7 +260,7 @@ export default function RideReport(props: Props) {
           </section>
 
           {/* Windows + week */}
-          <section className="mt-8 grid gap-4 lg:grid-cols-[1fr_1.4fr]">
+          <section className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-[1fr_1.4fr]">
             <div className="tx-stitch relative rounded-xl border border-zinc-800 bg-zinc-900 p-5">
               <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Best dry windows this week</h2>
               {main.wins.length ? (
@@ -339,7 +339,7 @@ export default function RideReport(props: Props) {
         <p className="mt-1 font-body text-sm text-zinc-500">
           Same weather, same read: if it&apos;s dry here, it&apos;s dry at these too — unless they&apos;re indoor, or dirt.
         </p>
-        <div className="mt-4 grid gap-6 lg:grid-cols-2">
+        <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className="space-y-4">
             {nearbyFeatured.length > 0 && (
               <div>
