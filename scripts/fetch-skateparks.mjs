@@ -17,26 +17,41 @@ const MIRRORS = [
 const UA = 'RitualRollers/1.0 (ritualrollers.com; dave@clickshift.ca)'
 const COUNTRIES = ['CA', 'MX', 'US']
 
-const query = cc => `[out:json][timeout:900];
+// Country-wide queries time out when the public servers are busy, so each country is fetched in
+// longitude/latitude tiles (south, west, north, east), clipped to the country's own area.
+const TILES = {
+  CA: [[41.5, -141, 84, -120], [41.5, -120, 84, -100], [41.5, -100, 84, -80], [41.5, -80, 84, -52]],
+  MX: [[14, -118.5, 33, -104], [14, -104, 33, -86]],
+  US: [
+    [24, -125, 50, -115], [24, -115, 50, -105], [24, -105, 50, -97], [24, -97, 50, -90],
+    [24, -90, 50, -84], [24, -84, 50, -78], [24, -78, 50, -66],
+    [51, -180, 72, -129], [18, -161, 23, -154],
+  ],
+}
+
+const query = (cc, [s, w, n, e]) => {
+  const b = `(${s},${w},${n},${e})`
+  return `[out:json][timeout:300];
 area["ISO3166-1"="${cc}"][admin_level=2]->.a;
 (
-  nwr["sport"~"skateboard|bmx|pump|mtb|scooter|dirt_jump|freestyle"](area.a);
-  nwr["leisure"="skatepark"](area.a);
-  nwr["leisure"~"^(track|pitch)$"]["name"~"pump ?track|bmx|bike park|dirt jump",i](area.a);
+  nwr["sport"~"skateboard|bmx|pump|mtb|scooter|dirt_jump|freestyle"](area.a)${b};
+  nwr["leisure"="skatepark"](area.a)${b};
+  nwr["leisure"~"^(track|pitch)$"]["name"~"pump ?track|bmx|bike park|dirt jump",i](area.a)${b};
 );
 out center tags;`
+}
 
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 
 async function overpass(q) {
-  for (let attempt = 0; attempt < 6; attempt++) {
+  for (let attempt = 0; attempt < 9; attempt++) {
     const url = MIRRORS[attempt % MIRRORS.length]
     try {
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': UA },
         body: 'data=' + encodeURIComponent(q),
-        signal: AbortSignal.timeout(960_000),
+        signal: AbortSignal.timeout(360_000),
       })
       const text = await res.text()
       if (res.ok && text.trim().startsWith('{')) {
@@ -48,7 +63,7 @@ async function overpass(q) {
     } catch (e) {
       console.warn(`${url} failed: ${e.message}`)
     }
-    await sleep(20_000 * (attempt + 1))
+    await sleep(15_000 * (attempt + 1))
   }
   throw new Error('every Overpass mirror failed')
 }
@@ -103,17 +118,21 @@ function shape(el, cc) {
 const parks = []
 const seen = new Set()
 for (const cc of COUNTRIES) {
-  const elements = await overpass(query(cc))
-  let kept = 0
-  for (const el of elements) {
-    const p = shape(el, cc)
-    if (!p || seen.has(p.id)) continue
-    seen.add(p.id)
-    parks.push(p)
-    kept++
+  let kept = 0, total = 0
+  for (const tile of TILES[cc]) {
+    const elements = await overpass(query(cc, tile))
+    total += elements.length
+    for (const el of elements) {
+      const p = shape(el, cc)
+      if (!p || seen.has(p.id)) continue
+      seen.add(p.id)
+      parks.push(p)
+      kept++
+    }
+    console.log(`${cc} ${tile.join(',')}: ${elements.length} elements`)
+    await sleep(5_000)
   }
-  console.log(`${cc}: ${elements.length} elements, ${kept} spots`)
-  await sleep(15_000)
+  console.log(`${cc}: ${total} elements, ${kept} spots`)
 }
 
 // A spot mapped as both an area and a point inside it: keep the named area, drop the twin
