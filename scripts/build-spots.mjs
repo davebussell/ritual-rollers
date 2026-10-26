@@ -113,6 +113,12 @@ for (const file of files) {
         const named = p.name && (similar(p.name, spot.name) || norm(p.name) === norm(spot.name))
         if (d < 1.5 && named && d < bestKm) { best = p; bestKm = d }
       }
+      // Rough coordinates (estimated, or geocoded from an address): if exactly one mapped spot of the
+      // same kind sits within 1.5 km, it is the one
+      if (!best && ['estimated', 'address', ''].includes(coordSource) && want) {
+        const near = parks.filter(p => p.kind === want && Math.abs(p.lat - spot.lat) < 0.02 && km(p, spot) < 1.5)
+        if (near.length === 1) best = near[0]
+      }
       if (best) { spot.osm = best.id; spot.lat = best.lat; spot.lng = best.lng; if (best.lit != null && spot.lit == null) spot.lit = best.lit }
       else unsnapped.push(`${spot.name} (${spot.city}) — ${coordSource || 'no coord_source'}`)
     }

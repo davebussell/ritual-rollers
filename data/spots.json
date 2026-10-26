@@ -5,8 +5,8 @@
   "country": "CA",
   "region": "Alberta",
   "city": "Banff",
-  "lat": 51.17311,
-  "lng": -115.57799,
+  "lat": 51.17388,
+  "lng": -115.57972,
   "kind": "park",
   "features": [
    "snake run",
@@ -34,7 +34,8 @@
   "why": "A New Line Skateparks build off Sundance Road beside the town's ball diamonds, with a long snake-run bowl (hips, extensions, vert walls, pump bumps) and a street course of hubbas, stairs, handrails, a pole jam and a Euro gap.",
   "heads_up": "Open sunrise to sunset; watch for fly balls from the ball diamonds next door and give elk and other wildlife plenty of space.",
   "source": "https://skatethestates.com/?p=34083",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w1071148531"
  },
  {
   "name": "Callingwood Skatepark",
@@ -43,7 +44,7 @@
   "region": "Alberta",
   "city": "Edmonton",
   "lat": 53.5061,
-  "lng": -113.62657,
+  "lng": -113.62618,
   "kind": "park",
   "features": [
    "street",
@@ -62,13 +63,14 @@
    "scooter"
   ],
   "indoor": false,
-  "lit": null,
+  "lit": true,
   "cost": "free",
   "skill": "intermediate",
   "why": "A 19,500 sq ft New Line Skateparks street park in west Edmonton with granite-topped hubba ledges, stair sets, handrails, gaps, manual pads and a half pipe.",
   "heads_up": "Listed hours are sunrise to sunset; it's mostly street terrain, so transition skaters may want to pair it with Castle Downs or Mill Woods.",
   "source": "https://skatethestates.com/best-skateparks-in-edmonton/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w261775620"
  },
  {
   "name": "Castle Downs Skatepark",
@@ -76,8 +78,8 @@
   "country": "CA",
   "region": "Alberta",
   "city": "Edmonton",
-  "lat": 53.61604,
-  "lng": -113.52493,
+  "lat": 53.616,
+  "lng": -113.52498,
   "kind": "park",
   "features": [
    "flow",
@@ -105,7 +107,8 @@
   "why": "A large all-concrete park on 153 Avenue NW beside the Castle Downs YMCA, with a big flow bowl (hips, extension, roller, roll-in and a transfer spine) and a full street course.",
   "heads_up": "Open 5 a.m. to 11 p.m.; Edmonton asks skaters to ride only when the surface is dry and free of snow and ice.",
   "source": "https://skatethestates.com/best-skateparks-in-edmonton/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w1228549482"
  },
  {
   "name": "Cowboys Park Skatepark (formerly Shaw Millennium Park)",
@@ -148,8 +151,8 @@
   "country": "CA",
   "region": "Alberta",
   "city": "Calgary",
-  "lat": 50.98408,
-  "lng": -114.06789,
+  "lat": 50.98406,
+  "lng": -114.06791,
   "kind": "pumptrack",
   "features": [
    "pump track",
@@ -167,7 +170,8 @@
   "why": "Calgary's first asphalt pump track, built in 2020 by Bike Track for the Fairview Community Association, with small tabletops and beginner, intermediate and advanced routes.",
   "heads_up": "Parking is limited; don't park in the alley behind Fairview Drive. Open 8 a.m. to 10 p.m.",
   "source": "https://www.calgary.ca/bike-walk-roll/pump-tracks.html",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w1447603981"
  },
  {
   "name": "Genesis Centre Skatepark",
@@ -236,7 +240,8 @@
   "why": "A New Line Skateparks park of almost 18,000 sq ft with a pool-style bowl, a large flow bowl and street terrain of hubbas, handrails, stair sets, an A-frame ledge and a pole jam, a natural stop on the drive between Edmonton and Calgary.",
   "heads_up": "Lit and listed as open 24/7.",
   "source": "https://skatethestates.com/best-skateparks-in-edmonton/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w1051982858"
  },
  {
   "name": "Huntington Hills Skatepark",
@@ -244,8 +249,8 @@
   "country": "CA",
   "region": "Alberta",
   "city": "Calgary",
-  "lat": 51.11115,
-  "lng": -114.06529,
+  "lat": 51.11116,
+  "lng": -114.06528,
   "kind": "park",
   "features": [
    "bowl",
@@ -271,7 +276,8 @@
   "why": "One of the first three parks built in 2015 under Calgary's skatepark strategy, with a large bowl of extensions, hips, a spine and a pool-style pocket with pool coping, plus hubbas, a handrail, stairs and manual pads.",
   "heads_up": "A neighbourhood park at Centre St N and 64 Ave NW, so keep the noise down for the neighbours late in the day.",
   "source": "https://skatethestates.com/best-skateparks-in-calgary/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w727822839"
  },
  {
   "name": "Inglewood Bike Pump Track",
@@ -280,7 +286,7 @@
   "region": "Alberta",
   "city": "Calgary",
   "lat": 51.03685,
-  "lng": -114.015,
+  "lng": -114.01501,
   "kind": "pumptrack",
   "features": [
    "pump track",
@@ -294,13 +300,14 @@
    "mtb"
   ],
   "indoor": false,
-  "lit": null,
+  "lit": false,
   "cost": "free",
   "skill": "all",
   "why": "Opened in October 2021 at 2040 7 Ave S.E., designed by Ground Cubed and Velosolutions: two asphalt tracks for beginner and intermediate riders, just off the Bow River pathway.",
   "heads_up": "Free drop-in, 8 a.m. to 10 p.m.",
   "source": "https://www.calgary.ca/bike-walk-roll/pump-tracks.html",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w1346106191"
  },
  {
   "name": "Inland Skatepark",
@@ -308,8 +315,8 @@
   "country": "CA",
   "region": "Alberta",
   "city": "Medicine Hat",
-  "lat": 50.02455,
-  "lng": -110.68483,
+  "lat": 50.02456,
+  "lng": -110.68484,
   "kind": "park",
   "features": [
    "bowl",
@@ -335,7 +342,8 @@
   "why": "In Kin Coulee Park below Medicine Hat College, where a 13,500 sq ft addition in 2013 added an upper bowl, a hubba with two rails, and a plaza with a brick bank-to-ledge, a big three-stair, a gap and a warped 'sushi dish' manual pad.",
   "heads_up": "It's down the hill from the college on Kipling Street; the older park's terrain sits alongside the 2013 addition.",
   "source": "https://skateparktour.ca/size/regional/page/4/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w1024458386"
  },
  {
   "name": "Mill Woods Skatepark",
@@ -343,8 +351,8 @@
   "country": "CA",
   "region": "Alberta",
   "city": "Edmonton",
-  "lat": 53.45533,
-  "lng": -113.44388,
+  "lat": 53.4554,
+  "lng": -113.44373,
   "kind": "park",
   "features": [
    "bowl",
@@ -370,7 +378,8 @@
   "why": "One of Edmonton's older parks, by the Mill Woods Recreation Centre, with a bowl of hips, volcanoes and pump bumps and a brick China bank, plus ledges, rails, a Euro gap and a bank-to-bank gap.",
   "heads_up": "It's lit and open 24/7, but the older concrete has big cracks, so watch your wheels.",
   "source": "https://skatethestates.com/best-skateparks-in-edmonton/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w121771487"
  },
  {
   "name": "New Brighton Skatepark",
@@ -378,7 +387,7 @@
   "country": "CA",
   "region": "Alberta",
   "city": "Calgary",
-  "lat": 50.92839,
+  "lat": 50.9284,
   "lng": -113.94713,
   "kind": "park",
   "features": [
@@ -404,7 +413,8 @@
   "why": "A New Line Skateparks build in southeast Calgary whose bowl has several hips, pocket and vert extensions and a roll-in, next to a street section with two stair sets with handrails, out ledges and a long flat bar.",
   "heads_up": "Check the bowl is dry and clear of gravel before dropping in after a storm.",
   "source": "https://skatethestates.com/best-skateparks-in-calgary/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w484430643"
  },
  {
   "name": "South Glenmore Bike Pump Track",
@@ -413,7 +423,7 @@
   "region": "Alberta",
   "city": "Calgary",
   "lat": 50.97768,
-  "lng": -114.13122,
+  "lng": -114.13115,
   "kind": "pumptrack",
   "features": [
    "pump track",
@@ -431,7 +441,8 @@
   "why": "Velosolutions built two connected asphalt tracks here in 2020, a 110 m beginner loop and a 204 m loop with bigger features, raised above ground because of the high water table by the Glenmore Reservoir.",
   "heads_up": "Open 8 a.m. to 10 p.m.; park at 3520 90 Ave S.W. and ride east on the Elbow River pathway.",
   "source": "https://www.calgary.ca/bike-walk-roll/pump-tracks.html",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w857667253"
  },
  {
   "name": "Southwood Skatepark",
@@ -440,7 +451,7 @@
   "region": "Alberta",
   "city": "Calgary",
   "lat": 50.9561,
-  "lng": -114.08701,
+  "lng": -114.08726,
   "kind": "park",
   "features": [
    "flow",
@@ -466,7 +477,8 @@
   "why": "Another of Calgary's 2015 strategy parks, set in a quiet southwest neighbourhood park, with a flow bowl of varying depths and a radial pocket plus ledges, rails, stairs and a bank with an inset ledge.",
   "heads_up": "Listed hours are 5 a.m. to 11 p.m.; it's a residential area, so keep it respectful.",
   "source": "https://skatethestates.com/best-skateparks-in-calgary/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "r18733573"
  },
  {
   "name": "The Compound Indoor Skatepark",
@@ -532,8 +544,8 @@
   "country": "CA",
   "region": "Alberta",
   "city": "St. Albert",
-  "lat": 53.64719,
-  "lng": -113.61255,
+  "lat": 53.6472,
+  "lng": -113.61262,
   "kind": "park",
   "features": [
    "bowl",
@@ -559,7 +571,8 @@
   "why": "Rebuilt on the old park's site in Legion Memorial Park in 2020, this 14,000 sq ft park has a 5–8 ft pool-style bowl, a 4 ft mini-ramp bowl, a flow bowl with a banked spine and centre island, and a street area.",
   "heads_up": "Lights stay on until 11 p.m.; the fenced park's only entrance is on the northeast side, behind the kids' water park.",
   "source": "https://skatethestates.com/best-skateparks-in-edmonton/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w1056548219"
  },
  {
   "name": "Chilliwack Pump Track",
@@ -596,8 +609,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Vancouver",
-  "lat": 49.26177,
-  "lng": -123.0791,
+  "lat": 49.26176,
+  "lng": -123.07914,
   "kind": "bowl",
   "features": [
    "bowl",
@@ -617,7 +630,8 @@
   "why": "Vancouver's first skatepark, opened in May 1979 on a filled-in ravine after local skaters worked with a neighbourhood committee on the design. The Vancouver Heritage Foundation named it a Place That Matters in 2022, and the Park Board has been renewing it.",
   "heads_up": "No lights, so it's a daylight session; BMX riders share the bowls, so take turns.",
   "source": "https://placesthatmatter.ca/wp-content/uploads/2025/01/2024-Time-Line-for-Heritage-Foundation-Website-China-Creek-Bowls.pdf",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w289144527"
  },
  {
   "name": "Chuck Bailey Skatepark",
@@ -625,8 +639,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Surrey",
-  "lat": 49.19646,
-  "lng": -122.84939,
+  "lat": 49.19649,
+  "lng": -122.84949,
   "kind": "park",
   "features": [
    "street",
@@ -648,7 +662,8 @@
   "why": "About 30,000 sq ft of concrete outside the Chuck Bailey Recreation Centre, mixing a large plaza of ramps, rails and bowls with local art, plus a 5,000 sq ft covered bowl area built for wet-weather riding.",
   "heads_up": "Only the covered bowl area stays dry in the rain; the rest of the plaza is open to the weather.",
   "source": "https://www.destinationvancouver.com/inspirations/outdoors/10-destination-worthy-skateboard-parks-around-vancouver",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w577675880"
  },
  {
   "name": "Garden City Bike Park",
@@ -713,7 +728,7 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Vancouver",
-  "lat": 49.28333,
+  "lat": 49.28328,
   "lng": -123.04325,
   "kind": "park",
   "features": [
@@ -735,7 +750,8 @@
   "why": "A big concrete park on the west side of Hastings Park, between the PNE Forum and the Italian Gardens, with three connected bowls (the deep end runs about 11 feet) and a small street area. It has hosted contests including the Vans Park Series.",
   "heads_up": "Street parking around the PNE grounds is restricted, so use PNE parking; the bowls fill up on dry summer evenings.",
   "source": "https://www.destinationvancouver.com/inspirations/outdoors/10-destination-worthy-skateboard-parks-around-vancouver",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w336181474"
  },
  {
   "name": "Inter River Bike Park",
@@ -832,8 +848,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Vancouver",
-  "lat": 49.23795,
-  "lng": -123.07628,
+  "lat": 49.23794,
+  "lng": -123.07625,
   "kind": "park",
   "features": [
    "bowl",
@@ -855,7 +871,8 @@
   "why": "A compact East Vancouver park at Knight Street and East 37th Avenue built around a pool-style bowl about 9.5 feet at the deep end and 5 feet at the shallow end, plus a mini-ramp and amphitheatre-style ledges.",
   "heads_up": "No lights; the pool bowl is deep for a small park, so newer skaters should warm up on the mini-ramp.",
   "source": "https://www.destinationvancouver.com/inspirations/outdoors/10-destination-worthy-skateboard-parks-around-vancouver",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w162282671"
  },
  {
   "name": "Leeside Tunnel Skateboard Park",
@@ -863,7 +880,7 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Vancouver",
-  "lat": 49.28112,
+  "lat": 49.28113,
   "lng": -123.03196,
   "kind": "diy",
   "features": [
@@ -885,7 +902,8 @@
   "why": "A volunteer-built DIY park inside an abandoned 49 m tunnel under the Cassiar Connector at East Hastings, named for skater and artist Lee Matasi, who was killed in Gastown in 2005. About a dozen hand-built mini-ramps, quarter pipes and grind poles fill the tunnel.",
   "heads_up": "Reach it down the lane behind the E-Comm building off East Pender; laneway parking is tight, so park on East Pender and keep the driveways clear.",
   "source": "https://vancouver.ca/parks-recreation-culture/leeside-tunnel-skateboard-park.aspx",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w238086184"
  },
  {
   "name": "Metro Skate Park (Bonsor Park)",
@@ -924,8 +942,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Burnaby",
-  "lat": 49.28716,
-  "lng": -122.92333,
+  "lat": 49.28728,
+  "lng": -122.92318,
   "kind": "bikepark",
   "features": [
    "skills",
@@ -938,13 +956,14 @@
    "mtb"
   ],
   "indoor": false,
-  "lit": null,
+  "lit": false,
   "cost": "free",
   "skill": "all",
   "why": "Built for mountain bikers on the north side of Burnaby Mountain, with skinnies, elevated bridges, drops, teeter-totters, wood and dirt pump tracks and dirt jumps.",
   "heads_up": "Washrooms and picnic tables on site; wooden features get slick in the wet.",
   "source": "https://www.destinationvancouver.com/inspirations/outdoors/9-destination-worthy-bike-skills-parks-around-vancouver",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w86984097"
  },
  {
   "name": "One Love Indoor Skatepark",
@@ -1007,7 +1026,7 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Penticton",
-  "lat": 49.49994,
+  "lat": 49.49997,
   "lng": -119.61329,
   "kind": "park",
   "features": [
@@ -1033,7 +1052,8 @@
   "why": "In Riverside Park at the west end of the beach, with a very large street section of ledges, hubbas, rails, banks, quarter pipes and stair sets alongside a large flow bowl.",
   "heads_up": "It's beside a go-kart track and bumper boats, so summer days are busy; public washrooms are nearby and there's a large lot to the north.",
   "source": "https://skateparktour.ca/features/transition/page/26",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w471201348"
  },
  {
   "name": "Penzer Bike Park",
@@ -1041,8 +1061,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Langley",
-  "lat": 49.08802,
-  "lng": -122.66954,
+  "lat": 49.08825,
+  "lng": -122.66967,
   "kind": "bikepark",
   "features": [
    "pump track",
@@ -1062,7 +1082,8 @@
   "why": "Part of Penzer Action Park: a BMX-style dirt jump area (2008) and a cement pump track (2017), next to a skatepark, a parkour area and an in-ground trampoline.",
   "heads_up": "The pump track is shared with skateboards and scooters, so watch the traffic at busy times.",
   "source": "https://fvcurrent.com/p/pump-tracks-fraser-valley",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w482556495"
  },
  {
   "name": "Railside Skate Park",
@@ -1071,7 +1092,7 @@
   "region": "British Columbia",
   "city": "Port Coquitlam",
   "lat": 49.26533,
-  "lng": -122.7791,
+  "lng": -122.77911,
   "kind": "park",
   "features": [
    "street",
@@ -1095,7 +1116,8 @@
   "why": "At the south end of Lions Park beside the rail yards, mixing a street area of rails, hips, stairs and ledges with a large bowl zone.",
   "heads_up": "It sits right beside an active rail yard, so keep clear of the tracks; there's no cover when it rains.",
   "source": "https://www.destinationvancouver.com/inspirations/outdoors/10-destination-worthy-skateboard-parks-around-vancouver",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w256640003"
  },
  {
   "name": "Seylynn Bowl",
@@ -1125,7 +1147,8 @@
   "why": "A concrete snake run that drops into a bowl, first ridden in 1978 and known as Canada's oldest surviving skatepark. Monty Little, who later designed the original Whistler park, co-designed it.",
   "heads_up": "The concrete is decades old with patches and cracks, so walk your line first; it's tucked behind trees by the ball diamonds on Hunter Street, open dawn to dusk.",
   "source": "https://skateparktour.ca/skateparks/seylynn-skatepark-north-vancouver-bc/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w118755298"
  },
  {
   "name": "Sicamous Pump Track",
@@ -1159,8 +1182,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Sidney",
-  "lat": 48.64333,
-  "lng": -123.39966,
+  "lat": 48.64331,
+  "lng": -123.39968,
   "kind": "park",
   "features": [
    "bowl",
@@ -1185,7 +1208,8 @@
   "why": "In Tulista Park about 25 km north of downtown Victoria, pairing a bowl of varied depths with an extension and pocket with a full street section of stairs, a hubba, a handrail, a brick bank and a camel hump.",
   "heads_up": "Listed hours are 6 a.m. to 10 p.m.",
   "source": "https://skatethestates.com/best-skateparks-in-victoria-british-columbia/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w503838773"
  },
  {
   "name": "Silver Star Bike Park",
@@ -1252,8 +1276,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Squamish",
-  "lat": 49.72331,
-  "lng": -123.14305,
+  "lat": 49.72329,
+  "lng": -123.14299,
   "kind": "bmxtrack",
   "features": [
    "race track",
@@ -1271,7 +1295,8 @@
   "why": "Refreshed BMX track between Brennan Park and Kinsmen Campground with straights, berm turns, rollers, rhythm sections and tabletops, a short walk from the SORCA skills park.",
   "heads_up": "Dirt track: give it time to dry after rain.",
   "source": "https://exploresquamish.com/news/squamish-grom-friendly-bike-parks",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w89533251"
  },
  {
   "name": "Stevie Smith Bike Park",
@@ -1331,8 +1356,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Victoria",
-  "lat": 48.44279,
-  "lng": -123.36351,
+  "lat": 48.44281,
+  "lng": -123.36376,
   "kind": "park",
   "features": [
    "bowl",
@@ -1355,7 +1380,8 @@
   "why": "A 3,000 m² all-wheels park built by New Line Skateparks that opened in August 2022 in Topaz Park, with a big bowl stepping from 6- and 8-foot pool-block sections to a 10-foot section with steel coping, a street line along the path and smaller beginner features.",
   "heads_up": "Floodlights switch off in sequence at 10 p.m. to signal closing; a bike pump track sits next door, so watch for riders.",
   "source": "https://absoluteunderground.tv/topaz-skatepark/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "r17365011"
  },
  {
   "name": "UBC Skatepark",
@@ -1363,8 +1389,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Vancouver",
-  "lat": 49.26085,
-  "lng": -123.24449,
+  "lat": 49.26087,
+  "lng": -123.24452,
   "kind": "park",
   "features": [
    "mini ramp",
@@ -1386,7 +1412,8 @@
   "why": "Billed as North America's first on-campus concrete skatepark, it packs a bowled mini-ramp, ledges, rails and a ledge shaped like a stack of books into a compact spot on Thunderbird Boulevard.",
   "heads_up": "Small footprint, so watch for skaters crossing your line; there's no cover from rain.",
   "source": "https://www.destinationvancouver.com/inspirations/outdoors/10-destination-worthy-skateboard-parks-around-vancouver",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w258978380"
  },
  {
   "name": "Vancouver Skate Plaza (Downtown Skateboard Plaza)",
@@ -1395,7 +1422,7 @@
   "region": "British Columbia",
   "city": "Vancouver",
   "lat": 49.27718,
-  "lng": -123.10249,
+  "lng": -123.10275,
   "kind": "plaza",
   "features": [
    "street",
@@ -1418,7 +1445,8 @@
   "why": "A 2,000 m² street plaza under the Georgia and Dunsmuir viaducts, opened in 2004 and upgraded in 2011, with replica rails, embankments, curbs, walls and steps in granite, brick, concrete and steel. Complex magazine ranked it #21 on its 2013 list of the world's best skateparks.",
   "heads_up": "The viaducts overhead keep most of it dry in the rain, but the city has long planned to remove them and replace the plaza, so check the city page before a trip.",
   "source": "https://vancouver.ca/parks-recreation-culture/downtown-skateboard-plaza.aspx",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w401708838"
  },
  {
   "name": "Vanier Park Bike Skills Track",
@@ -1455,7 +1483,7 @@
   "region": "British Columbia",
   "city": "Victoria",
   "lat": 48.43074,
-  "lng": -123.3819,
+  "lng": -123.38191,
   "kind": "park",
   "features": [
    "bowl",
@@ -1479,7 +1507,8 @@
   "why": "Victoria's long-running park at 250 Esquimalt Road, a New Line Skateparks project first built in 2002 with a second phase in 2017, with one fully enclosed bowl, one open flow bowl and modern street terrain.",
   "heads_up": "The enclosed bowl has steel and pool coping, so wear a helmet; there's no roof, so let it dry after a shower.",
   "source": "https://newlineskateparks.com/?p=1175",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w138280984"
  },
  {
   "name": "Whistler Mountain Bike Park",
@@ -1487,8 +1516,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Whistler",
-  "lat": 50.11623,
-  "lng": -122.95095,
+  "lat": 50.11626,
+  "lng": -122.95109,
   "kind": "bikepark",
   "features": [
    "downhill",
@@ -1506,7 +1535,8 @@
   "why": "Lift-served park on Whistler Mountain, open since 1999, with over 900 vertical metres of terrain reached by chairlift and gondola. It has hosted Crankworx events, including a pump track challenge at the Boneyard in 2010.",
   "heads_up": "Summer lift ticket required; check Whistler Blackcomb for this season's opening and closing dates.",
   "source": "https://www.whistler.com/blog/post/one-bike-one-place-whistlers-cycling-options/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "r19051528"
  },
  {
   "name": "Whistler Skatepark",
@@ -1514,8 +1544,8 @@
   "country": "CA",
   "region": "British Columbia",
   "city": "Whistler",
-  "lat": 50.1174,
-  "lng": -122.95246,
+  "lat": 50.1173,
+  "lng": -122.951,
   "kind": "park",
   "features": [
    "snake run",
@@ -1539,7 +1569,8 @@
   "why": "Designed by Monty Little and built with Terry Snyder, it opened to skaters in August 1990 with a snake run into a 6.5 m-wide 'Snake Bowl'. Later phases driven by local skaters (the third opened in 2016) grew it past 50,000 sq ft, which the municipality counts as Canada's second-largest skatepark.",
   "heads_up": "Open April to November; the lights run until 1 a.m. on a push-button timer, helmets are recommended and mountain bikes aren't allowed. Access is through Day Lot 3.",
   "source": "https://www.whistler.ca/culture-recreation/facilities/skate-park/",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "w93258210"
  },
  {
   "name": "Píhtikwé Skatepark",
@@ -1574,7 +1605,7 @@
   "region": "Manitoba",
   "city": "Winnipeg",
   "lat": 49.88948,
-  "lng": -97.13084,
+  "lng": -97.13074,
   "kind": "plaza",
   "features": [
    "street",
@@ -1600,7 +1631,8 @@
   "why": "Opened in 2006 at The Forks, about 44,000 sq ft of plaza with rails, ledges, banks, steps and skateable art such as the steel 'magic carpet', plus an 8,500 sq ft bowl. Designed by van der Zalm + Associates and New Line Skateparks, it was Canada's most expensive skatepark when built ($2.5 million).",
   "heads_up": "It's a busy public site, so watch for people walking through the plaza on summer evenings.",
   "source": "https://www.theforks.com/blog/525/the-plaza-at-the-forks-celebrates-20-years",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w33164087"
  },
  {
   "name": "Bayview Arena Bike Park",
@@ -1778,8 +1810,8 @@
   "country": "CA",
   "region": "Ontario",
   "city": "Toronto",
-  "lat": 43.63726,
-  "lng": -79.46401,
+  "lat": 43.6372,
+  "lng": -79.4639,
   "kind": "bikepark",
   "features": [
    "pump track",
@@ -1799,7 +1831,8 @@
   "why": "Opened in 2014 about 150 m from Lake Ontario, partly from recycled materials, with pump tracks, a skills trail, a large drop, a boardwalk and a wall ride, rated green to black.",
   "heads_up": "Open dawn to dusk; no parking on site, only a drop-off roundabout at Lake Shore Blvd. W. and Ellis Ave.",
   "source": "https://www.toronto.ca/explore-enjoy/parks-recreation/program-activities/sports/skateboarding-bmx-mountain-biking/",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "w277904965"
  },
  {
   "name": "Camp Fortune Pump Track",
@@ -1853,6 +1886,157 @@
   "why": "At 1,800 m² it is the largest pump track in the Quebec City area. The Velosolutions-built track has hosted a Red Bull UCI Pump Track World Championships qualifier and is lit in the evening.",
   "heads_up": "Paid access (adult day pass about $24), and the park closes on rainy days.",
   "source": "https://www.singletracks.com/bike-trails/empire-47/",
+  "confidence": "medium"
+ },
+ {
+  "name": "Auburn/Opelika Skate Park",
+  "slug": "auburn-opelika-skate-park",
+  "country": "US",
+  "region": "Alabama",
+  "city": "Auburn",
+  "lat": 32.62392,
+  "lng": -85.44211,
+  "kind": "park",
+  "features": [
+   "bowl"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A pour-in-place concrete park built by American Ramp Company as a joint project of the cities of Auburn and Opelika at Pines Crossing Golf Course, opened in January 2020 with a large bowl as its centrepiece.",
+  "heads_up": "At Pines Crossing Golf Course; check Auburn Parks and Recreation for hours.",
+  "source": "https://strayrocket.com/skateparks/alabama/auburn-opelika-skate-park",
+  "confidence": "medium"
+ },
+ {
+  "name": "CityWalk BHAM Skatepark",
+  "slug": "citywalk-bham-skatepark-birmingham",
+  "country": "US",
+  "region": "Alabama",
+  "city": "Birmingham",
+  "lat": 33.52121,
+  "lng": -86.81449,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "snake run",
+   "street",
+   "flow",
+   "banks",
+   "rails",
+   "ledges",
+   "manual pads"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "The skatepark at CityWalk BHAM, the public space built beneath the elevated I-59/I-20 corridor downtown, with several bowls, a snake run, a street plaza and a flow course.",
+  "heads_up": "Hours run roughly 7 a.m. to 10 p.m. and change with the season.",
+  "source": "https://strayrocket.com/skateparks/alabama/citywalk-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Skate Depot",
+  "slug": "skate-depot-cullman",
+  "country": "US",
+  "region": "Alabama",
+  "city": "Cullman",
+  "lat": 34.18219,
+  "lng": -86.84487,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "rails",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "The City of Cullman's 8,000-square-foot Spohn Ranch park on Second Avenue NE by Depot Park, opened in November 2022 with ramps, a drop-in bowl, rails and wedges.",
+  "heads_up": "Open to skateboards, rollerblades, BMX and scooters, so keep an eye out for bikes.",
+  "source": "https://strayrocket.com/skateparks/alabama/skate-depot-cullman",
+  "confidence": "medium"
+ },
+ {
+  "name": "Kanis Skatepark",
+  "slug": "kanis-skatepark-little-rock",
+  "country": "US",
+  "region": "Arkansas",
+  "city": "Little Rock",
+  "lat": 34.74315,
+  "lng": -92.36025,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "transition",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "intermediate",
+  "why": "A deep late-1980s peanut bowl, a DIY zone built by the Kanis DIY Krew over about 15 years, and a 2016 Hunger Skateparks addition with corner pockets, hips, a spine and a steep bank wall; the Kanis Bash draws skaters every year around Halloween.",
+  "heads_up": "The old bowl is deep and steep; watch a few runs before you drop in.",
+  "source": "https://strayrocket.com/skateparks/arkansas/kanis-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Riverfront Skate and Bike Park",
+  "slug": "riverfront-skate-and-bike-park-fort-smith",
+  "country": "US",
+  "region": "Arkansas",
+  "city": "Fort Smith",
+  "lat": 35.39369,
+  "lng": -94.42907,
+  "kind": "park",
+  "features": [
+   "pump track"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A city-owned skate and bike park on Riverfront Drive in downtown Fort Smith, opened in 2018, with a skate park of about 14,500 square feet built by American Ramp Company plus an asphalt pump track and bike skills lines.",
+  "heads_up": "Skate park, pump track and bike lines sit side by side, so watch for riders crossing between them.",
+  "source": "https://strayrocket.com/skateparks/arkansas/riverfront-skate-and-bike-park",
   "confidence": "medium"
  },
  {
@@ -1913,6 +2097,563 @@
   "confidence": "medium"
  },
  {
+  "name": "Bethune Point Skatepark",
+  "slug": "bethune-point-skatepark-daytona-beach",
+  "country": "US",
+  "region": "Florida",
+  "city": "Daytona Beach",
+  "lat": 29.199,
+  "lng": -81.00862,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "gaps",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 16,000-square-foot Spohn Ranch park on the Halifax River (2009) whose kidney bowl is built as a replica of a 1970s California backyard pool, with blue tile and pool coping, next to a street section around a 'broken pyramid'.",
+  "heads_up": "Skaters under 18 need a waiver signed by a parent or guardian before they can ride.",
+  "source": "https://strayrocket.com/skateparks/florida/bethune-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Blake Doyle Skatepark",
+  "slug": "blake-doyle-skatepark-pensacola",
+  "country": "US",
+  "region": "Florida",
+  "city": "Pensacola",
+  "lat": 30.41991,
+  "lng": -87.21283,
+  "kind": "park",
+  "features": [
+   "beginner area",
+   "street",
+   "bowl"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "About 25,000 square feet of concrete under Interstate 110 in the Hollice T. Williams greenway, opened in May 2023 and built by Evergreen Skateparks, with a beginner area, a multilevel plaza and two bowls.",
+  "heads_up": "Start in the beginner section if you are new to concrete.",
+  "source": "https://strayrocket.com/skateparks/florida/blake-doyle-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Bro Bowl (Perry Harvey Sr. Park)",
+  "slug": "bro-bowl-tampa",
+  "country": "US",
+  "region": "Florida",
+  "city": "Tampa",
+  "lat": 27.95788,
+  "lng": -82.45484,
+  "kind": "bowl",
+  "features": [
+   "bowl",
+   "banks",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "intermediate",
+  "why": "Opened in 1979 as Florida's first public skatepark, the Bro Bowl became the first skatepark listed on the U.S. National Register of Historic Places (2013); the original was demolished in the park's renovation and replaced by a new bowl closely modelled on it.",
+  "heads_up": "Banked 1970s-style shapes reward carving more than tech tricks; go early or late to avoid the midday heat.",
+  "source": "https://en.wikipedia.org/wiki/Bro_Bowl",
+  "confidence": "high",
+  "osm": "w616656331"
+ },
+ {
+  "name": "Kona Skatepark",
+  "slug": "kona-skatepark-jacksonville",
+  "country": "US",
+  "region": "Florida",
+  "city": "Jacksonville",
+  "lat": 30.32365,
+  "lng": -81.56483,
+  "kind": "park",
+  "features": [
+   "snake run",
+   "bowl",
+   "vert",
+   "mini ramp",
+   "street",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "paid",
+  "skill": "all",
+  "why": "Opened in June 1977 in Arlington, Kona is listed by Guinness World Records as the oldest surviving commercial skatepark; its original snake and J-runs are still ridden alongside a pro bowl, vert ramp, mini ramp and street course.",
+  "heads_up": "Private paid park, open noon to 9 p.m. and closed Mondays; the vert ramp needed a rebuild in 2024, so ask what is open.",
+  "source": "https://en.wikipedia.org/wiki/Kona_Skatepark",
+  "confidence": "high"
+ },
+ {
+  "name": "Lot 11 Skatepark",
+  "slug": "lot-11-skatepark-miami",
+  "country": "US",
+  "region": "Florida",
+  "city": "Miami",
+  "lat": 25.77596,
+  "lng": -80.20021,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "manual pads",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 38,000-square-foot concrete park under the I-95 bridge near downtown Miami, opened in 2019 and built by American Ramp Company and Pivot Custom, with a combi bowl (pool coping and tile) wrapped by a large street plaza with granite ledges.",
+  "heads_up": "Busy in the evenings when it cools down; posted hours have changed over time, so check before a late session.",
+  "source": "https://strayrocket.com/skateparks/florida/lot-11-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Pompano Beach Skatepark",
+  "slug": "pompano-beach-skatepark",
+  "country": "US",
+  "region": "Florida",
+  "city": "Pompano Beach",
+  "lat": 26.23912,
+  "lng": -80.10704,
+  "kind": "park",
+  "features": [
+   "street",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "all",
+  "why": "The City of Pompano Beach's concrete park in Community Park, designed and built by New Line Skateparks and opened on July 22, 2026, with street and transition terrain and a skateable Pompano fish sculpture.",
+  "heads_up": "Posted rules require a strapped helmet, closed-toe shoes and a shirt; open 8 a.m. to 10 p.m.",
+  "source": "https://strayrocket.com/skateparks/florida/pompano-beach-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Possum Creek Skatepark",
+  "slug": "possum-creek-skatepark-gainesville",
+  "country": "US",
+  "region": "Florida",
+  "city": "Gainesville",
+  "lat": 29.70256,
+  "lng": -82.38579,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "street",
+   "stairs",
+   "rails",
+   "ledges",
+   "banks",
+   "manual pads"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "An 18,000-square-foot Spohn Ranch park (2009) laid out as a triangle, with a waterfall bowl in one corner and several stair sets with hubbas and handrails through the middle.",
+  "heads_up": "No lights: open sunrise to sunset only.",
+  "source": "https://strayrocket.com/skateparks/florida/possum-creek-skatepark",
+  "confidence": "medium",
+  "osm": "w265892922"
+ },
+ {
+  "name": "Skatepark of Tampa (SPoT)",
+  "slug": "skatepark-of-tampa",
+  "country": "US",
+  "region": "Florida",
+  "city": "Tampa",
+  "lat": 27.9664,
+  "lng": -82.41031,
+  "kind": "indoor",
+  "features": [
+   "street",
+   "transition",
+   "bowl",
+   "rails",
+   "beginner area"
+  ],
+  "surface": "wood",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": true,
+  "lit": null,
+  "cost": "paid",
+  "skill": "all",
+  "why": "Open to the public since January 1993, SPoT hosts the Tampa Pro (first held in 1995) and the Tampa Am, and its street course is rebuilt every year for the contests; there is also an outdoor concrete transition course and a beginner course.",
+  "heads_up": "Paid sessions with a signed waiver; check the posted hours before you go, especially around contest weeks.",
+  "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa",
+  "confidence": "high",
+  "osm": "w524230739"
+ },
+ {
+  "name": "Bay Creek Skatepark",
+  "slug": "bay-creek-skatepark-loganville",
+  "country": "US",
+  "region": "Georgia",
+  "city": "Loganville",
+  "lat": 33.88559,
+  "lng": -83.92581,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "mini ramp",
+   "street",
+   "stairs",
+   "rails",
+   "ledges",
+   "gaps",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 12,000-square-foot park designed and built by Pillar Design Studios in 2009 with local skaters, where a central platform links a bowl, mini ramp and volcano to a street plaza of stairs, hubbas and handrails.",
+  "heads_up": "Open sunrise to 11 p.m. with lights.",
+  "source": "https://strayrocket.com/skateparks/georgia/bay-creek-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Brook Run Skate Park",
+  "slug": "brook-run-skate-park-dunwoody",
+  "country": "US",
+  "region": "Georgia",
+  "city": "Dunwoody",
+  "lat": 33.93515,
+  "lng": -84.29735,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "flow",
+   "transition",
+   "ledges",
+   "rails",
+   "stairs",
+   "banks",
+   "manual pads"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 27,000-square-foot lighted park opened in 2007, run by the City of Dunwoody since 2010 and free since 2011, with a flow bowl, a tiled pool-style bowl and a street section.",
+  "heads_up": "The gate opens at 7 a.m.; lights allow evening sessions.",
+  "source": "https://en.wikipedia.org/wiki/Brook_Run_Skate_Park",
+  "confidence": "high"
+ },
+ {
+  "name": "Central City Skatepark",
+  "slug": "central-city-skatepark-macon",
+  "country": "US",
+  "region": "Georgia",
+  "city": "Macon",
+  "lat": 32.83147,
+  "lng": -83.61426,
+  "kind": "park",
+  "features": [
+   "street",
+   "stairs",
+   "rails",
+   "ledges",
+   "banks",
+   "bowl",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "all",
+  "why": "A free public park in downtown Macon with a street section that opened in 2017 and a concrete bowl added in 2019.",
+  "heads_up": "Summer afternoons are hot; go early or late.",
+  "source": "https://en.wikipedia.org/wiki/Central_City_Skatepark",
+  "confidence": "high",
+  "osm": "n6698296200"
+ },
+ {
+  "name": "Duncan Creek Park Skatepark",
+  "slug": "duncan-creek-park-skatepark-dacula",
+  "country": "US",
+  "region": "Georgia",
+  "city": "Dacula",
+  "lat": 34.06955,
+  "lng": -83.9055,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "transition",
+   "stairs",
+   "rails",
+   "ledges"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 20,000-square-foot Wally Hollyday park (2008) in Gwinnett County with six bowls, including a backyard-style pool, plus four stair sets with rails and ledges.",
+  "heads_up": "The deep pool is for confident transition skaters; warm up in the smaller bowls first.",
+  "source": "https://skatethestates.com/best-skateparks-in-georgia/",
+  "confidence": "medium"
+ },
+ {
+  "name": "Historic Fourth Ward Skatepark",
+  "slug": "historic-fourth-ward-skatepark-atlanta",
+  "country": "US",
+  "region": "Georgia",
+  "city": "Atlanta",
+  "lat": 33.76472,
+  "lng": -84.36039,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "transition",
+   "street",
+   "ledges",
+   "stairs",
+   "rails",
+   "gaps",
+   "manual pads",
+   "mini ramp",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "Atlanta's first free public skatepark (2011), a 17,000-square-foot Pillar Design Studios park beside the BeltLine with a rocket-shaped bowl, two more open bowls and a street plaza, helped by a $25,000 Tony Hawk Foundation grant.",
+  "heads_up": "Open sunrise to 11 p.m. with lights.",
+  "source": "https://strayrocket.com/skateparks/georgia/historic-fourth-ward-skatepark",
+  "confidence": "medium",
+  "osm": "w182470291"
+ },
+ {
+  "name": "Grant Skate Park",
+  "slug": "grant-skate-park-chicago",
+  "country": "US",
+  "region": "Illinois",
+  "city": "Chicago",
+  "lat": 41.8688,
+  "lng": -87.62267,
+  "kind": "park",
+  "features": [],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "The Chicago Park District's free skate park in the south end of Grant Park at 1135 S. Michigan Avenue, a concrete park a short ride from the Loop.",
+  "heads_up": "Downtown lakefront park; wind off the lake can be strong.",
+  "source": "https://news.wttw.com/2019/07/16/go-grind-chicago-skateboard-camp-shows-kids-basics-city-skate-parks",
+  "confidence": "medium",
+  "osm": "w288932982"
+ },
+ {
+  "name": "Iles Park Skatepark",
+  "slug": "iles-park-skatepark-springfield",
+  "country": "US",
+  "region": "Illinois",
+  "city": "Springfield",
+  "lat": 39.78096,
+  "lng": -89.64515,
+  "kind": "plaza",
+  "features": [
+   "street",
+   "ledges",
+   "stairs",
+   "rails",
+   "manual pads"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 5,000-square-foot Spohn Ranch plaza (2021) for the Springfield Park District, with ledges, stairs, a manual pad, handrails and a flat bar designed with local skaters.",
+  "heads_up": "Helmets and pads are strongly encouraged at Springfield Park District skateparks.",
+  "source": "https://strayrocket.com/skateparks/illinois/iles-park-skatepark",
+  "confidence": "medium",
+  "osm": "w957503883"
+ },
+ {
+  "name": "Logan Boulevard Skate Park",
+  "slug": "logan-boulevard-skate-park-chicago",
+  "country": "US",
+  "region": "Illinois",
+  "city": "Chicago",
+  "lat": 41.92863,
+  "lng": -87.68898,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "transition",
+   "rails",
+   "manual pads",
+   "street"
+  ],
+  "surface": "wood",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": true,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 1.29-acre Chicago Park District park beneath the Kennedy Expressway in Logan Square, with a bowl corner with a spine, quarters with hips, a funbox with rails and a manual pad, shared by skaters and BMX riders.",
+  "heads_up": "Covered by the expressway, so it often stays skateable in the rain; local groups have proposed a renovation, so check for construction.",
+  "source": "https://www.chicagoparkdistrict.com/parks-facilities/logan-boulevard-skate-park",
+  "confidence": "high",
+  "osm": "w205033058"
+ },
+ {
+  "name": "Wilson Skate Park",
+  "slug": "wilson-skate-park-chicago",
+  "country": "US",
+  "region": "Illinois",
+  "city": "Chicago",
+  "lat": 41.9667,
+  "lng": -87.64608,
+  "kind": "park",
+  "features": [],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A free Chicago Park District skate park at 700 W. Wilson Avenue on the lakefront near Montrose Beach.",
+  "heads_up": "Lakefront spot near Montrose Beach, so wind can be strong.",
+  "source": "https://news.wttw.com/2019/07/16/go-grind-chicago-skateboard-camp-shows-kids-basics-city-skate-parks",
+  "confidence": "medium",
+  "osm": "w23946607"
+ },
+ {
   "name": "Griffin Bike Park",
   "slug": "griffin-bike-park-terre-haute",
   "country": "US",
@@ -1940,6 +2681,755 @@
   "heads_up": "OpenStreetMap lists it as open 24/7 \"weather permitting\", so check conditions after rain.",
   "source": "https://www.goodreads.com/author_blog_posts/19947395-what-is-a-pump-track?tab=book",
   "confidence": "medium"
+ },
+ {
+  "name": "Major Taylor Skate Park",
+  "slug": "major-taylor-skate-park-indianapolis",
+  "country": "US",
+  "region": "Indiana",
+  "city": "Indianapolis",
+  "lat": 39.82029,
+  "lng": -86.19785,
+  "kind": "park",
+  "features": [],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Indy Parks' skate park at the Lake Sullivan Sports Complex, built in 1999 next to the Major Taylor Velodrome and BMX track, open to skateboarders, inline skaters and cyclists.",
+  "heads_up": "Shared with bikes and inline skaters; the velodrome and BMX track next door are run separately.",
+  "source": "https://www.visitindy.com/directory/major-taylor-skate-park/",
+  "confidence": "medium"
+ },
+ {
+  "name": "Sunset Skatepark",
+  "slug": "sunset-skatepark-evansville",
+  "country": "US",
+  "region": "Indiana",
+  "city": "Evansville",
+  "lat": 37.96155,
+  "lng": -87.57236,
+  "kind": "park",
+  "features": [
+   "flow",
+   "bowl",
+   "ledges",
+   "street"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Opened in December 2023 on the Ohio River levee, this 27,000-square-foot Hunger Skateparks all-wheels park has a hybrid roller rink and skate zone, a flow bowl, a pool bowl, long adaptive ledges and street areas.",
+  "heads_up": "Built for all wheels, so expect roller skaters and BMX alongside skateboards.",
+  "source": "https://strayrocket.com/skateparks/indiana/sunset-skatepark-evansville",
+  "confidence": "medium",
+  "osm": "w1498288248"
+ },
+ {
+  "name": "Willard Park Skatepark",
+  "slug": "willard-park-skatepark-indianapolis",
+  "country": "US",
+  "region": "Indiana",
+  "city": "Indianapolis",
+  "lat": 39.76637,
+  "lng": -86.1285,
+  "kind": "park",
+  "features": [
+   "flow",
+   "bowl",
+   "street"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "Designed by Hunger Skateparks and pushed through by Indy Skatepark Advocates, this park near downtown is the largest the city has built and its first new outdoor park since 1999, with a flow bowl and a street plaza.",
+  "heads_up": "No lights: dawn to dusk.",
+  "source": "https://strayrocket.com/skateparks/indiana/willard-park-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Lauridsen Skatepark",
+  "slug": "lauridsen-skatepark-des-moines",
+  "country": "US",
+  "region": "Iowa",
+  "city": "Des Moines",
+  "lat": 41.59363,
+  "lng": -93.61916,
+  "kind": "park",
+  "features": [
+   "street",
+   "bowl",
+   "flow",
+   "snake run",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "Opened in May 2021 on the Des Moines riverfront, this 88,000-square-foot park was the largest public skatepark in the U.S. when it opened and hosted Dew Tour 2021, with park and street courses, a flow bowl, an amoeba pool and a snake run.",
+  "heads_up": "Open 6 a.m. to 10:30 p.m. with lights; helmets and pads are highly recommended, and BMX riders must use plastic pegs.",
+  "source": "https://dsmskatepark.com/",
+  "confidence": "high",
+  "osm": "w923009685"
+ },
+ {
+  "name": "Riverside Skatepark",
+  "slug": "riverside-skatepark-waterloo",
+  "country": "US",
+  "region": "Iowa",
+  "city": "Waterloo",
+  "lat": 42.50679,
+  "lng": -92.34792,
+  "kind": "park",
+  "features": [
+   "street",
+   "mini ramp",
+   "ledges",
+   "rails",
+   "stairs",
+   "gaps",
+   "manual pads",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "An 8,500-square-foot Spohn Ranch concrete park opened in 2020 to replace a flood-destroyed wooden park, built behind the levee, with a mini ramp, a five-stair with rail and hubba, and street features.",
+  "heads_up": "No lights: sunrise to sunset.",
+  "source": "https://strayrocket.com/skateparks/iowa/waterloo-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Young's Park Skatepark",
+  "slug": "young-s-park-skatepark-knoxville",
+  "country": "US",
+  "region": "Iowa",
+  "city": "Knoxville",
+  "lat": 41.32241,
+  "lng": -93.11045,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "street",
+   "rails",
+   "ledges",
+   "stairs",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "An 8,000-square-foot Spohn Ranch park (2018) that replaced an old set of wood and metal ramps, with a split bowl (4-foot and 6-foot sections) and a compact street area.",
+  "heads_up": "Open dawn to dusk.",
+  "source": "https://strayrocket.com/skateparks/iowa/youngs-park-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Berry Hill Park Skatepark",
+  "slug": "berry-hill-park-skatepark-lexington",
+  "country": "US",
+  "region": "Kentucky",
+  "city": "Lexington",
+  "lat": 37.97685,
+  "lng": -84.46002,
+  "kind": "park",
+  "features": [
+   "flow",
+   "snake run",
+   "bowl",
+   "stairs",
+   "rails"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "all",
+  "why": "An 18,000-square-foot Lexington city park with a flow bowl and snake run, horseshoe-stamped concrete and metal rails with thoroughbred designs.",
+  "heads_up": "Open dawn to dusk.",
+  "source": "https://www.the-house.com/portal/top-5-skateparks-in-kentucky-louisville-lexington/",
+  "confidence": "medium",
+  "osm": "w242106623"
+ },
+ {
+  "name": "David Armstrong Extreme Park",
+  "slug": "david-armstrong-extreme-park-louisville",
+  "country": "US",
+  "region": "Kentucky",
+  "city": "Louisville",
+  "lat": 38.25716,
+  "lng": -85.74012,
+  "kind": "park",
+  "features": [
+   "full pipe",
+   "bowl",
+   "vert",
+   "street",
+   "ledges",
+   "rails",
+   "banks",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "Opened in 2002 near downtown Louisville, this 40,000-square-foot park has a 24-foot full pipe, bowls from 4 to 11 feet, a 12-foot wooden vert ramp and a street course; part of it was rebuilt in 2015 after bridge construction.",
+  "heads_up": "Closes at 11 p.m. nightly (cameras enforce it); the full pipe and 11-foot bowls are for experienced riders.",
+  "source": "https://en.wikipedia.org/wiki/David_Armstrong_Extreme_Park",
+  "confidence": "high",
+  "osm": "w566507173"
+ },
+ {
+  "name": "Newport DIY Skatepark",
+  "slug": "newport-diy-skatepark",
+  "country": "US",
+  "region": "Kentucky",
+  "city": "Newport",
+  "lat": 39.09538,
+  "lng": -84.48146,
+  "kind": "diy",
+  "features": [
+   "bowl",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "intermediate",
+  "why": "Volunteer-built DIY terrain under the I-471 bridge, across the river from Cincinnati, that local skaters and Galaxie Skateshop have grown since about 2008, with a concrete bowl poured by Hunger Skateparks in 2017.",
+  "heads_up": "Not a city park: it is kept up by volunteers, so respect the locals, take your trash and consider chipping in to the build fund.",
+  "source": "https://strayrocket.com/skateparks/kentucky/newport-diy-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Woodland Skatepark",
+  "slug": "woodland-skatepark-lexington",
+  "country": "US",
+  "region": "Kentucky",
+  "city": "Lexington",
+  "lat": 38.03481,
+  "lng": -84.49089,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "transition",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "all",
+  "why": "A roughly 12,000-square-foot park in Woodland Park on East High Street near downtown Lexington, with bowls, ramps and pyramids.",
+  "heads_up": "Skateboards only: no bikes or scooters; open dawn to dusk.",
+  "source": "https://www.the-house.com/portal/top-5-skateparks-in-kentucky-louisville-lexington/",
+  "confidence": "medium",
+  "osm": "w230597730"
+ },
+ {
+  "name": "Houma Skatepark (Fireman's Skate and Bike Park)",
+  "slug": "houma-skatepark",
+  "country": "US",
+  "region": "Louisiana",
+  "city": "Houma",
+  "lat": 29.58126,
+  "lng": -90.72431,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "gaps",
+   "manual pads",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 15,000-square-foot Spohn Ranch park opened in 2015, started with a $10,000 bequest from a local man named Jerry, with an open bowl and a full street section.",
+  "heads_up": "No lights: sunrise to sunset.",
+  "source": "https://strayrocket.com/skateparks/louisiana/houma-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Parisite Skatepark",
+  "slug": "parisite-skatepark-new-orleans",
+  "country": "US",
+  "region": "Louisiana",
+  "city": "New Orleans",
+  "lat": 29.99212,
+  "lng": -90.07284,
+  "kind": "diy",
+  "features": [
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "gaps",
+   "manual pads",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "Started by the Parisite DIY crew building ramps and concrete without permission under the I-610 overpass on Pleasure Street, then legitimised with the city and state and rebuilt with Spohn Ranch as a 6,000-square-foot concrete park in 2014.",
+  "heads_up": "No lights (sunrise to sunset); respect the local crew who fought for the spot.",
+  "source": "https://strayrocket.com/skateparks/louisiana/parisite-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Ann Arbor Skatepark",
+  "slug": "ann-arbor-skatepark",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Ann Arbor",
+  "lat": 42.28447,
+  "lng": -83.77939,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "snake run",
+   "flow",
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "manual pads"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 30,000-square-foot park in Veterans Memorial Park that opened in June 2014 after years of local advocacy, with a kidney bowl, a clover bowl, a snake run and a street course; Tony Hawk skated the opening.",
+  "heads_up": "Friends of the Ann Arbor Skatepark run free All Girls Skate sessions on some Sunday mornings in season.",
+  "source": "https://en.wikipedia.org/wiki/Ann_Arbor_Skatepark",
+  "confidence": "high",
+  "osm": "w394161179"
+ },
+ {
+  "name": "Ferndale Skatepark (Donald Red Geary Skatepark)",
+  "slug": "ferndale-skatepark",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Ferndale",
+  "lat": 42.46268,
+  "lng": -83.14841,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "transition",
+   "pool coping",
+   "rails",
+   "gaps",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "An 18,000-square-foot Evergreen Skateparks park opened in 2019 with help from a $250,000 Tony Hawk Foundation grant, with an open bowl, a spine, hubbas and flat rails.",
+  "heads_up": "Open 7 a.m. to 10 p.m. as weather permits.",
+  "source": "https://strayrocket.com/skateparks/michigan/ferndale-skatepark",
+  "confidence": "medium",
+  "osm": "w870543531"
+ },
+ {
+  "name": "Marquette Skate Plaza",
+  "slug": "marquette-skate-plaza",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Marquette",
+  "lat": 46.55694,
+  "lng": -87.38886,
+  "kind": "plaza",
+  "features": [
+   "street",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 9,000-square-foot Upper Peninsula plaza at Pine Street and Fair Avenue, built by Spohn Ranch after a seven-year community fundraising campaign, with a California-style high bank and a Barcelona-style wall.",
+  "heads_up": "Upper Peninsula winters are long; the season runs roughly late spring to fall.",
+  "source": "https://strayrocket.com/skateparks/michigan/marquette-skate-park",
+  "confidence": "medium"
+ },
+ {
+  "name": "Modern Skate Park",
+  "slug": "modern-skate-park-royal-oak",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Royal Oak",
+  "lat": 42.50273,
+  "lng": -83.11681,
+  "kind": "indoor",
+  "features": [
+   "street",
+   "bowl",
+   "rails",
+   "ledges",
+   "transition"
+  ],
+  "surface": "wood",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": true,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Modern Skate & Surf's indoor park, which the shop lists at 60,000 square feet, opened in 2008 with more than an acre of ramps and rails, including a wooden bowl built by Team Pain.",
+  "heads_up": "Runs set session times with an electronic waiver; check the schedule before you drive over.",
+  "source": "https://www.modernskate.com/",
+  "confidence": "high",
+  "osm": "w894312335"
+ },
+ {
+  "name": "Ranney Skate Park",
+  "slug": "ranney-skate-park-lansing",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Lansing",
+  "lat": 42.73421,
+  "lng": -84.50413,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "vert",
+   "transition",
+   "gaps",
+   "ledges",
+   "rails",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 20,000-square-foot Team Pain park in Ranney Park with quarter pipes and a vert extension, a 5-to-9-foot egg bowl, a large pyramid and transfer gaps.",
+  "heads_up": "Lit for evening sessions; the egg bowl's deep end is for confident skaters.",
+  "source": "https://skatethestates.com/best-skateparks-in-michigan/",
+  "confidence": "medium"
+ },
+ {
+  "name": "Ride It Sculpture Park",
+  "slug": "ride-it-sculpture-park-detroit",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Detroit",
+  "lat": 42.41449,
+  "lng": -83.06366,
+  "kind": "diy",
+  "features": [
+   "snake run",
+   "transition",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "intermediate",
+  "why": "A free skatepark and art project on four vacant lots along the Davison Freeway at Klinger Street, started in 2012 by Power House Productions with visiting skaters and artists and expanded by Evergreen Skateparks in 2013 and 2017.",
+  "heads_up": "Neighbourhood art space, not a city park: be respectful of the residents on the block.",
+  "source": "https://strayrocket.com/skateparks/michigan/ride-it-sculpture-park",
+  "confidence": "medium"
+ },
+ {
+  "name": "Riverside Park Skatepark",
+  "slug": "riverside-park-skatepark-detroit",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Detroit",
+  "lat": 42.31403,
+  "lng": -83.0799,
+  "kind": "park",
+  "features": [
+   "street",
+   "stairs",
+   "rails",
+   "ledges",
+   "bowl",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 21,000-square-foot Grindline park on the Detroit riverfront (2019) with two stair sets with handrails, a hubba, a pole jam, banks and a central pool-style bowl.",
+  "heads_up": "Riverfront wind makes it cold in spring and fall; dress for it.",
+  "source": "https://skatethestates.com/best-skateparks-in-michigan/",
+  "confidence": "medium",
+  "osm": "w777948791"
+ },
+ {
+  "name": "Sterling Heights Skatepark",
+  "slug": "sterling-heights-skatepark",
+  "country": "US",
+  "region": "Michigan",
+  "city": "Sterling Heights",
+  "lat": 42.58921,
+  "lng": -83.01261,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "transition",
+   "stairs",
+   "rails",
+   "gaps",
+   "manual pads",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 20,000-square-foot Evergreen Skateparks park opened in 2018 with the city and local skaters, mixing a bowl and quarter pipes with stairs, rails and a manual pad.",
+  "heads_up": "No lights; open 7 a.m. to 10 p.m. April to September, with shorter hours the rest of the year.",
+  "source": "https://strayrocket.com/skateparks/michigan/sterling-heights-skatepark",
+  "confidence": "medium",
+  "osm": "w1130722370"
+ },
+ {
+  "name": "3rd Lair Skatepark",
+  "slug": "3rd-lair-skatepark-golden-valley",
+  "country": "US",
+  "region": "Minnesota",
+  "city": "Golden Valley",
+  "lat": 44.97304,
+  "lng": -93.36354,
+  "kind": "indoor",
+  "features": [
+   "bowl",
+   "vert",
+   "mini ramp",
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "banks"
+  ],
+  "surface": "wood",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": true,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Founded in the late 1990s by Mark Muller, 3rd Lair is a skate shop and indoor park that is one of the most popular in Minnesota, with a peanut bowl, a vert ramp, a mini-ramp room and street terrain, plus an outdoor area.",
+  "heads_up": "The main winter option in the Twin Cities; check session times and waiver rules before you go.",
+  "source": "https://mspmag.com/arts-and-culture/state-of-skateboarding-twin-cities",
+  "confidence": "medium"
+ },
+ {
+  "name": "Bemidji Skate Plaza",
+  "slug": "bemidji-skate-plaza",
+  "country": "US",
+  "region": "Minnesota",
+  "city": "Bemidji",
+  "lat": 47.48999,
+  "lng": -94.89728,
+  "kind": "plaza",
+  "features": [
+   "street",
+   "banks",
+   "snake run",
+   "bowl"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 14,000-square-foot concrete plaza in City Park built by Spohn Ranch to a SITE Design Group plan and opened in November 2010, which Spohn describes as Minnesota's first public skate plaza; it has a China Banks replica, a snake run and a bowl.",
+  "heads_up": "Northern Minnesota season is short: expect snow cover from late fall into spring.",
+  "source": "https://strayrocket.com/skateparks/minnesota/bemidji-skate-plaza",
+  "confidence": "medium"
+ },
+ {
+  "name": "JXTA Skate-Able Art Plaza",
+  "slug": "jxta-skate-able-art-plaza-minneapolis",
+  "country": "US",
+  "region": "Minnesota",
+  "city": "Minneapolis",
+  "lat": 44.99937,
+  "lng": -93.29437,
+  "kind": "plaza",
+  "features": [
+   "banks",
+   "manual pads",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 4,200-square-foot plaza on West Broadway designed by Juxtaposition Arts' youth apprentices and built by Hunger Skateparks in 2019, which the Cultural Landscape Foundation calls the first public skatepark in Minneapolis.",
+  "heads_up": "Small and unlit; it is an art plaza, so be mindful of people using the space.",
+  "source": "https://strayrocket.com/skateparks/minnesota/juxtaposition-arts-skate-able-art-plaza",
+  "confidence": "medium",
+  "osm": "w839961864"
  },
  {
   "name": "Keene Creek Bike Park",
@@ -1970,6 +3460,33 @@
   "heads_up": "Parts of the park are still being built; the city lists the beginner, intermediate and advanced jump lines as open.",
   "source": "https://duluthmn.gov/parks/parks-trails/current-projects/keene-creek-bike-park/",
   "confidence": "medium"
+ },
+ {
+  "name": "Pidgeon Park (Hernando Skatepark)",
+  "slug": "pidgeon-park",
+  "country": "US",
+  "region": "Mississippi",
+  "city": "Hernando",
+  "lat": 34.80992,
+  "lng": -89.99455,
+  "kind": "park",
+  "features": [],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 6,000-square-foot Evergreen Skateparks concrete park in Renasant Park (2015), about 30 minutes south of Memphis, named for Edward Pidgeon, who raised the money for it at the farmers market for years.",
+  "heads_up": "No lights; plan for daylight sessions.",
+  "source": "https://strayrocket.com/skateparks/mississippi/hernando-skatepark",
+  "confidence": "medium",
+  "osm": "w1112317398"
  },
  {
   "name": "Kinetic Park",
@@ -2009,7 +3526,7 @@
   "features": [
    "pump track"
   ],
-  "surface": "dirt",
+  "surface": "hard",
   "disciplines": [
    "bmx",
    "mtb"
@@ -2024,6 +3541,177 @@
   "confidence": "high"
  },
  {
+  "name": "Penn Valley Skate Park",
+  "slug": "penn-valley-skate-park-kansas-city",
+  "country": "US",
+  "region": "Missouri",
+  "city": "Kansas City",
+  "lat": 39.07378,
+  "lng": -94.59254,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "banks",
+   "stairs",
+   "rails",
+   "street"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Opened in 2005 on the hill in Penn Valley Park overlooking downtown Kansas City, it pairs a bank-heavy street plaza with a bowl that waterfalls from 6 to 9 feet with real pool coping and tile.",
+  "heads_up": "Steady local crowd; the bowl's deep end is for confident transition skaters.",
+  "source": "https://en.wikipedia.org/wiki/Penn_Valley_skatepark",
+  "confidence": "medium",
+  "osm": "w496242108"
+ },
+ {
+  "name": "Westhoff Plaza Skate and BMX Complex",
+  "slug": "westhoff-plaza-skate-and-bmx-complex-o-fallon",
+  "country": "US",
+  "region": "Missouri",
+  "city": "O'Fallon",
+  "lat": 38.81374,
+  "lng": -90.68301,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "ledges",
+   "rails",
+   "stairs",
+   "banks",
+   "gaps"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A concrete skate and BMX park in Westhoff Park in St. Louis's western suburbs, opened by the city in 2012, with ledges, a stair set, hubbas, a jump gap and a six-foot bowl.",
+  "heads_up": "Closes for rain, ice and snow; in winter the closing time depends on the temperature.",
+  "source": "https://strayrocket.com/skateparks/missouri/westhoff-plaza-skate-and-bmx-complex",
+  "confidence": "medium"
+ },
+ {
+  "name": "Atlantic Beach Skatepark",
+  "slug": "atlantic-beach-skatepark",
+  "country": "US",
+  "region": "North Carolina",
+  "city": "Atlantic Beach",
+  "lat": 34.69957,
+  "lng": -76.75096,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "transition",
+   "ledges",
+   "rails",
+   "stairs",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 13,000-square-foot park in Atlantic Beach Town Park by Pillar Design Studios and Artisan Skateparks, with a bowl with pool coping and a street section a short walk from the beach.",
+  "heads_up": "Seasonal hours: weekends only before and after summer, daily 10 a.m.-10 p.m. in summer; check the town's parks page.",
+  "source": "https://strayrocket.com/skateparks/north-carolina/atlantic-beach-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Cherokee Action Sports Park",
+  "slug": "cherokee-action-sports-park",
+  "country": "US",
+  "region": "North Carolina",
+  "city": "Cherokee",
+  "lat": 35.49037,
+  "lng": -83.31184,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "flow",
+   "street",
+   "ledges",
+   "rails",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Funded by the Eastern Band of Cherokee Indians and opened in June 2011 on Acquoni Road, this Pillar-designed, Artisan-built park of about 13,000 square feet has a vert bowl with pool coping, a flow bowl and street features.",
+  "heads_up": "Older concrete shows some wear; mountain weather changes quickly, so expect wet patches after storms.",
+  "source": "https://strayrocket.com/skateparks/north-carolina/cherokee-action-sports-park",
+  "confidence": "medium",
+  "osm": "w721055566"
+ },
+ {
+  "name": "Durham Skate Park",
+  "slug": "durham-skate-park",
+  "country": "US",
+  "region": "North Carolina",
+  "city": "Durham",
+  "lat": 36.00061,
+  "lng": -78.90025,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 10,000-square-foot downtown park on Foster Street by Pillar Design Studios and Artisan Skateparks, mixing a backyard-style bowl with a street plaza.",
+  "heads_up": "Listed as open dawn to dusk.",
+  "source": "https://strayrocket.com/skateparks/north-carolina/durham-skatepark",
+  "confidence": "medium",
+  "osm": "w118815913"
+ },
+ {
   "name": "George Poston Park Pump Track",
   "slug": "george-poston-park-pump-track-lowell",
   "country": "US",
@@ -2035,7 +3723,7 @@
   "features": [
    "pump track"
   ],
-  "surface": "dirt",
+  "surface": "hard",
   "disciplines": [
    "bmx",
    "mtb"
@@ -2048,6 +3736,171 @@
   "heads_up": "The coordinates mark the park as a whole; the pump track is one part of a larger park with trails.",
   "source": "https://media.visitnc.com/Red-Bull-Pump-Track-World-Championship-to-Hold-Qualifier-in-Gastonia",
   "confidence": "medium"
+ },
+ {
+  "name": "Marsh Creek Skatepark",
+  "slug": "marsh-creek-skatepark-raleigh",
+  "country": "US",
+  "region": "North Carolina",
+  "city": "Raleigh",
+  "lat": 35.82367,
+  "lng": -78.56742,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "snake run",
+   "transition",
+   "ledges",
+   "rails",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": false,
+  "cost": "free",
+  "skill": "all",
+  "why": "A 12,000-square-foot Pillar Design Studios park (2009) inside the 110-acre Marsh Creek Park, with a large bowl, a snake run and street obstacles.",
+  "heads_up": "No lights: sunrise to sunset only.",
+  "source": "https://strayrocket.com/skateparks/north-carolina/marsh-creek-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Mooresville Skatepark",
+  "slug": "mooresville-skatepark",
+  "country": "US",
+  "region": "North Carolina",
+  "city": "Mooresville",
+  "lat": 35.59272,
+  "lng": -80.81668,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "snake run",
+   "street",
+   "ledges",
+   "rails",
+   "stairs",
+   "gaps"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "all",
+  "why": "Opened in December 2022 north of Charlotte, this park designed by Team Pain and built by Artisan Skateparks for just under $3 million has an amoeba bowl and a square bowl with pool coping, a shallow snake run and a street section.",
+  "heads_up": "Check Mooresville Parks and Recreation for current hours.",
+  "source": "https://strayrocket.com/skateparks/north-carolina/mooresville-skatepark",
+  "confidence": "medium",
+  "osm": "w728832688"
+ },
+ {
+  "name": "Athens Skate Park",
+  "slug": "athens-skate-park",
+  "country": "US",
+  "region": "Ohio",
+  "city": "Athens",
+  "lat": 39.33556,
+  "lng": -82.07577,
+  "kind": "park",
+  "features": [
+   "full pipe",
+   "bowl",
+   "transition",
+   "pool coping"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "intermediate",
+  "why": "Built by Grindline in 2003 behind the Athens Recreation Center, this park was once the only one with a 'capsule' (a full 16-foot pipe connected to a cradle) and is among the largest concrete parks in Ohio.",
+  "heads_up": "Older Grindline concrete with cement coping; the capsule is for experienced riders.",
+  "source": "https://en.wikipedia.org/wiki/Athens_Skate_Park",
+  "confidence": "medium"
+ },
+ {
+  "name": "Camp Washington Skatepark",
+  "slug": "camp-washington-skatepark-cincinnati",
+  "country": "US",
+  "region": "Ohio",
+  "city": "Cincinnati",
+  "lat": 39.1394,
+  "lng": -84.53647,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "street",
+   "banks",
+   "ledges",
+   "rails",
+   "flow"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Cincinnati's first public skatepark, about 15,500 square feet by Hunger Skateparks beside the Camp Washington Recreation Area, opened in August 2026 with a bowl from 3.5 to 8 feet, a tech alley, a flow street pit and street features.",
+  "heads_up": "Open daily 6 a.m. to 10 p.m.; brand-new, so expect crowds in its first season.",
+  "source": "https://strayrocket.com/skateparks/ohio/camp-washington-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Crooked River Skatepark",
+  "slug": "crooked-river-skatepark-cleveland",
+  "country": "US",
+  "region": "Ohio",
+  "city": "Cleveland",
+  "lat": 41.49054,
+  "lng": -81.70194,
+  "kind": "park",
+  "features": [
+   "flow",
+   "bowl",
+   "stairs",
+   "rails"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A Grindline park in Rivergate Park on the Cuyahoga River, built in 2014 with Tony Hawk Foundation support, with a flow bowl with hips and extensions, a pool-style bowl about 6 feet deep, stairs, rails and hubbas.",
+  "heads_up": "Open 7 a.m. to 11 p.m. with lights for night sessions and restrooms on site.",
+  "source": "https://www.the-house.com/portal/our-top-5-ohio-skateparks/",
+  "confidence": "medium",
+  "osm": "w593865571"
  },
  {
   "name": "Dayton Bike Yard",
@@ -2075,6 +3928,37 @@
   "why": "A newer bike park in Welcome Park with about 2.5 acres of jumps, a pump track, and areas set aside for beginners and families.",
   "heads_up": "The coordinates mark the pump track; the jump areas fill the rest of the 2.5-acre site.",
   "source": "https://livability.com/oh/dayton/experiences-adventures/bicycling-in-dayton-oh-it-just-feels-wright/",
+  "confidence": "medium"
+ },
+ {
+  "name": "Everett Park Skatepark",
+  "slug": "everett-park-skatepark-newark",
+  "country": "US",
+  "region": "Ohio",
+  "city": "Newark",
+  "lat": 40.06208,
+  "lng": -82.39525,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "full pipe",
+   "street",
+   "pump track"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "A Spohn Ranch concrete park of about 15,000 square feet with an elongated bowl that runs through a full pipe in the middle, plus a street plaza and a pump track.",
+  "heads_up": "Open dawn to 11 p.m. with lights.",
+  "source": "https://strayrocket.com/skateparks/ohio/newark-skatepark-ohio",
   "confidence": "medium"
  },
  {
@@ -2137,7 +4021,69 @@
   "why": "Opened in 2004 in a former factory on Cleveland's west side and since grown to about 165,000 sq ft. It has a full-size indoor pump track, a jump trail, foam pits, a BMX pool, and a trail of nearly a mile with rocks and logs built to feel like the woods.",
   "heads_up": "Seasonal: usually open October to April and closed in summer; riders under 18 need a waiver signed by a parent.",
   "source": "https://en.wikipedia.org/wiki/Ray%27s_MTB_Indoor_Park",
-  "confidence": "high"
+  "confidence": "high",
+  "osm": "n8163505338"
+ },
+ {
+  "name": "Rob Dyrdek/DC Shoes Skate Plaza",
+  "slug": "rob-dyrdek-dc-shoes-skate-plaza-kettering",
+  "country": "US",
+  "region": "Ohio",
+  "city": "Kettering",
+  "lat": 39.68911,
+  "lng": -84.11495,
+  "kind": "plaza",
+  "features": [
+   "street"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "all",
+  "why": "A gift from pro skater Rob Dyrdek, this large concrete plaza is built like a city square, with street terrain modelled on spots in Los Angeles, San Francisco and Barcelona.",
+  "heads_up": "Open sunrise to sunset.",
+  "source": "https://www.the-house.com/portal/our-top-5-ohio-skateparks/",
+  "confidence": "medium",
+  "osm": "w81124821"
+ },
+ {
+  "name": "Buckwalter Skate Park",
+  "slug": "buckwalter-skate-park-bluffton",
+  "country": "US",
+  "region": "South Carolina",
+  "city": "Bluffton",
+  "lat": 32.24899,
+  "lng": -80.90429,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "stairs",
+   "rails",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Beaufort County's 11,000-square-foot concrete park at the Buckwalter Recreation Center, opened in March 2010, designed by Pillar Design Studios and built by Artisan Skateparks from residents' suggestions.",
+  "heads_up": "Parking and restrooms are shared with the Buckwalter Recreation Center.",
+  "source": "https://strayrocket.com/skateparks/south-carolina/buckwalter-skatepark",
+  "confidence": "medium",
+  "osm": "w568376749"
  },
  {
   "name": "Piney Mountain Bike Lounge",
@@ -2153,7 +4099,7 @@
    "rollers",
    "berms"
   ],
-  "surface": "dirt",
+  "surface": "hard",
   "disciplines": [
    "mtb"
   ],
@@ -2165,6 +4111,69 @@
   "heads_up": "The lights stay on only while the lounge is open and staffed, so riding follows its hours.",
   "source": "https://www.goodreads.com/author_blog_posts/19947395-what-is-a-pump-track?tab=book",
   "confidence": "medium"
+ },
+ {
+  "name": "Garner Street Park Skatepark",
+  "slug": "garner-street-park-skatepark-springfield",
+  "country": "US",
+  "region": "Tennessee",
+  "city": "Springfield",
+  "lat": 36.51554,
+  "lng": -86.88841,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "mini ramp",
+   "street"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "A 6,300-square-foot boomerang-shaped concrete park north of Nashville, built by Hunger Skateparks with the Kiwanis Club and opened in March 2024, with a bowl, mini ramp, street features and a skateable steel sculpture by local fabricator Adam Heffner.",
+  "heads_up": "Small park; Garner Street Park has restrooms and a shelter beside it.",
+  "source": "https://strayrocket.com/skateparks/tennessee/garner-street-park-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Two Rivers Skatepark (Metro Nashville Skatepark)",
+  "slug": "two-rivers-skatepark",
+  "country": "US",
+  "region": "Tennessee",
+  "city": "Nashville",
+  "lat": 36.18729,
+  "lng": -86.68678,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "pool coping",
+   "flow",
+   "street",
+   "transition"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "unknown",
+  "skill": "all",
+  "why": "Built by Metro Parks in 2004 with Wally Hollyday as designer, this 22,000-square-foot park in Two Rivers Park has a 10-foot combi pool with pool coping (the General Jackson), a mid-sized flow bowl and a street area.",
+  "heads_up": "Open year-round from dawn to 11 p.m.; skateboards, inline skates and BMX share the park.",
+  "source": "https://en.wikipedia.org/wiki/Metro_Nashville_Skatepark",
+  "confidence": "high",
+  "osm": "w336953521"
  },
  {
   "name": "Paris Pump Track",
@@ -2199,7 +4208,7 @@
   "country": "US",
   "region": "Washington",
   "city": "Seattle",
-  "lat": 47.63496,
+  "lat": 47.63524,
   "lng": -122.32326,
   "kind": "bikepark",
   "features": [
@@ -2210,13 +4219,14 @@
    "mtb"
   ],
   "indoor": false,
-  "lit": null,
+  "lit": false,
   "cost": "unknown",
   "skill": "all",
   "why": "Seattle's urban mountain bike park in I-5 Colonnade Park, under the freeway. Seattle Parks and the Evergreen Mountain Bike Alliance planned to rebuild its Tqalu Skills Zone with two paved pump tracks.",
   "heads_up": "The paved pump tracks were set for construction in summer–fall 2024; check Seattle Parks to see whether they have opened.",
   "source": "https://seattle.gov/parks/about-us/projects/i-5-colonnade-pump-track-",
-  "confidence": "medium"
+  "confidence": "medium",
+  "osm": "n3957621878"
  },
  {
   "name": "Leavenworth Pump Track",
@@ -2245,5 +4255,137 @@
   "heads_up": "OpenStreetMap says it has no lights, so plan to ride in daylight.",
   "source": "https://pnwcomponents.com/blogs/news/redbull-world-champ-pump-track-qualifiers",
   "confidence": "medium"
+ },
+ {
+  "name": "Four Seasons Skatepark",
+  "slug": "four-seasons-skatepark-milwaukee",
+  "country": "US",
+  "region": "Wisconsin",
+  "city": "Milwaukee",
+  "lat": 43.03312,
+  "lng": -87.9426,
+  "kind": "indoor",
+  "features": [
+   "street",
+   "bowl",
+   "flow",
+   "mini ramp",
+   "ledges",
+   "rails",
+   "stairs",
+   "banks"
+  ],
+  "surface": "wood",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": true,
+  "lit": null,
+  "cost": "paid",
+  "skill": "all",
+  "why": "A warehouse indoor park of about 22,000 square feet of wooden ramps in the Menomonee River Valley, with street features, a flow bowl, mini ramps and a foam pit.",
+  "heads_up": "Paid day passes or membership; helmets required.",
+  "source": "https://www.northshorefamilyadventures.com/indoor-activities/milwaukee-skateparks",
+  "confidence": "medium",
+  "osm": "w663021994"
+ },
+ {
+  "name": "Goodman Skatepark",
+  "slug": "goodman-skatepark-madison",
+  "country": "US",
+  "region": "Wisconsin",
+  "city": "Madison",
+  "lat": 43.08467,
+  "lng": -89.36553,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "vert",
+   "flow",
+   "street"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": true,
+  "cost": "free",
+  "skill": "all",
+  "why": "Completed in 2017 in McPike Park for about $1.2 million, designed by Stantec and built by Hardcore Skateparks, with a vert bowl, a flow bowl and a street plaza.",
+  "heads_up": "Open 8 a.m. to 10 p.m. in season and closed in winter.",
+  "source": "https://strayrocket.com/skateparks/wisconsin/goodman-skatepark",
+  "confidence": "medium",
+  "osm": "w334891462"
+ },
+ {
+  "name": "The Turf Skatepark",
+  "slug": "the-turf-skatepark-greenfield",
+  "country": "US",
+  "region": "Wisconsin",
+  "city": "Greenfield",
+  "lat": 42.9625,
+  "lng": -87.96722,
+  "kind": "bowl",
+  "features": [
+   "bowl",
+   "transition",
+   "street"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "intermediate",
+  "why": "Surfin' Turf opened in 1979 with five concrete pools designed by Art Kent and was later filled with gravel; Grindline rebuilt the five original bowls to their 1979 scale, plus a combi bowl and street course, and the city rededicated it on June 7, 2025.",
+  "heads_up": "Rebuilt 1970s pool shapes, so expect old-school transitions; open dawn to dusk.",
+  "source": "https://strayrocket.com/skateparks/wisconsin/turf-skatepark",
+  "confidence": "medium"
+ },
+ {
+  "name": "Wauwatosa Skate Park (Hart Park)",
+  "slug": "wauwatosa-skate-park",
+  "country": "US",
+  "region": "Wisconsin",
+  "city": "Wauwatosa",
+  "lat": 43.04619,
+  "lng": -88.00094,
+  "kind": "park",
+  "features": [
+   "bowl",
+   "flow",
+   "ledges",
+   "rails",
+   "stairs",
+   "banks"
+  ],
+  "surface": "hard",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline",
+   "scooter"
+  ],
+  "indoor": false,
+  "lit": null,
+  "cost": "free",
+  "skill": "all",
+  "why": "A free concrete park in Hart Park opened in 2015, with a triple bowl, a flow bowl, ledges, handrails, stairs and an A-frame.",
+  "heads_up": "No helmet rule, but gear is recommended; Hart Park has restrooms and parking.",
+  "source": "https://www.northshorefamilyadventures.com/indoor-activities/milwaukee-skateparks",
+  "confidence": "medium",
+  "osm": "w440955087"
  }
 ]

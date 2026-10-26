@@ -1,7 +1,9 @@
 // Every wheels spot OpenStreetMap knows about in Canada, the US and Mexico → data/parks.json:
 // skateparks, pump tracks, BMX tracks and bike / dirt jump parks.
-// Runs in GitHub Actions (.github/workflows/skateparks.yml), which has the open network this needs.
 //   node scripts/fetch-skateparks.mjs
+// Source: the QLever SPARQL endpoint over the OpenStreetMap planet (qlever.dev, University of
+// Freiburg), which answers a whole country in seconds where the public Overpass servers time out.
+// Runs in GitHub Actions (.github/workflows/skateparks.yml) and anywhere else with network.
 // Output is compact on purpose (it ships with the site): one object per spot,
 //   { id, name, lat, lng, cc, kind, sports?, lit?, indoor?, fee?, surface?, hours?, web?, city?, region? }
 // kind: "skate" | "pump" | "bmx" | "bike". Unnamed spots are kept (name null): the site calls them
@@ -9,63 +11,60 @@
 
 import { writeFileSync } from 'fs'
 
-const MIRRORS = [
-  'https://overpass-api.de/api/interpreter',
-  'https://overpass.private.coffee/api/interpreter',
-  'https://overpass.kumi.systems/api/interpreter',
-]
+const ENDPOINT = 'https://qlever.dev/api/osm-planet'
 const UA = 'RitualRollers/1.0 (ritualrollers.com; dave@clickshift.ca)'
-const COUNTRIES = ['CA', 'MX', 'US']
+// OSM country relations
+const COUNTRIES = { CA: 1428125, MX: 114686, US: 148838 }
 
-// Country-wide queries time out when the public servers are busy, so each country is fetched in
-// longitude/latitude tiles (south, west, north, east), clipped to the country's own area.
-const TILES = {
-  CA: [[41.5, -141, 84, -120], [41.5, -120, 84, -100], [41.5, -100, 84, -80], [41.5, -80, 84, -52]],
-  MX: [[14, -118.5, 33, -104], [14, -104, 33, -86]],
-  US: [
-    [24, -125, 50, -115], [24, -115, 50, -105], [24, -105, 50, -97], [24, -97, 50, -90],
-    [24, -90, 50, -84], [24, -84, 50, -78], [24, -78, 50, -66],
-    [51, -180, 72, -129], [18, -161, 23, -154],
-  ],
-}
+const KEY = k => `<https://www.openstreetmap.org/wiki/Key:${k}>`
+const TAGS = ['sport', 'leisure', 'name', 'name:en', 'lit', 'indoor', 'covered', 'building', 'fee', 'surface', 'opening_hours',
+  'website', 'contact:website', 'url', 'addr:city', 'addr:state', 'addr:province', 'access', 'shop', 'club', 'office',
+  'disused', 'demolished', 'bmx', 'track']
+const varOf = t => '?' + t.replace(/[^a-z]/g, '_')
 
-const query = (cc, [s, w, n, e]) => {
-  const b = `(${s},${w},${n},${e})`
-  return `[out:json][timeout:300];
-area["ISO3166-1"="${cc}"][admin_level=2]->.a;
-(
-  nwr["sport"~"skateboard|bmx|pump|mtb|scooter|dirt_jump|freestyle"](area.a)${b};
-  nwr["leisure"="skatepark"](area.a)${b};
-  nwr["leisure"~"^(track|pitch)$"]["name"~"pump ?track|bmx|bike park|dirt jump",i](area.a)${b};
-);
-out center tags;`
-}
+const query = rel => `PREFIX ogc: <http://www.opengis.net/rdf#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?o ${TAGS.map(varOf).join(' ')} ?wkt WHERE {
+  <https://www.openstreetmap.org/relation/${rel}> ogc:sfContains ?o .
+  { ?o ${KEY('sport')} ?s0 . FILTER(REGEX(?s0, "skateboard|bmx|pump|mtb|scooter|dirt_jump|freestyle")) }
+  UNION { ?o ${KEY('leisure')} "skatepark" }
+  UNION { ?o ${KEY('leisure')} ?l0 . FILTER(?l0 = "track" || ?l0 = "pitch") ?o ${KEY('name')} ?n0 . FILTER(REGEX(?n0, "pump ?track|bmx|bike park|dirt jump", "i")) }
+  ${TAGS.map(t => `OPTIONAL { ?o ${KEY(t)} ${varOf(t)} }`).join('\n  ')}
+  ?o geo:hasGeometry/geo:asWKT ?wkt .
+}`
 
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 
-async function overpass(q) {
-  for (let attempt = 0; attempt < 9; attempt++) {
-    const url = MIRRORS[attempt % MIRRORS.length]
+async function sparql(q) {
+  for (let attempt = 0; attempt < 5; attempt++) {
     try {
-      const res = await fetch(url, {
+      const res = await fetch(ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': UA },
-        body: 'data=' + encodeURIComponent(q),
-        signal: AbortSignal.timeout(360_000),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/sparql-results+json', 'User-Agent': UA },
+        body: 'query=' + encodeURIComponent(q),
+        signal: AbortSignal.timeout(300_000),
       })
       const text = await res.text()
-      if (res.ok && text.trim().startsWith('{')) {
-        const data = JSON.parse(text)
-        if (data.remark && /runtime error|timed out|out of memory/i.test(data.remark)) throw new Error(data.remark)
-        return data.elements ?? []
-      }
-      console.warn(`${url} → ${res.status} ${text.slice(0, 120).replace(/\s+/g, ' ')}`)
+      if (res.ok && text.trim().startsWith('{')) return JSON.parse(text).results.bindings
+      console.warn(`QLever → ${res.status} ${text.slice(0, 160).replace(/\s+/g, ' ')}`)
     } catch (e) {
-      console.warn(`${url} failed: ${e.message}`)
+      console.warn(`QLever failed: ${e.message}`)
     }
-    await sleep(15_000 * (attempt + 1))
+    await sleep(20_000 * (attempt + 1))
   }
-  throw new Error('every Overpass mirror failed')
+  throw new Error('QLever did not answer')
+}
+
+// The middle of a geometry: the centre of its bounding box (good enough for a park pin)
+function centre(wkt) {
+  const nums = wkt.match(/-?\d+(?:\.\d+)?(?:e-?\d+)?/gi)?.map(Number) ?? []
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity
+  for (let i = 0; i + 1 < nums.length; i += 2) {
+    const x = nums[i], y = nums[i + 1]
+    if (x < minX) minX = x; if (x > maxX) maxX = x
+    if (y < minY) minY = y; if (y > maxY) maxY = y
+  }
+  return Number.isFinite(minX) ? { lat: (minY + maxY) / 2, lng: (minX + maxX) / 2 } : null
 }
 
 const yes = v => v === 'yes' || v === 'true' || v === '1'
@@ -83,23 +82,26 @@ function kindOf(t) {
   return null
 }
 
-function shape(el, cc) {
-  const t = el.tags ?? {}
-  if (t.shop || t.club || t.office || t.route || t.type === 'route') return null
+function shape(row, cc) {
+  const t = {}
+  for (const tag of TAGS) { const v = row[varOf(tag).slice(1)]; if (v) t[tag] = v.value }
+  if (t.shop || t.club || t.office) return null
   if (['private', 'no'].includes(t.access)) return null
-  if (t.disused || t['disused:leisure'] || t['abandoned:leisure'] || t.demolished || t['demolished:leisure']) return null
+  if (t.disused || t.demolished) return null
   if (t.leisure && !PLACES.has(t.leisure)) return null
   const kind = kindOf(t)
   if (!kind) return null
   if (!t.leisure && kind !== 'skate' && !t.name) return null
-  const lat = el.lat ?? el.center?.lat
-  const lng = el.lon ?? el.center?.lon
-  if (lat == null || lng == null) return null
+  const iri = row.o.value // https://www.openstreetmap.org/way/123
+  const m = iri.match(/\/(node|way|relation)\/(\d+)$/)
+  if (!m) return null
+  const c = centre(row.wkt.value)
+  if (!c) return null
   const indoor = yes(t.indoor) || yes(t.covered) || (t.building != null && t.building !== 'no')
     || t.leisure === 'sports_centre' || t.leisure === 'sports_hall'
   const fee = t.fee == null ? null : yes(t.fee) ? true : t.fee === 'no' ? false : null
   const lit = t.lit == null ? null : t.lit !== 'no'
-  const out = { id: `${el.type[0]}${el.id}`, name: t.name ?? t['name:en'] ?? null, lat: round(lat), lng: round(lng), cc, kind }
+  const out = { id: `${m[1][0]}${m[2]}`, name: t.name ?? t['name:en'] ?? null, lat: round(c.lat), lng: round(c.lng), cc, kind }
   const sports = (t.sport ?? '').split(';').map(s => s.trim()).filter(Boolean)
   if (sports.length) out.sports = sports
   if (lit != null) out.lit = lit
@@ -117,22 +119,18 @@ function shape(el, cc) {
 
 const parks = []
 const seen = new Set()
-for (const cc of COUNTRIES) {
-  let kept = 0, total = 0
-  for (const tile of TILES[cc]) {
-    const elements = await overpass(query(cc, tile))
-    total += elements.length
-    for (const el of elements) {
-      const p = shape(el, cc)
-      if (!p || seen.has(p.id)) continue
-      seen.add(p.id)
-      parks.push(p)
-      kept++
-    }
-    console.log(`${cc} ${tile.join(',')}: ${elements.length} elements`)
-    await sleep(5_000)
+for (const [cc, rel] of Object.entries(COUNTRIES)) {
+  const rows = await sparql(query(rel))
+  let kept = 0
+  for (const row of rows) {
+    const p = shape(row, cc)
+    if (!p || seen.has(p.id)) continue
+    seen.add(p.id)
+    parks.push(p)
+    kept++
   }
-  console.log(`${cc}: ${total} elements, ${kept} spots`)
+  console.log(`${cc}: ${rows.length} rows, ${kept} spots`)
+  await sleep(3_000)
 }
 
 // A spot mapped as both an area and a point inside it: keep the named area, drop the twin
@@ -153,12 +151,12 @@ const final = parks.filter(p => !dropped.has(p.id)).sort((a, b) => a.cc.localeCo
 
 if (final.length < 3000) throw new Error(`only ${final.length} spots — refusing to overwrite the dataset`)
 
-const count = (f) => final.filter(f).length
+const count = f => final.filter(f).length
 writeFileSync('data/parks.json', JSON.stringify({
-  source: 'OpenStreetMap contributors, ODbL — https://www.openstreetmap.org/copyright',
+  source: 'OpenStreetMap contributors, ODbL — https://www.openstreetmap.org/copyright (via qlever.dev)',
   fetched: new Date().toISOString(),
   count: final.length,
   parks: final,
 }) + '\n')
-console.log(`wrote ${final.length} spots; ` + ['CA', 'MX', 'US'].map(cc => `${cc} ${count(p => p.cc === cc)}`).join(', ')
+console.log(`wrote ${final.length} spots; ` + Object.keys(COUNTRIES).map(cc => `${cc} ${count(p => p.cc === cc)}`).join(', ')
   + '; ' + ['skate', 'pump', 'bmx', 'bike'].map(k => `${k} ${count(p => p.kind === k)}`).join(', ') + `; ${dropped.size} twins dropped`)
