@@ -60,7 +60,9 @@ for (const file of files) {
     const indoor = raw.indoor === true || kind === 'indoor'
     const surfaceRaw = String(raw.surface ?? '').toLowerCase()
     const surface = indoor ? 'wood'
-      : BIKE_KINDS.has(kind) ? (['asphalt', 'concrete'].includes(surfaceRaw) ? 'hard' : surfaceRaw === 'wood' ? 'wood' : 'dirt')
+      : BIKE_KINDS.has(kind) ? (['asphalt', 'concrete'].includes(surfaceRaw) ? 'hard' : surfaceRaw === 'wood' ? 'wood'
+        // well-known pump tracks are mostly asphalt; bike parks and BMX tracks mostly dirt
+        : surfaceRaw ? 'dirt' : kind === 'pumptrack' ? 'hard' : 'dirt')
       : 'hard'
     let disciplines = (raw.disciplines ?? []).map(d => String(d).toLowerCase()).filter(d => DISCIPLINES.has(d))
     if (!disciplines.length) {

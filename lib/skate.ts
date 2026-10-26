@@ -133,7 +133,7 @@ export function readHour(h: Hour, waterMm: number, traits: SpotTraits = {}): Rea
   if (traits.indoor) {
     const outside = ground === 'dry' ? 'dry outside too' : ground === 'drying' ? 'drying outside'
       : ground === 'snow' ? 'snow outside' : ground === 'ice' ? 'icy outside' : raining ? 'raining outside' : 'wet outside'
-    return out('skateable', `indoor — open whatever the weather (${outside}); check the hours`, ground === 'dry' ? 0.5 : 0.7)
+    return out('skateable', `open whatever the weather (${outside}); check the hours`, ground === 'dry' ? 0.5 : 0.7)
   }
 
   switch (ground) {

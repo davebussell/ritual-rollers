@@ -34,7 +34,7 @@ export default function ScoutSearch({ size = 'compact', initial = '', autoFocus 
         onChange={e => setQ(e.target.value)}
         autoFocus={autoFocus}
         aria-label="Place to check — a town, a zip or a postal code"
-        placeholder="A town, zip or postal code — Portland, 92109, H2X…"
+        placeholder="Town, zip or postal code"
         className={`min-w-0 flex-1 rounded-md border-2 border-zinc-800 bg-zinc-950 font-body text-white placeholder:text-zinc-600 outline-none transition-colors focus:border-orange-500 ${
           hero ? 'px-5 py-3.5 text-base' : 'px-4 py-2.5 text-sm'
         }`}

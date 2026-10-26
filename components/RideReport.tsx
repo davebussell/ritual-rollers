@@ -105,7 +105,7 @@ function NowCard({ label, read, dry, rain24, localTime, dirt, indoor }: {
           </p>
         )}
         <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 font-body text-xs text-zinc-500 sm:grid-cols-4">
-          <span className="flex items-center gap-1.5"><Droplets className="h-3.5 w-3.5" /> {rain24.toFixed(1)} mm rain, last 24 h</span>
+          <span className="flex items-center gap-1.5"><Droplets className="h-3.5 w-3.5" /> {rain24.toFixed(1)} mm rain in 24 h</span>
           <span className="flex items-center gap-1.5"><Thermometer className="h-3.5 w-3.5" /> {Math.round(h.tempC)} °C{h.rh != null ? ` · ${Math.round(h.rh)}% humidity` : ''}</span>
           <span className="flex items-center gap-1.5"><Wind className="h-3.5 w-3.5" /> gusts {Math.round(h.gustKph)} km/h</span>
           <span className="flex items-center gap-1.5"><Sun className="h-3.5 w-3.5" /> {h.precipProb != null ? `${Math.round(h.precipProb)}% rain chance` : `UV ${h.uv != null ? Math.round(h.uv) : '—'}`}</span>

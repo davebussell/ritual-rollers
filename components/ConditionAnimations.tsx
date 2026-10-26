@@ -135,10 +135,6 @@ export function GroundAnim({ ground, dirt = false, className = '' }: {
         <circle key={i} cx={x} cy="-4" r={1.6 + (i % 3) * 0.5} fill="#F5F0E6"
           style={{ animation: `rr-flake ${(2.2 + (i % 4) * 0.5).toFixed(1)}s linear infinite`, animationDelay: `${(-i * 0.6).toFixed(1)}s` }} />
       ))}
-      {ground === 'dry' && !dirt && (
-        <line x1="-40" x2="0" y1="34" y2="34" stroke="#1F1A15" strokeWidth="3" strokeLinecap="round" opacity="0.35"
-          style={{ animation: 'rr-streak 2.4s linear infinite' }} />
-      )}
     </svg>
   )
 }

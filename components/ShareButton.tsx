@@ -41,7 +41,7 @@ export default function ShareButton({ url, title, compact }: Props) {
           compact ? 'px-3 py-1.5 text-base' : 'px-4 py-2 text-lg'
         }`}>
         {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
-        {copied ? 'Link copied!' : 'Share this trip'}
+        {copied ? 'Link copied!' : 'Share'}
       </button>
       {!compact && (
         <>

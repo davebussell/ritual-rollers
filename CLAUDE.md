@@ -29,4 +29,7 @@ networks or road routes.
 - Check every change at 375px and at 1280px+ before saying done.
 - Keep the SEO basics (title, description, canonical, Open Graph, `app/sitemap.ts`, `robots.txt`) intact.
 - Featured spots need a real source and must not be invented: see README "Featured spots".
+- Analytics: Netlify's snippet injection (`ga4-portfolio`) adds GA4 `G-QK0ETT28BD` to every page; never put GA4 in the code
+  (it was in `app/layout.tsx` until 2026-10-26, so every page view counted twice). Clarity (`yjaeee242b`) is in the layout
+  because Netlify does not inject it for this project.
 - Weather is Open-Meteo (free, non-commercial terms, no key). Map data is OpenStreetMap (ODbL): keep the credit lines.

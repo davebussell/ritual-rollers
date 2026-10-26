@@ -26,6 +26,8 @@ export interface SkateForecast {
 }
 
 const UA = { 'User-Agent': 'RitualRollers/1.0 (ritualrollers.com)' }
+// Overridable so local checks can point at a mock (tests/mock-open-meteo.mjs)
+const API = process.env.OPEN_METEO_URL ?? 'https://api.open-meteo.com'
 const num = (x: unknown): number => { const n = Number(x); return Number.isFinite(n) ? n : 0 }
 const maybe = (x: unknown): number | null => (x == null ? null : Number.isFinite(Number(x)) ? Number(x) : null)
 
@@ -113,7 +115,7 @@ const base = (lat: number, lng: number) =>
 
 export async function fetchSkateForecast(lat: number, lng: number): Promise<SkateForecast | null> {
   const fc = await getJson(
-    `https://api.open-meteo.com/v1/forecast?${base(lat, lng)}&forecast_days=7&current=temperature_2m&hourly=${HOURLY}&daily=${DAILY}`,
+    `${API}/v1/forecast?${base(lat, lng)}&forecast_days=7&current=temperature_2m&hourly=${HOURLY}&daily=${DAILY}`,
     900,
   )
   if (!fc || typeof fc !== 'object') return null
@@ -128,7 +130,7 @@ export async function fetchSkateForecasts(points: { lat: number; lng: number }[]
   const lats = points.map(p => p.lat.toFixed(4)).join(',')
   const lngs = points.map(p => p.lng.toFixed(4)).join(',')
   const data = await getJson(
-    `https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lngs}&timezone=auto&past_days=2&forecast_days=2&current=temperature_2m&hourly=${HOURLY}&daily=${DAILY}`,
+    `${API}/v1/forecast?latitude=${lats}&longitude=${lngs}&timezone=auto&past_days=2&forecast_days=2&current=temperature_2m&hourly=${HOURLY}&daily=${DAILY}`,
     1800,
   )
   if (!data) return points.map(() => null)
