@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound, permanentRedirect } from 'next/navigation'
 import legacy from '@/data/legacy-spot-slugs.json'
 import RideReport from '@/components/RideReport'
-import { spotBySlug, spotsNear, traitsOf, COUNTRY_LABEL } from '@/lib/spots-index'
+import { spotBySlug, spotsNear, traitsOf, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
 import { fetchSkateForecast } from '@/lib/forecast'
 import { fetchStoriesNear } from '@/lib/stories-near'
@@ -41,7 +41,7 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
   }
   const point = { lat: spot.lat, lng: spot.lng, label: `${spot.name}, ${spot.city}`, countryCode: spot.country }
   const [forecast, stories] = await Promise.all([fetchSkateForecast(spot.lat, spot.lng), fetchStoriesNear(point)])
-  const nearbyParks = parksNear(spot.lat, spot.lng, 25, 60).filter(p => p.id !== spot.osm && p.distanceKm > 0.05)
+  const nearbyParks = parksNear(spot.lat, spot.lng, 25, 60).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05)
   const nearbyFeatured = spotsNear(spot.lat, spot.lng, 60, spot.slug)
 
   const jsonLd = {

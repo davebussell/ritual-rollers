@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import RideReport from '@/components/RideReport'
 import { parkById, parksNear, parkName, parkTraits, PARK_KIND_META } from '@/lib/parks'
-import { spotsNear, COUNTRY_LABEL } from '@/lib/spots-index'
+import { spotsNear, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
 import { fetchSkateForecast } from '@/lib/forecast'
 import { fetchStoriesNear } from '@/lib/stories-near'
 import { nowRead, describe } from '@/lib/report'
@@ -40,7 +40,7 @@ export default async function ParkPage({ params }: { params: Promise<{ id: strin
   const name = parkName(park)
   const point = { lat: park.lat, lng: park.lng, label: name, countryCode: park.cc }
   const [forecast, stories] = await Promise.all([fetchSkateForecast(park.lat, park.lng), fetchStoriesNear(point)])
-  const nearbyParks = parksNear(park.lat, park.lng, 25, 60).filter(p => p.id !== park.id)
+  const nearbyParks = parksNear(park.lat, park.lng, 25, 60).filter(p => p.id !== park.id && !isFeaturedPark(p))
   const nearbyFeatured = spotsNear(park.lat, park.lng, 60)
   const place = where(park)
 

@@ -11,8 +11,8 @@ const problems = []
 for (const width of [375, 1280]) {
   const page = await browser.newPage({ viewport: { width, height: 900 } })
   for (const path of paths) {
-    const res = await page.goto(base + path, { waitUntil: 'networkidle', timeout: 60000 }).catch(e => ({ status: () => `ERR ${e.message}` }))
-    await page.waitForTimeout(800)
+    const res = await page.goto(base + path, { waitUntil: 'load', timeout: 90000 }).catch(e => ({ status: () => `ERR ${e.message}` }))
+    await page.waitForTimeout(3000) // 'networkidle' never settles on the deploy preview (Netlify drawer, analytics)
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
     const name = `${outDir}/${width}${path.replace(/[^a-z0-9]+/gi, '_') || '_home'}.png`
     await page.screenshot({ path: name, fullPage: true })

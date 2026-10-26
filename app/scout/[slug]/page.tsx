@@ -4,7 +4,7 @@ import RideReport from '@/components/RideReport'
 import { fromSlug, geocodePlace, type GeoPoint } from '@/lib/geo'
 import { fetchSkateForecast } from '@/lib/forecast'
 import { fetchStoriesNear } from '@/lib/stories-near'
-import { isNorthAmerica, spotsNear } from '@/lib/spots-index'
+import { isNorthAmerica, spotsNear, isFeaturedPark } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
 import { nowRead, describe } from '@/lib/report'
 
@@ -74,7 +74,7 @@ export default async function ScoutPlacePage({ params }: { params: Promise<{ slu
       forecast={forecast}
       traits={{ surface: 'hard', lit: null }}
       nearbyFeatured={spotsNear(point.lat, point.lng, 60)}
-      nearbyParks={parksNear(point.lat, point.lng, 25, 80)}
+      nearbyParks={parksNear(point.lat, point.lng, 25, 80).filter(p => !isFeaturedPark(p))}
       stories={stories}
     />
   )

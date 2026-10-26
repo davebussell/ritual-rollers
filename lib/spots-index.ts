@@ -69,6 +69,15 @@ export function spotBySlug(slug: string): IndexedSpot | undefined {
   return SPOTS.find(s => s.slug === slug)
 }
 
+// OSM parks that are already a featured spot: the "every mapped spot" lists leave these out, since the
+// featured list above them shows the same place. A park counts when a featured spot links to it, or sits on
+// it (within ~60 m: many researched spots took their coordinates from OSM without the name matching).
+const FEATURED_OSM = new Set(SPOTS.map(s => s.osm).filter((id): id is string => !!id))
+export function isFeaturedPark(p: { id: string; lat: number; lng: number }): boolean {
+  if (FEATURED_OSM.has(p.id)) return true
+  return SPOTS.some(s => Math.abs(s.lat - p.lat) < 0.0006 && Math.abs(s.lng - p.lng) < 0.0008)
+}
+
 export function spotsNear(lat: number, lng: number, radiusKm: number, exclude?: string): (IndexedSpot & { distanceKm: number })[] {
   return SPOTS
     .filter(s => s.slug !== exclude)
