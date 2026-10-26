@@ -8,8 +8,8 @@ const barlow = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '600', '70
 const work = Work_Sans({ subsets: ['latin'], variable: '--font-work' })
 
 const SITE_URL = 'https://ritualrollers.com'
-const TITLE = 'Ritual Rollers — The Ritual of the Ride'
-const DESCRIPTION = 'Adventures worth sharing. Scout any spot on Earth — wind, waves, snow, road — see what\'s rideable, pack right, and roll it with your crew.'
+const TITLE = 'Ritual Rollers — Is it dry? Skateparks, pump tracks & bike parks'
+const DESCRIPTION = 'Anything on wheels across Canada, the US and Mexico: skateparks, plazas, DIYs, pump tracks, BMX tracks and bike parks, each with a live read of whether the ground is dry — and when it will be.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

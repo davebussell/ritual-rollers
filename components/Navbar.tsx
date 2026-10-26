@@ -71,24 +71,24 @@ export default function Navbar() {
             Spots
           </NavLink>
           <NavLink href="/scout" active={pathname.startsWith('/scout')} icon={<Compass className="h-3.5 w-3.5" />}>
-            Scout
+            Is it dry?
           </NavLink>
           <NavLink href="/explore" active={isActive('/explore') || isActive('/feed')} icon={<BookOpen className="h-3.5 w-3.5" />}>
-            Stories
+            Sessions
           </NavLink>
 
-          {/* The two primary actions: find a ride, find your crew */}
+          {/* The two primary actions: find a spot, find your crew */}
           <Link href="/finder"
             className="tx-stitch ml-2 flex items-center gap-1.5 rounded-md bg-orange-500 px-3.5 py-2 font-display text-[14px] font-bold uppercase tracking-wide text-white transition-all hover:bg-orange-400 active:scale-95">
             <Compass className="h-3.5 w-3.5" strokeWidth={2.5} />
-            Find a ride
+            Find a spot
           </Link>
           <Link href="/crew"
             className="tx-stitch ml-1.5 flex items-center gap-1.5 rounded-md bg-forest px-3.5 py-2 font-display text-[14px] font-bold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-95">
             <Users className="h-3.5 w-3.5" strokeWidth={2.5} />
             Find your crew
           </Link>
-          <Link href="/trips/new" title="Log a ride"
+          <Link href="/trips/new" title="Log a session"
             className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white">
             <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
           </Link>

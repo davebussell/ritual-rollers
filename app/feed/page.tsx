@@ -103,7 +103,7 @@ export default async function FeedPage({ searchParams }: { searchParams: Promise
           <p className="mt-1 text-sm text-zinc-500">
             {followingMode
               ? followingIds.length === 0
-                ? 'Follow explorers to build your personal feed'
+                ? 'Follow riders to build your personal feed'
                 : `${scored.length} trips from accounts you follow · top upvoted first`
               : `${scored.length} trips from the whole community · top upvoted first`}
           </p>
@@ -147,7 +147,7 @@ export default async function FeedPage({ searchParams }: { searchParams: Promise
             <UserCheck className="h-8 w-8" />
           </div>
           <div>
-            <p className="text-lg font-semibold text-white">Sign in to follow explorers</p>
+            <p className="text-lg font-semibold text-white">Sign in to follow riders</p>
             <p className="mt-1 text-sm text-zinc-500">Your following feed lives here once you're signed in.</p>
           </div>
           <Link href="/auth/login"
@@ -162,7 +162,7 @@ export default async function FeedPage({ searchParams }: { searchParams: Promise
           </div>
           <div>
             <p className="text-lg font-semibold text-white">You're not following anyone yet</p>
-            <p className="mt-1 text-sm text-zinc-500">Find explorers in the community feed and follow them to curate this view.</p>
+            <p className="mt-1 text-sm text-zinc-500">Find riders in the community feed and follow them to curate this view.</p>
           </div>
           <Link href="/feed"
             className="flex items-center gap-2 rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 transition-all active:scale-95">

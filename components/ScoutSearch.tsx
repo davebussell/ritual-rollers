@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Compass } from 'lucide-react'
-import { toSlug } from '@/lib/local-sports'
+import { toSlug } from '@/lib/geo'
 
 interface Props {
   size?: 'hero' | 'compact'
@@ -33,8 +33,8 @@ export default function ScoutSearch({ size = 'compact', initial = '', autoFocus 
         value={q}
         onChange={e => setQ(e.target.value)}
         autoFocus={autoFocus}
-        aria-label="Place to scout — a town, a break, a zip or postal code"
-        placeholder="Anywhere on Earth — Tarifa, Hood River, 92109, M5V…"
+        aria-label="Place to check — a town, a zip or a postal code"
+        placeholder="A town, zip or postal code — Portland, 92109, H2X…"
         className={`min-w-0 flex-1 rounded-md border-2 border-zinc-800 bg-zinc-950 font-body text-white placeholder:text-zinc-600 outline-none transition-colors focus:border-orange-500 ${
           hero ? 'px-5 py-3.5 text-base' : 'px-4 py-2.5 text-sm'
         }`}
@@ -44,7 +44,7 @@ export default function ScoutSearch({ size = 'compact', initial = '', autoFocus 
           hero ? 'px-5 py-3.5 text-lg' : 'px-4 py-2.5 text-base'
         }`}>
         <Compass className={`h-4 w-4 ${busy ? 'animate-spin' : ''}`} strokeWidth={2.5} />
-        {hero ? 'Scout it' : 'Scout'}
+        {hero ? 'Is it dry?' : 'Check'}
       </button>
     </form>
   )

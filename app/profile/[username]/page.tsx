@@ -166,7 +166,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
         {/* Trips */}
         <div className="mb-4">
           <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-zinc-600 flex items-center gap-2">
-            <MapPin className="h-3 w-3" /> Adventures · {trips.length}
+            <MapPin className="h-3 w-3" /> Sessions · {trips.length}
           </p>
           {trips.length === 0 ? (
             <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-800 py-20 text-center">

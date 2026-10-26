@@ -103,3 +103,42 @@ export function SunArc({ localTime, sunrise, sunset, className = '' }: { localTi
     </svg>
   )
 }
+
+// The ground itself: a slab of concrete (or a strip of dirt) that shows what's on it.
+// Puddles shimmer when it's wet, shrink to patches while it dries, snow drifts down, ice glints.
+export function GroundAnim({ ground, dirt = false, className = '' }: {
+  ground: 'dry' | 'drying' | 'wet' | 'mud' | 'snow' | 'ice'; dirt?: boolean; className?: string
+}) {
+  const slab = dirt
+    ? (ground === 'mud' || ground === 'wet' ? '#5C4128' : ground === 'drying' ? '#7A5A3A' : '#9C7A52')
+    : (ground === 'wet' ? '#8A8278' : ground === 'drying' ? '#B4AC9F' : ground === 'snow' ? '#E8E2D6' : ground === 'ice' ? '#C9D3D6' : '#C8C0B2')
+  const seams = dirt ? 'none' : '#9E9588'
+  const puddles: [number, number, number][] = ground === 'wet' || ground === 'mud'
+    ? [[30, 38, 18], [92, 32, 26], [150, 40, 20], [182, 30, 10]]
+    : ground === 'drying' ? [[60, 38, 9], [148, 34, 7]] : []
+  return (
+    <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden className={`rr-anim block h-full w-full ${className}`}>
+      <rect x="0" y="14" width="200" height="40" rx="3" fill={slab} />
+      {!dirt && [50, 100, 150].map(x => <line key={x} x1={x} x2={x} y1="14" y2="54" stroke={seams} strokeWidth="1" opacity="0.6" />)}
+      {dirt && ground !== 'snow' && [[20, 48], [70, 44], [120, 50], [170, 46]].map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="1.6" fill="#4A3420" opacity="0.5" />
+      ))}
+      {puddles.map(([x, y, rx], i) => (
+        <ellipse key={i} cx={x} cy={y} rx={rx} ry={rx / 5 + 1.5} fill={dirt ? '#3B2A1A' : '#5A8AA8'} opacity={ground === 'drying' ? 0.25 : 0.45}
+          style={{ animation: `rr-shimmer ${(2.4 + i * 0.4).toFixed(1)}s ease-in-out infinite`, animationDelay: `${(-i * 0.7).toFixed(1)}s` }} />
+      ))}
+      {ground === 'ice' && [40, 110, 165].map((x, i) => (
+        <path key={i} d={`M${x} 30 l6 -4 l6 4 l-6 4 z`} fill="#F5F0E6" opacity="0.8"
+          style={{ animation: `rr-shimmer ${(1.8 + i * 0.5).toFixed(1)}s ease-in-out infinite` }} />
+      ))}
+      {ground === 'snow' && [12, 48, 80, 118, 150, 186].map((x, i) => (
+        <circle key={i} cx={x} cy="-4" r={1.6 + (i % 3) * 0.5} fill="#F5F0E6"
+          style={{ animation: `rr-flake ${(2.2 + (i % 4) * 0.5).toFixed(1)}s linear infinite`, animationDelay: `${(-i * 0.6).toFixed(1)}s` }} />
+      ))}
+      {ground === 'dry' && !dirt && (
+        <line x1="-40" x2="0" y1="34" y2="34" stroke="#1F1A15" strokeWidth="3" strokeLinecap="round" opacity="0.35"
+          style={{ animation: 'rr-streak 2.4s linear infinite' }} />
+      )}
+    </svg>
+  )
+}

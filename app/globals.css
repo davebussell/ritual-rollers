@@ -223,6 +223,7 @@ h1:not(.font-expedition), h2:not(.font-expedition), h3:not(.font-expedition) {
 @keyframes rr-streak { from { transform: translateX(0); } to { transform: translateX(300px); } }
 @keyframes rr-dash   { to { stroke-dashoffset: -30; } }
 @keyframes rr-flake  { from { transform: translateY(0); } to { transform: translateY(70px); } }
+@keyframes rr-shimmer { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.2; } }
 
 @media (prefers-reduced-motion: reduce) {
   .rr-anim * { animation: none !important; }

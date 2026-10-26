@@ -1,10 +1,12 @@
-// Logged rides near a point — shared by the scout page and the indexed spot page.
-// Server-only (uses the server Supabase client).
+// Logged sessions near a point — shared by the scout, park and spot pages.
+// Server-only (uses the server Supabase client). Sample trips from the outdoor-sports days are
+// left out unless they carry a wheels tag.
 
 import { createClient } from '@/lib/supabase/server'
-import { haversineKm, type GeoPoint } from '@/lib/local-sports'
+import { haversineKm, type GeoPoint } from '@/lib/geo'
+import { getActivity } from '@/lib/activities'
 import { isSampleTrip } from '@/lib/sample'
-import type { StoryCard } from '@/components/SpotReport'
+import type { StoryCard } from '@/components/RideReport'
 
 const STORY_RADIUS_KM = 400
 
@@ -12,18 +14,19 @@ export async function fetchStoriesNear(point: GeoPoint, limit = 6): Promise<Stor
   const supabase = await createClient()
   const { data } = await supabase
     .from('trips')
-    .select('id,title,upvotes_count,profiles!trips_owner_id_fkey(username),trip_photos!trip_photos_trip_id_fkey(storage_path,lat,lng,sequence_order)')
+    .select('id,title,upvotes_count,activity_tags,profiles!trips_owner_id_fkey(username),trip_photos!trip_photos_trip_id_fkey(storage_path,lat,lng,sequence_order)')
     .eq('is_public', true)
     .order('upvotes_count', { ascending: false })
     .limit(60)
 
   type Row = {
-    id: string; title: string; upvotes_count: number
+    id: string; title: string; upvotes_count: number; activity_tags: string[] | null
     profiles: { username: string | null } | null
     trip_photos: { storage_path: string; lat: number | null; lng: number | null; sequence_order: number | null }[] | null
   }
   const rows = ((data ?? []) as unknown) as Row[]
   return rows
+    .filter(row => !isSampleTrip({ trip_photos: row.trip_photos }) || (row.activity_tags ?? []).some(t => getActivity(t)))
     .map(row => {
       const photos = [...(row.trip_photos ?? [])].sort((a, b) => (a.sequence_order ?? 0) - (b.sequence_order ?? 0))
       const anchor = photos.find(p => p.lat != null && p.lng != null)
