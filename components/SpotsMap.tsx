@@ -1,11 +1,12 @@
 'use client'
 
-// The index on a map: one pin per established spot, coloured by its headline sport's family.
+// The featured index on a map: one pin per spot, coloured by its kind.
 
 import { useEffect, useRef, useState } from 'react'
 import type { Map as LeafletMap, LayerGroup } from 'leaflet'
-import { FAMILY_META, SPORT_BY_ID } from '@/lib/sports'
+import { KIND_META } from '@/lib/sports'
 import type { IndexedSpot } from '@/lib/spots-index'
+import { TILE_URL, TILE_OPTIONS } from '@/lib/tiles'
 
 interface Props {
   spots: IndexedSpot[]
@@ -13,8 +14,6 @@ interface Props {
   onSelect?: (slug: string) => void
 }
 
-const TILE_URL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-const TILE_ATTRIBUTION = '&copy; OpenStreetMap contributors &copy; CARTO'
 const NA_BOUNDS: [[number, number], [number, number]] = [[14, -168], [72, -52]]
 
 function escapeHtml(s: string): string {
@@ -43,7 +42,7 @@ export default function SpotsMap({ spots, activeSlug = null, onSelect }: Props) 
       if (cancelled || !containerRef.current) return
       const map = L.map(containerRef.current, { scrollWheelZoom: false })
       mapRef.current = map
-      L.tileLayer(TILE_URL, { attribution: TILE_ATTRIBUTION, maxZoom: 19 }).addTo(map)
+      L.tileLayer(TILE_URL, TILE_OPTIONS).addTo(map)
       layerRef.current = L.layerGroup().addTo(map)
       map.fitBounds(NA_BOUNDS, { padding: [10, 10] })
       setReady(true)
@@ -63,15 +62,14 @@ export default function SpotsMap({ spots, activeSlug = null, onSelect }: Props) 
       if (!map || !layer) return
       layer.clearLayers()
       spots.forEach(spot => {
-        const fam = SPORT_BY_ID[spot.sports[0]]?.family ?? 'water'
-        const color = FAMILY_META[fam].color
+        const color = KIND_META[spot.kind].color
         const active = spot.slug === activeSlug
         const marker = L.marker([spot.lat, spot.lng], {
           icon: L.divIcon({ html: pinHtml(color, active), className: 'rr-index-pin', iconSize: [18, 18], iconAnchor: [9, 9] }),
           zIndexOffset: active ? 1000 : 0,
         })
-        const sportsLine = spot.sports.map(id => SPORT_BY_ID[id]?.label).filter(Boolean).join(' · ')
-        marker.bindPopup(`<div style="font-family:Work Sans,system-ui;min-width:180px"><strong style="font-size:14px">${escapeHtml(spot.name)}</strong><br/><span style="font-size:12px;color:#6B5B48">${escapeHtml(spot.region)} · ${escapeHtml(sportsLine)}</span><br/><a href="/spots/${spot.slug}" style="display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:#A3271F">Open the spot →</a></div>`)
+        const sportsLine = `${KIND_META[spot.kind].label}${spot.indoor ? ' · indoor' : ''} · ${spot.city}`
+        marker.bindPopup(`<div style="font-family:Work Sans,system-ui;min-width:180px"><strong style="font-size:14px">${escapeHtml(spot.name)}</strong><br/><span style="font-size:12px;color:#6B5B48">${escapeHtml(sportsLine)}</span><br/><a href="/spots/${spot.slug}" style="display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:#A3271F">Is it dry? →</a></div>`)
         marker.on('click', () => onSelect?.(spot.slug))
         layer.addLayer(marker)
       })

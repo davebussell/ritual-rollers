@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Users } from 'lucide-react'
-import { SPORTS } from '@/lib/sports'
+import { DISCIPLINES } from '@/lib/sports'
 
 interface Props {
   initialQuery?: string
@@ -26,12 +26,12 @@ export default function CrewSearch({ initialQuery = '', initialSport = null }: P
   return (
     <form onSubmit={submit} role="search" className="flex w-full max-w-2xl flex-col gap-2 sm:flex-row">
       <input value={q} onChange={e => setQ(e.target.value)}
-        aria-label="Where are you headed?" placeholder="Where are you headed? Hood River, Tofino, 92109…"
+        aria-label="Where are you headed?" placeholder="Where are you headed? Portland, Montreal, 92109…"
         className="min-w-0 flex-1 rounded-md border-2 border-zinc-800 bg-zinc-950 px-4 py-3 font-body text-base text-white placeholder:text-zinc-600 outline-none focus:border-orange-500" />
-      <select aria-label="Sport" value={sport} onChange={e => setSport(e.target.value)}
+      <select aria-label="What you ride" value={sport} onChange={e => setSport(e.target.value)}
         className="rounded-md border-2 border-zinc-800 bg-zinc-950 px-3 py-3 font-body text-sm text-white outline-none focus:border-orange-500">
-        <option value="">Any sport</option>
-        {SPORTS.map(s => <option key={s.id} value={s.id}>{s.emoji} {s.label}</option>)}
+        <option value="">Anything on wheels</option>
+        {DISCIPLINES.map(s => <option key={s.id} value={s.id}>{s.emoji} {s.label}</option>)}
       </select>
       <button type="submit"
         className="tx-stitch relative flex items-center justify-center gap-2 rounded-md bg-forest px-5 py-3 font-display text-lg font-bold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-95">

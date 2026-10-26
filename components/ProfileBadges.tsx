@@ -1,7 +1,7 @@
 import type { Region } from '@/lib/regions'
 
 const BADGES = [
-  { id: 'first_trip', emoji: '🗺️', label: 'First Adventure', desc: 'Posted your first trip' },
+  { id: 'first_trip', emoji: '🗺️', label: 'First Session', desc: 'Posted your first session' },
   { id: 'globe_trotter', emoji: '🌍', label: 'Globe Trotter', desc: 'Visited 3+ regions' },
   { id: 'world_traveller', emoji: '✈️', label: 'World Traveller', desc: 'Visited 5+ regions' },
   { id: 'europe', emoji: '🏰', label: 'Euro Trails', desc: 'Explored Europe' },
@@ -10,8 +10,8 @@ const BADGES = [
   { id: 'south_america', emoji: '🌿', label: 'Jungle Runner', desc: 'Explored South America' },
   { id: 'africa', emoji: '🦁', label: 'Safari Spirit', desc: 'Explored Africa' },
   { id: 'oceania', emoji: '🏄', label: 'Pacific Rider', desc: 'Explored Oceania' },
-  { id: 'surf', emoji: '🌊', label: 'Surf Chaser', desc: 'Tagged surf adventures' },
-  { id: 'skate', emoji: '🛹', label: 'Skate Culture', desc: 'Tagged skate adventures' },
+  { id: 'dirt', emoji: '🚲', label: 'Dirt Merchant', desc: 'Tagged BMX and bike sessions' },
+  { id: 'skate', emoji: '🛹', label: 'Skate Culture', desc: 'Tagged skate sessions' },
 ]
 
 const REGION_BADGE_MAP: Record<Region, string> = {

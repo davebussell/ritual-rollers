@@ -233,7 +233,7 @@ export default function AlbumImporter() {
         <div className="w-full max-w-sm rounded-2xl border border-orange-500/25 bg-orange-500/8 px-5 py-4 text-left">
           <p className="text-sm font-semibold text-orange-300">Your trips are live — as a guest</p>
           <p className="mt-1 text-xs text-zinc-400 leading-relaxed">
-            Create a free account to manage your trips, earn badges, build a profile, and find adventure partners.
+            Create a free account to manage your sessions, earn badges, build a profile, and find a crew to ride with.
           </p>
           <div className="mt-3 flex gap-2">
             <a href="/auth/signup"

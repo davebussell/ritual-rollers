@@ -1,27 +1,28 @@
-// Iconic North American spots that anchor the home strip and the scout landing.
-// Fixed coordinates so their pages never depend on a geocoder.
+// The handful of spots on the home strip: a spread of famous concrete, a DIY, an indoor park and
+// the dirt side, across all three countries. Picked from the index by name so the list survives
+// a data refresh; anything missing is filled from high-confidence spots in other regions.
 
-export interface FeaturedSpot {
-  slug: string
-  name: string
-  region: string
-  countryCode: string
-  lat: number
-  lng: number
-  tagline: string
-}
+import { SPOTS, travelRegionOf, type IndexedSpot } from '@/lib/spots-index'
 
-export const FEATURED_SPOTS: FeaturedSpot[] = [
-  { slug: 'hood-river-oregon', name: 'Hood River', region: 'Oregon, USA', countryCode: 'US', lat: 45.7054, lng: -121.5215, tagline: 'the Gorge' },
-  { slug: 'squamish-bc', name: 'Squamish', region: 'British Columbia, Canada', countryCode: 'CA', lat: 49.7016, lng: -123.1558, tagline: 'granite, wind and dirt' },
-  { slug: 'tofino-bc', name: 'Tofino', region: 'British Columbia, Canada', countryCode: 'CA', lat: 49.1530, lng: -125.9066, tagline: 'cold-water surf' },
-  { slug: 'la-ventana-baja', name: 'La Ventana', region: 'Baja California Sur, Mexico', countryCode: 'MX', lat: 24.0471, lng: -109.9898, tagline: 'El Norte season' },
-  { slug: 'cape-hatteras-nc', name: 'Cape Hatteras', region: 'North Carolina, USA', countryCode: 'US', lat: 35.2500, lng: -75.5280, tagline: 'Outer Banks wind and swell' },
-  { slug: 'jackson-hole-wyoming', name: 'Jackson Hole', region: 'Wyoming, USA', countryCode: 'US', lat: 43.5875, lng: -110.8279, tagline: 'steep and deep' },
-  { slug: 'moab-utah', name: 'Moab', region: 'Utah, USA', countryCode: 'US', lat: 38.5733, lng: -109.5498, tagline: 'slickrock' },
-  { slug: 'kihei-maui', name: 'Kihei', region: 'Maui, Hawaii', countryCode: 'US', lat: 20.7644, lng: -156.4450, tagline: 'trade-wind afternoons' },
+const WANTED = [
+  'Burnside', 'Venice Beach', 'FDR', 'Lynch Family', 'Le Taz', 'Kona', 'Coler', 'Mexico City',
+  'Vancouver', 'Lowry', 'Pump Track',
 ]
 
-export function featuredBySlug(slug: string): FeaturedSpot | undefined {
-  return FEATURED_SPOTS.find(s => s.slug === slug)
+export function featuredSpots(n = 8): IndexedSpot[] {
+  const out: IndexedSpot[] = []
+  const used = new Set<string>()
+  for (const w of WANTED) {
+    if (out.length >= n) break
+    const hit = SPOTS.find(s => !used.has(s.slug) && (s.name.includes(w) || s.city.includes(w)) && s.confidence === 'high')
+      ?? SPOTS.find(s => !used.has(s.slug) && (s.name.includes(w) || s.city.includes(w)))
+    if (hit) { out.push(hit); used.add(hit.slug) }
+  }
+  const regions = new Set(out.map(travelRegionOf))
+  for (const s of SPOTS) {
+    if (out.length >= n) break
+    if (used.has(s.slug) || s.confidence !== 'high' || regions.has(travelRegionOf(s))) continue
+    out.push(s); used.add(s.slug); regions.add(travelRegionOf(s))
+  }
+  return out.slice(0, n)
 }

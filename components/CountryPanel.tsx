@@ -147,7 +147,7 @@ export default function CountryPanel({ countryId, countryName, trips, currentUse
             className="flex flex-col items-center justify-center h-40 gap-2 text-center px-6">
             <div className="text-3xl opacity-30">{info?.flag ?? '🌍'}</div>
             <p className="text-zinc-600 text-sm">No trips yet in {countryName}</p>
-            <p className="text-zinc-700 text-xs">Add your first adventure above</p>
+            <p className="text-zinc-700 text-xs">Add your first session above</p>
           </motion.div>
         ) : (
           <div className="divide-y divide-zinc-800/40">

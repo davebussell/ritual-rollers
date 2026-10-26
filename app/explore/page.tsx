@@ -86,7 +86,7 @@ export default async function ExplorePage() {
           <h1 className="text-2xl font-bold text-white">Explore</h1>
           <p className="mt-1 text-sm text-zinc-500">
             {followingMode
-              ? `The latest from the ${followingIds.length} explorer${followingIds.length !== 1 ? 's' : ''} you follow`
+              ? `The latest from the ${followingIds.length} rider${followingIds.length !== 1 ? 's' : ''} you follow`
               : 'Journeys from crews around the world — every one built from photos'}
           </p>
         </div>
@@ -117,8 +117,8 @@ export default async function ExplorePage() {
           <p className="flex-1 text-sm text-zinc-400">
             <span className="font-expedition text-[10px] uppercase tracking-[0.25em] text-orange-400">Example feed · </span>
             {hasSample
-              ? `${SAMPLE_NOTICE} Follow a few explorers and this becomes your crew's feed.`
-              : 'This is what your feed looks like once you follow a few explorers — open any trip to review the full mapped story.'}
+              ? `${SAMPLE_NOTICE} Follow a few riders and this becomes your crew's feed.`
+              : 'This is what your feed looks like once you follow a few riders — open any session to see the full mapped story.'}
           </p>
           {!user && (
             <Link href="/auth/signup"

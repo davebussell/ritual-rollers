@@ -4,19 +4,28 @@ import { createClient } from '@/lib/supabase/server'
 import CrewSearch from '@/components/CrewSearch'
 import RollCallForm from '@/components/RollCallForm'
 import FollowButton from '@/components/FollowButton'
-import { geocodePlace, haversineKm, toSlug, type GeoPoint } from '@/lib/local-sports'
+import { geocodePlace, haversineKm, toSlug, type GeoPoint } from '@/lib/geo'
 import { spotBySlug, isNorthAmerica } from '@/lib/spots-index'
-import { SPORT_BY_ID, countryFlag } from '@/lib/sports'
+import { DISCIPLINE_BY_ID } from '@/lib/sports'
+import { countryFlag } from '@/lib/format'
+import { getActivity } from '@/lib/activities'
 import { isSamplePath } from '@/lib/sample'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   title: 'Find your crew — Ritual Rollers',
-  description: 'Riders who\'ve logged rides where you\'re headed, and roll calls for who\'s going when. Never roll a new spot alone.',
+  description: 'Skaters and riders who\'ve logged sessions where you\'re headed, and roll calls for who\'s going when. Never session a new spot alone.',
   alternates: { canonical: '/crew' },
 }
 
-const RADIUS_KM = 400
+const RADIUS_KM = 150
+
+// Which session tags count as which discipline, for the rider filter
+const TAGS_FOR: Record<string, string[]> = {
+  skateboard: ['street', 'park', 'bowl', 'vert', 'diy', 'plaza', 'cruising', 'downhill'],
+  roller: ['roller'], inline: ['inline'], scooter: ['scooter'],
+  bmx: ['bmx', 'pumptrack', 'dirtjumps'], mtb: ['mtb', 'dirtjumps', 'pumptrack'],
+}
 
 interface Rider {
   id: string
@@ -31,14 +40,14 @@ interface Rider {
 
 export default async function CrewPage({ searchParams }: { searchParams: Promise<{ q?: string; sport?: string; spot?: string }> }) {
   const { q, sport, spot: spotSlug } = await searchParams
-  const sportId = sport && SPORT_BY_ID[sport] ? sport : null
+  const sportId = sport && DISCIPLINE_BY_ID[sport] ? sport : null
 
   // Resolve the place: an indexed spot, or any North American place name
   let point: GeoPoint | null = null
   let placeSlug = ''
   if (spotSlug) {
     const s = spotBySlug(spotSlug)
-    if (s) { point = { lat: s.lat, lng: s.lng, label: `${s.name}, ${s.region}`, countryCode: s.country }; placeSlug = s.slug }
+    if (s) { point = { lat: s.lat, lng: s.lng, label: `${s.name}, ${s.city}`, countryCode: s.country }; placeSlug = s.slug }
   } else if (q?.trim()) {
     const g = await geocodePlace(q)
     if (g && isNorthAmerica(g.countryCode)) { point = g; placeSlug = toSlug(q) }
@@ -69,8 +78,10 @@ export default async function CrewPage({ searchParams }: { searchParams: Promise
       if (!anchor || !row.profiles) continue
       const km = haversineKm(point.lat, point.lng, anchor.lat as number, anchor.lng as number)
       if (km > RADIUS_KM) continue
-      if (sportId && !(row.activity_tags ?? []).includes(sportId)) continue
+      if (sportId && !(row.activity_tags ?? []).some(t => TAGS_FOR[sportId]?.includes(t))) continue
       const sample = (row.trip_photos ?? []).some(p => isSamplePath(p.storage_path))
+      // Sample trips from the outdoor-sports days stay out unless they carry a wheels tag
+      if (sample && !(row.activity_tags ?? []).some(t => getActivity(t))) continue
       const r = byOwner.get(row.owner_id)
       if (r) {
         r.rides += 1
@@ -115,10 +126,10 @@ export default async function CrewPage({ searchParams }: { searchParams: Promise
       <div className="text-center">
         <p className="tag inline-block px-3 py-1 text-[11px] tracking-[0.18em]">Find your crew</p>
         <h1 className="mx-auto mt-4 max-w-3xl font-display text-5xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-white sm:text-6xl">
-          Never roll a new spot <span className="text-forest">alone</span>
+          Never session a new spot <span className="text-forest">alone</span>
         </h1>
         <p className="mx-auto mt-4 max-w-xl font-body text-lg text-zinc-500">
-          Riders who&apos;ve logged rides where you&apos;re headed, and roll calls for who&apos;s going when.
+          Skaters and riders who&apos;ve logged sessions where you&apos;re headed, and roll calls for who&apos;s going when.
         </p>
         <div className="mt-8 flex justify-center"><CrewSearch initialQuery={q ?? ''} initialSport={sportId} /></div>
       </div>
@@ -134,12 +145,12 @@ export default async function CrewPage({ searchParams }: { searchParams: Promise
             {/* Riders */}
             <section>
               <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">
-                Riders within {RADIUS_KM} km of {countryFlag(point.countryCode)} {point.label}{sportId ? ` · ${SPORT_BY_ID[sportId].label}` : ''}
+                Riders within {RADIUS_KM} km of {countryFlag(point.countryCode)} {point.label}{sportId ? ` · ${DISCIPLINE_BY_ID[sportId].label}` : ''}
               </h2>
               {riders.length === 0 ? (
                 <div className="mt-4 rounded-md border border-dashed border-zinc-700 p-6">
                   <p className="font-display text-2xl font-bold uppercase text-white">No one&apos;s logged this ground yet</p>
-                  <p className="mt-1 font-body text-sm text-zinc-500">Be the first — <Link href="/trips/new" className="text-teal-700 hover:underline">log a ride</Link> and the next rider through finds you.</p>
+                  <p className="mt-1 font-body text-sm text-zinc-500">Be the first — <Link href="/trips/new" className="text-teal-700 hover:underline">log a session</Link> and the next rider through finds you.</p>
                 </div>
               ) : (
                 <ul className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -152,7 +163,7 @@ export default async function CrewPage({ searchParams }: { searchParams: Promise
                             : <div className="grid h-10 w-10 place-items-center rounded-md bg-forest font-display text-lg font-bold text-white">{r.username[0]?.toUpperCase()}</div>}
                           <div>
                             <p className="font-display text-xl font-bold uppercase tracking-[0.02em] text-white">@{r.username}</p>
-                            <p className="font-body text-xs text-zinc-500">{r.rides} ride{r.rides === 1 ? '' : 's'} nearby · {Math.round(r.nearest.km)} km</p>
+                            <p className="font-body text-xs text-zinc-500">{r.rides} session{r.rides === 1 ? '' : 's'} nearby · {Math.round(r.nearest.km)} km</p>
                           </div>
                         </Link>
                         {r.sample
@@ -164,7 +175,7 @@ export default async function CrewPage({ searchParams }: { searchParams: Promise
                       </p>
                       {r.sports.length > 0 && (
                         <div className="mt-2 flex flex-wrap gap-1">
-                          {r.sports.slice(0, 5).map(id => <span key={id} className="tag px-1.5 py-0.5 text-[10px] tracking-wider">{SPORT_BY_ID[id]?.emoji ?? '·'} {SPORT_BY_ID[id]?.label ?? id}</span>)}
+                          {r.sports.filter(id => getActivity(id)).slice(0, 5).map(id => <span key={id} className="tag px-1.5 py-0.5 text-[10px] tracking-wider">{getActivity(id)!.emoji} {getActivity(id)!.label}</span>)}
                         </div>
                       )}
                     </li>
@@ -176,7 +187,7 @@ export default async function CrewPage({ searchParams }: { searchParams: Promise
             {/* Roll calls */}
             <aside className="tx-stitch relative h-fit rounded-xl border border-zinc-800 bg-zinc-900 p-5">
               <h2 className="font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">Roll calls</h2>
-              <p className="mt-1 font-body text-sm text-zinc-500">&ldquo;{point.label.split(',')[0]}, dates, sport — who&apos;s in?&rdquo;</p>
+              <p className="mt-1 font-body text-sm text-zinc-500">&ldquo;{point.label.split(',')[0]}, Saturday, skate — who&apos;s in?&rdquo;</p>
               {!callsAvailable ? (
                 <p className="mt-4 font-body text-sm text-zinc-500">Roll calls open soon — the crew tables aren&apos;t live yet.</p>
               ) : calls.length === 0 ? (
@@ -185,8 +196,8 @@ export default async function CrewPage({ searchParams }: { searchParams: Promise
                 <ul className="mt-4 space-y-2">
                   {calls.map(c => (
                     <li key={c.id} className="rounded-md border border-zinc-800 bg-zinc-950 p-3">
-                      <p className="font-display text-lg font-bold uppercase tracking-[0.02em] text-white">{SPORT_BY_ID[c.sport]?.emoji} {fmt(c.starts_on)} – {fmt(c.ends_on)}</p>
-                      <p className="font-body text-xs text-zinc-500">{c.place_name} · {SPORT_BY_ID[c.sport]?.label ?? c.sport}{c.level && c.level !== 'all' ? ` · ${c.level}` : ''} · @{c.owner ?? 'rider'} · {c.members} in</p>
+                      <p className="font-display text-lg font-bold uppercase tracking-[0.02em] text-white">{DISCIPLINE_BY_ID[c.sport]?.emoji} {fmt(c.starts_on)}{c.ends_on !== c.starts_on ? ` – ${fmt(c.ends_on)}` : ''}</p>
+                      <p className="font-body text-xs text-zinc-500">{c.place_name} · {DISCIPLINE_BY_ID[c.sport]?.label ?? c.sport}{c.level && c.level !== 'all' ? ` · ${c.level}` : ''} · @{c.owner ?? 'rider'} · {c.members} in</p>
                       {c.note && <p className="mt-1 font-body text-sm text-zinc-400">{c.note}</p>}
                     </li>
                   ))}

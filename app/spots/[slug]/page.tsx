@@ -1,53 +1,78 @@
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import SpotReport from '@/components/SpotReport'
-import { spotBySlug } from '@/lib/spots-index'
-import { fetchSpotForecast } from '@/lib/forecast'
+import { notFound, permanentRedirect } from 'next/navigation'
+import legacy from '@/data/legacy-spot-slugs.json'
+import RideReport from '@/components/RideReport'
+import { spotBySlug, spotsNear, traitsOf, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
+import { parksNear } from '@/lib/parks'
+import { fetchSkateForecast } from '@/lib/forecast'
 import { fetchStoriesNear } from '@/lib/stories-near'
-import { allVerdicts, SPORT_BY_ID, type Status } from '@/lib/sports'
-import type { GeoPoint } from '@/lib/local-sports'
+import { nowRead, describe } from '@/lib/report'
+import { KIND_META } from '@/lib/sports'
 
 export const dynamic = 'force-dynamic'
 
-const STATUS_RANK: Record<Status, number> = { firing: 2, rideable: 1, quiet: 0 }
+const SITE = 'https://ritualrollers.com'
 
-function pointOf(slug: string): { spot: NonNullable<ReturnType<typeof spotBySlug>>; point: GeoPoint } | null {
-  const spot = spotBySlug(slug)
-  if (!spot) return null
-  return { spot, point: { lat: spot.lat, lng: spot.lng, label: `${spot.name}, ${spot.region}`, countryCode: spot.country } }
-}
+// The outdoor-sports index (kite, surf, ski…) that lived here until the wheels-only relaunch
+const LEGACY = new Set(legacy as string[])
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const hit = pointOf(slug)
-  if (!hit) return { title: 'Spot not found — Ritual Rollers' }
-  const { spot, point } = hit
-  const sports = spot.sports.map(id => SPORT_BY_ID[id]?.label).filter(Boolean).join(', ')
-  let description = `${spot.why} Established for ${sports}. Live conditions, best windows this week and what to pack.`
-  try {
-    const forecast = await fetchSpotForecast(point.lat, point.lng)
-    if (forecast) {
-      const top = [...allVerdicts(forecast.current)]
-        .filter(v => spot.sports.includes(v.sport.id))
-        .sort((a, b) => STATUS_RANK[b.status] - STATUS_RANK[a.status] || b.score - a.score)[0]
-      if (top && top.status !== 'quiet') description = `${top.sport.label} ${top.status.toUpperCase()} · ${top.line}. ${spot.why}`.slice(0, 157) + '…'
-    }
-  } catch {}
-  const title = `${spot.name}, ${spot.region} — ${sports} · Ritual Rollers`
+  const spot = spotBySlug(slug)
+  if (!spot) return { title: 'Spot not found — Ritual Rollers' }
+  const forecast = await fetchSkateForecast(spot.lat, spot.lng)
+  const description = describe(nowRead(forecast, traitsOf(spot)), spot.why)
+  const title = `${spot.name}, ${spot.city} — is it dry? · Ritual Rollers`
   return {
     title,
     description,
     alternates: { canonical: `/spots/${slug}` },
-    openGraph: { title, description, url: `https://ritualrollers.com/spots/${slug}`, type: 'website' },
+    openGraph: { title, description, url: `${SITE}/spots/${slug}`, type: 'website' },
     twitter: { card: 'summary_large_image', title, description },
   }
 }
 
-export default async function IndexedSpotPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function SpotPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const hit = pointOf(slug)
-  if (!hit) notFound()
-  const { spot, point } = hit
-  const [forecast, stories] = await Promise.all([fetchSpotForecast(point.lat, point.lng), fetchStoriesNear(point)])
-  return <SpotReport slug={slug} point={point} forecast={forecast} stories={stories} index={spot} basePath="/spots" />
+  const spot = spotBySlug(slug)
+  if (!spot) {
+    if (LEGACY.has(slug)) permanentRedirect('/spots')
+    notFound()
+  }
+  const point = { lat: spot.lat, lng: spot.lng, label: `${spot.name}, ${spot.city}`, countryCode: spot.country }
+  const [forecast, stories] = await Promise.all([fetchSkateForecast(spot.lat, spot.lng), fetchStoriesNear(point)])
+  const nearbyParks = parksNear(spot.lat, spot.lng, 25, 60).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05)
+  const nearbyFeatured = spotsNear(spot.lat, spot.lng, 60, spot.slug)
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': spot.kind === 'street' ? 'Place' : 'SportsActivityLocation',
+    name: spot.name,
+    description: spot.why,
+    url: `${SITE}/spots/${slug}`,
+    geo: { '@type': 'GeoCoordinates', latitude: spot.lat, longitude: spot.lng },
+    address: { '@type': 'PostalAddress', addressLocality: spot.city, addressRegion: spot.region, addressCountry: spot.country },
+    ...(spot.cost === 'free' ? { isAccessibleForFree: true } : {}),
+  }
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <RideReport
+        mode="spot"
+        title={spot.name}
+        subtitle={`${KIND_META[spot.kind].label}${spot.indoor ? ' · indoor' : ''} · ${spot.city}, ${spot.region}, ${COUNTRY_LABEL[spot.country]}`}
+        kicker="Ride report"
+        countryCode={spot.country}
+        shareUrl={`${SITE}/spots/${slug}`}
+        point={point}
+        forecast={forecast}
+        traits={traitsOf(spot)}
+        index={spot}
+        nearbyFeatured={nearbyFeatured}
+        nearbyParks={nearbyParks}
+        stories={stories}
+      />
+    </>
+  )
 }

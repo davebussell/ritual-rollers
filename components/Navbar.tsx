@@ -5,13 +5,14 @@ import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import Logo from '@/components/Logo'
-import { Map, LogOut, User, Plus, BookOpen, Compass, Users } from 'lucide-react'
+import { Map, LogOut, User, Plus, BookOpen, Compass, Users, Menu, X, Droplets } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 
 export default function Navbar() {
   const [user, setUser] = useState<SupaUser | null>(null)
   const [username, setUsername] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -45,6 +46,10 @@ export default function Navbar() {
 
   const isActive = (href: string) => pathname === href
 
+  // Close the phone menu whenever the page changes
+  const [lastPath, setLastPath] = useState(pathname)
+  if (lastPath !== pathname) { setLastPath(pathname); setOpen(false) }
+
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
       scrolled
@@ -65,30 +70,42 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Nav links */}
-        <div className="flex items-center gap-1">
+        {/* Phone and tablet: the main action and a menu */}
+        <div className="flex items-center gap-1.5 lg:hidden">
+          <Link href="/scout"
+            className="tx-stitch flex items-center gap-1.5 rounded-md bg-orange-500 px-3 py-2 font-display text-[14px] font-bold uppercase tracking-wide text-white active:scale-95">
+            <Droplets className="h-3.5 w-3.5" strokeWidth={2.5} /> Is it dry?
+          </Link>
+          <button type="button" onClick={() => setOpen(o => !o)} aria-expanded={open} aria-controls="rr-menu" aria-label={open ? 'Close menu' : 'Open menu'}
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-zinc-700 text-zinc-300">
+            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
+        </div>
+
+        {/* Desktop links */}
+        <div className="hidden items-center gap-1 lg:flex">
           <NavLink href="/spots" active={pathname.startsWith('/spots')} icon={<Map className="h-3.5 w-3.5" />}>
             Spots
           </NavLink>
           <NavLink href="/scout" active={pathname.startsWith('/scout')} icon={<Compass className="h-3.5 w-3.5" />}>
-            Scout
+            Is it dry?
           </NavLink>
           <NavLink href="/explore" active={isActive('/explore') || isActive('/feed')} icon={<BookOpen className="h-3.5 w-3.5" />}>
-            Stories
+            Sessions
           </NavLink>
 
-          {/* The two primary actions: find a ride, find your crew */}
+          {/* The two primary actions: find a spot, find your crew */}
           <Link href="/finder"
             className="tx-stitch ml-2 flex items-center gap-1.5 rounded-md bg-orange-500 px-3.5 py-2 font-display text-[14px] font-bold uppercase tracking-wide text-white transition-all hover:bg-orange-400 active:scale-95">
             <Compass className="h-3.5 w-3.5" strokeWidth={2.5} />
-            Find a ride
+            Find a spot
           </Link>
           <Link href="/crew"
             className="tx-stitch ml-1.5 flex items-center gap-1.5 rounded-md bg-forest px-3.5 py-2 font-display text-[14px] font-bold uppercase tracking-wide text-white transition-all hover:brightness-110 active:scale-95">
             <Users className="h-3.5 w-3.5" strokeWidth={2.5} />
             Find your crew
           </Link>
-          <Link href="/trips/new" title="Log a ride"
+          <Link href="/trips/new" title="Log a session"
             className="ml-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-300 transition-colors hover:bg-zinc-700 hover:text-white">
             <Plus className="h-3.5 w-3.5" strokeWidth={2.5} />
           </Link>
@@ -114,6 +131,33 @@ export default function Navbar() {
           )}
         </div>
       </div>
+      {open && (
+        <div id="rr-menu" className="border-t border-zinc-800 bg-zinc-950 px-4 pb-4 pt-2 lg:hidden">
+          <div className="mx-auto grid max-w-6xl gap-1">
+            {[
+              { href: '/finder', label: 'Find a spot', icon: <Compass className="h-4 w-4" /> },
+              { href: '/spots', label: 'All spots', icon: <Map className="h-4 w-4" /> },
+              { href: '/scout', label: 'Is it dry? Check a town', icon: <Droplets className="h-4 w-4" /> },
+              { href: '/crew', label: 'Find your crew', icon: <Users className="h-4 w-4" /> },
+              { href: '/explore', label: 'Sessions', icon: <BookOpen className="h-4 w-4" /> },
+              { href: '/trips/new', label: 'Log a session', icon: <Plus className="h-4 w-4" /> },
+              ...(user && username ? [{ href: `/profile/${username}`, label: 'Your profile', icon: <User className="h-4 w-4" /> }] : []),
+            ].map(l => (
+              <Link key={l.href} href={l.href}
+                className={`flex items-center gap-3 rounded-md px-3 py-2.5 font-display text-lg font-bold uppercase tracking-wide ${pathname === l.href ? 'bg-zinc-900 text-white' : 'text-zinc-400'}`}>
+                {l.icon} {l.label}
+              </Link>
+            ))}
+            {user ? (
+              <button onClick={signOut} className="flex items-center gap-3 rounded-md px-3 py-2.5 text-left font-display text-lg font-bold uppercase tracking-wide text-zinc-500">
+                <LogOut className="h-4 w-4" /> Sign out
+              </button>
+            ) : (
+              <Link href="/auth/login" className="mt-1 rounded-md border border-zinc-700 px-3 py-2.5 text-center font-display text-lg font-bold uppercase tracking-wide text-zinc-300">Sign in</Link>
+            )}
+          </div>
+        </div>
+      )}
       <div className="rule-plaid" aria-hidden />
     </nav>
   )

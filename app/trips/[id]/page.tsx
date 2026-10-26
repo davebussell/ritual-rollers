@@ -280,7 +280,7 @@ export default async function TripPage({ params }: { params: Promise<{ id: strin
 
         {/* Footer CTA */}
         <div className="border-t border-zinc-800 pt-10 text-center">
-          <p className="mb-4 text-sm text-zinc-500">Stoked on this adventure?</p>
+          <p className="mb-4 text-sm text-zinc-500">Stoked on this session?</p>
           <UpvoteButton tripId={trip.id} currentUserId={user?.id ?? null}
             initialCount={trip.upvotes_count} initialUpvoted={userUpvoted} />
           {!user && (

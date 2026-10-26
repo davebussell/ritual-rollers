@@ -1,11 +1,11 @@
 'use client'
 
-// "Hood River, Jul 12–19, kite, solid — who's in?" Writes to crew_calls (phase 2/3 migration).
+// "Burnside, Saturday, skate, solid — who's in?" Writes to crew_calls (phase 2/3 migration).
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { SPORTS } from '@/lib/sports'
+import { DISCIPLINES } from '@/lib/sports'
 
 interface Props {
   placeSlug: string
@@ -34,11 +34,11 @@ export default function RollCallForm({ placeSlug, placeName, lat, lng, defaultSp
       </p>
     )
   }
-  if (done) return <p className="font-body text-sm text-white">Roll call posted. Riders who scout {placeName} will see it.</p>
+  if (done) return <p className="font-body text-sm text-white">Roll call posted. Anyone checking {placeName} will see it.</p>
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!sport || !starts || !ends) { setError('Pick a sport and your dates.'); return }
+    if (!sport || !starts || !ends) { setError('Pick what you ride and your dates.'); return }
     setBusy(true); setError(null)
     const supabase = createClient()
     const { data: { user } } = await supabase.auth.getUser()
@@ -58,10 +58,10 @@ export default function RollCallForm({ placeSlug, placeName, lat, lng, defaultSp
 
   return (
     <form onSubmit={submit} className="grid gap-2 sm:grid-cols-[1fr_1fr_1fr_auto]">
-      <select aria-label="Sport" value={sport} onChange={e => setSport(e.target.value)} required
+      <select aria-label="What you ride" value={sport} onChange={e => setSport(e.target.value)} required
         className="rounded-md border-2 border-zinc-800 bg-zinc-950 px-3 py-2 font-body text-sm text-white outline-none focus:border-orange-500">
-        <option value="">Sport…</option>
-        {SPORTS.map(s => <option key={s.id} value={s.id}>{s.emoji} {s.label}</option>)}
+        <option value="">Riding…</option>
+        {DISCIPLINES.map(s => <option key={s.id} value={s.id}>{s.emoji} {s.label}</option>)}
       </select>
       <input type="date" aria-label="From" value={starts} onChange={e => setStarts(e.target.value)} required
         className="rounded-md border-2 border-zinc-800 bg-zinc-950 px-3 py-2 font-body text-sm text-white outline-none focus:border-orange-500" />

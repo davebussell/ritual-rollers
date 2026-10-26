@@ -8,8 +8,8 @@ const barlow = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '600', '70
 const work = Work_Sans({ subsets: ['latin'], variable: '--font-work' })
 
 const SITE_URL = 'https://ritualrollers.com'
-const TITLE = 'Ritual Rollers — The Ritual of the Ride'
-const DESCRIPTION = 'Adventures worth sharing. Scout any spot on Earth — wind, waves, snow, road — see what\'s rideable, pack right, and roll it with your crew.'
+const TITLE = 'Ritual Rollers — Is it dry? Skateparks, pump tracks & bike parks'
+const DESCRIPTION = 'Anything on wheels across Canada, the US and Mexico: skateparks, plazas, DIYs, pump tracks, BMX tracks and bike parks, each with a live read of whether the ground is dry — and when it will be.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -59,14 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${barlow.variable} ${work.variable} ${work.className} tx-canvas bg-zinc-950 text-white min-h-screen antialiased`} suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        {/* Google tag (gtag.js) — Click Shift Portfolio */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-QK0ETT28BD" strategy="afterInteractive" />
-        <Script id="ga4-portfolio" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-QK0ETT28BD');
-        ` }} />
+        {/* GA4 (G-QK0ETT28BD) is added by Netlify's snippet injection (ga4-portfolio) — never add it here */}
         {/* Microsoft Clarity */}
         <Script id="ms-clarity" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
       (function(c,l,a,r,i,t,y){

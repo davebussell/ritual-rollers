@@ -197,7 +197,7 @@ export default function NewTripPage() {
               <RefreshCw className="h-8 w-8" />
             </div>
             <div>
-              <p className="font-medium text-zinc-300">Publishing your adventure…</p>
+              <p className="font-medium text-zinc-300">Publishing your session…</p>
               {photos.length > 0 && (
                 <p className="text-sm text-zinc-500 mt-1">Uploading photos {progress}%</p>
               )}
