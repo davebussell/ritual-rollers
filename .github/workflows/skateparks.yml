@@ -1,7 +1,7 @@
-# Refreshes data/skateparks.json (every skatepark in OpenStreetMap for CA, US, MX).
+# Refreshes data/parks.json (every skatepark, pump track, BMX track and bike park in OpenStreetMap for CA, US, MX).
 # Run it from the Actions tab ("Run workflow") when you want fresh map data. On main a refresh
 # commit deploys the site, like any other push.
-name: Refresh skateparks
+name: Refresh parks
 
 on:
   workflow_dispatch:
@@ -32,8 +32,8 @@ jobs:
         run: |
           git config user.name "ritualrollers-bot"
           git config user.email "dave@clickshift.ca"
-          git add data/skateparks.json
+          git add data/parks.json
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
-          git commit -m "Refresh skateparks from OpenStreetMap"
+          git commit -m "Refresh parks from OpenStreetMap"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
