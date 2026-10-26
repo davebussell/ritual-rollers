@@ -146,7 +146,7 @@ export function readHour(h: Hour, waterMm: number, traits: SpotTraits = {}): Rea
     case 'wet':
       return raining
         ? out('no', `raining — ${h.rainMm.toFixed(1)} mm this hour`, 0.03)
-        : out('no', `wet — ${waterMm.toFixed(1)} mm still on the ${surface === 'wood' ? 'ramps' : 'concrete'}`, 0.06)
+        : out('no', `wet — ${waterMm.toFixed(1)} mm still on the ${surface === 'wood' ? 'ramps' : 'surface'}`, 0.06)
   }
 
   if (g >= 55) return out('no', `gusts ${r(g)} km/h — sit it out`, 0.1)

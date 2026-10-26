@@ -109,7 +109,10 @@ export default function HomeScout({ strip, teasers, featuredCount, mapped }: Pro
                   </div>
                   <p className="font-expedition text-[10px] uppercase tracking-[0.18em]" style={{ color: KIND_META[s.kind].color }}>{KIND_META[s.kind].label} · {s.city}</p>
                   {s.line ? (
-                    <p className="mt-3 font-body text-sm text-zinc-300"><span className="font-semibold text-white">{s.ground}</span> — {s.line}</p>
+                    <p className="mt-3 font-body text-sm text-zinc-300">
+                      <span className="mr-1.5 rounded-sm border border-zinc-700 px-1.5 py-0.5 font-expedition text-[10px] uppercase tracking-[0.14em] text-white">{s.ground}</span>
+                      {s.line.charAt(0).toUpperCase() + s.line.slice(1)}
+                    </p>
                   ) : (
                     <p className="mt-3 font-body text-sm text-zinc-500">no read right now</p>
                   )}

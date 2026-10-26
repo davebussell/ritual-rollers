@@ -1,15 +1,11 @@
 # Refreshes data/parks.json (every skatepark, pump track, BMX track and bike park in OpenStreetMap for CA, US, MX).
-# Run it from the Actions tab ("Run workflow") when you want fresh map data. On main a refresh
-# commit deploys the site, like any other push.
+# Run it from the Actions tab ("Run workflow") when you want fresh map data, or locally with
+# `node scripts/fetch-skateparks.mjs`. On main a refresh commit deploys the site, like any other push.
+# QLever refuses GitHub's runners at times; the script then falls back to Overpass, which is slower.
 name: Refresh parks
 
 on:
   workflow_dispatch:
-  push:
-    branches: [skate]
-    paths:
-      - scripts/fetch-skateparks.mjs
-      - .github/workflows/skateparks.yml
 
 permissions:
   contents: write
