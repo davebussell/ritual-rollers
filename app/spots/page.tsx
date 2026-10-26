@@ -26,7 +26,7 @@ export default function SpotsPage() {
           <h1 className="mt-3 font-display text-5xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-white">Spots worth the trip</h1>
           <p className="mt-2 max-w-2xl font-body text-zinc-500">
             {SPOTS.length} featured spots — {skate} to skate, {bike} to ride — across 🇨🇦 {countries.CA} · 🇺🇸 {countries.US} · 🇲🇽 {countries.MX}.
-            Each one researched, with a source. Plus {mapped.total.toLocaleString('en-US')} more mapped parks and tracks that show up around any town you check.
+            Each one researched, with a source. Plus all {mapped.total.toLocaleString('en-US')} parks and tracks on OpenStreetMap, which show up around any town you check.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
