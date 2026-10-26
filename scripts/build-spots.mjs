@@ -34,6 +34,11 @@ let parks = []
 try { parks = JSON.parse(readFileSync('data/parks.json', 'utf8')).parks } catch { console.warn('no data/parks.json — skipping OSM snapping') }
 const OSM_KIND = { park: 'skate', plaza: 'skate', diy: 'skate', bowl: 'skate', indoor: undefined, street: null, pumptrack: 'pump', bmxtrack: 'bmx', bikepark: 'bike' }
 
+// Spots a research file may suggest that we don't feature, keyed by normalised name, with the reason.
+const EXCLUDE = new Map([
+  ['freedom plaza', 'skating is banned there (National Park Service land; Park Police move skaters on)'],
+])
+
 const dropped = []
 const unsnapped = []
 const out = []
@@ -49,6 +54,7 @@ for (const file of files) {
     const source = String(raw.source ?? '').trim()
     const fail = why => dropped.push(`${name || '?'} (${file.split('/').pop()}): ${why}`)
     if (!name || !why) { fail('missing name or why'); continue }
+    if (EXCLUDE.has(norm(name))) { fail(EXCLUDE.get(norm(name))); continue }
     if (!BOX[country]) { fail(`country ${country}`); continue }
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) { fail('no coordinates'); continue }
     const [s, n, w, e] = BOX[country]

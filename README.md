@@ -37,6 +37,9 @@ gets two reads, concrete and dirt. The tests in `tests/skate.test.ts` pin the be
   researched with a source (briefs: skate spots and bike spots; fields in `lib/spots-index.ts`). The build validates,
   de-duplicates and snaps coordinates to the matching OpenStreetMap feature when one is within 1.5 km under a similar
   name (`osm` field). Never add a spot without a real source; leave out anything closed or demolished.
+  The research files, the briefs the researchers worked from and the known gaps are in `research/spots/` (not
+  published). Rebuild: `node scripts/build-spots.mjs research/spots/*.json`. Spots we deliberately don't feature are in
+  `EXCLUDE` at the top of the build script.
 - **Every mapped park** — `data/parks.json`: every skatepark, pump track, BMX track and bike park in OpenStreetMap for
   CA/US/MX, fetched by `scripts/fetch-skateparks.mjs` in GitHub Actions (`.github/workflows/skateparks.yml`; run it from
   the Actions tab to refresh — on `main` the refresh commit deploys). Each one has a page at `/parks/<id>`.

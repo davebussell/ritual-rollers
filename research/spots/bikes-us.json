@@ -1,0 +1,393 @@
+[
+  {
+    "name": "Runway Bike Park",
+    "city": "Springdale",
+    "region": "Arkansas",
+    "country": "US",
+    "lat": 36.18686,
+    "lng": -94.11942,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "skills",
+      "beginner area"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "mtb",
+      "skateboard"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "Velosolutions designed the asphalt pump track at The Jones Center: about 25,000 sq ft. It opened in fall 2018 and that October hosted the first Red Bull Pump Track World Championship final. The 2.75-acre park also has three asphalt skills lines with cedar and steel features, and a bicycle playground for small kids.",
+    "heads_up": "The Jones Center lends out bikes and helmets for free, so you can ride without bringing your own.",
+    "source": "https://www.waltonfamilyfoundation.org/stories/home-region/a-diverse-community-is-given-the-runway-to-explore-a-burgeoning-sport",
+    "confidence": "high"
+  },
+  {
+    "name": "Kinetic Park",
+    "city": "Dardenne Prairie",
+    "region": "Missouri",
+    "country": "US",
+    "lat": 38.76886,
+    "lng": -90.76345,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "This St. Charles County park, formerly the Youth Activity Park, has what the county billed as the largest asphalt pump track in the nation. It hosted Red Bull UCI Pump Track World Championships qualifiers in 2021 and 2022.",
+    "heads_up": "OpenStreetMap lists the park as open 10 a.m. to 10 p.m. daily; check St. Charles County Parks for current hours.",
+    "source": "https://terrain-mag.com/st-charles-red-bull-pump-track-championship/",
+    "confidence": "medium"
+  },
+  {
+    "name": "MOmentum Bike Park",
+    "city": "Joplin",
+    "region": "Missouri",
+    "country": "US",
+    "lat": 37.10976,
+    "lng": -94.51881,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track"
+    ],
+    "surface": null,
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "A new city bike park in its first season in 2026. Joplin is one of four US communities hosting a 2026 Velosolutions/UCI Pump Track qualifier, held at the park on August 15–16, 2026.",
+    "heads_up": "OpenStreetMap lists it as open 6 a.m. to 10 p.m.; the park is brand new, so check with the City of Joplin for current details.",
+    "source": "https://www.joplinmo.org/CivicAlerts.aspx?AID=3958",
+    "confidence": "high"
+  },
+  {
+    "name": "George Poston Park Pump Track",
+    "city": "Lowell",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 35.28432,
+    "lng": -81.10975,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track"
+    ],
+    "surface": null,
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "North Carolina's first Velosolutions pump track, about 10,000 sq ft, in a Gaston County park that also has more than 10 miles of singletrack. It hosted Red Bull UCI Pump Track World Championships qualifiers, including in 2021 and 2022.",
+    "heads_up": "The coordinates mark the park as a whole; the pump track is one part of a larger park with trails.",
+    "source": "https://media.visitnc.com/Red-Bull-Pump-Track-World-Championship-to-Hold-Qualifier-in-Gastonia",
+    "confidence": "medium"
+  },
+  {
+    "name": "Leavenworth Pump Track",
+    "city": "Leavenworth",
+    "region": "Washington",
+    "country": "US",
+    "lat": 47.58852,
+    "lng": -120.66815,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb",
+      "skateboard",
+      "scooter"
+    ],
+    "indoor": false,
+    "lit": false,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "An asphalt pump track built by Velosolutions that hosted Red Bull Pump Track World Championship qualifiers in 2018 and 2019.",
+    "heads_up": "OpenStreetMap says it has no lights, so plan to ride in daylight.",
+    "source": "https://pnwcomponents.com/blogs/news/redbull-world-champ-pump-track-qualifiers",
+    "confidence": "medium"
+  },
+  {
+    "name": "Paris Pump Track",
+    "city": "Paris",
+    "region": "Texas",
+    "country": "US",
+    "lat": 33.64269,
+    "lng": -95.52357,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb",
+      "skateboard"
+    ],
+    "indoor": false,
+    "lit": false,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "An asphalt pump track on the Trail de Paris that hosted Red Bull UCI Pump Track World Championships qualifiers in May 2021 and July 2022.",
+    "heads_up": "OpenStreetMap says it has no lights, so it's a daylight ride.",
+    "source": "https://15.ie/?p=18636",
+    "confidence": "medium"
+  },
+  {
+    "name": "Truckee Bike Park",
+    "city": "Truckee",
+    "region": "California",
+    "country": "US",
+    "lat": 39.32981,
+    "lng": -120.15807,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "jump line",
+      "berms",
+      "pump track",
+      "rollers",
+      "beginner area"
+    ],
+    "surface": null,
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "Three flow lines (beginner, intermediate and advanced) that you drop into and pump over berms and jumps, plus a side-by-side Dual Pump track and a start-to-finish Straight Rhythm line.",
+    "heads_up": "Truckee is snow country, so expect a winter off-season; check conditions before you drive up.",
+    "source": "https://www.goodreads.com/author_blog_posts/19947395-what-is-a-pump-track?tab=book",
+    "confidence": "medium"
+  },
+  {
+    "name": "Griffin Bike Park",
+    "city": "Terre Haute",
+    "region": "Indiana",
+    "country": "US",
+    "lat": 39.33939,
+    "lng": -87.35751,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "skills",
+      "pump track",
+      "jump line",
+      "berms",
+      "beginner area"
+    ],
+    "surface": null,
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "A 300-acre bike park with more than two dozen lines. They run from the one-mile, all-ability Basic Training Skills Loop of berms and hips to Mega Pump, an expert 0.6-mile pump trail with three big jumps.",
+    "heads_up": "OpenStreetMap lists it as open 24/7 \"weather permitting\", so check conditions after rain.",
+    "source": "https://www.goodreads.com/author_blog_posts/19947395-what-is-a-pump-track?tab=book",
+    "confidence": "medium"
+  },
+  {
+    "name": "Piney Mountain Bike Lounge",
+    "city": "Greenville",
+    "region": "South Carolina",
+    "country": "US",
+    "lat": 34.89096,
+    "lng": -82.37468,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "rollers",
+      "berms"
+    ],
+    "surface": null,
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": true,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "A mellow pump track of rollers and berms at a bike lounge with beer and food trucks. It is lit, so riding carries on after dark, and staff are on hand to give tips.",
+    "heads_up": "The lights stay on only while the lounge is open and staffed, so riding follows its hours.",
+    "source": "https://www.goodreads.com/author_blog_posts/19947395-what-is-a-pump-track?tab=book",
+    "confidence": "medium"
+  },
+  {
+    "name": "Ray's MTB Indoor Park",
+    "city": "Cleveland",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 41.45465,
+    "lng": -81.7524,
+    "coord_source": "osm",
+    "kind": "indoor",
+    "features": [
+      "pump track",
+      "jump line",
+      "foam pit",
+      "skills",
+      "beginner area"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "indoor": true,
+    "lit": null,
+    "cost": "paid",
+    "skill": "all",
+    "why": "Opened in 2004 in a former factory on Cleveland's west side and since grown to about 165,000 sq ft. It has a full-size indoor pump track, a jump trail, foam pits, a BMX pool, and a trail of nearly a mile with rocks and logs built to feel like the woods.",
+    "heads_up": "Seasonal: usually open October to April and closed in summer; riders under 18 need a waiver signed by a parent.",
+    "source": "https://en.wikipedia.org/wiki/Ray%27s_MTB_Indoor_Park",
+    "confidence": "high"
+  },
+  {
+    "name": "Mike's Bike Park",
+    "city": "Dayton",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 39.7655,
+    "lng": -84.17128,
+    "coord_source": "osm",
+    "kind": "indoor",
+    "features": [
+      "pump track",
+      "foam pit",
+      "skills",
+      "beginner area"
+    ],
+    "surface": null,
+    "disciplines": [
+      "bmx",
+      "mtb",
+      "scooter",
+      "skateboard",
+      "inline"
+    ],
+    "indoor": true,
+    "lit": null,
+    "cost": "paid",
+    "skill": "all",
+    "why": "Two floors of indoor riding in a former downtown radiator factory, opened in 2016 by Mike Bisig. It has a pump track, jumps, ramps, skinnies, a foam pit, a cross-country loop and a beginner section, and almost anything without a motor is allowed.",
+    "heads_up": "Open year-round; everyone signs a waiver before riding.",
+    "source": "https://spectrumnews1.com/oh/columbus/news/2022/01/12/dayton-indoor-bike-park-allows-riders-off-all-skill-levels-to-escape-the-cold-",
+    "confidence": "medium"
+  },
+  {
+    "name": "Dayton Bike Yard",
+    "city": "Dayton",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 39.73819,
+    "lng": -84.20247,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "jump line",
+      "beginner area"
+    ],
+    "surface": null,
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "A newer bike park in Welcome Park with about 2.5 acres of jumps, a pump track, and areas set aside for beginners and families.",
+    "heads_up": "The coordinates mark the pump track; the jump areas fill the rest of the 2.5-acre site.",
+    "source": "https://livability.com/oh/dayton/experiences-adventures/bicycling-in-dayton-oh-it-just-feels-wright/",
+    "confidence": "medium"
+  },
+  {
+    "name": "Keene Creek Bike Park",
+    "city": "Duluth",
+    "region": "Minnesota",
+    "country": "US",
+    "lat": 46.73615,
+    "lng": -92.17531,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "dirt jumps",
+      "jump line",
+      "pump track",
+      "skills",
+      "beginner area"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "Built by volunteers with COGGS (Cyclists of Gitchee Gumee Shores) on about an acre near and partly under Interstate 35. It has a dirt jump plaza with beginner, intermediate and advanced lines, a pump track, and a bike playground of wooden features.",
+    "heads_up": "Parts of the park are still being built; the city lists the beginner, intermediate and advanced jump lines as open.",
+    "source": "https://duluthmn.gov/parks/parks-trails/current-projects/keene-creek-bike-park/",
+    "confidence": "medium"
+  },
+  {
+    "name": "I-5 Colonnade Mountain Bike Park",
+    "city": "Seattle",
+    "region": "Washington",
+    "country": "US",
+    "lat": 47.63496,
+    "lng": -122.32326,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "skills"
+    ],
+    "surface": null,
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "Seattle's urban mountain bike park in I-5 Colonnade Park, under the freeway. Seattle Parks and the Evergreen Mountain Bike Alliance planned to rebuild its Tqalu Skills Zone with two paved pump tracks.",
+    "heads_up": "The paved pump tracks were set for construction in summer–fall 2024; check Seattle Parks to see whether they have opened.",
+    "source": "https://seattle.gov/parks/about-us/projects/i-5-colonnade-pump-track-",
+    "confidence": "medium"
+  }
+]

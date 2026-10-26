@@ -1,0 +1,845 @@
+[
+  {
+    "name": "Whistler Mountain Bike Park",
+    "city": "Whistler",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.11623,
+    "lng": -122.95095,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "downhill",
+      "freeride",
+      "jump line"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "paid",
+    "skill": "all",
+    "why": "Lift-served park on Whistler Mountain, open since 1999, with over 900 vertical metres of terrain reached by chairlift and gondola. It has hosted Crankworx events, including a pump track challenge at the Boneyard in 2010.",
+    "heads_up": "Summer lift ticket required; check Whistler Blackcomb for this season's opening and closing dates.",
+    "source": "https://www.whistler.com/blog/post/one-bike-one-place-whistlers-cycling-options/",
+    "confidence": "medium"
+  },
+  {
+    "name": "Sun Peaks Bike Park",
+    "city": "Sun Peaks",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.88354,
+    "lng": -119.88213,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "downhill"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "paid",
+    "skill": "all",
+    "why": "Lift-served park at Sun Peaks Resort near Kamloops, running since 1999, with more than 89 km of trails and 595 m of vertical. It grew onto Sundance Mountain in 2022 and hosts the Canadian National Downhill Championships.",
+    "heads_up": "Seasonal: the 2026 season ran June 13 to September 27; lift ticket required.",
+    "source": "https://freehub.com/features/kamloops-travel-guide",
+    "confidence": "medium"
+  },
+  {
+    "name": "Silver Star Bike Park",
+    "city": "Vernon",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.35839,
+    "lng": -119.06441,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "downhill",
+      "beginner area"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "paid",
+    "skill": "all",
+    "why": "Lift-served park at Silver Star Mountain Resort above Vernon. When the Georgia Straight covered it in 2013 it had 18 trails over 44 km, including the 7 km Paradise Trail for beginners.",
+    "heads_up": "Trail figures are from 2013; check the resort for current lift days and tickets.",
+    "source": "https://www.straight.com/node/70217",
+    "confidence": "medium"
+  },
+  {
+    "name": "SORCA Bike Skills Park",
+    "city": "Squamish",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.72524,
+    "lng": -123.14232,
+    "coord_source": "estimated",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "dirt jumps",
+      "jump line",
+      "skills",
+      "drops",
+      "beginner area"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "mtb",
+      "bmx",
+      "scooter",
+      "skateboard"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Rebuilt by the Squamish Off-Road Cycling Association next to the Brennan Park Recreation Centre (the original park dates from 2014), with three jump lines (green, blue and double blue), a paved pump track, drops and skinnies.",
+    "heads_up": "Free to ride; SORCA asks riders to buy an optional yearly trail pass (sold at Corsa Cycles) to pay for upkeep.",
+    "source": "https://squamishchief.com/local-news/squamishs-newest-mountain-bike-skills-park-is-officially-open-at-brennan-park-9264821",
+    "confidence": "medium"
+  },
+  {
+    "name": "Squamish BMX Track",
+    "city": "Squamish",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.72331,
+    "lng": -123.14305,
+    "coord_source": "osm",
+    "kind": "bmxtrack",
+    "features": [
+      "race track",
+      "berms",
+      "rollers"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "bmx"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Refreshed BMX track between Brennan Park and Kinsmen Campground with straights, berm turns, rollers, rhythm sections and tabletops, a short walk from the SORCA skills park.",
+    "heads_up": "Dirt track: give it time to dry after rain.",
+    "source": "https://exploresquamish.com/news/squamish-grom-friendly-bike-parks",
+    "confidence": "medium"
+  },
+  {
+    "name": "Pemberton Bike Skills Park",
+    "city": "Pemberton",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.31746,
+    "lng": -122.75556,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "skills",
+      "drops",
+      "jump line"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Opened in 2022 in Den Duyf Park with four zones (pump track, skills park, drop zone and jump lines) rated so riders can progress. It was paid for mostly by a provincial grant of about $974,000.",
+    "heads_up": "Closed 11 p.m. to 7 a.m. (until 9 a.m. on Sundays and holidays).",
+    "source": "https://www.squamishreporter.com/2022/07/18/new-bike-skills-park-opens-in-pemberton",
+    "confidence": "medium"
+  },
+  {
+    "name": "Inter River Bike Park",
+    "city": "North Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.31905,
+    "lng": -123.02925,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "dirt jumps",
+      "jump line",
+      "pump track",
+      "beginner area"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "bmx",
+      "mtb",
+      "skateboard"
+    ],
+    "indoor": false,
+    "lit": false,
+    "cost": "free",
+    "skill": "all",
+    "why": "Opened in 2019 beside a former BMX park, with a BMX dirt jump course, a paved pump track and a dirt pump track. Landyachtz has held timed skateboard races on the paved loop.",
+    "heads_up": "The jump course is for experienced riders; beginners and intermediates should stick to the pump tracks.",
+    "source": "https://www.destinationvancouver.com/inspirations/outdoors/9-destination-worthy-bike-skills-parks-around-vancouver",
+    "confidence": "high"
+  },
+  {
+    "name": "Vanier Park Bike Skills Track",
+    "city": "Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.27512,
+    "lng": -123.14189,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "dirt jumps",
+      "pump track",
+      "beginner area"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": false,
+    "cost": "free",
+    "skill": "all",
+    "why": "Built in 2010 and kept up by volunteers, it sits in the trees on the south side of Vanier Park by the Burrard Street Bridge, with dirt jumps of several sizes and two pump tracks, the smaller one for kids.",
+    "heads_up": "All dirt and no lights: ride in daylight and skip it after heavy rain.",
+    "source": "https://www.destinationvancouver.com/inspirations/outdoors/9-destination-worthy-bike-skills-parks-around-vancouver",
+    "confidence": "high"
+  },
+  {
+    "name": "Hastings Park Bike Skills Track",
+    "city": "Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.28384,
+    "lng": -123.03353,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "berms",
+      "skills",
+      "beginner area"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "In the southeast corner of Hastings Park at the north end of Empire Field: a dirt pump track with sculpted berms, a smaller pump track for kids and wooden skills platforms and ramps.",
+    "heads_up": "Gets busy in late afternoons; dirt sections need to dry after rain.",
+    "source": "https://www.destinationvancouver.com/inspirations/outdoors/9-destination-worthy-bike-skills-parks-around-vancouver",
+    "confidence": "high"
+  },
+  {
+    "name": "Mountain Air Bike Skills Park",
+    "city": "Burnaby",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.28716,
+    "lng": -122.92333,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "skills",
+      "pump track",
+      "dirt jumps",
+      "drops"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Built for mountain bikers on the north side of Burnaby Mountain, with skinnies, elevated bridges, drops, teeter-totters, wood and dirt pump tracks and dirt jumps.",
+    "heads_up": "Washrooms and picnic tables on site; wooden features get slick in the wet.",
+    "source": "https://www.destinationvancouver.com/inspirations/outdoors/9-destination-worthy-bike-skills-parks-around-vancouver",
+    "confidence": "high"
+  },
+  {
+    "name": "Garden City Bike Park",
+    "city": "Richmond",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.16317,
+    "lng": -123.12406,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "skills",
+      "dirt jumps",
+      "beginner area"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Richmond's bike park on Granville Avenue has an obstacle section with skinnies and a teeter-totter, and a dirt jump area with jumps laid out by skill level, from beginner to expert.",
+    "heads_up": "Dirt jumps: let them dry out after rain.",
+    "source": "https://www.destinationvancouver.com/inspirations/outdoors/9-destination-worthy-bike-skills-parks-around-vancouver",
+    "confidence": "high"
+  },
+  {
+    "name": "Penzer Bike Park",
+    "city": "Langley",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.08802,
+    "lng": -122.66954,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "dirt jumps"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "bmx",
+      "mtb",
+      "scooter",
+      "skateboard"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Part of Penzer Action Park: a BMX-style dirt jump area (2008) and a cement pump track (2017), next to a skatepark, a parkour area and an in-ground trampoline.",
+    "heads_up": "The pump track is shared with skateboards and scooters, so watch the traffic at busy times.",
+    "source": "https://fvcurrent.com/p/pump-tracks-fraser-valley",
+    "confidence": "high"
+  },
+  {
+    "name": "Chilliwack Pump Track",
+    "city": "Chilliwack",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.1708,
+    "lng": -121.9645,
+    "coord_source": "estimated",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "rollers",
+      "berms",
+      "beginner area"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Velosolutions built two asphalt tracks at The Landing in late 2020: a pro track of over 300 m with a tunnel, which Velosolutions calls the only one of its kind in North America, and a shorter intermediate track.",
+    "heads_up": "The pro track is fast and can intimidate young riders; start on the smaller track. Turf edges give softer landings.",
+    "source": "https://velosolutions.com/chilliwack-pump-track/",
+    "confidence": "medium"
+  },
+  {
+    "name": "Stevie Smith Bike Park",
+    "city": "Nanaimo",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.19679,
+    "lng": -123.98826,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "beginner area"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Velosolutions built a beginner track and a larger competition track here in 2017. The park hosts Red Bull Pump Track World Championship qualifiers, including the only Canadian stop in 2018.",
+    "heads_up": "The competition track is for confident riders; warm up on the beginner loop.",
+    "source": "https://velosolutions.com/wp-content/uploads/2021/08/Velosolutions-Recent-most-important-job-in-Canada.pdf",
+    "confidence": "high"
+  },
+  {
+    "name": "Jordie Lunn Bike Park",
+    "city": "Langford",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 48.44323,
+    "lng": -123.54084,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "jump line",
+      "skills",
+      "beginner area"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": false,
+    "cost": "free",
+    "skill": "all",
+    "why": "Velosolutions built a 1,500 m² main pump track, a kids' track and a roughly 142 m downhill snake run here in 2020 on a steep site that honours rider Jordie Lunn; the park also has jump and skills zones.",
+    "heads_up": "The pump tracks have no lights, so plan to ride in daylight.",
+    "source": "https://velosolutions.com/wp-content/uploads/2021/08/Velosolutions-Recent-most-important-job-in-Canada.pdf",
+    "confidence": "high"
+  },
+  {
+    "name": "Kamloops Bike Ranch",
+    "city": "Kamloops",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.66828,
+    "lng": -120.26389,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "dirt jumps",
+      "jump line",
+      "pump track",
+      "race track",
+      "drops"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "indoor": false,
+    "lit": true,
+    "cost": "free",
+    "skill": "all",
+    "why": "Set up in 2005 inside city limits, the Ranch has jump lines like Tombstone and Wrangler, the floodlit Corral dirt jumps, a BMX track and a new $1.3 million all-wheels pump track.",
+    "heads_up": "Dirt lines need to dry after rain; a local shuttle (Mostly Mental Shuttles) has run laps to the top.",
+    "source": "https://freehub.com/features/kamloops-travel-guide",
+    "confidence": "medium"
+  },
+  {
+    "name": "Sicamous Pump Track",
+    "city": "Sicamous",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.83301,
+    "lng": -118.98036,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Asphalt pump track in Finlayson Park that hosted the first UCI Pump Track World Championships Canada Qualifier in 2024, with nearly 50 riders, and the qualifier again in 2025.",
+    "heads_up": "It sits beside the skatepark and rec centre in Finlayson Park, so it pairs well with a skate session.",
+    "source": "https://cyclingbc.net/events/2024-08-26",
+    "confidence": "high"
+  },
+  {
+    "name": "South Glenmore Bike Pump Track",
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 50.97768,
+    "lng": -114.13122,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "beginner area"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Velosolutions built two connected asphalt tracks here in 2020, a 110 m beginner loop and a 204 m loop with bigger features, raised above ground because of the high water table by the Glenmore Reservoir.",
+    "heads_up": "Open 8 a.m. to 10 p.m.; park at 3520 90 Ave S.W. and ride east on the Elbow River pathway.",
+    "source": "https://www.calgary.ca/bike-walk-roll/pump-tracks.html",
+    "confidence": "high"
+  },
+  {
+    "name": "Inglewood Bike Pump Track",
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 51.03685,
+    "lng": -114.015,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "rollers",
+      "berms",
+      "beginner area"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Opened in October 2021 at 2040 7 Ave S.E., designed by Ground Cubed and Velosolutions: two asphalt tracks for beginner and intermediate riders, just off the Bow River pathway.",
+    "heads_up": "Free drop-in, 8 a.m. to 10 p.m.",
+    "source": "https://www.calgary.ca/bike-walk-roll/pump-tracks.html",
+    "confidence": "high"
+  },
+  {
+    "name": "West Confederation Bike Pump Track",
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 51.07874,
+    "lng": -114.10711,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "berms"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "intermediate",
+    "why": "Calgary's newest Velosolutions track, in the southeast corner of West Confederation Park, with a 90 m intermediate loop and a 145 m advanced loop of five berms each.",
+    "heads_up": "Groups can book it on weekdays; outside bookings it is open for drop-in, 8 a.m. to 10 p.m.",
+    "source": "https://www.calgary.ca/bike-walk-roll/pump-tracks.html",
+    "confidence": "high"
+  },
+  {
+    "name": "Fairview Bike Pump Track",
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 50.98408,
+    "lng": -114.06789,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "beginner area"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Calgary's first asphalt pump track, built in 2020 by Bike Track for the Fairview Community Association, with small tabletops and beginner, intermediate and advanced routes.",
+    "heads_up": "Parking is limited; don't park in the alley behind Fairview Drive. Open 8 a.m. to 10 p.m.",
+    "source": "https://www.calgary.ca/bike-walk-roll/pump-tracks.html",
+    "confidence": "high"
+  },
+  {
+    "name": "Joyride 150",
+    "city": "Markham",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.87724,
+    "lng": -79.27369,
+    "coord_source": "osm",
+    "kind": "indoor",
+    "features": [
+      "foam pit",
+      "resi ramp",
+      "pump track",
+      "jump line",
+      "race track",
+      "beginner area"
+    ],
+    "surface": "mixed",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": true,
+    "lit": null,
+    "cost": "paid",
+    "skill": "all",
+    "why": "Indoor bike park that opened in December 2009 in a building of over 100,000 sq ft, with beginner to expert sections, a foam pit and resi jump, jump and rhythm lines, a BMX street park, a pump track and an indoor cross-country loop.",
+    "heads_up": "Paid day passes (about $31 for ages 7 and up, less after 7 p.m.); bring your own bike and helmet or rent them there.",
+    "source": "https://kidzapp.com/ca/kids-activities/markham/summer-fun/joyride-150-biking-programs-115319",
+    "confidence": "medium"
+  },
+  {
+    "name": "Sunnyside Bike Park",
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.63726,
+    "lng": -79.46401,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "skills",
+      "drops",
+      "beginner area"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Opened in 2014 about 150 m from Lake Ontario, partly from recycled materials, with pump tracks, a skills trail, a large drop, a boardwalk and a wall ride, rated green to black.",
+    "heads_up": "Open dawn to dusk; no parking on site, only a drop-off roundabout at Lake Shore Blvd. W. and Ellis Ave.",
+    "source": "https://www.toronto.ca/explore-enjoy/parks-recreation/program-activities/sports/skateboarding-bmx-mountain-biking/",
+    "confidence": "high"
+  },
+  {
+    "name": "Centennial Park Pan Am BMX Centre",
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.65493,
+    "lng": -79.59508,
+    "coord_source": "osm",
+    "kind": "bmxtrack",
+    "features": [
+      "race track",
+      "start hill",
+      "berms"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "bmx"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "intermediate",
+    "why": "The BMX venue of the Toronto 2015 Pan Am Games: a compact closed-loop course with four straights, three banked turns, 5 m and 8 m start ramps and several challenging jumps.",
+    "heads_up": "Open dawn to dusk from May 2 to October 31, weather permitting.",
+    "source": "https://www.toronto.ca/explore-enjoy/parks-recreation/program-activities/sports/skateboarding-bmx-mountain-biking/",
+    "confidence": "high"
+  },
+  {
+    "name": "Bayview Arena Bike Park",
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.78791,
+    "lng": -79.39437,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "dirt jumps",
+      "berms",
+      "pump track"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "A 3,000 m² dirt park behind Bayview Arena in North York with jumps, berms and tabletops for a range of skill levels.",
+    "heads_up": "Open dawn to dusk; park at the arena. Let the dirt dry after rain.",
+    "source": "https://www.toronto.ca/explore-enjoy/parks-recreation/program-activities/sports/skateboarding-bmx-mountain-biking/",
+    "confidence": "high"
+  },
+  {
+    "name": "Carlington Bike Park",
+    "city": "Ottawa",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 45.37328,
+    "lng": -75.74387,
+    "coord_source": "osm",
+    "kind": "bikepark",
+    "features": [
+      "pump track",
+      "skills",
+      "beginner area"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "Led by the Ottawa Mountain Bike Association with the City of Ottawa, it sits on the former ski hill in Carlington Park, with three granite-surface circuits for beginner to advanced riders.",
+    "heads_up": "Easy to reach by bus and bike path, so you don't need a car.",
+    "source": "https://northernontario.travel/cycling/bike-parks-ontario",
+    "confidence": "medium"
+  },
+  {
+    "name": "Phil Esposito Park Pump Track",
+    "city": "Sault Ste. Marie",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 46.5182,
+    "lng": -84.34368,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "rollers",
+      "berms",
+      "beginner area"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "free",
+    "skill": "all",
+    "why": "One of the first asphalt pump tracks in Ontario, with beginner rollers and banked turns plus an advanced 'butterfly' route, linked to more than 30 km of mountain bike trails.",
+    "heads_up": "Bike rentals are available in town for about $50 a day.",
+    "source": "https://northernontario.travel/cycling/bike-parks-ontario",
+    "confidence": "medium"
+  },
+  {
+    "name": "Kivi Park Pump Track",
+    "city": "Sudbury",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 46.40455,
+    "lng": -80.99405,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "berms",
+      "rollers"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "paid",
+    "skill": "intermediate",
+    "why": "A newer intermediate dirt pump track with banked turns and rollers at Kivi Park, which has more than 55 km of trails.",
+    "heads_up": "Kivi Park charges a day pass ($9, family $25, kids 10 and under free); bike rentals from $25 for 2 hours.",
+    "source": "https://northernontario.travel/cycling/bike-parks-ontario",
+    "confidence": "medium"
+  },
+  {
+    "name": "Empire 47 Pump Track",
+    "city": "Lac-Delage",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 46.98074,
+    "lng": -71.41457,
+    "coord_source": "osm",
+    "kind": "pumptrack",
+    "features": [
+      "pump track"
+    ],
+    "surface": "asphalt",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "indoor": false,
+    "lit": true,
+    "cost": "paid",
+    "skill": "all",
+    "why": "At 1,800 m² it is the largest pump track in the Quebec City area. The Velosolutions-built track has hosted a Red Bull UCI Pump Track World Championships qualifier and is lit in the evening.",
+    "heads_up": "Paid access (adult day pass about $24), and the park closes on rainy days.",
+    "source": "https://www.singletracks.com/bike-trails/empire-47/",
+    "confidence": "medium"
+  },
+  {
+    "name": "Camp Fortune Pump Track",
+    "city": "Chelsea",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 45.5108,
+    "lng": -75.84352,
+    "coord_source": "estimated",
+    "kind": "pumptrack",
+    "features": [
+      "pump track",
+      "berms",
+      "rollers",
+      "start hill"
+    ],
+    "surface": "dirt",
+    "disciplines": [
+      "mtb"
+    ],
+    "indoor": false,
+    "lit": null,
+    "cost": "unknown",
+    "skill": "all",
+    "why": "Camp Fortune's pump track sits on NCC land in Gatineau Park. A 2023 federal assessment covered a 215 m expansion with a start ramp, two berms, five tabletops and six rollers, the first phase of a mountain bike skills park.",
+    "heads_up": "It is built on native soil, so wait for it to dry after rain.",
+    "source": "https://www.iaac-aeic.gc.ca/050/evaluations/proj/84619",
+    "confidence": "medium"
+  }
+]
