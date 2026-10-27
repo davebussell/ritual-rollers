@@ -59,7 +59,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${barlow.variable} ${work.variable} ${work.className} tx-canvas bg-zinc-950 text-white min-h-screen antialiased`} suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        {/* GA4 (G-QK0ETT28BD) is added by Netlify's snippet injection (ga4-portfolio) — never add it here */}
+        {/* GA4 (G-QK0ETT28BD). Netlify's snippet injection (ga4-portfolio) reached the old static pages but not
+            the pages Next renders on request, so the tag lives here — and stands down if Netlify's copy is already
+            on the page, so a view is counted once either way. Runs after the page is parsed, when an injected
+            snippet would already be in the DOM. */}
+        <Script id="ga4" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
+      (function(){
+        if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+        var s = document.createElement('script'); s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QK0ETT28BD';
+        document.head.appendChild(s);
+        window.gtag('js', new Date()); window.gtag('config', 'G-QK0ETT28BD');
+      })();
+        ` }} />
         {/* Microsoft Clarity */}
         <Script id="ms-clarity" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
       (function(c,l,a,r,i,t,y){

@@ -56,7 +56,7 @@ async function tryZippopotam(country: 'us' | 'ca', code: string): Promise<GeoPoi
 async function tryNominatim(q: string): Promise<GeoPoint | null> {
   try {
     const res = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&q=${encodeURIComponent(q)}`,
+      `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&accept-language=en&q=${encodeURIComponent(q)}`,
       { headers: { Accept: 'application/json', ...UA }, next: { revalidate: 86400 }, signal: AbortSignal.timeout(8000) }
     )
     if (!res.ok) return null
@@ -68,7 +68,9 @@ async function tryNominatim(q: string): Promise<GeoPoint | null> {
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null
     const a = hit.address ?? {}
     const locality = a.city || a.town || a.village || a.municipality || a.county || a.state || hit.name
-    const country = a.country
+    // In Canada, the US and Mexico name the province or state ("Wakefield, Quebec"); elsewhere the country.
+    const cc = String(a.country_code ?? '').toLowerCase()
+    const country = ['ca', 'us', 'mx'].includes(cc) && a.state && a.state !== locality ? a.state : a.country
     const label = locality && country && locality !== country ? `${locality}, ${country}`
       : String(hit.display_name || q).split(',').slice(0, 2).map((s: string) => s.trim()).join(', ')
     return { lat, lng, label, countryCode: a.country_code ? String(a.country_code).toUpperCase() : null }
