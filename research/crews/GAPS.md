@@ -20,3 +20,11 @@
   Crew, BEATS + SKATES (secondary sources only); Babes Brigade (year of the lesson start inferred).
 - Leads to check by hand: @regio_rollers (Monterrey), Rollers en México "No patines sol@" (CDMX), @concretecruisers
   (Ottawa). A readable BMX Canada track directory would fill several gap cities.
+
+## US East, Midwest, South (crews-us-east.json, 42)
+- St. Louis has none. One group each in Philadelphia, Pittsburgh, Detroit, Baltimore, Cleveland, Charlotte, New Orleans,
+  Richmond. Atlanta has no skateboard group. No pump-track or dirt-jump groups; no scooter groups; women's and queer
+  sessions are thin (most post only on Instagram, which couldn't be read).
+- Leads: Philly Pumptrack (loaner bikes, women/trans/femme mornings; website stops at 2024); Act II Philly beginner
+  lessons at Paine's Park (queer nonprofit, adults 18+); recheck later.
+- Left out: groups run by one named individual (Teach & Skate, Burnsville Skateville); Wheel Mill Pittsburgh (closed).

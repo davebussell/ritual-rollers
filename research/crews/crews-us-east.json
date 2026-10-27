@@ -1,0 +1,1113 @@
+[
+  {
+    "name": "Empire Skate Club of New York",
+    "kind": "club",
+    "disciplines": [
+      "inline"
+    ],
+    "audience": [
+      "adults"
+    ],
+    "city": "New York",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.7641,
+    "lng": -73.9736,
+    "coords": "spot",
+    "home_spot": "Grand Army Plaza (Fifth Ave & 60th St), southeast corner of Central Park",
+    "meets": "Tuesday Night Skate, 8 pm, year-round weather permitting; weekend group skates in the warm months",
+    "about": "Volunteer-run inline club whose Tuesday Night Skate has rolled out of Central Park's southeast corner since about 1989. It also leads weekend tours of the boroughs, speed sessions on the Central Park and Prospect Park loops, and the multi-day Big Apple Roll every August.",
+    "links": {
+      "website": "https://empireskate.org/",
+      "instagram": "https://instagram.com/empireskateclubnyc/",
+      "facebook": "https://www.facebook.com/groups/empireskateclub/"
+    },
+    "source": "https://empireskate.org/",
+    "active": "2026-10: club skate to the 2026 NYC Marathon listed for Nov 1, 2026 (meetup.com/nycrollerbladers); site lists Big Apple Roll 2027 dates",
+    "confidence": "high"
+  },
+  {
+    "name": "NYC Wednesday Night Skate",
+    "kind": "skate-night",
+    "disciplines": [
+      "inline",
+      "roller"
+    ],
+    "audience": [
+      "adults",
+      "all"
+    ],
+    "city": "New York",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.736,
+    "lng": -73.9903,
+    "coords": "spot",
+    "home_spot": "South steps of Union Square Park (Broadway & E 14th St)",
+    "meets": "Wednesdays, meet just before 8 pm, early April to late October; a Winter Wednesday Night Skate runs November–March",
+    "about": "New York's biggest regular group skate: a marshalled loop of roughly 12 to 15 miles through Manhattan at a moderate pace, finishing back at Union Square around 10:15 pm. Peak-season nights draw a few hundred skaters, and people hang around the park afterwards.",
+    "links": {
+      "facebook": "https://www.facebook.com/WednesdayNightSkateNYC2.0/",
+      "instagram": "https://www.instagram.com/winterwednesdaynightskatenyc/"
+    },
+    "source": "https://empireskate.org/moregroups.html",
+    "active": "2026-10-28 session listed on Eventbrite (eventbrite.com/e/wednesday-night-skate-nyc-tickets-1997274917042); Empire page notes the 2025 season finale",
+    "confidence": "medium"
+  },
+  {
+    "name": "NYC Rollerbladers",
+    "kind": "club",
+    "disciplines": [
+      "inline"
+    ],
+    "audience": [
+      "beginners",
+      "adults"
+    ],
+    "city": "New York",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.7939,
+    "lng": -73.9176,
+    "coords": "spot",
+    "home_spot": "Randall's Island main roadway by Icahn Stadium (beginner skates); other skates start around Manhattan",
+    "about": "Meetup community started in 2023 that pulls the city's inline group skates into one calendar. It runs beginner sessions on Randall's Island's car-free roadway alongside intermediate bridge-practice and loop skates, often co-hosted with Empire Skate Club.",
+    "links": {
+      "meetup": "https://www.meetup.com/nycrollerbladers/"
+    },
+    "source": "https://www.meetup.com/nycrollerbladers/events/",
+    "active": "2026-10-18 Bridge Practice and 2026-10-24 Halloween skate; beginner skates scheduled into 2027",
+    "confidence": "high"
+  },
+  {
+    "name": "Central Park Dance Skaters Association (Skate Circle)",
+    "kind": "nonprofit",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners",
+      "families"
+    ],
+    "city": "New York",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.7721,
+    "lng": -73.973,
+    "coords": "spot",
+    "home_spot": "The Skate Circle in Central Park, between Sheep Meadow and the Naumburg Bandshell",
+    "meets": "Most Saturdays, Sundays and holiday weekends, April–October, 2:45–6:45 pm",
+    "about": "All-volunteer nonprofit that sets up the Central Park Skate Circle with live DJs for roller dancing on spring-to-fall weekends. Anyone can roll in with their own skates, from nervous first-timers to veteran dancers, and kids are welcome with helmets.",
+    "links": {
+      "website": "https://cpdsa.org/"
+    },
+    "source": "https://cpdsa.org/",
+    "active": "2026-10: board elections Oct 11–12, 2026 and season finale Oct 25, 2026 (centralpark.com event listing)",
+    "confidence": "high"
+  },
+  {
+    "name": "Ghostskate NYC",
+    "kind": "club",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "New York",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.7127,
+    "lng": -74.006,
+    "coords": "city",
+    "about": "Free skateboarding meetup group, running since 2011, that organises flatland sessions, beginner lessons, long-distance pushes and races around the city. You can come along before you even own a board.",
+    "links": {
+      "meetup": "https://www.meetup.com/GhostskateNYC/"
+    },
+    "source": "https://www.meetup.com/GhostskateNYC/events/",
+    "active": "2026-06-20 Central Park race; 2026-05-07 skateboard showcase",
+    "confidence": "high"
+  },
+  {
+    "name": "Landskaters of Philadelphia Inline Skate Club",
+    "kind": "club",
+    "disciplines": [
+      "inline"
+    ],
+    "audience": [
+      "adults",
+      "beginners"
+    ],
+    "city": "Philadelphia",
+    "region": "Pennsylvania",
+    "country": "US",
+    "lat": 39.9649,
+    "lng": -75.1801,
+    "coords": "spot",
+    "home_spot": "Rocky Steps, Philadelphia Museum of Art (a common start for weekend skates; start points vary)",
+    "meets": "Tuesday Night Skate (brisk pace, about 12–13 miles); Saturday and Sunday social skates, usually mid-morning",
+    "about": "Long-running inline club that posts every ride on an open Google Group: a fast Tuesday-evening loop of around 12 miles plus easier weekend skates out of the Art Museum area or Eastern State Penitentiary. Newcomers are welcome on the social rides.",
+    "links": {
+      "website": "https://groups.google.com/g/landskaters"
+    },
+    "source": "https://groups.google.com/g/landskaters",
+    "active": "2026-10 posts: Tuesday Night Skate 10/20/26, Sat Skate 10/24/26, Halloween costume skate Oct 27",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate Hags",
+    "kind": "crew",
+    "disciplines": [
+      "roller",
+      "skateboard"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Boston",
+    "region": "Massachusetts",
+    "country": "US",
+    "lat": 42.3588,
+    "lng": -71.0578,
+    "coords": "city",
+    "about": "Weekly meetup crew for quad skaters and skateboarders that started in Waltham parking lots in 2020 and grew to more than 100 members. The Charles River Conservancy points newcomers to it as a way into the Lynch Family Skatepark scene.",
+    "links": {
+      "instagram": "https://www.instagram.com/skatehags/"
+    },
+    "source": "https://thecharles.org/our-work/lynch-family-skatepark/",
+    "active": "2026: listed in the Charles River Conservancy's skate-scene spotlight on a page updated after its Sept 24, 2026 event",
+    "confidence": "medium"
+  },
+  {
+    "name": "LonelyBones Skate Co.",
+    "kind": "crew",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "queer",
+      "women"
+    ],
+    "city": "Boston",
+    "region": "Massachusetts",
+    "country": "US",
+    "lat": 42.3588,
+    "lng": -71.0578,
+    "coords": "city",
+    "about": "Skate and art collective for marginalised skaters, set up to break gender stereotypes in skateboarding. It hosts meetups and events in Boston and Cambridge parks.",
+    "links": {
+      "instagram": "https://www.instagram.com/lonelyboneskateco"
+    },
+    "source": "https://thecharles.org/our-work/lynch-family-skatepark/",
+    "active": "2026: listed in the Charles River Conservancy's skate-scene spotlight (page updated after Sept 24, 2026)",
+    "confidence": "medium"
+  },
+  {
+    "name": "SAPS – Saturday Aggressive Park Skate",
+    "kind": "crew",
+    "disciplines": [
+      "inline"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Boston",
+    "region": "Massachusetts",
+    "country": "US",
+    "lat": 42.3588,
+    "lng": -71.0578,
+    "coords": "city",
+    "about": "Boston's aggressive-inline crew: as the name says, Saturday park sessions for bladers who grind and jump. The Charles River Conservancy lists it among the crews to follow for the Lynch Family Skatepark scene.",
+    "links": {
+      "instagram": "https://www.instagram.com/saps_boston/"
+    },
+    "source": "https://thecharles.org/our-work/lynch-family-skatepark/",
+    "active": "2026: listed in the Charles River Conservancy's skate-scene spotlight (page updated after Sept 24, 2026)",
+    "confidence": "medium"
+  },
+  {
+    "name": "Washington Area Roadskaters (WAR)",
+    "kind": "club",
+    "disciplines": [
+      "inline",
+      "roller"
+    ],
+    "audience": [
+      "adults",
+      "beginners"
+    ],
+    "city": "Washington",
+    "region": "District of Columbia",
+    "country": "US",
+    "lat": 38.89585,
+    "lng": -77.03078,
+    "coords": "spot",
+    "home_spot": "Freedom Plaza (Friday and Sunday skates)",
+    "meets": "Tuesday Night Skate 6:45 pm from NoMa–Gallaudet Metro; Friday Night Skate 7 pm and Sunday Skate 10 am from Freedom Plaza; Sunday 9 am intro clinic at Woodrow Wilson Plaza",
+    "about": "Nonprofit skate club founded in 1987 and one of the oldest on the East Coast. Several group skates a week tour the city, and an introductory clinic on Sunday mornings gets new skaters ready to join them.",
+    "links": {
+      "meetup": "https://www.meetup.com/washington-area-roadskaters/"
+    },
+    "source": "https://www.meetup.com/washington-area-roadskaters/events/",
+    "active": "2026-10-27 Tuesday Night Skate; weekly events listed into November 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate Instruction DC",
+    "kind": "lessons",
+    "disciplines": [
+      "inline",
+      "roller"
+    ],
+    "audience": [
+      "beginners",
+      "adults",
+      "families"
+    ],
+    "city": "Washington",
+    "region": "District of Columbia",
+    "country": "US",
+    "lat": 38.9502,
+    "lng": -77.0419,
+    "coords": "spot",
+    "home_spot": "Carter Barron Amphitheatre, Rock Creek Park",
+    "meets": "Free learn-to-skate clinic, Saturdays 9:45 am (Aug–Oct 2026)",
+    "about": "Certified instructors teaching inline and roller skating to adults, teens and families, indoors and out. Their free Saturday-morning learn-to-skate clinic is open to anyone.",
+    "links": {
+      "meetup": "https://www.meetup.com/skate-instruction/"
+    },
+    "source": "https://www.meetup.com/skate-instruction/events/",
+    "active": "2026-10-03 free learn-to-skate clinic",
+    "confidence": "high"
+  },
+  {
+    "name": "Skatepark of Baltimore",
+    "kind": "nonprofit",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "all",
+      "families",
+      "kids"
+    ],
+    "city": "Baltimore",
+    "region": "Maryland",
+    "country": "US",
+    "lat": 39.32992,
+    "lng": -76.63596,
+    "coords": "spot",
+    "home_spot": "Skatepark of Baltimore, Roosevelt Park, Hampden",
+    "about": "Volunteer nonprofit behind the free skatepark in Roosevelt Park. It raises repair money with warehouse skate jams and runs community days, such as a spring family event with free skateboard lessons.",
+    "links": {
+      "website": "https://skateparkofbaltimore.org/"
+    },
+    "source": "https://skateparkofbaltimore.org/wp/jakes-day-april-18th/",
+    "active": "2026-04-18 Jake's Day (free lessons); 2025-11-19 warehouse skate jam fundraiser",
+    "confidence": "high"
+  },
+  {
+    "name": "Three Rivers Inline Club (TRIC) – Skate Pittsburgh",
+    "kind": "club",
+    "disciplines": [
+      "inline"
+    ],
+    "audience": [
+      "adults"
+    ],
+    "city": "Pittsburgh",
+    "region": "Pennsylvania",
+    "country": "US",
+    "lat": 40.418,
+    "lng": -79.9496,
+    "coords": "spot",
+    "home_spot": "Hazelwood Green (Wednesday all-skates)",
+    "meets": "Wednesdays 6 pm all-skate at Hazelwood Green; Sundays 9 am social city skate from the Eliza Furnace Trail lot",
+    "about": "Adults-only (18+) inline club running free weekly street and trail skates across Pittsburgh's neighbourhoods, bridges and river trails, with a leader, blockers and a sweep on organised rides.",
+    "links": {
+      "meetup": "https://www.meetup.com/pittsburgh-three-rivers-inline-club/"
+    },
+    "source": "https://www.meetup.com/pittsburgh-three-rivers-inline-club/events/",
+    "active": "2026-10-25 Sunday skate; weekly skates listed into November 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Windy City Skaters",
+    "kind": "club",
+    "disciplines": [
+      "inline",
+      "skateboard"
+    ],
+    "audience": [
+      "all",
+      "adults"
+    ],
+    "city": "Chicago",
+    "region": "Illinois",
+    "country": "US",
+    "lat": 41.8839,
+    "lng": -87.6302,
+    "coords": "spot",
+    "home_spot": "Daley Plaza",
+    "meets": "'Road rave' street skates of 13–16 miles from Daley Plaza, mostly Friday evenings at 7:20 pm in season",
+    "about": "Big, friendly Chicago group, going since 2008, that is mostly inline but welcomes skateboarders and longboarders. Expect themed night tours of the city's neighbourhoods, lakefront slalom practice and trips to inline marathons.",
+    "links": {
+      "meetup": "https://www.meetup.com/WindyCitySkaters/"
+    },
+    "source": "https://www.meetup.com/WindyCitySkaters/events/",
+    "active": "2026-10-25 road rave to 'Meet Me On Milwaukee'",
+    "confidence": "high"
+  },
+  {
+    "name": "Go Grind Friday Nights at Grant Skate Park",
+    "kind": "skate-night",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "kids"
+    ],
+    "city": "Chicago",
+    "region": "Illinois",
+    "country": "US",
+    "lat": 41.86885,
+    "lng": -87.62267,
+    "coords": "spot",
+    "home_spot": "Grant Skate Park (just north of Roosevelt Rd & Indiana Ave)",
+    "meets": "Fridays 4–7 pm (Sept 2026), free",
+    "about": "Free Chicago Park District teen night at the Grant Park skate park, with weekly skateboard races and trick contests.",
+    "links": {
+      "website": "https://www.chicagoparkdistrict.com/events/go-grind-friday-nights-grant-15"
+    },
+    "source": "https://www.chicagoparkdistrict.com/events/go-grind-friday-nights-grant-15",
+    "active": "2026-09-04 session",
+    "confidence": "high"
+  },
+  {
+    "name": "Ghostskate Chicago",
+    "kind": "club",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Chicago",
+    "region": "Illinois",
+    "country": "US",
+    "lat": 41.8756,
+    "lng": -87.6244,
+    "coords": "city",
+    "about": "Chicago branch of the Ghostskate meetup community: free skateboard meetups along The 606 trail, beginner sessions and the odd indoor jam.",
+    "links": {
+      "meetup": "https://www.meetup.com/GhostskateChicago/"
+    },
+    "source": "https://www.meetup.com/GhostskateChicago/events/",
+    "active": "2025-11-29 indoor skate jam at Garfield Park Conservatory (events are infrequent)",
+    "confidence": "high"
+  },
+  {
+    "name": "Motown Roller Club",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Detroit",
+    "region": "Michigan",
+    "country": "US",
+    "lat": 42.335,
+    "lng": -83.0192,
+    "coords": "spot",
+    "home_spot": "Robert C. Valade Park, Detroit Riverfront",
+    "meets": "First and last Tuesday of the month, 6–9 pm (summer 2026)",
+    "about": "Roller-skating meetup on the Detroit Riverfront, listed on the Riverfront Conservancy's free community calendar: bring your skates and roll with the club at Valade Park on summer evenings.",
+    "links": {},
+    "source": "https://www.detroitriverfront.org/events/calendar/2026/07",
+    "active": "2026-06 to 2026-08 meetups listed on the Detroit Riverfront Conservancy calendar",
+    "confidence": "medium"
+  },
+  {
+    "name": "Minnesota Monday Night Skate",
+    "kind": "skate-night",
+    "disciplines": [
+      "inline",
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Minneapolis",
+    "region": "Minnesota",
+    "country": "US",
+    "lat": 44.9773,
+    "lng": -93.2655,
+    "coords": "city",
+    "meets": "Monday evenings in summer (6:30 pm in June 2026); start points vary (BF Nelson Park, Bde Maka Ska)",
+    "about": "Summer Monday-night group skate through Minneapolis and St. Paul. Most riders are on inlines but any skates are welcome, and routes are planned to be manageable for every level.",
+    "links": {
+      "meetup": "https://www.meetup.com/minnesota-monday-night-skate/"
+    },
+    "source": "https://www.meetup.com/minnesota-monday-night-skate/events/",
+    "active": "2026-06-15 and 2026-06-22 skates",
+    "confidence": "high"
+  },
+  {
+    "name": "3rd Lair Skatepark",
+    "kind": "shop-session",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "women",
+      "adults",
+      "beginners",
+      "kids"
+    ],
+    "city": "Golden Valley",
+    "region": "Minnesota",
+    "country": "US",
+    "lat": 44.97304,
+    "lng": -93.36354,
+    "coords": "spot",
+    "home_spot": "3rd Lair indoor skatepark, 850 Florida Ave S, Golden Valley (Minneapolis metro)",
+    "meets": "Park open daily from noon; weekly girls' and women's clinic and an adults-only clinic in 2026 sessions",
+    "about": "Indoor skatepark and shop in the western suburbs of Minneapolis with street course, mini ramp and bowl. Alongside open sessions it runs a weekly skate clinic for girls and women of all ages and one strictly for adults, grouped by ability from first-timers up.",
+    "links": {
+      "website": "https://3rdlair.com/"
+    },
+    "source": "https://3rdlair.com/collections/skatecamp/products/2026-girls-skateboard-clinic-session-9",
+    "active": "2026 clinic sessions; Halloween party Oct 30, 2026 and Midwest Melee Nov 20–21, 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Milwaukee Recreation Summer Skate Sessions",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "families",
+      "kids"
+    ],
+    "city": "Milwaukee",
+    "region": "Wisconsin",
+    "country": "US",
+    "lat": 43.0386,
+    "lng": -87.9091,
+    "coords": "city",
+    "meets": "Summer Wednesdays, 2:30–4:30 pm at rotating city playfields (2026: June 24 to Aug 12)",
+    "about": "Free pop-up roller skating from the city's recreation department at a different neighbourhood playfield each week, with skates available on site and no registration needed.",
+    "links": {
+      "website": "https://www.milwaukeerecreation.net/enrichment-programs/special-events/summer-skate-sessions"
+    },
+    "source": "https://www.milwaukeerecreation.net/enrichment-programs/special-events/summer-skate-sessions",
+    "active": "2026 summer schedule (June 24–Aug 12, 2026)",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate Columbus",
+    "kind": "club",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Columbus",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 39.9861,
+    "lng": -83.0048,
+    "coords": "spot",
+    "home_spot": "Stonewall Columbus, 1160 N High St (Short North)",
+    "meets": "Weekly Short North street skate, Saturdays 9:30 am (Aug–Sep 2026)",
+    "about": "Open, beginner-friendly group that runs casual street skates and city rollouts with music, for anyone on small wheels whatever their style or experience.",
+    "links": {
+      "meetup": "https://www.meetup.com/skate-columbus-meetup-group/"
+    },
+    "source": "https://www.meetup.com/skate-columbus-meetup-group/events/",
+    "active": "2026-09-26 weekly rollout",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate CBUS",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "adults",
+      "beginners"
+    ],
+    "city": "Columbus",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 40.0661,
+    "lng": -82.9935,
+    "coords": "spot",
+    "home_spot": "Skate Zone 71 roller rink, 4900 Evanswood Dr",
+    "meets": "Adults-only rink nights, typically Wednesdays at 8:20 pm (spring 2026)",
+    "about": "Social group for grown-ups who want to relive rink nights: adults-only roller sessions with newbie-friendly tips from experienced members, often followed by a drink.",
+    "links": {
+      "meetup": "https://www.meetup.com/skatecbus/"
+    },
+    "source": "https://www.meetup.com/skatecbus/events/",
+    "active": "2026-04-08 adults-only roller skating night",
+    "confidence": "high"
+  },
+  {
+    "name": "Ray's Indoor Bike Park",
+    "kind": "shop-session",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "beginners",
+      "families"
+    ],
+    "city": "Cleveland",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 41.45465,
+    "lng": -81.7524,
+    "coords": "spot",
+    "home_spot": "Ray's Indoor Bike Park, 9801 Walford Ave",
+    "meets": "Open daily in its indoor season: weekdays noon–10 pm, weekends 9 am–10 pm",
+    "about": "Converted factory turned indoor mountain-bike and BMX park, open each cold season since 2004, with lines from beginner skills loops to big jumps, rentals and lessons. Riders of every level session it all winter.",
+    "links": {
+      "website": "https://www.raysmtb.com/"
+    },
+    "source": "https://www.raysmtb.com/",
+    "active": "Oct 2026 homepage: 'soon starting our 23rd season'",
+    "confidence": "high"
+  },
+  {
+    "name": "Kansas City Urban Skating",
+    "kind": "skate-night",
+    "disciplines": [
+      "inline",
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "adults"
+    ],
+    "city": "Kansas City",
+    "region": "Missouri",
+    "country": "US",
+    "lat": 39.1095,
+    "lng": -94.582,
+    "coords": "spot",
+    "home_spot": "City Market (5th & Walnut)",
+    "meets": "Tuesday Night Skate, 7 pm",
+    "about": "Weekly Tuesday-night group skate from the River Market plus news of other skating events around KC. Everyone is welcome, but the route takes in some hills and rough patches.",
+    "links": {
+      "meetup": "https://www.meetup.com/kansas-city-urban-skating/"
+    },
+    "source": "https://www.meetup.com/kansas-city-urban-skating/events/",
+    "active": "2026-10-27 Tuesday Night Skate",
+    "confidence": "high"
+  },
+  {
+    "name": "Raytown BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "families",
+      "beginners"
+    ],
+    "city": "Kansas City",
+    "region": "Missouri",
+    "country": "US",
+    "lat": 38.9746,
+    "lng": -94.4332,
+    "coords": "spot",
+    "home_spot": "Raytown BMX track, 12605 Frost Rd",
+    "meets": "Monday practice nights and Wednesday local races (autumn 2026 calendar)",
+    "about": "Volunteer-run, USA BMX-sanctioned race track in southeast Kansas City, staffed by rider families. Regular practice nights and local races are open to riders of all ages; a USA BMX membership (trial passes exist) is needed to ride.",
+    "links": {
+      "website": "https://www.usabmx.com/tracks/mo-raytown-bmx",
+      "instagram": "http://instagram.com/raytown_bmx_",
+      "facebook": "https://www.facebook.com/raytown.bmx"
+    },
+    "source": "https://www.usabmx.com/tracks/mo-raytown-bmx",
+    "active": "2026-10-26 practice; races and practices scheduled into Nov 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Cascade Family Skating – Friday Night Adult Skate",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "adults"
+    ],
+    "city": "Atlanta",
+    "region": "Georgia",
+    "country": "US",
+    "lat": 33.7546,
+    "lng": -84.4977,
+    "coords": "spot",
+    "home_spot": "Cascade Family Skating, 3335 Martin Luther King Jr Dr SW",
+    "meets": "Fridays, adults 18+, 11:30 pm–2:30 am",
+    "about": "Late-night 18+ session at Cascade, a long-running roller rink in southwest Atlanta. Skate rental is included in admission, so you can just show up.",
+    "links": {
+      "website": "https://www.eventbrite.com/o/cascade-skating-rink-11138131949"
+    },
+    "source": "https://www.eventbrite.com/e/cascade-skating-friday-night-adult-skate-tickets-1072706186079",
+    "active": "2026-10-30 Friday adult session listed",
+    "confidence": "high"
+  },
+  {
+    "name": "BeltLine Rollers",
+    "kind": "club",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Atlanta",
+    "region": "Georgia",
+    "country": "US",
+    "lat": 33.76472,
+    "lng": -84.36041,
+    "coords": "spot",
+    "home_spot": "Atlanta BeltLine near Ponce City Market and the Historic Fourth Ward Skatepark",
+    "about": "Small, all-levels roller-skating meetup that practises together on the Eastside BeltLine trail and at the Historic Fourth Ward Skatepark.",
+    "links": {
+      "meetup": "https://www.meetup.com/beltline-rollers/"
+    },
+    "source": "https://www.meetup.com/beltline-rollers/events/",
+    "active": "2025-02-28 'Rollin' & Strollin'' meetup (activity is occasional)",
+    "confidence": "high"
+  },
+  {
+    "name": "Roll Call Skate Club at The Underline",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "audience": [
+      "adults"
+    ],
+    "city": "Miami",
+    "region": "Florida",
+    "country": "US",
+    "lat": 25.7407,
+    "lng": -80.2374,
+    "coords": "spot",
+    "home_spot": "The Inter Grove Gallery on The Underline, 2680 SW 28th Ln (Coconut Grove)",
+    "meets": "First Tuesday of the month, 7:30–8:30 pm",
+    "about": "Free monthly club skate on The Underline run by Friends of The Underline with All Skates Go To Heaven: intros, a stretch, some freestyle and a group roll along the trail with escorts at crossings. It's aimed at skaters already comfortable riding in a group.",
+    "links": {
+      "website": "https://www.eventbrite.com/o/friends-of-the-underline-11124869759"
+    },
+    "source": "https://www.eventbrite.com/e/roll-call-skate-club-the-underline-tickets-1990769710795",
+    "active": "2026-11-03 session listed",
+    "confidence": "high"
+  },
+  {
+    "name": "The Miami Guide Wednesday Skate Club",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Miami Beach",
+    "region": "Florida",
+    "country": "US",
+    "lat": 25.8581,
+    "lng": -80.1205,
+    "coords": "spot",
+    "home_spot": "Near the North Beach Bandshell, 7275 Collins Ave (meet at the Sazon Cubano window)",
+    "meets": "Wednesdays: meet 7 pm, roll out about 7:10, back by 8:30",
+    "about": "Free, no-sign-up weekly skate along the flat Miami Beach boardwalk from North Beach to Mid Beach and back at an easy pace. First-timers are the norm and you can turn back whenever you like.",
+    "links": {
+      "website": "https://www.eventbrite.com/o/the-miami-guide-106717905511"
+    },
+    "source": "https://www.eventbrite.com/e/wednesday-skate-club-the-miami-guide-tickets-1999961230879",
+    "active": "2026-10-28 weekly session listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Miami South BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "families",
+      "beginners"
+    ],
+    "city": "Miami",
+    "region": "Florida",
+    "country": "US",
+    "lat": 25.5659,
+    "lng": -80.403,
+    "coords": "spot",
+    "home_spot": "Miami South BMX track, 13050 SW 216th St",
+    "meets": "Tuesdays practice 6:30–8:30 pm; Thursdays practice and racing from 6:30 pm; Saturdays (one-day trial for new riders)",
+    "about": "Volunteer-run nonprofit BMX track that has served South Dade for more than 30 years, with riders from toddlers on balance bikes to adults over 50. New riders can try it on a Saturday one-day trial before buying a USA BMX licence.",
+    "links": {
+      "website": "https://www.usabmx.com/tracks/fl-miami-south-bmx",
+      "instagram": "https://www.instagram.com/miamisouthbmx/",
+      "facebook": "https://www.facebook.com/MIAMI-SOUTH-BMX-128664831094/"
+    },
+    "source": "https://www.usabmx.com/tracks/fl-miami-south-bmx",
+    "active": "2026-10 practices and local races (Oct 20, 22, 24, 27)",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate Hollywood Beach",
+    "kind": "skate-night",
+    "disciplines": [
+      "inline",
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Hollywood",
+    "region": "Florida",
+    "country": "US",
+    "lat": 26.0223,
+    "lng": -80.1155,
+    "coords": "spot",
+    "home_spot": "Charnow Park, 300 Connecticut St, by the Hollywood Beach Broadwalk (Miami metro)",
+    "meets": "Wednesdays, 7:45 pm",
+    "about": "South Florida inline group with a weekly evening skate at Hollywood Beach. Skaters of every level are welcome, including people who want to learn.",
+    "links": {
+      "meetup": "https://www.meetup.com/South-Florida-Inline-Skating-and-Social-Group/"
+    },
+    "source": "https://www.meetup.com/South-Florida-Inline-Skating-and-Social-Group/events/",
+    "active": "2026-10-21 skate; weekly sessions listed into December 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Skatepark of Tampa Girls' Meetup",
+    "kind": "shop-session",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "women",
+      "beginners"
+    ],
+    "city": "Tampa",
+    "region": "Florida",
+    "country": "US",
+    "lat": 27.9664,
+    "lng": -82.41031,
+    "coords": "spot",
+    "home_spot": "Skatepark of Tampa (SPoT)",
+    "meets": "Last Saturday of every month",
+    "about": "Monthly session at SPoT set aside for women skateboarders to meet, learn from each other and skate together, with free food laid on.",
+    "links": {
+      "website": "https://skateparkoftampa.com/"
+    },
+    "source": "https://skateparkoftampa.com/blogs/events/girls-meet-up",
+    "active": "2025-06-28 session listing",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate 4 Fun",
+    "kind": "club",
+    "disciplines": [
+      "inline",
+      "roller",
+      "skateboard"
+    ],
+    "audience": [
+      "all",
+      "adults"
+    ],
+    "city": "St. Petersburg",
+    "region": "Florida",
+    "country": "US",
+    "lat": 27.7738,
+    "lng": -82.6228,
+    "coords": "spot",
+    "home_spot": "St. Pete Pier (Tuesday skates); practice sessions at USF Tampa's Beard Garage",
+    "meets": "Tuesdays 7:30 pm from the St. Pete Pier; Tuesday/Wednesday 7:30 pm practice at USF Tampa; Thursday roll in St. Pete; Sunday skates in Sarasota",
+    "about": "Tampa Bay's outdoor rec-skating group, going since the early 1990s, with several skates a week across St. Pete, Tampa and Sarasota for inline, quad and board riders.",
+    "links": {
+      "meetup": "https://www.meetup.com/skate-4-fun/"
+    },
+    "source": "https://www.meetup.com/skate-4-fun/events/",
+    "active": "2026-10-27 St. Pete skate; weekly sessions listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Oldsmar BMX Supercross",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "beginners"
+    ],
+    "city": "Oldsmar",
+    "region": "Florida",
+    "country": "US",
+    "lat": 28.055,
+    "lng": -82.7036,
+    "coords": "spot",
+    "home_spot": "Oldsmar Sports Complex (Tampa Bay)",
+    "meets": "Practice Tuesdays, clinics Wednesdays, local races Thursdays (autumn 2026 calendar)",
+    "about": "Official USA BMX training site with a two-tier supercross track; besides hosting nationals it runs weekly practices, coaching clinics and local races open to members of every level.",
+    "links": {
+      "website": "https://www.usabmx.com/tracks/fl-oldsmar-bmx-supercross",
+      "instagram": "https://www.instagram.com/OldsmarBMXsupercross",
+      "facebook": "https://www.facebook.com/OldsmarBMXsupercross"
+    },
+    "source": "https://www.usabmx.com/tracks/fl-oldsmar-bmx-supercross",
+    "active": "2026-10 practices, clinics and races (Oct 20, 21, 22, 27, 28)",
+    "confidence": "high"
+  },
+  {
+    "name": "ORL BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "families",
+      "kids",
+      "beginners"
+    ],
+    "city": "Orlando",
+    "region": "Florida",
+    "country": "US",
+    "lat": 28.5585,
+    "lng": -81.4433,
+    "coords": "spot",
+    "home_spot": "ORL BMX track, 4801 W Colonial Dr",
+    "meets": "Tuesdays open practice (Strider 5–6 pm, class and cruiser 6–8 pm); Thursday and Saturday practice and races",
+    "about": "All-volunteer nonprofit BMX track in west Orlando with a family feel. Newcomers can book a one-day trial session, and Tuesday open practice is the easy way in.",
+    "links": {
+      "website": "https://www.usabmx.com/tracks/fl-orl-bmx",
+      "instagram": "https://www.instagram.com/orlbmx/",
+      "facebook": "http://www.facebook.com/pages/Orlbmx/232775953527975"
+    },
+    "source": "https://www.usabmx.com/tracks/fl-orl-bmx",
+    "active": "2026-10 practices and races (Oct 22, 24, 27, 29)",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate Nashville",
+    "kind": "club",
+    "disciplines": [
+      "roller",
+      "inline",
+      "skateboard"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Nashville",
+    "region": "Tennessee",
+    "country": "US",
+    "lat": 36.1623,
+    "lng": -86.7743,
+    "coords": "city",
+    "about": "Community group behind meetups and greenway skate outings around Nashville, plus skating workshops. Any wheels are welcome, and outings are pitched at different skill levels.",
+    "links": {
+      "instagram": "https://www.instagram.com/skate_nashville/"
+    },
+    "source": "https://www.nashvillescene.com/arts_culture/coverstory/summer-guide-skating-skateboarding/article_96ed4abc-4261-4c0a-a206-52910f88c6d6.html",
+    "active": "2026-05-21 Nashville Scene summer guide describes current meetups",
+    "confidence": "medium"
+  },
+  {
+    "name": "Shelby Park Community Center BYO-Skates Family Skating",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "audience": [
+      "families",
+      "all"
+    ],
+    "city": "Nashville",
+    "region": "Tennessee",
+    "country": "US",
+    "lat": 36.1708,
+    "lng": -86.7349,
+    "coords": "spot",
+    "home_spot": "Shelby Park Community Center, East Nashville",
+    "meets": "Wednesdays 12:15–3 pm and Saturdays 10 am–noon (as reported May 2026)",
+    "about": "Metro Parks community centre that hosts bring-your-own-skates family skating hours twice a week, an easy place for kids and grown-ups to find their feet.",
+    "links": {},
+    "source": "https://www.nashvillescene.com/arts_culture/coverstory/summer-guide-skating-skateboarding/article_96ed4abc-4261-4c0a-a206-52910f88c6d6.html",
+    "active": "2026-05-21 Nashville Scene summer guide",
+    "confidence": "medium"
+  },
+  {
+    "name": "Transitional Spaces (Parisite DIY Skatepark)",
+    "kind": "nonprofit",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "all",
+      "kids"
+    ],
+    "city": "New Orleans",
+    "region": "Louisiana",
+    "country": "US",
+    "lat": 29.99212,
+    "lng": -90.07284,
+    "coords": "spot",
+    "home_spot": "Parisite DIY Skatepark",
+    "meets": "Monthly skate jams at Parisite; 'Grounds Krewe' clean-up Saturdays at noon",
+    "about": "Skater-run nonprofit that operates Parisite, Louisiana's largest skatepark, under an agreement with the city. It hosts monthly skate jams with live music, murals and food, runs skate scholarships, and welcomes volunteers to the Saturday clean-up crew.",
+    "links": {
+      "website": "https://www.transitionalspaces.org/"
+    },
+    "source": "https://www.transitionalspaces.org/pages/programs",
+    "active": "2025-02/03 Parisite fundraiser events (raffle listing published 2025-02-13)",
+    "confidence": "high"
+  },
+  {
+    "name": "Hornet's Nest BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "beginners"
+    ],
+    "city": "Charlotte",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 35.3203,
+    "lng": -80.8723,
+    "coords": "spot",
+    "home_spot": "Hornet's Nest Park, 6301 Beatties Ford Rd",
+    "meets": "Saturday local races (autumn 2026); monitored open practice and clinics per Mecklenburg County Parks",
+    "about": "Charlotte's long-standing USA BMX track, founded in 1982 and run with volunteers, with coaching for novice riders and an on-site BMX shop. Regular races and practice sessions are open to riders of all ages.",
+    "links": {
+      "website": "https://www.usabmx.com/tracks/1316/about",
+      "facebook": "https://www.facebook.com/HornetsNestBMX",
+      "instagram": "https://www.instagram.com/hnbmx/"
+    },
+    "source": "https://www.usabmx.com/tracks/1316/about",
+    "active": "2026-10-24 and 2026-10-25 local races; Saturdays scheduled through Nov 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate Raleigh",
+    "kind": "nonprofit",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "bmx"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Raleigh",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 35.7804,
+    "lng": -78.6391,
+    "coords": "city",
+    "home_spot": "Conlon Family Skatepark (built and managed with Skate Raleigh); pop-ups around the city",
+    "about": "Nonprofit pushing for more places to skate in Raleigh. It helped build and now manages the Conlon Family Skatepark and stages free pop-up skate sessions with ramps, rails and boxes at spots like Moore Square and Dix Park for every kind of wheels.",
+    "links": {
+      "website": "https://skateraleigh.com/"
+    },
+    "source": "https://skateraleigh.com/",
+    "active": "2026-05-16 Dix Park skatepark pop-up; 2026-07-07 update",
+    "confidence": "high"
+  },
+  {
+    "name": "Rollerblade & Chill",
+    "kind": "club",
+    "disciplines": [
+      "inline"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Durham",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 35.9042,
+    "lng": -78.9437,
+    "coords": "spot",
+    "home_spot": "Southpoint Mall area, Durham",
+    "meets": "Saturdays 8 am (autumn 2026)",
+    "about": "Friendly Triangle rollerblading group running city skates, park sessions and night rides. It is explicitly welcoming to beginners and to people returning to blades after years away.",
+    "links": {
+      "meetup": "https://www.meetup.com/rollerblade-chill/"
+    },
+    "source": "https://www.meetup.com/rollerblade-chill/events/",
+    "active": "2026-10-24 Saturday skate; weekly skates listed into Nov 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Richmond BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "beginners"
+    ],
+    "city": "Richmond",
+    "region": "Virginia",
+    "country": "US",
+    "lat": 37.5216,
+    "lng": -77.4042,
+    "coords": "spot",
+    "home_spot": "Gillies Creek Park, 4401 Hobbs Lane",
+    "meets": "Sunday local races (Oct–Nov 2026 calendar)",
+    "about": "USA BMX track in Gillies Creek Park since 1998, redesigned in 2020, with jumps that suit first-time racers as well as experts and an all-weather stone-dust surface.",
+    "links": {
+      "website": "https://www.usabmx.com/tracks/va-richmond-bmx",
+      "instagram": "https://www.instagram.com/richmondbmx",
+      "facebook": "https://www.facebook.com/richmondbmx/"
+    },
+    "source": "https://www.usabmx.com/tracks/va-richmond-bmx",
+    "active": "2026-10-25 local race; races scheduled every Sunday in Nov 2026",
+    "confidence": "high"
+  }
+]
