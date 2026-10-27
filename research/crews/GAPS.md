@@ -9,3 +9,22 @@
 - No public page found: Skate Church (Pearland), 4DWN Babes and Gutsy Girls (Dallas), Las ChicAZ (Phoenix), Rainbow
   Rollers (O'ahu), ROSA Roll Outs (San Antonio).
 - Bernalillo County Skate Night (Albuquerque) has no page of its own; its event listing is used as the link.
+
+## Canada and Mexico (crews-ca-mx.json, 27; 26 listed)
+- Nothing yet for Quebec City, Halifax, Hamilton, London ON, Kitchener–Waterloo, St. John's, Guadalajara, Tijuana,
+  Puebla, Mérida, Oaxaca, Querétaro (most crews there are Instagram/Facebook only, which can't be read).
+- Gatineau side of Ottawa, incl. Chelsea and Wakefield: only a one-day municipal intro skate (June 2026); no group.
+- Rollers Unidos México left out on purpose (only evidence: organised one national festival). See EXCLUDE in
+  scripts/build-crews.mjs.
+- Weaker entries: 13th Ave BMX Club (Regina; 2025 city grant document only); Stouffville BMX, Nepean BMX, Melanin Skate
+  Crew, BEATS + SKATES (secondary sources only); Babes Brigade (year of the lesson start inferred).
+- Leads to check by hand: @regio_rollers (Monterrey), Rollers en México "No patines sol@" (CDMX), @concretecruisers
+  (Ottawa). A readable BMX Canada track directory would fill several gap cities.
+
+## US East, Midwest, South (crews-us-east.json, 42)
+- St. Louis has none. One group each in Philadelphia, Pittsburgh, Detroit, Baltimore, Cleveland, Charlotte, New Orleans,
+  Richmond. Atlanta has no skateboard group. No pump-track or dirt-jump groups; no scooter groups; women's and queer
+  sessions are thin (most post only on Instagram, which couldn't be read).
+- Leads: Philly Pumptrack (loaner bikes, women/trans/femme mornings; website stops at 2024); Act II Philly beginner
+  lessons at Paine's Park (queer nonprofit, adults 18+); recheck later.
+- Left out: groups run by one named individual (Teach & Skate, Burnsville Skateville); Wheel Mill Pittsburgh (closed).

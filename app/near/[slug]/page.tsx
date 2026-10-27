@@ -8,6 +8,8 @@ import { spotsNear, isFeaturedPark, isNorthAmerica } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
 import { upcomingSessions } from '@/lib/sessions'
 import { geocodePlace, fromSlug, haversineKm } from '@/lib/geo'
+import { getWheel } from '@/lib/wheel-server'
+import { fits, parkFits } from '@/lib/wheels'
 
 export const dynamic = 'force-dynamic'
 
@@ -36,21 +38,23 @@ export default async function NearPage({ params }: { params: Promise<{ slug: str
   const hub = nearestCity(place.lat, place.lng, 35)
   if (hub) redirect(`/cities/${hub.slug}`)
 
-  const sessions = await upcomingSessions({ near: { lat: place.lat, lng: place.lng, km: RADIUS }, limit: 10 })
+  const { wheel } = await getWheel()
+  const sessions = await upcomingSessions({ near: { lat: place.lat, lng: place.lng, km: RADIUS }, disciplines: wheel?.disciplines, limit: 10 })
   const nearby = CITIES.map(c => ({ c, d: haversineKm(place.lat, place.lng, c.lat, c.lng) }))
     .filter(x => x.d < 200).sort((a, b) => a.d - b.d).slice(0, 6).map(x => ({ slug: x.c.slug, name: x.c.name }))
 
   return (
     <Hub
-      title={`Riding near ${place.label.split(',')[0]}`}
+      title={`${wheel?.doing ?? 'Riding'} near ${place.label.split(',')[0]}`}
       subtitle={place.label}
       point={place}
       sessions={sessions}
-      crews={crewsNear(place.lat, place.lng, RADIUS)}
-      spots={spotsNear(place.lat, place.lng, RADIUS)}
-      parks={parksNear(place.lat, place.lng, RADIUS, 120).filter(p => !isFeaturedPark(p))}
+      crews={crewsNear(place.lat, place.lng, RADIUS).filter(c => fits(c.disciplines, wheel))}
+      spots={spotsNear(place.lat, place.lng, RADIUS).filter(s => fits(s.disciplines, wheel))}
+      parks={parksNear(place.lat, place.lng, RADIUS, 400).filter(p => !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 120)}
       riders={[]}
       nearby={nearby}
+      wheelLabel={wheel?.lower}
       radiusKm={RADIUS}
     />
   )

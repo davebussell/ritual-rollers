@@ -4,6 +4,9 @@ import { Unbounded, Overpass } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { WheelChoiceBar } from '@/components/WheelPicker'
+import { cookies } from 'next/headers'
+import { WHEEL_COOKIE, wheelById } from '@/lib/wheels'
 
 const unbounded = Unbounded({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-unbounded' })
 const overpass = Overpass({ subsets: ['latin'], weight: ['400', '600', '700', '800'], variable: '--font-overpass' })
@@ -55,7 +58,9 @@ const jsonLd = {
   ],
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const raw = (await cookies()).get(WHEEL_COOKIE)?.value
+  const wheel = raw === 'all' ? 'all' : wheelById(raw)?.id ?? null
   return (
     <html lang="en" className={`${unbounded.variable} ${overpass.variable}`}>
       <body className="flex min-h-screen flex-col font-sans antialiased" suppressHydrationWarning>
@@ -84,7 +89,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       })(window, document, "clarity", "script", "yjaeee242b");
         ` }} />
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[60] focus:rounded focus:bg-curb focus:px-3 focus:py-2 focus:font-bold">Skip to content</a>
-        <Navbar />
+        <Navbar wheel={wheel} />
+        {!wheel && <WheelChoiceBar />}
         <main id="main" className="flex-1">{children}</main>
         <Footer />
       </body>

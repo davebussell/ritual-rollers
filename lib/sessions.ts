@@ -38,6 +38,7 @@ export interface SessionQuery {
   park?: string
   near?: { lat: number; lng: number; km: number }
   discipline?: string
+  disciplines?: string[]    // the picked wheel: any of these
   beginners?: boolean
   limit?: number
 }
@@ -48,6 +49,7 @@ function matches(s: RideSession, q: SessionQuery): boolean {
   if (q.park && s.park_id !== q.park) return false
   if (q.near && haversineKm(q.near.lat, q.near.lng, s.lat, s.lng) > q.near.km) return false
   if (q.discipline && !s.disciplines.includes(q.discipline)) return false
+  if (q.disciplines && !s.disciplines.some(d => q.disciplines!.includes(d))) return false
   if (q.beginners && !s.beginners_welcome && s.level !== 'new') return false
   return true
 }

@@ -12,6 +12,7 @@ import type { NearPark } from '@/lib/parks'
 import { PARK_KIND_META, parkName } from '@/lib/parks'
 import { KIND_META, LEVEL_LABEL, type Level } from '@/lib/sports'
 import { disciplineList } from '@/lib/sports'
+import { WheelNote } from '@/components/WheelPicker'
 
 export interface SpotFacts {
   name: string
@@ -42,6 +43,8 @@ interface Props {
   crews: (Crew & { distanceKm: number })[]
   nearbySpots: (IndexedSpot & { distanceKm: number })[]
   nearbyParks: NearPark[]
+  wheelLabel?: string      // the picked wheel, when the page is filtered
+  misfit?: string          // set when this spot isn't one for the picked wheel
 }
 
 function Fact({ label, children }: { label: string; children: React.ReactNode }) {
@@ -53,7 +56,7 @@ function Fact({ label, children }: { label: string; children: React.ReactNode })
   )
 }
 
-export default function SpotView({ facts, postHref, sessions, riders, crews, nearbySpots, nearbyParks }: Props) {
+export default function SpotView({ facts, postHref, sessions, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit }: Props) {
   const f = facts
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`
   const pins = [
@@ -73,6 +76,7 @@ export default function SpotView({ facts, postHref, sessions, riders, crews, nea
           <span aria-hidden="true" className="h-3 w-3 rounded-[3px]" style={{ background: f.color }} />
           {f.kindLabel}{f.indoor && !/indoor/i.test(f.kindLabel) ? ', indoor' : ''}
         </p>
+        {wheelLabel && <div className={`mt-3 ${misfit ? 'rounded-lg bg-curb/40 px-3 py-2' : ''}`}><WheelNote label={wheelLabel} misfit={misfit} /></div>}
       </header>
 
       <div className="mt-10 grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_340px]">

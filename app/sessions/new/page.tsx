@@ -6,6 +6,7 @@ import { sessionsReady } from '@/lib/sessions'
 import { SPOTS, spotBySlug, spotsNear } from '@/lib/spots-index'
 import { parkById, parkName } from '@/lib/parks'
 import { cityBySlug, nearestCity } from '@/lib/cities'
+import { getWheel } from '@/lib/wheel-server'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Post a session', robots: { index: false } }
@@ -23,7 +24,7 @@ export default async function NewSessionPage({ searchParams }: { searchParams: P
   const sp = await searchParams
   const here = sp.spot ? `?spot=${sp.spot}` : sp.park ? `?park=${sp.park}` : sp.city ? `?city=${sp.city}` : ''
   const next = `/sessions/new${here}`
-  const [me, ready] = await Promise.all([getMe(), sessionsReady()])
+  const [me, ready, { wheel }] = await Promise.all([getMe(), sessionsReady(), getWheel()])
 
   if (!ready) {
     return (
@@ -83,7 +84,7 @@ export default async function NewSessionPage({ searchParams }: { searchParams: P
       <h1 className="h-display text-[32px] sm:text-[44px]">Post a session</h1>
       <p className="mt-3 text-[17px] text-asphalt-2">Say where and when you&apos;re riding. Riders nearby see it on the spot and city pages and can tap I&apos;m in.</p>
       <div className="mt-8">
-        <SessionForm userId={me.id} places={places} initial={initial} myDisciplines={me.profile?.disciplines ?? []} />
+        <SessionForm userId={me.id} places={places} initial={initial} myDisciplines={me.profile?.disciplines?.length ? me.profile.disciplines : wheel?.disciplines ?? []} />
       </div>
     </div>
   )

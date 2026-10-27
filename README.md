@@ -30,6 +30,15 @@ node tests/shots.mjs http://localhost:3000 /tmp/shots / /cities/ottawa   # scree
   sends it to the nearest hub or shows what's around it.
 - **Guidelines** (`/guidelines`): how sessions work, 16+, reporting.
 
+## Pick your wheels (2026-10-27)
+The header has a picker: **Board** (skateboards and scooters), **Skates** (roller and inline) or **Bike** (BMX and
+mountain bikes), or Everything. Until a visitor picks, a bar under the header asks "What do you ride?". The choice is
+the `rr_wheel` cookie (`lib/wheels.ts`, read on the server by `lib/wheel-server.ts`), and every page then shows only
+what fits: spots by their disciplines, mapped parks by kind (bike: pump, BMX and bike parks; board and skates:
+skateparks and pump tracks), sessions, crews and riders by discipline. Filtered pages say so, with a "Show everything"
+button; a spot that doesn't fit says so instead of hiding. Search engines carry no cookie and see everything.
+Picking reloads the page (a soft refresh left the header stale).
+
 ## People and safety (Dave's decisions, 2026-10-27)
 - Accounts are 16+: riders confirm their birth year and that they're 16 or older; only the fact (`age_confirmed_at`)
   is stored. Anyone can browse.
@@ -41,8 +50,9 @@ node tests/shots.mjs http://localhost:3000 /tmp/shots / /cities/ottawa   # scree
 ## Data
 - **Sessions, I'm in, comments, rider profiles**: Supabase, `supabase/migrations/004_riders_and_sessions.sql`
   (additive; Dave runs it in the SQL editor). Until it's run, posting says "opens soon" and pages show samples.
-- **Samples** (`lib/sample.ts`): 24 made-up riders and about 50 sessions at real featured spots, always upcoming, always
-  tagged Sample. They fill lists that have fewer than 3 real entries and give way as real ones arrive.
+- **Samples** (`lib/sample.ts`): 45 made-up riders and about 48 sessions (one board, one skates and one bike session per
+  sample city where a spot fits; bike ones may sit at named mapped BMX tracks, pump tracks and bike parks), always
+  upcoming, always tagged Sample. They fill lists that have fewer than 3 real entries and give way as real ones arrive.
 - **Featured spots**: `data/spots.json`, built by `node scripts/build-spots.mjs research/spots/*.json` (sources,
   briefs and gaps in `research/spots/`). Never add a spot without a real source; leave out anything closed.
 - **Every mapped park**: `data/parks.json`, from OpenStreetMap via the "Refresh parks" GitHub Action

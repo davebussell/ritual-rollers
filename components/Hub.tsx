@@ -12,6 +12,7 @@ import type { NearPark } from '@/lib/parks'
 import { PARK_KIND_META, parkName } from '@/lib/parks'
 import { KIND_META } from '@/lib/sports'
 import { plural } from '@/lib/format'
+import { WheelNote } from '@/components/WheelPicker'
 
 interface Props {
   title: string
@@ -25,9 +26,10 @@ interface Props {
   riders: RiderCard[]
   nearby?: { slug: string; name: string }[]
   radiusKm: number
+  wheelLabel?: string
 }
 
-export default function Hub({ title, subtitle, point, citySlug, sessions, crews, spots, parks, riders, nearby = [], radiusKm }: Props) {
+export default function Hub({ title, subtitle, point, citySlug, sessions, crews, spots, parks, riders, nearby = [], radiusKm, wheelLabel }: Props) {
   const realSessions = sessions.filter(s => !s.sample).length
   const postHref = citySlug ? `/sessions/new?city=${citySlug}` : '/sessions/new'
   const pins = [
@@ -45,6 +47,7 @@ export default function Hub({ title, subtitle, point, citySlug, sessions, crews,
           {crews.length ? `${plural(crews.length, 'crew')} to ride with.` : 'No crews listed yet.'}{' '}
           {realSessions ? `${plural(realSessions, 'session')} coming up.` : ''}
         </p>
+        {wheelLabel && <div className="mt-3"><WheelNote label={wheelLabel} /></div>}
       </header>
 
       <div className="mt-10 grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_340px]">

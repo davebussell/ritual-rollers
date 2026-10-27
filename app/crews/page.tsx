@@ -4,6 +4,9 @@ import { CrewRow } from '@/components/Rows'
 import { Empty } from '@/components/bits'
 import { CREWS } from '@/lib/crews'
 import { CITIES, cityBySlug } from '@/lib/cities'
+import { getWheel } from '@/lib/wheel-server'
+import { fits } from '@/lib/wheels'
+import { WheelNote } from '@/components/WheelPicker'
 import { AUDIENCES, DISCIPLINES } from '@/lib/sports'
 import { COUNTRY_LABEL, type Country } from '@/lib/spots-index'
 
@@ -21,10 +24,12 @@ function href(params: Record<string, string | undefined>): string {
 
 export default async function CrewsPage({ searchParams }: { searchParams: Promise<{ city?: string; ride?: string; who?: string }> }) {
   const sp = await searchParams
+  const { wheel } = await getWheel()
+  const rideOptions = DISCIPLINES.filter(d => !wheel || wheel.disciplines.includes(d.id))
   const city = sp.city ? cityBySlug(sp.city) : undefined
-  const ride = DISCIPLINES.some(d => d.id === sp.ride) ? sp.ride : undefined
+  const ride = rideOptions.some(d => d.id === sp.ride) ? sp.ride : undefined
   const who = AUDIENCES.some(a => a.id === sp.who) ? sp.who : undefined
-  const list = CREWS.filter(c =>
+  const list = CREWS.filter(c => fits(c.disciplines, wheel) &&
     (!city || c.hub === city.slug) && (!ride || c.disciplines.includes(ride)) && (!who || c.audience.includes(who)))
   const base = { city: city?.slug, ride, who }
   const hubsWithCrews = CITIES.filter(c => CREWS.some(x => x.hub === c.slug)).sort((a, b) => a.name.localeCompare(b.name))
@@ -39,6 +44,7 @@ export default async function CrewsPage({ searchParams }: { searchParams: Promis
             Groups that ride together and welcome new people: skate nights, roller and inline groups, women&apos;s and queer sessions,
             BMX and bike clubs. Each one links to the group&apos;s own page.
           </p>
+          {wheel && <div className="mt-3"><WheelNote label={wheel.lower} /></div>}
         </div>
         <Link href="/crews/add" className="btn btn-ghost shrink-0">Add your crew</Link>
       </div>
@@ -54,8 +60,8 @@ export default async function CrewsPage({ searchParams }: { searchParams: Promis
         <button type="submit" className="btn btn-dark !py-2.5">Show</button>
       </form>
       <div className="mt-3 flex flex-wrap gap-2">
-        <Link href={href({ ...base, ride: undefined })} className="chip" aria-current={!ride ? 'page' : undefined}>Any wheels</Link>
-        {DISCIPLINES.map(d => <Link key={d.id} href={href({ ...base, ride: d.id })} className="chip" aria-current={ride === d.id ? 'page' : undefined}>{d.label}</Link>)}
+        <Link href={href({ ...base, ride: undefined })} className="chip" aria-current={!ride ? 'page' : undefined}>{wheel ? 'Both' : 'Any wheels'}</Link>
+        {rideOptions.map(d => <Link key={d.id} href={href({ ...base, ride: d.id })} className="chip" aria-current={ride === d.id ? 'page' : undefined}>{d.label}</Link>)}
       </div>
       <div className="mt-2 flex flex-wrap gap-2">
         <Link href={href({ ...base, who: undefined })} className="chip" aria-current={!who ? 'page' : undefined}>Anyone</Link>
