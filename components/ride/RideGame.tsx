@@ -191,6 +191,7 @@ export default function RideGame({ parkId, parkName, parkSurface, wheel, backHre
         lines: [...paths.values()].map(({ line, path }) => ({ id: line.id, path, surface: surfaceFor(line, path.style, parkSurface) })),
         seed: [...parkId].reduce((a, ch) => a * 31 + ch.charCodeAt(0), 7),
         lowPower,
+        focus: c.line.id,
       })
       builtRef.current = { proj, ground, flat: hf.flat, paths, scene }
       const el = wrapRef.current

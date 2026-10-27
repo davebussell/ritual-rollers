@@ -22,6 +22,7 @@ export interface SceneOptions {
   lines: SceneLine[]
   seed: number
   lowPower: boolean
+  focus?: string                       // the line being ridden: the woods gather around it
 }
 
 // ── palette ─────────────────────────────────────────────────────────
@@ -249,8 +250,9 @@ export function createScene(o: SceneOptions): RideScene {
     for (let t = 0; t < tries && spots.length < cap; t++) {
       let x = box.minX + random() * areaW, z = box.minZ + random() * areaD
       // in the woods, half the trees crowd the trails, the way they do on a real hillside
-      if (wooded && rideLines.length && t % 2 === 0) {
-        const l = rideLines[Math.floor(random() * rideLines.length)].path
+      if (wooded && rideLines.length && t % 3 !== 0) {
+        const focus = rideLines.find(l => l.id === o.focus)
+        const l = (focus && random() < 0.7 ? focus : rideLines[Math.floor(random() * rideLines.length)]).path
         const i = Math.floor(random() * l.n)
         const a = random() * Math.PI * 2, d = 4 + random() * 45
         x = l.x[i] + Math.cos(a) * d
