@@ -35,7 +35,7 @@ export default async function Home() {
   const { wheel } = await getWheel()
   const me = await getMe()
   const { places: riding } = await ridingEverywhere(wheel, me?.id ?? null, 8)
-  const featured = spread(featuredPlaces().filter(f => placeFits(f, wheel)), f => f.city, 9)
+  const featured = spread(featuredPlaces().filter(f => placeFits(f, wheel)), f => f.city, 12)
   const crews = crewMix(6, wheel)
   const spots = SPOTS.filter(s => fits(s.disciplines, wheel))
   const parks = PARKS.filter(p => parkFits(p.kind, wheel))
@@ -43,7 +43,9 @@ export default async function Home() {
   const cityOptions = CITIES.map(c => ({ slug: c.slug, name: c.name, region: c.region }))
   const popular = POPULAR.map(cityBySlug).filter(Boolean)
   const what = wheel?.id === 'bike' ? 'pump tracks, BMX tracks and bike parks' : wheel ? 'skateparks and pump tracks' : 'skateparks, pump tracks, BMX tracks and bike parks'
-  const heroPhotos = featured.slice(0, 3)
+  // The hero shows three parks; the grid below goes on with the next ones rather than repeating them
+  const heroPhotos = featured.length >= 6 ? featured.slice(0, 3) : []
+  const moreParks = featured.slice(heroPhotos.length, heroPhotos.length + 9)
   // Riders to know: Kolby Parks first (Dave asked for him by name), then the most results
   const athletes = ATHLETES.filter(a => eventFits(a.disciplines, wheel)).sort((a, b) => Number(b.slug === 'kolby-parks') - Number(a.slug === 'kolby-parks') || b.results.length - a.results.length).slice(0, 3)
   const races = EVENTS.filter(e => eventFits(e.disciplines, wheel) && e.results.length).sort((a, b) => (b.results[0]?.year ?? 0) - (a.results[0]?.year ?? 0)).slice(0, 6)
@@ -54,8 +56,8 @@ export default async function Home() {
         <div className="max-w-xl">
           <h1 className="h-display text-[40px] sm:text-[56px]">Find a park to {wheel?.verb ?? 'ride'}</h1>
           <p className="mt-5 text-lg leading-relaxed text-asphalt-2 sm:text-xl">
-            {(spots.length + parks.length).toLocaleString('en-US')} {what} across Canada, the US and Mexico. See each one in 3D,
-            see people riding it, and tag the one you&apos;re riding next.
+            {`${(spots.length + parks.length).toLocaleString('en-US')} ${what} across Canada, the US and Mexico. `}
+            See each one in 3D, see people riding it, and tag the one you&apos;re riding next.
           </p>
           <div className="mt-8"><CitySearch cities={cityOptions} big /></div>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -71,7 +73,7 @@ export default async function Home() {
             ))}
           </ol>
         </div>
-        {heroPhotos.length >= 3 ? (
+        {heroPhotos.length === 3 ? (
           <div className="grid min-w-0 grid-cols-2 gap-3 self-start">
             {heroPhotos.map((f, i) => (
               <Link key={f.key} href={f.href} className={`group relative block overflow-hidden rounded-xl bg-concrete-2 ${i === 0 ? 'col-span-2' : ''}`}>
@@ -93,12 +95,12 @@ export default async function Home() {
       </section>
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 sm:px-6">
-        {featured.length > 0 && (
+        {moreParks.length > 0 && (
           <section>
             <SectionHead title="Parks, ridden" href="/spots" linkLabel="Browse every park">
               Real photos of people riding real parks, old and new. Every photo is free to share and credited to whoever took it.
             </SectionHead>
-            <FeaturedParks places={featured} />
+            <FeaturedParks places={moreParks} />
           </section>
         )}
 

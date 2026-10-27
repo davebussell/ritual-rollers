@@ -47,11 +47,19 @@ node tests/shots.mjs http://localhost:3000 /tmp/shots / /cities/ottawa   # scree
 Dave wants authentic shots of people riding the parks, vintage first. Only photos we're allowed to republish:
 public domain, CC0, CC BY, CC BY-SA, or an Open Government Licence, each credited with its licence and a link to its
 source. Never NC/ND, never all-rights-reserved, never copied from Instagram, TikTok, Facebook or news sites.
-- Research: `research/photos/BRIEF.md`, results in `research/photos/*.json`.
+- Research: `research/photos/BRIEF.md`, results in `research/photos/vintage.json` (before 2005) and `recent.json`.
+- Review: someone looks at every photo before it ships. `research/photos/review.json` lists the pages that were looked
+  at and are fine (`ok`) and the ones left out with the reason (`skip`: the rider may be under 18, no riding in the
+  frame, and so on). A new research entry in neither list is downloaded to `.cache/review/<id>.jpg` and held back.
+- Captions name a rider only if they're a well-known pro (`PUBLIC_RIDERS` in the build script); anyone else becomes
+  "A skater" / "A rider". The source page keeps the name.
 - Build: `node scripts/build-photos.mjs research/photos/*.json` re-checks every Wikimedia Commons file's licence, author
-  and date against the Commons API, drops anything not allowed, photos whose subject is a child, and photos not matched
-  to a park, downloads each once (cache in `.cache/photos`, git-ignored), and writes `public/photos/<id>.jpg` (1600 px)
-  and `<id>-640.jpg` plus `data/photos.json`.
+  and date against the Commons API, drops anything not allowed, captions mentioning children, and photos not matched
+  to a park, downloads each once (cache in `.cache/photos`, git-ignored), writes `public/photos/<id>.jpg` (1600 px)
+  and `<id>-640.jpg` plus `data/photos.json`, and removes images no longer in the set.
+- First set (2026-10-27): 113 photos of 60 parks (US 43 parks, Canada 9, Mexico 8), 15 of them from 2000–2004. 13 were
+  left out on review. Gaps: nothing before 2000, no vintage outside the US, no roller/inline/scooter, little in Canada
+  outside Vancouver/Whistler, Calgary, Winnipeg, Toronto and Montreal, and Mexico is mostly Mexico City.
 - Parks with photos are the featured parks (home page "Parks, ridden", page banners).
 - Social media photos: only with the photographer's permission. Dave sends the requests
   (`research/photos/permission-requests.md` lists posts per park and a draft message); approved photos are added to
