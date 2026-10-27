@@ -23,17 +23,18 @@ interface Props {
   country: 'CA' | 'US' | 'MX'
   entry: LinesEntry | null
   editUrl: string
+  title?: string         // e.g. "The course in 3D" on a race page
 }
 
 const DIFFS: Difficulty[] = ['green', 'blue', 'black', 'double']
 
-export default function ParkMapSection({ parkId, parkKind, color, name, lat, lng, country, entry, editUrl }: Props) {
+export default function ParkMapSection({ parkId, parkKind, color, name, lat, lng, country, entry, editUrl, title: titleOverride }: Props) {
   const [pick, setPick] = useState<string | null>(null)
   const [all, setAll] = useState(false)
   const [stats, setStats] = useState<Record<string, { climb: number; drop: number }>>({})
 
   const hasLines = (entry?.n ?? 0) > 0
-  const title = parkKind === 'bike' ? 'Trail map' : parkKind === 'skate' ? 'The park in 3D' : 'Track map'
+  const title = titleOverride ?? (parkKind === 'bike' ? 'Trail map' : parkKind === 'skate' ? 'The park in 3D' : 'Track map')
   const named = entry?.t ?? []
   const shown = all ? named : named.slice(0, 10)
   const trailWord = parkKind === 'bike' ? 'trails' : 'lines'
@@ -46,7 +47,7 @@ export default function ParkMapSection({ parkId, parkKind, color, name, lat, lng
           {entry.n} {entry.n === 1 ? trailWord.replace(/s$/, '') : trailWord} mapped{entry.m ? `, ${metres(entry.m)} in all` : ''}. Tilt, spin and zoom; tap a {parkKind === 'bike' ? 'trail' : 'line'} for its climbs and drops.
         </p>
       )}
-      {!hasLines && <p className="mt-1 text-[15px] text-muted">Tilt, spin and zoom the park and the streets around it.</p>}
+      {!hasLines && <p className="mt-1 text-[15px] text-muted">Tilt, spin and zoom {titleOverride ? 'the place' : 'the park'} and the streets around it.</p>}
 
       <div className="panel mt-4 overflow-hidden">
         <ParkMap3D
@@ -95,7 +96,9 @@ export default function ParkMapSection({ parkId, parkKind, color, name, lat, lng
       )}
 
       <p className="mt-3 text-[13px] leading-relaxed text-muted">
-        {!entry
+        {!entry && titleOverride
+          ? null
+          : !entry
           ? <>This park is only a dot on the map so far. Know it? <a href={editUrl} className="prose-link font-semibold" rel="noopener">Draw it on OpenStreetMap</a> and its outline shows up here after the next refresh.</>
           : !hasLines && parkKind === 'skate'
             ? <>Only the outline of this park is mapped. Know it well? <a href={editUrl} className="prose-link font-semibold" rel="noopener">Add its bowls, ramps and rails on OpenStreetMap</a> so every map shows them.</>

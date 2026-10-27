@@ -43,6 +43,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
             parkId={park?.id ?? ''} parkKind={park?.kind ?? 'skate'} color={park ? PARK_KIND_META[park.kind].color : '#D4402A'}
             name={e.place || e.name} lat={e.lat} lng={e.lng} country={e.country} entry={park ? linesFor(park.id) : null}
             editUrl={`https://www.openstreetmap.org/edit#map=18/${e.lat}/${e.lng}`}
+            title={park ? undefined : e.coords === 'course' ? 'The course in 3D' : `${e.city} in 3D`}
           />
           <section>
             <h2 className="h-section text-[22px] sm:text-[26px]">Results</h2>
