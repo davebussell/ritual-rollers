@@ -116,7 +116,8 @@ export async function sessionComments(id: string): Promise<SessionComment[]> {
 export async function sessionsReady(): Promise<boolean> {
   try {
     const supabase = await createClient()
-    const { error } = await supabase.from('ride_sessions').select('id', { head: true, count: 'exact' }).limit(1)
+    // A plain read: a HEAD request against a missing table comes back without an error, so it can't tell
+    const { error } = await supabase.from('ride_sessions').select('id').limit(1)
     return !error
   } catch {
     return false
