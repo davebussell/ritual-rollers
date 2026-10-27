@@ -7,6 +7,10 @@ import type { RiderCard } from '@/lib/types'
 import type { IndexedSpot } from '@/lib/spots-index'
 import type { NearPark } from '@/lib/parks'
 import { PARK_KIND_META, parkName } from '@/lib/parks'
+import type { NearShop } from '@/lib/shops'
+import type { Company } from '@/lib/companies'
+import { COMPANY_KIND_LABEL } from '@/lib/companies'
+import { SHOP_COLOR, shopLabel } from '@/lib/shops'
 import { AUDIENCE_LABEL, KIND_META, LEVEL_LABEL, FEATURE_LABEL } from '@/lib/sports'
 import { cityBySlug } from '@/lib/cities'
 import { spotBySlug } from '@/lib/spots-index'
@@ -76,5 +80,38 @@ export function ParkRow({ p }: { p: NearPark }) {
       </div>
       <span className="shrink-0 pt-0.5 text-[13px] text-muted">{p.distanceKm < 1 ? '<1' : Math.round(p.distanceKm)} km</span>
     </Link>
+  )
+}
+
+export function ShopRow({ s }: { s: NearShop }) {
+  const where = [s.addr, s.city].filter(Boolean).join(', ')
+  return (
+    <div className="flex gap-3.5 py-3">
+      <span aria-hidden="true" className="mt-1.5 h-2.5 w-2.5 shrink-0 rotate-45 rounded-[2px]" style={{ background: SHOP_COLOR[s.kind] }} />
+      <div className="min-w-0 flex-1">
+        <p className="text-[15px] font-bold leading-snug">
+          {s.web ? <a href={s.web} className="hover:underline hover:underline-offset-4" rel="noopener nofollow">{s.name}</a> : s.name}
+        </p>
+        <p className="text-[13px] text-muted">{shopLabel(s)}{where ? ` · ${where}` : ''}</p>
+      </div>
+      <span className="shrink-0 pt-0.5 text-[13px] text-muted">{s.distanceKm < 1 ? '<1' : Math.round(s.distanceKm)} km</span>
+    </div>
+  )
+}
+
+export function CompanyRow({ c }: { c: Company & { distanceKm: number } }) {
+  const href = c.links.website ?? c.links.instagram ?? c.links.facebook ?? c.source
+  return (
+    <div className="flex gap-3.5 py-3">
+      <span aria-hidden="true" className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full border-2 border-asphalt" />
+      <div className="min-w-0 flex-1">
+        <p className="text-[15px] font-bold leading-snug">
+          <a href={href} className="hover:underline hover:underline-offset-4" rel="noopener nofollow">{c.name}</a>
+        </p>
+        <p className="text-[13px] text-muted">{COMPANY_KIND_LABEL[c.kind]}{c.what ? ` · ${c.what}` : ''} · {c.city}</p>
+        <p className="mt-1 text-[14px] leading-snug text-asphalt-2">{c.about}</p>
+      </div>
+      <span className="shrink-0 pt-0.5 text-[13px] text-muted">{c.distanceKm < 1 ? '<1' : Math.round(c.distanceKm)} km</span>
+    </div>
   )
 }

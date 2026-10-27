@@ -6,12 +6,20 @@ import { CITIES, nearestCity } from '@/lib/cities'
 import { crewsNear } from '@/lib/crews'
 import { spotsNear, isFeaturedPark, isNorthAmerica } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
+import { shopsNear } from '@/lib/shops'
+import { companiesNear } from '@/lib/companies'
 import { upcomingSessions } from '@/lib/sessions'
 import { geocodePlace, fromSlug, haversineKm } from '@/lib/geo'
 import { getWheel } from '@/lib/wheel-server'
 import { fits, parkFits } from '@/lib/wheels'
 
 export const dynamic = 'force-dynamic'
+
+// Companies within 80 km, or the three nearest within 400 km when there are none
+function companiesFor(lat: number, lng: number, wheel: Parameters<typeof companiesNear>[3]) {
+  const near = companiesNear(lat, lng, 80, wheel)
+  return near.length ? { list: near, nearest: false } : { list: companiesNear(lat, lng, 400, wheel).slice(0, 3), nearest: true }
+}
 
 const RADIUS = 30
 
@@ -52,6 +60,8 @@ export default async function NearPage({ params }: { params: Promise<{ slug: str
       crews={crewsNear(place.lat, place.lng, RADIUS).filter(c => fits(c.disciplines, wheel))}
       spots={spotsNear(place.lat, place.lng, RADIUS).filter(s => fits(s.disciplines, wheel))}
       parks={parksNear(place.lat, place.lng, RADIUS, 400).filter(p => !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 120)}
+      shops={shopsNear(place.lat, place.lng, RADIUS, wheel, 60)}
+      companies={companiesFor(place.lat, place.lng, wheel)}
       riders={[]}
       nearby={nearby}
       wheelLabel={wheel?.lower}

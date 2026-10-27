@@ -2,13 +2,14 @@
 
 import Link from 'next/link'
 import { SessionRow } from '@/components/SessionBits'
-import { CrewRow, RiderRow, SpotRow, ParkRow } from '@/components/Rows'
+import { CrewRow, RiderRow, SpotRow, ParkRow, ShopRow } from '@/components/Rows'
 import { Empty, SectionHead } from '@/components/bits'
 import HubMap from '@/components/HubMap'
 import type { RideSession, RiderCard } from '@/lib/types'
 import type { Crew } from '@/lib/crews'
 import type { IndexedSpot } from '@/lib/spots-index'
 import type { NearPark } from '@/lib/parks'
+import type { NearShop } from '@/lib/shops'
 import { PARK_KIND_META, parkName } from '@/lib/parks'
 import { KIND_META, LEVEL_LABEL, type Level } from '@/lib/sports'
 import { disciplineList } from '@/lib/sports'
@@ -46,6 +47,7 @@ interface Props {
   wheelLabel?: string      // the picked wheel, when the page is filtered
   misfit?: string          // set when this spot isn't one for the picked wheel
   parkMap?: React.ReactNode  // the trail / track map, when the spot is a mapped park
+  shops?: NearShop[]
 }
 
 function Fact({ label, children }: { label: string; children: React.ReactNode }) {
@@ -57,7 +59,7 @@ function Fact({ label, children }: { label: string; children: React.ReactNode })
   )
 }
 
-export default function SpotView({ facts, postHref, sessions, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit, parkMap }: Props) {
+export default function SpotView({ facts, postHref, sessions, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit, parkMap, shops = [] }: Props) {
   const f = facts
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`
   const pins = [
@@ -137,6 +139,12 @@ export default function SpotView({ facts, postHref, sessions, riders, crews, nea
             {f.web && <Fact label="Website"><a href={f.web} className="prose-link" rel="noopener">Visit</a></Fact>}
             {f.source && <Fact label="Source"><a href={f.source.url} className="prose-link" rel="noopener">{f.source.label}</a></Fact>}
           </dl>
+          {shops.length > 0 && (
+            <section>
+              <h2 className="h-section text-[18px]">Shops nearby</h2>
+              <div className="rows mt-2">{shops.slice(0, 4).map(s => <ShopRow key={s.id} s={s} />)}</div>
+            </section>
+          )}
           {nearbySpots.length > 0 && (
             <section>
               <h2 className="h-section text-[18px]">Spots nearby</h2>

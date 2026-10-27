@@ -5,6 +5,8 @@ import { CITIES, HUB_KM, cityBySlug } from '@/lib/cities'
 import { crewsNear } from '@/lib/crews'
 import { spotsNear, isFeaturedPark, COUNTRY_LABEL } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
+import { shopsNear } from '@/lib/shops'
+import { companiesNear } from '@/lib/companies'
 import { upcomingSessions } from '@/lib/sessions'
 import { ridersFor } from '@/lib/riders'
 import { getWheel } from '@/lib/wheel-server'
@@ -12,6 +14,12 @@ import { fits, parkFits } from '@/lib/wheels'
 import { haversineKm } from '@/lib/geo'
 
 export const dynamic = 'force-dynamic'
+
+// Companies within 80 km, or the three nearest within 400 km when there are none
+function companiesFor(lat: number, lng: number, wheel: Parameters<typeof companiesNear>[3]) {
+  const near = companiesNear(lat, lng, 80, wheel)
+  return near.length ? { list: near, nearest: false } : { list: companiesNear(lat, lng, 400, wheel).slice(0, 3), nearest: true }
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
@@ -50,6 +58,8 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
       crews={crewsNear(city.lat, city.lng, HUB_KM).filter(c => fits(c.disciplines, wheel))}
       spots={spotsNear(city.lat, city.lng, HUB_KM).filter(s => fits(s.disciplines, wheel))}
       parks={parksNear(city.lat, city.lng, HUB_KM, 400).filter(p => !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 150)}
+      shops={shopsNear(city.lat, city.lng, HUB_KM, wheel, 60)}
+      companies={companiesFor(city.lat, city.lng, wheel)}
       riders={riders}
       nearby={nearby}
       wheelLabel={wheel?.lower}
