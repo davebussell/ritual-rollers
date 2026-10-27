@@ -130,3 +130,18 @@ test('plans end with their day at the spot, and read as a time of day', async ()
   assert.equal(whenLabel('time', '17:30'), '5:30 pm')
   assert.equal(whenLabel('time', '00:00'), '12 am')
 })
+
+test('on a pump track loop, a board gets going from a standstill with pushes alone', async () => {
+  const { startPoint } = await import('../lib/ride/physics')
+  const p = buildPath(circle(14), { style: 'pump', groundHeight: flat })
+  const st = startState(startPoint(p), false)
+  let travelled = 0, last = st.s
+  for (let i = 0; i < 60 * 40; i++) {
+    stepFor(st, { pedal: true, pump: false, brake: false }, p, RIDERS.board, 1 / 60)
+    let d = st.s - last
+    if (d < -p.length / 2) d += p.length
+    travelled += Math.max(0, d)
+    last = st.s
+  }
+  assert.ok(travelled > p.length, `travelled ${travelled.toFixed(1)} m of a ${p.length.toFixed(1)} m loop`)
+})

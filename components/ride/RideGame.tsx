@@ -14,7 +14,7 @@ import type { WheelId } from '@/lib/wheels'
 import { rideList, riderForWheel, sceneBox, nextLines, styleFor, surfaceFor, type RideChoice } from '@/lib/ride/setup'
 import { projection, loadHeightfield, buildGround, TERRAIN_ATTRIBUTION, TERRAIN_ATTRIBUTION_URL, type Ground, type Projection } from '@/lib/ride/terrain'
 import { buildPath, pointAt, type RidePath } from '@/lib/ride/path'
-import { RIDERS, startState, stepFor, respawn, type Rider, type RideState, type Input } from '@/lib/ride/physics'
+import { RIDERS, startState, startPoint, stepFor, respawn, type Rider, type RideState, type Input } from '@/lib/ride/physics'
 import type { RideScene, CameraMode } from '@/lib/ride/scene'
 import { DifficultySign } from '@/components/TrailSigns'
 
@@ -238,7 +238,7 @@ export default function RideGame({ parkId, parkName, parkSurface, wheel, backHre
     if (!path) return
     const line = builtRef.current!.paths.get(lineId)!.line
     const dirt = surfaceFor(line, path.style, parkSurface) === 'dirt'
-    const st = startState(path.closed ? 0 : 0.5, dirt)
+    const st = startState(startPoint(path), dirt)
     st.y = pointAt(path, st.s).h
     runRef.current = { st, path, lineId, rev, first: lineId, firstRev: rev, t: 0, started: false, lapStart: 0, laps: 0, bestLap: null, prevS: st.s, msg: '', msgUntil: 0, distance: 0 }
     setResult(null)

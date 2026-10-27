@@ -120,7 +120,9 @@ export function step(st: RideState, inp: Input, path: RidePath, spec: RiderSpec,
     let a = -G * sin
     if (inp.pedal && st.v < spec.pedalTop) {
       const taper = Math.min(1, (spec.pedalTop - st.v) / 1.5)
-      a += Math.min(3, spec.power / (spec.mass * Math.max(1.2, Math.abs(st.v)))) * taper
+      // a hard first push or pedal stroke gets you rolling even when power alone wouldn't
+      const fromPower = spec.power / (spec.mass * Math.max(1.2, Math.abs(st.v)))
+      a += Math.min(3, Math.max(fromPower, Math.abs(st.v) < 1.5 ? 2.2 : 0)) * taper
     }
     if (inp.pump && Math.abs(st.v) > 1) {
       // pushing down on a backside turns height into speed; pushing into a face costs speed
@@ -181,6 +183,18 @@ function crash(st: RideState) {
   st.air = false
   st.airTime = 0
   st.skid = 0
+}
+
+// Where to start: on a generated track, the top of the first roller (so the first move is downhill, the way you'd
+// drop in); otherwise the start of the line
+export function startPoint(path: RidePath): number {
+  if (!path.generated) return path.closed ? 0 : 0.5
+  let best = path.closed ? 0 : 0.5, top = -Infinity
+  for (let s = path.closed ? 0 : 0.5; s < Math.min(path.length, 8); s += path.ds) {
+    const h = pointAt(path, s).h
+    if (h > top) { top = h; best = s }
+  }
+  return best
 }
 
 // After a crash: back up a few metres and stand still
