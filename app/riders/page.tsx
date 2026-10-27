@@ -4,6 +4,8 @@ import { RiderRow } from '@/components/Rows'
 import { Empty } from '@/components/bits'
 import { ridersFor } from '@/lib/riders'
 import { CITIES, cityBySlug } from '@/lib/cities'
+import { getWheel } from '@/lib/wheel-server'
+import { WheelNote } from '@/components/WheelPicker'
 import { DISCIPLINES } from '@/lib/sports'
 
 export const dynamic = 'force-dynamic'
@@ -22,9 +24,11 @@ function href(params: Record<string, string | undefined>): string {
 
 export default async function RidersPage({ searchParams }: { searchParams: Promise<{ city?: string; ride?: string }> }) {
   const sp = await searchParams
+  const { wheel } = await getWheel()
+  const rideOptions = DISCIPLINES.filter(d => !wheel || wheel.disciplines.includes(d.id))
   const city = sp.city ? cityBySlug(sp.city) : undefined
-  const ride = DISCIPLINES.some(d => d.id === sp.ride) ? sp.ride : undefined
-  const riders = await ridersFor({ city: city?.slug, discipline: ride }, 60)
+  const ride = rideOptions.some(d => d.id === sp.ride) ? sp.ride : undefined
+  const riders = await ridersFor({ city: city?.slug, discipline: ride, disciplines: wheel?.disciplines }, 60)
   const base = { city: city?.slug, ride }
 
   return (
@@ -35,6 +39,7 @@ export default async function RidersPage({ searchParams }: { searchParams: Promi
           <p className="mt-3 text-[17px] text-asphalt-2">
             People who&apos;d like company: new in town, starting late, or looking for a crew. Find someone who rides what you ride, then catch them at a session.
           </p>
+          {wheel && <div className="mt-3"><WheelNote label={wheel.lower} /></div>}
         </div>
         <Link href="/me" className="btn btn-curb shrink-0">List yourself</Link>
       </div>
@@ -49,8 +54,8 @@ export default async function RidersPage({ searchParams }: { searchParams: Promi
         <button type="submit" className="btn btn-dark !py-2.5">Show</button>
       </form>
       <div className="mt-3 flex flex-wrap gap-2">
-        <Link href={href({ ...base, ride: undefined })} className="chip" aria-current={!ride ? 'page' : undefined}>Any wheels</Link>
-        {DISCIPLINES.map(d => <Link key={d.id} href={href({ ...base, ride: d.id })} className="chip" aria-current={ride === d.id ? 'page' : undefined}>{d.label}</Link>)}
+        <Link href={href({ ...base, ride: undefined })} className="chip" aria-current={!ride ? 'page' : undefined}>{wheel ? 'Both' : 'Any wheels'}</Link>
+        {rideOptions.map(d => <Link key={d.id} href={href({ ...base, ride: d.id })} className="chip" aria-current={ride === d.id ? 'page' : undefined}>{d.label}</Link>)}
       </div>
 
       <div className="mt-8">

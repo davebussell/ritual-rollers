@@ -19,6 +19,8 @@ Dave dropped conditions entirely on 2026-10-27: **no weather, temperature or "is
 back unless he asks. Nothing motorized, no trail networks or road routes.
 - People rules (Dave, 2026-10-27): accounts 16+ (anyone can browse); contact is public sessions only, no private
   messages; riders show their city and chosen spots, never where they live; rider pages are noindex.
+- Wheel picker (Dave, 2026-10-27): Board / Skates / Bike in the header; the whole site filters to the pick (cookie
+  `rr_wheel`, see README). New features must respect it: filter by `fits()` / `parkFits()` from `lib/wheels.ts`.
 - Samples (`lib/sample.ts`) are always tagged Sample and give way to real entries. Crews must be real groups with a
   source and recent activity; never invent one.
 

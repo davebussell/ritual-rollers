@@ -4,6 +4,8 @@ import { SessionRow } from '@/components/SessionBits'
 import { Empty } from '@/components/bits'
 import { upcomingSessions } from '@/lib/sessions'
 import { CITIES, HUB_KM, cityBySlug } from '@/lib/cities'
+import { getWheel } from '@/lib/wheel-server'
+import { WheelNote } from '@/components/WheelPicker'
 import { DISCIPLINES } from '@/lib/sports'
 
 export const dynamic = 'force-dynamic'
@@ -21,12 +23,14 @@ function href(params: Record<string, string | undefined>): string {
 
 export default async function SessionsPage({ searchParams }: { searchParams: Promise<{ city?: string; ride?: string; beginners?: string }> }) {
   const sp = await searchParams
+  const { wheel } = await getWheel()
+  const rideOptions = DISCIPLINES.filter(d => !wheel || wheel.disciplines.includes(d.id))
   const city = sp.city ? cityBySlug(sp.city) : undefined
-  const ride = DISCIPLINES.some(d => d.id === sp.ride) ? sp.ride : undefined
+  const ride = rideOptions.some(d => d.id === sp.ride) ? sp.ride : undefined
   const beginners = sp.beginners === '1'
   const sessions = await upcomingSessions({
     near: city ? { lat: city.lat, lng: city.lng, km: HUB_KM } : undefined,
-    discipline: ride, beginners, limit: 40,
+    discipline: ride, disciplines: wheel?.disciplines, beginners, limit: 40,
   })
   const anySample = sessions.some(s => s.sample)
   const base = { city: city?.slug, ride, beginners: beginners ? '1' : undefined }
@@ -37,6 +41,7 @@ export default async function SessionsPage({ searchParams }: { searchParams: Pro
         <div className="max-w-2xl">
           <h1 className="h-display text-[34px] sm:text-[48px]">Sessions</h1>
           <p className="mt-3 text-[17px] text-asphalt-2">Someone posts where and when they&apos;re riding. You tap I&apos;m in and show up. Public spots, public sessions.</p>
+          {wheel && <div className="mt-3"><WheelNote label={wheel.lower} /></div>}
         </div>
         <Link href="/sessions/new" className="btn btn-curb shrink-0">Post a session</Link>
       </div>
@@ -52,8 +57,8 @@ export default async function SessionsPage({ searchParams }: { searchParams: Pro
         <button type="submit" className="btn btn-dark !py-2.5">Show</button>
       </form>
       <div className="mt-3 flex flex-wrap gap-2">
-        <Link href={href({ ...base, ride: undefined })} className="chip" aria-current={!ride ? 'page' : undefined}>Any wheels</Link>
-        {DISCIPLINES.map(d => <Link key={d.id} href={href({ ...base, ride: d.id })} className="chip" aria-current={ride === d.id ? 'page' : undefined}>{d.label}</Link>)}
+        <Link href={href({ ...base, ride: undefined })} className="chip" aria-current={!ride ? 'page' : undefined}>{wheel ? 'Both' : 'Any wheels'}</Link>
+        {rideOptions.map(d => <Link key={d.id} href={href({ ...base, ride: d.id })} className="chip" aria-current={ride === d.id ? 'page' : undefined}>{d.label}</Link>)}
         <Link href={href({ ...base, beginners: beginners ? undefined : '1' })} className="chip" aria-current={beginners ? 'page' : undefined}>Beginners welcome</Link>
       </div>
 

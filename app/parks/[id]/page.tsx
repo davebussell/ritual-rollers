@@ -6,6 +6,8 @@ import { spotsNear, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
 import { crewsNear } from '@/lib/crews'
 import { nearestCity } from '@/lib/cities'
 import { upcomingSessions } from '@/lib/sessions'
+import { getWheel } from '@/lib/wheel-server'
+import { fits, parkFits } from '@/lib/wheels'
 
 export const dynamic = 'force-dynamic'
 
@@ -37,7 +39,9 @@ export default async function ParkPage({ params }: { params: Promise<{ id: strin
   const park = parkById(id)
   if (!park) notFound()
   const hub = nearestCity(park.lat, park.lng)
-  const sessions = await upcomingSessions({ park: id, limit: 8 })
+  const { wheel } = await getWheel()
+  const sessions = await upcomingSessions({ park: id, disciplines: wheel?.disciplines, limit: 8 })
+  const misfit = wheel && !parkFits(park.kind, wheel) ? `This ${PARK_KIND_META[park.kind].label.toLowerCase()} isn't one for ${wheel.lower}.` : undefined
   // Who rides it, by kind of park (OSM's sport tags are too sparse to go on)
   const disciplines = { skate: ['skateboard', 'roller', 'inline', 'scooter', 'bmx'], pump: ['skateboard', 'roller', 'inline', 'scooter', 'bmx', 'mtb'], bmx: ['bmx'], bike: ['mtb', 'bmx'] }[park.kind]
 
@@ -63,9 +67,11 @@ export default async function ParkPage({ params }: { params: Promise<{ id: strin
       postHref={`/sessions/new?park=${id}`}
       sessions={sessions}
       riders={[]}
-      crews={crewsNear(park.lat, park.lng, 25)}
-      nearbySpots={spotsNear(park.lat, park.lng, 40)}
-      nearbyParks={parksNear(park.lat, park.lng, 20, 60).filter(p => p.id !== park.id && !isFeaturedPark(p))}
+      crews={crewsNear(park.lat, park.lng, 25).filter(c => fits(c.disciplines, wheel))}
+      nearbySpots={spotsNear(park.lat, park.lng, 40).filter(s => fits(s.disciplines, wheel))}
+      nearbyParks={parksNear(park.lat, park.lng, 20, 200).filter(p => p.id !== park.id && !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 60)}
+      wheelLabel={wheel?.lower}
+      misfit={misfit}
     />
   )
 }

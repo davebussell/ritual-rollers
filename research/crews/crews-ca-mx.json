@@ -1,0 +1,710 @@
+[
+  {
+    "name": "The Bentway Roller Skate Parties & Lessons",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners",
+      "families"
+    ],
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.63766,
+    "lng": -79.40674,
+    "coords": "spot",
+    "home_spot": "The Bentway Skate Trail, 250 Fort York Blvd (under the Gardiner Expressway)",
+    "meets": "Late summer (Aug 7 to Sept 27 in 2026): beginner lessons on Friday nights, plus free skate parties with DJs",
+    "about": "A charity-run public space under the Gardiner Expressway turns its 220 m figure-eight trail into a roller loop every late summer. First-timers can book a Friday-night lesson. The free parties put DJs, group skate demos and every level on the loop together, and rentals are on site.",
+    "links": {
+      "website": "https://thebentway.ca/"
+    },
+    "source": "https://thebentway.ca/event/roller-skate-party-2026/",
+    "active": "2026-08-07 Roller Skate Party; weekly Friday lessons through Sept 2026 (also Streets of Toronto, 2026-07-20)",
+    "confidence": "high"
+  },
+  {
+    "name": "The Melanin Skate Crew",
+    "kind": "crew",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.65348,
+    "lng": -79.38393,
+    "coords": "city",
+    "about": "A Toronto roller skating community that started in summer 2020 to look after members' physical and mental health. It centres Black, African and Caribbean skaters but has grown past 2,000 members, and runs Afro-Caribbean themed skates, workshops and lessons.",
+    "links": {
+      "instagram": "https://www.instagram.com/themelaninskatecrew/"
+    },
+    "source": "https://thebentway.ca/event/roller-skate-party-2026/",
+    "active": "2026-08-07 co-host of The Bentway Roller Skate Party",
+    "confidence": "medium"
+  },
+  {
+    "name": "BEATS + SKATES",
+    "kind": "crew",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.65348,
+    "lng": -79.38393,
+    "coords": "city",
+    "about": "A Toronto collective of roller skaters, beatmakers and street artists who put on DIY community skate activations that mix music and art-making. Follow it for pop-up skates around the city.",
+    "links": {
+      "instagram": "https://www.instagram.com/beatsandskates/"
+    },
+    "source": "https://thebentway.ca/event/roller-skate-party-2026/",
+    "active": "2026-08-07 co-host of The Bentway Roller Skate Party",
+    "confidence": "medium"
+  },
+  {
+    "name": "Babes Brigade",
+    "kind": "lessons",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "women",
+      "beginners",
+      "adults",
+      "kids"
+    ],
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.65348,
+    "lng": -79.38393,
+    "coords": "city",
+    "home_spot": "Skate Loft (indoor lessons, winter)",
+    "meets": "Indoor lessons from Nov 2: Mondays and Tuesdays at 5:30 or 6:30 pm (register by email via the site)",
+    "about": "A women-run Toronto skateboarding company, going since 2015, that teaches beginner-friendly lessons to youth and adults of any gender and has hosted women-centred meetups, contests and parties. Lessons move indoors for the winter.",
+    "links": {
+      "website": "https://www.babesbrigade.ca/"
+    },
+    "source": "https://www.babesbrigade.ca/",
+    "active": "2026-11 indoor lesson block announced on the site (starts Monday Nov 2; Nov 2 falls on a Monday in 2026; site footer (c) 2026)",
+    "confidence": "medium"
+  },
+  {
+    "name": "Stouffville BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Whitchurch-Stouffville",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.94532,
+    "lng": -79.34754,
+    "coords": "spot",
+    "home_spot": "BMX track at Bruce's Mill Conservation Area (York Region, north-east of Toronto)",
+    "about": "A BMX racing club at Bruce's Mill that BMX Canada calls one of Ontario's top racing clubs, with programs for riders at every level. It is the nearest club track for Toronto riders that we could confirm.",
+    "links": {
+      "website": "https://stouffvillebmx.ca/"
+    },
+    "source": "https://www.usabmx.com/news-and-media/6/2025-09-16/2026-BMX-Canada-National-Series?id=2059",
+    "active": "2025-09-16 announced as host of the BMX Canada Greater Toronto Nationals, Aug 7-9, 2026",
+    "confidence": "medium"
+  },
+  {
+    "name": "Tranquille à roulettes",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners"
+    ],
+    "city": "Montreal",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 45.5096,
+    "lng": -73.56493,
+    "coords": "spot",
+    "home_spot": "Esplanade Tranquille, Quartier des Spectacles (downtown)",
+    "meets": "Each fall (Sept 5 to Oct 25 in 2026), open daily; Friday DJ nights 7-10 pm; intro lessons Saturdays 10 am-noon and Wednesdays 6-8 pm",
+    "about": "A free open-air roller disco that the Quartier des Spectacles partnership sets up downtown each fall, with lights, projections and a dance-floor track. Friday nights bring local DJs. Instructors from the Montreal roller shop Lowlife lead beginner lessons twice a week, and quads and pads can be rented on site.",
+    "links": {},
+    "source": "https://www.timeout.com/montreal/news/montreal-has-a-free-open-air-roller-disco-this-falllace-up-and-hit-the-dance-floor-091426",
+    "active": "2026-09-05 to 2026-10-25 season (Time Out, 2026-09-14; RestoMontreal listing of the Quartier des Spectacles release)",
+    "confidence": "medium"
+  },
+  {
+    "name": "Club BMX Montréal",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "kids",
+      "adults",
+      "women",
+      "beginners"
+    ],
+    "city": "Montreal",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 45.68547,
+    "lng": -73.49768,
+    "coords": "spot",
+    "home_spot": "BMX track in the park of École secondaire de la Pointe-aux-Trembles, 15200 rue Sherbrooke Est",
+    "meets": "Summer season; age-group courses and local races (registration on the club site)",
+    "about": "Nonprofit club that runs the only racing BMX track on the island of Montreal, in Pointe-aux-Trembles. Summer groups run from 4-5-year-olds on run bikes to a 15+ and adult group, with a girls-only group for ages 10 and up, plus a local race series.",
+    "links": {
+      "website": "https://www.bmxmontreal.com/"
+    },
+    "source": "https://www.bmxmontreal.com/",
+    "active": "Summer 2026 registration and 2026 local race series on the club site",
+    "confidence": "high"
+  },
+  {
+    "name": "Le TAZ",
+    "kind": "lessons",
+    "disciplines": [
+      "skateboard",
+      "scooter"
+    ],
+    "audience": [
+      "kids",
+      "adults",
+      "beginners"
+    ],
+    "city": "Montreal",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 45.56074,
+    "lng": -73.63471,
+    "coords": "spot",
+    "home_spot": "Le TAZ indoor skatepark, 8931 av. Papineau (Saint-Michel)",
+    "meets": "Winter lesson blocks from mid-January; adults-only beginner class Saturdays 9-10 am",
+    "about": "Montreal's big indoor skatepark runs lesson blocks for kids on skateboards or scooters. A Saturday-morning beginners' class is for adults only and runs alongside the kids' lesson, so parents can learn at the same time. A good winter option when outdoor parks close.",
+    "links": {
+      "website": "https://www.taz.ca/"
+    },
+    "source": "https://www.taz.ca/cours/",
+    "active": "Winter 2027 lesson sessions listed for registration (site (c) 2026)",
+    "confidence": "high"
+  },
+  {
+    "name": "Rolla Skate Club",
+    "kind": "club",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "adults",
+      "beginners",
+      "kids"
+    ],
+    "city": "Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.28441,
+    "lng": -123.03977,
+    "coords": "spot",
+    "home_spot": "Rollerland building, 2901 E Hastings St (PNE grounds)",
+    "meets": "Public skate party every Saturday, 4-10 pm; adult intro classes; youth programs year-round",
+    "about": "A roller skating club and indoor rink on the PNE grounds, with classes from total beginner up, year-round youth programs, and a public skate party with a DJ every Saturday. Membership covers classes and open skate, and non-members can pay at the door for the Saturday party.",
+    "links": {
+      "website": "https://www.rollaskateclub.com/",
+      "instagram": "https://www.instagram.com/rollaskateclub/"
+    },
+    "source": "https://www.rollaskateclub.com/",
+    "active": "2026-04-15 post on the club blog (rollaskateclub.com/rolla-blog)",
+    "confidence": "high"
+  },
+  {
+    "name": "Action BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids"
+    ],
+    "city": "Surrey",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.13977,
+    "lng": -122.87343,
+    "coords": "spot",
+    "home_spot": "Track at 12600 76 Ave, behind Newton Athletic Park",
+    "meets": "April-September: Monday gate practice 6:15-8:15 pm; Thursday racing (registration 6:15 pm, racing 7 pm)",
+    "about": "A volunteer-run BMX racing club in Newton, Surrey (Metro Vancouver), offering coaching, weekly gate practice and Thursday-night races in season, including classes for strider bikes and half-track riders. Practice needs closed shoes, long pants and long sleeves.",
+    "links": {
+      "website": "https://www.actionbmx.ca/",
+      "facebook": "https://www.facebook.com/actionbmxclub"
+    },
+    "source": "https://www.actionbmx.ca/",
+    "active": "2025-07-12 hosted the BC Provincial BMX Championships (Cycling BC events archive)",
+    "confidence": "high"
+  },
+  {
+    "name": "Calgary BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "beginners"
+    ],
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 51.04561,
+    "lng": -114.05754,
+    "coords": "city",
+    "meets": "2026: Wednesday race nights from May 20 (practice 6 pm, racing 7 pm); practices Mon (new riders 6-7 pm), Tue (coached groups) and Thu (all ages 6-7 pm, open track 7:15-8:15 pm)",
+    "about": "A volunteer-run, 30-year-old BMX racing association with coached practices for complete beginners up to the race team, weekly district race nights and summer Friday Night Lights races. It is family-oriented and open to every skill level.",
+    "links": {
+      "website": "https://www.calgarybmx.com/"
+    },
+    "source": "https://www.calgarybmx.com/",
+    "active": "2026 season schedule on the site (race nights from 2026-05-20)",
+    "confidence": "high"
+  },
+  {
+    "name": "The Compound (Riders on Board)",
+    "kind": "club",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "adults",
+      "beginners",
+      "kids"
+    ],
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 51.04561,
+    "lng": -114.05754,
+    "coords": "city",
+    "home_spot": "The Compound indoor skatepark (new location)",
+    "meets": "Adults 18+: Tuesday nights in five-week blocks (Sept 2026 to Mar 2027); public drop-in sessions",
+    "about": "Calgary's indoor skate-only park, run by the youth board-sports club Riders on Board. Tuesday nights are kept for adults, from first-timers to people getting back into it, with coaches around. Kids' programs, camps and drop-in hours fill the rest of the week.",
+    "links": {
+      "website": "https://thecompoundyyc.com/",
+      "instagram": "https://www.instagram.com/thecompoundyyc/",
+      "facebook": "https://www.facebook.com/thecompoundyyc"
+    },
+    "source": "https://thecompoundyyc.com/adult-skate-program/",
+    "active": "Fall 2026 adult program from 2026-09-08 (Tuesday); 2026/27 programs open for registration",
+    "confidence": "high"
+  },
+  {
+    "name": "Edmonton Skateboarding Association: Adult Skate Night",
+    "kind": "skate-night",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "adults"
+    ],
+    "city": "Edmonton",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 53.483,
+    "lng": -113.48211,
+    "coords": "spot",
+    "home_spot": "Foam Fighters indoor skate space, 9767 45 Ave NW",
+    "meets": "Saturday nights as scheduled, 7-10 pm; pre-booking required, 20 skaters max",
+    "about": "Indoor skate nights for adults only (18+), run by the Edmonton Skateboarding Association in a small indoor space with ledges, rails, quarter pipes, a manny pad and a kicker. Numbers are capped and booked ahead, so the floor stays relaxed for people returning to skating.",
+    "links": {
+      "website": "https://edmskate.corsizio.com/"
+    },
+    "source": "https://edmskate.corsizio.com/event/69a1fab0711f80ec6fd51ae7",
+    "active": "2026-03-21 session (event registration page)",
+    "confidence": "high"
+  },
+  {
+    "name": "Edmonton BMX (YEGBMX)",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "beginners"
+    ],
+    "city": "Edmonton",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 53.50622,
+    "lng": -113.4631,
+    "coords": "spot",
+    "home_spot": "Track at 6850 88 St NW, by Argyll Park (pin is on Argyll Park)",
+    "meets": "Tuesday coached practice nights for members; Open Track drop-in days and race nights on the club schedule",
+    "about": "Edmonton's BMX racing association. Members get coached Tuesday practices and open-track rides. Newcomers can try it on an Open Track day with a one-time waiver, or come to a race night to watch and talk to members.",
+    "links": {
+      "website": "https://www.edmontonbmx.com/"
+    },
+    "source": "https://www.edmontonbmx.com/",
+    "active": "2026 club memberships and rider handbook; year-end party 2026-09-26",
+    "confidence": "high"
+  },
+  {
+    "name": "Ottawa Quad Rollerskating Club",
+    "kind": "club",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "audience": [
+      "all",
+      "adults",
+      "beginners"
+    ],
+    "city": "Ottawa",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 45.38586,
+    "lng": -75.695,
+    "coords": "spot",
+    "home_spot": "Norm Fenn Gym (Ice House), Carleton University",
+    "meets": "Most Fridays through the year (Sept-Dec 2026 season); tickets and rentals on Eventbrite",
+    "about": "A volunteer-run nonprofit that hosts indoor social roller skating to music on a large wooden gym floor most Friday evenings, plus roller parties through the year. Quads or inlines and any style are welcome. There is no instruction, so new skaters learn by watching, and rentals must be booked ahead.",
+    "links": {
+      "website": "https://www.eventbrite.ca/o/ottawa-quad-rollerskating-club-11106340959"
+    },
+    "source": "https://www.eventbrite.ca/e/social-rollerskating-ottawa-quad-session-sept-dec-2026-tickets-1999138222238",
+    "active": "Sept-Dec 2026 session on sale (first date 2026-09-18)",
+    "confidence": "high"
+  },
+  {
+    "name": "Nepean BMX",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Ottawa",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 45.26113,
+    "lng": -75.77174,
+    "coords": "spot",
+    "home_spot": "Nepean BMX track, Strandherd Drive (Barrhaven)",
+    "about": "A BMX racing club founded in 2012 on Ottawa's west side, in Barrhaven, and a regular stop on the national race series. It is the closest club track for riders in Ottawa-Gatineau.",
+    "links": {
+      "website": "https://www.nepeanbmx.com/"
+    },
+    "source": "https://www.usabmx.com/news-and-media/General/2026-05-25/BMX-CANADA-HEADS-TO-NEPEAN-BMX-for-CAPITAL-CITY-NATIONALS?id=2093",
+    "active": "2026-05-29 to 31 hosted the BMX Canada Capital City Nationals",
+    "confidence": "medium"
+  },
+  {
+    "name": "Píhtikwé Skatepark",
+    "kind": "nonprofit",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "families",
+      "beginners"
+    ],
+    "city": "Winnipeg",
+    "region": "Manitoba",
+    "country": "CA",
+    "lat": 49.89353,
+    "lng": -97.14446,
+    "coords": "spot",
+    "home_spot": "323 Portage Ave, across from Canada Life Centre",
+    "meets": "Thu-Fri: after-school session 4-6 pm, open session 6-10 pm; Sat: family session 10 am-noon, open session noon-4 pm",
+    "about": "A grassroots indoor skatepark built by skaters, parents, volunteers and local businesses; its Cree name means 'come in'. Drop-in sessions are cheap and free for Indigenous skaters, nobody is turned away for not being able to pay, and Saturday mornings are kept for families.",
+    "links": {
+      "website": "https://pitikweskatepark.com/"
+    },
+    "source": "https://pitikweskatepark.com/",
+    "active": "2026-10-10 reopened at 323 Portage Ave (CTV News Winnipeg)",
+    "confidence": "high"
+  },
+  {
+    "name": "Roller Skate Victoria",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "all",
+      "beginners",
+      "adults"
+    ],
+    "city": "Victoria",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 48.45426,
+    "lng": -123.39947,
+    "coords": "spot",
+    "home_spot": "Pearkes Recreation Centre fieldhouse, 3100 Tillicum Rd (fall to spring)",
+    "meets": "Saturday open skate 8-10 pm at Pearkes from Sept 12, 2026 (some Saturdays off; check Instagram); summer Saturdays 7-9 pm at the Q Centre",
+    "about": "Greater Victoria's roller skating school and community. It runs Saturday-night open skates indoors with rentals, a Sunday roller skate school and roller-dance coaching. A good first stop for new or returning quad skaters.",
+    "links": {
+      "website": "https://rollerskatevictoria.com/"
+    },
+    "source": "https://rollerskatevictoria.com/",
+    "active": "Fall 2026 Saturday open skate from 2026-09-12; summer series ran to 2026-08-15",
+    "confidence": "high"
+  },
+  {
+    "name": "Right to Skate",
+    "kind": "nonprofit",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "kids",
+      "women",
+      "queer",
+      "beginners"
+    ],
+    "city": "Saskatoon",
+    "region": "Saskatchewan",
+    "country": "CA",
+    "lat": 52.1318,
+    "lng": -106.66077,
+    "coords": "city",
+    "meets": "Girls-only 4-week course, usually at W.W. Ashley Park (spring); lessons, clinics and summer camps",
+    "about": "A Saskatoon nonprofit that has spent a dozen years making skateboarding accessible to youth and marginalised communities. It runs girls', Indigenous, newcomer and queer programs, lessons and camps, and a learn-to-skate clinic for women 30 and over.",
+    "links": {
+      "website": "https://www.righttoskate.com/",
+      "instagram": "https://www.instagram.com/righttoskate/",
+      "facebook": "https://www.facebook.com/RightToSkate/"
+    },
+    "source": "https://www.righttoskate.com/",
+    "active": "2026: girls course 'opens spring 2026', Golf Classic 2026 news; summer camps listed 2026-04-17 (Family Fun Saskatoon)",
+    "confidence": "high"
+  },
+  {
+    "name": "Women and Queer Skate Meetups (formerly Girls, Gays and Theys)",
+    "kind": "skate-night",
+    "disciplines": [
+      "skateboard"
+    ],
+    "audience": [
+      "women",
+      "queer",
+      "beginners",
+      "adults"
+    ],
+    "city": "Saskatoon",
+    "region": "Saskatchewan",
+    "country": "CA",
+    "lat": 52.1318,
+    "lng": -106.66077,
+    "coords": "city",
+    "meets": "Weekly, May to October",
+    "about": "Right to Skate's weekly hangout at Saskatoon skateparks for women, non-binary and two-spirit skaters, trans men and women and other 2SLGBTQIA+ people. It is unstructured and social, mostly skaters aged 20 to 40, with free loaner boards, helmets and pads.",
+    "links": {
+      "website": "https://www.righttoskate.com/queer-skateboarding",
+      "instagram": "https://www.instagram.com/righttoskate/"
+    },
+    "source": "https://www.righttoskate.com/queer-skateboarding",
+    "active": "Listed as running weekly May-Oct; the organisation is running 2026 programs (spring 2026 girls course, Golf Classic 2026)",
+    "confidence": "high"
+  },
+  {
+    "name": "13th Ave BMX Club",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Regina",
+    "region": "Saskatchewan",
+    "country": "CA",
+    "lat": 50.44797,
+    "lng": -104.61588,
+    "coords": "city",
+    "about": "Regina's BMX racing club. In 2025 the City of Regina gave it a grant for a performance and safety upgrade of its track. We found no club page we could read, so check locally for practice times.",
+    "links": {},
+    "source": "https://www.regina.ca/export/sites/Regina.ca/about-regina/grants-scholarships/.galleries/pdfs/2025-AANI-Grant-Recipients-Sport-Recreation-Stream.pdf",
+    "active": "2025 City of Regina grant ($13,500, '13th Ave BMX: Performance & Safety Enhancement Project')",
+    "confidence": "medium"
+  },
+  {
+    "name": "Kelowna Roller Nights",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "audience": [
+      "all",
+      "beginners",
+      "families"
+    ],
+    "city": "Kelowna",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.88881,
+    "lng": -119.49713,
+    "coords": "spot",
+    "home_spot": "Stuart Park, downtown Kelowna",
+    "meets": "Summer Tuesdays, 7:30-9:30 pm (July 7 to Aug 25 in 2026)",
+    "about": "Roller nights in downtown Stuart Park, part of the City of Kelowna's free summer evening events. Bring roller or inline skates and pads, or rent on site. All ages and levels are welcome.",
+    "links": {
+      "website": "https://www.kelowna.ca/"
+    },
+    "source": "https://www.kelowna.ca/node/601223",
+    "active": "2026-06-30 City of Kelowna announcement (season July 7 to Aug 25, 2026)",
+    "confidence": "high"
+  },
+  {
+    "name": "Squamish BMX Racing Club",
+    "kind": "club",
+    "disciplines": [
+      "bmx"
+    ],
+    "audience": [
+      "all",
+      "kids",
+      "adults"
+    ],
+    "city": "Squamish",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.72325,
+    "lng": -123.14297,
+    "coords": "spot",
+    "home_spot": "Squamish BMX Track",
+    "meets": "Mondays: races (register by 5 pm online or 5-5:45 pm on site); Thursdays: gate practice (half track 5:30-6:15 pm, full track 6-7:30 pm); racing moves to Sunday afternoons after Labour Day",
+    "about": "The club behind Squamish's rebuilt, near-all-weather BMX track. Everyone is welcome, from toddlers on strider bikes to adults racing locally or at nationals. It hosted the 2026 Sea to Sky Nationals and won BMX Canada's track operator award for 2025.",
+    "links": {
+      "website": "https://squamishbmx.com/",
+      "instagram": "https://www.instagram.com/squamish_bmx/",
+      "facebook": "https://www.facebook.com/sqbmx/"
+    },
+    "source": "https://squamishbmx.com/schedule/",
+    "active": "2026-06-12 to 14 hosted the Sea to Sky BMX Nationals (Tourism Squamish); 2026 practice pass on the schedule page",
+    "confidence": "high"
+  },
+  {
+    "name": "Whistler Mountain Bike Park Women's Night",
+    "kind": "lessons",
+    "disciplines": [
+      "mtb"
+    ],
+    "audience": [
+      "women",
+      "beginners",
+      "adults"
+    ],
+    "city": "Whistler",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.11266,
+    "lng": -122.95443,
+    "coords": "spot",
+    "home_spot": "Base of the Whistler Village Gondola",
+    "about": "A women's riding program in the lift-served Whistler Mountain Bike Park that has run for 20 years. Its 2025 anniversary day for members and alumni included coaching sessions, riding challenges and prizes. Check the resort for how to join the current season.",
+    "links": {
+      "website": "https://www.whistlerblackcomb.com/explore-the-resort/activities-and-events/whistler-mountain-bike-park/plan-your-ride/events/20th-anniversary-womens-nights.aspx"
+    },
+    "source": "https://www.whistlerblackcomb.com/explore-the-resort/activities-and-events/whistler-mountain-bike-park/plan-your-ride/events/20th-anniversary-womens-nights.aspx",
+    "active": "2025-09-13 20th-anniversary Women's Night event",
+    "confidence": "medium"
+  },
+  {
+    "name": "Universo Quads",
+    "kind": "lessons",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "adults",
+      "beginners"
+    ],
+    "city": "Mexico City",
+    "region": "Ciudad de México",
+    "country": "MX",
+    "lat": 19.43265,
+    "lng": -99.1332,
+    "coords": "city",
+    "meets": "Class venues and dates are posted on Instagram",
+    "about": "A Mexico City roller-dance school and community for adults of any gender, with levels from never-skated to advanced and an emphasis on safe, judgement-free spaces. It also created Rolla México, a four-day festival of group skates, workshops, battles and parties.",
+    "links": {
+      "website": "https://universoquads.com/",
+      "instagram": "https://www.instagram.com/universoquads"
+    },
+    "source": "https://universoquads.com/",
+    "active": "2026-04-09 to 12 Rolla México festival (Chilango); 2027 edition presale Oct 19-31, 2026",
+    "confidence": "high"
+  },
+  {
+    "name": "Rollers Unidos México",
+    "kind": "crew",
+    "disciplines": [
+      "inline",
+      "roller"
+    ],
+    "audience": [
+      "all"
+    ],
+    "city": "Mexico City",
+    "region": "Ciudad de México",
+    "country": "MX",
+    "lat": 19.43265,
+    "lng": -99.1332,
+    "coords": "city",
+    "about": "The skating collective that organised the 2026 Festival Nacional Roller in Mexico City. It ran four days of group skates, from a themed night ride out of Parque México to a long-distance route to Teotihuacán, with its own staff for safety and medical checks. Riders need solid braking and a steady pace.",
+    "links": {},
+    "source": "https://www.posta.com.mx/cdmx/lista-completa-de-actividades-para-patinadores-que-lleguen-a-cdmx/vl2172124",
+    "active": "2026-03-13 to 16 Festival Nacional Roller CDMX (Posta, 2026-03-03)",
+    "confidence": "medium"
+  },
+  {
+    "name": "Roller & Friends",
+    "kind": "skate-night",
+    "disciplines": [
+      "roller"
+    ],
+    "audience": [
+      "beginners",
+      "adults"
+    ],
+    "city": "Monterrey",
+    "region": "Nuevo León",
+    "country": "MX",
+    "lat": 25.6771,
+    "lng": -100.28219,
+    "coords": "spot",
+    "home_spot": "Parque Fundidora",
+    "about": "A social roller meetup at Parque Fundidora for people who often arrive alone. Each 'date' combines a beginner-friendly class from local instructors with snacks, a group dinner and time to meet other skaters. Places are limited and reserved by direct message.",
+    "links": {},
+    "source": "https://monterreysecreto.com/en/roller-and-friends-parque-fundidora-en/",
+    "active": "2026-05-11 'Roller & Friends Date 5.0' announced (Monterrey Secreto)",
+    "confidence": "medium"
+  }
+]

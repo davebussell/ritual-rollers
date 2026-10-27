@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase/client'
 import Wheel from '@/components/Wheel'
+import { WheelPicker, type WheelValue } from '@/components/WheelPicker'
 
 const LINKS = [
   { href: '/spots', label: 'Spots' },
@@ -15,7 +16,7 @@ const LINKS = [
   { href: '/riders', label: 'Riders' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ wheel }: { wheel: WheelValue | null }) {
   const [user, setUser] = useState<SupaUser | null>(null)
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
@@ -40,10 +41,14 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-asphalt text-flyer">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Ritual Rollers home">
-          <Wheel size={30} />
-          <span className="font-display text-[17px] font-semibold tracking-tight sm:text-lg">Ritual Rollers</span>
-        </Link>
+        <div className="flex min-w-0 items-center gap-3 lg:gap-5">
+          <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Ritual Rollers home">
+            <Wheel size={30} />
+            <span className={`font-display text-[17px] font-semibold tracking-tight sm:text-lg ${wheel ? 'hidden min-[420px]:inline' : ''}`}>Ritual Rollers</span>
+          </Link>
+          {/* What you ride: on phones only once picked (the bar under the header asks first) */}
+          <div className={wheel ? '' : 'hidden sm:block'}><WheelPicker current={wheel} /></div>
+        </div>
 
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
           {LINKS.map(l => (
@@ -79,6 +84,7 @@ export default function Navbar() {
             ))}
             <li><Link href={user ? '/me' : '/auth/login'} className="block py-3 text-lg font-semibold text-flyer/80">{user ? 'Your profile' : 'Sign in'}</Link></li>
           </ul>
+          <div className="mt-3"><WheelPicker current={wheel} onDark={false} wide /></div>
           <Link href="/sessions/new" className="btn btn-curb mt-3 w-full">Post a session</Link>
         </nav>
       )}

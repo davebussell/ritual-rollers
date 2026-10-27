@@ -21,6 +21,11 @@ const km = (a, b) => { const r = Math.PI / 180, dl = (b.lat - a.lat) * r, dg = (
 const clean = s => String(s ?? '').replace(/\S+@\S+\.\S+/g, '').replace(/\+?\d[\d\s().-]{7,}\d/g, '').replace(/\s{2,}/g, ' ').trim()
 const isUrl = u => typeof u === 'string' && /^https?:\/\/[^\s]+$/.test(u)
 
+// Groups a research file suggested that we don't list, keyed by normalised name, with the reason
+const EXCLUDE = new Map([
+  ['rollers-unidos-mexico', 'only evidence is organising one national festival; no sign of regular group skates'],
+])
+
 const cities = JSON.parse(readFileSync('data/cities.json', 'utf8'))
 const out = []
 const dropped = []
@@ -33,6 +38,7 @@ for (const file of files) {
     const country = String(raw.country ?? '').toUpperCase()
     const lat = Number(raw.lat), lng = Number(raw.lng)
     if (!name) { fail('no name'); continue }
+    if (EXCLUDE.has(norm(name))) { fail(EXCLUDE.get(norm(name))); continue }
     if (!BOX[country]) { fail(`country ${country}`); continue }
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) { fail('no coordinates'); continue }
     const [s, n, w, e] = BOX[country]

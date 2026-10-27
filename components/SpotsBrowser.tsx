@@ -14,7 +14,7 @@ const PinsMap = dynamic(() => import('@/components/PinsMap'), { ssr: false, load
 
 const SELECT = 'field !w-auto min-w-0 !rounded-full !py-2 !text-[15px] font-semibold'
 
-export default function SpotsBrowser() {
+export default function SpotsBrowser({ wheelDisciplines }: { wheelDisciplines?: string[] }) {
   const router = useRouter()
   const params = useSearchParams()
   const pick = <T extends string>(key: string, allowed: readonly T[]): T | null => {
@@ -39,11 +39,16 @@ export default function SpotsBrowser() {
     router.replace(`/spots?${q.toString()}`, { scroll: false })
   }
 
+  // The wheel picked in the header narrows everything first
   const spots = useMemo(
-    () => filterSpots({ group, kind, ride, country, travelRegion: region, style, skill, indoor }),
-    [group, kind, ride, country, region, style, skill, indoor],
+    () => filterSpots({ group, kind, ride, country, travelRegion: region, style, skill, indoor })
+      .filter(s => !wheelDisciplines || s.disciplines.some(d => wheelDisciplines.includes(d))),
+    [group, kind, ride, country, region, style, skill, indoor, wheelDisciplines],
   )
-  const kindOptions = group ? KIND_GROUPS.find(g => g.id === group)!.kinds : KINDS
+  const present = useMemo(() => new Set(filterSpots({}).filter(s => !wheelDisciplines || s.disciplines.some(d => wheelDisciplines.includes(d))).map(s => s.kind)), [wheelDisciplines])
+  const kindOptions = (group ? KIND_GROUPS.find(g => g.id === group)!.kinds : KINDS).filter(k => present.has(k))
+  const rideOptions = DISCIPLINES.filter(d => !wheelDisciplines || wheelDisciplines.includes(d.id))
+  const groups = KIND_GROUPS.filter(g => g.kinds.some(k => present.has(k)))
   const pins = useMemo(() => spots.map(s => ({
     id: s.slug, lat: s.lat, lng: s.lng, title: s.name, sub: `${KIND_META[s.kind].label} in ${s.city}`,
     href: `/spots/${s.slug}`, linkLabel: 'See the spot', color: KIND_META[s.kind].color, big: true,
@@ -52,9 +57,9 @@ export default function SpotsBrowser() {
   return (
     <div>
       <div className="flex flex-wrap gap-2" role="group" aria-label="Kind of spot">
-        {([null, 'skate', 'bike'] as const).map(g => (
+        {groups.length > 1 && ([null, ...groups.map(g => g.id)] as const).map(g => (
           <button key={g ?? 'all'} type="button" onClick={() => set('group', g)} aria-pressed={group === g} className="chip !px-4 !py-2 !text-[15px]">
-            {g === null ? 'Everything' : KIND_GROUPS.find(x => x.id === g)!.label}
+            {g === null ? 'Every kind' : KIND_GROUPS.find(x => x.id === g)!.label}
           </button>
         ))}
       </div>
@@ -65,8 +70,8 @@ export default function SpotsBrowser() {
           {kindOptions.map(k => <option key={k} value={k}>{KIND_META[k].plural}</option>)}
         </select>
         <select aria-label="What you ride" value={ride ?? ''} onChange={e => set('ride', e.target.value || null)} className={SELECT}>
-          <option value="">Anything on wheels</option>
-          {DISCIPLINES.map(d => <option key={d.id} value={d.id}>{d.label}</option>)}
+          <option value="">{wheelDisciplines ? 'Any of these' : 'Anything on wheels'}</option>
+          {rideOptions.map(d => <option key={d.id} value={d.id}>{d.label}</option>)}
         </select>
         <select aria-label="Region" value={region ?? ''} onChange={e => set('region', e.target.value || null)} className={SELECT}>
           <option value="">All regions</option>

@@ -9,6 +9,8 @@ import { nearestCity } from '@/lib/cities'
 import { upcomingSessions } from '@/lib/sessions'
 import { ridersFor } from '@/lib/riders'
 import { KIND_META, FEATURE_LABEL } from '@/lib/sports'
+import { getWheel } from '@/lib/wheel-server'
+import { fits, parkFits } from '@/lib/wheels'
 
 export const dynamic = 'force-dynamic'
 
@@ -38,7 +40,10 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
     notFound()
   }
   const hub = nearestCity(spot.lat, spot.lng)
-  const [sessions, riders] = await Promise.all([upcomingSessions({ spot: slug, limit: 8 }), ridersFor({ spot: slug }, 6)])
+  const { wheel } = await getWheel()
+  const disciplines = wheel?.disciplines
+  const [sessions, riders] = await Promise.all([upcomingSessions({ spot: slug, disciplines, limit: 8 }), ridersFor({ spot: slug, disciplines }, 6)])
+  const misfit = wheel && !fits(spot.disciplines, wheel) ? `This ${KIND_META[spot.kind].label.toLowerCase()} isn't one for ${wheel.lower}.` : undefined
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -75,9 +80,11 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
         postHref={`/sessions/new?spot=${slug}`}
         sessions={sessions}
         riders={riders}
-        crews={crewsNear(spot.lat, spot.lng, 25)}
-        nearbySpots={spotsNear(spot.lat, spot.lng, 40, slug)}
-        nearbyParks={parksNear(spot.lat, spot.lng, 20, 60).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05)}
+        crews={crewsNear(spot.lat, spot.lng, 25).filter(c => fits(c.disciplines, wheel))}
+        nearbySpots={spotsNear(spot.lat, spot.lng, 40, slug).filter(s => fits(s.disciplines, wheel))}
+        nearbyParks={parksNear(spot.lat, spot.lng, 20, 200).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05 && parkFits(p.kind, wheel)).slice(0, 60)}
+        wheelLabel={wheel?.lower}
+        misfit={misfit}
       />
     </>
   )

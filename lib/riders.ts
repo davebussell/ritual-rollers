@@ -14,13 +14,16 @@ function toCard(p: Partial<Profile>): RiderCard {
   }
 }
 
-export async function realRiders(filter: { city?: string; spot?: string; discipline?: string } = {}): Promise<RiderCard[]> {
+type RiderFilter = { city?: string; spot?: string; discipline?: string; disciplines?: string[] }
+
+export async function realRiders(filter: RiderFilter = {}): Promise<RiderCard[]> {
   try {
     const supabase = await createClient()
     let q = supabase.from('profiles').select(COLUMNS).eq('open_to_ride', true).not('age_confirmed_at', 'is', null).limit(100)
     if (filter.city) q = q.eq('home_city', filter.city)
     if (filter.spot) q = q.contains('home_spots', [filter.spot])
     if (filter.discipline) q = q.contains('disciplines', [filter.discipline])
+    if (filter.disciplines) q = q.overlaps('disciplines', filter.disciplines)
     const { data, error } = await q
     if (error || !data) return []
     return (data as Partial<Profile>[]).map(toCard)
@@ -29,7 +32,7 @@ export async function realRiders(filter: { city?: string; spot?: string; discipl
   }
 }
 
-export async function ridersFor(filter: { city?: string; spot?: string; discipline?: string } = {}, max = 12): Promise<RiderCard[]> {
+export async function ridersFor(filter: RiderFilter = {}, max = 12): Promise<RiderCard[]> {
   const real = await realRiders(filter)
   const samples = sampleRiders(filter).filter(r => !filter.discipline || r.disciplines.includes(filter.discipline))
   return withSamples(real, samples, 3, max)

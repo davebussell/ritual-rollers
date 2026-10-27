@@ -6,6 +6,7 @@ import { sampleSessions, sampleRiders, withSamples, isSampleUsername } from '../
 import { CITIES, POPULAR, cityBySlug, nearestCity } from '../lib/cities'
 import { CREWS } from '../lib/crews'
 import { SPOTS, spotBySlug } from '../lib/spots-index'
+import { WHEELS, fits, parkFits, wheelById } from '../lib/wheels'
 
 test('clock formats wall-clock times', () => {
   assert.equal(clock('2026-11-01T10:00'), '10 am')
@@ -48,7 +49,7 @@ test('sample sessions are upcoming, at real spots, in real cities', () => {
     assert.ok(s.sample)
     assert.ok(Date.parse(s.starts_at) > now, `${s.id} is in the past`)
     assert.ok(Date.parse(s.starts_at) < now + 8 * 86400_000, `${s.id} is more than a week out`)
-    assert.ok(s.spot_slug && spotBySlug(s.spot_slug), `${s.id} has no spot`)
+    assert.ok((s.spot_slug && spotBySlug(s.spot_slug)) || s.park_id, `${s.id} has no spot`)
     assert.ok(s.city && cityBySlug(s.city), `${s.id} has no city`)
     assert.ok(s.disciplines.length > 0)
     assert.ok(s.riders_count >= s.riders.length + 1)
@@ -60,7 +61,11 @@ test('sample riders live in real cities, at real spots', () => {
   assert.ok(riders.length >= 20)
   for (const r of riders) {
     assert.ok(r.home_city && cityBySlug(r.home_city), `${r.username} has no city`)
-    assert.equal(r.home_spots.length, 1, `${r.username} has no home spot`)
+    assert.ok(r.home_spots.length <= 1)
+    for (const slug of r.home_spots) {
+      const spot = spotBySlug(slug)
+      assert.ok(spot && spot.disciplines.some(d => r.disciplines.includes(d)), `${r.username}'s home spot doesn't suit what they ride`)
+    }
     assert.ok(isSampleUsername(r.username))
   }
 })
@@ -83,4 +88,23 @@ test('crews are clean and placed', () => {
 
 test('every featured spot has a source and sits in its country', () => {
   for (const s of SPOTS) assert.ok(/^https?:\/\//.test(s.source), `${s.slug} has no source`)
+})
+
+test('every wheel gets a populated site', () => {
+  const now = Date.parse('2026-10-27T15:00:00Z')
+  for (const w of WHEELS) {
+    assert.ok(SPOTS.filter(s => fits(s.disciplines, w)).length >= 40, `${w.id}: too few spots`)
+    assert.ok(sampleSessions(now).filter(s => fits(s.disciplines, w)).length >= 10, `${w.id}: too few sample sessions`)
+    assert.ok(sampleRiders({ disciplines: w.disciplines }).length >= 10, `${w.id}: too few sample riders`)
+    assert.ok(CREWS.filter(c => fits(c.disciplines, w)).length >= 10, `${w.id}: too few crews`)
+  }
+})
+
+test('wheel filters', () => {
+  assert.equal(wheelById('bike')?.label, 'Bike')
+  assert.equal(wheelById('nope'), null)
+  assert.ok(fits(['skateboard'], null))
+  assert.ok(fits(['roller', 'skateboard'], wheelById('skates')))
+  assert.ok(!fits(['bmx'], wheelById('board')))
+  assert.ok(parkFits('bmx', wheelById('bike')) && !parkFits('bmx', wheelById('skates')))
 })

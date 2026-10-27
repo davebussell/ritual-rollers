@@ -11,6 +11,8 @@ import { SPOTS } from '@/lib/spots-index'
 import { PARKS } from '@/lib/parks'
 import { KIND_GROUPS, KIND_META } from '@/lib/sports'
 import type { RideSession } from '@/lib/types'
+import { getWheel } from '@/lib/wheel-server'
+import { fits, parkFits, type Wheel } from '@/lib/wheels'
 
 export const dynamic = 'force-dynamic'
 
@@ -21,19 +23,24 @@ function spread<T>(items: T[], key: (t: T) => string, n: number): T[] {
   return [...first, ...rest].slice(0, n)
 }
 
-function crewMix(n: number): Crew[] {
-  const byAudience = [...CREWS].sort((a, b) => Number(b.audience.some(x => x !== 'all')) - Number(a.audience.some(x => x !== 'all')))
+function crewMix(n: number, wheel: Wheel | null): Crew[] {
+  const byAudience = CREWS.filter(c => fits(c.disciplines, wheel)).sort((a, b) => Number(b.audience.some(x => x !== 'all')) - Number(a.audience.some(x => x !== 'all')))
   return spread(byAudience, c => c.hub ?? c.city, n)
 }
 
 export default async function Home() {
-  const [sessions, riders] = await Promise.all([upcomingSessions({ limit: 40 }), ridersFor({}, 30)])
+  const { wheel } = await getWheel()
+  const disciplines = wheel?.disciplines
+  const [sessions, riders] = await Promise.all([upcomingSessions({ limit: 40, disciplines }), ridersFor({ disciplines }, 30)])
   // Range over repetition: different cities and different kinds of session
   const flyers = spread(spread(sessions, (s: RideSession) => s.title, 40), (s: RideSession) => s.city ?? s.id, 3)
   const rest = sessions.filter(s => !flyers.includes(s))
   const list = spread(spread(rest, (s: RideSession) => s.title, 40), (s: RideSession) => s.city ?? s.id, 6)
     .sort((a, b) => a.starts_at.localeCompare(b.starts_at))
-  const crews = crewMix(6)
+  const crews = crewMix(6, wheel)
+  const spots = SPOTS.filter(s => fits(s.disciplines, wheel))
+  const parks = PARKS.filter(p => parkFits(p.kind, wheel))
+  const kinds = KIND_GROUPS.flatMap(g => g.kinds).filter(k => spots.some(s => s.kind === k))
   const people = spread(riders, r => r.home_city ?? r.username, 4)
   const cityOptions = CITIES.map(c => ({ slug: c.slug, name: c.name, region: c.region }))
   const popular = POPULAR.map(cityBySlug).filter(Boolean)
@@ -43,10 +50,11 @@ export default async function Home() {
       {/* Hero: where you ride, and who's going */}
       <section className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 pb-12 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-16">
         <div className="max-w-xl">
-          <h1 className="h-display text-[40px] sm:text-[56px]">Find people to ride with</h1>
+          <h1 className="h-display text-[40px] sm:text-[56px]">Find people to {wheel?.verb ?? 'ride'} with</h1>
           <p className="mt-5 text-lg leading-relaxed text-asphalt-2 sm:text-xl">
-            Spots, sessions and crews for skateboards, roller and inline skates, scooters, BMX and mountain bikes,
-            across Canada, the US and Mexico.
+            {wheel
+              ? `Spots, sessions and crews for ${wheel.lower}, across Canada, the US and Mexico.`
+              : 'Spots, sessions and crews for skateboards, roller and inline skates, scooters, BMX and mountain bikes, across Canada, the US and Mexico.'}
           </p>
           <div className="mt-8">
             <CitySearch cities={cityOptions} big />
@@ -118,11 +126,11 @@ export default async function Home() {
         {/* Spots */}
         <section>
           <SectionHead title="Spots" href="/spots" linkLabel="Browse spots">
-            {SPOTS.length} researched spots worth the trip, plus {PARKS.length.toLocaleString('en-US')} skateparks, pump tracks, BMX tracks and bike
-            parks from OpenStreetMap.
+            {spots.length} researched spots worth the trip, plus {parks.length.toLocaleString('en-US')}{' '}
+            {wheel?.id === 'bike' ? 'pump tracks, BMX tracks and bike parks' : wheel ? 'skateparks and pump tracks' : 'skateparks, pump tracks, BMX tracks and bike parks'} from OpenStreetMap.
           </SectionHead>
           <div className="flex flex-wrap gap-2">
-            {KIND_GROUPS.flatMap(g => g.kinds).map(k => (
+            {kinds.map(k => (
               <Link key={k} href={`/spots?kind=${k}`} className="chip">
                 <span aria-hidden="true" className="h-2.5 w-2.5 rounded-[3px]" style={{ background: KIND_META[k].color }} />
                 {KIND_META[k].plural}
