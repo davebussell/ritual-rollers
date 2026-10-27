@@ -1,13 +1,13 @@
 import type { NextConfig } from 'next'
 
 // Old addresses from the conditions site (until 2026-10-27) and the outdoor-trips site before it.
+// /ride used to redirect to /spots; since 2026-10-27 it's the 3D ride index.
 const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: '/scout', destination: '/cities', permanent: true },
       { source: '/scout/:slug', destination: '/near/:slug', permanent: true },
       { source: '/finder', destination: '/spots', permanent: true },
-      { source: '/ride', destination: '/spots', permanent: true },
       { source: '/crew', destination: '/sessions', permanent: true },
       { source: '/explore', destination: '/sessions', permanent: true },
       { source: '/feed', destination: '/sessions', permanent: true },
