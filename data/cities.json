@@ -1280,6 +1280,16 @@
   "spots": 1
  },
  {
+  "name": "Fort Worth",
+  "region": "Texas",
+  "country": "US",
+  "lat": 32.7532,
+  "lng": -97.3327,
+  "metro": true,
+  "slug": "fort-worth",
+  "spots": 0
+ },
+ {
   "name": "Fresno",
   "region": "California",
   "country": "US",

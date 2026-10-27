@@ -47,7 +47,8 @@ for (const file of files) {
     if (!isUrl(raw.source)) { fail('no source URL'); continue }
     const links = {}
     for (const k of LINKS) if (isUrl(raw.links?.[k])) links[k] = raw.links[k]
-    if (!Object.keys(links).length) { fail('no public link'); continue }
+    // A group with no page of its own (a city-run skate night, say): its event listing is where to find it
+    if (!Object.keys(links).length) links.website = raw.source
     const city = clean(raw.city)
     const key = `${norm(name)}|${norm(city)}`
     if (out.some(c => c._key === key)) { fail('duplicate'); continue }

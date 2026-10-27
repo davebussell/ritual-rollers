@@ -474,5 +474,9 @@
  "Toluca|México|MX": {
   "lat": 19.2925,
   "lng": -99.6569
+ },
+ "Fort Worth|Texas|US": {
+  "lat": 32.7532,
+  "lng": -97.3327
  }
 }

@@ -23,7 +23,7 @@ const METROS = [
   // United States
   ['New York', 'New York', 'US'], ['Los Angeles', 'California', 'US'], ['Chicago', 'Illinois', 'US'], ['Houston', 'Texas', 'US'],
   ['Phoenix', 'Arizona', 'US'], ['Philadelphia', 'Pennsylvania', 'US'], ['San Antonio', 'Texas', 'US'], ['San Diego', 'California', 'US'],
-  ['Dallas', 'Texas', 'US'], ['San Jose', 'California', 'US'], ['Austin', 'Texas', 'US'], ['Jacksonville', 'Florida', 'US'],
+  ['Dallas', 'Texas', 'US'], ['Fort Worth', 'Texas', 'US'], ['San Jose', 'California', 'US'], ['Austin', 'Texas', 'US'], ['Jacksonville', 'Florida', 'US'],
   ['Columbus', 'Ohio', 'US'], ['Charlotte', 'North Carolina', 'US'], ['Indianapolis', 'Indiana', 'US'], ['San Francisco', 'California', 'US'],
   ['Oakland', 'California', 'US'], ['Seattle', 'Washington', 'US'], ['Denver', 'Colorado', 'US'], ['Washington', 'District of Columbia', 'US'],
   ['Nashville', 'Tennessee', 'US'], ['Oklahoma City', 'Oklahoma', 'US'], ['El Paso', 'Texas', 'US'], ['Boston', 'Massachusetts', 'US'],
