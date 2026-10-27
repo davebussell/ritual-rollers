@@ -77,6 +77,12 @@ export function osmUrl(id: string): string {
   return `https://www.openstreetmap.org/${type}/${id.slice(1)}`
 }
 
+// OpenStreetMap's editor, opened on this feature
+export function osmEditUrl(id: string): string {
+  const type = id[0] === 'n' ? 'node' : id[0] === 'w' ? 'way' : 'relation'
+  return `https://www.openstreetmap.org/edit?${type}=${id.slice(1)}`
+}
+
 export function parkCounts(): Record<ParkKind, number> & { total: number } {
   const c = { skate: 0, pump: 0, bmx: 0, bike: 0, total: PARKS.length }
   for (const p of PARKS) c[p.kind] += 1

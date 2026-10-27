@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import SpotView from '@/components/SpotView'
-import { parkById, parksNear, parkName, PARK_KIND_META, osmUrl } from '@/lib/parks'
+import { parkById, parksNear, parkName, PARK_KIND_META, osmUrl, osmEditUrl } from '@/lib/parks'
+import { linesFor, rideable } from '@/lib/lines'
+import ParkMapSection from '@/components/ParkMapSection'
 import { spotsNear, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
 import { crewsNear } from '@/lib/crews'
 import { nearestCity } from '@/lib/cities'
@@ -72,6 +74,15 @@ export default async function ParkPage({ params }: { params: Promise<{ id: strin
       nearbyParks={parksNear(park.lat, park.lng, 20, 200).filter(p => p.id !== park.id && !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 60)}
       wheelLabel={wheel?.lower}
       misfit={misfit}
+      parkMap={
+        <ParkMapSection
+          parkId={park.id} parkKind={park.kind} color={PARK_KIND_META[park.kind].color} name={parkName(park)}
+          entry={linesFor(park.id)}
+          rideHref={rideable(park.id) ? `/ride/${park.id}` : null}
+          rideLabel={wheel && park.kind !== 'pump' && wheel.id !== 'bike' ? 'Ride it in 3D (on a bike)' : undefined}
+          editUrl={osmEditUrl(park.id)}
+        />
+      }
     />
   )
 }

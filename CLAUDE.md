@@ -16,7 +16,10 @@ site live in `davebussell/portfolio-hq` — read its CLAUDE.md too, then `README
 Spots to ride and people to ride with: anything on wheels, ridden hard (skateboards, roller and inline skates, scooters,
 BMX and mountain bikes), across Canada, the US and Mexico. Spots, cities, sessions (I'm in, comments), crews and riders.
 Dave dropped conditions entirely on 2026-10-27: **no weather, temperature or "is it dry" features** — don't bring them
-back unless he asks. Nothing motorized, no trail networks or road routes.
+back unless he asks. Nothing motorized, no road routes, and no trail networks outside the parks: trails are mapped
+inside bike parks, pump tracks and BMX tracks only (trail maps and the 3D ride, Dave 2026-10-27; README "Trail maps").
+- The 3D ride must say what's generated (trees; rollers, berms and start hills on tracks) and credit OpenStreetMap and
+  the elevation tiles. Keep `lib/ride/physics.ts` pure and tested.
 - People rules (Dave, 2026-10-27): accounts 16+ (anyone can browse); contact is public sessions only, no private
   messages; riders show their city and chosen spots, never where they live; rider pages are noindex.
 - Wheel picker (Dave, 2026-10-27): Board / Skates / Bike in the header; the whole site filters to the pick (cookie

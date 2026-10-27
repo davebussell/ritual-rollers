@@ -3,7 +3,9 @@ import { notFound, permanentRedirect } from 'next/navigation'
 import legacy from '@/data/legacy-spot-slugs.json'
 import SpotView from '@/components/SpotView'
 import { spotBySlug, spotsNear, isFeaturedPark, COUNTRY_LABEL } from '@/lib/spots-index'
-import { parksNear } from '@/lib/parks'
+import { parksNear, parkById, PARK_KIND_META, osmEditUrl } from '@/lib/parks'
+import { linesFor, rideable } from '@/lib/lines'
+import ParkMapSection from '@/components/ParkMapSection'
 import { crewsNear } from '@/lib/crews'
 import { nearestCity } from '@/lib/cities'
 import { upcomingSessions } from '@/lib/sessions'
@@ -44,6 +46,9 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
   const disciplines = wheel?.disciplines
   const [sessions, riders] = await Promise.all([upcomingSessions({ spot: slug, disciplines, limit: 8 }), ridersFor({ spot: slug, disciplines }, 6)])
   const misfit = wheel && !fits(spot.disciplines, wheel) ? `This ${KIND_META[spot.kind].label.toLowerCase()} isn't one for ${wheel.lower}.` : undefined
+  // the mapped park behind a featured spot: its outline and lines
+  const park = spot.osm ? parkById(spot.osm) : undefined
+  const lines = park ? linesFor(park.id) : null
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -85,6 +90,15 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
         nearbyParks={parksNear(spot.lat, spot.lng, 20, 200).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05 && parkFits(p.kind, wheel)).slice(0, 60)}
         wheelLabel={wheel?.lower}
         misfit={misfit}
+        parkMap={park && lines ? (
+          <ParkMapSection
+            parkId={park.id} parkKind={park.kind} color={PARK_KIND_META[park.kind].color} name={spot.name}
+            entry={lines}
+            rideHref={rideable(park.id) ? `/ride/${park.id}` : null}
+            rideLabel={wheel && park.kind !== 'pump' && wheel.id !== 'bike' ? 'Ride it in 3D (on a bike)' : undefined}
+            editUrl={osmEditUrl(park.id)}
+          />
+        ) : undefined}
       />
     </>
   )

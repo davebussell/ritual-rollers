@@ -64,6 +64,11 @@ export function spotBySlug(slug: string): IndexedSpot | undefined {
   return SPOTS.find(s => s.slug === slug)
 }
 
+// The featured spot that links to an OSM park, if any
+export function spotByOsm(id: string): IndexedSpot | undefined {
+  return SPOTS.find(s => s.osm === id)
+}
+
 // OSM parks that are already a featured spot: the "every mapped spot" lists leave these out, since the
 // featured list above them shows the same place. A park counts when a featured spot links to it, or sits on
 // it (within ~60 m: many researched spots took their coordinates from OSM without the name matching).

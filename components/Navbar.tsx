@@ -11,6 +11,7 @@ import { WheelPicker, type WheelValue } from '@/components/WheelPicker'
 
 const LINKS = [
   { href: '/spots', label: 'Spots' },
+  { href: '/ride', label: 'Ride 3D' },
   { href: '/sessions', label: 'Sessions' },
   { href: '/crews', label: 'Crews' },
   { href: '/riders', label: 'Riders' },
