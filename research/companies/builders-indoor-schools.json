@@ -1,0 +1,1143 @@
+[
+  {
+    "name": "New Line Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Concrete skateparks, pump tracks",
+    "city": "Fort Langley",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.16913,
+    "lng": -122.57936,
+    "coords": "city",
+    "about": "Plans, designs and builds concrete skateparks and pump tracks. Head office is in Fort Langley, with teams in Calgary, Toronto, San Diego and Edgewater, Florida.",
+    "links": {
+      "website": "https://www.newlineskateparks.com",
+      "instagram": "https://www.instagram.com/newlineskateparks"
+    },
+    "source": "https://www.newlineskateparks.com/contact-our-team/",
+    "active": "2026-07 Pompano Beach, FL skatepark opening (Sun Sentinel); 2025-10 project post on Coaldale, AB",
+    "confidence": "high"
+  },
+  {
+    "name": "Spohn Ranch",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Skateparks, pump tracks, bike parks",
+    "city": "Los Angeles",
+    "region": "California",
+    "country": "US",
+    "lat": 34.05369,
+    "lng": -118.24277,
+    "coords": "city",
+    "about": "Los Angeles design-build firm behind concrete skateparks, skate plazas, pump tracks and skateable art in cities across the US.",
+    "links": {
+      "website": "https://www.spohnranch.com",
+      "instagram": "https://instagram.com/spohnranch/"
+    },
+    "source": "https://www.spohnranch.com/",
+    "active": "2026-04 South Haymarket Skatepark open house, City of Lincoln, NE; 2026-07 Tonopah, NV park project (Pahrump Valley Times)",
+    "confidence": "high"
+  },
+  {
+    "name": "Grindline Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Concrete skateparks",
+    "city": "Seattle",
+    "region": "Washington",
+    "country": "US",
+    "lat": 47.60383,
+    "lng": -122.33006,
+    "coords": "city",
+    "about": "Seattle design-build company with more than 350 concrete skatepark projects, many of them in the Pacific Northwest.",
+    "links": {
+      "website": "https://www.grindline.com",
+      "instagram": "https://www.instagram.com/grindlineskateparks/"
+    },
+    "source": "https://www.grindline.com/",
+    "active": "2026-03 Grass Valley, CA skatepark opening (TheUnion.com); 2026-10 Taku Lake Skatepark project post",
+    "confidence": "high"
+  },
+  {
+    "name": "Dreamland Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Concrete skateparks",
+    "city": "Lincoln City",
+    "region": "Oregon",
+    "country": "US",
+    "lat": 44.96179,
+    "lng": -124.01595,
+    "coords": "city",
+    "about": "Skater-run crew from the Oregon coast that designs and pours concrete skateparks, from Oregon to Hawaii and Mexico.",
+    "links": {
+      "website": "https://www.dreamlandskateparks.com",
+      "instagram": "https://instagram.com/dreamlandskateparks"
+    },
+    "source": "https://www.dreamlandskateparks.com/contact-us",
+    "active": "2026-04 Hanapepe, Kauai skatepark project kickoff (Kauai Now); 2025-09 Driggs, ID skatepark expansion (TransWorld SKATEboarding)",
+    "confidence": "high"
+  },
+  {
+    "name": "Evergreen Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Concrete skateparks, pump tracks",
+    "city": "Portland",
+    "region": "Oregon",
+    "country": "US",
+    "lat": 45.52025,
+    "lng": -122.67419,
+    "coords": "city",
+    "about": "Portland company that designs and builds concrete skateparks and pump tracks, and handles repair work on existing parks.",
+    "links": {
+      "website": "https://www.evergreenskateparks.com",
+      "instagram": "https://www.instagram.com/evergreenskateparks/"
+    },
+    "source": "https://www.evergreenskateparks.com/connect",
+    "active": "2026-07 Philipsburg, MT skatepark grand opening (NBC Montana)",
+    "confidence": "high"
+  },
+  {
+    "name": "American Ramp Company",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx",
+      "mtb"
+    ],
+    "what": "Skateparks, pump tracks, bike parks",
+    "city": "Joplin",
+    "region": "Missouri",
+    "country": "US",
+    "lat": 37.08418,
+    "lng": -94.51334,
+    "coords": "city",
+    "about": "Joplin manufacturer and builder of above-ground and concrete skateparks, modular and asphalt pump tracks, bike parks and bicycle playgrounds.",
+    "links": {
+      "website": "https://americanrampcompany.com"
+    },
+    "source": "https://americanrampcompany.com/",
+    "active": "2026-07 Jensen Park pump track opening, Arlington, WA (Lynnwood Times); 2026-10 project survey pages (Farr West, UT; Elko, NV)",
+    "confidence": "high"
+  },
+  {
+    "name": "Canadian Ramp Company",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx",
+      "mtb"
+    ],
+    "what": "Skateparks, pump tracks, bike parks",
+    "city": "Innerkip",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.21026,
+    "lng": -80.69669,
+    "coords": "city",
+    "about": "Ontario builder of above-ground and concrete skateparks, modular and Velosolutions asphalt pump tracks and bike parks across Canada.",
+    "links": {
+      "website": "https://canadianrampcompany.ca"
+    },
+    "source": "https://canadianrampcompany.ca/",
+    "active": "2026-06 Charlottetown, PEI project post; 2026-10 Oliver, BC pump track (Castanet)",
+    "confidence": "high"
+  },
+  {
+    "name": "California Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Skatepark design and construction",
+    "city": "Upland",
+    "region": "California",
+    "country": "US",
+    "lat": 34.09751,
+    "lng": -117.64839,
+    "coords": "city",
+    "about": "Upland-based design-build company with skateparks across the US and abroad, from city parks to training facilities.",
+    "links": {
+      "website": "https://www.caskateparks.com"
+    },
+    "source": "https://www.caskateparks.com/",
+    "active": "2026-05 Chattanooga skate park redesign (Chattanooga Times Free Press); 2025-04 Malibu skate park (Los Angeles Daily News)",
+    "confidence": "high"
+  },
+  {
+    "name": "Team Pain Skate Parks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Skateparks, wheel parks",
+    "city": "Winter Springs",
+    "region": "Florida",
+    "country": "US",
+    "lat": 28.69873,
+    "lng": -81.30552,
+    "coords": "city",
+    "about": "Central Florida designer and builder of concrete skateparks and wheel parks around the US.",
+    "links": {
+      "website": "https://teampain.com"
+    },
+    "source": "https://teampain.com/contact/",
+    "active": "2025-07 Casselberry, FL wheel park grand opening (company post)",
+    "confidence": "high"
+  },
+  {
+    "name": "Pillar Design Studios",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "scooter",
+      "bmx",
+      "roller",
+      "inline"
+    ],
+    "what": "Skatepark and action-sports park design-build",
+    "city": "Tempe",
+    "region": "Arizona",
+    "country": "US",
+    "lat": 33.42551,
+    "lng": -111.94002,
+    "coords": "city",
+    "about": "Arizona firm founded in 2006 that plans, designs and builds skateparks and BMX facilities for towns and cities.",
+    "links": {
+      "website": "https://www.pillardesignstudios.com"
+    },
+    "source": "https://www.pillardesignstudios.com/about",
+    "active": "2026-08 Potsdam, NY skatepark under construction (North Country Now); 2026-09 Starkville, MS skate park input session (Commercial Dispatch)",
+    "confidence": "high"
+  },
+  {
+    "name": "5th Pocket Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Skatepark design and construction",
+    "city": "Langhorne",
+    "region": "Pennsylvania",
+    "country": "US",
+    "lat": 40.17618,
+    "lng": -74.92025,
+    "coords": "city",
+    "about": "Skater-owned benefit corporation near Philadelphia offering skatepark design consultation, construction management and construction.",
+    "links": {
+      "website": "https://www.5thpocketskateparks.com"
+    },
+    "source": "https://www.5thpocketskateparks.com/about",
+    "active": "2026-07 Summerville, SC skatepark redesign (Post and Courier); 2026-01 Easton, PA skatepark plans (lehighvalleylive)",
+    "confidence": "high"
+  },
+  {
+    "name": "Artisan Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx",
+      "mtb"
+    ],
+    "what": "Skateparks, pump tracks, bike parks",
+    "city": "Kitty Hawk",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 36.06643,
+    "lng": -75.69354,
+    "coords": "city",
+    "about": "Outer Banks company that designs and builds skateparks, pump tracks and bike parks for towns along the East Coast and beyond.",
+    "links": {
+      "website": "https://www.artisanskateparks.com",
+      "instagram": "https://www.instagram.com/artisanskateparks/"
+    },
+    "source": "https://www.artisanskateparks.com/contact",
+    "active": "2026-08 Amesbury, MA skate park milestone (Newburyport Daily News); 2026-05 Williamsport, PA pump track (Sun-Gazette)",
+    "confidence": "high"
+  },
+  {
+    "name": "Progressive Trail Design",
+    "kind": "builder",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "what": "MTB trails, bike parks, jump parks",
+    "city": "Bentonville",
+    "region": "Arkansas",
+    "country": "US",
+    "lat": 36.37286,
+    "lng": -94.20879,
+    "coords": "city",
+    "about": "Bentonville planning, design and construction firm for mountain bike trails, bike parks and jump parks.",
+    "links": {
+      "website": "https://progressivetraildesign.com",
+      "instagram": "https://www.instagram.com/progressivetraildesign/"
+    },
+    "source": "https://progressivetraildesign.com/",
+    "active": "2025-11 Oklahoma City MTB jump park (Singletracks); 2025-09 named to design the LA 2028 Olympic MTB course (Mountain Bike Action)",
+    "confidence": "high"
+  },
+  {
+    "name": "Elevated Trail Design",
+    "kind": "builder",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "MTB trails, bike parks",
+    "city": "Asheville",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 35.59536,
+    "lng": -82.55084,
+    "coords": "city",
+    "about": "Trail planning, design and construction firm founded in 2011 in North Carolina's Blue Ridge Mountains; builds bike parks and bike trails.",
+    "links": {
+      "website": "https://www.elevatedtraildesign.com",
+      "instagram": "https://www.instagram.com/elevatedtraildesign/"
+    },
+    "source": "https://www.elevatedtraildesign.com/about",
+    "active": "2025-06 lift-served bike park project in North Carolina (Singletracks)",
+    "confidence": "high"
+  },
+  {
+    "name": "Rock Solid Trail Contracting",
+    "kind": "builder",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "MTB trails, flow and jump lines",
+    "city": "Copper Harbor",
+    "region": "Michigan",
+    "country": "US",
+    "lat": 47.46807,
+    "lng": -87.8888,
+    "coords": "city",
+    "about": "Trail building company from Copper Harbor, with a second base in Bentonville, Arkansas; has built mountain bike trails across the US since 2014.",
+    "links": {
+      "website": "https://rocksolidtrails.com"
+    },
+    "source": "https://rocksolidtrails.com/about",
+    "active": "2026-02 Singletracks feature on its 2026 build season; 2026-07 Singletracks interview with its owner",
+    "confidence": "high"
+  },
+  {
+    "name": "Gravity Logic",
+    "kind": "builder",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Bike parks, downhill and jump trails",
+    "city": "Whistler",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.11719,
+    "lng": -122.9543,
+    "coords": "city",
+    "about": "Trail building company co-founded by builders of the Whistler Mountain Bike Park, including its A-Line; designs and builds lift-served bike parks.",
+    "links": {
+      "website": "https://www.gravitylogic.com"
+    },
+    "source": "https://www.singletracks.com/mtb-trails/north-shores-original-bike-park-returns-cypress-mountain-reopening-in-2027/",
+    "active": "2026-08 hired to build the Cypress Mountain, BC bike park (Singletracks); 2026-07 OZ Trails Bike Park, AR opening",
+    "confidence": "medium"
+  },
+  {
+    "name": "SPA Skateparks",
+    "kind": "builder",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Skateparks, pump tracks",
+    "city": "Austin",
+    "region": "Texas",
+    "country": "US",
+    "lat": 30.26493,
+    "lng": -97.74741,
+    "coords": "city",
+    "about": "Austin design-build contractor for concrete skateparks and pump tracks, mostly for Texas cities.",
+    "links": {
+      "website": "https://www.spaskateparks.com",
+      "instagram": "https://www.instagram.com/spaskateparks/"
+    },
+    "source": "https://www.spaskateparks.com/projects/georgetown-texas-garey-skate-park-pump-track/",
+    "active": "2026-09-03 Garey Park skate park and pump track opening, Georgetown, TX (company project page)",
+    "confidence": "high"
+  },
+  {
+    "name": "Rydan Ramp Company",
+    "kind": "builder",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "what": "Wooden ramps, indoor bike park builds",
+    "city": "Salford",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 42.99753,
+    "lng": -80.82745,
+    "coords": "city",
+    "about": "Small Ontario shop near Ingersoll that designs and builds wooden ramps and features for bike parks, including indoor parks.",
+    "links": {},
+    "source": "https://cyclingmagazine.ca/mtb/the-canadian-who-builds-million-dollar-dreams-out-of-plywood/",
+    "active": "2025-12 Canadian Cycling Magazine profile",
+    "confidence": "medium"
+  },
+  {
+    "name": "TAZ",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "scooter",
+      "bmx",
+      "roller",
+      "inline"
+    ],
+    "what": "Indoor skatepark and roller rink",
+    "city": "Montreal",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 45.56101,
+    "lng": -73.63519,
+    "coords": "address",
+    "about": "Large indoor skatepark in Montreal's north end with a roller rink, classes, birthday parties and a school skateboard program.",
+    "links": {
+      "website": "https://www.taz.ca",
+      "instagram": "https://www.instagram.com/le_taz"
+    },
+    "source": "https://www.taz.ca/en/contact/",
+    "active": "2026 school-year skateboard concentration program and winter 2027 class sessions listed on its site (page updated 2026-10)",
+    "confidence": "high"
+  },
+  {
+    "name": "Skatepark of Tampa (SPoT)",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Indoor skatepark, skate shop, contests",
+    "city": "Tampa",
+    "region": "Florida",
+    "country": "US",
+    "lat": 27.94499,
+    "lng": -82.45831,
+    "coords": "city",
+    "about": "Long-running Tampa skatepark and shop that hosts the Tampa Am and Tampa Pro contests.",
+    "links": {
+      "website": "https://skateparkoftampa.com",
+      "instagram": "https://www.instagram.com/spottampa"
+    },
+    "source": "https://skateparkoftampa.com/",
+    "active": "2026-10-18 Tampa Am 2026 finals (company site)",
+    "confidence": "high"
+  },
+  {
+    "name": "3rd Lair Skatepark",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Indoor skatepark, skate shop, camps",
+    "city": "Golden Valley",
+    "region": "Minnesota",
+    "country": "US",
+    "lat": 44.97304,
+    "lng": -93.36354,
+    "coords": "address",
+    "about": "Indoor skatepark and shop in the Minneapolis suburbs that also runs summer skateboard camps, adult clinics and a contest series.",
+    "links": {
+      "website": "https://3rdlair.com",
+      "instagram": "https://www.instagram.com/3rdlair"
+    },
+    "source": "https://3rdlair.com/",
+    "active": "2026 summer skateboard camps listed on its site; 2026-06 contest series stop in Plymouth (hometownsource.com)",
+    "confidence": "high"
+  },
+  {
+    "name": "Ray's Indoor Bike Park",
+    "kind": "indoor",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "what": "Indoor mountain bike and BMX park",
+    "city": "Cleveland",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 41.45465,
+    "lng": -81.7524,
+    "coords": "address",
+    "about": "Indoor mountain bike park in a Cleveland warehouse, open seasonally, with trails and lines for every level.",
+    "links": {
+      "website": "https://www.raysmtb.com"
+    },
+    "source": "https://www.raysmtb.com/",
+    "active": "2025-12 Mountain Bike Action feature; site announces its 23rd season",
+    "confidence": "high"
+  },
+  {
+    "name": "Woodward Copper",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "bmx",
+      "scooter"
+    ],
+    "what": "Indoor action-sports barn, lessons, camps",
+    "city": "Copper Mountain",
+    "region": "Colorado",
+    "country": "US",
+    "lat": 39.47809,
+    "lng": -106.16289,
+    "coords": "city",
+    "about": "Action-sports centre at Copper Mountain Resort with The Barn, a 19,400 sq ft indoor facility with skateparks, trampolines and foam-pit jumps, plus lessons.",
+    "links": {
+      "website": "https://www.coppercolorado.com/the-mountain/woodward-copper/about/"
+    },
+    "source": "https://www.coppercolorado.com/the-mountain/woodward-copper/about/",
+    "active": "2026-09 Red Gerard signature week at Woodward Copper (Yahoo Sports)",
+    "confidence": "high"
+  },
+  {
+    "name": "Woodward Tahoe",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "bmx",
+      "scooter",
+      "mtb"
+    ],
+    "what": "Indoor Bunker, camps, lessons",
+    "city": "Soda Springs",
+    "region": "California",
+    "country": "US",
+    "lat": 39.3254,
+    "lng": -120.37999,
+    "coords": "city",
+    "about": "Woodward centre at Boreal Mountain near Lake Tahoe with the indoor Bunker training facility, coaching and summer action-sports camps.",
+    "links": {
+      "website": "https://www.rideboreal.com/explore/who-we-are/woodward-tahoe/"
+    },
+    "source": "https://www.rideboreal.com/explore/who-we-are/woodward-tahoe/",
+    "active": "2026-09 Tahoe resorts season preview (Tahoe Daily Tribune); 2026-05 downhill bike park coverage (Tahoe Guide)",
+    "confidence": "high"
+  },
+  {
+    "name": "Woodward Park City",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "bmx",
+      "scooter",
+      "mtb"
+    ],
+    "what": "Indoor hub, lessons, camps",
+    "city": "Park City",
+    "region": "Utah",
+    "country": "US",
+    "lat": 40.64609,
+    "lng": -111.498,
+    "coords": "city",
+    "about": "Year-round action-sports centre in Park City with an indoor hub for skate, bike and trampoline sessions, plus lessons, camps and memberships.",
+    "links": {
+      "website": "https://www.woodwardparkcity.com"
+    },
+    "source": "https://www.woodwardparkcity.com/",
+    "active": "2026-10 kids skateboarding competition at Woodward Park City (Park Record)",
+    "confidence": "high"
+  },
+  {
+    "name": "North Shore Bike Park",
+    "kind": "indoor",
+    "disciplines": [
+      "mtb",
+      "bmx",
+      "skateboard",
+      "scooter"
+    ],
+    "what": "Indoor bike and skate park",
+    "city": "Maple Ridge",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.23996,
+    "lng": -122.49585,
+    "coords": "address",
+    "about": "Indoor bike and skatepark that moved from North Vancouver to Maple Ridge after losing its old building in 2025.",
+    "links": {
+      "website": "https://www.northshorebikepark.ca"
+    },
+    "source": "https://www.northshorebikepark.ca/",
+    "active": "2025-11 reopened in Maple Ridge (BCIT News; Maple Ridge News)",
+    "confidence": "high"
+  },
+  {
+    "name": "Gate City Skate Park",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Indoor skatepark, lessons, camps",
+    "city": "Nashua",
+    "region": "New Hampshire",
+    "country": "US",
+    "lat": 42.79448,
+    "lng": -71.52745,
+    "coords": "address",
+    "about": "Non-profit indoor skatepark in Nashua that grew out of a summer skate camp and still runs lessons and camps.",
+    "links": {
+      "website": "https://www.gatecityskatepark.com"
+    },
+    "source": "https://www.gatecityskatepark.com/",
+    "active": "2026-10 WMUR feature on the park and its skate camp",
+    "confidence": "high"
+  },
+  {
+    "name": "Joyride 150",
+    "kind": "indoor",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "what": "Indoor bike park, lessons",
+    "city": "Markham",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.87683,
+    "lng": -79.27295,
+    "coords": "address",
+    "about": "Indoor bike park in Markham, north of Toronto, with drop-in riding, group lessons, adult clinics and events.",
+    "links": {
+      "website": "https://www.joyride150.com"
+    },
+    "source": "https://www.joyride150.com/contacts/",
+    "active": "2026-10 Halloween Jam 2026 page; 2026-01 women's weekend (Canadian Cycling Magazine)",
+    "confidence": "high"
+  },
+  {
+    "name": "Chilango Skate",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Skate shop with indoor skatepark and lessons",
+    "city": "Mexico City",
+    "region": "Ciudad de México",
+    "country": "MX",
+    "lat": 19.40197,
+    "lng": -99.1682,
+    "coords": "address",
+    "about": "Skate shop in Roma Sur with a private indoor skatepark where it teaches skateboarding classes.",
+    "links": {
+      "website": "https://chilangoskate.com",
+      "instagram": "https://www.instagram.com/chilangoskate/"
+    },
+    "source": "https://chilangoskate.com/",
+    "active": "2026 Go Skateboarding Day event listed on its site",
+    "confidence": "high"
+  },
+  {
+    "name": "The Compound",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "scooter"
+    ],
+    "what": "Indoor skatepark, skate programs, camps",
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 51.01513,
+    "lng": -114.0412,
+    "coords": "address",
+    "about": "Indoor skatepark in southeast Calgary with drop-in sessions, kids' and adult skate programs, PD-day and summer camps and private lessons.",
+    "links": {
+      "website": "https://thecompoundyyc.com",
+      "instagram": "https://www.instagram.com/thecompoundyyc/"
+    },
+    "source": "https://thecompoundyyc.com/",
+    "active": "Registration open for its 2026/27 skate programs and camps (company site, updated 2026-10)",
+    "confidence": "high"
+  },
+  {
+    "name": "Substance Skatepark",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Indoor skatepark, camps, events",
+    "city": "Brooklyn",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.70945,
+    "lng": -73.93534,
+    "coords": "address",
+    "about": "Indoor skatepark in Brooklyn spread over two rooms with ramps and a halfpipe; runs memberships, an after-school program, skate camp and shows.",
+    "links": {
+      "website": "https://substanceskatepark.com"
+    },
+    "source": "https://substanceskatepark.com/",
+    "active": "2026-08 Knocked Loose and Denzel Curry show at the park (NME)",
+    "confidence": "high"
+  },
+  {
+    "name": "Commonwealth Skateboarding",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Indoor skatepark and skate shop",
+    "city": "Portland",
+    "region": "Oregon",
+    "country": "US",
+    "lat": 45.51251,
+    "lng": -122.64577,
+    "coords": "address",
+    "about": "Southeast Portland skate shop and indoor skatepark offering sessions and private park rentals.",
+    "links": {
+      "website": "https://cwskate.com",
+      "instagram": "https://instagram.com/commonwealthskate"
+    },
+    "source": "https://cwskate.com/",
+    "active": "2026-02 15th anniversary (Portland Tribune; KPTV)",
+    "confidence": "high"
+  },
+  {
+    "name": "Onirik Skatepark",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "scooter",
+      "bmx",
+      "roller"
+    ],
+    "what": "Indoor skatepark in a former church",
+    "city": "Shawinigan",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 46.62505,
+    "lng": -72.65759,
+    "coords": "address",
+    "about": "Non-profit indoor skatepark in the former Saint-Georges church in Shawinigan, open evenings and weekends with youth hours.",
+    "links": {
+      "website": "https://www.onirikskatepark.com",
+      "instagram": "https://www.instagram.com/onirik_skatepark/"
+    },
+    "source": "https://www.onirikskatepark.com/",
+    "active": "2026-08 opening coverage (Radio-Canada); 2026-07 L'Hebdo du St-Maurice",
+    "confidence": "high"
+  },
+  {
+    "name": "CJ's Skatepark",
+    "kind": "indoor",
+    "disciplines": [
+      "skateboard",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Indoor skatepark, lessons, camps",
+    "city": "Mississauga",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.5917,
+    "lng": -79.60246,
+    "coords": "address",
+    "about": "Indoor skatepark in Mississauga with skateboard and scooter lessons, PA-day, March-break and summer camps, and birthday parties.",
+    "links": {
+      "website": "https://cjsskatepark.com",
+      "instagram": "https://www.instagram.com/cjskatepark/"
+    },
+    "source": "https://cjsskatepark.com/",
+    "active": "2025-11 CHCH story on a young scooter rider that mentions the park",
+    "confidence": "high"
+  },
+  {
+    "name": "Woodward PA",
+    "kind": "school",
+    "disciplines": [
+      "skateboard",
+      "bmx",
+      "scooter"
+    ],
+    "what": "Action-sports summer camps",
+    "city": "Woodward",
+    "region": "Pennsylvania",
+    "country": "US",
+    "lat": 40.89824,
+    "lng": -77.3464,
+    "coords": "city",
+    "about": "The original Woodward camp in central Pennsylvania: overnight summer camps with indoor and outdoor skate, BMX and scooter facilities. It invites former Woodward West campers now that the West camp has closed.",
+    "links": {
+      "website": "https://www.woodwardpa.com"
+    },
+    "source": "https://www.woodwardpa.com/",
+    "active": "2026 summer camp season highlights on its site",
+    "confidence": "high"
+  },
+  {
+    "name": "Windells",
+    "kind": "school",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Ski and skateboard summer camps",
+    "city": "Sandy",
+    "region": "Oregon",
+    "country": "US",
+    "lat": 45.39692,
+    "lng": -122.26163,
+    "coords": "city",
+    "about": "Mt. Hood summer camp on a 28-acre private campus with skateparks, trampolines and foam pits; runs skateboard camps alongside ski camps.",
+    "links": {
+      "website": "https://windells.com",
+      "instagram": "https://www.instagram.com/windellscamp"
+    },
+    "source": "https://windells.com/",
+    "active": "2026-10 blog post and open registration for the 2026-27 season",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate Like a Girl",
+    "kind": "school",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Skate lessons, camps, clinics",
+    "city": "Seattle",
+    "region": "Washington",
+    "country": "US",
+    "lat": 47.60383,
+    "lng": -122.33006,
+    "coords": "city",
+    "about": "Non-profit that runs skateboarding lessons, youth summer camps and clinics for women, girls, trans and non-binary skaters, with chapters in Seattle and Portland.",
+    "links": {
+      "website": "https://www.skatelikeagirl.com",
+      "instagram": "https://www.instagram.com/skatelikeagirl"
+    },
+    "source": "https://www.skatelikeagirl.com/",
+    "active": "2026-09 new executive director appointed (Shredder News)",
+    "confidence": "high"
+  },
+  {
+    "name": "Endless Biking",
+    "kind": "school",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "MTB lessons, camps, guided rides",
+    "city": "North Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.30885,
+    "lng": -123.03441,
+    "coords": "address",
+    "about": "North Vancouver outfit that teaches mountain biking on the North Shore: private lessons, kids' summer and spring-break camps, and guided rides.",
+    "links": {
+      "website": "https://www.endlessbiking.com",
+      "instagram": "https://www.instagram.com/endlessbiking"
+    },
+    "source": "https://www.endlessbiking.com/",
+    "active": "2026 fall programs open (company site)",
+    "confidence": "high"
+  },
+  {
+    "name": "Skateyogi",
+    "kind": "school",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Skate classes for kids and adults",
+    "city": "Brooklyn",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.72082,
+    "lng": -73.95973,
+    "coords": "address",
+    "about": "Brooklyn skateboarding school with weekly classes for ages 3 to 15, adult classes and open skates, and private lessons; second site on Empire Blvd.",
+    "links": {
+      "website": "https://www.skateyogi.com",
+      "instagram": "https://www.instagram.com/skateyogi/"
+    },
+    "source": "https://www.skateyogi.com/",
+    "active": "Fall 2026 class session on its site",
+    "confidence": "high"
+  },
+  {
+    "name": "Homage Skateboard Academy",
+    "kind": "school",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Indoor skate lessons, camps, after-school",
+    "city": "Brooklyn",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.68361,
+    "lng": -73.98142,
+    "coords": "address",
+    "about": "Indoor skateboarding facility in Brooklyn offering private and group lessons, an after-school program and holiday and summer camps.",
+    "links": {
+      "website": "https://homageskateboardacademy.com",
+      "instagram": "https://www.instagram.com/homageskateboardacademy/"
+    },
+    "source": "https://homageskateboardacademy.com/",
+    "active": "2026-09 listed in Mommy Poppins Gowanus guide; after-school program page updated 2026-09",
+    "confidence": "high"
+  },
+  {
+    "name": "Dirt Camp",
+    "kind": "school",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Kids' MTB day and sleepover camps",
+    "city": "Bromont",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 45.30071,
+    "lng": -72.63807,
+    "coords": "address",
+    "about": "Quebec's original mountain bike camp for ages 7 to 15, running since 1996, with day and sleepover camps at Bromont and day camps at Mont Blanc, Oka, Rigaud and Rawdon.",
+    "links": {
+      "website": "https://dirtcamp.ca",
+      "instagram": "https://www.instagram.com/dirt.camp/"
+    },
+    "source": "https://dirtcamp.ca/contact/",
+    "active": "2026-04 30th-anniversary story (Canadian Cycling Magazine); fall weekend camps on its site",
+    "confidence": "high"
+  },
+  {
+    "name": "School of MTB",
+    "kind": "school",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "MTB coaching, lessons, camps",
+    "city": "Kelowna",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.88792,
+    "lng": -119.4959,
+    "coords": "city",
+    "about": "Kelowna mountain bike school with certified coaching, private lessons, kids' camps and women's clinics around the Okanagan.",
+    "links": {
+      "website": "https://schoolofmtb.com"
+    },
+    "source": "https://schoolofmtb.com/",
+    "active": "2026-09 blog posts; 2026-02 opening story (Kelowna Capital News)",
+    "confidence": "high"
+  },
+  {
+    "name": "Skate On 8's",
+    "kind": "school",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Roller skating lessons and classes",
+    "city": "Milwaukee",
+    "region": "Wisconsin",
+    "country": "US",
+    "lat": 43.09155,
+    "lng": -87.94042,
+    "coords": "address",
+    "about": "Milwaukee roller skating academy with private lessons, group classes and progression programs for all ages.",
+    "links": {
+      "website": "https://skateon8s.com"
+    },
+    "source": "https://skateon8s.com/",
+    "active": "2026-10 grand opening (TMJ4 News)",
+    "confidence": "high"
+  },
+  {
+    "name": "Summer Gravity Camps",
+    "kind": "school",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Youth and adult downhill MTB camps",
+    "city": "Whistler",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.11719,
+    "lng": -122.9543,
+    "coords": "city",
+    "about": "Week-long gravity mountain bike camps in the Whistler Bike Park for youth and adults, with rotating guest coaches.",
+    "links": {
+      "website": "https://summergravitycamps.com",
+      "instagram": "https://www.instagram.com/summergravitycamps/"
+    },
+    "source": "https://summergravitycamps.com/dates-pricing/",
+    "active": "2027 registration opening December 2026 (company site)",
+    "confidence": "high"
+  },
+  {
+    "name": "Little Ripper Skateboarding",
+    "kind": "school",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Skate lessons, school programs, shop",
+    "city": "Chicago",
+    "region": "Illinois",
+    "country": "US",
+    "lat": 41.9595,
+    "lng": -87.7448,
+    "coords": "address",
+    "about": "Chicago skateboarding school for kids of all levels that also runs school programs and a small skate shop.",
+    "links": {
+      "website": "https://www.littleripperskateboarding.com",
+      "instagram": "https://www.instagram.com/little_ripper_skateboarding/"
+    },
+    "source": "https://www.littleripperskateboarding.com/",
+    "active": "2025-12 Time Out Chicago feature",
+    "confidence": "high"
+  },
+  {
+    "name": "Chicago Skateboard School",
+    "kind": "school",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Indoor skate lessons, camps",
+    "city": "Bellwood",
+    "region": "Illinois",
+    "country": "US",
+    "lat": 41.88321,
+    "lng": -87.8706,
+    "coords": "address",
+    "about": "Skateboard school with its own indoor facility in Bellwood, west of Chicago, offering kids' and adult lessons, camps and parties.",
+    "links": {
+      "website": "https://www.chicagoskateboardschool.com",
+      "instagram": "https://www.instagram.com/chicagoskateschool/"
+    },
+    "source": "https://www.chicagoskateboardschool.com/facility",
+    "active": "2025-01 ABC7 Chicago feature; 2026-09 zine workshop listing (McKinley Park News)",
+    "confidence": "high"
+  },
+  {
+    "name": "Workshop Skateboard Club",
+    "kind": "school",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Indoor skate lessons and camps",
+    "city": "Kitchener",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.43859,
+    "lng": -80.47289,
+    "coords": "address",
+    "about": "Small private indoor skateboard facility in Kitchener built around lessons and camps for beginners and kids.",
+    "links": {
+      "website": "https://workshopskateboardclub.square.site/"
+    },
+    "source": "https://www.communityedition.ca/workshop-skateboard-club/",
+    "active": "2025-01 opening story (Community Edition)",
+    "confidence": "medium"
+  },
+  {
+    "name": "Rolla Skate Club",
+    "kind": "school",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Roller skating classes and skate nights",
+    "city": "Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.28441,
+    "lng": -123.03977,
+    "coords": "address",
+    "about": "Roller skating club in the Rollerland building at the PNE with beginner-to-advanced adult classes, kids' classes, Saturday skate parties and online lessons.",
+    "links": {
+      "website": "https://www.rollaskateclub.com",
+      "instagram": "https://www.instagram.com/rollaskateclub/"
+    },
+    "source": "https://rollaskateclub.com/classes/",
+    "active": "Class calendar for the week of 2026-10-25 (company site)",
+    "confidence": "high"
+  },
+  {
+    "name": "Bliss On Wheels",
+    "kind": "school",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Roller dance and skating classes",
+    "city": "Mexico City",
+    "region": "Ciudad de México",
+    "country": "MX",
+    "lat": 19.43263,
+    "lng": -99.13318,
+    "coords": "city",
+    "about": "Roller dance studio under the Juan Escutia bridge in Condesa with roller dance, fitness and artistic skating classes, kids' classes and open skate times.",
+    "links": {
+      "website": "https://blissonwheels.mx",
+      "instagram": "https://www.instagram.com/bliss.onwheels/"
+    },
+    "source": "https://blissonwheels.mx/",
+    "active": "2026 event (Roll Over Cancún 2026) on its site; 2025-10 roller dance party (Chilango)",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,1597 @@
+[
+  {
+    "name": "Skate One (Powell-Peralta, Bones)",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Decks, wheels, bearings",
+    "city": "Goleta",
+    "region": "California",
+    "country": "US",
+    "lat": 34.4358,
+    "lng": -119.8276,
+    "coords": "city",
+    "about": "Company behind Powell-Peralta decks and Bones wheels and bearings; office in Goleta, with its own factory in Ventura, California.",
+    "links": {
+      "website": "https://www.skateone.com",
+      "instagram": "https://www.instagram.com/skateonecorp/"
+    },
+    "source": "https://www.skateone.com/",
+    "active": "2026-10 Powell-Peralta news posts (Oct 15-16, 2026)",
+    "confidence": "high"
+  },
+  {
+    "name": "Deluxe (Real, Anti Hero, Krooked, Spitfire, Thunder, Venture)",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Decks, wheels, trucks",
+    "city": "San Francisco",
+    "region": "California",
+    "country": "US",
+    "lat": 37.7879,
+    "lng": -122.4075,
+    "coords": "city",
+    "about": "San Francisco skate distribution house that runs Real, Anti Hero and Krooked decks, Spitfire wheels and Thunder and Venture trucks.",
+    "links": {
+      "website": "https://www.dlxsf.com"
+    },
+    "source": "https://www.dlxsf.com",
+    "active": "2026-10-23 news post (Venture video part)",
+    "confidence": "high"
+  },
+  {
+    "name": "Loaded Boards",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Longboards, skateboards, wheels, trucks",
+    "city": "Culver City",
+    "region": "California",
+    "country": "US",
+    "lat": 34.0211,
+    "lng": -118.3965,
+    "coords": "city",
+    "about": "Makes bamboo longboards and skateboards, plus its own wheels and trucks, from Culver City in Los Angeles.",
+    "links": {
+      "website": "https://www.loadedboards.com",
+      "instagram": "https://www.instagram.com/loadedboards/"
+    },
+    "source": "https://www.loadedboards.com/",
+    "active": "2026-08-18 new completes listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Carver Skateboards",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Surfskates, trucks",
+    "city": "Culver City",
+    "region": "California",
+    "country": "US",
+    "lat": 34.0211,
+    "lng": -118.3965,
+    "coords": "city",
+    "about": "Surfskate maker known for its carving truck systems; lists its office in Culver City.",
+    "links": {
+      "website": "https://carverskateboards.com",
+      "instagram": "https://www.instagram.com/carverskate/"
+    },
+    "source": "https://carverskateboards.com",
+    "active": "2026-10-21 new product listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Arbor Skateboards",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Decks, cruisers, longboards, wheels",
+    "city": "Los Angeles",
+    "region": "California",
+    "country": "US",
+    "lat": 33.995,
+    "lng": -118.4669,
+    "coords": "city",
+    "about": "Venice-based board company making street decks, cruisers and longboards (alongside snowboards).",
+    "links": {
+      "website": "https://www.arborcollective.com",
+      "instagram": "https://www.instagram.com/arborskateboards/"
+    },
+    "source": "https://www.arborcollective.com/policies/refund-policy",
+    "active": "2026-09-21 new decks listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Sector 9",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Longboards, cruisers, wheels",
+    "city": "San Diego",
+    "region": "California",
+    "country": "US",
+    "lat": 32.7157,
+    "lng": -117.1638,
+    "coords": "city",
+    "about": "Longboard and cruiser company with its world headquarters in San Diego; also makes its own wheels.",
+    "links": {
+      "website": "https://sector9.com",
+      "instagram": "https://www.instagram.com/sector9/"
+    },
+    "source": "https://sector9.com/pages/contact",
+    "active": "2026-10-26 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Paris Truck Co",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Longboard and skate trucks",
+    "city": "Los Alamitos",
+    "region": "California",
+    "country": "US",
+    "lat": 33.8039,
+    "lng": -118.0772,
+    "coords": "city",
+    "about": "Truck maker for longboard and skate setups, based in Los Alamitos in Orange County.",
+    "links": {
+      "website": "https://www.paristruckco.com",
+      "instagram": "https://www.instagram.com/paristruckco/"
+    },
+    "source": "https://www.paristruckco.com/",
+    "active": "2026-04-23 new V3 trucks listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Bustin Boards",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Longboards, custom boards",
+    "city": "Hagerstown",
+    "region": "Maryland",
+    "country": "US",
+    "lat": 39.643,
+    "lng": -77.7191,
+    "coords": "city",
+    "about": "Longboard and skateboard brand run from Hagerstown, Maryland, with a custom shop that builds boards to order.",
+    "links": {
+      "website": "https://bustinboards.com",
+      "instagram": "https://www.instagram.com/bustinboards/"
+    },
+    "source": "https://bustinboards.com/pages/contact-bustin-boards",
+    "active": "2026-08-07 custom board listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Alien Workshop",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Decks",
+    "city": "Portland",
+    "region": "Oregon",
+    "country": "US",
+    "lat": 45.5202,
+    "lng": -122.6742,
+    "coords": "city",
+    "about": "Long-running deck brand, now operating out of northeast Portland.",
+    "links": {
+      "website": "https://www.alienworkshop.com",
+      "instagram": "https://www.instagram.com/alienworkshop/"
+    },
+    "source": "https://www.alienworkshop.com/",
+    "active": "2026-10-23 new decks listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Satori Movement",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Wheels, hemp clothing",
+    "city": "Arcata",
+    "region": "California",
+    "country": "US",
+    "lat": 40.8665,
+    "lng": -124.0828,
+    "coords": "city",
+    "about": "Small skate company in Arcata, Northern California, making Satori wheels and hemp apparel since 1998.",
+    "links": {
+      "website": "https://www.satorimovement.com",
+      "instagram": "https://www.instagram.com/satoriwheels/"
+    },
+    "source": "https://www.satorimovement.com/policies/contact-information",
+    "active": "2026-10 product pages updated (sitemap)",
+    "confidence": "high"
+  },
+  {
+    "name": "Seismic Skate Systems",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Wheels, bearings, trucks",
+    "city": "Boulder",
+    "region": "Colorado",
+    "country": "US",
+    "lat": 40.015,
+    "lng": -105.2705,
+    "coords": "city",
+    "about": "Boulder company engineering longboard and downhill wheels, Fullspin bearings and trucks.",
+    "links": {
+      "website": "https://seismicskate.com",
+      "instagram": "https://www.instagram.com/seismicskate/"
+    },
+    "source": "https://seismicskate.com/pages/contact",
+    "active": "2026-10-18 news post (wheels and bearings record)",
+    "confidence": "high"
+  },
+  {
+    "name": "Hella Grip",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard",
+      "scooter"
+    ],
+    "what": "Grip tape",
+    "city": "Pacheco",
+    "region": "California",
+    "country": "US",
+    "lat": 37.9902,
+    "lng": -122.0698,
+    "coords": "city",
+    "about": "Grip tape maker for scooters and skateboards, with signature and art griptapes; based in Pacheco in the East Bay.",
+    "links": {
+      "website": "https://hellagrip.com"
+    },
+    "source": "https://slothshop.hellagrip.com/pages/contact-us",
+    "active": "2026-05-24 new signature grip listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Welcome Skateboards",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Decks, wheels",
+    "city": "Laguna Hills",
+    "region": "California",
+    "country": "US",
+    "lat": 33.5949,
+    "lng": -117.6882,
+    "coords": "city",
+    "about": "Deck brand with its own shapes and graphics, founded in 2010; business address in Laguna Hills, Orange County.",
+    "links": {
+      "website": "https://welcomeskateboards.com",
+      "instagram": "https://www.instagram.com/welcomeskateboards/"
+    },
+    "source": "https://welcomeskateboards.com/policies/terms-of-service",
+    "active": "2026-10-20 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Hamboards",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Surfskates, HST trucks",
+    "city": "Wilmington",
+    "region": "Delaware",
+    "country": "US",
+    "lat": 39.7383,
+    "lng": -75.5527,
+    "coords": "city",
+    "about": "Makes surf-style carving boards, skate poles and HST trucks; company and warehouse in the Wilmington area of Delaware.",
+    "links": {
+      "website": "https://hamboards.com"
+    },
+    "source": "https://hamboards.com/policies/contact-information",
+    "active": "2026-09-15 new bushing kits listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Landyachtz",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Longboards, cruisers, Hawgs wheels",
+    "city": "Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.2703,
+    "lng": -123.0814,
+    "coords": "address",
+    "about": "Skater-owned Vancouver longboard and cruiser maker (since 1997), also behind Hawgs wheels; runs a factory store at its HQ.",
+    "links": {
+      "website": "https://landyachtz.com",
+      "instagram": "https://www.instagram.com/landyachtz/"
+    },
+    "source": "https://landyachtz.com/contact/",
+    "active": "2026-10-06 blog post; 2026-08-27 pump track championship post",
+    "confidence": "high"
+  },
+  {
+    "name": "Roarockit Skateboard Company",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "DIY deck-building kits, veneer, Thin Air Press",
+    "city": "Toronto",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.717,
+    "lng": -79.311,
+    "coords": "address",
+    "about": "Toronto company selling kits and a vacuum-bag press for building your own skateboard decks from maple veneer; materials pickup at its Toronto unit.",
+    "links": {
+      "website": "https://www.roarockit.com"
+    },
+    "source": "https://www.roarockit.com/contact",
+    "active": "2025-03 Made in CA directory listing; online shop and pickup hours current",
+    "confidence": "high"
+  },
+  {
+    "name": "Beat Skateboards",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard"
+    ],
+    "what": "Decks",
+    "city": "Mexico City",
+    "region": "Ciudad de México",
+    "country": "MX",
+    "lat": 19.4326,
+    "lng": -99.1332,
+    "coords": "city",
+    "about": "Mexican deck brand with pro models for Mexican skaters; its store terms list a Mexico City address.",
+    "links": {
+      "website": "https://beatskate.mx",
+      "instagram": "https://www.instagram.com/beatskateboardsofficial/"
+    },
+    "source": "https://beatskate.mx/policies/terms-of-service",
+    "active": "2026-08-07 new decks listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Riedell Skates",
+    "kind": "maker",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Roller skate boots",
+    "city": "Red Wing",
+    "region": "Minnesota",
+    "country": "US",
+    "lat": 44.5625,
+    "lng": -92.5338,
+    "coords": "city",
+    "about": "Family-run skate maker that hand-builds roller and figure skate boots in Red Wing, Minnesota.",
+    "links": {
+      "website": "https://riedellskates.com",
+      "instagram": "https://www.instagram.com/riedellroller/"
+    },
+    "source": "https://riedellskates.com/about-us/",
+    "active": "2026-08-26 press page update (leadership news)",
+    "confidence": "high"
+  },
+  {
+    "name": "Sure-Grip",
+    "kind": "maker",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Roller skates, plates, wheels",
+    "city": "South Gate",
+    "region": "California",
+    "country": "US",
+    "lat": 33.9463,
+    "lng": -118.201,
+    "coords": "city",
+    "about": "Roller skate and plate maker since 1937; still makes many of its parts in its Southern California facility.",
+    "links": {
+      "website": "https://www.suregrip.com",
+      "instagram": "https://www.instagram.com/suregriprollerskates/"
+    },
+    "source": "https://www.suregrip.com/policies/contact-information",
+    "active": "2026-08-06 new product listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Roller Derby Skate Corp. (Roller Derby, Tour Hockey)",
+    "kind": "maker",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "what": "Quad and inline skates, roller hockey skates",
+    "city": "Litchfield",
+    "region": "Illinois",
+    "country": "US",
+    "lat": 39.1769,
+    "lng": -89.6556,
+    "coords": "city",
+    "about": "Skate company headquartered in Litchfield, Illinois, where its skates were first made; also owns Tour Hockey inline gear.",
+    "links": {
+      "website": "https://rollerderby.com"
+    },
+    "source": "https://rollerderby.com/pages/about-us",
+    "active": "2026-09-30 new product listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Jackson Ultima (Tournament Sports)",
+    "kind": "maker",
+    "disciplines": [
+      "roller",
+      "inline"
+    ],
+    "what": "Roller skates, inline wheels (also figure skates)",
+    "city": "Cambridge",
+    "region": "Ontario",
+    "country": "CA",
+    "lat": 43.3601,
+    "lng": -80.3123,
+    "coords": "city",
+    "about": "Skate maker best known for figure skates that also makes roller skates and inline wheels; parent Tournament Sports is in Cambridge, Ontario.",
+    "links": {
+      "website": "https://jacksonultima.com",
+      "instagram": "https://www.instagram.com/jackson.ultima/"
+    },
+    "source": "https://jacksonultima.com/pages/about",
+    "active": "2026-01-14 new product listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Them Skates",
+    "kind": "maker",
+    "disciplines": [
+      "inline"
+    ],
+    "what": "Aggressive inline skates",
+    "city": "Santa Ana",
+    "region": "California",
+    "country": "US",
+    "lat": 33.7479,
+    "lng": -117.8664,
+    "coords": "address",
+    "about": "Independently owned aggressive inline skate brand (since 2017) with its own location in downtown Santa Ana.",
+    "links": {
+      "website": "https://www.themgoods.com",
+      "instagram": "https://www.instagram.com/themskates/"
+    },
+    "source": "https://www.themgoods.com/",
+    "active": "2026-10-24 new stock listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Labeda Wheels",
+    "kind": "maker",
+    "disciplines": [
+      "inline"
+    ],
+    "what": "Roller hockey wheels",
+    "city": "Lake Elsinore",
+    "region": "California",
+    "country": "US",
+    "lat": 33.6681,
+    "lng": -117.3273,
+    "coords": "city",
+    "about": "US-made inline and roller hockey wheel maker, in business since 1969, based in Lake Elsinore.",
+    "links": {
+      "website": "https://labeda.com"
+    },
+    "source": "https://labeda.com",
+    "active": "2025-12-16 new wheels listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Epic Skates",
+    "kind": "maker",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Quad skates, wheels",
+    "city": "Lewisville",
+    "region": "Texas",
+    "country": "US",
+    "lat": 33.0462,
+    "lng": -96.9942,
+    "coords": "city",
+    "about": "Entry-level and mid-range quad skate brand shipping from Lewisville in the Dallas area.",
+    "links": {
+      "website": "https://epicskates.com",
+      "instagram": "https://www.instagram.com/epic.skates/"
+    },
+    "source": "https://epicskates.com/policies/contact-information",
+    "active": "2026-10-22 new skate package listed",
+    "confidence": "high"
+  },
+  {
+    "name": "K2 Skates",
+    "kind": "maker",
+    "disciplines": [
+      "inline"
+    ],
+    "what": "Inline skates",
+    "city": "Bellevue",
+    "region": "Washington",
+    "country": "US",
+    "lat": 47.6144,
+    "lng": -122.1923,
+    "coords": "city",
+    "about": "Long-standing inline skate brand (also ice skates and helmets) with its office in Bellevue, near Seattle.",
+    "links": {
+      "website": "https://k2skates.com",
+      "instagram": "https://www.instagram.com/k2.skates/"
+    },
+    "source": "https://k2skates.com/en-us/support",
+    "active": "2026-07-22 blog post",
+    "confidence": "high"
+  },
+  {
+    "name": "VNLA (Vanilla)",
+    "kind": "maker",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Roller skates, wheels",
+    "city": "Lenexa",
+    "region": "Kansas",
+    "country": "US",
+    "lat": 38.9697,
+    "lng": -94.7846,
+    "coords": "city",
+    "about": "Roller skate company making boots, Powertrac plates and wheels; business address in Lenexa in the Kansas City area.",
+    "links": {
+      "website": "https://www.vnla.com",
+      "instagram": "https://www.instagram.com/vnlaco/"
+    },
+    "source": "https://www.vnla.com/policies/terms-of-service",
+    "active": "2026-03-09 new skate listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Moxi Roller Skates",
+    "kind": "maker",
+    "disciplines": [
+      "roller"
+    ],
+    "what": "Roller skates, wheels, parts",
+    "city": "Long Beach",
+    "region": "California",
+    "country": "US",
+    "lat": 33.769,
+    "lng": -118.1916,
+    "coords": "city",
+    "about": "Roller skate brand run from Long Beach; its skates are made by Riedell in Minnesota.",
+    "links": {
+      "website": "https://www.moxiskates.com",
+      "instagram": "https://www.instagram.com/moxirollerskates/"
+    },
+    "source": "https://iloveinspired.com/riedells-got-moxi/",
+    "active": "2026-09-21 new product listed on moxiskates.com",
+    "confidence": "medium"
+  },
+  {
+    "name": "Tilt Scooters",
+    "kind": "maker",
+    "disciplines": [
+      "scooter"
+    ],
+    "what": "Pro scooter decks and parts",
+    "city": "Grand Rapids",
+    "region": "Michigan",
+    "country": "US",
+    "lat": 42.9632,
+    "lng": -85.6679,
+    "coords": "city",
+    "about": "Pro scooter brand making decks and parts; mailing address in Grand Rapids.",
+    "links": {
+      "website": "https://www.tiltlife.com",
+      "instagram": "https://www.instagram.com/tiltlife/"
+    },
+    "source": "https://www.tiltlife.com/",
+    "active": "2026-08-31 new deck listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Lucky Scooters",
+    "kind": "maker",
+    "disciplines": [
+      "scooter"
+    ],
+    "what": "Pro scooters, parts",
+    "city": "Riverside",
+    "region": "California",
+    "country": "US",
+    "lat": 33.9732,
+    "lng": -117.3731,
+    "coords": "city",
+    "about": "Pro scooter company that began making custom parts in a Washington garage in 2008 and now ships from Riverside.",
+    "links": {
+      "website": "https://www.luckyscooters.com",
+      "instagram": "https://www.instagram.com/luckyscooters/"
+    },
+    "source": "https://www.luckyscooters.com/pages/customer-care",
+    "active": "2026-10-19 new complete scooters listed",
+    "confidence": "high"
+  },
+  {
+    "name": "North Scooters",
+    "kind": "maker",
+    "disciplines": [
+      "scooter"
+    ],
+    "what": "Pro scooters, decks, forks",
+    "city": "Sylvan Lake",
+    "region": "Alberta",
+    "country": "CA",
+    "lat": 52.3102,
+    "lng": -114.0974,
+    "coords": "city",
+    "about": "Pro scooter parts and completes brand; its terms list a business address in Sylvan Lake, near Red Deer.",
+    "links": {
+      "website": "https://northscooters.com"
+    },
+    "source": "https://northscooters.com/policies/terms-of-service",
+    "active": "2026-06-07 new G8 parts listed",
+    "confidence": "high"
+  },
+  {
+    "name": "AO Scooters",
+    "kind": "maker",
+    "disciplines": [
+      "scooter"
+    ],
+    "what": "Pro scooter decks, wheels, parts",
+    "city": "Vista",
+    "region": "California",
+    "country": "US",
+    "lat": 33.2021,
+    "lng": -117.2425,
+    "coords": "city",
+    "about": "Pro scooter brand with signature decks and wheels; says it is based in Vista, North County San Diego.",
+    "links": {
+      "website": "https://www.aoscooters.com",
+      "instagram": "https://www.instagram.com/ao_scooters/"
+    },
+    "source": "https://www.aoscooters.com/contact",
+    "active": "2026-09-24 signature deck pages updated (sitemap)",
+    "confidence": "high"
+  },
+  {
+    "name": "Profile Racing",
+    "kind": "maker",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "what": "Hubs, cranks, parts (USA-made)",
+    "city": "St. Petersburg",
+    "region": "Florida",
+    "country": "US",
+    "lat": 27.7712,
+    "lng": -82.634,
+    "coords": "city",
+    "about": "Makes BMX and bike hubs, cranks and other parts in the USA; based in St. Petersburg.",
+    "links": {
+      "website": "https://www.profileracing.com",
+      "instagram": "https://www.instagram.com/profile_racing/"
+    },
+    "source": "https://www.profileracing.com/contact-us/",
+    "active": "2026-10-21 blog post",
+    "confidence": "high"
+  },
+  {
+    "name": "Odyssey BMX (and Sunday Bikes)",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX parts, Sunday complete bikes",
+    "city": "Norwalk",
+    "region": "California",
+    "country": "US",
+    "lat": 33.9093,
+    "lng": -118.0849,
+    "coords": "city",
+    "about": "BMX parts company in Norwalk, Los Angeles County; Sunday Bikes, its complete-bike sister brand, shares the address.",
+    "links": {
+      "website": "https://odysseybmx.com",
+      "instagram": "https://www.instagram.com/odysseybmx/"
+    },
+    "source": "https://odysseybmx.com/contact/",
+    "active": "2026-10-22 bike check post",
+    "confidence": "high"
+  },
+  {
+    "name": "Kink BMX",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX bikes, frames, parts",
+    "city": "Rochester",
+    "region": "New York",
+    "country": "US",
+    "lat": 43.1573,
+    "lng": -77.6152,
+    "coords": "city",
+    "about": "BMX bike, frame and parts brand based in Rochester, New York.",
+    "links": {
+      "website": "https://kinkbmx.com",
+      "instagram": "https://www.instagram.com/kinkbmx/"
+    },
+    "source": "https://kinkbmx.com/pages/contact",
+    "active": "2026-08-10 new product listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Haro Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "what": "BMX and mountain bikes",
+    "city": "Vista",
+    "region": "California",
+    "country": "US",
+    "lat": 33.2021,
+    "lng": -117.2425,
+    "coords": "city",
+    "about": "Long-running BMX brand making freestyle and race BMX bikes plus mountain bikes; office in Vista, North County San Diego.",
+    "links": {
+      "website": "https://harobikes.com",
+      "instagram": "https://www.instagram.com/haro.bicycles/"
+    },
+    "source": "https://harobikes.com/pages/contact",
+    "active": "2026-07-31 new product listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Demolition Parts",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX frames and parts",
+    "city": "Whittier",
+    "region": "California",
+    "country": "US",
+    "lat": 33.9749,
+    "lng": -118.0339,
+    "coords": "city",
+    "about": "BMX frame and parts company in Whittier, going since 2000.",
+    "links": {
+      "website": "https://demolitionparts.com",
+      "instagram": "https://www.instagram.com/demolitionparts/"
+    },
+    "source": "https://demolitionparts.com/pages/contact",
+    "active": "2026-09-15 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Box Components",
+    "kind": "maker",
+    "disciplines": [
+      "bmx",
+      "mtb"
+    ],
+    "what": "BMX race and MTB components",
+    "city": "Anaheim",
+    "region": "California",
+    "country": "US",
+    "lat": 33.8348,
+    "lng": -117.9117,
+    "coords": "city",
+    "about": "BMX racing and mountain bike component maker (drivetrains, forks, headsets) in Anaheim.",
+    "links": {
+      "website": "https://boxcomponents.com",
+      "instagram": "https://www.instagram.com/boxbmx/"
+    },
+    "source": "https://boxcomponents.com/policies/contact-information",
+    "active": "2026-06-02 new headset listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Chase Bicycles (BMX Racing Group)",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX race frames and bikes",
+    "city": "Torrance",
+    "region": "California",
+    "country": "US",
+    "lat": 33.8371,
+    "lng": -118.3414,
+    "coords": "city",
+    "about": "BMX race frame and complete bike brand run by BMX Racing Group in Torrance.",
+    "links": {
+      "website": "https://chasebicycles.com",
+      "instagram": "https://www.instagram.com/chasebicycles/"
+    },
+    "source": "https://chasebicycles.com/contact/",
+    "active": "2026-08-13 2026 Edge Pro models posted",
+    "confidence": "high"
+  },
+  {
+    "name": "DK Bicycles",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX bikes, frames, parts",
+    "city": "Dayton",
+    "region": "Ohio",
+    "country": "US",
+    "lat": 39.7589,
+    "lng": -84.1916,
+    "coords": "city",
+    "about": "BMX brand from Dayton, Ohio, making freestyle and race bikes, frames and parts since 1979.",
+    "links": {
+      "website": "https://dkbicycles.com",
+      "instagram": "https://www.instagram.com/dkbicycles/"
+    },
+    "source": "https://dkbicycles.com/pages/contact",
+    "active": "2026-10-21 new frames listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Fiend BMX",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX frames, forks, parts",
+    "city": "Melbourne",
+    "region": "Florida",
+    "country": "US",
+    "lat": 28.0785,
+    "lng": -80.6078,
+    "coords": "city",
+    "about": "BMX frame and parts brand with a showroom in Melbourne on Florida's Space Coast.",
+    "links": {
+      "website": "https://fiendbmx.com"
+    },
+    "source": "https://fiendbmx.com/pages/contact-us",
+    "active": "2026-10-20 new fork listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Supercross BMX",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX race frames, forks, carbon parts",
+    "city": "Apple Valley",
+    "region": "California",
+    "country": "US",
+    "lat": 34.4953,
+    "lng": -117.1767,
+    "coords": "address",
+    "about": "Race frame and carbon component maker since 1989, with a showroom in Apple Valley in the High Desert.",
+    "links": {
+      "website": "https://www.supercrossbmx.com",
+      "instagram": "https://www.instagram.com/SupercrossBMX/"
+    },
+    "source": "https://www.supercrossbmx.com/",
+    "active": "2026-10-22 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Hoffman Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX frames, bikes, parts",
+    "city": "Oklahoma City",
+    "region": "Oklahoma",
+    "country": "US",
+    "lat": 35.473,
+    "lng": -97.5171,
+    "coords": "city",
+    "about": "BMX frame, bike and parts brand approaching its 30th year, with its mailing address in Oklahoma City.",
+    "links": {
+      "website": "https://hoffmanbikes.com"
+    },
+    "source": "https://hoffmanbikes.com/contact-us/",
+    "active": "2026-06-20 shop listings updated (sitemap)",
+    "confidence": "high"
+  },
+  {
+    "name": "S&M Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX frames, bikes, parts",
+    "city": "Santa Ana",
+    "region": "California",
+    "country": "US",
+    "lat": 33.7495,
+    "lng": -117.8732,
+    "coords": "city",
+    "about": "BMX frame and parts maker whose shop is in Santa Ana.",
+    "links": {
+      "website": "https://sandmbikes.com",
+      "instagram": "https://www.instagram.com/sandmbmx/"
+    },
+    "source": "https://sandmbikes.com/",
+    "active": "2026-10-22 blog post",
+    "confidence": "high"
+  },
+  {
+    "name": "Cult",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX bikes, frames, parts",
+    "city": "Santa Ana",
+    "region": "California",
+    "country": "US",
+    "lat": 33.7495,
+    "lng": -117.8732,
+    "coords": "city",
+    "about": "BMX bike and parts brand; its store terms list a business address in Santa Ana.",
+    "links": {
+      "website": "https://cultcrew.com",
+      "instagram": "https://www.instagram.com/cultcrew/"
+    },
+    "source": "https://cultcrew.com/policies/terms-of-service",
+    "active": "2026-10-23 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Primo and Stranger (Strangerco)",
+    "kind": "maker",
+    "disciplines": [
+      "bmx"
+    ],
+    "what": "BMX parts, frames, bikes",
+    "city": "Long Beach",
+    "region": "California",
+    "country": "US",
+    "lat": 33.769,
+    "lng": -118.1916,
+    "coords": "city",
+    "about": "Long Beach company behind the Primo and Stranger BMX brands.",
+    "links": {
+      "website": "https://primostranger.com"
+    },
+    "source": "https://primostranger.com/",
+    "active": "2026-09-25 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Chromag Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Steel hardtails, bars, stems, pedals",
+    "city": "Whistler",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.0888,
+    "lng": -123.0353,
+    "coords": "address",
+    "about": "Whistler maker of steel hardtails plus bars, stems and pedals, with some frames hand-made in Canada; HQ on Alpha Lake Road.",
+    "links": {
+      "website": "https://chromagbikes.com",
+      "instagram": "https://www.instagram.com/chromagbikes/"
+    },
+    "source": "https://us.chromagbikes.com/",
+    "active": "2026-07 art event held at Chromag HQ",
+    "confidence": "high"
+  },
+  {
+    "name": "We Are One Composites",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Carbon rims, wheels, bars",
+    "city": "Kamloops",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 50.6758,
+    "lng": -120.3394,
+    "coords": "city",
+    "about": "Hand-lays carbon mountain bike rims, wheels and bars at its factory in Kamloops.",
+    "links": {
+      "website": "https://www.weareonecomposites.com",
+      "instagram": "https://www.instagram.com/weareonecomposites/"
+    },
+    "source": "https://www.weareonecomposites.com/en-us",
+    "active": "2026-06-17 products published",
+    "confidence": "high"
+  },
+  {
+    "name": "OneUp Components",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Droppers, pedals, hubs, tools",
+    "city": "Squamish",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.6981,
+    "lng": -123.1559,
+    "coords": "city",
+    "about": "Mountain bike parts company founded by three engineers who wanted to live and ride in Squamish.",
+    "links": {
+      "website": "https://www.oneupcomponents.com",
+      "instagram": "https://www.instagram.com/oneupcomponents/"
+    },
+    "source": "https://www.oneupcomponents.com/pages/about-us",
+    "active": "2026-07-21 new hubs listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Cycles Devinci",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes",
+    "city": "Saguenay",
+    "region": "Quebec",
+    "country": "CA",
+    "lat": 48.4286,
+    "lng": -71.0637,
+    "coords": "city",
+    "about": "Bike maker in Chicoutimi (Saguenay) making mountain bikes and e-bikes, with production in Canada.",
+    "links": {
+      "website": "https://www.devinci.com",
+      "instagram": "https://www.instagram.com/cyclesdevinci/"
+    },
+    "source": "https://www.devinci.com/en/",
+    "active": "2026-10-06 article",
+    "confidence": "high"
+  },
+  {
+    "name": "Rocky Mountain Bicycles",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes",
+    "city": "North Vancouver",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.3206,
+    "lng": -123.0738,
+    "coords": "city",
+    "about": "Mountain bike brand founded in 1981 and based in North Vancouver.",
+    "links": {
+      "website": "https://bikes.com",
+      "instagram": "https://www.instagram.com/rockymountainbicycles/"
+    },
+    "source": "https://bikes.com/",
+    "active": "2026-10-08 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Forbidden Bike Company",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "High-pivot trail and enduro bikes, Ti hardtails",
+    "city": "Cumberland",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 49.6185,
+    "lng": -125.032,
+    "coords": "city",
+    "about": "Vancouver Island bike company known for high-pivot trail bikes; workshop and offices in Cumberland.",
+    "links": {
+      "website": "https://forbiddenbike.com",
+      "instagram": "https://www.instagram.com/forbiddenbikecompany/"
+    },
+    "source": "https://forbiddenbike.com/the-gathering-vol-4-recap/",
+    "active": "2026-10-20 recap of owners' ride held in Cumberland",
+    "confidence": "medium"
+  },
+  {
+    "name": "Spawn Cycles",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes and parts",
+    "city": "Langford",
+    "region": "British Columbia",
+    "country": "CA",
+    "lat": 48.4498,
+    "lng": -123.5047,
+    "coords": "city",
+    "about": "Small BC mountain bike brand (Rokk builds, Brood parts) based in Langford, near Victoria.",
+    "links": {
+      "website": "https://spawncycles.com",
+      "instagram": "https://www.instagram.com/spawncycles/"
+    },
+    "source": "https://spawncycles.com/policies/contact-information",
+    "active": "2025-05-01 new grips listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Transition Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes, PBJ dirt jump bike",
+    "city": "Bellingham",
+    "region": "Washington",
+    "country": "US",
+    "lat": 48.7298,
+    "lng": -122.4703,
+    "coords": "address",
+    "about": "Bellingham bike company making trail bikes and the PBJ dirt jump bike, with its Outpost shop at the HQ.",
+    "links": {
+      "website": "https://www.transitionbikes.com",
+      "instagram": "https://www.instagram.com/transitionbikes/"
+    },
+    "source": "https://www.transitionbikes.com/Contact-Us",
+    "active": "2026 model line (Regulator, Sentinel, Spur) on its site",
+    "confidence": "high"
+  },
+  {
+    "name": "Evil Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Trail, enduro and downhill bikes",
+    "city": "Bellingham",
+    "region": "Washington",
+    "country": "US",
+    "lat": 48.7544,
+    "lng": -122.4788,
+    "coords": "city",
+    "about": "Rider-owned mountain bike brand designed and run out of Bellingham.",
+    "links": {
+      "website": "https://evil-bikes.com",
+      "instagram": "https://www.instagram.com/evilbicycles/"
+    },
+    "source": "https://evil-bikes.com/",
+    "active": "2026-10-22 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Kona Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes",
+    "city": "Ferndale",
+    "region": "Washington",
+    "country": "US",
+    "lat": 48.8467,
+    "lng": -122.5897,
+    "coords": "city",
+    "about": "Mountain bike company in Ferndale, just north of Bellingham.",
+    "links": {
+      "website": "https://konaworld.com",
+      "instagram": "https://www.instagram.com/konabikes/"
+    },
+    "source": "https://konaworld.com/",
+    "active": "2026-08-25 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Revel Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes",
+    "city": "Golden",
+    "region": "Colorado",
+    "country": "US",
+    "lat": 39.7546,
+    "lng": -105.2206,
+    "coords": "city",
+    "about": "Colorado mountain bike brand that started in Carbondale and is now headquartered in Golden.",
+    "links": {
+      "website": "https://revelbikes.com",
+      "instagram": "https://www.instagram.com/revelbikes/"
+    },
+    "source": "https://revelbikes.com/pages/contact",
+    "active": "2026-10-15 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "REEB Cycles",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Hardtail frames and bikes",
+    "city": "Longmont",
+    "region": "Colorado",
+    "country": "US",
+    "lat": 40.1586,
+    "lng": -105.1135,
+    "coords": "address",
+    "about": "Colorado frame builder of hardtails and other bikes, with a bike shop and lounge in Longmont.",
+    "links": {
+      "website": "https://reebcycles.com"
+    },
+    "source": "https://reebcycles.com/",
+    "active": "2026-09-23 limited-edition release with Cane Creek",
+    "confidence": "high"
+  },
+  {
+    "name": "Industry Nine",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Hubs, wheels",
+    "city": "Asheville",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 35.5954,
+    "lng": -82.5508,
+    "coords": "city",
+    "about": "Machines and anodizes hubs, spokes and drive systems in Asheville, building custom wheels.",
+    "links": {
+      "website": "https://industrynine.com",
+      "instagram": "https://www.instagram.com/industry_nine/"
+    },
+    "source": "https://industrynine.com/pages/contact",
+    "active": "2026-10-25 new product listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Cane Creek Cycling Components",
+    "kind": "maker",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "what": "Suspension, headsets",
+    "city": "Fletcher",
+    "region": "North Carolina",
+    "country": "US",
+    "lat": 35.4309,
+    "lng": -82.5011,
+    "coords": "city",
+    "about": "Suspension and headset maker in Fletcher, just south of Asheville.",
+    "links": {
+      "website": "https://www.canecreek.com",
+      "instagram": "https://www.instagram.com/canecreekusa/"
+    },
+    "source": "https://www.canecreek.com/policies/contact-information",
+    "active": "2026-10-09 news post",
+    "confidence": "high"
+  },
+  {
+    "name": "Chris King Precision Components",
+    "kind": "maker",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "what": "Headsets, hubs, bottom brackets",
+    "city": "Portland",
+    "region": "Oregon",
+    "country": "US",
+    "lat": 45.5202,
+    "lng": -122.6742,
+    "coords": "city",
+    "about": "Makes headsets, hubs and bottom brackets in its own Portland factory.",
+    "links": {
+      "website": "https://chrisking.com",
+      "instagram": "https://www.instagram.com/chriskingbuzz/"
+    },
+    "source": "https://chrisking.com",
+    "active": "2026-10-14 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Wolf Tooth Components",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Chainrings, components, tools",
+    "city": "Burnsville",
+    "region": "Minnesota",
+    "country": "US",
+    "lat": 44.7671,
+    "lng": -93.2774,
+    "coords": "city",
+    "about": "US-made bike components and tools; in its Burnsville home since 2018.",
+    "links": {
+      "website": "https://www.wolftoothcomponents.com",
+      "instagram": "https://www.instagram.com/wolf_tooth_comp/"
+    },
+    "source": "https://www.wolftoothcomponents.com/pages/about-us",
+    "active": "2026-10-09 new chainrings listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Pivot Cycles",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes",
+    "city": "Tempe",
+    "region": "Arizona",
+    "country": "US",
+    "lat": 33.4255,
+    "lng": -111.94,
+    "coords": "city",
+    "about": "Mountain bike maker headquartered in Tempe, Arizona.",
+    "links": {
+      "website": "https://www.pivotcycles.com",
+      "instagram": "https://www.instagram.com/pivotcycles/"
+    },
+    "source": "https://www.pivotcycles.com/en-us/contact-us",
+    "active": "2026-04-27 story post",
+    "confidence": "high"
+  },
+  {
+    "name": "Ibis Cycles",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Trail and enduro bikes",
+    "city": "Santa Cruz",
+    "region": "California",
+    "country": "US",
+    "lat": 36.9744,
+    "lng": -122.0295,
+    "coords": "city",
+    "about": "Santa Cruz mountain bike maker with its global HQ on Shaffer Road.",
+    "links": {
+      "website": "https://www.ibiscycles.com",
+      "instagram": "https://www.instagram.com/ibiscycles/"
+    },
+    "source": "https://www.ibiscycles.com/news",
+    "active": "2026-09-15 news post",
+    "confidence": "high"
+  },
+  {
+    "name": "Marin Bikes",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain and kids' bikes",
+    "city": "Petaluma",
+    "region": "California",
+    "country": "US",
+    "lat": 38.2326,
+    "lng": -122.6365,
+    "coords": "city",
+    "about": "Mountain and kids' bike brand with its office in Petaluma.",
+    "links": {
+      "website": "https://marinbikes.com",
+      "instagram": "https://www.instagram.com/marinbikes/"
+    },
+    "source": "https://marinbikes.com/",
+    "active": "2026-09-08 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Turbo Bicycles (Kinetic Sport)",
+    "kind": "maker",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "what": "Mountain, BMX-style and kids' bikes",
+    "city": "San Luis Potosí",
+    "region": "San Luis Potosí",
+    "country": "MX",
+    "lat": 22.1516,
+    "lng": -100.9764,
+    "coords": "city",
+    "about": "Mexican bike maker since 1986, run by Kinetic Sport in San Luis Potosí; mountain, 20-inch and kids' bikes.",
+    "links": {
+      "website": "https://turbo.mx",
+      "instagram": "https://www.instagram.com/turbobicycles/"
+    },
+    "source": "https://turbo.mx/pages/soporte",
+    "active": "2026-10 Bici Expo 2026 (CDMX) and 2027 models",
+    "confidence": "high"
+  },
+  {
+    "name": "Alubike (Grupo Mercurio)",
+    "kind": "maker",
+    "disciplines": [
+      "mtb"
+    ],
+    "what": "Mountain bikes",
+    "city": "San Luis Potosí",
+    "region": "San Luis Potosí",
+    "country": "MX",
+    "lat": 22.1516,
+    "lng": -100.9764,
+    "coords": "city",
+    "about": "Mountain bike brand of Grupo Mercurio, the Mexican bicycle maker founded in 1964 whose plant is in San Luis Potosí.",
+    "links": {
+      "website": "https://alubike.com.mx",
+      "instagram": "https://www.instagram.com/alubikeofficial/"
+    },
+    "source": "https://alubike.com.mx/pages/nosotros",
+    "active": "2026-04-10 post on a visit to the Mercurio plant",
+    "confidence": "medium"
+  },
+  {
+    "name": "Kali Protectives",
+    "kind": "maker",
+    "disciplines": [
+      "mtb",
+      "bmx",
+      "skateboard"
+    ],
+    "what": "Helmets, pads",
+    "city": "Morgan Hill",
+    "region": "California",
+    "country": "US",
+    "lat": 37.1304,
+    "lng": -121.6545,
+    "coords": "city",
+    "about": "Helmet and protection maker for mountain bike, BMX and urban riding, based in Morgan Hill.",
+    "links": {
+      "website": "https://www.kaliprotectives.com",
+      "instagram": "https://www.instagram.com/kaliprotectives/"
+    },
+    "source": "https://www.kaliprotectives.com/pages/contact-us",
+    "active": "2026-10-01 new helmets listed",
+    "confidence": "high"
+  },
+  {
+    "name": "187 Killer Pads",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Knee, elbow and wrist pads, helmets",
+    "city": "Carlsbad",
+    "region": "California",
+    "country": "US",
+    "lat": 33.1352,
+    "lng": -117.3291,
+    "coords": "city",
+    "about": "Pad and helmet brand for skateparks, roller and scooter riders, based in Carlsbad.",
+    "links": {
+      "website": "https://187killerpads.com",
+      "instagram": "https://www.instagram.com/187killerpads/"
+    },
+    "source": "https://187killerpads.com/pages/contact-us",
+    "active": "2026-01-02 new pad sets listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Demon United",
+    "kind": "maker",
+    "disciplines": [
+      "mtb",
+      "skateboard"
+    ],
+    "what": "Body armour, knee pads, impact shorts",
+    "city": "Orem",
+    "region": "Utah",
+    "country": "US",
+    "lat": 40.2982,
+    "lng": -111.6944,
+    "coords": "city",
+    "about": "Protective gear for mountain biking and board sports (pads, impact shorts, armour) from Orem, Utah.",
+    "links": {
+      "website": "https://demon-united.com",
+      "instagram": "https://www.instagram.com/demonunited/"
+    },
+    "source": "https://demon-united.com/policies/contact-information",
+    "active": "2026-10-19 new kits listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Triple Eight",
+    "kind": "maker",
+    "disciplines": [
+      "skateboard",
+      "roller",
+      "inline",
+      "scooter",
+      "bmx"
+    ],
+    "what": "Helmets, pads, wrist guards",
+    "city": "Port Washington",
+    "region": "New York",
+    "country": "US",
+    "lat": 40.8264,
+    "lng": -73.685,
+    "coords": "city",
+    "about": "Helmet and pad brand from the New York skate scene, now based in Port Washington on Long Island; also makes roller derby gear.",
+    "links": {
+      "website": "https://triple8.com",
+      "instagram": "https://www.instagram.com/triple8nyc/"
+    },
+    "source": "https://triple8.com/pages/contact-us",
+    "active": "2026-09-30 new helmet listed",
+    "confidence": "high"
+  },
+  {
+    "name": "Troy Lee Designs",
+    "kind": "maker",
+    "disciplines": [
+      "mtb",
+      "bmx"
+    ],
+    "what": "MTB helmets, pads, riding gear (also moto)",
+    "city": "Corona",
+    "region": "California",
+    "country": "US",
+    "lat": 33.8753,
+    "lng": -117.5664,
+    "coords": "city",
+    "about": "Helmet and riding gear company in Corona; its mountain bike line covers helmets, pads and clothing (it also makes moto gear).",
+    "links": {
+      "website": "https://troyleedesigns.com",
+      "instagram": "https://www.instagram.com/troyleedesigns/"
+    },
+    "source": "https://troyleedesigns.com/",
+    "active": "2026-09-24 new products listed",
+    "confidence": "high"
+  },
+  {
+    "name": "G-Form",
+    "kind": "maker",
+    "disciplines": [
+      "mtb",
+      "bmx",
+      "skateboard"
+    ],
+    "what": "Impact pads and sleeves",
+    "city": "Providence",
+    "region": "Rhode Island",
+    "country": "US",
+    "lat": 41.824,
+    "lng": -71.4128,
+    "coords": "city",
+    "about": "Flexible impact-protection pads, born in Rhode Island and now run from Providence.",
+    "links": {
+      "website": "https://g-form.com"
+    },
+    "source": "https://g-form.com/policies/terms-of-service",
+    "active": "2025-11-19 new pads listed; 2026-05-01 new product",
+    "confidence": "high"
+  }
+]
