@@ -123,7 +123,7 @@ export default async function SessionPage({ params }: { params: Promise<{ id: st
           {!s.cancelled && <div className="panel p-5"><ImIn sessionId={id} userId={me?.id ?? null} initialIn={amIn} gate={gate} isHost={isHost} /></div>}
           <div className="panel overflow-hidden">
             <div className="h-[240px]">
-              <HubMap pins={[{ id: 'here', lat: s.lat, lng: s.lng, title: s.place_name, color: '#D4402A', big: true, square: true }]} center={{ lat: s.lat, lng: s.lng }} zoom={14} fitPins={false} label={`Map of ${s.place_name}`} />
+              <HubMap pins={[{ id: 'here', lat: s.lat, lng: s.lng, title: s.place_name, color: '#D4402A', big: true, square: true }]} center={{ lat: s.lat, lng: s.lng }} showCenter={false} zoom={14} fitPins={false} label={`Map of ${s.place_name}`} />
             </div>
             <div className="space-y-2 p-4">
               <a href={`https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`} className="btn btn-dark w-full" rel="noopener">Directions</a>

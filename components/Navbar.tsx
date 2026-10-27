@@ -55,7 +55,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/sessions/new" className="btn btn-curb hidden !py-2.5 sm:inline-flex">Post a session</Link>
+          <span className="hidden sm:inline-flex"><Link href="/sessions/new" className="btn btn-curb !py-2.5">Post a session</Link></span>
           <Link href={user ? '/me' : '/auth/login'}
             className="hidden rounded-full px-3 py-2 text-[15px] font-semibold text-flyer/75 transition-colors hover:text-flyer md:inline-flex">
             {user ? 'Your profile' : 'Sign in'}

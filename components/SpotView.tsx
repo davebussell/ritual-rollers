@@ -71,7 +71,7 @@ export default function SpotView({ facts, postHref, sessions, riders, crews, nea
         <h1 className="h-display mt-2 text-[32px] sm:text-[46px]">{f.name}</h1>
         <p className="mt-3 flex flex-wrap items-center gap-2 text-[17px] text-asphalt-2">
           <span aria-hidden="true" className="h-3 w-3 rounded-[3px]" style={{ background: f.color }} />
-          {f.kindLabel}{f.indoor ? ', indoor' : ''}
+          {f.kindLabel}{f.indoor && !/indoor/i.test(f.kindLabel) ? ', indoor' : ''}
         </p>
       </header>
 
@@ -116,7 +116,7 @@ export default function SpotView({ facts, postHref, sessions, riders, crews, nea
 
         <aside className="space-y-8">
           <div className="panel overflow-hidden">
-            <div className="h-[260px]"><HubMap pins={pins} center={{ lat: f.lat, lng: f.lng }} zoom={13} fitPins={false} label={`Map of ${f.name}`} /></div>
+            <div className="h-[260px]"><HubMap pins={pins} center={{ lat: f.lat, lng: f.lng }} showCenter={false} zoom={13} fitPins={false} label={`Map of ${f.name}`} /></div>
             <div className="p-4">
               <a href={directions} className="btn btn-dark w-full" rel="noopener">Directions</a>
             </div>

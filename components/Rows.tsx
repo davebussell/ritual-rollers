@@ -56,7 +56,7 @@ export function SpotRow({ s, distanceKm }: { s: IndexedSpot; distanceKm?: number
       <div className="min-w-0 flex-1">
         <p className="text-[16px] font-extrabold leading-snug group-hover:underline group-hover:underline-offset-4">{s.name}</p>
         <p className="text-[14px] text-muted">
-          {KIND_META[s.kind].label}{s.indoor ? ', indoor' : ''} in {s.city}
+          {KIND_META[s.kind].label}{s.indoor && s.kind !== 'indoor' ? ', indoor' : ''} in {s.city}
           {s.features.length ? `. ${s.features.slice(0, 3).map(f => FEATURE_LABEL[f] ?? f).join(', ')}` : ''}
         </p>
       </div>

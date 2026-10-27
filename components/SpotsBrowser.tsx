@@ -123,7 +123,7 @@ export default function SpotsBrowser() {
                   <span aria-hidden="true" className="mt-1.5 h-3 w-3 shrink-0 rounded-[3px]" style={{ background: KIND_META[s.kind].color }} />
                   <div>
                     <span className="block text-[17px] font-extrabold leading-snug group-hover:underline group-hover:underline-offset-4">{s.name}</span>
-                    <span className="block text-[14px] text-muted">{KIND_META[s.kind].label}{s.indoor ? ', indoor' : ''} in {s.city}, {s.region}</span>
+                    <span className="block text-[14px] text-muted">{KIND_META[s.kind].label}{s.indoor && s.kind !== 'indoor' ? ', indoor' : ''} in {s.city}, {s.region}</span>
                   </div>
                 </div>
                 <div className="pl-6 md:pl-0">

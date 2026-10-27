@@ -76,7 +76,7 @@ export default async function CrewPage({ params }: { params: Promise<{ slug: str
           <div className="panel h-[220px] overflow-hidden">
             <HubMap pins={[{ id: c.slug, lat: c.lat, lng: c.lng, title: c.home_spot ?? c.city, color: '#D4402A', big: true, square: true },
               ...nearbySpots.map(s => ({ id: s.slug, lat: s.lat, lng: s.lng, title: s.name, sub: KIND_META[s.kind].label, href: `/spots/${s.slug}`, linkLabel: 'See the spot', color: KIND_META[s.kind].color }))]}
-              center={{ lat: c.lat, lng: c.lng }} zoom={c.coords === 'spot' ? 13 : 11} fitPins={false} label={`Map near ${c.name}`} />
+              center={{ lat: c.lat, lng: c.lng }} showCenter={false} zoom={c.coords === 'spot' ? 13 : 11} fitPins={false} label={`Map near ${c.name}`} />
           </div>
           {nearbySpots.length > 0 && (
             <section>

@@ -1,54 +1,66 @@
 # Ritual Rollers
 
-**ritualrollers.com — dry enough to roll?** Skateparks, plazas, DIYs, street spots, pump tracks, BMX tracks and bike
-parks across Canada, the US and Mexico, each with a live read of whether the ground is dry right now and when it will be.
-For skateboards, roller and inline skates, scooters, BMX and mountain bikes.
+**ritualrollers.com: find spots to ride and people to ride with.** Skateboards, roller and inline skates, scooters,
+BMX and mountain bikes, across Canada, the US and Mexico. Every city and spot page answers three questions: where can I
+ride, who rides here, and who's going when.
 
-Next.js 16 (App Router) + Tailwind 4, Supabase for accounts and community, Leaflet maps, Open-Meteo weather.
+Since 2026-10-27 (Dave's call): no conditions, weather or temperature anywhere. The dry-ground read that lived here
+for a day is in git history (`lib/skate.ts` at `9badd9d`) if it's ever wanted again.
+
+Next.js 16 (App Router) + Tailwind 4, Supabase for accounts and sessions, Leaflet maps on OpenStreetMap tiles.
 
 ```
-npm ci --legacy-peer-deps
-npm run dev                         # http://localhost:3000
+npm ci
+npm run dev        # http://localhost:3000 (set NEXT_PUBLIC_SUPABASE_URL and _PUBLISHABLE_KEY; a placeholder URL works and shows the sample state)
 npm run build
-npx tsx --test tests/skate.test.ts  # the conditions engine
+npm test           # tests/data.test.ts: samples, cities, crews, formatting
+node tests/shots.mjs http://localhost:3000 /tmp/shots / /cities/ottawa   # screenshots at 375 and 1280, flags sideways scroll
 ```
 
-## The ride read (`lib/skate.ts`)
-The engine keeps a running figure for the water on the ground, hour by hour, starting two days back
-(`lib/forecast.ts` asks Open-Meteo for `past_days=2` and 7 days ahead):
+## What's on it
+- **Sessions** (`/sessions`, `/sessions/new`, `/sessions/[id]`): someone posts a spot, a day and a time, who it's for
+  and whether beginners are welcome. Riders tap I'm in and comment. Public, at public spots, no private messages.
+- **Crews** (`/crews`, `/crews/[slug]`, `/crews/add`): real groups (skate nights, roller groups, women's and queer
+  sessions, BMX and MTB clubs, nonprofits), each with its own public links, a source and recent activity.
+- **Riders** (`/riders`, `/riders/[username]`, `/me`): riders who say they're open to riding with people. City and
+  chosen spots only, never where they live. Rider pages are noindex.
+- **Spots** (`/spots`, `/spots/[slug]`, `/parks/[id]`): 370 researched spots plus every mapped park, each showing
+  sessions, riders and crews there.
+- **Cities** (`/cities`, `/cities/[slug]`, `/near/[place]`): 231 hubs (40 km); any other town goes to `/near/…`, which
+  sends it to the nearest hub or shows what's around it.
+- **Guidelines** (`/guidelines`): how sessions work, 16+, reporting.
 
-- rain adds to it, up to what the surface holds before the rest runs off;
-- sun, wind and dry air take it away: Open-Meteo's FAO reference evapotranspiration (ET0), scaled per surface;
-- frost locks it in (ice); snow on the ground closes outdoor spots; a melt-out leaves the ground soaked.
-
-| Surface | holds | dry under | damp up to | dries at |
-|---|---|---|---|---|
-| hard (concrete, asphalt) | 1.2 mm | 0.05 mm | 0.35 mm | 1.5× ET0 by day, 1.2× at night |
-| wood (outdoor ramps) | 1.5 mm | 0.05 mm | 0.3 mm | 1.0× / 0.8× |
-| dirt (jumps, BMX, bike parks) | 12 mm | 1.5 mm | 4 mm (mud above) | 0.8× / 0.4× |
-
-Each hour gets a ground state (dry, drying/soft, wet, mud, snow, ice) and a status (prime, rideable, sit it out) with a
-plain line carrying the real number. Heat, cold, gusts, rain chance and darkness (lit or not) are caveats. Indoor spots
-are always rideable. On top: "rideable by ~3pm", the best dry daylight windows, and a 7-day read. A place (`/scout/…`)
-gets two reads, concrete and dirt. The tests in `tests/skate.test.ts` pin the behaviour down.
+## People and safety (Dave's decisions, 2026-10-27)
+- Accounts are 16+: riders confirm their birth year and that they're 16 or older; only the fact (`age_confirmed_at`)
+  is stored. Anyone can browse.
+- Contact is public sessions only: I'm in and comments. No private messages.
+- Report links on sessions and profiles go to the Netlify Form `report` (emails Dave). Hosts can delete comments on
+  their sessions and cancel them. At most 6 new sessions per rider per day (database trigger).
+- New accounts get a neutral `rider_xxxxxx` username (they used to get their email's local part) until the rider picks one.
 
 ## Data
-- **Featured spots** — `data/spots.json`, built by `node scripts/build-spots.mjs <research files…>`. Each entry was
-  researched with a source (briefs: skate spots and bike spots; fields in `lib/spots-index.ts`). The build validates,
-  de-duplicates and snaps coordinates to the matching OpenStreetMap feature when one is within 1.5 km under a similar
-  name (`osm` field). Never add a spot without a real source; leave out anything closed or demolished.
-  The research files, the briefs the researchers worked from and the known gaps are in `research/spots/` (not
-  published). Rebuild: `node scripts/build-spots.mjs research/spots/*.json`. Spots we deliberately don't feature are in
-  `EXCLUDE` at the top of the build script.
-- **Every mapped park** — `data/parks.json`: every skatepark, pump track, BMX track and bike park in OpenStreetMap for
-  CA/US/MX, fetched by `scripts/fetch-skateparks.mjs` in GitHub Actions (`.github/workflows/skateparks.yml`; run it from
-  the Actions tab to refresh — on `main` the refresh commit deploys). Each one has a page at `/parks/<id>`.
-- **Legacy** — `data/legacy-spot-slugs.json`: the 636 outdoor-sport spots from before the relaunch, redirected to `/spots`.
+- **Sessions, I'm in, comments, rider profiles**: Supabase, `supabase/migrations/004_riders_and_sessions.sql`
+  (additive; Dave runs it in the SQL editor). Until it's run, posting says "opens soon" and pages show samples.
+- **Samples** (`lib/sample.ts`): 24 made-up riders and about 50 sessions at real featured spots, always upcoming, always
+  tagged Sample. They fill lists that have fewer than 3 real entries and give way as real ones arrive.
+- **Featured spots**: `data/spots.json`, built by `node scripts/build-spots.mjs research/spots/*.json` (sources,
+  briefs and gaps in `research/spots/`). Never add a spot without a real source; leave out anything closed.
+- **Every mapped park**: `data/parks.json`, from OpenStreetMap via the "Refresh parks" GitHub Action
+  (`scripts/fetch-skateparks.mjs`).
+- **Cities**: `data/cities.json`, built by `node scripts/build-cities.mjs` (metro list in the script; Nominatim
+  results cached in `research/cities/geocode.json`).
+- **Crews**: `data/crews.json`, built by `node scripts/build-crews.mjs research/crews/*.json` (brief in
+  `research/crews/BRIEF.md`). New and updated crews come in through the Netlify Form `crew` (`/crews/add`); check the
+  group's own page, add it to a research file, rebuild.
+- **Legacy**: `data/legacy-spot-slugs.json` (636 outdoor-sport spots from before 2026-10-26) redirect to `/spots`;
+  old pages from the conditions and trips versions redirect in `next.config.ts`.
 
-## Pages
-`/` home strip of live reads · `/spots` featured index (list/map, filters) · `/spots/[slug]` ride report ·
-`/parks/[id]` ride report for any mapped park · `/scout` and `/scout/[place]` any town, zip or postal code ·
-`/finder` four-question finder · `/crew` riders and roll calls · `/explore`, `/feed`, `/trips/…`, `/profile/…` community.
+## Look
+Concrete and curb paint: asphalt `#1F201C`, concrete `#E5E4DF`, flyer `#FBFBF8`, curb yellow `#F2C230` (actions),
+fire-lane red `#D4402A` (dates), pool blue `#2D68B0` (links, skatepark pins). Unbounded for headlines and date
+numerals, Overpass for everything else. Sessions are flyers taped to the wall; everything else is quiet lists. Tokens and
+component classes are in `app/globals.css` (they're emitted after Tailwind's utilities, so wrap rather than put a
+conflicting utility such as `hidden` on a `.btn`).
 
 ## Deploy
 Netlify project `ritual-rollers`, linked to this repo: every push to `main` builds and goes live. Work on a branch,

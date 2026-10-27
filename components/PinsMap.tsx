@@ -25,6 +25,7 @@ interface Props {
   center?: { lat: number; lng: number } | null
   activeId?: string | null
   onSelect?: (id: string) => void
+  showCenter?: boolean     // draw the centre marker (off when a pin already marks the place)
   zoom?: number            // with a centre: the starting zoom
   fitPins?: boolean        // zoom to the pins (default when there's no centre)
   label: string            // what the map shows, for screen readers
@@ -44,7 +45,7 @@ function pinHtml(p: Pin, active: boolean): string {
 
 const centerHtml = `<div style="width:18px;height:18px;border-radius:50%;background:#F2C230;border:3px solid #1F201C;box-shadow:0 0 0 4px rgba(242,194,48,.35)"></div>`
 
-export default function PinsMap({ pins, center = null, activeId = null, onSelect, zoom = 11, fitPins, label }: Props) {
+export default function PinsMap({ pins, center = null, showCenter = true, activeId = null, onSelect, zoom = 11, fitPins, label }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<LeafletMap | null>(null)
   const layerRef = useRef<LayerGroup | null>(null)
@@ -83,7 +84,7 @@ export default function PinsMap({ pins, center = null, activeId = null, onSelect
       const map = mapRef.current, layer = layerRef.current
       if (!map || !layer) return
       layer.clearLayers()
-      if (center) {
+      if (center && showCenter) {
         layer.addLayer(L.marker([center.lat, center.lng], {
           icon: L.divIcon({ html: centerHtml, className: 'rr-center', iconSize: [18, 18], iconAnchor: [9, 9] }), zIndexOffset: 2000, keyboard: false,
         }))
@@ -110,7 +111,7 @@ export default function PinsMap({ pins, center = null, activeId = null, onSelect
       }
     }
     render()
-  }, [ready, pins, activeId, onSelect, center, zoom, fitPins])
+  }, [ready, pins, activeId, onSelect, center, showCenter, zoom, fitPins])
 
   return <div ref={containerRef} role="region" aria-label={label} className="h-full w-full" />
 }

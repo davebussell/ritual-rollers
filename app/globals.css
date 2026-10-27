@@ -45,79 +45,78 @@ body {
 
 ::selection { background: var(--color-curb); color: var(--color-asphalt); }
 
-/* Component classes live in the components layer, so Tailwind utilities (hidden, w-full, py-…) can override them */
-@layer components {
-  /* Headline scale: Unbounded is wide, so it runs a step smaller than a condensed face would */
-  .h-display { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; }
-  .h-section { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; }
+/* Component classes. Next's CSS build emits these after Tailwind's utilities, so they win over a utility on the
+   same element (`btn hidden` stays visible). Wrap instead, or use the important form (`!py-2`). */
+/* Headline scale: Unbounded is wide, so it runs a step smaller than a condensed face would */
+.h-display { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; }
+.h-section { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; }
 
-  /* Links in running text */
-  .prose-link { color: var(--color-pool); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-  .prose-link:hover { color: var(--color-pool-deep); text-decoration-thickness: 2px; }
+/* Links in running text */
+.prose-link { color: var(--color-pool); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose-link:hover { color: var(--color-pool-deep); text-decoration-thickness: 2px; }
 
-  /* Buttons */
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-    border-radius: 999px; padding: .7rem 1.25rem; font-weight: 700; font-size: .95rem; line-height: 1;
-    transition: background-color .15s, color .15s, border-color .15s, transform .1s;
-  }
-  .btn:active { transform: translateY(1px); }
-  .btn-curb { background: var(--color-curb); color: var(--color-asphalt); }
-  .btn-curb:hover { background: var(--color-curb-deep); }
-  .btn-dark { background: var(--color-asphalt); color: var(--color-flyer); }
-  .btn-dark:hover { background: var(--color-asphalt-2); }
-  .btn-ghost { border: 2px solid var(--color-asphalt); color: var(--color-asphalt); }
-  .btn-ghost:hover { background: var(--color-asphalt); color: var(--color-flyer); }
-  .btn[disabled] { opacity: .5; pointer-events: none; }
-
-  /* Chips (filters, tags) */
-  .chip {
-    display: inline-flex; align-items: center; gap: .35rem; border-radius: 999px; padding: .3rem .75rem;
-    font-size: .85rem; font-weight: 600; border: 1.5px solid var(--color-concrete-3); color: var(--color-asphalt-2);
-    background: transparent; transition: background-color .15s, border-color .15s, color .15s;
-  }
-  .chip:hover { border-color: var(--color-asphalt); color: var(--color-asphalt); }
-  .chip[aria-pressed="true"], .chip[aria-current="page"] { background: var(--color-asphalt); border-color: var(--color-asphalt); color: var(--color-flyer); }
-
-  /* Small labels on things: "Sample", "Beginners welcome" */
-  .tag { display: inline-flex; align-items: center; border-radius: 4px; padding: .1rem .4rem; font-size: .75rem; font-weight: 700; line-height: 1.3; }
-  .tag-sample { background: var(--color-concrete-2); color: var(--color-asphalt-2); }
-  .tag-welcome { background: var(--color-curb); color: var(--color-asphalt); }
-  .tag-line { border: 1.5px solid var(--color-concrete-3); color: var(--color-asphalt-2); }
-
-  /* Panels: the quiet surface for forms and side boxes */
-  .panel { background: var(--color-flyer); border: 1.5px solid var(--color-concrete-2); border-radius: 14px; }
-
-  /* Lists: rows separated by a rule, not cards */
-  .rows > * + * { border-top: 1.5px solid var(--color-concrete-2); }
-
-  /* The flyer: a session taped to the wall */
-  .flyer {
-    position: relative; background: var(--color-flyer); border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(31,32,28,.06), 0 10px 22px -12px rgba(31,32,28,.35);
-    transform: rotate(var(--tilt, -1.2deg));
-    transition: transform .2s ease;
-  }
-  .flyer::before {
-    content: ""; position: absolute; top: -11px; left: 50%; width: 88px; height: 22px; margin-left: -44px;
-    background: rgba(242, 194, 48, .55); transform: rotate(calc(var(--tilt, -1.2deg) * -2));
-    box-shadow: 0 1px 1px rgba(31,32,28,.08);
-  }
-  a.flyer:hover { transform: rotate(0deg) translateY(-2px); }
-  @media (prefers-reduced-motion: reduce) {
-    .flyer, a.flyer:hover { transition: none; }
-  }
-
-  /* Form fields */
-  .field {
-    width: 100%; border-radius: 10px; border: 1.5px solid var(--color-concrete-3); background: var(--color-flyer);
-    padding: .65rem .8rem; font-size: 1rem; color: var(--color-asphalt);
-  }
-  .field::placeholder { color: #8A8B84; }
-  .field:focus { outline: none; border-color: var(--color-asphalt); box-shadow: 0 0 0 3px rgba(45,104,176,.25); }
-  .label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: .35rem; }
-  .hint { font-size: .85rem; color: var(--color-muted); }
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border-radius: 999px; padding: .7rem 1.25rem; font-weight: 700; font-size: .95rem; line-height: 1;
+  transition: background-color .15s, color .15s, border-color .15s, transform .1s;
 }
+.btn:active { transform: translateY(1px); }
+.btn-curb { background: var(--color-curb); color: var(--color-asphalt); }
+.btn-curb:hover { background: var(--color-curb-deep); }
+.btn-dark { background: var(--color-asphalt); color: var(--color-flyer); }
+.btn-dark:hover { background: var(--color-asphalt-2); }
+.btn-ghost { border: 2px solid var(--color-asphalt); color: var(--color-asphalt); }
+.btn-ghost:hover { background: var(--color-asphalt); color: var(--color-flyer); }
+.btn[disabled] { opacity: .5; pointer-events: none; }
+
+/* Chips (filters, tags) */
+.chip {
+  display: inline-flex; align-items: center; gap: .35rem; border-radius: 999px; padding: .3rem .75rem;
+  font-size: .85rem; font-weight: 600; border: 1.5px solid var(--color-concrete-3); color: var(--color-asphalt-2);
+  background: transparent; transition: background-color .15s, border-color .15s, color .15s;
+}
+.chip:hover { border-color: var(--color-asphalt); color: var(--color-asphalt); }
+.chip[aria-pressed="true"], .chip[aria-current="page"] { background: var(--color-asphalt); border-color: var(--color-asphalt); color: var(--color-flyer); }
+
+/* Small labels on things: "Sample", "Beginners welcome" */
+.tag { display: inline-flex; align-items: center; border-radius: 4px; padding: .1rem .4rem; font-size: .75rem; font-weight: 700; line-height: 1.3; }
+.tag-sample { background: var(--color-concrete-2); color: var(--color-asphalt-2); }
+.tag-welcome { background: var(--color-curb); color: var(--color-asphalt); }
+.tag-line { border: 1.5px solid var(--color-concrete-3); color: var(--color-asphalt-2); }
+
+/* Panels: the quiet surface for forms and side boxes */
+.panel { background: var(--color-flyer); border: 1.5px solid var(--color-concrete-2); border-radius: 14px; }
+
+/* Lists: rows separated by a rule, not cards */
+.rows > * + * { border-top: 1.5px solid var(--color-concrete-2); }
+
+/* The flyer: a session taped to the wall */
+.flyer {
+  position: relative; background: var(--color-flyer); border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(31,32,28,.06), 0 10px 22px -12px rgba(31,32,28,.35);
+  transform: rotate(var(--tilt, -1.2deg));
+  transition: transform .2s ease;
+}
+.flyer::before {
+  content: ""; position: absolute; top: -11px; left: 50%; width: 88px; height: 22px; margin-left: -44px;
+  background: rgba(242, 194, 48, .55); transform: rotate(calc(var(--tilt, -1.2deg) * -2));
+  box-shadow: 0 1px 1px rgba(31,32,28,.08);
+}
+a.flyer:hover { transform: rotate(0deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) {
+  .flyer, a.flyer:hover { transition: none; }
+}
+
+/* Form fields */
+.field {
+  width: 100%; border-radius: 10px; border: 1.5px solid var(--color-concrete-3); background: var(--color-flyer);
+  padding: .65rem .8rem; font-size: 1rem; color: var(--color-asphalt);
+}
+.field::placeholder { color: #8A8B84; }
+.field:focus { outline: none; border-color: var(--color-asphalt); box-shadow: 0 0 0 3px rgba(45,104,176,.25); }
+.label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: .35rem; }
+.hint { font-size: .85rem; color: var(--color-muted); }
 
 /* Leaflet sits on the concrete palette */
 .rr-tiles { filter: saturate(0.35) contrast(0.95) brightness(1.03); }
