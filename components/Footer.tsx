@@ -20,6 +20,7 @@ export default function Footer() {
           <ul className="mt-3 space-y-2">
             <li><Link className="hover:text-flyer" href="/spots">Spots</Link></li>
             <li><Link className="hover:text-flyer" href="/cities">Cities</Link></li>
+            <li><Link className="hover:text-flyer" href="/ride">Ride it in 3D</Link></li>
             <li><Link className="hover:text-flyer" href="/sessions">Sessions</Link></li>
             <li><Link className="hover:text-flyer" href="/crews">Crews</Link></li>
             <li><Link className="hover:text-flyer" href="/riders">Riders</Link></li>

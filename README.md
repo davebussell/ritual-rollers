@@ -29,6 +29,34 @@ node tests/shots.mjs http://localhost:3000 /tmp/shots / /cities/ottawa   # scree
 - **Cities** (`/cities`, `/cities/[slug]`, `/near/[place]`): 231 hubs (40 km); any other town goes to `/near/…`, which
   sends it to the nearest hub or shows what's around it.
 - **Guidelines** (`/guidelines`): how sessions work, 16+, reporting.
+- **Trail maps** (on `/parks/[id]` and featured spots that are a mapped park): the park's outline and the trails and
+  track lines mapped inside it, coloured by difficulty, with the named trails listed. Skateparks show their outline and
+  a link to add what's inside on OpenStreetMap; parks mapped only as a point say so.
+- **Ride it in 3D** (`/ride`, `/ride/[id]`): first person on a park's real lines over the real ground (see below).
+
+## Trail maps and the 3D ride (2026-10-27)
+Dave asked for trail maps for every location and a game to ride them, starting with bikes and tracks.
+- **Data**: `node scripts/fetch-lines.mjs` (after `fetch-skateparks.mjs`) asks QLever for each park's outline and the
+  ways inside bike parks, pump tracks and BMX tracks, keeps the rideable ones (trails with `mtb:scale` /
+  `mtb:scale:imba` or `sport=mtb`, `leisure=track` lines, and paths mostly inside the park), joins ways split by OSM
+  into whole trails, and writes `public/lines/<id>.json` (fetched by the browser) and `data/lines-index.json` (counts,
+  named trails and whether there's something to ride; read on the server by `lib/lines.ts`). A park mapped as a point
+  gets no lines (a point on a trail would claim the whole trail). A pump or BMX track mapped only as an area is ridden
+  along the edge of that area, and the page says so (`fromOutline`). `LINES_CACHE=<dir>` keeps QLever's answers so the
+  files can be rebuilt offline. The "Refresh parks" Action runs both scripts.
+- **Difficulty**: `mtb:scale:imba` first (0–1 green circle, 2 blue square, 3 black diamond, 4 double black), else
+  `mtb:scale` (S0 green, S1 blue, S2 black, S3+ double black), else "not rated". The page says to trust the signs.
+- **The ride** (`components/ride/RideGame.tsx`, `lib/ride/*`, three.js loaded only on `/ride/[id]`): ground from the
+  AWS Open Data Terrain Tiles (terrarium PNGs, CORS open, no key; credit on the page), a 1–2 m mesh around the line;
+  every line of the park drawn as a ribbon; the rider follows the chosen line (pure physics in `lib/ride/physics.ts`,
+  tested in `tests/ride.test.ts`): pedal or push, pump (press down the back of a roller for speed, let go on the face),
+  brake, corner speed limits (skid, then crash), air off crests and landings. Trails are ridden downhill unless they're
+  one-way; tracks flow on into joining lines; a trail carries on while the next piece has the same name.
+- **What's generated, said on the page**: trees everywhere, and on pump and BMX tracks the rollers, berms and start
+  hill (elevation data can't see them). The lines and the shape of the ground are real.
+- **Wheel picker**: Bike rides everything. Board and Skates can ride hard (non-dirt) pump tracks as a board or skates;
+  elsewhere the ride says it's on a bike. `/ride` lists only what fits the pick.
+- Best laps and run times are kept per browser (localStorage), not shared.
 
 ## Pick your wheels (2026-10-27)
 The header has a picker: **Board** (skateboards and scooters), **Skates** (roller and inline) or **Bike** (BMX and
@@ -56,7 +84,8 @@ Picking reloads the page (a soft refresh left the header stale).
 - **Featured spots**: `data/spots.json`, built by `node scripts/build-spots.mjs research/spots/*.json` (sources,
   briefs and gaps in `research/spots/`). Never add a spot without a real source; leave out anything closed.
 - **Every mapped park**: `data/parks.json`, from OpenStreetMap via the "Refresh parks" GitHub Action
-  (`scripts/fetch-skateparks.mjs`).
+  (`scripts/fetch-skateparks.mjs`). Their outlines and lines: `public/lines/` and `data/lines-index.json`
+  (`scripts/fetch-lines.mjs`, same Action).
 - **Cities**: `data/cities.json`, built by `node scripts/build-cities.mjs` (metro list in the script; Nominatim
   results cached in `research/cities/geocode.json`).
 - **Crews**: `data/crews.json`, built by `node scripts/build-crews.mjs research/crews/*.json` (brief in

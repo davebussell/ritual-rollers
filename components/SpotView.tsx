@@ -45,6 +45,7 @@ interface Props {
   nearbyParks: NearPark[]
   wheelLabel?: string      // the picked wheel, when the page is filtered
   misfit?: string          // set when this spot isn't one for the picked wheel
+  parkMap?: React.ReactNode  // the trail / track map, when the spot is a mapped park
 }
 
 function Fact({ label, children }: { label: string; children: React.ReactNode }) {
@@ -56,7 +57,7 @@ function Fact({ label, children }: { label: string; children: React.ReactNode })
   )
 }
 
-export default function SpotView({ facts, postHref, sessions, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit }: Props) {
+export default function SpotView({ facts, postHref, sessions, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit, parkMap }: Props) {
   const f = facts
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`
   const pins = [
@@ -90,6 +91,8 @@ export default function SpotView({ facts, postHref, sessions, riders, crews, nea
               )}
             </section>
           )}
+
+          {parkMap}
 
           <section>
             <SectionHead title="Sessions here" />
