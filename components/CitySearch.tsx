@@ -12,7 +12,7 @@ export interface CityOption { slug: string; name: string; region: string }
 
 const fold = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
 
-export default function CitySearch({ cities, big = false }: { cities: CityOption[]; big?: boolean }) {
+export default function CitySearch({ cities, big = false, target = 'city' }: { cities: CityOption[]; big?: boolean; target?: 'city' | 'tag' }) {
   const router = useRouter()
   const [q, setQ] = useState('')
   const [open, setOpen] = useState(false)
@@ -28,9 +28,9 @@ export default function CitySearch({ cities, big = false }: { cities: CityOption
   }, [q, cities])
 
   const go = (c?: CityOption) => {
-    if (c) { router.push(`/cities/${c.slug}`); return }
+    if (c) { router.push(target === 'tag' ? `/tag?city=${c.slug}` : `/cities/${c.slug}`); return }
     const slug = toSlug(q)
-    if (slug) router.push(`/near/${slug}`)
+    if (slug) router.push(target === 'tag' ? `/tag?near=${slug}` : `/near/${slug}`)
   }
 
   return (

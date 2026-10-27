@@ -31,8 +31,8 @@ export default async function MePage({ searchParams }: { searchParams: Promise<{
       <h1 className="h-display text-[32px] sm:text-[44px]">{setUp ? 'Your rider profile' : 'Set up your rider profile'}</h1>
       <p className="mt-3 text-[17px] text-asphalt-2">
         {setUp
-          ? <>This is what people see on <Link href={`/riders/${me.profile?.username}`} className="prose-link">your page</Link>, next to sessions you post or join.</>
-          : 'A name, what you ride and where. Then you can post sessions and say you’re in.'}
+          ? <>This is what people see on <Link href={`/riders/${me.profile?.username}`} className="prose-link">your page</Link>, next to the photos you post. Your friends also see the spots you tag.</>
+          : 'A name, what you ride and where. Then you can tag spots, add friends and post photos.'}
       </p>
       {friends && friends.incoming.length > 0 && (
         <section className="mt-8 rounded-xl bg-curb/25 p-4 sm:p-5">

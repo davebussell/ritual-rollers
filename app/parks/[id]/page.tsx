@@ -2,18 +2,25 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import SpotView from '@/components/SpotView'
 import { parkById, parksNear, parkName, PARK_KIND_META, osmUrl, osmEditUrl } from '@/lib/parks'
-import { linesFor, rideable } from '@/lib/lines'
+import { linesFor } from '@/lib/lines'
 import ParkMapSection from '@/components/ParkMapSection'
 import { shopsNear } from '@/lib/shops'
 import Plans from '@/components/Plans'
+import Photos, { Credit } from '@/components/Photos'
+import { photosFor } from '@/lib/photos'
 import { spotsNear, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
 import { crewsNear } from '@/lib/crews'
 import { nearestCity } from '@/lib/cities'
-import { upcomingSessions } from '@/lib/sessions'
 import { getWheel } from '@/lib/wheel-server'
 import { fits, parkFits } from '@/lib/wheels'
 
 export const dynamic = 'force-dynamic'
+
+// The first photo of someone riding it, as the page's banner
+function heroFor(list: ReturnType<typeof photosFor>) {
+  const p = list.find(x => x.width >= x.height) ?? list[0]
+  return p ? { src: p.src, alt: p.caption || p.title, credit: <Credit p={p} /> } : null
+}
 
 const SITE = 'https://ritualrollers.com'
 
@@ -38,13 +45,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 }
 
-export default async function ParkPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ParkPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ plan?: string }> }) {
+  const { plan } = await searchParams
   const { id } = await params
   const park = parkById(id)
   if (!park) notFound()
   const hub = nearestCity(park.lat, park.lng)
   const { wheel } = await getWheel()
-  const sessions = await upcomingSessions({ park: id, disciplines: wheel?.disciplines, limit: 8 })
   const misfit = wheel && !parkFits(park.kind, wheel) ? `This ${PARK_KIND_META[park.kind].label.toLowerCase()} isn't one for ${wheel.lower}.` : undefined
   // Who rides it, by kind of park (OSM's sport tags are too sparse to go on)
   const disciplines = { skate: ['skateboard', 'roller', 'inline', 'scooter', 'bmx'], pump: ['skateboard', 'roller', 'inline', 'scooter', 'bmx', 'mtb'], bmx: ['bmx'], bike: ['mtb', 'bmx'] }[park.kind]
@@ -68,22 +75,21 @@ export default async function ParkPage({ params }: { params: Promise<{ id: strin
         web: park.web,
         source: { url: osmUrl(park.id), label: 'OpenStreetMap' },
       }}
-      postHref={`/sessions/new?park=${id}`}
-      sessions={sessions}
       riders={[]}
       crews={crewsNear(park.lat, park.lng, 25).filter(c => fits(c.disciplines, wheel))}
       nearbySpots={spotsNear(park.lat, park.lng, 40).filter(s => fits(s.disciplines, wheel))}
       nearbyParks={parksNear(park.lat, park.lng, 20, 200).filter(p => p.id !== park.id && !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 60)}
       shops={shopsNear(park.lat, park.lng, 25, wheel, 4)}
-      plans={<Plans place={{ park: park.id, name: parkName(park), city: hub?.slug ?? null, lat: park.lat, lng: park.lng }} next={`/parks/${id}`} />}
+      photos={<Photos place={{ park: park.id, lat: park.lat, lng: park.lng }} name={parkName(park)} next={`/parks/${id}`} />}
+      hero={heroFor(photosFor({ park: park.id }))}
+      plans={<Plans place={{ park: park.id, name: parkName(park), city: hub?.slug ?? null, lat: park.lat, lng: park.lng }} next={`/parks/${id}`} open={plan === '1'} />}
       wheelLabel={wheel?.lower}
       misfit={misfit}
       parkMap={
         <ParkMapSection
           parkId={park.id} parkKind={park.kind} color={PARK_KIND_META[park.kind].color} name={parkName(park)}
+          lat={park.lat} lng={park.lng} country={park.cc}
           entry={linesFor(park.id)}
-          rideHref={rideable(park.id) ? `/ride/${park.id}` : null}
-          rideLabel={wheel && park.kind !== 'pump' && wheel.id !== 'bike' ? 'Ride it in 3D (on a bike)' : undefined}
           editUrl={osmEditUrl(park.id)}
         />
       }

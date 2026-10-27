@@ -1,6 +1,6 @@
 // The lines inside each park (trails, BMX and pump track lines) and its outline, from OpenStreetMap.
-// scripts/fetch-lines.mjs writes one file per park to public/lines/<id>.json (fetched by the browser for the trail map
-// and the 3D ride) and a summary of every park to data/lines-index.json (read here, on the server).
+// scripts/fetch-lines.mjs writes one file per park to public/lines/<id>.json (fetched by the browser for the 3D park
+// map) and a summary of every park to data/lines-index.json (read here, on the server).
 // Data © OpenStreetMap contributors (ODbL).
 
 import raw from '@/data/lines-index.json'
@@ -38,7 +38,7 @@ export interface LinesEntry {
   m?: number                                       // metres of line in all
   d?: Record<Difficulty, number>                   // trails by difficulty
   t?: [string, Difficulty | LineKind, number][]    // named trails and tracks: name, difficulty (or kind), metres
-  r?: 1                                            // something to ride in 3D
+  r?: 1                                            // has a trail or track line 30 m or longer
   fo?: 1                                           // fromOutline
 }
 
@@ -47,14 +47,6 @@ export const LINES_FETCHED = data.fetched
 
 export function linesFor(id: string): LinesEntry | null {
   return data.parks[id] ?? null
-}
-
-export function rideable(id: string): boolean {
-  return data.parks[id]?.r === 1
-}
-
-export function rideableIds(): string[] {
-  return Object.entries(data.parks).filter(([, e]) => e.r === 1).map(([id]) => id)
 }
 
 export const DIFFICULTY_META: Record<Difficulty, { label: string; color: string; sign: string }> = {

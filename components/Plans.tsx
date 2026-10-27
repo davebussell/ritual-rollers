@@ -15,10 +15,18 @@ function dayLabel(day: string, lng: number): string {
   return d.relative ?? `${d.weekdayLong} ${d.day} ${d.month}`
 }
 
-export default async function Plans({ place, next }: { place: PlanSpot; next: string }) {
+export default async function Plans({ place, next, open = false }: { place: PlanSpot; next: string; open?: boolean }) {
   const me = await getMe()
   const [counts, visible] = await Promise.all([planCounts(place), visiblePlans(place, me?.id ?? null)])
-  if (counts === null) return null   // plans aren't switched on yet
+  if (counts === null) {
+    // plans aren't switched on yet (migration 005)
+    return (
+      <section id="plans" className="scroll-mt-24">
+        <h2 className="h-section text-[22px] sm:text-[26px]">Who&apos;s riding here</h2>
+        <p className="mt-2 max-w-2xl text-[15px] text-asphalt-2">Soon you&apos;ll be able to tag this spot with when you&apos;re riding it. Everyone will see how many are coming; your friends will see it&apos;s you.</p>
+      </section>
+    )
+  }
 
   const days = new Map<string, { counts: PlanCount[]; people: VisiblePlan[] }>()
   for (const c of counts) {
@@ -31,10 +39,10 @@ export default async function Plans({ place, next }: { place: PlanSpot; next: st
   const friendsNamed = visible.some(p => !p.mine)
 
   return (
-    <section>
-      <h2 className="h-section text-[22px] sm:text-[26px]">Who&apos;s coming</h2>
+    <section id="plans" className="scroll-mt-24">
+      <h2 className="h-section text-[22px] sm:text-[26px]">Who&apos;s riding here</h2>
       <p className="mt-1 max-w-2xl text-[15px] text-muted">
-        Riders who plan to be here. Everyone sees how many; only their friends see who.
+        Riders who tagged this spot and when. Everyone sees how many; only their friends see who.
       </p>
       {days.size ? (
         <ul className="rows panel mt-4 px-4 sm:px-5">
@@ -69,7 +77,7 @@ export default async function Plans({ place, next }: { place: PlanSpot; next: st
       <div className="mt-5">
         {gate === 'ok' && me ? (
           <PlanForm
-            meId={me.id} hasPlans={mine.length > 0}
+            meId={me.id} hasPlans={mine.length > 0} startOpen={open}
             place={{ spot: place.spot ?? null, park: place.park ?? null, name: place.name, city: place.city ?? null, lat: place.lat, lng: place.lng }}
           />
         ) : gate === 'setup' ? (

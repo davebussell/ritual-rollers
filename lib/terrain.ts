@@ -1,5 +1,5 @@
-// Ground for the 3D ride: a local flat projection around the park, and a heightfield built from the free
-// Terrain Tiles on AWS Open Data (Mapzen's terrarium PNGs: elevation = R·256 + G + B/256 − 32768 metres).
+// Elevation for park maps (trail profiles: climbs and drops): a local flat projection around the park, and a
+// heightfield built from the free Terrain Tiles on AWS Open Data (Mapzen's terrarium PNGs: elevation = R·256 + G + B/256 − 32768 metres).
 // Sources behind the tiles include USGS 3DEP, NRCan's CDEM, SRTM and GMTED; detail is about 3–30 m depending on
 // where you are, so the shape of a hillside is real but bumps smaller than that are not in it.
 
@@ -14,7 +14,7 @@ export interface Projection {
   lng0: number
   kx: number   // metres per degree of longitude
   ky: number   // metres per degree of latitude
-  // x east, z south (three.js: -z is north)
+  // x east, z south
   toLocal: (lng: number, lat: number) => [number, number]
   toLngLat: (x: number, z: number) => [number, number]
 }

@@ -1,12 +1,14 @@
-// A place's page: sessions coming up, crews, spots on a map, riders. Used by /cities/<slug> and /near/<place>.
+// A place's page: the parks on a map, who's riding where this week, crews, shops and companies, riders.
+// Used by /cities/<slug> and /near/<place>.
 
 import Link from 'next/link'
-import { SessionRow } from '@/components/SessionBits'
+import { RidingRow } from '@/components/Riding'
+import type { Riding } from '@/lib/riding'
 import { CrewRow, RiderRow, SpotRow, ParkRow, ShopRow, CompanyRow } from '@/components/Rows'
 import type { Company } from '@/lib/companies'
 import { Empty, SectionHead } from '@/components/bits'
 import HubMap from '@/components/HubMap'
-import type { RideSession, RiderCard } from '@/lib/types'
+import type { RiderCard } from '@/lib/types'
 import type { Crew } from '@/lib/crews'
 import type { IndexedSpot } from '@/lib/spots-index'
 import type { NearPark } from '@/lib/parks'
@@ -22,7 +24,7 @@ interface Props {
   subtitle: string
   point: { lat: number; lng: number }
   citySlug?: string
-  sessions: RideSession[]
+  riding: Riding
   crews: Crew[]
   spots: (IndexedSpot & { distanceKm: number })[]
   parks: NearPark[]
@@ -34,9 +36,9 @@ interface Props {
   wheelLabel?: string
 }
 
-export default function Hub({ title, subtitle, point, citySlug, sessions, crews, spots, parks, shops, companies, riders, nearby = [], radiusKm, wheelLabel }: Props) {
-  const realSessions = sessions.filter(s => !s.sample).length
-  const postHref = citySlug ? `/sessions/new?city=${citySlug}` : '/sessions/new'
+export default function Hub({ title, subtitle, point, citySlug, riding, crews, spots, parks, shops, companies, riders, nearby = [], radiusKm, wheelLabel }: Props) {
+  const realPlaces = riding.places.filter(p => !p.sample).length
+  const tagHref = citySlug ? `/tag?city=${citySlug}` : '/tag'
   const pins = [
     ...spots.map(s => ({ id: s.slug, lat: s.lat, lng: s.lng, title: s.name, sub: KIND_META[s.kind].label, href: `/spots/${s.slug}`, linkLabel: 'See the spot', color: KIND_META[s.kind].color, big: true, square: true })),
     ...parks.map(p => ({ id: p.id, lat: p.lat, lng: p.lng, title: parkName(p), sub: PARK_KIND_META[p.kind].label, href: `/parks/${p.id}`, linkLabel: 'See the park', color: PARK_KIND_META[p.kind].color })),
@@ -52,32 +54,13 @@ export default function Hub({ title, subtitle, point, citySlug, sessions, crews,
         <p className="mt-3 text-[17px] text-asphalt-2">
           {plural(spots.length, 'featured spot')} and {plural(parks.length, 'mapped park')} within {radiusKm} km.{' '}
           {crews.length ? `${plural(crews.length, 'crew')} to ride with.` : 'No crews listed yet.'}{' '}
-          {realSessions ? `${plural(realSessions, 'session')} coming up.` : ''}
+          {realPlaces ? `Riders are heading to ${plural(realPlaces, 'spot')} this week.` : ''}
         </p>
         {wheelLabel && <div className="mt-3"><WheelNote label={wheelLabel} /></div>}
       </header>
 
       <div className="mt-10 grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div className="min-w-0 space-y-14">
-          <section>
-            <SectionHead title="Sessions coming up" />
-            {sessions.length ? (
-              <div className="rows panel px-4 sm:px-5">{sessions.map(s => <SessionRow key={s.id} s={s} />)}</div>
-            ) : (
-              <Empty>No sessions posted here yet. Going riding this week? <Link href={postHref} className="prose-link font-semibold">Post it</Link> and see who turns up.</Empty>
-            )}
-            <Link href={postHref} className="btn btn-curb mt-4">Post a session here</Link>
-          </section>
-
-          <section>
-            <SectionHead title="Crews" href={citySlug ? `/crews?city=${citySlug}` : '/crews'} linkLabel="All crews" />
-            {crews.length ? (
-              <div className="rows panel px-4 sm:px-5">{crews.map(c => <CrewRow key={c.slug} c={c} showCity={false} />)}</div>
-            ) : (
-              <Empty>No crews listed here yet. Know one, or run one? <Link href={`/crews/add${citySlug ? `?city=${citySlug}` : ''}`} className="prose-link font-semibold">Add it</Link>.</Empty>
-            )}
-          </section>
-
           <section>
             <SectionHead title="Spots" href="/spots" linkLabel="Browse every spot" />
             <div className="panel h-[340px] overflow-hidden sm:h-[420px]">
@@ -91,6 +74,28 @@ export default function Hub({ title, subtitle, point, citySlug, sessions, crews,
               </details>
             )}
           </section>
+
+          <section id="riding">
+            <SectionHead title="Who's riding this week">
+              Spots riders have tagged, and when. Everyone sees how many; your friends&apos; names show when you&apos;re signed in.
+            </SectionHead>
+            {riding.places.length ? (
+              <div className="rows panel px-4 sm:px-5">{riding.places.map(p => <RidingRow key={p.key} p={p} distanceKm={p.distanceKm} />)}</div>
+            ) : (
+              <Empty>Nobody has tagged a spot here yet this week.</Empty>
+            )}
+            <Link href={tagHref} className="btn btn-curb mt-4">Tag a spot you&apos;re riding</Link>
+          </section>
+
+          <section>
+            <SectionHead title="Crews" href={citySlug ? `/crews?city=${citySlug}` : '/crews'} linkLabel="All crews" />
+            {crews.length ? (
+              <div className="rows panel px-4 sm:px-5">{crews.map(c => <CrewRow key={c.slug} c={c} showCity={false} />)}</div>
+            ) : (
+              <Empty>No crews listed here yet. Know one, or run one? <Link href={`/crews/add${citySlug ? `?city=${citySlug}` : ''}`} className="prose-link font-semibold">Add it</Link>.</Empty>
+            )}
+          </section>
+
 
           <section>
             <SectionHead title="Shops">

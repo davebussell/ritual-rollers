@@ -11,8 +11,7 @@ import { WheelPicker, type WheelValue } from '@/components/WheelPicker'
 
 const LINKS = [
   { href: '/spots', label: 'Spots' },
-  { href: '/ride', label: 'Ride 3D' },
-  { href: '/sessions', label: 'Sessions' },
+  { href: '/riding', label: 'Who’s riding' },
   { href: '/crews', label: 'Crews' },
   { href: '/riders', label: 'Riders' },
 ]
@@ -67,7 +66,7 @@ export default function Navbar({ wheel }: { wheel: WheelValue | null }) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <span className="hidden sm:inline-flex"><Link href="/sessions/new" className="btn btn-curb !py-2.5">Post a session</Link></span>
+          <span className="hidden sm:inline-flex"><Link href="/tag" className="btn btn-curb !py-2.5">Tag a spot</Link></span>
           <Link href={user ? '/me' : '/auth/login'}
             className="hidden rounded-full px-3 py-2 text-[15px] font-semibold text-flyer/75 transition-colors hover:text-flyer md:inline-flex">
             {user ? 'Your profile' : 'Sign in'}
@@ -94,7 +93,7 @@ export default function Navbar({ wheel }: { wheel: WheelValue | null }) {
             <li><Link href={user ? '/me' : '/auth/login'} className="block py-3 text-lg font-semibold text-flyer/80">{user ? 'Your profile' : 'Sign in'}{requests > 0 ? ` (${requests} friend request${requests === 1 ? '' : 's'})` : ''}</Link></li>
           </ul>
           <div className="mt-3"><WheelPicker current={wheel} onDark={false} wide /></div>
-          <Link href="/sessions/new" className="btn btn-curb mt-3 w-full">Post a session</Link>
+          <Link href="/tag" className="btn btn-curb mt-3 w-full">Tag a spot</Link>
         </nav>
       )}
     </header>

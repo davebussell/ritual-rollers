@@ -6,7 +6,7 @@ import { COUNTRY_LABEL, type Country } from '@/lib/spots-index'
 
 export const metadata: Metadata = {
   title: 'Cities: where to skate, roll and ride',
-  description: 'Spots, sessions and crews in every city we cover across Canada, the US and Mexico.',
+  description: 'Skateparks, pump tracks and bike parks in every city we cover across Canada, the US and Mexico, in 3D, with who’s riding them this week.',
   alternates: { canonical: '/cities' },
 }
 
@@ -17,7 +17,7 @@ export default function CitiesPage() {
     <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
       <h1 className="h-display text-[34px] sm:text-[48px]">Cities</h1>
       <p className="mt-3 max-w-2xl text-[17px] text-asphalt-2">
-        Every city has its spots, its crews and the sessions people post. Not listed? Search your town and we&apos;ll show what&apos;s around it.
+        Every city has its parks in 3D, who&apos;s riding them this week, its crews and its shops. Not listed? Search your town and we&apos;ll show what&apos;s around it.
       </p>
       <div className="mt-6 max-w-xl"><CitySearch cities={options} /></div>
 

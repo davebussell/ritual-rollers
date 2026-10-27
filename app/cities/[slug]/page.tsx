@@ -7,7 +7,8 @@ import { spotsNear, isFeaturedPark, COUNTRY_LABEL } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
 import { shopsNear } from '@/lib/shops'
 import { companiesNear } from '@/lib/companies'
-import { upcomingSessions } from '@/lib/sessions'
+import { ridingNear } from '@/lib/riding'
+import { getMe } from '@/lib/me'
 import { ridersFor } from '@/lib/riders'
 import { getWheel } from '@/lib/wheel-server'
 import { fits, parkFits } from '@/lib/wheels'
@@ -25,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const c = cityBySlug(slug)
   if (!c) return { title: 'City not found' }
-  const title = `Skate, roller and BMX in ${c.name}: spots, sessions and crews`
-  const description = `Where to ride in ${c.name}, ${c.region}: skateparks, pump tracks and bike parks, sessions coming up, and the crews and riders who ride them.`
+  const title = `Skateparks, pump tracks and bike parks in ${c.name}`
+  const description = `Where to ride in ${c.name}, ${c.region}: skateparks, pump tracks and bike parks in 3D, who's riding them this week, crews, shops and riders.`
   return {
     title, description,
     alternates: { canonical: `/cities/${slug}` },
@@ -40,8 +41,9 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
   if (!city) notFound()
   const { wheel } = await getWheel()
   const disciplines = wheel?.disciplines
-  const [sessions, riders] = await Promise.all([
-    upcomingSessions({ near: { lat: city.lat, lng: city.lng, km: HUB_KM }, disciplines, limit: 10 }),
+  const me = await getMe()
+  const [riding, riders] = await Promise.all([
+    ridingNear(city.lat, city.lng, HUB_KM, wheel, me?.id ?? null, 10),
     ridersFor({ city: slug, disciplines }, 8),
   ])
   const nearby = CITIES.filter(c => c.slug !== slug)
@@ -54,7 +56,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
       subtitle={`${city.region}, ${COUNTRY_LABEL[city.country]}`}
       point={city}
       citySlug={slug}
-      sessions={sessions}
+      riding={riding}
       crews={crewsNear(city.lat, city.lng, HUB_KM).filter(c => fits(c.disciplines, wheel))}
       spots={spotsNear(city.lat, city.lng, HUB_KM).filter(s => fits(s.disciplines, wheel))}
       parks={parksNear(city.lat, city.lng, HUB_KM, 400).filter(p => !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 150)}

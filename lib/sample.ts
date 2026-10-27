@@ -1,11 +1,11 @@
-// Sample riders and sessions, so a first visit shows how the site works before real riders post.
-// Everything here is invented and is always shown with a "Sample" tag. Sessions are generated relative to
-// today, at real spots, so they're always upcoming. Each sample city gets one session per kind of wheel
-// (board, skates, bike) where a spot fits and a local sample rider rides it. Real riders and sessions push
-// samples out (see withSamples): once a place has enough real ones, its samples stop showing.
+// Sample riders and plans, so a first visit shows how the site works before real riders post.
+// Everything here is invented and is always shown with a "Sample" tag. Plans are generated relative to today, at real
+// spots, so they're always upcoming: each sample city gets one place per kind of wheel (board, skates, bike) where a
+// spot fits. Real riders and plans push samples out (see withSamples).
 
 import type { Level } from '@/lib/sports'
-import type { RideSession, RiderCard, RiderLite } from '@/lib/types'
+import type { RiderCard } from '@/lib/types'
+import type { PlacePlans, PlanCount } from '@/lib/plans'
 import { cityBySlug } from '@/lib/cities'
 import { spotsNear, type IndexedSpot } from '@/lib/spots-index'
 import { parksNear, PARK_KIND_META, type NearPark } from '@/lib/parks'
@@ -107,10 +107,6 @@ function toCard(r: SampleRider): RiderCard {
   }
 }
 
-function toLite(r: SampleRider): RiderLite {
-  return { username: r.username, display_name: r.display_name, avatar_url: null, sample: true }
-}
-
 export function sampleRiders(filter: { city?: string; spot?: string; disciplines?: string[] } = {}): RiderCard[] {
   return RIDERS.map(toCard).filter(r =>
     (!filter.city || r.home_city === filter.city) && (!filter.spot || r.home_spots.includes(filter.spot)) &&
@@ -122,7 +118,7 @@ export function sampleRider(username: string): RiderCard | null {
   return r ? toCard(r) : null
 }
 
-// ── Sessions ─────────────────────────────────────────────────────────
+// ── Sample plans ─────────────────────────────────────────────────────
 
 interface Place { slug: string | null; parkId: string | null; name: string; lat: number; lng: number; disciplines: string[]; kind: string; features: string[]; indoor: boolean }
 
@@ -194,8 +190,10 @@ const fromSpot = (s: IndexedSpot): Place => ({ slug: s.slug, parkId: null, name:
 const fromPark = (p: NearPark): Place => ({ slug: null, parkId: p.id, name: p.name ?? PARK_KIND_META[p.kind].label, lat: p.lat, lng: p.lng,
   disciplines: p.kind === 'skate' ? ['skateboard', 'roller', 'inline', 'scooter'] : ['bmx', 'mtb', 'skateboard', 'scooter'], kind: p.kind, features: [], indoor: !!p.indoor })
 
-export function sampleSessions(now = Date.now()): RideSession[] {
-  const out: RideSession[] = []
+// Sample plans: a few places per sample city where "riders plan to be" this week, so a first visit shows how it works.
+// Always tagged Sample, at real spots, and they give way as soon as an area has real plans.
+export function samplePlacePlans(now = Date.now()): PlacePlans[] {
+  const out: PlacePlans[] = []
   for (const slug of SESSION_CITIES) {
     const city = cityBySlug(slug)
     if (!city) continue
@@ -205,53 +203,27 @@ export function sampleSessions(now = Date.now()): RideSession[] {
       ...parksNear(city.lat, city.lng, 30, 200).filter(p => p.name && p.kind !== 'skate').map(fromPark),
     ]
     const used = new Set<string>()
-    let n = 0
     for (const wheel of WHEELS) {
-      const hosts = RIDERS.filter(r => r.city === slug && ridesAny(r, wheel.disciplines))
-      if (!hosts.length) continue
       const order = TEMPLATES.filter(t => t.wheel === wheel.id).sort((a, b) => hash(`${slug}|${a.title}`) - hash(`${slug}|${b.title}`))
       for (const t of order) {
         const place = places.find(p => t.fits(p) && !used.has(p.name))
         if (!place) continue
         used.add(place.name)
         const h = hash(`${slug}:${t.title}`)
-        const date = nextWeekday(localToday(city.lng, now), t.weekday)
-        const startsLocal = `${date}T${t.time}`
-        const startsAt = new Date(Date.parse(`${startsLocal}:00Z`) - Math.round(city.lng / 15) * 3600_000).toISOString()
-        const host = hosts[h % hosts.length]
-        const going = RIDERS.filter(r => r !== host && ridesAny(r, wheel.disciplines) && (r.city === slug || (h + r.username.length) % 9 === 0)).slice(0, 3)
+        const hour = Number(t.time.slice(0, 2))
+        const day = nextWeekday(localToday(city.lng, now), t.weekday)
+        const days: PlanCount[] = [{ day, part: hour < 12 ? 'morning' : hour < 17 ? 'afternoon' : 'evening', at_local: null, riders: 2 + (h % 5) }]
+        if (h % 3 === 0) days.push({ day: addDays(day, 1), part: 'afternoon', at_local: null, riders: 1 + (h % 3) })
         out.push({
-          id: `sample-${slug}-${n + 1}`,
-          sample: true,
-          title: t.title,
-          notes: t.notes,
-          spot_slug: place.slug,
-          park_id: place.parkId,
-          place_name: place.name,
-          city: slug,
-          lat: place.lat,
-          lng: place.lng,
-          starts_at: startsAt,
-          starts_local: startsLocal,
-          disciplines: wheel.disciplines.filter(d => place.disciplines.includes(d)).length
-            ? wheel.disciplines.filter(d => place.disciplines.includes(d)) : wheel.disciplines,
-          level: t.level,
-          beginners_welcome: t.beginners,
-          cancelled: false,
-          host: toLite(host),
-          riders: going.map(toLite),
-          riders_count: going.length + 1 + (h % 6),
+          key: `sample:${slug}:${place.slug ?? place.parkId}`, sample: true,
+          spot_slug: place.slug, park_id: place.parkId, name: place.name, lat: place.lat, lng: place.lng, city: slug,
+          days, total: days.reduce((n, d) => n + d.riders, 0), friends: [],
         })
-        n += 1
         break
       }
     }
   }
-  return out.sort((a, b) => a.starts_at.localeCompare(b.starts_at))
-}
-
-export function sampleSession(id: string, now = Date.now()): RideSession | null {
-  return sampleSessions(now).find(s => s.id === id) ?? null
+  return out
 }
 
 // Real first; samples fill in only while a list has fewer than `min` real entries.

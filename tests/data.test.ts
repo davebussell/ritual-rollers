@@ -2,7 +2,9 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { clock, sessionDate, localToday, addDays, initials } from '../lib/format'
-import { sampleSessions, sampleRiders, withSamples, isSampleUsername } from '../lib/sample'
+import { samplePlacePlans, sampleRiders, withSamples, isSampleUsername } from '../lib/sample'
+import { placeFits } from '../lib/riding'
+import { parkById } from '../lib/parks'
 import { CITIES, POPULAR, cityBySlug, nearestCity } from '../lib/cities'
 import { CREWS } from '../lib/crews'
 import { SPOTS, spotBySlug } from '../lib/spots-index'
@@ -40,19 +42,21 @@ test('city slugs are unique and the popular list exists', () => {
   assert.equal(nearestCity(45.64, -75.93)?.slug, 'ottawa')  // Wakefield is inside Ottawa's hub
 })
 
-test('sample sessions are upcoming, at real spots, in real cities', () => {
+test('sample plans are upcoming, at real spots, in real cities', () => {
   const now = Date.parse('2026-10-27T15:00:00Z')
-  const list = sampleSessions(now)
-  assert.ok(list.length >= 30, `only ${list.length} sample sessions`)
-  assert.equal(new Set(list.map(s => s.id)).size, list.length)
-  for (const s of list) {
-    assert.ok(s.sample)
-    assert.ok(Date.parse(s.starts_at) > now, `${s.id} is in the past`)
-    assert.ok(Date.parse(s.starts_at) < now + 8 * 86400_000, `${s.id} is more than a week out`)
-    assert.ok((s.spot_slug && spotBySlug(s.spot_slug)) || s.park_id, `${s.id} has no spot`)
-    assert.ok(s.city && cityBySlug(s.city), `${s.id} has no city`)
-    assert.ok(s.disciplines.length > 0)
-    assert.ok(s.riders_count >= s.riders.length + 1)
+  const list = samplePlacePlans(now)
+  assert.ok(list.length >= 30, `only ${list.length} sample places`)
+  assert.equal(new Set(list.map(s => s.key)).size, list.length)
+  for (const p of list) {
+    assert.ok(p.sample)
+    assert.ok((p.spot_slug && spotBySlug(p.spot_slug)) || (p.park_id && parkById(p.park_id)), `${p.key} has no spot`)
+    assert.ok(p.city && cityBySlug(p.city), `${p.key} has no city`)
+    for (const d of p.days) {
+      const t = Date.parse(`${d.day}T12:00:00Z`)
+      assert.ok(t > now - 86400_000 && t < now + 9 * 86400_000, `${p.key} ${d.day} is not this week`)
+      assert.ok(d.riders >= 1)
+    }
+    assert.equal(p.total, p.days.reduce((n, d) => n + d.riders, 0))
   }
 })
 
@@ -94,7 +98,7 @@ test('every wheel gets a populated site', () => {
   const now = Date.parse('2026-10-27T15:00:00Z')
   for (const w of WHEELS) {
     assert.ok(SPOTS.filter(s => fits(s.disciplines, w)).length >= 40, `${w.id}: too few spots`)
-    assert.ok(sampleSessions(now).filter(s => fits(s.disciplines, w)).length >= 10, `${w.id}: too few sample sessions`)
+    assert.ok(samplePlacePlans(now).filter(p => placeFits(p, w)).length >= 10, `${w.id}: too few sample plans`)
     assert.ok(sampleRiders({ disciplines: w.disciplines }).length >= 10, `${w.id}: too few sample riders`)
     assert.ok(CREWS.filter(c => fits(c.disciplines, w)).length >= 10, `${w.id}: too few crews`)
   }

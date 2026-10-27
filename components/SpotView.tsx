@@ -1,11 +1,11 @@
-// A spot's page (featured spot or mapped park): what's there, who's going when, who rides it, crews nearby.
+// A spot's page (featured spot or mapped park): the park in 3D, photos, who's riding it when, who rides it, crews and
+// shops nearby.
 
 import Link from 'next/link'
-import { SessionRow } from '@/components/SessionBits'
 import { CrewRow, RiderRow, SpotRow, ParkRow, ShopRow } from '@/components/Rows'
 import { Empty, SectionHead } from '@/components/bits'
 import HubMap from '@/components/HubMap'
-import type { RideSession, RiderCard } from '@/lib/types'
+import type { RiderCard } from '@/lib/types'
 import type { Crew } from '@/lib/crews'
 import type { IndexedSpot } from '@/lib/spots-index'
 import type { NearPark } from '@/lib/parks'
@@ -38,8 +38,6 @@ export interface SpotFacts {
 
 interface Props {
   facts: SpotFacts
-  postHref: string
-  sessions: RideSession[]
   riders: RiderCard[]
   crews: (Crew & { distanceKm: number })[]
   nearbySpots: (IndexedSpot & { distanceKm: number })[]
@@ -49,6 +47,8 @@ interface Props {
   parkMap?: React.ReactNode  // the trail / track map, when the spot is a mapped park
   shops?: NearShop[]
   plans?: React.ReactNode    // who's coming (counts for everyone, names for friends)
+  photos?: React.ReactNode   // people riding it, on camera
+  hero?: { src: string; alt: string; credit: React.ReactNode } | null
 }
 
 function Fact({ label, children }: { label: string; children: React.ReactNode }) {
@@ -60,7 +60,7 @@ function Fact({ label, children }: { label: string; children: React.ReactNode })
   )
 }
 
-export default function SpotView({ facts, postHref, sessions, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit, parkMap, shops = [], plans }: Props) {
+export default function SpotView({ facts, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit, parkMap, shops = [], plans, photos, hero = null }: Props) {
   const f = facts
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`
   const pins = [
@@ -71,6 +71,13 @@ export default function SpotView({ facts, postHref, sessions, riders, crews, nea
 
   return (
     <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+      {hero && (
+        <figure className="mb-8">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={hero.src} alt={hero.alt} className="aspect-[4/3] w-full rounded-xl object-cover sm:aspect-[21/9]" />
+          <figcaption className="mt-1.5">{hero.credit}</figcaption>
+        </figure>
+      )}
       <header className="max-w-3xl">
         <p className="text-[15px] font-semibold text-muted">
           <Link href="/spots" className="hover:underline">Spots</Link> / {f.cityHref ? <Link href={f.cityHref} className="hover:underline">{f.place}</Link> : f.place}
@@ -95,19 +102,11 @@ export default function SpotView({ facts, postHref, sessions, riders, crews, nea
             </section>
           )}
 
+          {photos}
+
           {parkMap}
 
           {plans}
-
-          <section>
-            <SectionHead title="Sessions here" />
-            {sessions.length ? (
-              <div className="rows panel px-4 sm:px-5">{sessions.map(s => <SessionRow key={s.id} s={s} showPlace={false} />)}</div>
-            ) : (
-              <Empty>Nobody has posted a session here yet. Riding here soon? Post it and see who comes.</Empty>
-            )}
-            <Link href={postHref} className="btn btn-curb mt-4">Post a session here</Link>
-          </section>
 
           <section>
             <SectionHead title="Riders who ride here" />

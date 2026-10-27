@@ -2,13 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { riderByUsername } from '@/lib/riders'
-import { realSessions } from '@/lib/sessions'
-import { sampleSessions } from '@/lib/sample'
+import { plansOf, whenLabel } from '@/lib/plans'
+import { sessionDate } from '@/lib/format'
 import { cityBySlug } from '@/lib/cities'
 import { spotBySlug } from '@/lib/spots-index'
 import { LEVEL_LABEL, disciplineList } from '@/lib/sports'
 import { Avatar, SampleTag, riderName } from '@/components/bits'
-import { SessionRow } from '@/components/SessionBits'
 import ReportLink from '@/components/ReportLink'
 import FriendButton from '@/components/FriendButton'
 import { getMe } from '@/lib/me'
@@ -32,9 +31,7 @@ export default async function RiderPage({ params }: { params: Promise<{ username
   const spots = r.home_spots.map(spotBySlug).filter(Boolean)
   const me = await getMe()
   const friend = r.sample ? null : await friendStateWith(me?.id ?? null, username)
-  const sessions = r.sample
-    ? sampleSessions().filter(s => s.host.username === username || s.riders.some(x => x.username === username))
-    : (await realSessions({})).filter(s => s.host.username === username || s.riders.some(x => x.username === username))
+  const plans = friend?.otherId ? await plansOf(friend.otherId) : []
 
   return (
     <div className="mx-auto max-w-3xl px-4 pt-10 sm:px-6">
@@ -66,16 +63,26 @@ export default async function RiderPage({ params }: { params: Promise<{ username
       {!r.open_to_ride && !r.sample && <p className="mt-4 text-[15px] text-muted">Not listed as looking for people right now.</p>}
 
       <section className="mt-12">
-        <h2 className="h-section text-[22px]">Sessions</h2>
-        {sessions.length ? (
-          <div className="rows mt-3 panel px-4 sm:px-5">{sessions.map(s => <SessionRow key={s.id} s={s} />)}</div>
+        <h2 className="h-section text-[22px]">Where {riderName(r)} is riding next</h2>
+        {plans.length ? (
+          <ul className="rows mt-3 panel px-4 sm:px-5">
+            {plans.map(p => {
+              const d = sessionDate(`${p.day}T12:00`, p.lng)
+              return (
+                <li key={p.id} className="py-3 text-[15px]">
+                  <Link href={p.spot_slug ? `/spots/${p.spot_slug}` : `/parks/${p.park_id}`} className="font-semibold hover:underline">{p.place_name}</Link>
+                  <span className="text-muted"> · {d.relative ?? `${d.weekdayLong} ${d.day} ${d.month}`}, {whenLabel(p.part, p.at_local)}</span>
+                </li>
+              )
+            })}
+          </ul>
         ) : (
-          <p className="mt-3 text-[15px] text-muted">Nothing coming up.</p>
+          <p className="mt-3 text-[15px] text-muted">{friend?.state === 'friends' || friend?.state === 'self' ? 'Nothing tagged for the coming days.' : `Only ${riderName(r)}’s friends see where they’re riding.`}</p>
         )}
       </section>
       <p className="mt-10 text-[14px] text-muted">
-        To ride with {riderName(r)}, join a session they&apos;re going to, or add them as a friend to see where they plan to ride.
-        There are no private messages here, on purpose.
+        To ride with {riderName(r)}, add them as a friend: you&apos;ll see the spots they tag and when. There are no private
+        messages here, on purpose.
       </p>
       {!r.sample && <div className="mt-3"><ReportLink what="profile" url={`https://ritualrollers.com/riders/${r.username}`} /></div>}
     </div>
