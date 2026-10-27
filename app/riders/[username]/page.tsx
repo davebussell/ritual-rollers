@@ -10,6 +10,9 @@ import { LEVEL_LABEL, disciplineList } from '@/lib/sports'
 import { Avatar, SampleTag, riderName } from '@/components/bits'
 import { SessionRow } from '@/components/SessionBits'
 import ReportLink from '@/components/ReportLink'
+import FriendButton from '@/components/FriendButton'
+import { getMe } from '@/lib/me'
+import { friendStateWith } from '@/lib/friends'
 
 export const dynamic = 'force-dynamic'
 
@@ -27,6 +30,8 @@ export default async function RiderPage({ params }: { params: Promise<{ username
   if (!r) notFound()
   const city = r.home_city ? cityBySlug(r.home_city) : null
   const spots = r.home_spots.map(spotBySlug).filter(Boolean)
+  const me = await getMe()
+  const friend = r.sample ? null : await friendStateWith(me?.id ?? null, username)
   const sessions = r.sample
     ? sampleSessions().filter(s => s.host.username === username || s.riders.some(x => x.username === username))
     : (await realSessions({})).filter(s => s.host.username === username || s.riders.some(x => x.username === username))
@@ -42,6 +47,12 @@ export default async function RiderPage({ params }: { params: Promise<{ username
         </div>
       </div>
       {r.sample && <p className="mt-5 rounded-xl bg-asphalt px-5 py-3 text-[15px] text-flyer">A made-up rider, to show what a profile looks like.</p>}
+      {friend && friend.state !== 'self' && (
+        <div className="mt-5">
+          <FriendButton state={friend.state} meId={me?.id ?? null} otherId={friend.otherId} isRider={!!me?.isRider} name={riderName(r)} next={`/riders/${r.username}`} />
+          {friend.state === 'friends' && <p className="mt-1 text-[13px] text-muted">You see each other&apos;s plans on spot pages.</p>}
+        </div>
+      )}
       {r.bio && <p className="mt-6 text-[18px] leading-relaxed">{r.bio}</p>}
       <dl className="rows mt-6 panel px-4">
         {r.disciplines.length > 0 && <div className="flex justify-between gap-4 py-2.5 text-[15px]"><dt className="text-muted">Rides</dt><dd className="text-right font-semibold">{disciplineList(r.disciplines, 'label')}</dd></div>}
@@ -63,7 +74,8 @@ export default async function RiderPage({ params }: { params: Promise<{ username
         )}
       </section>
       <p className="mt-10 text-[14px] text-muted">
-        To ride with {riderName(r)}, join a session they&apos;re going to. There are no private messages here, on purpose.
+        To ride with {riderName(r)}, join a session they&apos;re going to, or add them as a friend to see where they plan to ride.
+        There are no private messages here, on purpose.
       </p>
       {!r.sample && <div className="mt-3"><ReportLink what="profile" url={`https://ritualrollers.com/riders/${r.username}`} /></div>}
     </div>

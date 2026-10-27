@@ -121,3 +121,12 @@ test('every rideable park has a file with something to ride', () => {
     assert.ok(linesFor(id)?.r === 1)
   }
 })
+
+test('plans end with their day at the spot, and read as a time of day', async () => {
+  const { planExpiry, whenLabel } = await import('../lib/plans-shared')
+  // Ottawa (-75.7°, about UTC-5 by the sun): the end of Nov 1 is 04:59:59 UTC on Nov 2
+  assert.equal(planExpiry('2026-11-01', -75.7), '2026-11-02T04:59:59.000Z')
+  assert.equal(whenLabel('afternoon', null), 'afternoon')
+  assert.equal(whenLabel('time', '17:30'), '5:30 pm')
+  assert.equal(whenLabel('time', '00:00'), '12 am')
+})

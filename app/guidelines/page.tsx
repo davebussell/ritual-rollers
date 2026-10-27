@@ -11,6 +11,9 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
   { title: 'Sessions are public, at public spots', body: <>
     <p>A session is a post that says where and when you&apos;re riding. Anyone can read it. Meet at the spot itself, never at someone&apos;s home or car.</p>
     <p>There are no private messages. Questions go in the session&apos;s comments, where everyone can see them.</p></> },
+  { title: 'Plans are for your friends', body: <>
+    <p>On any spot or park you can say you&apos;ll be there on a day. Everyone sees how many riders plan to come; only your friends see that it&apos;s you. A plan disappears after that day.</p>
+    <p>Friends are riders who accepted your request, or whose request you accepted. Being friends doesn&apos;t open messages: there still aren&apos;t any. Only accept people you know or have ridden with, and remove a friend any time from their page.</p></> },
   { title: 'Accounts are for riders 16 and over', body: <>
     <p>Anyone can browse spots, crews and sessions. To post, say you&apos;re in, comment or list yourself, you need an account, and you confirm you&apos;re 16 or older.</p>
     <p>Younger riders: crews and lessons programs are the place to start, with a parent or guardian. Many are listed under <Link href="/crews?who=kids" className="prose-link">Crews for kids</Link> and <Link href="/crews?who=families" className="prose-link">families</Link>.</p></> },

@@ -5,6 +5,7 @@ import { parkById, parksNear, parkName, PARK_KIND_META, osmUrl, osmEditUrl } fro
 import { linesFor, rideable } from '@/lib/lines'
 import ParkMapSection from '@/components/ParkMapSection'
 import { shopsNear } from '@/lib/shops'
+import Plans from '@/components/Plans'
 import { spotsNear, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
 import { crewsNear } from '@/lib/crews'
 import { nearestCity } from '@/lib/cities'
@@ -74,6 +75,7 @@ export default async function ParkPage({ params }: { params: Promise<{ id: strin
       nearbySpots={spotsNear(park.lat, park.lng, 40).filter(s => fits(s.disciplines, wheel))}
       nearbyParks={parksNear(park.lat, park.lng, 20, 200).filter(p => p.id !== park.id && !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 60)}
       shops={shopsNear(park.lat, park.lng, 25, wheel, 4)}
+      plans={<Plans place={{ park: park.id, name: parkName(park), city: hub?.slug ?? null, lat: park.lat, lng: park.lng }} next={`/parks/${id}`} />}
       wheelLabel={wheel?.lower}
       misfit={misfit}
       parkMap={

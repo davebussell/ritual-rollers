@@ -74,6 +74,11 @@ Picking reloads the page (a soft refresh left the header stale).
 - Accounts are 16+: riders confirm their birth year and that they're 16 or older; only the fact (`age_confirmed_at`)
   is stored. Anyone can browse.
 - Contact is public sessions only: I'm in and comments. No private messages.
+- Friends and plans (Dave, 2026-10-27): riders send friend requests from rider pages and accept them on `/me` (a red
+  count in the header shows waiting requests). On any spot or park, a rider can say "I'll be here" for a day in the
+  next week (morning, afternoon, evening or a time, plus an optional note). Everyone sees how many riders plan to come
+  (`plan_counts()`, no ids); only the rider and their signed-in friends see who (row-level security on `ride_plans`).
+  Plans disappear after their day. Friends still can't message each other.
 - Report links on sessions and profiles go to the Netlify Form `report` (emails Dave). Hosts can delete comments on
   their sessions and cancel them. At most 6 new sessions per rider per day (database trigger).
 - New accounts get a neutral `rider_xxxxxx` username (they used to get their email's local part) until the rider picks one.
@@ -81,6 +86,8 @@ Picking reloads the page (a soft refresh left the header stale).
 ## Data
 - **Sessions, I'm in, comments, rider profiles**: Supabase, `supabase/migrations/004_riders_and_sessions.sql`
   (additive; Dave runs it in the SQL editor). Until it's run, posting says "opens soon" and pages show samples.
+- **Friends and plans**: `supabase/migrations/005_friends_and_plans.sql` (after 004; additive). Until it's run, spot
+  pages leave out "Who's coming" and rider pages say friends open soon.
 - **Samples** (`lib/sample.ts`): 45 made-up riders and about 48 sessions (one board, one skates and one bike session per
   sample city where a spot fits; bike ones may sit at named mapped BMX tracks, pump tracks and bike parks), always
   upcoming, always tagged Sample. They fill lists that have fewer than 3 real entries and give way as real ones arrive.
