@@ -10,6 +10,8 @@ import { SPOTS } from '@/lib/spots-index'
 import { PARKS } from '@/lib/parks'
 import { KIND_GROUPS, KIND_META } from '@/lib/sports'
 import { featuredPlaces } from '@/lib/photos'
+import { ATHLETES, EVENTS, eventFits } from '@/lib/events'
+import { AthleteCard, EventRow } from '@/components/EventBits'
 import { ridingEverywhere, placeFits } from '@/lib/riding'
 import { getMe } from '@/lib/me'
 import { getWheel } from '@/lib/wheel-server'
@@ -42,6 +44,9 @@ export default async function Home() {
   const popular = POPULAR.map(cityBySlug).filter(Boolean)
   const what = wheel?.id === 'bike' ? 'pump tracks, BMX tracks and bike parks' : wheel ? 'skateparks and pump tracks' : 'skateparks, pump tracks, BMX tracks and bike parks'
   const heroPhotos = featured.slice(0, 3)
+  // Riders to know: Kolby Parks first (Dave asked for him by name), then the most results
+  const athletes = ATHLETES.filter(a => eventFits(a.disciplines, wheel)).sort((a, b) => Number(b.slug === 'kolby-parks') - Number(a.slug === 'kolby-parks') || b.results.length - a.results.length).slice(0, 3)
+  const races = EVENTS.filter(e => eventFits(e.disciplines, wheel) && e.results.length).sort((a, b) => (b.results[0]?.year ?? 0) - (a.results[0]?.year ?? 0)).slice(0, 6)
 
   return (
     <>
@@ -94,6 +99,16 @@ export default async function Home() {
               Real photos of people riding real parks, old and new. Every photo is free to share and credited to whoever took it.
             </SectionHead>
             <FeaturedParks places={featured} />
+          </section>
+        )}
+
+        {(athletes.length > 0 || races.length > 0) && (
+          <section>
+            <SectionHead title="Riders and races" href="/events" linkLabel="All races and contests">
+              Who&apos;s winning down the hills and in the parks, and where the races are held. Every result links to its source.
+            </SectionHead>
+            {athletes.length > 0 && <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">{athletes.map(a => <AthleteCard key={a.slug} a={a} />)}</div>}
+            {races.length > 0 && <div className="rows panel mt-4 px-4 sm:px-5 md:columns-2 md:gap-10 md:[&>*]:break-inside-avoid">{races.map(e => <EventRow key={e.slug} e={e} />)}</div>}
           </section>
         )}
 

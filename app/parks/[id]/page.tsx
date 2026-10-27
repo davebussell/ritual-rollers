@@ -8,6 +8,8 @@ import { shopsNear } from '@/lib/shops'
 import Plans from '@/components/Plans'
 import Photos, { Credit } from '@/components/Photos'
 import { photosFor } from '@/lib/photos'
+import { eventsAt } from '@/lib/events'
+import { EventRow } from '@/components/EventBits'
 import { spotsNear, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
 import { crewsNear } from '@/lib/crews'
 import { nearestCity } from '@/lib/cities'
@@ -15,6 +17,16 @@ import { getWheel } from '@/lib/wheel-server'
 import { fits, parkFits } from '@/lib/wheels'
 
 export const dynamic = 'force-dynamic'
+
+function EventsHere({ list }: { list: ReturnType<typeof eventsAt> }) {
+  if (!list.length) return null
+  return (
+    <section>
+      <h2 className="h-section text-[22px] sm:text-[26px]">Races and contests here</h2>
+      <div className="rows panel mt-3 px-4 sm:px-5">{list.map(e => <EventRow key={e.slug} e={e} />)}</div>
+    </section>
+  )
+}
 
 // The first photo of someone riding it, as the page's banner
 function heroFor(list: ReturnType<typeof photosFor>) {
@@ -82,6 +94,7 @@ export default async function ParkPage({ params, searchParams }: { params: Promi
       shops={shopsNear(park.lat, park.lng, 25, wheel, 4)}
       photos={<Photos place={{ park: park.id, lat: park.lat, lng: park.lng }} name={parkName(park)} next={`/parks/${id}`} />}
       hero={heroFor(photosFor({ park: park.id }))}
+      events={<EventsHere list={eventsAt({ park: park.id, lat: park.lat, lng: park.lng })} />}
       plans={<Plans place={{ park: park.id, name: parkName(park), city: hub?.slug ?? null, lat: park.lat, lng: park.lng }} next={`/parks/${id}`} open={plan === '1'} />}
       wheelLabel={wheel?.lower}
       misfit={misfit}

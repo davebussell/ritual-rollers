@@ -21,6 +21,7 @@ export default function Footer() {
             <li><Link className="hover:text-flyer" href="/spots">Spots</Link></li>
             <li><Link className="hover:text-flyer" href="/cities">Cities</Link></li>
             <li><Link className="hover:text-flyer" href="/riding">Who&apos;s riding</Link></li>
+            <li><Link className="hover:text-flyer" href="/events">Races and contests</Link></li>
             <li><Link className="hover:text-flyer" href="/crews">Crews</Link></li>
             <li><Link className="hover:text-flyer" href="/riders">Riders</Link></li>
           </ul>

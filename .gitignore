@@ -45,3 +45,6 @@ next-env.d.ts
 
 # copied from node_modules before dev and build (scripts/copy-maplibre-worker.mjs)
 /public/maplibre/
+
+# downloaded originals for scripts/build-photos.mjs
+/.cache/

@@ -9,6 +9,7 @@ import { parksNear } from '@/lib/parks'
 import { shopsNear } from '@/lib/shops'
 import { companiesNear } from '@/lib/companies'
 import { ridingNear } from '@/lib/riding'
+import { eventsNear } from '@/lib/events'
 import { getMe } from '@/lib/me'
 import { geocodePlace, fromSlug, haversineKm } from '@/lib/geo'
 import { getWheel } from '@/lib/wheel-server'
@@ -59,6 +60,7 @@ export default async function NearPage({ params }: { params: Promise<{ slug: str
       subtitle={place.label}
       point={place}
       riding={riding}
+      events={eventsNear(place.lat, place.lng, 80, wheel)}
       crews={crewsNear(place.lat, place.lng, RADIUS).filter(c => fits(c.disciplines, wheel))}
       spots={spotsNear(place.lat, place.lng, RADIUS).filter(s => fits(s.disciplines, wheel))}
       parks={parksNear(place.lat, place.lng, RADIUS, 400).filter(p => !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 120)}

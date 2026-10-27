@@ -8,6 +8,7 @@ import { parksNear } from '@/lib/parks'
 import { shopsNear } from '@/lib/shops'
 import { companiesNear } from '@/lib/companies'
 import { ridingNear } from '@/lib/riding'
+import { eventsNear } from '@/lib/events'
 import { getMe } from '@/lib/me'
 import { ridersFor } from '@/lib/riders'
 import { getWheel } from '@/lib/wheel-server'
@@ -57,6 +58,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
       point={city}
       citySlug={slug}
       riding={riding}
+      events={eventsNear(city.lat, city.lng, 80, wheel)}
       crews={crewsNear(city.lat, city.lng, HUB_KM).filter(c => fits(c.disciplines, wheel))}
       spots={spotsNear(city.lat, city.lng, HUB_KM).filter(s => fits(s.disciplines, wheel))}
       parks={parksNear(city.lat, city.lng, HUB_KM, 400).filter(p => !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 150)}

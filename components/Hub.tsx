@@ -4,6 +4,8 @@
 import Link from 'next/link'
 import { RidingRow } from '@/components/Riding'
 import type { Riding } from '@/lib/riding'
+import type { RideEvent } from '@/lib/events'
+import { EventRow } from '@/components/EventBits'
 import { CrewRow, RiderRow, SpotRow, ParkRow, ShopRow, CompanyRow } from '@/components/Rows'
 import type { Company } from '@/lib/companies'
 import { Empty, SectionHead } from '@/components/bits'
@@ -25,6 +27,7 @@ interface Props {
   point: { lat: number; lng: number }
   citySlug?: string
   riding: Riding
+  events?: (RideEvent & { distanceKm: number })[]
   crews: Crew[]
   spots: (IndexedSpot & { distanceKm: number })[]
   parks: NearPark[]
@@ -36,7 +39,7 @@ interface Props {
   wheelLabel?: string
 }
 
-export default function Hub({ title, subtitle, point, citySlug, riding, crews, spots, parks, shops, companies, riders, nearby = [], radiusKm, wheelLabel }: Props) {
+export default function Hub({ title, subtitle, point, citySlug, riding, events = [], crews, spots, parks, shops, companies, riders, nearby = [], radiusKm, wheelLabel }: Props) {
   const realPlaces = riding.places.filter(p => !p.sample).length
   const tagHref = citySlug ? `/tag?city=${citySlug}` : '/tag'
   const pins = [
@@ -86,6 +89,13 @@ export default function Hub({ title, subtitle, point, citySlug, riding, crews, s
             )}
             <Link href={tagHref} className="btn btn-curb mt-4">Tag a spot you&apos;re riding</Link>
           </section>
+
+          {events.length > 0 && (
+            <section>
+              <SectionHead title="Races and contests" href="/events" linkLabel="All of them">Held in and around here, with their results.</SectionHead>
+              <div className="rows panel px-4 sm:px-5">{events.slice(0, 8).map(e => <EventRow key={e.slug} e={e} distanceKm={e.distanceKm} />)}</div>
+            </section>
+          )}
 
           <section>
             <SectionHead title="Crews" href={citySlug ? `/crews?city=${citySlug}` : '/crews'} linkLabel="All crews" />

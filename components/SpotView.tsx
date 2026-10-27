@@ -48,6 +48,7 @@ interface Props {
   shops?: NearShop[]
   plans?: React.ReactNode    // who's coming (counts for everyone, names for friends)
   photos?: React.ReactNode   // people riding it, on camera
+  events?: React.ReactNode   // races and contests held here
   hero?: { src: string; alt: string; credit: React.ReactNode } | null
 }
 
@@ -60,7 +61,7 @@ function Fact({ label, children }: { label: string; children: React.ReactNode })
   )
 }
 
-export default function SpotView({ facts, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit, parkMap, shops = [], plans, photos, hero = null }: Props) {
+export default function SpotView({ facts, riders, crews, nearbySpots, nearbyParks, wheelLabel, misfit, parkMap, shops = [], plans, photos, events, hero = null }: Props) {
   const f = facts
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`
   const pins = [
@@ -107,6 +108,8 @@ export default function SpotView({ facts, riders, crews, nearbySpots, nearbyPark
           {parkMap}
 
           {plans}
+
+          {events}
 
           <section>
             <SectionHead title="Riders who ride here" />
