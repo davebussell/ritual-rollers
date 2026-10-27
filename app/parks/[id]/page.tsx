@@ -31,7 +31,7 @@ function EventsHere({ list }: { list: ReturnType<typeof eventsAt> }) {
 // The first photo of someone riding it, as the page's banner
 function heroFor(list: ReturnType<typeof photosFor>) {
   const p = list.find(x => x.width >= x.height) ?? list[0]
-  return p ? { src: p.src, alt: p.caption || p.title, credit: <Credit p={p} /> } : null
+  return p ? { id: p.id, src: p.src, alt: p.caption || p.title, credit: <Credit p={p} /> } : null
 }
 
 const SITE = 'https://ritualrollers.com'
@@ -68,6 +68,8 @@ export default async function ParkPage({ params, searchParams }: { params: Promi
   // Who rides it, by kind of park (OSM's sport tags are too sparse to go on)
   const disciplines = { skate: ['skateboard', 'roller', 'inline', 'scooter', 'bmx'], pump: ['skateboard', 'roller', 'inline', 'scooter', 'bmx', 'mtb'], bmx: ['bmx'], bike: ['mtb', 'bmx'] }[park.kind]
 
+  const hero = heroFor(photosFor({ park: park.id }))
+
   return (
     <SpotView
       facts={{
@@ -92,8 +94,8 @@ export default async function ParkPage({ params, searchParams }: { params: Promi
       nearbySpots={spotsNear(park.lat, park.lng, 40).filter(s => fits(s.disciplines, wheel))}
       nearbyParks={parksNear(park.lat, park.lng, 20, 200).filter(p => p.id !== park.id && !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 60)}
       shops={shopsNear(park.lat, park.lng, 25, wheel, 4)}
-      photos={<Photos place={{ park: park.id, lat: park.lat, lng: park.lng }} name={parkName(park)} next={`/parks/${id}`} />}
-      hero={heroFor(photosFor({ park: park.id }))}
+      photos={<Photos except={hero?.id} place={{ park: park.id, lat: park.lat, lng: park.lng }} name={parkName(park)} next={`/parks/${id}`} />}
+      hero={hero}
       events={<EventsHere list={eventsAt({ park: park.id, lat: park.lat, lng: park.lng })} />}
       plans={<Plans place={{ park: park.id, name: parkName(park), city: hub?.slug ?? null, lat: park.lat, lng: park.lng }} next={`/parks/${id}`} open={plan === '1'} />}
       wheelLabel={wheel?.lower}

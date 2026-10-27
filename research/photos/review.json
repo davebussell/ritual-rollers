@@ -1,5 +1,5 @@
 {
- "note": "Every photo is looked at before it ships. scripts/build-photos.mjs only publishes pages listed under ok; pages under skip stay out, with the reason, so nobody adds them again. A new research entry that is in neither list is held back until someone looks at it.",
+ "note": "Every photo is looked at before it ships. scripts/build-photos.mjs only publishes pages listed under ok; pages under skip stay out, with the reason, so nobody adds them again. A new research entry that is in neither list is held back until someone looks at it. lead: photos that make a good cover for their park (riding clearly in frame, wide); the home page and park banners prefer them.",
  "skip": {
   "https://commons.wikimedia.org/wiki/File:Heather_Christensen_skateboarding.jpg": "Reviewed 2026-10-27: a blacked-out box covers part of the frame and the source describes the subject as a model, not a rider at this park.",
   "https://commons.wikimedia.org/wiki/File:Port_of_Bellingham_Waterfront_Bike_Park_08.jpg": "Reviewed 2026-10-27: the rider may be under 18. No photos whose subject is a child.",
@@ -129,5 +129,28 @@
   "https://www.flickr.com/photos/voght/2385411389/",
   "https://www.loc.gov/item/2018700096/",
   "https://www.loc.gov/item/2018700098/"
+ ],
+ "lead": [
+  "https://commons.wikimedia.org/wiki/File:Lake_Cunningham_Skate_Park_(7580485530).jpg",
+  "https://commons.wikimedia.org/wiki/File:Tony_Hawk_skating_the_Ann_Arbor_skatepark_at_Veteran%27s_Memorial_Park_(cropped).jpg",
+  "https://commons.wikimedia.org/wiki/File:Apertura_del_Skate_Park_Coyotes_-i---i-_(34103293513).jpg",
+  "https://commons.wikimedia.org/wiki/File:Seattle_-_Skateboarder_at_Delridge_Skate_Park,_2011_(53595707726).jpg",
+  "https://commons.wikimedia.org/wiki/File:Shaw_Millenium_Park_Calgary_(13200416585).jpg",
+  "https://commons.wikimedia.org/wiki/File:Whistler_Bike_Park_(29666809747).jpg",
+  "https://www.flickr.com/photos/59283046@N00/15946585039",
+  "https://commons.wikimedia.org/wiki/File:Foundation_Skate_Park,_Atlanta_(5822355515).jpg",
+  "https://commons.wikimedia.org/wiki/File:Major_Taylor_Skate_Park_-_July_2014_-_5chw4r7z_09.jpg",
+  "https://www.flickr.com/photos/9698888@N04/2704524855",
+  "https://commons.wikimedia.org/wiki/File:Hitting_the_rail_-_Far_Rockaway_Skatepark_-_September_-_2019.jpg",
+  "https://commons.wikimedia.org/wiki/File:Samantha_Bolton_kick_flips_at_Blue_Park_-_Brooklyn,_NY.jpg",
+  "https://commons.wikimedia.org/wiki/File:Skatepark_Bosque_de_San_Juan_de_Aragon-_air_out_of_bowl.jpg",
+  "https://commons.wikimedia.org/wiki/File:Leavenworth_Pump_Track_3.jpg",
+  "https://commons.wikimedia.org/wiki/File:Skate_Plaza_Grant_Park_1_(33034477941).jpg",
+  "https://www.flickr.com/photos/skateoregon/3460787575/",
+  "https://www.flickr.com/photos/bzo/665287/",
+  "https://commons.wikimedia.org/wiki/File:Louisville_extreme_park_01.jpg",
+  "https://commons.wikimedia.org/wiki/File:Jefferson_Skatepark_(15858512100).jpg",
+  "https://commons.wikimedia.org/wiki/File:Skatepark_Azcapotzalco_IMG_9947_(25791557066).jpg",
+  "https://commons.wikimedia.org/wiki/File:Kevin_Godette_backside_crooked_grind_at_the_LES_skatepark.jpg"
  ]
 }

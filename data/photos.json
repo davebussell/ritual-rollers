@@ -1,5 +1,5 @@
 {
- "built": "2026-10-27T23:08:43.292Z",
+ "built": "2026-10-27T23:24:44.526Z",
  "count": 113,
  "photos": [
   {
@@ -69,7 +69,8 @@
    "country": "US",
    "lat": 44.99517,
    "lng": -123.0192,
-   "caption": "A BMX rider floats a big air above the Carlson Skate Park in Keizer in June 2000."
+   "caption": "A BMX rider floats a big air above the Carlson Skate Park in Keizer in June 2000.",
+   "lead": true
   },
   {
    "id": "38d7eda44c9b",
@@ -230,7 +231,8 @@
    "country": "US",
    "lat": 45.28996,
    "lng": -122.97704,
-   "caption": "A skater boosts an air over a hip at the Newberg skatepark (\"The Berg\") in April 2004."
+   "caption": "A skater boosts an air over a hip at the Newberg skatepark (\"The Berg\") in April 2004.",
+   "lead": true
   },
   {
    "id": "4091c8baf6fc",
@@ -345,7 +347,8 @@
    "country": "US",
    "lat": 38.25716,
    "lng": -85.74012,
-   "caption": "A rider gets air out of one of the bowls at the Louisville Extreme Park in May 2004."
+   "caption": "A rider gets air out of one of the bowls at the Louisville Extreme Park in May 2004.",
+   "lead": true
   },
   {
    "id": "b2b0122375ce",
@@ -354,7 +357,7 @@
    "width": 1600,
    "height": 1067,
    "title": "BurnsideSkatePark",
-   "author": "User:Cacophony",
+   "author": "Cacophony",
    "licence": "CC BY 2.5",
    "licence_url": "https://creativecommons.org/licenses/by/2.5",
    "page": "https://commons.wikimedia.org/wiki/File:BurnsideSkatePark.jpg",
@@ -377,7 +380,7 @@
    "width": 1600,
    "height": 1200,
    "title": "Bike Park Bottom",
-   "author": "XMAG (talk) (Uploads)",
+   "author": "XMAG",
    "licence": "Public domain",
    "licence_url": "",
    "page": "https://commons.wikimedia.org/wiki/File:Bike_Park_Bottom.JPG",
@@ -506,7 +509,8 @@
    "country": "CA",
    "lat": 49.88948,
    "lng": -97.13074,
-   "caption": "A skater airs off the plaza gap in front of a crowd at a contest at The Forks."
+   "caption": "A skater airs off the plaza gap in front of a crowd at a contest at The Forks.",
+   "lead": true
   },
   {
    "id": "add36c3537c5",
@@ -644,7 +648,8 @@
    "country": "US",
    "lat": 33.76472,
    "lng": -84.36039,
-   "caption": "A skater lays back across the bowl at the Historic Fourth Ward Skatepark's opening."
+   "caption": "A skater lays back across the bowl at the Historic Fourth Ward Skatepark's opening.",
+   "lead": true
   },
   {
    "id": "ae5c551bed5e",
@@ -713,7 +718,8 @@
    "country": "US",
    "lat": 47.56447,
    "lng": -122.3643,
-   "caption": "A long-haired skater airs over the bowl on Delridge Skatepark's opening day."
+   "caption": "A long-haired skater airs over the bowl on Delridge Skatepark's opening day.",
+   "lead": true
   },
   {
    "id": "4668a9a7610e",
@@ -759,7 +765,8 @@
    "country": "US",
    "lat": 37.33617,
    "lng": -121.80326,
-   "caption": "A skater flies over the bowl in front of a packed crowd at Lake Cunningham."
+   "caption": "A skater flies over the bowl in front of a packed crowd at Lake Cunningham.",
+   "lead": true
   },
   {
    "id": "2c58bf06f9e6",
@@ -966,7 +973,8 @@
    "country": "US",
    "lat": 47.5692,
    "lng": -122.30907,
-   "caption": "A BMX rider carves the wall of the bowl at Jefferson Park Skatepark."
+   "caption": "A BMX rider carves the wall of the bowl at Jefferson Park Skatepark.",
+   "lead": true
   },
   {
    "id": "26b52c3edd18",
@@ -1058,7 +1066,8 @@
    "country": "US",
    "lat": 39.82029,
    "lng": -86.19782,
-   "caption": "A BMX rider lifts off the bowl edge at Major Taylor Skate Park."
+   "caption": "A BMX rider lifts off the bowl edge at Major Taylor Skate Park.",
+   "lead": true
   },
   {
    "id": "f8eb3e2428c9",
@@ -1081,7 +1090,8 @@
    "country": "US",
    "lat": 42.28447,
    "lng": -83.77939,
-   "caption": "Tony Hawk airs over the bowl in front of a big crowd at the Ann Arbor Skatepark opening."
+   "caption": "Tony Hawk airs over the bowl in front of a big crowd at the Ann Arbor Skatepark opening.",
+   "lead": true
   },
   {
    "id": "9ba280b1d105",
@@ -1104,7 +1114,8 @@
    "country": "CA",
    "lat": 51.04606,
    "lng": -114.0926,
-   "caption": "A BMX rider in an orange helmet launches across the street section in Calgary."
+   "caption": "A BMX rider in an orange helmet launches across the street section in Calgary.",
+   "lead": true
   },
   {
    "id": "7d65ec35b958",
@@ -1173,7 +1184,8 @@
    "country": "US",
    "lat": 39.89873,
    "lng": -75.18008,
-   "caption": "A skater carves a graffiti-covered wall at FDR Skatepark in December."
+   "caption": "A skater carves a graffiti-covered wall at FDR Skatepark in December.",
+   "lead": true
   },
   {
    "id": "7825b075e130",
@@ -1311,7 +1323,8 @@
    "country": "MX",
    "lat": 19.49845,
    "lng": -99.18238,
-   "caption": "A long-haired skater rides down the banked pyramid at Skatepark Azcapotzalco."
+   "caption": "A long-haired skater rides down the banked pyramid at Skatepark Azcapotzalco.",
+   "lead": true
   },
   {
    "id": "f5c084ddfb88",
@@ -1357,7 +1370,8 @@
    "country": "US",
    "lat": 47.58853,
    "lng": -120.66814,
-   "caption": "A BMX rider pumps over a roller on the asphalt pump track in Leavenworth."
+   "caption": "A BMX rider pumps over a roller on the asphalt pump track in Leavenworth.",
+   "lead": true
   },
   {
    "id": "34bfb66f9752",
@@ -1449,7 +1463,8 @@
    "country": "MX",
    "lat": 19.3195,
    "lng": -99.12367,
-   "caption": "A skateboarder airs high over the street course on opening day of the Los Coyotes skatepark."
+   "caption": "A skateboarder airs high over the street course on opening day of the Los Coyotes skatepark.",
+   "lead": true
   },
   {
    "id": "a6dfc6564e57",
@@ -1564,7 +1579,8 @@
    "country": "US",
    "lat": 41.8688,
    "lng": -87.62267,
-   "caption": "A skater kickflips across the flat at Grant Skate Park on a grey spring day."
+   "caption": "A skater kickflips across the flat at Grant Skate Park on a grey spring day.",
+   "lead": true
   },
   {
    "id": "eb4c08095492",
@@ -1817,7 +1833,8 @@
    "country": "CA",
    "lat": 50.11626,
    "lng": -122.95109,
-   "caption": "A mountain biker rolls across the summit terrain of the Whistler bike park with peaks behind."
+   "caption": "A mountain biker rolls across the summit terrain of the Whistler bike park with peaks behind.",
+   "lead": true
   },
   {
    "id": "772adc5641f7",
@@ -1955,7 +1972,8 @@
    "country": "US",
    "lat": 40.71135,
    "lng": -73.99288,
-   "caption": "A skater does a backside crooked grind down a handrail during a session at the LES skatepark."
+   "caption": "A skater does a backside crooked grind down a handrail during a session at the LES skatepark.",
+   "lead": true
   },
   {
    "id": "a22b64451c4c",
@@ -2024,7 +2042,8 @@
    "country": "US",
    "lat": 40.59516,
    "lng": -73.74649,
-   "caption": "A skater grinds the stair rail at Far Rockaway Skate Park during the Battle of the Beach."
+   "caption": "A skater grinds the stair rail at Far Rockaway Skate Park during the Battle of the Beach.",
+   "lead": true
   },
   {
    "id": "0af63608bfac",
@@ -2070,7 +2089,8 @@
    "country": "US",
    "lat": 40.7092,
    "lng": -73.94488,
-   "caption": "A skater kickflips off a wooden kicker at Blue Park."
+   "caption": "A skater kickflips off a wooden kicker at Blue Park.",
+   "lead": true
   },
   {
    "id": "7d05fdd73aa3",
@@ -2208,7 +2228,8 @@
    "country": "MX",
    "lat": 19.45765,
    "lng": -99.07288,
-   "caption": "A skater boosts out of the bowl past the big CDMX letters in Bosque de Aragón."
+   "caption": "A skater boosts out of the bowl past the big CDMX letters in Bosque de Aragón.",
+   "lead": true
   },
   {
    "id": "edd11f68efff",
@@ -2493,7 +2514,7 @@
    "width": 1600,
    "height": 1200,
    "title": "PARCUR Tercera Sección del Bosque de Chapultepec 3",
-   "author": "Own work",
+   "author": "ProtoplasmaKid",
    "licence": "CC BY-SA 4.0",
    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
    "page": "https://commons.wikimedia.org/wiki/File:PARCUR_Tercera_Secci%C3%B3n_del_Bosque_de_Chapultepec_3.jpg",

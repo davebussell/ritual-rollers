@@ -17,6 +17,7 @@ import { createHash } from 'crypto'
 const files = process.argv.slice(2).filter(f => f.endsWith('.json') && !/permission-requests|review\.json$/.test(f))
 const REVIEW = existsSync('research/photos/review.json') ? JSON.parse(readFileSync('research/photos/review.json', 'utf8')) : { ok: [], skip: {} }
 const reviewedOk = new Set(REVIEW.ok ?? [])
+const lead = new Set(REVIEW.lead ?? [])
 if (!files.length) { console.error('usage: node scripts/build-photos.mjs research/photos/*.json'); process.exit(1) }
 
 const UA = 'RitualRollersPhotoBuilder/1.0 (https://ritualrollers.com; dave@clickshift.ca)'
@@ -46,21 +47,40 @@ function licenceOk(name, url = '') {
 
 const strip = html => String(html ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
 
+// Commons credits as people read them: no wiki chrome ("(talk)", "User:"), and the uploader's name when the Author
+// field only says "Own work" (some uploaders swap Author and Source)
+export function cleanAuthor(artist, credit = '') {
+  let a = strip(artist).replace(/\((talk|contribs|uploads)\)/gi, '').replace(/^User:/, '').replace(/\s+/g, ' ').trim()
+  if (/^own work$/i.test(a)) a = strip(credit).replace(/^User:/, '').trim()
+  return /^own work$/i.test(a) ? '' : a
+}
+
+// The Commons API answer for each file is cached in .cache/commons, so a re-run doesn't depend on the API (it rate
+// limits) once a file has been checked. Delete the cache to check every file again.
 async function commonsInfo(page) {
   const title = decodeURIComponent(page.split('/wiki/')[1] ?? '').replace(/_/g, ' ')
   if (!title.startsWith('File:')) return null
+  const cacheFile = `.cache/commons/${createHash('sha1').update(page).digest('hex').slice(0, 12)}.json`
+  if (existsSync(cacheFile)) return JSON.parse(readFileSync(cacheFile, 'utf8'))
   const api = `https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url|size|extmetadata&iiurlwidth=1600&titles=${encodeURIComponent(title)}`
-  const res = await fetch(api, { headers: { 'User-Agent': UA } })
+  let res
+  for (let i = 0; i < 5; i++) {
+    res = await fetch(api, { headers: { 'User-Agent': UA } })
+    if (res.status !== 429) break
+    await sleep(15000 * (i + 1))
+  }
   if (!res.ok) return null
   const page0 = Object.values((await res.json()).query?.pages ?? {})[0]
   const ii = page0?.imageinfo?.[0]
   if (!ii) return null
   const m = ii.extmetadata ?? {}
-  return {
+  const info = {
     url: ii.thumburl ?? ii.url, width: ii.width, height: ii.height,
     licence: strip(m.LicenseShortName?.value), licence_url: m.LicenseUrl?.value ?? '',
-    author: strip(m.Artist?.value), date: strip(m.DateTimeOriginal?.value),
+    author: cleanAuthor(m.Artist?.value, m.Credit?.value), date: strip(m.DateTimeOriginal?.value),
   }
+  writeFileSync(cacheFile, JSON.stringify(info))
+  return info
 }
 
 async function download(url, to) {
@@ -94,6 +114,7 @@ print(round(w * k), round(h * k))
 mkdirSync(OUT, { recursive: true })
 mkdirSync('.cache/photos', { recursive: true })
 mkdirSync('.cache/review', { recursive: true })
+mkdirSync('.cache/commons', { recursive: true })
 const out = [], dropped = [], held = []
 const seen = new Set()
 for (const file of files) {
@@ -123,6 +144,7 @@ for (const file of files) {
       author = info.author || author; url = info.url
     }
     if (!licenceOk(licence, licence_url)) { fail(`licence ${licence}`); continue }
+    author = cleanAuthor(author)
     if (!author) author = 'Unknown photographer'
     const id = createHash('sha1').update(key).digest('hex').slice(0, 12)
     const cached = `.cache/photos/${id}`
@@ -141,6 +163,7 @@ for (const file of files) {
       discipline: raw.discipline, park_id: raw.park_id ?? null, spot_slug: raw.spot_slug ?? null, park_name: raw.park_name,
       city: raw.city ?? '', region: raw.region ?? '', country, lat: +lat.toFixed(5), lng: +lng.toFixed(5),
       caption: unnamed(String(raw.caption ?? ''), raw.discipline).slice(0, 220),
+      ...(lead.has(key) ? { lead: true } : {}),
     })
     await sleep(200)
   }

@@ -34,7 +34,7 @@ function EventsHere({ list }: { list: ReturnType<typeof eventsAt> }) {
 // The first photo of someone riding it, as the page's banner
 function heroFor(list: ReturnType<typeof photosFor>) {
   const p = list.find(x => x.width >= x.height) ?? list[0]
-  return p ? { src: p.src, alt: p.caption || p.title, credit: <Credit p={p} /> } : null
+  return p ? { id: p.id, src: p.src, alt: p.caption || p.title, credit: <Credit p={p} /> } : null
 }
 
 const SITE = 'https://ritualrollers.com'
@@ -83,6 +83,8 @@ export default async function SpotPage({ params, searchParams }: { params: Promi
     ...(spot.cost === 'free' ? { isAccessibleForFree: true } : {}),
   }
 
+  const hero = heroFor(photosFor({ spot: slug, park: spot.osm ?? null }))
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -109,8 +111,8 @@ export default async function SpotPage({ params, searchParams }: { params: Promi
         nearbySpots={spotsNear(spot.lat, spot.lng, 40, slug).filter(s => fits(s.disciplines, wheel))}
         nearbyParks={parksNear(spot.lat, spot.lng, 20, 200).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05 && parkFits(p.kind, wheel)).slice(0, 60)}
         shops={shopsNear(spot.lat, spot.lng, 25, wheel, 4)}
-        photos={<Photos place={{ spot: slug, park: spot.osm ?? null, lat: spot.lat, lng: spot.lng }} name={spot.name} next={`/spots/${slug}`} />}
-        hero={heroFor(photosFor({ spot: slug, park: spot.osm ?? null }))}
+        photos={<Photos except={hero?.id} place={{ spot: slug, park: spot.osm ?? null, lat: spot.lat, lng: spot.lng }} name={spot.name} next={`/spots/${slug}`} />}
+        hero={hero}
         events={<EventsHere list={eventsAt({ spot: slug, park: spot.osm ?? null, lat: spot.lat, lng: spot.lng })} />}
         plans={<Plans place={{ spot: slug, name: spot.name, city: hub?.slug ?? null, lat: spot.lat, lng: spot.lng }} next={`/spots/${slug}`} open={plan === '1'} />}
         wheelLabel={wheel?.lower}

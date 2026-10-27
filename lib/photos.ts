@@ -29,6 +29,7 @@ export interface LicensedPhoto {
   lat: number
   lng: number
   caption: string
+  lead?: boolean          // picked as a cover for its park (research/photos/review.json "lead")
 }
 
 export interface RiderPhoto {
@@ -46,8 +47,9 @@ const data = raw as unknown as { photos: LicensedPhoto[] }
 export const PHOTOS: LicensedPhoto[] = data.photos
 
 export function photosFor(place: { park?: string | null; spot?: string | null }): LicensedPhoto[] {
+  // The cover photo first, then oldest to newest
   return PHOTOS.filter(p => (place.spot && p.spot_slug === place.spot) || (place.park && p.park_id === place.park))
-    .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999))
+    .sort((a, b) => Number(!!b.lead) - Number(!!a.lead) || (a.year ?? 9999) - (b.year ?? 9999))
 }
 
 export function vintage(p: Pick<LicensedPhoto, 'year'>): boolean {
@@ -77,8 +79,8 @@ export async function riderPhotos(place: { park?: string | null; spot?: string |
   }
 }
 
-// The featured parks: every park we have a photo of someone riding, best known first (featured spots, then by the
-// number of photos), one card each
+// The featured parks: every park we have a photo of someone riding, one card each. Parks with a picked cover photo come
+// first, then featured spots, then by the number of photos. Each card shows the cover photo, else a wide one.
 export interface FeaturedPlace { key: string; href: string; name: string; city: string; country: 'CA' | 'US' | 'MX'; spot_slug: string | null; park_id: string | null; photo: LicensedPhoto; count: number }
 
 export function featuredPlaces(): FeaturedPlace[] {
@@ -87,8 +89,9 @@ export function featuredPlaces(): FeaturedPlace[] {
     const key = p.spot_slug ? `s:${p.spot_slug}` : p.park_id ? `p:${p.park_id}` : null
     if (!key) continue
     const f = by.get(key)
-    if (f) { f.count++; if (p.width >= p.height && f.photo.width < f.photo.height) f.photo = p; continue }
+    const better = (a: LicensedPhoto, b: LicensedPhoto) => Number(!!a.lead) - Number(!!b.lead) || Number(a.width >= a.height) - Number(b.width >= b.height)
+    if (f) { f.count++; if (better(p, f.photo) > 0) f.photo = p; continue }
     by.set(key, { key, href: p.spot_slug ? `/spots/${p.spot_slug}` : `/parks/${p.park_id}`, name: p.park_name, city: p.city, country: p.country, spot_slug: p.spot_slug, park_id: p.park_id, photo: p, count: 1 })
   }
-  return [...by.values()].sort((a, b) => Number(!!b.spot_slug) - Number(!!a.spot_slug) || b.count - a.count || a.name.localeCompare(b.name))
+  return [...by.values()].sort((a, b) => Number(!!b.photo.lead) - Number(!!a.photo.lead) || Number(!!b.spot_slug) - Number(!!a.spot_slug) || b.count - a.count || a.name.localeCompare(b.name))
 }

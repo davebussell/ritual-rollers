@@ -15,18 +15,20 @@ export function Credit({ p, className = '' }: { p: LicensedPhoto; className?: st
   )
 }
 
-export default async function Photos({ place, name, next }: { place: { park?: string | null; spot?: string | null; lat: number; lng: number; city?: string | null }; name: string; next: string }) {
+// except: the photo already shown as the page banner, so the gallery doesn't repeat it
+export default async function Photos({ place, name, next, except }: { place: { park?: string | null; spot?: string | null; lat: number; lng: number; city?: string | null }; name: string; next: string; except?: string }) {
   const me = await getMe()
-  const licensed = photosFor(place)
+  const licensed = photosFor(place).filter(p => p.id !== except)
   const mine = await riderPhotos(place, me?.id ?? null)
   const riders = mine ?? []
   if (!licensed.length && !riders.length && mine === null) return null
+  const fromBanner = !!except && !licensed.length && !riders.length
 
   return (
     <section id="photos" className="scroll-mt-24">
       <h2 className="h-section text-[22px] sm:text-[26px]">Riding {name}</h2>
       {licensed.length + riders.length === 0 && (
-        <p className="mt-2 text-[15px] text-asphalt-2">No photos of people riding here yet. Got one you took? Add it.</p>
+        <p className="mt-2 text-[15px] text-asphalt-2">{fromBanner ? 'The photo at the top is the only one so far. Got one you took? Add it.' : 'No photos of people riding here yet. Got one you took? Add it.'}</p>
       )}
       {licensed.length > 0 && (
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
