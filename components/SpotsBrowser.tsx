@@ -1,20 +1,18 @@
 'use client'
 
-// Browse the featured index: filter by what you ride, kind of spot, region, style and level;
-// flip between list and map. Filters live in the URL so a view is shareable.
+// Browse the featured spots: filter by what you ride, kind of spot, region, style and level; flip between
+// list and map. Filters live in the URL so a view can be shared.
 
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { List, Map as MapIcon } from 'lucide-react'
-import { countryFlag } from '@/lib/format'
-import { DISCIPLINES, DISCIPLINE_BY_ID, KIND_META, KINDS, KIND_GROUPS, FEATURE_LABEL, STYLE_LABEL, type Kind, type Style } from '@/lib/sports'
+import { DISCIPLINES, KIND_META, KINDS, KIND_GROUPS, FEATURE_LABEL, STYLE_LABEL, type Kind, type Style } from '@/lib/sports'
 import { TRAVEL_REGIONS, filterSpots, type Country, type Skill } from '@/lib/spots-index'
 
-const SpotsMap = dynamic(() => import('@/components/SpotsMap'), { ssr: false, loading: () => <div className="h-full w-full animate-pulse bg-zinc-900" /> })
+const PinsMap = dynamic(() => import('@/components/PinsMap'), { ssr: false, loading: () => <div className="h-full w-full animate-pulse bg-concrete-2" /> })
 
-const SELECT = 'min-w-0 rounded-md border-2 border-zinc-800 bg-zinc-950 px-3 py-2 font-body text-sm text-white outline-none focus:border-orange-500'
+const SELECT = 'field !w-auto min-w-0 !rounded-full !py-2 !text-[15px] font-semibold'
 
 export default function SpotsBrowser() {
   const router = useRouter()
@@ -46,28 +44,29 @@ export default function SpotsBrowser() {
     [group, kind, ride, country, region, style, skill, indoor],
   )
   const kindOptions = group ? KIND_GROUPS.find(g => g.id === group)!.kinds : KINDS
+  const pins = useMemo(() => spots.map(s => ({
+    id: s.slug, lat: s.lat, lng: s.lng, title: s.name, sub: `${KIND_META[s.kind].label} in ${s.city}`,
+    href: `/spots/${s.slug}`, linkLabel: 'See the spot', color: KIND_META[s.kind].color, big: true,
+  })), [spots])
 
   return (
     <div>
-      {/* Group tabs */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Kind of spot">
         {([null, 'skate', 'bike'] as const).map(g => (
-          <button key={g ?? 'all'} type="button" onClick={() => set('group', g)} aria-pressed={group === g}
-            className={`rounded-md px-4 py-2 font-display text-lg font-bold uppercase tracking-wide transition-all active:scale-95 ${group === g ? 'bg-orange-500 text-white' : 'border border-zinc-800 bg-zinc-950 text-zinc-500 hover:text-white'}`}>
+          <button key={g ?? 'all'} type="button" onClick={() => set('group', g)} aria-pressed={group === g} className="chip !px-4 !py-2 !text-[15px]">
             {g === null ? 'Everything' : KIND_GROUPS.find(x => x.id === g)!.label}
           </button>
         ))}
       </div>
 
-      {/* Filters */}
-      <div className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center">
+      <div className="mt-4 flex flex-wrap items-center gap-2">
         <select aria-label="Kind of spot" value={kind ?? ''} onChange={e => set('kind', e.target.value || null)} className={SELECT}>
-          <option value="">Every kind of spot</option>
+          <option value="">Every kind</option>
           {kindOptions.map(k => <option key={k} value={k}>{KIND_META[k].plural}</option>)}
         </select>
         <select aria-label="What you ride" value={ride ?? ''} onChange={e => set('ride', e.target.value || null)} className={SELECT}>
           <option value="">Anything on wheels</option>
-          {DISCIPLINES.map(d => <option key={d.id} value={d.id}>{d.emoji} {d.label}</option>)}
+          {DISCIPLINES.map(d => <option key={d.id} value={d.id}>{d.label}</option>)}
         </select>
         <select aria-label="Region" value={region ?? ''} onChange={e => set('region', e.target.value || null)} className={SELECT}>
           <option value="">All regions</option>
@@ -75,7 +74,7 @@ export default function SpotsBrowser() {
         </select>
         <select aria-label="Country" value={country ?? ''} onChange={e => set('country', e.target.value || null)} className={SELECT}>
           <option value="">Any country</option>
-          <option value="CA">🇨🇦 Canada</option><option value="US">🇺🇸 United States</option><option value="MX">🇲🇽 Mexico</option>
+          <option value="CA">Canada</option><option value="US">United States</option><option value="MX">Mexico</option>
         </select>
         <select aria-label="Style" value={style ?? ''} onChange={e => set('style', e.target.value || null)} className={SELECT}>
           <option value="">Any style</option>
@@ -83,68 +82,62 @@ export default function SpotsBrowser() {
         </select>
         <select aria-label="Level" value={skill ?? ''} onChange={e => set('skill', e.target.value || null)} className={SELECT}>
           <option value="">Any level</option>
-          <option value="beginner">Learning</option><option value="intermediate">Solid</option><option value="advanced">Sending</option>
+          <option value="beginner">Good for learning</option><option value="intermediate">Comfortable</option><option value="advanced">Advanced</option>
         </select>
-        <label className="col-span-2 flex items-center gap-2 font-body text-sm text-zinc-500 sm:col-span-1">
-          <input type="checkbox" checked={indoor} onChange={e => set('indoor', e.target.checked ? '1' : null)} className="h-4 w-4 accent-[#D9A21B]" />
+        <label className="flex items-center gap-2 px-2 text-[15px] font-semibold">
+          <input type="checkbox" checked={indoor} onChange={e => set('indoor', e.target.checked ? '1' : null)} className="h-4 w-4 accent-[#1F201C]" />
           Indoor only
         </label>
-        <div className="col-span-2 flex rounded-md border border-zinc-800 bg-zinc-950 p-0.5 sm:col-span-1 sm:ml-auto">
-          <button type="button" onClick={() => set('view', null)} aria-pressed={view === 'list'}
-            className={`flex flex-1 items-center justify-center gap-1.5 rounded px-3 py-1.5 font-expedition text-[11px] uppercase tracking-[0.14em] ${view === 'list' ? 'bg-orange-500 text-white' : 'text-zinc-500 hover:text-white'}`}>
-            <List className="h-3.5 w-3.5" /> List
-          </button>
-          <button type="button" onClick={() => set('view', 'map')} aria-pressed={view === 'map'}
-            className={`flex flex-1 items-center justify-center gap-1.5 rounded px-3 py-1.5 font-expedition text-[11px] uppercase tracking-[0.14em] ${view === 'map' ? 'bg-orange-500 text-white' : 'text-zinc-500 hover:text-white'}`}>
-            <MapIcon className="h-3.5 w-3.5" /> Map
-          </button>
+      </div>
+
+      <div className="mt-6 flex items-center justify-between gap-4">
+        <p className="text-[15px] font-semibold text-muted">{spots.length} {spots.length === 1 ? 'spot' : 'spots'}</p>
+        <div className="flex gap-1" role="group" aria-label="View">
+          <button type="button" onClick={() => set('view', null)} aria-pressed={view === 'list'} className="chip">List</button>
+          <button type="button" onClick={() => set('view', 'map')} aria-pressed={view === 'map'} className="chip">Map</button>
         </div>
       </div>
-      <p className="mt-3 font-expedition text-[11px] uppercase tracking-[0.18em] text-teal-700">{spots.length} spot{spots.length === 1 ? '' : 's'}</p>
 
       {view === 'map' ? (
-        <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_340px]">
-          <div className="h-[460px] overflow-hidden rounded-xl border border-zinc-800 sm:h-[560px]">
-            <SpotsMap spots={spots} activeSlug={activeSlug} onSelect={setActiveSlug} />
+        <div className="mt-3 grid gap-4 lg:grid-cols-[1fr_320px]">
+          <div className="panel h-[460px] overflow-hidden sm:h-[580px]">
+            <PinsMap pins={pins} activeId={activeSlug} onSelect={setActiveSlug} label="Map of featured spots" />
           </div>
-          <ul className="max-h-[560px] space-y-2 overflow-y-auto pr-1">
+          <ul className="rows panel max-h-[580px] overflow-y-auto px-4">
             {spots.map(s => (
               <li key={s.slug}>
-                <Link href={`/spots/${s.slug}`} onMouseEnter={() => setActiveSlug(s.slug)}
-                  className={`block rounded-md border bg-zinc-950 px-3 py-2 transition-colors ${activeSlug === s.slug ? 'border-orange-500' : 'border-zinc-800 hover:border-zinc-700'}`}>
-                  <p className="font-display text-lg font-bold uppercase tracking-[0.02em] text-white">{countryFlag(s.country)} {s.name}</p>
-                  <p className="font-body text-xs text-zinc-500">{KIND_META[s.kind].label} · {s.city}, {s.region}</p>
+                <Link href={`/spots/${s.slug}`} onMouseEnter={() => setActiveSlug(s.slug)} className={`block py-3 ${activeSlug === s.slug ? 'underline underline-offset-4' : ''}`}>
+                  <span className="block text-[15px] font-extrabold">{s.name}</span>
+                  <span className="block text-[13px] text-muted">{KIND_META[s.kind].label} in {s.city}, {s.region}</span>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
       ) : (
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="rows panel mt-3 px-4 sm:px-6">
           {spots.map(s => (
             <li key={s.slug}>
-              <Link href={`/spots/${s.slug}`} className="group block h-full rounded-md border border-zinc-800 bg-zinc-950 p-4 transition-all hover:border-orange-500">
-                <p className="font-expedition text-[10px] uppercase tracking-[0.18em]" style={{ color: KIND_META[s.kind].color }}>
-                  {KIND_META[s.kind].label}{s.indoor ? ' · indoor' : ''} · {countryFlag(s.country)} {s.region}
-                </p>
-                <p className="mt-0.5 font-display text-2xl font-bold uppercase tracking-[0.02em] text-white group-hover:text-orange-500">{s.name}</p>
-                <p className="font-body text-xs text-zinc-500">{s.city}</p>
-                <p className="mt-2 line-clamp-3 font-body text-sm text-zinc-400">{s.why}</p>
-                <div className="mt-3 flex flex-wrap items-center gap-1.5">
-                  {s.features.slice(0, 4).map(f => <span key={f} className="tag px-1.5 py-0.5 text-[10px] tracking-wider">{FEATURE_LABEL[f] ?? f}</span>)}
+              <Link href={`/spots/${s.slug}`} className="group grid gap-x-6 gap-y-1 py-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
+                <div className="flex gap-3">
+                  <span aria-hidden="true" className="mt-1.5 h-3 w-3 shrink-0 rounded-[3px]" style={{ background: KIND_META[s.kind].color }} />
+                  <div>
+                    <span className="block text-[17px] font-extrabold leading-snug group-hover:underline group-hover:underline-offset-4">{s.name}</span>
+                    <span className="block text-[14px] text-muted">{KIND_META[s.kind].label}{s.indoor && s.kind !== 'indoor' ? ', indoor' : ''} in {s.city}, {s.region}</span>
+                  </div>
                 </div>
-                <p className="mt-2 font-expedition text-[10px] uppercase tracking-[0.14em] text-zinc-600">
-                  {s.disciplines.map(d => DISCIPLINE_BY_ID[d]?.short ?? d).join(' · ')}
-                </p>
+                <div className="pl-6 md:pl-0">
+                  <span className="line-clamp-2 block text-[15px] text-asphalt-2">{s.why}</span>
+                  {s.features.length > 0 && <span className="mt-1 block text-[13px] text-muted">{s.features.slice(0, 5).map(f => FEATURE_LABEL[f] ?? f).join(', ')}</span>}
+                </div>
               </Link>
             </li>
           ))}
         </ul>
       )}
       {spots.length === 0 && (
-        <p className="mt-6 rounded-md border border-dashed border-zinc-700 p-6 font-body text-sm text-zinc-500">
-          Nothing featured matches those filters — loosen one, or{' '}
-          <Link href="/scout" className="text-teal-700 hover:underline">check a town</Link> to see every mapped park around it.
+        <p className="mt-6 rounded-xl border-2 border-dashed border-concrete-3 p-6 text-[15px]">
+          Nothing featured matches those filters. Loosen one, or <Link href="/cities" className="prose-link">pick a city</Link> to see every mapped park around it.
         </p>
       )}
     </div>

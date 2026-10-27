@@ -1,260 +1,126 @@
 @import "tailwindcss";
 
-/* ── Type ──────────────────────────────────────────────────────────────────
-   Barlow Condensed carries the headlines and the small letter-spaced kickers that
-   components call `font-expedition`; Work Sans does the body copy. */
+/* ── Ritual Rollers ────────────────────────────────────────────────────────
+   Concrete and curb paint. The page is light concrete, text is asphalt, actions are curb yellow,
+   dates and "today" are fire-lane red, links and skatepark pins are pool blue. Sessions are the one loud
+   thing: flyers taped to the wall. Everything else is quiet lists.
+   Type: Unbounded (wide, round — headlines and date numerals only) and Overpass (signage face, everything else). */
+
 @theme inline {
-  --font-display: var(--font-barlow);
-  --font-body: var(--font-work);
-  --font-expedition: var(--font-barlow);
+  --font-display: var(--font-unbounded);
+  --font-sans: var(--font-overpass);
 }
 
-/* ── Palette ───────────────────────────────────────────────────────────────
-   Heritage workwear: duck canvas, mustard, buffalo plaid, sage, kraft paper.
-   The codebase speaks in zinc/orange/amber/teal/emerald/cyan/blue. Rather than touch
-   hundreds of classes, those scales are re-tuned here so the whole site re-skins at
-   once: zinc-950 is the paper page, zinc-900 a kraft surface, zinc-800 a seam
-   hairline, and the 500–50 steps run from muted brown to ink. */
 @theme {
-  /* Named palette — bg-kraft / text-forest / border-seam / bg-mustard / text-plaid-red */
-  --color-paper: #F5F0E6;
-  --color-kraft: #EDE4D3;
-  --color-kraft-deep: #E2D5BE;
-  --color-seam: #D6C8B0;
-  --color-seam-strong: #B8A88C;
-  --color-ink: #1F1A15;
-  --color-ink-2: #3A3129;
-  --color-muted: #6B5B48;
-  --color-faint: #8E7E6A;
-  --color-duck: #B7794A;
-  --color-duck-deep: #8B5A2B;
-  --color-mustard: #D9A21B;
-  --color-mustard-deep: #B8860B;
-  --color-plaid-red: #A3271F;
-  --color-plaid-black: #2A1F1B;
-  --color-sage: #8FA37E;
-  --color-sage-light: #A8BC95;
-  --color-forest: #3F5A42;
-  --color-forest-deep: #2E4631;
-
-  /* Zinc → paper/kraft/ink */
-  --color-zinc-50: #1F1A15;
-  --color-zinc-100: #241E19;
-  --color-zinc-200: #2B241E;
-  --color-zinc-300: #3A3129;
-  --color-zinc-400: #4F4337;
-  --color-zinc-500: #6B5B48;
-  --color-zinc-600: #8E7E6A;
-  --color-zinc-700: #B8A88C;
-  --color-zinc-800: #D6C8B0;
-  --color-zinc-900: #EDE4D3;
-  --color-zinc-950: #F5F0E6;
-
-  /* Orange/amber → mustard */
-  --color-orange-400: #E3B33F;
-  --color-orange-500: #D9A21B;
-  --color-orange-600: #B8860B;
-  --color-amber-400: #C9962A;
-  --color-amber-500: #B8860B;
-
-  /* Teal (kickers) → rust red / duck */
-  --color-teal-600: #8B5A2B;
-  --color-teal-700: #A3271F;
-
-  /* Emerald → sage */
-  --color-emerald-400: #6E8A60;
-  --color-emerald-500: #8FA37E;
-
-  /* Cyan (wind glyph) → slate teal */
-  --color-cyan-400: #6E9CA1;
-  --color-cyan-500: #5B8A8F;
-  --color-cyan-600: #4C777C;
-
-  /* Blue (wave glyph) → lake blue */
-  --color-blue-400: #5A8AA8;
-  --color-blue-500: #3C6E8F;
+  --color-asphalt: #1F201C;
+  --color-asphalt-2: #3A3B36;
+  --color-muted: #5E5F59;
+  --color-concrete: #E5E4DF;
+  --color-concrete-2: #D6D5CF;
+  --color-concrete-3: #BEBDB6;
+  --color-flyer: #FBFBF8;
+  --color-curb: #F2C230;
+  --color-curb-deep: #D9A80F;
+  --color-fire: #D4402A;
+  --color-pool: #2D68B0;
+  --color-pool-deep: #22528C;
 }
 
-:root {
-  --ink: #1F1A15;
-}
+html { color-scheme: light; }
 
 body {
-  background: #F5F0E6;
-  color: var(--ink);
+  background-color: var(--color-concrete);
+  /* a faint aggregate, like broom-finished concrete */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  color: var(--color-asphalt);
+  font-feature-settings: "tnum" 0;
 }
 
-/* `text-white` meant "primary text" in the dark theme; it now means ink — except on a
-   strong fill (forest, duck, plaid, photo overlays), where white stays white. */
-.text-white { color: var(--ink); }
-.hover\:text-white:hover { color: var(--ink); }
-.group-hover\:text-white:is(:where(.group):hover *) { color: var(--ink); }
-:is(.bg-forest, .bg-forest-deep, .bg-duck-deep, .bg-plaid-red, .bg-plaid-black, .tx-plaid, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90).text-white,
-:is(.bg-forest, .bg-forest-deep, .bg-duck-deep, .bg-plaid-red, .bg-plaid-black, .tx-plaid, .bg-black\/60, .bg-black\/70, .bg-black\/80, .bg-black\/90) .text-white {
-  color: #ffffff;
-}
-/* Mustard fills read as ink, never white — a stitched label, not a glowing button */
-:is(.bg-orange-500, .bg-orange-400, .bg-orange-600, .from-orange-500, .bg-amber-500, .bg-mustard).text-white,
-:is(.bg-orange-500, .bg-orange-400, .bg-orange-600, .from-orange-500, .bg-amber-500, .bg-mustard) .text-white {
-  color: #1F1A15;
+/* Visible keyboard focus everywhere */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-pool);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-/* A panel that stays night-mode (the world map): a warm-dark scale, locally */
-.dark-panel {
-  --ink: #F5F0E6;
-  --color-zinc-50: #F5F0E6;
-  --color-zinc-100: #EDE4D3;
-  --color-zinc-200: #E2D5BE;
-  --color-zinc-300: #D6C8B0;
-  --color-zinc-400: #B8A88C;
-  --color-zinc-500: #8E7E6A;
-  --color-zinc-600: #6B5B48;
-  --color-zinc-700: #4F4337;
-  --color-zinc-800: #3A3129;
-  --color-zinc-900: #2B241E;
-  --color-zinc-950: #1F1A15;
-}
+::selection { background: var(--color-curb); color: var(--color-asphalt); }
 
-/* Workwear voice: headlines in the condensed grotesk, bold; kickers opt out */
-h1:not(.font-expedition), h2:not(.font-expedition), h3:not(.font-expedition) {
-  font-family: var(--font-barlow);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-wrap: balance;
-}
+/* Component classes. Next's CSS build emits these after Tailwind's utilities, so they win over a utility on the
+   same element (`btn hidden` stays visible). Wrap instead, or use the important form (`!py-2`). */
+/* Headline scale: Unbounded is wide, so it runs a step smaller than a condensed face would */
+.h-display { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; }
+.h-section { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; }
 
-/* ── Textures ──────────────────────────────────────────────────────────────
-   Duck-canvas weave, buffalo check, stitched labels. Class names are the contract. */
+/* Links in running text */
+.prose-link { color: var(--color-pool); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose-link:hover { color: var(--color-pool-deep); text-decoration-thickness: 2px; }
 
-/* Subtle canvas weave layered over the element's own background-color */
-.tx-canvas {
-  background-image:
-    repeating-linear-gradient(0deg, rgba(31, 26, 21, 0.035) 0 1px, transparent 1px 2px),
-    repeating-linear-gradient(90deg, rgba(31, 26, 21, 0.035) 0 1px, transparent 1px 2px);
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border-radius: 999px; padding: .7rem 1.25rem; font-weight: 700; font-size: .95rem; line-height: 1;
+  transition: background-color .15s, color .15s, border-color .15s, transform .1s;
 }
+.btn:active { transform: translateY(1px); }
+.btn-curb { background: var(--color-curb); color: var(--color-asphalt); }
+.btn-curb:hover { background: var(--color-curb-deep); }
+.btn-dark { background: var(--color-asphalt); color: var(--color-flyer); }
+.btn-dark:hover { background: var(--color-asphalt-2); }
+.btn-ghost { border: 2px solid var(--color-asphalt); color: var(--color-asphalt); }
+.btn-ghost:hover { background: var(--color-asphalt); color: var(--color-flyer); }
+.btn[disabled] { opacity: .5; pointer-events: none; }
 
-/* Buffalo check: red / black, 14px blocks */
-.tx-plaid {
-  background-color: #A3271F;
-  background-image:
-    linear-gradient(90deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%),
-    linear-gradient(0deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%);
-  background-size: 28px 28px, 28px 28px;
-  background-position: 0 0, 0 0;
+/* Chips (filters, tags) */
+.chip {
+  display: inline-flex; align-items: center; gap: .35rem; border-radius: 999px; padding: .3rem .75rem;
+  font-size: .85rem; font-weight: 600; border: 1.5px solid var(--color-concrete-3); color: var(--color-asphalt-2);
+  background: transparent; transition: background-color .15s, border-color .15s, color .15s;
 }
+.chip:hover { border-color: var(--color-asphalt); color: var(--color-asphalt); }
+.chip[aria-pressed="true"], .chip[aria-current="page"] { background: var(--color-asphalt); border-color: var(--color-asphalt); color: var(--color-flyer); }
 
-/* A 6px plaid band — use as a divider */
-.rule-plaid {
-  display: block;
-  width: 100%;
-  height: 6px;
-  background-color: #A3271F;
-  background-image:
-    linear-gradient(90deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%),
-    linear-gradient(0deg, rgba(42, 31, 27, 0.55) 50%, transparent 50%);
-  background-size: 28px 28px, 28px 28px;
-}
+/* Small labels on things: "Sample", "Beginners welcome" */
+.tag { display: inline-flex; align-items: center; border-radius: 4px; padding: .1rem .4rem; font-size: .75rem; font-weight: 700; line-height: 1.3; }
+.tag-sample { background: var(--color-concrete-2); color: var(--color-asphalt-2); }
+.tag-welcome { background: var(--color-curb); color: var(--color-asphalt); }
+.tag-line { border: 1.5px solid var(--color-concrete-3); color: var(--color-asphalt-2); }
 
-/* Dashed stitched inset outline inside a card or label */
-.tx-stitch {
-  outline: 1px dashed #B8A88C;
-  outline-offset: -6px;
-}
+/* Panels: the quiet surface for forms and side boxes */
+.panel { background: var(--color-flyer); border: 1.5px solid var(--color-concrete-2); border-radius: 14px; }
 
-/* Small woven label */
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.2rem 0.55rem;
-  border: 1px solid #D6C8B0;
-  border-radius: 0.375rem;
-  background: #EDE4D3;
-  color: #1F1A15;
-  font-family: var(--font-barlow);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
+/* Lists: rows separated by a rule, not cards */
+.rows > * + * { border-top: 1.5px solid var(--color-concrete-2); }
 
-/* Thin, light scrollbars in kraft and seam */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #D6C8B0 #EDE4D3;
+/* The flyer: a session taped to the wall */
+.flyer {
+  position: relative; background: var(--color-flyer); border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(31,32,28,.06), 0 10px 22px -12px rgba(31,32,28,.35);
+  transform: rotate(var(--tilt, -1.2deg));
+  transition: transform .2s ease;
 }
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #EDE4D3; }
-::-webkit-scrollbar-thumb { background: #D6C8B0; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #B8A88C; }
-
-::selection {
-  background: #D9A21B;
-  color: #1F1A15;
+.flyer::before {
+  content: ""; position: absolute; top: -11px; left: 50%; width: 88px; height: 22px; margin-left: -44px;
+  background: rgba(242, 194, 48, .55); transform: rotate(calc(var(--tilt, -1.2deg) * -2));
+  box-shadow: 0 1px 1px rgba(31,32,28,.08);
 }
-
-/* ── Motion ────────────────────────────────────────────────────────────── */
-
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse-ring {
-  0%   { transform: scale(0.6); opacity: 0.8; }
-  100% { transform: scale(2.2); opacity: 0; }
-}
-@keyframes stamp-in {
-  from { transform: scale(1.4) rotate(-6deg); opacity: 0; }
-  to   { transform: scale(1) rotate(0deg); opacity: 1; }
-}
-@keyframes shimmer {
-  from { background-position: -200% 0; }
-  to   { background-position: 200% 0; }
-}
-.animate-slide-up  { animation: slide-up 0.25s ease-out forwards; }
-.animate-pulse-ring { animation: pulse-ring 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
-.animate-stamp-in  { animation: stamp-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-.animate-shimmer   { animation: shimmer 1.8s linear infinite; }
-
-/* Living condition glyphs (components/ConditionAnimations.tsx). Distances are in
-   each SVG's own viewBox units; --wl is set per element to one wavelength. */
-@keyframes rr-wave   { to { transform: translateX(calc(-1 * var(--wl))); } }
-@keyframes rr-streak { from { transform: translateX(0); } to { transform: translateX(300px); } }
-@keyframes rr-dash   { to { stroke-dashoffset: -30; } }
-@keyframes rr-flake  { from { transform: translateY(0); } to { transform: translateY(70px); } }
-@keyframes rr-shimmer { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.2; } }
-
+a.flyer:hover { transform: rotate(0deg) translateY(-2px); }
 @media (prefers-reduced-motion: reduce) {
-  .rr-anim * { animation: none !important; }
+  .flyer, a.flyer:hover { transition: none; }
 }
 
-/* ── Adventure map ambience (the night-mode world map) ─────────────────── */
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.15; }
-  50%      { opacity: 0.7; }
+/* Form fields */
+.field {
+  width: 100%; border-radius: 10px; border: 1.5px solid var(--color-concrete-3); background: var(--color-flyer);
+  padding: .65rem .8rem; font-size: 1rem; color: var(--color-asphalt);
 }
-.rr-star { animation: twinkle 4s ease-in-out infinite; }
+.field::placeholder { color: #8A8B84; }
+.field:focus { outline: none; border-color: var(--color-asphalt); box-shadow: 0 0 0 3px rgba(45,104,176,.25); }
+.label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: .35rem; }
+.hint { font-size: .85rem; color: var(--color-muted); }
 
-@keyframes dash-march {
-  from { stroke-dashoffset: 0; }
-  to   { stroke-dashoffset: -20; }
-}
-.rr-arc { animation: dash-march 1.6s linear infinite; }
-
-@keyframes nebula-drift {
-  from { opacity: 0.5; }
-  to   { opacity: 1; }
-}
-.rr-nebula { animation: nebula-drift 8s ease-in-out infinite alternate; }
-
-.rr-photo-pin {
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 0.15s ease;
-}
-.rr-photo-pin:hover { transform: scale(1.15); }
-
-/* OpenStreetMap tiles, muted to sit on the paper palette (lib/tiles.ts) */
-.rr-tiles { filter: saturate(0.45) sepia(0.12) contrast(0.96) brightness(1.02); }
+/* Leaflet sits on the concrete palette */
+.rr-tiles { filter: saturate(0.35) contrast(0.95) brightness(1.03); }
+.leaflet-container { font-family: var(--font-overpass), system-ui, sans-serif; background: var(--color-concrete-2); }
+.leaflet-popup-content-wrapper { border-radius: 10px; }
+.leaflet-popup-content { margin: 10px 12px; font-size: 13px; line-height: 1.35; }
+.leaflet-popup-content a { color: var(--color-pool); font-weight: 700; }

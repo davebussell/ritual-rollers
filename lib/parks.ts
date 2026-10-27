@@ -5,7 +5,7 @@
 
 import raw from '@/data/parks.json'
 import { haversineKm } from '@/lib/geo'
-import type { Surface, SpotTraits } from '@/lib/skate'
+import type { Surface } from '@/lib/sports'
 
 export type ParkKind = 'skate' | 'pump' | 'bmx' | 'bike'
 
@@ -34,10 +34,10 @@ export const PARKS: OsmPark[] = data.parks
 export const PARKS_FETCHED = data.fetched
 
 export const PARK_KIND_META: Record<ParkKind, { label: string; plural: string; color: string }> = {
-  skate: { label: 'Skatepark', plural: 'Skateparks', color: '#3F5A42' },
-  pump: { label: 'Pump track', plural: 'Pump tracks', color: '#D9A21B' },
-  bmx: { label: 'BMX track', plural: 'BMX tracks', color: '#4C777C' },
-  bike: { label: 'Bike park', plural: 'Bike parks', color: '#8B5A2B' },
+  skate: { label: 'Skatepark', plural: 'Skateparks', color: '#2D68B0' },
+  pump: { label: 'Pump track', plural: 'Pump tracks', color: '#B98500' },
+  bmx: { label: 'BMX track', plural: 'BMX tracks', color: '#C2571A' },
+  bike: { label: 'Bike park', plural: 'Bike parks', color: '#3E7D3A' },
 }
 
 export function parkName(p: Pick<OsmPark, 'name' | 'kind'>): string {
@@ -53,10 +53,6 @@ export function surfaceOfPark(p: Pick<OsmPark, 'surface' | 'kind'>): Surface {
   if (DIRT.has(s)) return 'dirt'
   if (HARD.has(s)) return 'hard'
   return p.kind === 'bmx' || p.kind === 'bike' ? 'dirt' : 'hard'
-}
-
-export function parkTraits(p: OsmPark): SpotTraits {
-  return { indoor: !!p.indoor, lit: p.lit ?? null, surface: p.indoor ? 'hard' : surfaceOfPark(p) }
 }
 
 export function parkById(id: string): OsmPark | undefined {

@@ -1,31 +1,30 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import RideReport from '@/components/RideReport'
-import { parkById, parksNear, parkName, parkTraits, PARK_KIND_META } from '@/lib/parks'
+import SpotView from '@/components/SpotView'
+import { parkById, parksNear, parkName, PARK_KIND_META, osmUrl } from '@/lib/parks'
 import { spotsNear, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
-import { fetchSkateForecast } from '@/lib/forecast'
-import { fetchStoriesNear } from '@/lib/stories-near'
-import { nowRead, describe } from '@/lib/report'
+import { crewsNear } from '@/lib/crews'
+import { nearestCity } from '@/lib/cities'
+import { upcomingSessions } from '@/lib/sessions'
 
 export const dynamic = 'force-dynamic'
 
 const SITE = 'https://ritualrollers.com'
 
-function where(p: { city?: string; region?: string; cc: 'CA' | 'US' | 'MX' }): string {
-  return [p.city, p.region, COUNTRY_LABEL[p.cc]].filter(Boolean).join(', ')
+function where(p: { city?: string; region?: string; cc: 'CA' | 'US' | 'MX' }, hubName?: string): string {
+  return [p.city ?? hubName, p.region, COUNTRY_LABEL[p.cc]].filter(Boolean).join(', ')
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
   const park = parkById(id)
-  if (!park) return { title: 'Spot not found — Ritual Rollers' }
+  if (!park) return { title: 'Spot not found' }
+  const hub = nearestCity(park.lat, park.lng)
   const name = parkName(park)
-  const forecast = await fetchSkateForecast(park.lat, park.lng)
-  const description = describe(nowRead(forecast, parkTraits(park)), `${PARK_KIND_META[park.kind].label} conditions, the week's dry windows and what's nearby.`)
-  const title = `${name}${park.city ? `, ${park.city}` : ''} — is it dry? · Ritual Rollers`
+  const title = `${name}${park.city ?? hub?.name ? `, ${park.city ?? hub?.name}` : ''}: sessions and riders`
+  const description = `${PARK_KIND_META[park.kind].label} in ${where(park, hub?.name)}. Sessions people are posting, and the spots and crews nearby.`
   return {
-    title,
-    description,
+    title, description,
     alternates: { canonical: `/parks/${id}` },
     // Unnamed parks are useful on the map but too thin to index
     robots: park.name ? undefined : { index: false, follow: true },
@@ -37,28 +36,36 @@ export default async function ParkPage({ params }: { params: Promise<{ id: strin
   const { id } = await params
   const park = parkById(id)
   if (!park) notFound()
-  const name = parkName(park)
-  const point = { lat: park.lat, lng: park.lng, label: name, countryCode: park.cc }
-  const [forecast, stories] = await Promise.all([fetchSkateForecast(park.lat, park.lng), fetchStoriesNear(point)])
-  const nearbyParks = parksNear(park.lat, park.lng, 25, 60).filter(p => p.id !== park.id && !isFeaturedPark(p))
-  const nearbyFeatured = spotsNear(park.lat, park.lng, 60)
-  const place = where(park)
+  const hub = nearestCity(park.lat, park.lng)
+  const sessions = await upcomingSessions({ park: id, limit: 8 })
+  // Who rides it, by kind of park (OSM's sport tags are too sparse to go on)
+  const disciplines = { skate: ['skateboard', 'roller', 'inline', 'scooter', 'bmx'], pump: ['skateboard', 'roller', 'inline', 'scooter', 'bmx', 'mtb'], bmx: ['bmx'], bike: ['mtb', 'bmx'] }[park.kind]
 
   return (
-    <RideReport
-      mode="park"
-      title={name}
-      subtitle={`${PARK_KIND_META[park.kind].label}${park.indoor ? ' · indoor' : ''}${place ? ` · ${place}` : ''}`}
-      kicker="Ride report"
-      countryCode={park.cc}
-      shareUrl={`${SITE}/parks/${id}`}
-      point={point}
-      forecast={forecast}
-      traits={parkTraits(park)}
-      park={park}
-      nearbyFeatured={nearbyFeatured}
-      nearbyParks={nearbyParks}
-      stories={stories}
+    <SpotView
+      facts={{
+        name: parkName(park),
+        kindLabel: PARK_KIND_META[park.kind].label,
+        color: PARK_KIND_META[park.kind].color,
+        place: where(park, hub?.name),
+        cityHref: hub ? `/cities/${hub.slug}` : undefined,
+        lat: park.lat, lng: park.lng,
+        about: park.name ? undefined : 'This one is on the map without a name. If you know it, tell people in a session, or fix it on OpenStreetMap.',
+        features: [],
+        disciplines,
+        cost: park.fee === true ? 'paid' : park.fee === false ? 'free' : 'unknown',
+        lit: park.lit ?? null,
+        indoor: !!park.indoor,
+        hours: park.hours,
+        web: park.web,
+        source: { url: osmUrl(park.id), label: 'OpenStreetMap' },
+      }}
+      postHref={`/sessions/new?park=${id}`}
+      sessions={sessions}
+      riders={[]}
+      crews={crewsNear(park.lat, park.lng, 25)}
+      nearbySpots={spotsNear(park.lat, park.lng, 40)}
+      nearbyParks={parksNear(park.lat, park.lng, 20, 60).filter(p => p.id !== park.id && !isFeaturedPark(p))}
     />
   )
 }

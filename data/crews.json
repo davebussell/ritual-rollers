@@ -1,0 +1,1187 @@
+[
+ {
+  "name": "Bernalillo County Skate Night",
+  "kind": "skate-night",
+  "disciplines": [
+   "roller"
+  ],
+  "audience": [
+   "families",
+   "kids",
+   "all"
+  ],
+  "city": "Albuquerque",
+  "region": "New Mexico",
+  "country": "US",
+  "lat": 35.01513,
+  "lng": -106.65709,
+  "coords": "spot",
+  "home_spot": "Henry \"Kiki\" Saavedra Community Center, 201 Prosperity Ave SE",
+  "meets": "Several Friday evenings a year, 5:30–8 pm",
+  "about": "Family roller skate nights run by Bernalillo County at a South Valley community center, with skates, music and dinner covered by a small fee.",
+  "links": {
+   "website": "https://www.visitalbuquerque.org/event/skate-night/62146/"
+  },
+  "source": "https://www.visitalbuquerque.org/event/skate-night/62146/",
+  "active": "2026 dates listed (Jan 30, Apr 17, May 29, 2026)",
+  "confidence": "medium",
+  "hub": "albuquerque",
+  "slug": "bernalillo-county-skate-night"
+ },
+ {
+  "name": "Duke City BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Albuquerque",
+  "region": "New Mexico",
+  "country": "US",
+  "lat": 35.07031,
+  "lng": -106.62522,
+  "coords": "spot",
+  "home_spot": "1011 Buena Vista Dr SE",
+  "meets": "Practice Wednesdays; novice training Mondays; races Fridays and Sundays (Oct 2026 calendar)",
+  "about": "Albuquerque's BMX race track, host of a USA BMX national in June 2026, with midweek practice, novice and intermediate training and weekend racing.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/nm-duke-city-bmx",
+   "instagram": "https://www.instagram.com/dukecitybmx/",
+   "facebook": "https://www.facebook.com/DukeCityBMX"
+  },
+  "source": "https://www.usabmx.com/tracks/nm-duke-city-bmx",
+  "active": "2026-10 practice, training and races on the track calendar; 2026-06 Spring Nationals",
+  "confidence": "high",
+  "hub": "albuquerque",
+  "slug": "duke-city-bmx"
+ },
+ {
+  "name": "SK8 ATX",
+  "kind": "club",
+  "disciplines": [
+   "inline"
+  ],
+  "audience": [
+   "all",
+   "beginners",
+   "adults"
+  ],
+  "city": "Austin",
+  "region": "Texas",
+  "country": "US",
+  "lat": 30.26493,
+  "lng": -97.74741,
+  "coords": "city",
+  "meets": "Mondays (intermediate+) and Wednesdays (beginner–intermediate), evenings",
+  "about": "Austin's inline skating community, with two free group skates a week year-round: a faster, longer Monday for confident skaters and a Wednesday night aimed at newcomers. Start points are posted on Instagram.",
+  "links": {
+   "website": "https://www.sk8atx.info/home",
+   "instagram": "https://www.instagram.com/sk8atxofficial"
+  },
+  "source": "https://www.sk8atx.info/home",
+  "active": "2026-09 first Capital City Skate weekend (Austin Chronicle, Sept 24, 2026)",
+  "confidence": "high",
+  "hub": "austin",
+  "slug": "sk8-atx"
+ },
+ {
+  "name": "Swirl Austin",
+  "kind": "crew",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "women",
+   "beginners"
+  ],
+  "city": "Austin",
+  "region": "Texas",
+  "country": "US",
+  "lat": 30.26493,
+  "lng": -97.74741,
+  "coords": "city",
+  "home_spot": "Rotating Austin skateparks (e.g., House Park)",
+  "meets": "First and third Wednesdays",
+  "about": "Formerly Austin Womxn Skate, now part of the GrlSwirl collective: women meet twice a month at different spots around Austin to skate and learn together, including people who only picked up a board as adults.",
+  "links": {
+   "instagram": "https://www.instagram.com/swirlaustin/"
+  },
+  "source": "https://www.kut.org/texasstandard/2026-01-15/swirl-austin-skateboarding-group-womxn-skate-women-group-atx-texas",
+  "active": "session at House Park; 2026-01 Texas Standard feature",
+  "confidence": "medium",
+  "hub": "austin",
+  "slug": "swirl-austin"
+ },
+ {
+  "name": "The Shaky Knees Beginner Skateboarding Club",
+  "kind": "crew",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "adults",
+   "beginners"
+  ],
+  "city": "Austin",
+  "region": "Texas",
+  "country": "US",
+  "lat": 30.26493,
+  "lng": -97.74741,
+  "coords": "city",
+  "home_spot": "Rotates: NE Metro Skate Park (Pflugerville), House Park, Wells Branch",
+  "about": "A judgement-free skateboarding meetup for beginners over 25 who are nervous about falling. Casual sessions rotate between Austin-area parks.",
+  "links": {
+   "meetup": "https://www.meetup.com/the-shaky-knees-skateboarding-club/"
+  },
+  "source": "https://www.meetup.com/the-shaky-knees-skateboarding-club/",
+  "active": "Sunday session at the Pflugerville skatepark (Meetup)",
+  "confidence": "high",
+  "hub": "austin",
+  "slug": "the-shaky-knees-beginner-skateboarding-club"
+ },
+ {
+  "name": "Bellflower BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Bellflower",
+  "region": "California",
+  "country": "US",
+  "lat": 33.89451,
+  "lng": -118.13991,
+  "coords": "spot",
+  "home_spot": "9030 Somerset Blvd, Bellflower",
+  "meets": "Practice Wednesdays; local races Mondays and Fridays (Oct 2026 calendar)",
+  "about": "A USA BMX race track in southeast LA County with a weekly practice night and several local race nights a week, open to kids and adults; a straightforward way to try BMX racing.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/ca-bellflower-bmx",
+   "instagram": "https://www.instagram.com/bellflowerbmx/",
+   "facebook": "https://www.facebook.com/groups/285675546627/"
+  },
+  "source": "https://www.usabmx.com/tracks/ca-bellflower-bmx",
+  "active": "2026-10 practice and local races on the track calendar (through Nov 2026)",
+  "confidence": "high",
+  "hub": "long-beach",
+  "slug": "bellflower-bmx"
+ },
+ {
+  "name": "Skate Like a Girl – SF Bay Area",
+  "kind": "lessons",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "adults",
+   "beginners",
+   "kids"
+  ],
+  "city": "Berkeley",
+  "region": "California",
+  "country": "US",
+  "lat": 37.87084,
+  "lng": -122.27286,
+  "coords": "city",
+  "home_spot": "Berkeley Skatepark",
+  "meets": "Adult workshops on set Saturdays, 9 am–noon",
+  "about": "The Bay Area chapter of the Seattle-born skateboarding nonprofit runs Saturday-morning adult workshops for first-timers and people coming back to it, plus a youth skate school and holiday camps. Loaner gear and financial aid are offered.",
+  "links": {
+   "website": "https://www.skatelikeagirl.com/sfbayarea.html",
+   "instagram": "https://www.instagram.com/skatelikeagirl",
+   "facebook": "https://www.facebook.com/skatelikeagirl"
+  },
+  "source": "https://www.skatelikeagirl.com/sfbayarea.html",
+  "active": "2026 fall programme (adult workshops Sep 5, Oct 3 and Nov 7, 2026)",
+  "confidence": "high",
+  "hub": "oakland",
+  "slug": "skate-like-a-girl-sf-bay-area"
+ },
+ {
+  "name": "Treasure Valley Skate – daytime public skates",
+  "kind": "shop-session",
+  "disciplines": [
+   "roller"
+  ],
+  "audience": [
+   "families",
+   "kids",
+   "beginners"
+  ],
+  "city": "Boise",
+  "region": "Idaho",
+  "country": "US",
+  "lat": 43.64986,
+  "lng": -116.24639,
+  "coords": "spot",
+  "home_spot": "Treasure Valley Skate, 4712 W State St",
+  "about": "Boise's roller rink opens daytime sessions to the public, including homeschool skate days, with low admission and free rental skates; an easy start for families and new skaters.",
+  "links": {
+   "website": "https://www.treasurevalleyskate.com/"
+  },
+  "source": "https://boisemom.com/venue/treasure-valley-skate/",
+  "active": "Homeschool Skate and Halloween day skate (Boise Mom calendar)",
+  "confidence": "medium",
+  "hub": "boise",
+  "slug": "treasure-valley-skate-daytime-public-skates"
+ },
+ {
+  "name": "County Line BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Centennial",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.56453,
+  "lng": -104.93751,
+  "coords": "spot",
+  "home_spot": "8560 S Colorado Blvd, at County Line Rd",
+  "meets": "Practice Thursdays; local races Sundays (Oct 2026 calendar)",
+  "about": "A south-metro Denver BMX race track with a Thursday practice night and Sunday local races.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/co-county-line-bmx",
+   "instagram": "https://www.instagram.com/countylinebmx/",
+   "facebook": "https://www.facebook.com/CountyLineBMX"
+  },
+  "source": "https://www.usabmx.com/tracks/co-county-line-bmx",
+  "active": "2026-10 practice and races on the track calendar (through Nov 2026)",
+  "confidence": "high",
+  "hub": "denver",
+  "slug": "county-line-bmx"
+ },
+ {
+  "name": "Chandler BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Chandler",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 33.29941,
+  "lng": -111.82535,
+  "coords": "spot",
+  "home_spot": "298 S McQueen Rd, Chandler",
+  "meets": "Clinics Mondays; local races Thursdays (Oct 2026 calendar)",
+  "about": "An East Valley BMX race track with weekly coached clinics and local racing.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/az-chandler-bmx",
+   "instagram": "https://www.instagram.com/chandlerbmx001",
+   "facebook": "https://www.facebook.com/chandlerbmx001"
+  },
+  "source": "https://www.usabmx.com/tracks/az-chandler-bmx",
+  "active": "2026-10 clinics and local races on the track calendar (through Nov 2026)",
+  "confidence": "high",
+  "hub": "mesa",
+  "slug": "chandler-bmx"
+ },
+ {
+  "name": "DFW Inline Skate Club",
+  "kind": "club",
+  "disciplines": [
+   "inline"
+  ],
+  "audience": [
+   "all",
+   "beginners",
+   "adults"
+  ],
+  "city": "Dallas",
+  "region": "Texas",
+  "country": "US",
+  "lat": 32.8222,
+  "lng": -96.78651,
+  "coords": "spot",
+  "home_spot": "Katy Trail at Knox St (David's Way entrance)",
+  "meets": "Tuesdays and Thursdays, meet 7:30 pm, roll 8 pm",
+  "about": "Dallas's rollerblading club. Tuesday is a fast 14-mile loop for intermediate to advanced skaters; Thursday is a slower nine-mile out-and-back along the Katy Trail suited to beginners and intermediates.",
+  "links": {
+   "instagram": "https://www.instagram.com/dfwinlineskateclub",
+   "facebook": "https://www.facebook.com/groups/161534614047682",
+   "meetup": "https://www.meetup.com/dfw-inline-skate-club/",
+   "discord": "https://discord.com/invite/9h9yaweJP8"
+  },
+  "source": "https://www.meetup.com/dfw-inline-skate-club/",
+  "active": "2026-10 Tuesday and Thursday skates on Meetup (through Nov 5, 2026)",
+  "confidence": "high",
+  "hub": "dallas",
+  "slug": "dfw-inline-skate-club"
+ },
+ {
+  "name": "Denver Urban Skate Troop (DUST)",
+  "kind": "skate-night",
+  "disciplines": [
+   "inline",
+   "roller"
+  ],
+  "audience": [
+   "all"
+  ],
+  "city": "Denver",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.73924,
+  "lng": -104.98486,
+  "coords": "city",
+  "meets": "Wednesday nights, except in winter weather",
+  "about": "Denver's weekly urban skate since 2018: a social roll of five to ten miles with stops to dance, practise and talk. Mostly inlines and quads, other wheels welcome; summer turnouts can reach about a hundred.",
+  "links": {
+   "website": "https://www.denverurbanskate.com/"
+  },
+  "source": "https://www.thirstcolorado.com/source/2026/8/11/denver-urban-skate-troop",
+  "active": "2026-08 Thirst Colorado feature on the weekly skates",
+  "confidence": "medium",
+  "hub": "denver",
+  "slug": "denver-urban-skate-troop-dust"
+ },
+ {
+  "name": "Mile High BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Denver",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.65124,
+  "lng": -105.10301,
+  "coords": "spot",
+  "home_spot": "3606 S Independence St (by Foothills Fieldhouse)",
+  "meets": "Practice Tuesdays; local races Thursdays (Oct 2026 calendar)",
+  "about": "A BMX race track on Denver's southwest edge with a weekly practice night and weekly local racing for riders of all ages.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/co-mile-high-bmx",
+   "instagram": "https://www.instagram.com/milehigh_bmxtrack/",
+   "facebook": "https://www.facebook.com/MileHighBmx/"
+  },
+  "source": "https://www.usabmx.com/tracks/co-mile-high-bmx",
+  "active": "2026-10 practice and races on the track calendar",
+  "confidence": "high",
+  "hub": "denver",
+  "slug": "mile-high-bmx"
+ },
+ {
+  "name": "DeSoto BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "DeSoto",
+  "region": "Texas",
+  "country": "US",
+  "lat": 32.62277,
+  "lng": -96.84786,
+  "coords": "spot",
+  "home_spot": "Grimes Park, DeSoto",
+  "meets": "Practice Wednesdays and Sundays; racing Thursday nights (Oct 2026 calendar)",
+  "about": "A BMX race track in Grimes Park, south of Dallas, with two practice days a week and Thursday night racing.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/tx-desoto-bmx",
+   "instagram": "https://instagram.com/desoto.bmx",
+   "facebook": "https://www.facebook.com/thedesotobmxtrack"
+  },
+  "source": "https://www.usabmx.com/tracks/tx-desoto-bmx",
+  "active": "2026-10 practice and Thursday night racing on the track calendar",
+  "confidence": "high",
+  "hub": "dallas",
+  "slug": "desoto-bmx"
+ },
+ {
+  "name": "Cowtown BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Fort Worth",
+  "region": "Texas",
+  "country": "US",
+  "lat": 32.77236,
+  "lng": -97.2805,
+  "coords": "spot",
+  "home_spot": "447 Haltom Rd",
+  "meets": "Practice Tuesdays; local races Fridays and Sundays (Oct 2026 calendar)",
+  "about": "Fort Worth's BMX race track, with a weekly practice night and local races twice a week.",
+  "links": {
+   "website": "https://usabmx.com/tracks/1274/posts",
+   "instagram": "https://www.instagram.com/cowtownbmx/",
+   "facebook": "https://www.facebook.com/CowtownBmx"
+  },
+  "source": "https://usabmx.com/tracks/1274/posts",
+  "active": "2026-10 practice and races on the track calendar (through Nov 2026)",
+  "confidence": "high",
+  "hub": "fort-worth",
+  "slug": "cowtown-bmx"
+ },
+ {
+  "name": "Skate 610wn",
+  "kind": "crew",
+  "disciplines": [
+   "roller",
+   "inline",
+   "skateboard"
+  ],
+  "audience": [
+   "all",
+   "beginners"
+  ],
+  "city": "Houston",
+  "region": "Texas",
+  "country": "US",
+  "lat": 29.75894,
+  "lng": -95.3677,
+  "coords": "city",
+  "meets": "Wednesday sunset path skates (as posted)",
+  "about": "A Houston-area meetup for any kind of wheels, from rink and dance skating to relaxed path skates with food stops. Free lessons are offered on request.",
+  "links": {
+   "meetup": "https://www.meetup.com/skate610wn/"
+  },
+  "source": "https://www.meetup.com/skate610wn/",
+  "active": "Wednesday sunset skate (Meetup)",
+  "confidence": "high",
+  "hub": "houston",
+  "slug": "skate-610wn"
+ },
+ {
+  "name": "Southside Skatepark – Second Saturday Slamo",
+  "kind": "shop-session",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "all"
+  ],
+  "city": "Houston",
+  "region": "Texas",
+  "country": "US",
+  "lat": 29.74722,
+  "lng": -95.33967,
+  "coords": "spot",
+  "home_spot": "3600 Harrisburg Blvd, East Downtown (temporary pop-up)",
+  "about": "An afternoon skate jam on a pop-up street course that the Southside Skatepark shop builds in an empty East End warehouse lot, with local vendors alongside. The site is due for redevelopment, so check the shop before going.",
+  "links": {
+   "website": "https://southsideskateshop.com/"
+  },
+  "source": "https://southsideskateshop.com/blogs/news/second-saturday-slamo-houston-texas-june-13-2026",
+  "active": "event (Southside blog)",
+  "confidence": "high",
+  "hub": "houston",
+  "slug": "southside-skatepark-second-saturday-slamo"
+ },
+ {
+  "name": "Sk8 Ambitions",
+  "kind": "nonprofit",
+  "disciplines": [
+   "roller"
+  ],
+  "audience": [
+   "adults",
+   "beginners"
+  ],
+  "city": "Kapolei",
+  "region": "Hawaii",
+  "country": "US",
+  "lat": 21.34483,
+  "lng": -158.06333,
+  "coords": "city",
+  "home_spot": "KIHA Public Skating (Kapolei Inline Hockey Arenas)",
+  "meets": "Sundays: adult class 6–7 pm, Adult Skate Night 6–8 pm; Intro to Skate every 4th Sunday",
+  "about": "An O'ahu roller skating organisation started after the pandemic to give Pacific Islanders and anyone else a place to skate. Sunday evenings bring a themed adult class and an adult skate night at the island's only indoor rink, with an intro class each month for first-timers.",
+  "links": {
+   "website": "https://sk8ambitions.com/",
+   "instagram": "https://www.instagram.com/sk8ambitions",
+   "facebook": "https://www.facebook.com/sk8ambitions"
+  },
+  "source": "https://sk8ambitions.com/",
+  "active": "2025-06 Hawai'i Public Radio feature; official site shows a current October class schedule",
+  "confidence": "high",
+  "hub": "honolulu",
+  "slug": "sk8-ambitions"
+ },
+ {
+  "name": "Las Vegas PRIDE Skate Night",
+  "kind": "skate-night",
+  "disciplines": [
+   "roller"
+  ],
+  "audience": [
+   "queer",
+   "families",
+   "all"
+  ],
+  "city": "Las Vegas",
+  "region": "Nevada",
+  "country": "US",
+  "lat": 36.22939,
+  "lng": -115.22306,
+  "coords": "spot",
+  "home_spot": "Crystal Palace Rancho, 3901 N Rancho Dr",
+  "meets": "Periodic Monday evenings, 7–9 pm",
+  "about": "Las Vegas PRIDE books the Crystal Palace rink for substance-free LGBTQ+ skate nights a few times a year. Tickets include skating and the nights tend to sell out, so buy ahead.",
+  "links": {
+   "website": "https://lasvegaspride.org/"
+  },
+  "source": "https://lasvegaspride.org/calendar/week/2026-03-01/",
+  "active": "skate night on the PRIDE calendar (earlier one Feb 10, 2025)",
+  "confidence": "high",
+  "hub": "las-vegas",
+  "slug": "las-vegas-pride-skate-night"
+ },
+ {
+  "name": "Nellis BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Las Vegas",
+  "region": "Nevada",
+  "country": "US",
+  "lat": 36.21625,
+  "lng": -115.06559,
+  "coords": "spot",
+  "home_spot": "Nellis Meadows Park, 4949 E Cheyenne Ave",
+  "meets": "Practice Mondays and Fridays; racing Wednesdays and Sundays",
+  "about": "Clark County's BMX track at Nellis Meadows Park races riders from toddlers to over-60s. New riders get their first session free; wear long sleeves, long pants and closed shoes, and a loaner helmet is available.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/nv-nellis-bmx",
+   "instagram": "https://www.instagram.com/nellisbmx/",
+   "facebook": "https://www.facebook.com/nellisparkbmx"
+  },
+  "source": "https://www.clarkcountynv.gov/government/departments/parks___recreation/special_use_facility/bmx_track.php",
+  "active": "2026-10 practice and races on the USA BMX track calendar (through Nov 2026)",
+  "confidence": "high",
+  "hub": "las-vegas",
+  "slug": "nellis-bmx"
+ },
+ {
+  "name": "Skate Hunnies",
+  "kind": "skate-night",
+  "disciplines": [
+   "roller",
+   "inline"
+  ],
+  "audience": [
+   "all",
+   "beginners"
+  ],
+  "city": "Los Angeles",
+  "region": "California",
+  "country": "US",
+  "lat": 34.05369,
+  "lng": -118.24277,
+  "coords": "city",
+  "home_spot": "Rotating locations around LA",
+  "meets": "Thursdays, 7 pm",
+  "about": "A big, women-founded roller and inline community that formed during the pandemic. Its weekly Thursday Night Skate moves around the city on routes graded by difficulty, and it also runs drop-in classes, a three-week beginner course and summer skate parties.",
+  "links": {
+   "website": "https://www.laskatehunnies.com/",
+   "instagram": "https://www.instagram.com/la.skate.hunnies/",
+   "facebook": "https://www.facebook.com/la.skate.hunnies/"
+  },
+  "source": "https://www.laskatehunnies.com/",
+  "active": "Summer Skate Night at Mar Vista Roller Hockey Rink (Eventbrite)",
+  "confidence": "high",
+  "hub": "los-angeles",
+  "slug": "skate-hunnies"
+ },
+ {
+  "name": "The Night Skate (Downtown LA)",
+  "kind": "skate-night",
+  "disciplines": [
+   "inline",
+   "roller"
+  ],
+  "audience": [
+   "adults"
+  ],
+  "city": "Los Angeles",
+  "region": "California",
+  "country": "US",
+  "lat": 34.05012,
+  "lng": -118.24248,
+  "coords": "spot",
+  "home_spot": "Weller Court, 2nd St & San Pedro St, Little Tokyo",
+  "meets": "Tuesdays, rolls at 8:08 pm",
+  "about": "A weekly street skate of ten-plus miles through downtown LA on blades and quads, usually 30 to 50 people. It runs in traffic and over hills, so it suits skaters who can already stop and turn with confidence; it is not a learn-to-skate session.",
+  "links": {
+   "instagram": "https://www.instagram.com/thenightskatela/",
+   "facebook": "https://www.facebook.com/groups/thenightskate",
+   "meetup": "https://www.meetup.com/socalinline/"
+  },
+  "source": "https://www.meetup.com/socalinline/",
+  "active": "2026-10 weekly Tuesday skates on Meetup (Oct 27 and Nov 3, 2026 listed)",
+  "confidence": "high",
+  "hub": "los-angeles",
+  "slug": "the-night-skate-downtown-la"
+ },
+ {
+  "name": "Warpcandy – Church of Skate DTLA",
+  "kind": "skate-night",
+  "disciplines": [
+   "roller",
+   "inline"
+  ],
+  "audience": [
+   "all"
+  ],
+  "city": "Los Angeles",
+  "region": "California",
+  "country": "US",
+  "lat": 34.05192,
+  "lng": -118.24474,
+  "coords": "spot",
+  "home_spot": "LAPD headquarters, 1st & Main St, downtown",
+  "meets": "Sundays, 8 am (rolls out 8:10)",
+  "about": "A free Sunday-morning group roll through downtown's Historic Core on bike lanes, put on by Warpcandy, a small quad-focused skate outfit. It goes rain or shine and the route is posted each week.",
+  "links": {
+   "website": "https://www.warpcandy.com/",
+   "meetup": "https://www.meetup.com/warpcandy/"
+  },
+  "source": "https://www.meetup.com/warpcandy/",
+  "active": "Church of Skate DTLA (Meetup; held Jul–Sep 2026)",
+  "confidence": "high",
+  "hub": "los-angeles",
+  "slug": "warpcandy-church-of-skate-dtla"
+ },
+ {
+  "name": "Phoenix Roller Skating Meetup Group",
+  "kind": "club",
+  "disciplines": [
+   "roller"
+  ],
+  "audience": [
+   "adults",
+   "beginners"
+  ],
+  "city": "Phoenix",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 33.57875,
+  "lng": -112.15381,
+  "coords": "spot",
+  "home_spot": "Great Skate, 10054 N 43rd Ave, Glendale",
+  "meets": "Rink nights and monthly outdoor trail skates (as posted)",
+  "about": "A low-pressure group for beginners and returning skaters that meets for rink nights at Great Skate and heads out for occasional trail skates. Helmets and pads are encouraged outdoors.",
+  "links": {
+   "meetup": "https://www.meetup.com/phoenix-scottsdale-roller-hockey-meetup-group/"
+  },
+  "source": "https://www.meetup.com/phoenix-scottsdale-roller-hockey-meetup-group/",
+  "active": "2026-02 and 2026-03 rink nights on Meetup",
+  "confidence": "high",
+  "hub": "phoenix",
+  "slug": "phoenix-roller-skating-meetup-group"
+ },
+ {
+  "name": "Endorphin Drip Hiking Club – Adult Skate Night",
+  "kind": "skate-night",
+  "disciplines": [
+   "roller"
+  ],
+  "audience": [
+   "adults",
+   "beginners"
+  ],
+  "city": "Portland",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 45.46921,
+  "lng": -122.6638,
+  "coords": "spot",
+  "home_spot": "Oaks Park Roller Rink, 7805 SE Oaks Park Way",
+  "meets": "Tuesdays, 7–9:30 pm (18+)",
+  "about": "A Portland social club's standing Tuesday at the historic Oaks Park rink: adults only, all levels, with rental skates included in admission. It is mostly about skating to music and meeting people.",
+  "links": {
+   "meetup": "https://www.meetup.com/edhc_pnw/"
+  },
+  "source": "https://www.meetup.com/edhc_pnw/",
+  "active": "2026-10 weekly skate nights on Meetup (through Nov 10, 2026)",
+  "confidence": "high",
+  "hub": "portland-oregon",
+  "slug": "endorphin-drip-hiking-club-adult-skate-night"
+ },
+ {
+  "name": "Skate Like a Girl Portland – Women &/or Trans Sessions",
+  "kind": "skate-night",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "women",
+   "queer",
+   "adults",
+   "beginners"
+  ],
+  "city": "Portland",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 45.51354,
+  "lng": -122.6621,
+  "coords": "spot",
+  "home_spot": "Nike SB Skatepark, 334 SE Main St",
+  "meets": "Thursdays: lesson 6–7 pm, open skate 8–9:45 pm (18+, register ahead)",
+  "about": "Weekly adult sessions for women, trans, nonbinary and gender-nonconforming skaters: a coached lesson early in the evening, then open skate. Loaner boards and pads are free, sign-up is required and financial aid is available.",
+  "links": {
+   "website": "https://www.skatelikeagirl.com/pdx.html",
+   "instagram": "https://www.instagram.com/skatelikeagirl",
+   "facebook": "https://www.facebook.com/skatelikeagirl"
+  },
+  "source": "https://www.active.com/portland-or/skating/skateboarding-camps/women-and-or-trans-session-november-5th-6pm-7pm-lesson-2026",
+  "active": "session on ACTIVE (also Jul 30, Sep 3 and Dec 17, 2026)",
+  "confidence": "high",
+  "hub": "portland-oregon",
+  "slug": "skate-like-a-girl-portland-women-or-trans-sessions"
+ },
+ {
+  "name": "Oak Creek BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Roseville",
+  "region": "California",
+  "country": "US",
+  "lat": 38.73448,
+  "lng": -121.29146,
+  "coords": "spot",
+  "home_spot": "648 Riverside Ave, Roseville",
+  "meets": "Practice Thursdays; local races Wednesdays and Saturdays (Oct 2026 calendar)",
+  "about": "A sanctioned BMX race track in Roseville, northeast of Sacramento, with a weekly practice night and local races several days a week.",
+  "links": {
+   "website": "https://usabmx.com/tracks/0962/posts",
+   "instagram": "https://www.instagram.com/thecreek2022/",
+   "facebook": "https://www.facebook.com/OakCreekBmx"
+  },
+  "source": "https://usabmx.com/tracks/0962/posts",
+  "active": "2026-10 practice and local races on the track calendar (through Nov 2026)",
+  "confidence": "high",
+  "hub": "sacramento",
+  "slug": "oak-creek-bmx"
+ },
+ {
+  "name": "Popoutnine16",
+  "kind": "crew",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "all",
+   "kids"
+  ],
+  "city": "Sacramento",
+  "region": "California",
+  "country": "US",
+  "lat": 38.5446,
+  "lng": -121.40033,
+  "coords": "spot",
+  "home_spot": "Granite Skate Park, Granite Regional Park (Power Inn Rd)",
+  "about": "A community crew that grew out of South Sacramento's Granite skatepark, throwing free skate contests mixed with live hip-hop and local art, and now touring West Coast parks. A good way to plug into the local scene at a jam rather than a weekly session.",
+  "links": {
+   "website": "https://www.popoutnine16.com/"
+  },
+  "source": "https://www.capradio.org/articles/2026/07/22/popoutnine16-a-safe-haven-for-skaters-and-creatives/",
+  "active": "2026-07 CapRadio feature; jam at Derr-Okamoto Skatepark, Elk Grove, July 26, 2026",
+  "confidence": "medium",
+  "hub": "sacramento",
+  "slug": "popoutnine16"
+ },
+ {
+  "name": "The Rose Club – WTGNC Skate Night at All Together Skatepark",
+  "kind": "skate-night",
+  "disciplines": [
+   "skateboard",
+   "roller",
+   "inline"
+  ],
+  "audience": [
+   "women",
+   "queer"
+  ],
+  "city": "Salt Lake City",
+  "region": "Utah",
+  "country": "US",
+  "lat": 40.7545,
+  "lng": -111.90307,
+  "coords": "spot",
+  "home_spot": "All Together Skatepark, 660 S 400 W, Suite 300",
+  "meets": "Second Thursday of each month, 7–9 pm",
+  "about": "A monthly evening at Salt Lake's indoor skatepark kept for women, trans and gender-nonconforming skaters, hosted by The Rose Club. Skateboards, quads and inlines are all allowed at the park.",
+  "links": {
+   "website": "https://www.alltogetherskatepark.com/ats-salt-lake/"
+  },
+  "source": "https://www.alltogetherskatepark.com/ats-salt-lake/",
+  "active": "2026 park schedule page (camps dated Sep 2026–Jan 2027) lists the monthly night",
+  "confidence": "high",
+  "hub": "salt-lake-city",
+  "slug": "the-rose-club-wtgnc-skate-night-at-all-together-skatepark"
+ },
+ {
+  "name": "Alamo City Skaters",
+  "kind": "club",
+  "disciplines": [
+   "inline",
+   "roller"
+  ],
+  "audience": [
+   "all",
+   "adults"
+  ],
+  "city": "San Antonio",
+  "region": "Texas",
+  "country": "US",
+  "lat": 29.4246,
+  "lng": -98.49514,
+  "coords": "city",
+  "home_spot": "Varies; recently San Pedro Creek trailhead, 66 El Paso St",
+  "meets": "Third Sundays, meet 9 am, roll 9:30 am",
+  "about": "A San Antonio group that skates the city's paved trails and streets: a roughly ten-mile Third Sunday roll each month (paused in peak summer heat) and a free three-day Alamo Roll in November.",
+  "links": {
+   "meetup": "https://www.meetup.com/alamocityskaters/"
+  },
+  "source": "https://www.meetup.com/alamocityskaters/",
+  "active": "Third Sunday skate; Alamo Roll (Meetup)",
+  "confidence": "high",
+  "hub": "san-antonio",
+  "slug": "alamo-city-skaters"
+ },
+ {
+  "name": "Lone Star BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "San Antonio",
+  "region": "Texas",
+  "country": "US",
+  "lat": 29.49491,
+  "lng": -98.41847,
+  "coords": "spot",
+  "home_spot": "3950 Eisenhauer Rd",
+  "meets": "Local races most Thursdays, plus some Tuesdays and Saturdays (Oct 2026 calendar)",
+  "about": "A San Antonio BMX race track set up to bring families into the sport, with local racing several times a week and beginner leagues.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/tx-lone-star-bmx",
+   "instagram": "https://www.instagram.com/lonestarbmxsa",
+   "facebook": "https://www.facebook.com/lonestarbmxsa"
+  },
+  "source": "https://www.usabmx.com/tracks/tx-lone-star-bmx",
+  "active": "2026-10 local races on the track calendar (Oct 3–22, 2026)",
+  "confidence": "high",
+  "hub": "san-antonio",
+  "slug": "lone-star-bmx"
+ },
+ {
+  "name": "San Diego Inline",
+  "kind": "club",
+  "disciplines": [
+   "inline"
+  ],
+  "audience": [
+   "adults"
+  ],
+  "city": "San Diego",
+  "region": "California",
+  "country": "US",
+  "lat": 32.79533,
+  "lng": -117.21254,
+  "coords": "spot",
+  "home_spot": "De Anza Cove (Mission Bay) or Harbor Island Park",
+  "meets": "Thursday evenings, alternating routes (as posted)",
+  "about": "A volunteer-run crew of urban bladers doing evening skates around Mission Bay, Mission Beach and downtown, usually with a drink stop. Routes are graded and most are intermediate or advanced, on streets with rough patches.",
+  "links": {
+   "instagram": "https://www.instagram.com/sandiegoinline/",
+   "meetup": "https://www.meetup.com/sandiegoinline/"
+  },
+  "source": "https://www.meetup.com/sandiegoinline/",
+  "active": "2026-10 and 2026-11 skates listed on Meetup",
+  "confidence": "high",
+  "hub": "san-diego",
+  "slug": "san-diego-inline"
+ },
+ {
+  "name": "Women of Color Skateboarding Group",
+  "kind": "crew",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "women"
+  ],
+  "city": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "lat": 37.78794,
+  "lng": -122.40752,
+  "coords": "city",
+  "home_spot": "Rotating Bay Area skateparks",
+  "meets": "Saturday mornings (as posted)",
+  "about": "A small, relaxed meetup for women of color who skateboard, rotating between Bay Area skateparks and heading to skate events as a group. It is social first, with a reminder to skate within your limits.",
+  "links": {
+   "meetup": "https://www.meetup.com/san-francisco-skate-boarding-meetup-group/"
+  },
+  "source": "https://www.meetup.com/san-francisco-skate-boarding-meetup-group/",
+  "active": "2025-11 Saturday sessions; 2026-05 group outing listed on Meetup",
+  "confidence": "high",
+  "hub": "san-francisco",
+  "slug": "women-of-color-skateboarding-group"
+ },
+ {
+  "name": "Friday Night Skate – Santa Monica",
+  "kind": "skate-night",
+  "disciplines": [
+   "inline",
+   "roller"
+  ],
+  "audience": [
+   "adults"
+  ],
+  "city": "Santa Monica",
+  "region": "California",
+  "country": "US",
+  "lat": 34.01195,
+  "lng": -118.49167,
+  "coords": "spot",
+  "home_spot": "Santa Monica City Hall, 1685 Main St",
+  "meets": "Fridays, 9 pm",
+  "about": "A Friday night group skate that has run for over 20 years, looping 10 to 15 miles through Santa Monica and Venice from City Hall. Pitched at intermediate skaters on inlines or quads.",
+  "links": {
+   "website": "https://www.fridaynightskate.org/",
+   "facebook": "https://www.facebook.com/groups/20490681241/",
+   "meetup": "https://www.meetup.com/socalinline/"
+  },
+  "source": "https://www.fridaynightskate.org/",
+  "active": "2026-10 weekly Friday skates on the SoCal inline Meetup (Oct 23 and Oct 30, 2026)",
+  "confidence": "high",
+  "hub": "los-angeles",
+  "slug": "friday-night-skate-santa-monica"
+ },
+ {
+  "name": "SeaTac BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "SeaTac",
+  "region": "Washington",
+  "country": "US",
+  "lat": 47.48054,
+  "lng": -122.30956,
+  "coords": "spot",
+  "home_spot": "1855 S 136th St, SeaTac",
+  "meets": "Gate practice Tuesdays; local races Saturdays (Oct 2026 calendar; closed when wet)",
+  "about": "A BMX race track just south of Seattle with gate practice, team practices and local races. It closes when the dirt is wet, so check the track's pages before heading out.",
+  "links": {
+   "website": "https://usabmx.com/tracks/0239/posts",
+   "instagram": "https://instagram.com/seatacbmxofficial",
+   "facebook": "https://www.facebook.com/seatacbmxofficial"
+  },
+  "source": "https://usabmx.com/tracks/0239/posts",
+  "active": "2026-10 practices and races on the track calendar",
+  "confidence": "high",
+  "hub": "seattle",
+  "slug": "seatac-bmx"
+ },
+ {
+  "name": "Evergreen Crank Sisters",
+  "kind": "club",
+  "disciplines": [
+   "mtb"
+  ],
+  "audience": [
+   "women"
+  ],
+  "city": "Seattle",
+  "region": "Washington",
+  "country": "US",
+  "lat": 47.60383,
+  "lng": -122.33006,
+  "coords": "city",
+  "about": "The women's riding community of the Evergreen Mountain Bike Alliance's Cascades to Sound chapter, with free group rides and events all year for women and femme riders of every level. Rides are mostly on Puget Sound trail networks rather than at a bike park.",
+  "links": {
+   "website": "https://www.evergreenmtb.org/about/crank-sisters",
+   "instagram": "https://www.instagram.com/evergreencranksisters/"
+  },
+  "source": "https://www.evergreenmtb.org/about/crank-sisters",
+  "active": "2026-10 rides on the Evergreen calendar (Halloween dusk ride, ladies' night ride)",
+  "confidence": "high",
+  "hub": "seattle",
+  "slug": "evergreen-crank-sisters"
+ },
+ {
+  "name": "Skate Like a Girl Seattle – Women &/or Trans Sessions",
+  "kind": "skate-night",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "women",
+   "queer",
+   "adults",
+   "beginners"
+  ],
+  "city": "Seattle",
+  "region": "Washington",
+  "country": "US",
+  "lat": 47.64959,
+  "lng": -122.34217,
+  "coords": "spot",
+  "home_spot": "All Together Skatepark, 3500 Stone Way N (Fremont)",
+  "meets": "Mondays: lesson 7–8 pm, open skate 8–9:30 pm (18+, register ahead)",
+  "about": "The nonprofit's home-city adult session for women, trans, nonbinary and gender-expansive skaters at an indoor park: an hour of instruction, then open skate. Loaner boards, helmets and pads are on hand.",
+  "links": {
+   "website": "https://www.skatelikeagirl.com/seattle.html",
+   "instagram": "https://www.instagram.com/skatelikeagirl",
+   "facebook": "https://www.facebook.com/skatelikeagirl"
+  },
+  "source": "https://www.active.com/seattle-wa/skating/skateboarding-classes/adults-only-women-and-or-trans-session-november-2nd-8pm-9-30pm-open-skate-2026",
+  "active": "session on ACTIVE (also Sep 7, 2026)",
+  "confidence": "high",
+  "hub": "seattle",
+  "slug": "skate-like-a-girl-seattle-women-or-trans-sessions"
+ },
+ {
+  "name": "Rad Canyon BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "South Jordan",
+  "region": "Utah",
+  "country": "US",
+  "lat": 40.57254,
+  "lng": -112.01371,
+  "coords": "spot",
+  "home_spot": "5200 W 9800 S, South Jordan",
+  "meets": "Tuesday practice and balance-bike racing; Saturday racing (Oct 2026 calendar)",
+  "about": "A BMX race track in Daybreak, about 20 miles south of downtown Salt Lake, with Tuesday practice, Saturday racing and balance-bike races for the smallest riders.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/ut-rad-canyon-bmx",
+   "instagram": "https://www.instagram.com/radcanyonbmx/",
+   "facebook": "https://www.facebook.com/RadCanyonBMX"
+  },
+  "source": "https://www.usabmx.com/tracks/ut-rad-canyon-bmx",
+  "active": "2026-10 practice and races on the track calendar",
+  "confidence": "high",
+  "hub": "salt-lake-city",
+  "slug": "rad-canyon-bmx"
+ },
+ {
+  "name": "Tucson BMX",
+  "kind": "club",
+  "disciplines": [
+   "bmx"
+  ],
+  "audience": [
+   "all",
+   "kids",
+   "families"
+  ],
+  "city": "Tucson",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 32.16379,
+  "lng": -110.79505,
+  "coords": "spot",
+  "home_spot": "9245 E Irvington Rd",
+  "meets": "Practice Thursdays; local races Fridays (Oct 2026 calendar)",
+  "about": "Tucson's BMX race track, on the east side, with a practice night and a local race every week.",
+  "links": {
+   "website": "https://www.usabmx.com/tracks/az-tucson-bmx",
+   "instagram": "https://www.instagram.com/tucson_bmx__/",
+   "facebook": "https://www.facebook.com/TucsonBMX520/"
+  },
+  "source": "https://www.usabmx.com/tracks/az-tucson-bmx",
+  "active": "2026-10 practice and races on the track calendar (through Nov 2026)",
+  "confidence": "high",
+  "hub": "tucson",
+  "slug": "tucson-bmx"
+ },
+ {
+  "name": "Exposure Skate – Sesh(E) clinics",
+  "kind": "lessons",
+  "disciplines": [
+   "skateboard"
+  ],
+  "audience": [
+   "women",
+   "queer",
+   "adults",
+   "beginners"
+  ],
+  "city": "Vista",
+  "region": "California",
+  "country": "US",
+  "lat": 33.20214,
+  "lng": -117.24248,
+  "coords": "city",
+  "home_spot": "LVLUP USA training facility, Vista (May 2026 clinic)",
+  "about": "Free clinics from Exposure, the North County San Diego women's skateboarding nonprofit, for women and nonbinary skaters 16 and up, taught by volunteer pros. Boards and pads are provided and complete beginners are welcome; register ahead.",
+  "links": {
+   "website": "https://exposureskate.org/seshe/",
+   "instagram": "https://www.instagram.com/exposureskate/"
+  },
+  "source": "https://www.kpbs.org/events/2026/05/23/seshe-free-skateboarding-lessons-for-women",
+  "active": "Sesh(E) clinic at LVLUP USA, Vista (KPBS events listing)",
+  "confidence": "high",
+  "hub": "carlsbad",
+  "slug": "exposure-skate-sesh-e-clinics"
+ }
+]

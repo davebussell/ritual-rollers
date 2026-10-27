@@ -1,34 +1,32 @@
 import type { Metadata } from 'next'
 import { notFound, permanentRedirect } from 'next/navigation'
 import legacy from '@/data/legacy-spot-slugs.json'
-import RideReport from '@/components/RideReport'
-import { spotBySlug, spotsNear, traitsOf, COUNTRY_LABEL, isFeaturedPark } from '@/lib/spots-index'
+import SpotView from '@/components/SpotView'
+import { spotBySlug, spotsNear, isFeaturedPark, COUNTRY_LABEL } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
-import { fetchSkateForecast } from '@/lib/forecast'
-import { fetchStoriesNear } from '@/lib/stories-near'
-import { nowRead, describe } from '@/lib/report'
-import { KIND_META } from '@/lib/sports'
+import { crewsNear } from '@/lib/crews'
+import { nearestCity } from '@/lib/cities'
+import { upcomingSessions } from '@/lib/sessions'
+import { ridersFor } from '@/lib/riders'
+import { KIND_META, FEATURE_LABEL } from '@/lib/sports'
 
 export const dynamic = 'force-dynamic'
 
 const SITE = 'https://ritualrollers.com'
 
-// The outdoor-sports index (kite, surf, ski…) that lived here until the wheels-only relaunch
+// The outdoor-sports index (kite, surf, ski…) that lived here until the wheels relaunch
 const LEGACY = new Set(legacy as string[])
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const spot = spotBySlug(slug)
-  if (!spot) return { title: 'Spot not found — Ritual Rollers' }
-  const forecast = await fetchSkateForecast(spot.lat, spot.lng)
-  const description = describe(nowRead(forecast, traitsOf(spot)), spot.why)
-  const title = `${spot.name}, ${spot.city} — is it dry? · Ritual Rollers`
+  if (!spot) return { title: 'Spot not found' }
+  const title = `${spot.name}, ${spot.city}: sessions and riders`
+  const description = `${KIND_META[spot.kind].label} in ${spot.city}, ${spot.region}. ${spot.why}`.slice(0, 300)
   return {
-    title,
-    description,
+    title, description,
     alternates: { canonical: `/spots/${slug}` },
     openGraph: { title, description, url: `${SITE}/spots/${slug}`, type: 'website' },
-    twitter: { card: 'summary_large_image', title, description },
   }
 }
 
@@ -39,10 +37,8 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
     if (LEGACY.has(slug)) permanentRedirect('/spots')
     notFound()
   }
-  const point = { lat: spot.lat, lng: spot.lng, label: `${spot.name}, ${spot.city}`, countryCode: spot.country }
-  const [forecast, stories] = await Promise.all([fetchSkateForecast(spot.lat, spot.lng), fetchStoriesNear(point)])
-  const nearbyParks = parksNear(spot.lat, spot.lng, 25, 60).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05)
-  const nearbyFeatured = spotsNear(spot.lat, spot.lng, 60, spot.slug)
+  const hub = nearestCity(spot.lat, spot.lng)
+  const [sessions, riders] = await Promise.all([upcomingSessions({ spot: slug, limit: 8 }), ridersFor({ spot: slug }, 6)])
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -58,20 +54,30 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <RideReport
-        mode="spot"
-        title={spot.name}
-        subtitle={`${KIND_META[spot.kind].label}${spot.indoor ? ' · indoor' : ''} · ${spot.city}, ${spot.region}, ${COUNTRY_LABEL[spot.country]}`}
-        kicker="Ride report"
-        countryCode={spot.country}
-        shareUrl={`${SITE}/spots/${slug}`}
-        point={point}
-        forecast={forecast}
-        traits={traitsOf(spot)}
-        index={spot}
-        nearbyFeatured={nearbyFeatured}
-        nearbyParks={nearbyParks}
-        stories={stories}
+      <SpotView
+        facts={{
+          name: spot.name,
+          kindLabel: KIND_META[spot.kind].label,
+          color: KIND_META[spot.kind].color,
+          place: `${spot.city}, ${spot.region}, ${COUNTRY_LABEL[spot.country]}`,
+          cityHref: hub ? `/cities/${hub.slug}` : undefined,
+          lat: spot.lat, lng: spot.lng,
+          about: spot.why,
+          headsUp: spot.heads_up,
+          features: spot.features.map(f => FEATURE_LABEL[f] ?? f),
+          disciplines: spot.disciplines,
+          level: spot.skill === 'beginner' ? 'learning' : spot.skill === 'intermediate' ? 'comfortable' : spot.skill === 'advanced' ? 'advanced' : 'all',
+          cost: spot.cost,
+          lit: spot.lit,
+          indoor: spot.indoor,
+          source: { url: spot.source, label: new URL(spot.source).hostname.replace(/^www\./, '') },
+        }}
+        postHref={`/sessions/new?spot=${slug}`}
+        sessions={sessions}
+        riders={riders}
+        crews={crewsNear(spot.lat, spot.lng, 25)}
+        nearbySpots={spotsNear(spot.lat, spot.lng, 40, slug)}
+        nearbyParks={parksNear(spot.lat, spot.lng, 20, 60).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05)}
       />
     </>
   )
