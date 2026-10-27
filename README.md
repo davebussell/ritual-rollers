@@ -33,6 +33,9 @@ node tests/shots.mjs http://localhost:3000 /tmp/shots / /cities/ottawa   # scree
   track lines mapped inside it, coloured by difficulty, with the named trails listed. Skateparks show their outline and
   a link to add what's inside on OpenStreetMap; parks mapped only as a point say so.
 - **Ride it in 3D** (`/ride`, `/ride/[id]`): first person on a park's real lines over the real ground (see below).
+- **Shops and companies** (city and near pages; "Shops nearby" on park and spot pages): skate, roller and bike shops
+  from OpenStreetMap, and researched companies (park and track builders, makers, indoor parks, schools). Board shows
+  skate shops, Skates shows roller shops first, Bike shows bike shops; companies by discipline.
 
 ## Trail maps and the 3D ride (2026-10-27)
 Dave asked for trail maps for every location and a game to ride them, starting with bikes and tracks.
@@ -86,6 +89,12 @@ Picking reloads the page (a soft refresh left the header stale).
 - **Every mapped park**: `data/parks.json`, from OpenStreetMap via the "Refresh parks" GitHub Action
   (`scripts/fetch-skateparks.mjs`). Their outlines and lines: `public/lines/` and `data/lines-index.json`
   (`scripts/fetch-lines.mjs`, same Action).
+- **Shops**: `data/shops.json`, from OpenStreetMap (`scripts/fetch-shops.mjs`, same Action): `shop=bicycle` → bike;
+  skate shops by `shop=skate…`, `shop=sports` + `sport=skateboard|roller_skating|inline`, or a skate or board shop
+  name; hockey and figure skating shops and big-box chains are left out. Shops without a name are skipped.
+- **Companies**: `data/companies.json`, built by `node scripts/build-companies.mjs research/companies/*.json` (brief in
+  `research/companies/BRIEF.md`). Every company has its own link, a source and evidence of activity in 2025–26.
+  City pages show those within 80 km, or the three nearest within 400 km.
 - **Cities**: `data/cities.json`, built by `node scripts/build-cities.mjs` (metro list in the script; Nominatim
   results cached in `research/cities/geocode.json`).
 - **Crews**: `data/crews.json`, built by `node scripts/build-crews.mjs research/crews/*.json` (brief in

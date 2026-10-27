@@ -6,6 +6,7 @@ import { spotBySlug, spotsNear, isFeaturedPark, COUNTRY_LABEL } from '@/lib/spot
 import { parksNear, parkById, PARK_KIND_META, osmEditUrl } from '@/lib/parks'
 import { linesFor, rideable } from '@/lib/lines'
 import ParkMapSection from '@/components/ParkMapSection'
+import { shopsNear } from '@/lib/shops'
 import { crewsNear } from '@/lib/crews'
 import { nearestCity } from '@/lib/cities'
 import { upcomingSessions } from '@/lib/sessions'
@@ -88,6 +89,7 @@ export default async function SpotPage({ params }: { params: Promise<{ slug: str
         crews={crewsNear(spot.lat, spot.lng, 25).filter(c => fits(c.disciplines, wheel))}
         nearbySpots={spotsNear(spot.lat, spot.lng, 40, slug).filter(s => fits(s.disciplines, wheel))}
         nearbyParks={parksNear(spot.lat, spot.lng, 20, 200).filter(p => p.id !== spot.osm && !isFeaturedPark(p) && p.distanceKm > 0.05 && parkFits(p.kind, wheel)).slice(0, 60)}
+        shops={shopsNear(spot.lat, spot.lng, 25, wheel, 4)}
         wheelLabel={wheel?.lower}
         misfit={misfit}
         parkMap={park && lines ? (

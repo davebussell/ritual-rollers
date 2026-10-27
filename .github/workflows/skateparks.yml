@@ -1,5 +1,6 @@
 # Refreshes data/parks.json (every skatepark, pump track, BMX track and bike park in OpenStreetMap for CA, US, MX),
-# then the lines inside them (public/lines/*.json and data/lines-index.json: trail maps and the 3D ride).
+# then the lines inside them (public/lines/*.json and data/lines-index.json: trail maps and the 3D ride), and the
+# skate, roller and bike shops (data/shops.json).
 # Run it from the Actions tab ("Run workflow") when you want fresh map data, or locally with
 # `node scripts/fetch-skateparks.mjs`. On main a refresh commit deploys the site, like any other push.
 # QLever refuses GitHub's runners at times; the script then falls back to Overpass, which is slower.
@@ -28,11 +29,13 @@ jobs:
       # needs QLever; if it's refused from here, the parks still refresh and the old lines stay
       - run: node scripts/fetch-lines.mjs
         continue-on-error: true
+      - run: node scripts/fetch-shops.mjs
+        continue-on-error: true
       - name: Commit the data if it changed
         run: |
           git config user.name "ritualrollers-bot"
           git config user.email "dave@clickshift.ca"
-          git add data/parks.json data/lines-index.json public/lines
+          git add data/parks.json data/lines-index.json public/lines data/shops.json
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "Refresh parks from OpenStreetMap"
           git pull --rebase origin "${GITHUB_REF_NAME}"

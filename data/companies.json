@@ -1,0 +1,2954 @@
+{
+ "built": "2026-10-27T18:23:53.433Z",
+ "count": 120,
+ "companies": [
+  {
+   "name": "Dirt Camp",
+   "kind": "school",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Kids' MTB day and sleepover camps",
+   "city": "Bromont",
+   "region": "Quebec",
+   "country": "CA",
+   "lat": 45.30071,
+   "lng": -72.63807,
+   "coords": "address",
+   "about": "Quebec's original mountain bike camp for ages 7 to 15, running since 1996, with day and sleepover camps at Bromont and day camps at Mont Blanc, Oka, Rigaud and Rawdon.",
+   "links": {
+    "website": "https://dirtcamp.ca",
+    "instagram": "https://www.instagram.com/dirt.camp/"
+   },
+   "source": "https://dirtcamp.ca/contact/",
+   "active": "th-anniversary story (Canadian Cycling Magazine); fall weekend camps on its site",
+   "confidence": "high",
+   "hub": "sherbrooke",
+   "slug": "dirt-camp"
+  },
+  {
+   "name": "The Compound",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "scooter"
+   ],
+   "what": "Indoor skatepark, skate programs, camps",
+   "city": "Calgary",
+   "region": "Alberta",
+   "country": "CA",
+   "lat": 51.01513,
+   "lng": -114.0412,
+   "coords": "address",
+   "about": "Indoor skatepark in southeast Calgary with drop-in sessions, kids' and adult skate programs, PD-day and summer camps and private lessons.",
+   "links": {
+    "website": "https://thecompoundyyc.com",
+    "instagram": "https://www.instagram.com/thecompoundyyc/"
+   },
+   "source": "https://thecompoundyyc.com/",
+   "active": "Registration open for its 2026/27 skate programs and camps (company site, updated 2026-10)",
+   "confidence": "high",
+   "hub": "calgary",
+   "slug": "the-compound"
+  },
+  {
+   "name": "Jackson Ultima (Tournament Sports)",
+   "kind": "maker",
+   "disciplines": [
+    "roller",
+    "inline"
+   ],
+   "what": "Roller skates, inline wheels (also figure skates)",
+   "city": "Cambridge",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 43.3601,
+   "lng": -80.3123,
+   "coords": "city",
+   "about": "Skate maker best known for figure skates that also makes roller skates and inline wheels; parent Tournament Sports is in Cambridge, Ontario.",
+   "links": {
+    "website": "https://jacksonultima.com",
+    "instagram": "https://www.instagram.com/jackson.ultima/"
+   },
+   "source": "https://jacksonultima.com/pages/about",
+   "active": "new product listed",
+   "confidence": "high",
+   "hub": "kitchener",
+   "slug": "jackson-ultima-tournament-sports"
+  },
+  {
+   "name": "Forbidden Bike Company",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "High-pivot trail and enduro bikes, Ti hardtails",
+   "city": "Cumberland",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.6185,
+   "lng": -125.032,
+   "coords": "city",
+   "about": "Vancouver Island bike company known for high-pivot trail bikes; workshop and offices in Cumberland.",
+   "links": {
+    "website": "https://forbiddenbike.com",
+    "instagram": "https://www.instagram.com/forbiddenbikecompany/"
+   },
+   "source": "https://forbiddenbike.com/the-gathering-vol-4-recap/",
+   "active": "recap of owners' ride held in Cumberland",
+   "confidence": "medium",
+   "slug": "forbidden-bike-company"
+  },
+  {
+   "name": "New Line Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Concrete skateparks, pump tracks",
+   "city": "Fort Langley",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.16913,
+   "lng": -122.57936,
+   "coords": "city",
+   "about": "Plans, designs and builds concrete skateparks and pump tracks. Head office is in Fort Langley, with teams in Calgary, Toronto, San Diego and Edgewater, Florida.",
+   "links": {
+    "website": "https://www.newlineskateparks.com",
+    "instagram": "https://www.instagram.com/newlineskateparks"
+   },
+   "source": "https://www.newlineskateparks.com/contact-our-team/",
+   "active": "2026-07 Pompano Beach, FL skatepark opening (Sun Sentinel); 2025-10 project post on Coaldale, AB",
+   "confidence": "high",
+   "hub": "vancouver",
+   "slug": "new-line-skateparks"
+  },
+  {
+   "name": "Canadian Ramp Company",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx",
+    "mtb"
+   ],
+   "what": "Skateparks, pump tracks, bike parks",
+   "city": "Innerkip",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 43.21026,
+   "lng": -80.69669,
+   "coords": "city",
+   "about": "Ontario builder of above-ground and concrete skateparks, modular and Velosolutions asphalt pump tracks and bike parks across Canada.",
+   "links": {
+    "website": "https://canadianrampcompany.ca"
+   },
+   "source": "https://canadianrampcompany.ca/",
+   "active": "2026-06 Charlottetown, PEI project post; 2026-10 Oliver, BC pump track (Castanet)",
+   "confidence": "high",
+   "hub": "kitchener",
+   "slug": "canadian-ramp-company"
+  },
+  {
+   "name": "We Are One Composites",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Carbon rims, wheels, bars",
+   "city": "Kamloops",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 50.6758,
+   "lng": -120.3394,
+   "coords": "city",
+   "about": "Hand-lays carbon mountain bike rims, wheels and bars at its factory in Kamloops.",
+   "links": {
+    "website": "https://www.weareonecomposites.com",
+    "instagram": "https://www.instagram.com/weareonecomposites/"
+   },
+   "source": "https://www.weareonecomposites.com/en-us",
+   "active": "products published",
+   "confidence": "high",
+   "hub": "kamloops",
+   "slug": "we-are-one-composites"
+  },
+  {
+   "name": "School of MTB",
+   "kind": "school",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "MTB coaching, lessons, camps",
+   "city": "Kelowna",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.88792,
+   "lng": -119.4959,
+   "coords": "city",
+   "about": "Kelowna mountain bike school with certified coaching, private lessons, kids' camps and women's clinics around the Okanagan.",
+   "links": {
+    "website": "https://schoolofmtb.com"
+   },
+   "source": "https://schoolofmtb.com/",
+   "active": "2026-09 blog posts; 2026-02 opening story (Kelowna Capital News)",
+   "confidence": "high",
+   "hub": "kelowna",
+   "slug": "school-of-mtb"
+  },
+  {
+   "name": "Workshop Skateboard Club",
+   "kind": "school",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Indoor skate lessons and camps",
+   "city": "Kitchener",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 43.43859,
+   "lng": -80.47289,
+   "coords": "address",
+   "about": "Small private indoor skateboard facility in Kitchener built around lessons and camps for beginners and kids.",
+   "links": {
+    "website": "https://workshopskateboardclub.square.site/"
+   },
+   "source": "https://www.communityedition.ca/workshop-skateboard-club/",
+   "active": "2025-01 opening story (Community Edition)",
+   "confidence": "medium",
+   "hub": "kitchener",
+   "slug": "workshop-skateboard-club"
+  },
+  {
+   "name": "Spawn Cycles",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes and parts",
+   "city": "Langford",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 48.4498,
+   "lng": -123.5047,
+   "coords": "city",
+   "about": "Small BC mountain bike brand (Rokk builds, Brood parts) based in Langford, near Victoria.",
+   "links": {
+    "website": "https://spawncycles.com",
+    "instagram": "https://www.instagram.com/spawncycles/"
+   },
+   "source": "https://spawncycles.com/policies/contact-information",
+   "active": "new grips listed",
+   "confidence": "high",
+   "hub": "victoria",
+   "slug": "spawn-cycles"
+  },
+  {
+   "name": "North Shore Bike Park",
+   "kind": "indoor",
+   "disciplines": [
+    "mtb",
+    "bmx",
+    "skateboard",
+    "scooter"
+   ],
+   "what": "Indoor bike and skate park",
+   "city": "Maple Ridge",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.23996,
+   "lng": -122.49585,
+   "coords": "address",
+   "about": "Indoor bike and skatepark that moved from North Vancouver to Maple Ridge after losing its old building in 2025.",
+   "links": {
+    "website": "https://www.northshorebikepark.ca"
+   },
+   "source": "https://www.northshorebikepark.ca/",
+   "active": "2025-11 reopened in Maple Ridge (BCIT News; Maple Ridge News)",
+   "confidence": "high",
+   "hub": "chilliwack",
+   "slug": "north-shore-bike-park"
+  },
+  {
+   "name": "Joyride 150",
+   "kind": "indoor",
+   "disciplines": [
+    "mtb",
+    "bmx"
+   ],
+   "what": "Indoor bike park, lessons",
+   "city": "Markham",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 43.87683,
+   "lng": -79.27295,
+   "coords": "address",
+   "about": "Indoor bike park in Markham, north of Toronto, with drop-in riding, group lessons, adult clinics and events.",
+   "links": {
+    "website": "https://www.joyride150.com"
+   },
+   "source": "https://www.joyride150.com/contacts/",
+   "active": "2026-10 Halloween Jam 2026 page; 2026-01 women's weekend (Canadian Cycling Magazine)",
+   "confidence": "high",
+   "hub": "toronto",
+   "slug": "joyride-150"
+  },
+  {
+   "name": "CJ's Skatepark",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Indoor skatepark, lessons, camps",
+   "city": "Mississauga",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 43.5917,
+   "lng": -79.60246,
+   "coords": "address",
+   "about": "Indoor skatepark in Mississauga with skateboard and scooter lessons, PA-day, March-break and summer camps, and birthday parties.",
+   "links": {
+    "website": "https://cjsskatepark.com",
+    "instagram": "https://www.instagram.com/cjskatepark/"
+   },
+   "source": "https://cjsskatepark.com/",
+   "active": "2025-11 CHCH story on a young scooter rider that mentions the park",
+   "confidence": "high",
+   "hub": "toronto",
+   "slug": "cj-s-skatepark"
+  },
+  {
+   "name": "TAZ",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "scooter",
+    "bmx",
+    "roller",
+    "inline"
+   ],
+   "what": "Indoor skatepark and roller rink",
+   "city": "Montreal",
+   "region": "Quebec",
+   "country": "CA",
+   "lat": 45.56101,
+   "lng": -73.63519,
+   "coords": "address",
+   "about": "Large indoor skatepark in Montreal's north end with a roller rink, classes, birthday parties and a school skateboard program.",
+   "links": {
+    "website": "https://www.taz.ca",
+    "instagram": "https://www.instagram.com/le_taz"
+   },
+   "source": "https://www.taz.ca/en/contact/",
+   "active": "2026 school-year skateboard concentration program and winter 2027 class sessions listed on its site (page updated 2026-10)",
+   "confidence": "high",
+   "hub": "montreal",
+   "slug": "taz"
+  },
+  {
+   "name": "Endless Biking",
+   "kind": "school",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "MTB lessons, camps, guided rides",
+   "city": "North Vancouver",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.30885,
+   "lng": -123.03441,
+   "coords": "address",
+   "about": "North Vancouver outfit that teaches mountain biking on the North Shore: private lessons, kids' summer and spring-break camps, and guided rides.",
+   "links": {
+    "website": "https://www.endlessbiking.com",
+    "instagram": "https://www.instagram.com/endlessbiking"
+   },
+   "source": "https://www.endlessbiking.com/",
+   "active": "2026 fall programs open (company site)",
+   "confidence": "high",
+   "hub": "vancouver",
+   "slug": "endless-biking"
+  },
+  {
+   "name": "Rocky Mountain Bicycles",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes",
+   "city": "North Vancouver",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.3206,
+   "lng": -123.0738,
+   "coords": "city",
+   "about": "Mountain bike brand founded in 1981 and based in North Vancouver.",
+   "links": {
+    "website": "https://bikes.com",
+    "instagram": "https://www.instagram.com/rockymountainbicycles/"
+   },
+   "source": "https://bikes.com/",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "vancouver",
+   "slug": "rocky-mountain-bicycles"
+  },
+  {
+   "name": "Cycles Devinci",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes",
+   "city": "Saguenay",
+   "region": "Quebec",
+   "country": "CA",
+   "lat": 48.4286,
+   "lng": -71.0637,
+   "coords": "city",
+   "about": "Bike maker in Chicoutimi (Saguenay) making mountain bikes and e-bikes, with production in Canada.",
+   "links": {
+    "website": "https://www.devinci.com",
+    "instagram": "https://www.instagram.com/cyclesdevinci/"
+   },
+   "source": "https://www.devinci.com/en/",
+   "active": "article",
+   "confidence": "high",
+   "slug": "cycles-devinci"
+  },
+  {
+   "name": "Onirik Skatepark",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "scooter",
+    "bmx",
+    "roller"
+   ],
+   "what": "Indoor skatepark in a former church",
+   "city": "Shawinigan",
+   "region": "Quebec",
+   "country": "CA",
+   "lat": 46.62505,
+   "lng": -72.65759,
+   "coords": "address",
+   "about": "Non-profit indoor skatepark in the former Saint-Georges church in Shawinigan, open evenings and weekends with youth hours.",
+   "links": {
+    "website": "https://www.onirikskatepark.com",
+    "instagram": "https://www.instagram.com/onirik_skatepark/"
+   },
+   "source": "https://www.onirikskatepark.com/",
+   "active": "2026-08 opening coverage (Radio-Canada); 2026-07 L'Hebdo du St-Maurice",
+   "confidence": "high",
+   "hub": "trois-rivieres",
+   "slug": "onirik-skatepark"
+  },
+  {
+   "name": "OneUp Components",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Droppers, pedals, hubs, tools",
+   "city": "Squamish",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.6981,
+   "lng": -123.1559,
+   "coords": "city",
+   "about": "Mountain bike parts company founded by three engineers who wanted to live and ride in Squamish.",
+   "links": {
+    "website": "https://www.oneupcomponents.com",
+    "instagram": "https://www.instagram.com/oneupcomponents/"
+   },
+   "source": "https://www.oneupcomponents.com/pages/about-us",
+   "active": "new hubs listed",
+   "confidence": "high",
+   "hub": "squamish",
+   "slug": "oneup-components"
+  },
+  {
+   "name": "North Scooters",
+   "kind": "maker",
+   "disciplines": [
+    "scooter"
+   ],
+   "what": "Pro scooters, decks, forks",
+   "city": "Sylvan Lake",
+   "region": "Alberta",
+   "country": "CA",
+   "lat": 52.3102,
+   "lng": -114.0974,
+   "coords": "city",
+   "about": "Pro scooter parts and completes brand; its terms list a business address in Sylvan Lake, near Red Deer.",
+   "links": {
+    "website": "https://northscooters.com"
+   },
+   "source": "https://northscooters.com/policies/terms-of-service",
+   "active": "new G8 parts listed",
+   "confidence": "high",
+   "hub": "red-deer",
+   "slug": "north-scooters"
+  },
+  {
+   "name": "Roarockit Skateboard Company",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "DIY deck-building kits, veneer, Thin Air Press",
+   "city": "Toronto",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 43.717,
+   "lng": -79.311,
+   "coords": "address",
+   "about": "Toronto company selling kits and a vacuum-bag press for building your own skateboard decks from maple veneer; materials pickup at its Toronto unit.",
+   "links": {
+    "website": "https://www.roarockit.com"
+   },
+   "source": "https://www.roarockit.com/contact",
+   "active": "2025-03 Made in CA directory listing; online shop and pickup hours current",
+   "confidence": "high",
+   "hub": "toronto",
+   "slug": "roarockit-skateboard-company"
+  },
+  {
+   "name": "Landyachtz",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Longboards, cruisers, Hawgs wheels",
+   "city": "Vancouver",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.2703,
+   "lng": -123.0814,
+   "coords": "address",
+   "about": "Skater-owned Vancouver longboard and cruiser maker (since 1997), also behind Hawgs wheels; runs a factory store at its HQ.",
+   "links": {
+    "website": "https://landyachtz.com",
+    "instagram": "https://www.instagram.com/landyachtz/"
+   },
+   "source": "https://landyachtz.com/contact/",
+   "active": "blog post; pump track championship post",
+   "confidence": "high",
+   "hub": "vancouver",
+   "slug": "landyachtz"
+  },
+  {
+   "name": "Rolla Skate Club",
+   "kind": "school",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Roller skating classes and skate nights",
+   "city": "Vancouver",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.28441,
+   "lng": -123.03977,
+   "coords": "address",
+   "about": "Roller skating club in the Rollerland building at the PNE with beginner-to-advanced adult classes, kids' classes, Saturday skate parties and online lessons.",
+   "links": {
+    "website": "https://www.rollaskateclub.com",
+    "instagram": "https://www.instagram.com/rollaskateclub/"
+   },
+   "source": "https://rollaskateclub.com/classes/",
+   "active": "Class calendar for the week of (company site)",
+   "confidence": "high",
+   "hub": "vancouver",
+   "slug": "rolla-skate-club"
+  },
+  {
+   "name": "Chromag Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Steel hardtails, bars, stems, pedals",
+   "city": "Whistler",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 50.0888,
+   "lng": -123.0353,
+   "coords": "address",
+   "about": "Whistler maker of steel hardtails plus bars, stems and pedals, with some frames hand-made in Canada; HQ on Alpha Lake Road.",
+   "links": {
+    "website": "https://chromagbikes.com",
+    "instagram": "https://www.instagram.com/chromagbikes/"
+   },
+   "source": "https://us.chromagbikes.com/",
+   "active": "2026-07 art event held at Chromag HQ",
+   "confidence": "high",
+   "hub": "whistler",
+   "slug": "chromag-bikes"
+  },
+  {
+   "name": "Gravity Logic",
+   "kind": "builder",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Bike parks, downhill and jump trails",
+   "city": "Whistler",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 50.11719,
+   "lng": -122.9543,
+   "coords": "city",
+   "about": "Trail building company co-founded by builders of the Whistler Mountain Bike Park, including its A-Line; designs and builds lift-served bike parks.",
+   "links": {
+    "website": "https://www.gravitylogic.com"
+   },
+   "source": "https://www.singletracks.com/mtb-trails/north-shores-original-bike-park-returns-cypress-mountain-reopening-in-2027/",
+   "active": "2026-08 hired to build the Cypress Mountain, BC bike park (Singletracks); 2026-07 OZ Trails Bike Park, AR opening",
+   "confidence": "medium",
+   "hub": "whistler",
+   "slug": "gravity-logic"
+  },
+  {
+   "name": "Summer Gravity Camps",
+   "kind": "school",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Youth and adult downhill MTB camps",
+   "city": "Whistler",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 50.11719,
+   "lng": -122.9543,
+   "coords": "city",
+   "about": "Week-long gravity mountain bike camps in the Whistler Bike Park for youth and adults, with rotating guest coaches.",
+   "links": {
+    "website": "https://summergravitycamps.com",
+    "instagram": "https://www.instagram.com/summergravitycamps/"
+   },
+   "source": "https://summergravitycamps.com/dates-pricing/",
+   "active": "2027 registration opening December 2026 (company site)",
+   "confidence": "high",
+   "hub": "whistler",
+   "slug": "summer-gravity-camps"
+  },
+  {
+   "name": "Beat Skateboards",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Decks",
+   "city": "Mexico City",
+   "region": "Ciudad de México",
+   "country": "MX",
+   "lat": 19.4326,
+   "lng": -99.1332,
+   "coords": "city",
+   "about": "Mexican deck brand with pro models for Mexican skaters; its store terms list a Mexico City address.",
+   "links": {
+    "website": "https://beatskate.mx",
+    "instagram": "https://www.instagram.com/beatskateboardsofficial/"
+   },
+   "source": "https://beatskate.mx/policies/terms-of-service",
+   "active": "new decks listed",
+   "confidence": "high",
+   "hub": "mexico-city",
+   "slug": "beat-skateboards"
+  },
+  {
+   "name": "Bliss On Wheels",
+   "kind": "school",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Roller dance and skating classes",
+   "city": "Mexico City",
+   "region": "Ciudad de México",
+   "country": "MX",
+   "lat": 19.43263,
+   "lng": -99.13318,
+   "coords": "city",
+   "about": "Roller dance studio under the Juan Escutia bridge in Condesa with roller dance, fitness and artistic skating classes, kids' classes and open skate times.",
+   "links": {
+    "website": "https://blissonwheels.mx",
+    "instagram": "https://www.instagram.com/bliss.onwheels/"
+   },
+   "source": "https://blissonwheels.mx/",
+   "active": "2026 event (Roll Over Cancún 2026) on its site; 2025-10 roller dance party (Chilango)",
+   "confidence": "high",
+   "hub": "mexico-city",
+   "slug": "bliss-on-wheels"
+  },
+  {
+   "name": "Chilango Skate",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Skate shop with indoor skatepark and lessons",
+   "city": "Mexico City",
+   "region": "Ciudad de México",
+   "country": "MX",
+   "lat": 19.40197,
+   "lng": -99.1682,
+   "coords": "address",
+   "about": "Skate shop in Roma Sur with a private indoor skatepark where it teaches skateboarding classes.",
+   "links": {
+    "website": "https://chilangoskate.com",
+    "instagram": "https://www.instagram.com/chilangoskate/"
+   },
+   "source": "https://chilangoskate.com/",
+   "active": "2026 Go Skateboarding Day event listed on its site",
+   "confidence": "high",
+   "hub": "mexico-city",
+   "slug": "chilango-skate"
+  },
+  {
+   "name": "Alubike (Grupo Mercurio)",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes",
+   "city": "San Luis Potosí",
+   "region": "San Luis Potosí",
+   "country": "MX",
+   "lat": 22.1516,
+   "lng": -100.9764,
+   "coords": "city",
+   "about": "Mountain bike brand of Grupo Mercurio, the Mexican bicycle maker founded in 1964 whose plant is in San Luis Potosí.",
+   "links": {
+    "website": "https://alubike.com.mx",
+    "instagram": "https://www.instagram.com/alubikeofficial/"
+   },
+   "source": "https://alubike.com.mx/pages/nosotros",
+   "active": "post on a visit to the Mercurio plant",
+   "confidence": "medium",
+   "hub": "san-luis-potosi",
+   "slug": "alubike-grupo-mercurio"
+  },
+  {
+   "name": "Turbo Bicycles (Kinetic Sport)",
+   "kind": "maker",
+   "disciplines": [
+    "mtb",
+    "bmx"
+   ],
+   "what": "Mountain, BMX-style and kids' bikes",
+   "city": "San Luis Potosí",
+   "region": "San Luis Potosí",
+   "country": "MX",
+   "lat": 22.1516,
+   "lng": -100.9764,
+   "coords": "city",
+   "about": "Mexican bike maker since 1986, run by Kinetic Sport in San Luis Potosí; mountain, 20-inch and kids' bikes.",
+   "links": {
+    "website": "https://turbo.mx",
+    "instagram": "https://www.instagram.com/turbobicycles/"
+   },
+   "source": "https://turbo.mx/pages/soporte",
+   "active": "2026-10 Bici Expo 2026 (CDMX) and 2027 models",
+   "confidence": "high",
+   "hub": "san-luis-potosi",
+   "slug": "turbo-bicycles-kinetic-sport"
+  },
+  {
+   "name": "Box Components",
+   "kind": "maker",
+   "disciplines": [
+    "bmx",
+    "mtb"
+   ],
+   "what": "BMX race and MTB components",
+   "city": "Anaheim",
+   "region": "California",
+   "country": "US",
+   "lat": 33.8348,
+   "lng": -117.9117,
+   "coords": "city",
+   "about": "BMX racing and mountain bike component maker (drivetrains, forks, headsets) in Anaheim.",
+   "links": {
+    "website": "https://boxcomponents.com",
+    "instagram": "https://www.instagram.com/boxbmx/"
+   },
+   "source": "https://boxcomponents.com/policies/contact-information",
+   "active": "new headset listed",
+   "confidence": "high",
+   "hub": "long-beach",
+   "slug": "box-components"
+  },
+  {
+   "name": "Supercross BMX",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX race frames, forks, carbon parts",
+   "city": "Apple Valley",
+   "region": "California",
+   "country": "US",
+   "lat": 34.4953,
+   "lng": -117.1767,
+   "coords": "address",
+   "about": "Race frame and carbon component maker since 1989, with a showroom in Apple Valley in the High Desert.",
+   "links": {
+    "website": "https://www.supercrossbmx.com",
+    "instagram": "https://www.instagram.com/SupercrossBMX/"
+   },
+   "source": "https://www.supercrossbmx.com/",
+   "active": "new products listed",
+   "confidence": "high",
+   "slug": "supercross-bmx"
+  },
+  {
+   "name": "Satori Movement",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Wheels, hemp clothing",
+   "city": "Arcata",
+   "region": "California",
+   "country": "US",
+   "lat": 40.8665,
+   "lng": -124.0828,
+   "coords": "city",
+   "about": "Small skate company in Arcata, Northern California, making Satori wheels and hemp apparel since 1998.",
+   "links": {
+    "website": "https://www.satorimovement.com",
+    "instagram": "https://www.instagram.com/satoriwheels/"
+   },
+   "source": "https://www.satorimovement.com/policies/contact-information",
+   "active": "2026-10 product pages updated (sitemap)",
+   "confidence": "high",
+   "slug": "satori-movement"
+  },
+  {
+   "name": "Elevated Trail Design",
+   "kind": "builder",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "MTB trails, bike parks",
+   "city": "Asheville",
+   "region": "North Carolina",
+   "country": "US",
+   "lat": 35.59536,
+   "lng": -82.55084,
+   "coords": "city",
+   "about": "Trail planning, design and construction firm founded in 2011 in North Carolina's Blue Ridge Mountains; builds bike parks and bike trails.",
+   "links": {
+    "website": "https://www.elevatedtraildesign.com",
+    "instagram": "https://www.instagram.com/elevatedtraildesign/"
+   },
+   "source": "https://www.elevatedtraildesign.com/about",
+   "active": "2025-06 lift-served bike park project in North Carolina (Singletracks)",
+   "confidence": "high",
+   "hub": "asheville",
+   "slug": "elevated-trail-design"
+  },
+  {
+   "name": "Industry Nine",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Hubs, wheels",
+   "city": "Asheville",
+   "region": "North Carolina",
+   "country": "US",
+   "lat": 35.5954,
+   "lng": -82.5508,
+   "coords": "city",
+   "about": "Machines and anodizes hubs, spokes and drive systems in Asheville, building custom wheels.",
+   "links": {
+    "website": "https://industrynine.com",
+    "instagram": "https://www.instagram.com/industry_nine/"
+   },
+   "source": "https://industrynine.com/pages/contact",
+   "active": "new product listed",
+   "confidence": "high",
+   "hub": "asheville",
+   "slug": "industry-nine"
+  },
+  {
+   "name": "SPA Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Skateparks, pump tracks",
+   "city": "Austin",
+   "region": "Texas",
+   "country": "US",
+   "lat": 30.26493,
+   "lng": -97.74741,
+   "coords": "city",
+   "about": "Austin design-build contractor for concrete skateparks and pump tracks, mostly for Texas cities.",
+   "links": {
+    "website": "https://www.spaskateparks.com",
+    "instagram": "https://www.instagram.com/spaskateparks/"
+   },
+   "source": "https://www.spaskateparks.com/projects/georgetown-texas-garey-skate-park-pump-track/",
+   "active": "Garey Park skate park and pump track opening, Georgetown, TX (company project page)",
+   "confidence": "high",
+   "hub": "austin",
+   "slug": "spa-skateparks"
+  },
+  {
+   "name": "K2 Skates",
+   "kind": "maker",
+   "disciplines": [
+    "inline"
+   ],
+   "what": "Inline skates",
+   "city": "Bellevue",
+   "region": "Washington",
+   "country": "US",
+   "lat": 47.6144,
+   "lng": -122.1923,
+   "coords": "city",
+   "about": "Long-standing inline skate brand (also ice skates and helmets) with its office in Bellevue, near Seattle.",
+   "links": {
+    "website": "https://k2skates.com",
+    "instagram": "https://www.instagram.com/k2.skates/"
+   },
+   "source": "https://k2skates.com/en-us/support",
+   "active": "blog post",
+   "confidence": "high",
+   "hub": "seattle",
+   "slug": "k2-skates"
+  },
+  {
+   "name": "Evil Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Trail, enduro and downhill bikes",
+   "city": "Bellingham",
+   "region": "Washington",
+   "country": "US",
+   "lat": 48.7544,
+   "lng": -122.4788,
+   "coords": "city",
+   "about": "Rider-owned mountain bike brand designed and run out of Bellingham.",
+   "links": {
+    "website": "https://evil-bikes.com",
+    "instagram": "https://www.instagram.com/evilbicycles/"
+   },
+   "source": "https://evil-bikes.com/",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "eastsound",
+   "slug": "evil-bikes"
+  },
+  {
+   "name": "Transition Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes, PBJ dirt jump bike",
+   "city": "Bellingham",
+   "region": "Washington",
+   "country": "US",
+   "lat": 48.7298,
+   "lng": -122.4703,
+   "coords": "address",
+   "about": "Bellingham bike company making trail bikes and the PBJ dirt jump bike, with its Outpost shop at the HQ.",
+   "links": {
+    "website": "https://www.transitionbikes.com",
+    "instagram": "https://www.instagram.com/transitionbikes/"
+   },
+   "source": "https://www.transitionbikes.com/Contact-Us",
+   "active": "2026 model line (Regulator, Sentinel, Spur) on its site",
+   "confidence": "high",
+   "hub": "eastsound",
+   "slug": "transition-bikes"
+  },
+  {
+   "name": "Chicago Skateboard School",
+   "kind": "school",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Indoor skate lessons, camps",
+   "city": "Bellwood",
+   "region": "Illinois",
+   "country": "US",
+   "lat": 41.88321,
+   "lng": -87.8706,
+   "coords": "address",
+   "about": "Skateboard school with its own indoor facility in Bellwood, west of Chicago, offering kids' and adult lessons, camps and parties.",
+   "links": {
+    "website": "https://www.chicagoskateboardschool.com",
+    "instagram": "https://www.instagram.com/chicagoskateschool/"
+   },
+   "source": "https://www.chicagoskateboardschool.com/facility",
+   "active": "2025-01 ABC7 Chicago feature; 2026-09 zine workshop listing (McKinley Park News)",
+   "confidence": "high",
+   "hub": "chicago",
+   "slug": "chicago-skateboard-school"
+  },
+  {
+   "name": "Progressive Trail Design",
+   "kind": "builder",
+   "disciplines": [
+    "mtb",
+    "bmx"
+   ],
+   "what": "MTB trails, bike parks, jump parks",
+   "city": "Bentonville",
+   "region": "Arkansas",
+   "country": "US",
+   "lat": 36.37286,
+   "lng": -94.20879,
+   "coords": "city",
+   "about": "Bentonville planning, design and construction firm for mountain bike trails, bike parks and jump parks.",
+   "links": {
+    "website": "https://progressivetraildesign.com",
+    "instagram": "https://www.instagram.com/progressivetraildesign/"
+   },
+   "source": "https://progressivetraildesign.com/",
+   "active": "2025-11 Oklahoma City MTB jump park (Singletracks); 2025-09 named to design the LA 2028 Olympic MTB course (Mountain Bike Action)",
+   "confidence": "high",
+   "hub": "springdale",
+   "slug": "progressive-trail-design"
+  },
+  {
+   "name": "Seismic Skate Systems",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Wheels, bearings, trucks",
+   "city": "Boulder",
+   "region": "Colorado",
+   "country": "US",
+   "lat": 40.015,
+   "lng": -105.2705,
+   "coords": "city",
+   "about": "Boulder company engineering longboard and downhill wheels, Fullspin bearings and trucks.",
+   "links": {
+    "website": "https://seismicskate.com",
+    "instagram": "https://www.instagram.com/seismicskate/"
+   },
+   "source": "https://seismicskate.com/pages/contact",
+   "active": "news post (wheels and bearings record)",
+   "confidence": "high",
+   "hub": "denver",
+   "slug": "seismic-skate-systems"
+  },
+  {
+   "name": "Homage Skateboard Academy",
+   "kind": "school",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Indoor skate lessons, camps, after-school",
+   "city": "Brooklyn",
+   "region": "New York",
+   "country": "US",
+   "lat": 40.68361,
+   "lng": -73.98142,
+   "coords": "address",
+   "about": "Indoor skateboarding facility in Brooklyn offering private and group lessons, an after-school program and holiday and summer camps.",
+   "links": {
+    "website": "https://homageskateboardacademy.com",
+    "instagram": "https://www.instagram.com/homageskateboardacademy/"
+   },
+   "source": "https://homageskateboardacademy.com/",
+   "active": "2026-09 listed in Mommy Poppins Gowanus guide; after-school program page updated 2026-09",
+   "confidence": "high",
+   "hub": "new-york",
+   "slug": "homage-skateboard-academy"
+  },
+  {
+   "name": "Skateyogi",
+   "kind": "school",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Skate classes for kids and adults",
+   "city": "Brooklyn",
+   "region": "New York",
+   "country": "US",
+   "lat": 40.72082,
+   "lng": -73.95973,
+   "coords": "address",
+   "about": "Brooklyn skateboarding school with weekly classes for ages 3 to 15, adult classes and open skates, and private lessons; second site on Empire Blvd.",
+   "links": {
+    "website": "https://www.skateyogi.com",
+    "instagram": "https://www.instagram.com/skateyogi/"
+   },
+   "source": "https://www.skateyogi.com/",
+   "active": "Fall 2026 class session on its site",
+   "confidence": "high",
+   "hub": "new-york",
+   "slug": "skateyogi"
+  },
+  {
+   "name": "Substance Skatepark",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Indoor skatepark, camps, events",
+   "city": "Brooklyn",
+   "region": "New York",
+   "country": "US",
+   "lat": 40.70945,
+   "lng": -73.93534,
+   "coords": "address",
+   "about": "Indoor skatepark in Brooklyn spread over two rooms with ramps and a halfpipe; runs memberships, an after-school program, skate camp and shows.",
+   "links": {
+    "website": "https://substanceskatepark.com"
+   },
+   "source": "https://substanceskatepark.com/",
+   "active": "2026-08 Knocked Loose and Denzel Curry show at the park (NME)",
+   "confidence": "high",
+   "hub": "new-york",
+   "slug": "substance-skatepark"
+  },
+  {
+   "name": "Wolf Tooth Components",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Chainrings, components, tools",
+   "city": "Burnsville",
+   "region": "Minnesota",
+   "country": "US",
+   "lat": 44.7671,
+   "lng": -93.2774,
+   "coords": "city",
+   "about": "US-made bike components and tools; in its Burnsville home since 2018.",
+   "links": {
+    "website": "https://www.wolftoothcomponents.com",
+    "instagram": "https://www.instagram.com/wolf_tooth_comp/"
+   },
+   "source": "https://www.wolftoothcomponents.com/pages/about-us",
+   "active": "new chainrings listed",
+   "confidence": "high",
+   "hub": "minneapolis",
+   "slug": "wolf-tooth-components"
+  },
+  {
+   "name": "187 Killer Pads",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Knee, elbow and wrist pads, helmets",
+   "city": "Carlsbad",
+   "region": "California",
+   "country": "US",
+   "lat": 33.1352,
+   "lng": -117.3291,
+   "coords": "city",
+   "about": "Pad and helmet brand for skateparks, roller and scooter riders, based in Carlsbad.",
+   "links": {
+    "website": "https://187killerpads.com",
+    "instagram": "https://www.instagram.com/187killerpads/"
+   },
+   "source": "https://187killerpads.com/pages/contact-us",
+   "active": "new pad sets listed",
+   "confidence": "high",
+   "hub": "carlsbad",
+   "slug": "187-killer-pads"
+  },
+  {
+   "name": "Little Ripper Skateboarding",
+   "kind": "school",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Skate lessons, school programs, shop",
+   "city": "Chicago",
+   "region": "Illinois",
+   "country": "US",
+   "lat": 41.9595,
+   "lng": -87.7448,
+   "coords": "address",
+   "about": "Chicago skateboarding school for kids of all levels that also runs school programs and a small skate shop.",
+   "links": {
+    "website": "https://www.littleripperskateboarding.com",
+    "instagram": "https://www.instagram.com/little_ripper_skateboarding/"
+   },
+   "source": "https://www.littleripperskateboarding.com/",
+   "active": "2025-12 Time Out Chicago feature",
+   "confidence": "high",
+   "hub": "chicago",
+   "slug": "little-ripper-skateboarding"
+  },
+  {
+   "name": "Ray's Indoor Bike Park",
+   "kind": "indoor",
+   "disciplines": [
+    "mtb",
+    "bmx"
+   ],
+   "what": "Indoor mountain bike and BMX park",
+   "city": "Cleveland",
+   "region": "Ohio",
+   "country": "US",
+   "lat": 41.45465,
+   "lng": -81.7524,
+   "coords": "address",
+   "about": "Indoor mountain bike park in a Cleveland warehouse, open seasonally, with trails and lines for every level.",
+   "links": {
+    "website": "https://www.raysmtb.com"
+   },
+   "source": "https://www.raysmtb.com/",
+   "active": "2025-12 Mountain Bike Action feature; site announces its 23rd season",
+   "confidence": "high",
+   "hub": "cleveland",
+   "slug": "ray-s-indoor-bike-park"
+  },
+  {
+   "name": "Rock Solid Trail Contracting",
+   "kind": "builder",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "MTB trails, flow and jump lines",
+   "city": "Copper Harbor",
+   "region": "Michigan",
+   "country": "US",
+   "lat": 47.46807,
+   "lng": -87.8888,
+   "coords": "city",
+   "about": "Trail building company from Copper Harbor, with a second base in Bentonville, Arkansas; has built mountain bike trails across the US since 2014.",
+   "links": {
+    "website": "https://rocksolidtrails.com"
+   },
+   "source": "https://rocksolidtrails.com/about",
+   "active": "2026-02 Singletracks feature on its 2026 build season; 2026-07 Singletracks interview with its owner",
+   "confidence": "high",
+   "slug": "rock-solid-trail-contracting"
+  },
+  {
+   "name": "Woodward Copper",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "bmx",
+    "scooter"
+   ],
+   "what": "Indoor action-sports barn, lessons, camps",
+   "city": "Copper Mountain",
+   "region": "Colorado",
+   "country": "US",
+   "lat": 39.47809,
+   "lng": -106.16289,
+   "coords": "city",
+   "about": "Action-sports centre at Copper Mountain Resort with The Barn, a 19,400 sq ft indoor facility with skateparks, trampolines and foam-pit jumps, plus lessons.",
+   "links": {
+    "website": "https://www.coppercolorado.com/the-mountain/woodward-copper/about/"
+   },
+   "source": "https://www.coppercolorado.com/the-mountain/woodward-copper/about/",
+   "active": "2026-09 Red Gerard signature week at Woodward Copper (Yahoo Sports)",
+   "confidence": "high",
+   "hub": "breckenridge",
+   "slug": "woodward-copper"
+  },
+  {
+   "name": "Troy Lee Designs",
+   "kind": "maker",
+   "disciplines": [
+    "mtb",
+    "bmx"
+   ],
+   "what": "MTB helmets, pads, riding gear (also moto)",
+   "city": "Corona",
+   "region": "California",
+   "country": "US",
+   "lat": 33.8753,
+   "lng": -117.5664,
+   "coords": "city",
+   "about": "Helmet and riding gear company in Corona; its mountain bike line covers helmets, pads and clothing (it also makes moto gear).",
+   "links": {
+    "website": "https://troyleedesigns.com",
+    "instagram": "https://www.instagram.com/troyleedesigns/"
+   },
+   "source": "https://troyleedesigns.com/",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "lake-forest",
+   "slug": "troy-lee-designs"
+  },
+  {
+   "name": "Carver Skateboards",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Surfskates, trucks",
+   "city": "Culver City",
+   "region": "California",
+   "country": "US",
+   "lat": 34.0211,
+   "lng": -118.3965,
+   "coords": "city",
+   "about": "Surfskate maker known for its carving truck systems; lists its office in Culver City.",
+   "links": {
+    "website": "https://carverskateboards.com",
+    "instagram": "https://www.instagram.com/carverskate/"
+   },
+   "source": "https://carverskateboards.com",
+   "active": "new product listed",
+   "confidence": "high",
+   "hub": "los-angeles",
+   "slug": "carver-skateboards"
+  },
+  {
+   "name": "Loaded Boards",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Longboards, skateboards, wheels, trucks",
+   "city": "Culver City",
+   "region": "California",
+   "country": "US",
+   "lat": 34.0211,
+   "lng": -118.3965,
+   "coords": "city",
+   "about": "Makes bamboo longboards and skateboards, plus its own wheels and trucks, from Culver City in Los Angeles.",
+   "links": {
+    "website": "https://www.loadedboards.com",
+    "instagram": "https://www.instagram.com/loadedboards/"
+   },
+   "source": "https://www.loadedboards.com/",
+   "active": "new completes listed",
+   "confidence": "high",
+   "hub": "los-angeles",
+   "slug": "loaded-boards"
+  },
+  {
+   "name": "DK Bicycles",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX bikes, frames, parts",
+   "city": "Dayton",
+   "region": "Ohio",
+   "country": "US",
+   "lat": 39.7589,
+   "lng": -84.1916,
+   "coords": "city",
+   "about": "BMX brand from Dayton, Ohio, making freestyle and race bikes, frames and parts since 1979.",
+   "links": {
+    "website": "https://dkbicycles.com",
+    "instagram": "https://www.instagram.com/dkbicycles/"
+   },
+   "source": "https://dkbicycles.com/pages/contact",
+   "active": "new frames listed",
+   "confidence": "high",
+   "hub": "dayton",
+   "slug": "dk-bicycles"
+  },
+  {
+   "name": "Kona Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes",
+   "city": "Ferndale",
+   "region": "Washington",
+   "country": "US",
+   "lat": 48.8467,
+   "lng": -122.5897,
+   "coords": "city",
+   "about": "Mountain bike company in Ferndale, just north of Bellingham.",
+   "links": {
+    "website": "https://konaworld.com",
+    "instagram": "https://www.instagram.com/konabikes/"
+   },
+   "source": "https://konaworld.com/",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "eastsound",
+   "slug": "kona-bikes"
+  },
+  {
+   "name": "Cane Creek Cycling Components",
+   "kind": "maker",
+   "disciplines": [
+    "mtb",
+    "bmx"
+   ],
+   "what": "Suspension, headsets",
+   "city": "Fletcher",
+   "region": "North Carolina",
+   "country": "US",
+   "lat": 35.4309,
+   "lng": -82.5011,
+   "coords": "city",
+   "about": "Suspension and headset maker in Fletcher, just south of Asheville.",
+   "links": {
+    "website": "https://www.canecreek.com",
+    "instagram": "https://www.instagram.com/canecreekusa/"
+   },
+   "source": "https://www.canecreek.com/policies/contact-information",
+   "active": "news post",
+   "confidence": "high",
+   "hub": "asheville",
+   "slug": "cane-creek-cycling-components"
+  },
+  {
+   "name": "Revel Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes",
+   "city": "Golden",
+   "region": "Colorado",
+   "country": "US",
+   "lat": 39.7546,
+   "lng": -105.2206,
+   "coords": "city",
+   "about": "Colorado mountain bike brand that started in Carbondale and is now headquartered in Golden.",
+   "links": {
+    "website": "https://revelbikes.com",
+    "instagram": "https://www.instagram.com/revelbikes/"
+   },
+   "source": "https://revelbikes.com/pages/contact",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "denver",
+   "slug": "revel-bikes"
+  },
+  {
+   "name": "3rd Lair Skatepark",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Indoor skatepark, skate shop, camps",
+   "city": "Golden Valley",
+   "region": "Minnesota",
+   "country": "US",
+   "lat": 44.97304,
+   "lng": -93.36354,
+   "coords": "address",
+   "about": "Indoor skatepark and shop in the Minneapolis suburbs that also runs summer skateboard camps, adult clinics and a contest series.",
+   "links": {
+    "website": "https://3rdlair.com",
+    "instagram": "https://www.instagram.com/3rdlair"
+   },
+   "source": "https://3rdlair.com/",
+   "active": "2026 summer skateboard camps listed on its site; 2026-06 contest series stop in Plymouth (hometownsource.com)",
+   "confidence": "high",
+   "hub": "minneapolis",
+   "slug": "3rd-lair-skatepark"
+  },
+  {
+   "name": "Skate One (Powell-Peralta, Bones)",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Decks, wheels, bearings",
+   "city": "Goleta",
+   "region": "California",
+   "country": "US",
+   "lat": 34.4358,
+   "lng": -119.8276,
+   "coords": "city",
+   "about": "Company behind Powell-Peralta decks and Bones wheels and bearings; office in Goleta, with its own factory in Ventura, California.",
+   "links": {
+    "website": "https://www.skateone.com",
+    "instagram": "https://www.instagram.com/skateonecorp/"
+   },
+   "source": "https://www.skateone.com/",
+   "active": "2026-10 Powell-Peralta news posts (Oct 15-16, 2026)",
+   "confidence": "high",
+   "hub": "santa-barbara",
+   "slug": "skate-one-powell-peralta-bones"
+  },
+  {
+   "name": "Tilt Scooters",
+   "kind": "maker",
+   "disciplines": [
+    "scooter"
+   ],
+   "what": "Pro scooter decks and parts",
+   "city": "Grand Rapids",
+   "region": "Michigan",
+   "country": "US",
+   "lat": 42.9632,
+   "lng": -85.6679,
+   "coords": "city",
+   "about": "Pro scooter brand making decks and parts; mailing address in Grand Rapids.",
+   "links": {
+    "website": "https://www.tiltlife.com",
+    "instagram": "https://www.instagram.com/tiltlife/"
+   },
+   "source": "https://www.tiltlife.com/",
+   "active": "new deck listed",
+   "confidence": "high",
+   "slug": "tilt-scooters"
+  },
+  {
+   "name": "Bustin Boards",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Longboards, custom boards",
+   "city": "Hagerstown",
+   "region": "Maryland",
+   "country": "US",
+   "lat": 39.643,
+   "lng": -77.7191,
+   "coords": "city",
+   "about": "Longboard and skateboard brand run from Hagerstown, Maryland, with a custom shop that builds boards to order.",
+   "links": {
+    "website": "https://bustinboards.com",
+    "instagram": "https://www.instagram.com/bustinboards/"
+   },
+   "source": "https://bustinboards.com/pages/contact-bustin-boards",
+   "active": "custom board listed",
+   "confidence": "high",
+   "hub": "hagerstown",
+   "slug": "bustin-boards"
+  },
+  {
+   "name": "American Ramp Company",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx",
+    "mtb"
+   ],
+   "what": "Skateparks, pump tracks, bike parks",
+   "city": "Joplin",
+   "region": "Missouri",
+   "country": "US",
+   "lat": 37.08418,
+   "lng": -94.51334,
+   "coords": "city",
+   "about": "Joplin manufacturer and builder of above-ground and concrete skateparks, modular and asphalt pump tracks, bike parks and bicycle playgrounds.",
+   "links": {
+    "website": "https://americanrampcompany.com"
+   },
+   "source": "https://americanrampcompany.com/",
+   "active": "2026-07 Jensen Park pump track opening, Arlington, WA (Lynnwood Times); 2026-10 project survey pages (Farr West, UT; Elko, NV)",
+   "confidence": "high",
+   "hub": "joplin",
+   "slug": "american-ramp-company"
+  },
+  {
+   "name": "Artisan Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx",
+    "mtb"
+   ],
+   "what": "Skateparks, pump tracks, bike parks",
+   "city": "Kitty Hawk",
+   "region": "North Carolina",
+   "country": "US",
+   "lat": 36.06643,
+   "lng": -75.69354,
+   "coords": "city",
+   "about": "Outer Banks company that designs and builds skateparks, pump tracks and bike parks for towns along the East Coast and beyond.",
+   "links": {
+    "website": "https://www.artisanskateparks.com",
+    "instagram": "https://www.instagram.com/artisanskateparks/"
+   },
+   "source": "https://www.artisanskateparks.com/contact",
+   "active": "2026-08 Amesbury, MA skate park milestone (Newburyport Daily News); 2026-05 Williamsport, PA pump track (Sun-Gazette)",
+   "confidence": "high",
+   "slug": "artisan-skateparks"
+  },
+  {
+   "name": "Welcome Skateboards",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Decks, wheels",
+   "city": "Laguna Hills",
+   "region": "California",
+   "country": "US",
+   "lat": 33.5949,
+   "lng": -117.6882,
+   "coords": "city",
+   "about": "Deck brand with its own shapes and graphics, founded in 2010; business address in Laguna Hills, Orange County.",
+   "links": {
+    "website": "https://welcomeskateboards.com",
+    "instagram": "https://www.instagram.com/welcomeskateboards/"
+   },
+   "source": "https://welcomeskateboards.com/policies/terms-of-service",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "lake-forest",
+   "slug": "welcome-skateboards"
+  },
+  {
+   "name": "Labeda Wheels",
+   "kind": "maker",
+   "disciplines": [
+    "inline"
+   ],
+   "what": "Roller hockey wheels",
+   "city": "Lake Elsinore",
+   "region": "California",
+   "country": "US",
+   "lat": 33.6681,
+   "lng": -117.3273,
+   "coords": "city",
+   "about": "US-made inline and roller hockey wheel maker, in business since 1969, based in Lake Elsinore.",
+   "links": {
+    "website": "https://labeda.com"
+   },
+   "source": "https://labeda.com",
+   "active": "new wheels listed",
+   "confidence": "high",
+   "hub": "lake-forest",
+   "slug": "labeda-wheels"
+  },
+  {
+   "name": "5th Pocket Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Skatepark design and construction",
+   "city": "Langhorne",
+   "region": "Pennsylvania",
+   "country": "US",
+   "lat": 40.17618,
+   "lng": -74.92025,
+   "coords": "city",
+   "about": "Skater-owned benefit corporation near Philadelphia offering skatepark design consultation, construction management and construction.",
+   "links": {
+    "website": "https://www.5thpocketskateparks.com"
+   },
+   "source": "https://www.5thpocketskateparks.com/about",
+   "active": "2026-07 Summerville, SC skatepark redesign (Post and Courier); 2026-01 Easton, PA skatepark plans (lehighvalleylive)",
+   "confidence": "high",
+   "hub": "philadelphia",
+   "slug": "5th-pocket-skateparks"
+  },
+  {
+   "name": "VNLA (Vanilla)",
+   "kind": "maker",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Roller skates, wheels",
+   "city": "Lenexa",
+   "region": "Kansas",
+   "country": "US",
+   "lat": 38.9697,
+   "lng": -94.7846,
+   "coords": "city",
+   "about": "Roller skate company making boots, Powertrac plates and wheels; business address in Lenexa in the Kansas City area.",
+   "links": {
+    "website": "https://www.vnla.com",
+    "instagram": "https://www.instagram.com/vnlaco/"
+   },
+   "source": "https://www.vnla.com/policies/terms-of-service",
+   "active": "new skate listed",
+   "confidence": "high",
+   "hub": "kansas-city",
+   "slug": "vnla-vanilla"
+  },
+  {
+   "name": "Epic Skates",
+   "kind": "maker",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Quad skates, wheels",
+   "city": "Lewisville",
+   "region": "Texas",
+   "country": "US",
+   "lat": 33.0462,
+   "lng": -96.9942,
+   "coords": "city",
+   "about": "Entry-level and mid-range quad skate brand shipping from Lewisville in the Dallas area.",
+   "links": {
+    "website": "https://epicskates.com",
+    "instagram": "https://www.instagram.com/epic.skates/"
+   },
+   "source": "https://epicskates.com/policies/contact-information",
+   "active": "new skate package listed",
+   "confidence": "high",
+   "hub": "dallas",
+   "slug": "epic-skates"
+  },
+  {
+   "name": "Dreamland Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Concrete skateparks",
+   "city": "Lincoln City",
+   "region": "Oregon",
+   "country": "US",
+   "lat": 44.96179,
+   "lng": -124.01595,
+   "coords": "city",
+   "about": "Skater-run crew from the Oregon coast that designs and pours concrete skateparks, from Oregon to Hawaii and Mexico.",
+   "links": {
+    "website": "https://www.dreamlandskateparks.com",
+    "instagram": "https://instagram.com/dreamlandskateparks"
+   },
+   "source": "https://www.dreamlandskateparks.com/contact-us",
+   "active": "2026-04 Hanapepe, Kauai skatepark project kickoff (Kauai Now); 2025-09 Driggs, ID skatepark expansion (TransWorld SKATEboarding)",
+   "confidence": "high",
+   "hub": "lincoln-city",
+   "slug": "dreamland-skateparks"
+  },
+  {
+   "name": "Roller Derby Skate Corp. (Roller Derby, Tour Hockey)",
+   "kind": "maker",
+   "disciplines": [
+    "roller",
+    "inline"
+   ],
+   "what": "Quad and inline skates, roller hockey skates",
+   "city": "Litchfield",
+   "region": "Illinois",
+   "country": "US",
+   "lat": 39.1769,
+   "lng": -89.6556,
+   "coords": "city",
+   "about": "Skate company headquartered in Litchfield, Illinois, where its skates were first made; also owns Tour Hockey inline gear.",
+   "links": {
+    "website": "https://rollerderby.com"
+   },
+   "source": "https://rollerderby.com/pages/about-us",
+   "active": "new product listed",
+   "confidence": "high",
+   "hub": "springfield-illinois",
+   "slug": "roller-derby-skate-corp-roller-derby-tour-hockey"
+  },
+  {
+   "name": "Moxi Roller Skates",
+   "kind": "maker",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Roller skates, wheels, parts",
+   "city": "Long Beach",
+   "region": "California",
+   "country": "US",
+   "lat": 33.769,
+   "lng": -118.1916,
+   "coords": "city",
+   "about": "Roller skate brand run from Long Beach; its skates are made by Riedell in Minnesota.",
+   "links": {
+    "website": "https://www.moxiskates.com",
+    "instagram": "https://www.instagram.com/moxirollerskates/"
+   },
+   "source": "https://iloveinspired.com/riedells-got-moxi/",
+   "active": "new product listed on moxiskates.com",
+   "confidence": "medium",
+   "hub": "long-beach",
+   "slug": "moxi-roller-skates"
+  },
+  {
+   "name": "Primo and Stranger (Strangerco)",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX parts, frames, bikes",
+   "city": "Long Beach",
+   "region": "California",
+   "country": "US",
+   "lat": 33.769,
+   "lng": -118.1916,
+   "coords": "city",
+   "about": "Long Beach company behind the Primo and Stranger BMX brands.",
+   "links": {
+    "website": "https://primostranger.com"
+   },
+   "source": "https://primostranger.com/",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "long-beach",
+   "slug": "primo-and-stranger-strangerco"
+  },
+  {
+   "name": "REEB Cycles",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Hardtail frames and bikes",
+   "city": "Longmont",
+   "region": "Colorado",
+   "country": "US",
+   "lat": 40.1586,
+   "lng": -105.1135,
+   "coords": "address",
+   "about": "Colorado frame builder of hardtails and other bikes, with a bike shop and lounge in Longmont.",
+   "links": {
+    "website": "https://reebcycles.com"
+   },
+   "source": "https://reebcycles.com/",
+   "active": "limited-edition release with Cane Creek",
+   "confidence": "high",
+   "hub": "fort-collins",
+   "slug": "reeb-cycles"
+  },
+  {
+   "name": "Paris Truck Co",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Longboard and skate trucks",
+   "city": "Los Alamitos",
+   "region": "California",
+   "country": "US",
+   "lat": 33.8039,
+   "lng": -118.0772,
+   "coords": "city",
+   "about": "Truck maker for longboard and skate setups, based in Los Alamitos in Orange County.",
+   "links": {
+    "website": "https://www.paristruckco.com",
+    "instagram": "https://www.instagram.com/paristruckco/"
+   },
+   "source": "https://www.paristruckco.com/",
+   "active": "new V3 trucks listed",
+   "confidence": "high",
+   "hub": "long-beach",
+   "slug": "paris-truck-co"
+  },
+  {
+   "name": "Arbor Skateboards",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Decks, cruisers, longboards, wheels",
+   "city": "Los Angeles",
+   "region": "California",
+   "country": "US",
+   "lat": 33.995,
+   "lng": -118.4669,
+   "coords": "city",
+   "about": "Venice-based board company making street decks, cruisers and longboards (alongside snowboards).",
+   "links": {
+    "website": "https://www.arborcollective.com",
+    "instagram": "https://www.instagram.com/arborskateboards/"
+   },
+   "source": "https://www.arborcollective.com/policies/refund-policy",
+   "active": "new decks listed",
+   "confidence": "high",
+   "hub": "los-angeles",
+   "slug": "arbor-skateboards"
+  },
+  {
+   "name": "Spohn Ranch",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Skateparks, pump tracks, bike parks",
+   "city": "Los Angeles",
+   "region": "California",
+   "country": "US",
+   "lat": 34.05369,
+   "lng": -118.24277,
+   "coords": "city",
+   "about": "Los Angeles design-build firm behind concrete skateparks, skate plazas, pump tracks and skateable art in cities across the US.",
+   "links": {
+    "website": "https://www.spohnranch.com",
+    "instagram": "https://instagram.com/spohnranch/"
+   },
+   "source": "https://www.spohnranch.com/",
+   "active": "2026-04 South Haymarket Skatepark open house, City of Lincoln, NE; 2026-07 Tonopah, NV park project (Pahrump Valley Times)",
+   "confidence": "high",
+   "hub": "los-angeles",
+   "slug": "spohn-ranch"
+  },
+  {
+   "name": "Fiend BMX",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX frames, forks, parts",
+   "city": "Melbourne",
+   "region": "Florida",
+   "country": "US",
+   "lat": 28.0785,
+   "lng": -80.6078,
+   "coords": "city",
+   "about": "BMX frame and parts brand with a showroom in Melbourne on Florida's Space Coast.",
+   "links": {
+    "website": "https://fiendbmx.com"
+   },
+   "source": "https://fiendbmx.com/pages/contact-us",
+   "active": "new fork listed",
+   "confidence": "high",
+   "slug": "fiend-bmx"
+  },
+  {
+   "name": "Skate On 8's",
+   "kind": "school",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Roller skating lessons and classes",
+   "city": "Milwaukee",
+   "region": "Wisconsin",
+   "country": "US",
+   "lat": 43.09155,
+   "lng": -87.94042,
+   "coords": "address",
+   "about": "Milwaukee roller skating academy with private lessons, group classes and progression programs for all ages.",
+   "links": {
+    "website": "https://skateon8s.com"
+   },
+   "source": "https://skateon8s.com/",
+   "active": "2026-10 grand opening (TMJ4 News)",
+   "confidence": "high",
+   "hub": "milwaukee",
+   "slug": "skate-on-8-s"
+  },
+  {
+   "name": "Kali Protectives",
+   "kind": "maker",
+   "disciplines": [
+    "mtb",
+    "bmx",
+    "skateboard"
+   ],
+   "what": "Helmets, pads",
+   "city": "Morgan Hill",
+   "region": "California",
+   "country": "US",
+   "lat": 37.1304,
+   "lng": -121.6545,
+   "coords": "city",
+   "about": "Helmet and protection maker for mountain bike, BMX and urban riding, based in Morgan Hill.",
+   "links": {
+    "website": "https://www.kaliprotectives.com",
+    "instagram": "https://www.instagram.com/kaliprotectives/"
+   },
+   "source": "https://www.kaliprotectives.com/pages/contact-us",
+   "active": "new helmets listed",
+   "confidence": "high",
+   "hub": "san-jose",
+   "slug": "kali-protectives"
+  },
+  {
+   "name": "Gate City Skate Park",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Indoor skatepark, lessons, camps",
+   "city": "Nashua",
+   "region": "New Hampshire",
+   "country": "US",
+   "lat": 42.79448,
+   "lng": -71.52745,
+   "coords": "address",
+   "about": "Non-profit indoor skatepark in Nashua that grew out of a summer skate camp and still runs lessons and camps.",
+   "links": {
+    "website": "https://www.gatecityskatepark.com"
+   },
+   "source": "https://www.gatecityskatepark.com/",
+   "active": "2026-10 WMUR feature on the park and its skate camp",
+   "confidence": "high",
+   "hub": "nashua",
+   "slug": "gate-city-skate-park"
+  },
+  {
+   "name": "Odyssey BMX (and Sunday Bikes)",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX parts, Sunday complete bikes",
+   "city": "Norwalk",
+   "region": "California",
+   "country": "US",
+   "lat": 33.9093,
+   "lng": -118.0849,
+   "coords": "city",
+   "about": "BMX parts company in Norwalk, Los Angeles County; Sunday Bikes, its complete-bike sister brand, shares the address.",
+   "links": {
+    "website": "https://odysseybmx.com",
+    "instagram": "https://www.instagram.com/odysseybmx/"
+   },
+   "source": "https://odysseybmx.com/contact/",
+   "active": "bike check post",
+   "confidence": "high",
+   "hub": "long-beach",
+   "slug": "odyssey-bmx-and-sunday-bikes"
+  },
+  {
+   "name": "Hoffman Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX frames, bikes, parts",
+   "city": "Oklahoma City",
+   "region": "Oklahoma",
+   "country": "US",
+   "lat": 35.473,
+   "lng": -97.5171,
+   "coords": "city",
+   "about": "BMX frame, bike and parts brand approaching its 30th year, with its mailing address in Oklahoma City.",
+   "links": {
+    "website": "https://hoffmanbikes.com"
+   },
+   "source": "https://hoffmanbikes.com/contact-us/",
+   "active": "shop listings updated (sitemap)",
+   "confidence": "high",
+   "hub": "oklahoma-city",
+   "slug": "hoffman-bikes"
+  },
+  {
+   "name": "Demon United",
+   "kind": "maker",
+   "disciplines": [
+    "mtb",
+    "skateboard"
+   ],
+   "what": "Body armour, knee pads, impact shorts",
+   "city": "Orem",
+   "region": "Utah",
+   "country": "US",
+   "lat": 40.2982,
+   "lng": -111.6944,
+   "coords": "city",
+   "about": "Protective gear for mountain biking and board sports (pads, impact shorts, armour) from Orem, Utah.",
+   "links": {
+    "website": "https://demon-united.com",
+    "instagram": "https://www.instagram.com/demonunited/"
+   },
+   "source": "https://demon-united.com/policies/contact-information",
+   "active": "new kits listed",
+   "confidence": "high",
+   "hub": "salt-lake-city",
+   "slug": "demon-united"
+  },
+  {
+   "name": "Hella Grip",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard",
+    "scooter"
+   ],
+   "what": "Grip tape",
+   "city": "Pacheco",
+   "region": "California",
+   "country": "US",
+   "lat": 37.9902,
+   "lng": -122.0698,
+   "coords": "city",
+   "about": "Grip tape maker for scooters and skateboards, with signature and art griptapes; based in Pacheco in the East Bay.",
+   "links": {
+    "website": "https://hellagrip.com"
+   },
+   "source": "https://slothshop.hellagrip.com/pages/contact-us",
+   "active": "new signature grip listed",
+   "confidence": "high",
+   "hub": "oakland",
+   "slug": "hella-grip"
+  },
+  {
+   "name": "Woodward Park City",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "bmx",
+    "scooter",
+    "mtb"
+   ],
+   "what": "Indoor hub, lessons, camps",
+   "city": "Park City",
+   "region": "Utah",
+   "country": "US",
+   "lat": 40.64609,
+   "lng": -111.498,
+   "coords": "city",
+   "about": "Year-round action-sports centre in Park City with an indoor hub for skate, bike and trampoline sessions, plus lessons, camps and memberships.",
+   "links": {
+    "website": "https://www.woodwardparkcity.com"
+   },
+   "source": "https://www.woodwardparkcity.com/",
+   "active": "2026-10 kids skateboarding competition at Woodward Park City (Park Record)",
+   "confidence": "high",
+   "hub": "salt-lake-city",
+   "slug": "woodward-park-city"
+  },
+  {
+   "name": "Marin Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain and kids' bikes",
+   "city": "Petaluma",
+   "region": "California",
+   "country": "US",
+   "lat": 38.2326,
+   "lng": -122.6365,
+   "coords": "city",
+   "about": "Mountain and kids' bike brand with its office in Petaluma.",
+   "links": {
+    "website": "https://marinbikes.com",
+    "instagram": "https://www.instagram.com/marinbikes/"
+   },
+   "source": "https://marinbikes.com/",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "san-francisco",
+   "slug": "marin-bikes"
+  },
+  {
+   "name": "Triple Eight",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Helmets, pads, wrist guards",
+   "city": "Port Washington",
+   "region": "New York",
+   "country": "US",
+   "lat": 40.8264,
+   "lng": -73.685,
+   "coords": "city",
+   "about": "Helmet and pad brand from the New York skate scene, now based in Port Washington on Long Island; also makes roller derby gear.",
+   "links": {
+    "website": "https://triple8.com",
+    "instagram": "https://www.instagram.com/triple8nyc/"
+   },
+   "source": "https://triple8.com/pages/contact-us",
+   "active": "new helmet listed",
+   "confidence": "high",
+   "hub": "stamford",
+   "slug": "triple-eight"
+  },
+  {
+   "name": "Alien Workshop",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Decks",
+   "city": "Portland",
+   "region": "Oregon",
+   "country": "US",
+   "lat": 45.5202,
+   "lng": -122.6742,
+   "coords": "city",
+   "about": "Long-running deck brand, now operating out of northeast Portland.",
+   "links": {
+    "website": "https://www.alienworkshop.com",
+    "instagram": "https://www.instagram.com/alienworkshop/"
+   },
+   "source": "https://www.alienworkshop.com/",
+   "active": "new decks listed",
+   "confidence": "high",
+   "hub": "portland-oregon",
+   "slug": "alien-workshop"
+  },
+  {
+   "name": "Chris King Precision Components",
+   "kind": "maker",
+   "disciplines": [
+    "mtb",
+    "bmx"
+   ],
+   "what": "Headsets, hubs, bottom brackets",
+   "city": "Portland",
+   "region": "Oregon",
+   "country": "US",
+   "lat": 45.5202,
+   "lng": -122.6742,
+   "coords": "city",
+   "about": "Makes headsets, hubs and bottom brackets in its own Portland factory.",
+   "links": {
+    "website": "https://chrisking.com",
+    "instagram": "https://www.instagram.com/chriskingbuzz/"
+   },
+   "source": "https://chrisking.com",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "portland-oregon",
+   "slug": "chris-king-precision-components"
+  },
+  {
+   "name": "Commonwealth Skateboarding",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Indoor skatepark and skate shop",
+   "city": "Portland",
+   "region": "Oregon",
+   "country": "US",
+   "lat": 45.51251,
+   "lng": -122.64577,
+   "coords": "address",
+   "about": "Southeast Portland skate shop and indoor skatepark offering sessions and private park rentals.",
+   "links": {
+    "website": "https://cwskate.com",
+    "instagram": "https://instagram.com/commonwealthskate"
+   },
+   "source": "https://cwskate.com/",
+   "active": "th anniversary (Portland Tribune; KPTV)",
+   "confidence": "high",
+   "hub": "portland-oregon",
+   "slug": "commonwealth-skateboarding"
+  },
+  {
+   "name": "Evergreen Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Concrete skateparks, pump tracks",
+   "city": "Portland",
+   "region": "Oregon",
+   "country": "US",
+   "lat": 45.52025,
+   "lng": -122.67419,
+   "coords": "city",
+   "about": "Portland company that designs and builds concrete skateparks and pump tracks, and handles repair work on existing parks.",
+   "links": {
+    "website": "https://www.evergreenskateparks.com",
+    "instagram": "https://www.instagram.com/evergreenskateparks/"
+   },
+   "source": "https://www.evergreenskateparks.com/connect",
+   "active": "2026-07 Philipsburg, MT skatepark grand opening (NBC Montana)",
+   "confidence": "high",
+   "hub": "portland-oregon",
+   "slug": "evergreen-skateparks"
+  },
+  {
+   "name": "G-Form",
+   "kind": "maker",
+   "disciplines": [
+    "mtb",
+    "bmx",
+    "skateboard"
+   ],
+   "what": "Impact pads and sleeves",
+   "city": "Providence",
+   "region": "Rhode Island",
+   "country": "US",
+   "lat": 41.824,
+   "lng": -71.4128,
+   "coords": "city",
+   "about": "Flexible impact-protection pads, born in Rhode Island and now run from Providence.",
+   "links": {
+    "website": "https://g-form.com"
+   },
+   "source": "https://g-form.com/policies/terms-of-service",
+   "active": "new pads listed; new product",
+   "confidence": "high",
+   "hub": "providence",
+   "slug": "g-form"
+  },
+  {
+   "name": "Riedell Skates",
+   "kind": "maker",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Roller skate boots",
+   "city": "Red Wing",
+   "region": "Minnesota",
+   "country": "US",
+   "lat": 44.5625,
+   "lng": -92.5338,
+   "coords": "city",
+   "about": "Family-run skate maker that hand-builds roller and figure skate boots in Red Wing, Minnesota.",
+   "links": {
+    "website": "https://riedellskates.com",
+    "instagram": "https://www.instagram.com/riedellroller/"
+   },
+   "source": "https://riedellskates.com/about-us/",
+   "active": "press page update (leadership news)",
+   "confidence": "high",
+   "hub": "minneapolis",
+   "slug": "riedell-skates"
+  },
+  {
+   "name": "Lucky Scooters",
+   "kind": "maker",
+   "disciplines": [
+    "scooter"
+   ],
+   "what": "Pro scooters, parts",
+   "city": "Riverside",
+   "region": "California",
+   "country": "US",
+   "lat": 33.9732,
+   "lng": -117.3731,
+   "coords": "city",
+   "about": "Pro scooter company that began making custom parts in a Washington garage in 2008 and now ships from Riverside.",
+   "links": {
+    "website": "https://www.luckyscooters.com",
+    "instagram": "https://www.instagram.com/luckyscooters/"
+   },
+   "source": "https://www.luckyscooters.com/pages/customer-care",
+   "active": "new complete scooters listed",
+   "confidence": "high",
+   "hub": "hemet",
+   "slug": "lucky-scooters"
+  },
+  {
+   "name": "Kink BMX",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX bikes, frames, parts",
+   "city": "Rochester",
+   "region": "New York",
+   "country": "US",
+   "lat": 43.1573,
+   "lng": -77.6152,
+   "coords": "city",
+   "about": "BMX bike, frame and parts brand based in Rochester, New York.",
+   "links": {
+    "website": "https://kinkbmx.com",
+    "instagram": "https://www.instagram.com/kinkbmx/"
+   },
+   "source": "https://kinkbmx.com/pages/contact",
+   "active": "new product listed",
+   "confidence": "high",
+   "hub": "rochester-new-york",
+   "slug": "kink-bmx"
+  },
+  {
+   "name": "Sector 9",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Longboards, cruisers, wheels",
+   "city": "San Diego",
+   "region": "California",
+   "country": "US",
+   "lat": 32.7157,
+   "lng": -117.1638,
+   "coords": "city",
+   "about": "Longboard and cruiser company with its world headquarters in San Diego; also makes its own wheels.",
+   "links": {
+    "website": "https://sector9.com",
+    "instagram": "https://www.instagram.com/sector9/"
+   },
+   "source": "https://sector9.com/pages/contact",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "san-diego",
+   "slug": "sector-9"
+  },
+  {
+   "name": "Deluxe (Real, Anti Hero, Krooked, Spitfire, Thunder, Venture)",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Decks, wheels, trucks",
+   "city": "San Francisco",
+   "region": "California",
+   "country": "US",
+   "lat": 37.7879,
+   "lng": -122.4075,
+   "coords": "city",
+   "about": "San Francisco skate distribution house that runs Real, Anti Hero and Krooked decks, Spitfire wheels and Thunder and Venture trucks.",
+   "links": {
+    "website": "https://www.dlxsf.com"
+   },
+   "source": "https://www.dlxsf.com",
+   "active": "news post (Venture video part)",
+   "confidence": "high",
+   "hub": "san-francisco",
+   "slug": "deluxe-real-anti-hero-krooked-spitfire-thunder-venture"
+  },
+  {
+   "name": "Windells",
+   "kind": "school",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Ski and skateboard summer camps",
+   "city": "Sandy",
+   "region": "Oregon",
+   "country": "US",
+   "lat": 45.39692,
+   "lng": -122.26163,
+   "coords": "city",
+   "about": "Mt. Hood summer camp on a 28-acre private campus with skateparks, trampolines and foam pits; runs skateboard camps alongside ski camps.",
+   "links": {
+    "website": "https://windells.com",
+    "instagram": "https://www.instagram.com/windellscamp"
+   },
+   "source": "https://windells.com/",
+   "active": "2026-10 blog post and open registration for the 2026-27 season",
+   "confidence": "high",
+   "hub": "portland-oregon",
+   "slug": "windells"
+  },
+  {
+   "name": "Cult",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX bikes, frames, parts",
+   "city": "Santa Ana",
+   "region": "California",
+   "country": "US",
+   "lat": 33.7495,
+   "lng": -117.8732,
+   "coords": "city",
+   "about": "BMX bike and parts brand; its store terms list a business address in Santa Ana.",
+   "links": {
+    "website": "https://cultcrew.com",
+    "instagram": "https://www.instagram.com/cultcrew/"
+   },
+   "source": "https://cultcrew.com/policies/terms-of-service",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "lake-forest",
+   "slug": "cult"
+  },
+  {
+   "name": "S&M Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX frames, bikes, parts",
+   "city": "Santa Ana",
+   "region": "California",
+   "country": "US",
+   "lat": 33.7495,
+   "lng": -117.8732,
+   "coords": "city",
+   "about": "BMX frame and parts maker whose shop is in Santa Ana.",
+   "links": {
+    "website": "https://sandmbikes.com",
+    "instagram": "https://www.instagram.com/sandmbmx/"
+   },
+   "source": "https://sandmbikes.com/",
+   "active": "blog post",
+   "confidence": "high",
+   "hub": "lake-forest",
+   "slug": "s-m-bikes"
+  },
+  {
+   "name": "Them Skates",
+   "kind": "maker",
+   "disciplines": [
+    "inline"
+   ],
+   "what": "Aggressive inline skates",
+   "city": "Santa Ana",
+   "region": "California",
+   "country": "US",
+   "lat": 33.7479,
+   "lng": -117.8664,
+   "coords": "address",
+   "about": "Independently owned aggressive inline skate brand (since 2017) with its own location in downtown Santa Ana.",
+   "links": {
+    "website": "https://www.themgoods.com",
+    "instagram": "https://www.instagram.com/themskates/"
+   },
+   "source": "https://www.themgoods.com/",
+   "active": "new stock listed",
+   "confidence": "high",
+   "hub": "lake-forest",
+   "slug": "them-skates"
+  },
+  {
+   "name": "Ibis Cycles",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Trail and enduro bikes",
+   "city": "Santa Cruz",
+   "region": "California",
+   "country": "US",
+   "lat": 36.9744,
+   "lng": -122.0295,
+   "coords": "city",
+   "about": "Santa Cruz mountain bike maker with its global HQ on Shaffer Road.",
+   "links": {
+    "website": "https://www.ibiscycles.com",
+    "instagram": "https://www.instagram.com/ibiscycles/"
+   },
+   "source": "https://www.ibiscycles.com/news",
+   "active": "news post",
+   "confidence": "high",
+   "hub": "santa-cruz",
+   "slug": "ibis-cycles"
+  },
+  {
+   "name": "Grindline Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Concrete skateparks",
+   "city": "Seattle",
+   "region": "Washington",
+   "country": "US",
+   "lat": 47.60383,
+   "lng": -122.33006,
+   "coords": "city",
+   "about": "Seattle design-build company with more than 350 concrete skatepark projects, many of them in the Pacific Northwest.",
+   "links": {
+    "website": "https://www.grindline.com",
+    "instagram": "https://www.instagram.com/grindlineskateparks/"
+   },
+   "source": "https://www.grindline.com/",
+   "active": "2026-03 Grass Valley, CA skatepark opening (TheUnion.com); 2026-10 Taku Lake Skatepark project post",
+   "confidence": "high",
+   "hub": "seattle",
+   "slug": "grindline-skateparks"
+  },
+  {
+   "name": "Skate Like a Girl",
+   "kind": "school",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Skate lessons, camps, clinics",
+   "city": "Seattle",
+   "region": "Washington",
+   "country": "US",
+   "lat": 47.60383,
+   "lng": -122.33006,
+   "coords": "city",
+   "about": "Non-profit that runs skateboarding lessons, youth summer camps and clinics for women, girls, trans and non-binary skaters, with chapters in Seattle and Portland.",
+   "links": {
+    "website": "https://www.skatelikeagirl.com",
+    "instagram": "https://www.instagram.com/skatelikeagirl"
+   },
+   "source": "https://www.skatelikeagirl.com/",
+   "active": "2026-09 new executive director appointed (Shredder News)",
+   "confidence": "high",
+   "hub": "seattle",
+   "slug": "skate-like-a-girl"
+  },
+  {
+   "name": "Woodward Tahoe",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard",
+    "bmx",
+    "scooter",
+    "mtb"
+   ],
+   "what": "Indoor Bunker, camps, lessons",
+   "city": "Soda Springs",
+   "region": "California",
+   "country": "US",
+   "lat": 39.3254,
+   "lng": -120.37999,
+   "coords": "city",
+   "about": "Woodward centre at Boreal Mountain near Lake Tahoe with the indoor Bunker training facility, coaching and summer action-sports camps.",
+   "links": {
+    "website": "https://www.rideboreal.com/explore/who-we-are/woodward-tahoe/"
+   },
+   "source": "https://www.rideboreal.com/explore/who-we-are/woodward-tahoe/",
+   "active": "2026-09 Tahoe resorts season preview (Tahoe Daily Tribune); 2026-05 downhill bike park coverage (Tahoe Guide)",
+   "confidence": "high",
+   "hub": "reno",
+   "slug": "woodward-tahoe"
+  },
+  {
+   "name": "Sure-Grip",
+   "kind": "maker",
+   "disciplines": [
+    "roller"
+   ],
+   "what": "Roller skates, plates, wheels",
+   "city": "South Gate",
+   "region": "California",
+   "country": "US",
+   "lat": 33.9463,
+   "lng": -118.201,
+   "coords": "city",
+   "about": "Roller skate and plate maker since 1937; still makes many of its parts in its Southern California facility.",
+   "links": {
+    "website": "https://www.suregrip.com",
+    "instagram": "https://www.instagram.com/suregriprollerskates/"
+   },
+   "source": "https://www.suregrip.com/policies/contact-information",
+   "active": "new product listed",
+   "confidence": "high",
+   "hub": "los-angeles",
+   "slug": "sure-grip"
+  },
+  {
+   "name": "Profile Racing",
+   "kind": "maker",
+   "disciplines": [
+    "bmx",
+    "mtb"
+   ],
+   "what": "Hubs, cranks, parts (USA-made)",
+   "city": "St. Petersburg",
+   "region": "Florida",
+   "country": "US",
+   "lat": 27.7712,
+   "lng": -82.634,
+   "coords": "city",
+   "about": "Makes BMX and bike hubs, cranks and other parts in the USA; based in St. Petersburg.",
+   "links": {
+    "website": "https://www.profileracing.com",
+    "instagram": "https://www.instagram.com/profile_racing/"
+   },
+   "source": "https://www.profileracing.com/contact-us/",
+   "active": "blog post",
+   "confidence": "high",
+   "hub": "tampa",
+   "slug": "profile-racing"
+  },
+  {
+   "name": "Skatepark of Tampa (SPoT)",
+   "kind": "indoor",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Indoor skatepark, skate shop, contests",
+   "city": "Tampa",
+   "region": "Florida",
+   "country": "US",
+   "lat": 27.94499,
+   "lng": -82.45831,
+   "coords": "city",
+   "about": "Long-running Tampa skatepark and shop that hosts the Tampa Am and Tampa Pro contests.",
+   "links": {
+    "website": "https://skateparkoftampa.com",
+    "instagram": "https://www.instagram.com/spottampa"
+   },
+   "source": "https://skateparkoftampa.com/",
+   "active": "Tampa Am 2026 finals (company site)",
+   "confidence": "high",
+   "hub": "tampa",
+   "slug": "skatepark-of-tampa-spot"
+  },
+  {
+   "name": "Pillar Design Studios",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "scooter",
+    "bmx",
+    "roller",
+    "inline"
+   ],
+   "what": "Skatepark and action-sports park design-build",
+   "city": "Tempe",
+   "region": "Arizona",
+   "country": "US",
+   "lat": 33.42551,
+   "lng": -111.94002,
+   "coords": "city",
+   "about": "Arizona firm founded in 2006 that plans, designs and builds skateparks and BMX facilities for towns and cities.",
+   "links": {
+    "website": "https://www.pillardesignstudios.com"
+   },
+   "source": "https://www.pillardesignstudios.com/about",
+   "active": "2026-08 Potsdam, NY skatepark under construction (North Country Now); 2026-09 Starkville, MS skate park input session (Commercial Dispatch)",
+   "confidence": "high",
+   "hub": "phoenix",
+   "slug": "pillar-design-studios"
+  },
+  {
+   "name": "Pivot Cycles",
+   "kind": "maker",
+   "disciplines": [
+    "mtb"
+   ],
+   "what": "Mountain bikes",
+   "city": "Tempe",
+   "region": "Arizona",
+   "country": "US",
+   "lat": 33.4255,
+   "lng": -111.94,
+   "coords": "city",
+   "about": "Mountain bike maker headquartered in Tempe, Arizona.",
+   "links": {
+    "website": "https://www.pivotcycles.com",
+    "instagram": "https://www.instagram.com/pivotcycles/"
+   },
+   "source": "https://www.pivotcycles.com/en-us/contact-us",
+   "active": "story post",
+   "confidence": "high",
+   "hub": "phoenix",
+   "slug": "pivot-cycles"
+  },
+  {
+   "name": "Chase Bicycles (BMX Racing Group)",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX race frames and bikes",
+   "city": "Torrance",
+   "region": "California",
+   "country": "US",
+   "lat": 33.8371,
+   "lng": -118.3414,
+   "coords": "city",
+   "about": "BMX race frame and complete bike brand run by BMX Racing Group in Torrance.",
+   "links": {
+    "website": "https://chasebicycles.com",
+    "instagram": "https://www.instagram.com/chasebicycles/"
+   },
+   "source": "https://chasebicycles.com/contact/",
+   "active": "Edge Pro models posted",
+   "confidence": "high",
+   "hub": "long-beach",
+   "slug": "chase-bicycles-bmx-racing-group"
+  },
+  {
+   "name": "California Skateparks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Skatepark design and construction",
+   "city": "Upland",
+   "region": "California",
+   "country": "US",
+   "lat": 34.09751,
+   "lng": -117.64839,
+   "coords": "city",
+   "about": "Upland-based design-build company with skateparks across the US and abroad, from city parks to training facilities.",
+   "links": {
+    "website": "https://www.caskateparks.com"
+   },
+   "source": "https://www.caskateparks.com/",
+   "active": "2026-05 Chattanooga skate park redesign (Chattanooga Times Free Press); 2025-04 Malibu skate park (Los Angeles Daily News)",
+   "confidence": "high",
+   "hub": "lake-forest",
+   "slug": "california-skateparks"
+  },
+  {
+   "name": "AO Scooters",
+   "kind": "maker",
+   "disciplines": [
+    "scooter"
+   ],
+   "what": "Pro scooter decks, wheels, parts",
+   "city": "Vista",
+   "region": "California",
+   "country": "US",
+   "lat": 33.2021,
+   "lng": -117.2425,
+   "coords": "city",
+   "about": "Pro scooter brand with signature decks and wheels; says it is based in Vista, North County San Diego.",
+   "links": {
+    "website": "https://www.aoscooters.com",
+    "instagram": "https://www.instagram.com/ao_scooters/"
+   },
+   "source": "https://www.aoscooters.com/contact",
+   "active": "signature deck pages updated (sitemap)",
+   "confidence": "high",
+   "hub": "carlsbad",
+   "slug": "ao-scooters"
+  },
+  {
+   "name": "Haro Bikes",
+   "kind": "maker",
+   "disciplines": [
+    "bmx",
+    "mtb"
+   ],
+   "what": "BMX and mountain bikes",
+   "city": "Vista",
+   "region": "California",
+   "country": "US",
+   "lat": 33.2021,
+   "lng": -117.2425,
+   "coords": "city",
+   "about": "Long-running BMX brand making freestyle and race BMX bikes plus mountain bikes; office in Vista, North County San Diego.",
+   "links": {
+    "website": "https://harobikes.com",
+    "instagram": "https://www.instagram.com/haro.bicycles/"
+   },
+   "source": "https://harobikes.com/pages/contact",
+   "active": "new product listed",
+   "confidence": "high",
+   "hub": "carlsbad",
+   "slug": "haro-bikes"
+  },
+  {
+   "name": "Demolition Parts",
+   "kind": "maker",
+   "disciplines": [
+    "bmx"
+   ],
+   "what": "BMX frames and parts",
+   "city": "Whittier",
+   "region": "California",
+   "country": "US",
+   "lat": 33.9749,
+   "lng": -118.0339,
+   "coords": "city",
+   "about": "BMX frame and parts company in Whittier, going since 2000.",
+   "links": {
+    "website": "https://demolitionparts.com",
+    "instagram": "https://www.instagram.com/demolitionparts/"
+   },
+   "source": "https://demolitionparts.com/pages/contact",
+   "active": "new products listed",
+   "confidence": "high",
+   "hub": "los-angeles",
+   "slug": "demolition-parts"
+  },
+  {
+   "name": "Hamboards",
+   "kind": "maker",
+   "disciplines": [
+    "skateboard"
+   ],
+   "what": "Surfskates, HST trucks",
+   "city": "Wilmington",
+   "region": "Delaware",
+   "country": "US",
+   "lat": 39.7383,
+   "lng": -75.5527,
+   "coords": "city",
+   "about": "Makes surf-style carving boards, skate poles and HST trucks; company and warehouse in the Wilmington area of Delaware.",
+   "links": {
+    "website": "https://hamboards.com"
+   },
+   "source": "https://hamboards.com/policies/contact-information",
+   "active": "new bushing kits listed",
+   "confidence": "high",
+   "hub": "philadelphia",
+   "slug": "hamboards"
+  },
+  {
+   "name": "Team Pain Skate Parks",
+   "kind": "builder",
+   "disciplines": [
+    "skateboard",
+    "roller",
+    "inline",
+    "scooter",
+    "bmx"
+   ],
+   "what": "Skateparks, wheel parks",
+   "city": "Winter Springs",
+   "region": "Florida",
+   "country": "US",
+   "lat": 28.69873,
+   "lng": -81.30552,
+   "coords": "city",
+   "about": "Central Florida designer and builder of concrete skateparks and wheel parks around the US.",
+   "links": {
+    "website": "https://teampain.com"
+   },
+   "source": "https://teampain.com/contact/",
+   "active": "2025-07 Casselberry, FL wheel park grand opening (company post)",
+   "confidence": "high",
+   "hub": "orlando",
+   "slug": "team-pain-skate-parks"
+  },
+  {
+   "name": "Woodward PA",
+   "kind": "school",
+   "disciplines": [
+    "skateboard",
+    "bmx",
+    "scooter"
+   ],
+   "what": "Action-sports summer camps",
+   "city": "Woodward",
+   "region": "Pennsylvania",
+   "country": "US",
+   "lat": 40.89824,
+   "lng": -77.3464,
+   "coords": "city",
+   "about": "The original Woodward camp in central Pennsylvania: overnight summer camps with indoor and outdoor skate, BMX and scooter facilities. It invites former Woodward West campers now that the West camp has closed.",
+   "links": {
+    "website": "https://www.woodwardpa.com"
+   },
+   "source": "https://www.woodwardpa.com/",
+   "active": "2026 summer camp season highlights on its site",
+   "confidence": "high",
+   "hub": "woodward",
+   "slug": "woodward-pa"
+  }
+ ]
+}
