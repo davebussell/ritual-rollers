@@ -1,40 +1,42 @@
-// The wheels vocabulary: what you ride, what kind of spot it is, and what's there.
-
-import type { Surface } from '@/lib/skate'
-
-export { countryFlag, weekdayOf, clockOf, hourLabel, compassOf } from '@/lib/format'
+// The wheels vocabulary: what you ride, what kind of spot it is, what's there, and how well you ride.
 
 export interface Discipline {
   id: string
   label: string
   short: string
-  emoji: string
 }
 
 // Anything on wheels, ridden hard
 export const DISCIPLINES: Discipline[] = [
-  { id: 'skateboard', label: 'Skateboard', short: 'Skate', emoji: '🛹' },
-  { id: 'roller', label: 'Roller skates', short: 'Roller', emoji: '🛼' },
-  { id: 'inline', label: 'Inline skates', short: 'Inline', emoji: '🛼' },
-  { id: 'scooter', label: 'Scooter', short: 'Scooter', emoji: '🛴' },
-  { id: 'bmx', label: 'BMX', short: 'BMX', emoji: '🚲' },
-  { id: 'mtb', label: 'Mountain bike', short: 'MTB', emoji: '🚵' },
+  { id: 'skateboard', label: 'Skateboard', short: 'Skate' },
+  { id: 'roller', label: 'Roller skates', short: 'Roller' },
+  { id: 'inline', label: 'Inline skates', short: 'Inline' },
+  { id: 'scooter', label: 'Scooter', short: 'Scooter' },
+  { id: 'bmx', label: 'BMX', short: 'BMX' },
+  { id: 'mtb', label: 'Mountain bike', short: 'MTB' },
 ]
 
 export const DISCIPLINE_BY_ID: Record<string, Discipline> = Object.fromEntries(DISCIPLINES.map(d => [d.id, d]))
 
+export function disciplineList(ids: string[], style: 'short' | 'label' = 'short'): string {
+  return ids.map(id => DISCIPLINE_BY_ID[id]?.[style] ?? id).join(', ')
+}
+
+export type Surface = 'hard' | 'wood' | 'dirt'
+
 export type Kind = 'park' | 'plaza' | 'diy' | 'street' | 'bowl' | 'indoor' | 'pumptrack' | 'bikepark' | 'bmxtrack'
 
-export const KIND_META: Record<Kind, { label: string; plural: string; color: string; blurb: string; surface: Surface }> = {
-  park: { label: 'Skatepark', plural: 'Skateparks', color: '#3F5A42', blurb: 'built for it, usually free, usually concrete', surface: 'hard' },
-  plaza: { label: 'Plaza', plural: 'Plazas', color: '#5B8A8F', blurb: 'street-style ledges, gaps and stairs, built on purpose', surface: 'hard' },
-  diy: { label: 'DIY', plural: 'DIYs', color: '#A3271F', blurb: 'poured by skaters themselves; respect the locals', surface: 'hard' },
-  street: { label: 'Street spot', plural: 'Street spots', color: '#B7794A', blurb: 'not built for it — know the rules and the risks', surface: 'hard' },
-  bowl: { label: 'Bowl', plural: 'Bowls', color: '#3C6E8F', blurb: 'a stand-alone bowl or pool', surface: 'hard' },
-  indoor: { label: 'Indoor park', plural: 'Indoor parks', color: '#6B5B48', blurb: 'roofed, usually paid; your rain and winter plan', surface: 'wood' },
-  pumptrack: { label: 'Pump track', plural: 'Pump tracks', color: '#D9A21B', blurb: 'rollers and berms, no pedalling; every kind of wheel', surface: 'hard' },
-  bikepark: { label: 'Bike park', plural: 'Bike parks', color: '#8B5A2B', blurb: 'dirt jumps, skills lines, slopestyle and downhill', surface: 'dirt' },
-  bmxtrack: { label: 'BMX track', plural: 'BMX tracks', color: '#4C777C', blurb: 'start hill, rhythm sections, race nights', surface: 'dirt' },
+// Colours are map-pin colours: distinct from each other and readable on the muted map tiles.
+export const KIND_META: Record<Kind, { label: string; plural: string; color: string; blurb: string }> = {
+  park: { label: 'Skatepark', plural: 'Skateparks', color: '#2D68B0', blurb: 'Built for it, usually free, usually concrete.' },
+  plaza: { label: 'Plaza', plural: 'Plazas', color: '#6A4C93', blurb: 'Street-style ledges, gaps and stairs, built on purpose.' },
+  diy: { label: 'DIY', plural: 'DIYs', color: '#D4402A', blurb: 'Poured by riders themselves. Respect the locals and help keep it alive.' },
+  street: { label: 'Street spot', plural: 'Street spots', color: '#8A5A2B', blurb: 'Not built for it. Know the rules, and go easy on the place.' },
+  bowl: { label: 'Bowl', plural: 'Bowls', color: '#1F7A8C', blurb: 'A stand-alone bowl or pool.' },
+  indoor: { label: 'Indoor park', plural: 'Indoor parks', color: '#5B5F66', blurb: 'Roofed and usually paid: the plan for rain and winter.' },
+  pumptrack: { label: 'Pump track', plural: 'Pump tracks', color: '#B98500', blurb: 'Rollers and berms, no pedalling. Every kind of wheel.' },
+  bikepark: { label: 'Bike park', plural: 'Bike parks', color: '#3E7D3A', blurb: 'Dirt jumps, skills lines, slopestyle and downhill.' },
+  bmxtrack: { label: 'BMX track', plural: 'BMX tracks', color: '#C2571A', blurb: 'Start hill, rhythm sections and race nights.' },
 }
 
 export const KINDS = Object.keys(KIND_META) as Kind[]
@@ -83,9 +85,9 @@ export const FEATURE_LABEL: Record<string, string> = Object.fromEntries(FEATURES
 // "What do you like to ride?" → which spots fit
 export type Style = 'street' | 'tranny' | 'dirt' | 'any'
 export const STYLE_LABEL: Record<Style, string> = {
-  street: 'Street — ledges, rails, stairs',
-  tranny: 'Transition — bowls, ramps, vert',
-  dirt: 'Dirt & pump — jumps, berms, tracks',
+  street: 'Street: ledges, rails, stairs',
+  tranny: 'Transition: bowls, ramps, vert',
+  dirt: 'Dirt and pump: jumps, berms, tracks',
   any: 'A bit of everything',
 }
 
@@ -96,3 +98,27 @@ export function styleFit(features: string[], kind: Kind, style: Style): boolean 
   if (style === 'tranny') return groups.has('tranny') || kind === 'bowl'
   return groups.has('street') || kind === 'plaza' || kind === 'street'
 }
+
+// How a rider describes themselves, and who a session is for
+export type Level = 'new' | 'learning' | 'comfortable' | 'advanced'
+export const LEVELS: { id: Level; label: string; hint: string }[] = [
+  { id: 'new', label: 'Brand new', hint: 'First weeks, or back after a long break' },
+  { id: 'learning', label: 'Learning', hint: 'Rolling fine, working on the basics of the park' },
+  { id: 'comfortable', label: 'Comfortable', hint: 'Most of the park, a few tricks or lines' },
+  { id: 'advanced', label: 'Advanced', hint: 'Anything goes' },
+]
+export const LEVEL_LABEL: Record<Level | 'all', string> = {
+  all: 'All levels', new: 'Brand new', learning: 'Learning', comfortable: 'Comfortable', advanced: 'Advanced',
+}
+
+// Who a crew is for
+export const AUDIENCES: { id: string; label: string }[] = [
+  { id: 'all', label: 'Everyone' },
+  { id: 'beginners', label: 'Beginners' },
+  { id: 'adults', label: 'Adults' },
+  { id: 'women', label: 'Women' },
+  { id: 'queer', label: 'Queer and trans' },
+  { id: 'families', label: 'Families' },
+  { id: 'kids', label: 'Kids' },
+]
+export const AUDIENCE_LABEL: Record<string, string> = Object.fromEntries(AUDIENCES.map(a => [a.id, a.label]))

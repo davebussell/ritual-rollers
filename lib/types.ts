@@ -1,46 +1,66 @@
-import type { Region } from './regions'
+import type { Level } from '@/lib/sports'
 
+// A row of public.profiles (columns from supabase/schema.sql and migration 004)
 export interface Profile {
   id: string
   username: string
+  display_name: string | null
   bio: string | null
   avatar_url: string | null
+  disciplines: string[] | null
+  level: Level | null
+  home_city: string | null
+  home_spots: string[] | null
+  open_to_ride: boolean | null
+  age_confirmed_at: string | null
   created_at: string
 }
 
-export interface Trip {
+// What lists and cards need to show a rider
+export interface RiderCard {
+  username: string
+  display_name: string | null
+  avatar_url: string | null
+  bio: string | null
+  disciplines: string[]
+  level: Level | null
+  home_city: string | null
+  home_spots: string[]
+  sample?: boolean
+}
+
+export interface RiderLite {
+  username: string
+  display_name: string | null
+  avatar_url: string | null
+  sample?: boolean
+}
+
+export interface RideSession {
   id: string
-  owner_id: string
+  sample?: boolean
   title: string
-  description: string | null
-  cover_photo_id: string | null
-  is_public: boolean
-  upvotes_count: number
-  created_at: string
-  activity_tags?: string[] | null
-  profiles?: Profile
-  trip_photos?: TripPhoto[]
+  notes: string | null
+  spot_slug: string | null
+  park_id: string | null
+  place_name: string
+  city: string | null
+  lat: number
+  lng: number
+  starts_at: string
+  starts_local: string
+  disciplines: string[]
+  level: Level | 'all'
+  beginners_welcome: boolean
+  cancelled: boolean
+  host: RiderLite
+  riders: RiderLite[]       // who's in (may be a sample of them)
+  riders_count: number
 }
 
-export interface TripPhoto {
+export interface SessionComment {
   id: string
-  trip_id: string
-  uploader_id: string
-  storage_path: string
-  lat: number | null
-  lng: number | null
-  taken_at: string | null
-  caption: string | null
-  sequence_order: number
+  body: string
   created_at: string
-  profiles?: Profile
-}
-
-export interface TripWithAnchor extends Trip {
-  anchorLat: number | null
-  anchorLng: number | null
-  region: Region | null
-  countryCode: string | null
-  activity_tags: string[] | null
-  allPhotos: { lat: number; lng: number; storage_path: string }[]
+  rider: RiderLite
 }

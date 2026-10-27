@@ -1,7 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-const PROTECTED = ['/trips/new', '/profile/edit']
+const PROTECTED: string[] = []  // pages handle sign-in themselves (with a ?next= back to where you were)
 
 export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })

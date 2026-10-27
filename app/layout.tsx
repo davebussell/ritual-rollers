@@ -1,19 +1,20 @@
 import Script from 'next/script'
 import type { Metadata } from 'next'
-import { Barlow_Condensed, Work_Sans } from 'next/font/google'
+import { Unbounded, Overpass } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
-const barlow = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-barlow' })
-const work = Work_Sans({ subsets: ['latin'], variable: '--font-work' })
+const unbounded = Unbounded({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-unbounded' })
+const overpass = Overpass({ subsets: ['latin'], weight: ['400', '600', '700', '800'], variable: '--font-overpass' })
 
 const SITE_URL = 'https://ritualrollers.com'
-const TITLE = 'Ritual Rollers — Is it dry? Skateparks, pump tracks & bike parks'
-const DESCRIPTION = 'Anything on wheels across Canada, the US and Mexico: skateparks, plazas, DIYs, pump tracks, BMX tracks and bike parks, each with a live read of whether the ground is dry — and when it will be.'
+const TITLE = 'Ritual Rollers: find spots to ride and people to ride with'
+const DESCRIPTION = 'Skateparks, pump tracks and bike parks across Canada, the US and Mexico, and the riders and crews who session them. Find a spot, find a session, show up.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: TITLE,
+  title: { default: TITLE, template: '%s · Ritual Rollers' },
   description: DESCRIPTION,
   alternates: { canonical: '/' },
   openGraph: {
@@ -56,8 +57,8 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${barlow.variable} ${work.variable} ${work.className} tx-canvas bg-zinc-950 text-white min-h-screen antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${unbounded.variable} ${overpass.variable}`}>
+      <body className="flex min-h-screen flex-col font-sans antialiased" suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {/* GA4 (G-QK0ETT28BD). Netlify's snippet injection (ga4-portfolio) reached the old static pages but not
             the pages Next renders on request, so the tag lives here — and stands down if Netlify's copy is already
@@ -82,8 +83,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "yjaeee242b");
         ` }} />
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[60] focus:rounded focus:bg-curb focus:px-3 focus:py-2 focus:font-bold">Skip to content</a>
         <Navbar />
-        <main>{children}</main>
+        <main id="main" className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )

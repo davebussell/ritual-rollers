@@ -1,0 +1,478 @@
+{
+ "Toronto|Ontario|CA": {
+  "lat": 43.6535,
+  "lng": -79.3839
+ },
+ "Montreal|Quebec|CA": {
+  "lat": 45.5032,
+  "lng": -73.5698
+ },
+ "Vancouver|British Columbia|CA": {
+  "lat": 49.2609,
+  "lng": -123.114
+ },
+ "Calgary|Alberta|CA": {
+  "lat": 51.0456,
+  "lng": -114.0575
+ },
+ "Edmonton|Alberta|CA": {
+  "lat": 53.5462,
+  "lng": -113.4912
+ },
+ "Ottawa|Ontario|CA": {
+  "lat": 45.4209,
+  "lng": -75.6901
+ },
+ "Winnipeg|Manitoba|CA": {
+  "lat": 49.8955,
+  "lng": -97.1385
+ },
+ "Quebec City|Quebec|CA": {
+  "lat": 46.8137,
+  "lng": -71.2084
+ },
+ "Hamilton|Ontario|CA": {
+  "lat": 43.2561,
+  "lng": -79.8729
+ },
+ "Kitchener|Ontario|CA": {
+  "lat": 43.4513,
+  "lng": -80.4928
+ },
+ "London|Ontario|CA": {
+  "lat": 42.9837,
+  "lng": -81.2496
+ },
+ "Victoria|British Columbia|CA": {
+  "lat": 48.4283,
+  "lng": -123.365
+ },
+ "Halifax|Nova Scotia|CA": {
+  "lat": 44.6486,
+  "lng": -63.5859
+ },
+ "Saskatoon|Saskatchewan|CA": {
+  "lat": 52.1318,
+  "lng": -106.6608
+ },
+ "Regina|Saskatchewan|CA": {
+  "lat": 50.448,
+  "lng": -104.6159
+ },
+ "St. John's|Newfoundland and Labrador|CA": {
+  "lat": 47.5647,
+  "lng": -52.7067
+ },
+ "Kelowna|British Columbia|CA": {
+  "lat": 49.8879,
+  "lng": -119.4959
+ },
+ "Sherbrooke|Quebec|CA": {
+  "lat": 45.4033,
+  "lng": -71.889
+ },
+ "Trois-Rivières|Quebec|CA": {
+  "lat": 46.3432,
+  "lng": -72.5428
+ },
+ "Moncton|New Brunswick|CA": {
+  "lat": 46.0986,
+  "lng": -64.8004
+ },
+ "Fredericton|New Brunswick|CA": {
+  "lat": 45.9488,
+  "lng": -66.6292
+ },
+ "Charlottetown|Prince Edward Island|CA": {
+  "lat": 46.2354,
+  "lng": -63.1265
+ },
+ "Windsor|Ontario|CA": {
+  "lat": 42.2859,
+  "lng": -82.9781
+ },
+ "Barrie|Ontario|CA": {
+  "lat": 44.3893,
+  "lng": -79.6901
+ },
+ "Kingston|Ontario|CA": {
+  "lat": 44.3054,
+  "lng": -76.4284
+ },
+ "Sudbury|Ontario|CA": {
+  "lat": 46.4927,
+  "lng": -80.9912
+ },
+ "Thunder Bay|Ontario|CA": {
+  "lat": 48.4064,
+  "lng": -89.2598
+ },
+ "Whistler|British Columbia|CA": {
+  "lat": 50.1172,
+  "lng": -122.9543
+ },
+ "Squamish|British Columbia|CA": {
+  "lat": 49.6981,
+  "lng": -123.1559
+ },
+ "Nanaimo|British Columbia|CA": {
+  "lat": 49.1639,
+  "lng": -123.9381
+ },
+ "Kamloops|British Columbia|CA": {
+  "lat": 50.6758,
+  "lng": -120.3394
+ },
+ "Lethbridge|Alberta|CA": {
+  "lat": 49.6946,
+  "lng": -112.8331
+ },
+ "Red Deer|Alberta|CA": {
+  "lat": 52.2691,
+  "lng": -113.8141
+ },
+ "New York|New York|US": {
+  "lat": 40.7127,
+  "lng": -74.006
+ },
+ "Los Angeles|California|US": {
+  "lat": 34.0537,
+  "lng": -118.2428
+ },
+ "Chicago|Illinois|US": {
+  "lat": 41.8756,
+  "lng": -87.6244
+ },
+ "Houston|Texas|US": {
+  "lat": 29.7589,
+  "lng": -95.3677
+ },
+ "Phoenix|Arizona|US": {
+  "lat": 33.4484,
+  "lng": -112.0741
+ },
+ "Philadelphia|Pennsylvania|US": {
+  "lat": 39.9527,
+  "lng": -75.1635
+ },
+ "San Antonio|Texas|US": {
+  "lat": 29.4246,
+  "lng": -98.4951
+ },
+ "San Diego|California|US": {
+  "lat": 32.7157,
+  "lng": -117.1638
+ },
+ "Dallas|Texas|US": {
+  "lat": 32.7763,
+  "lng": -96.7969
+ },
+ "San Jose|California|US": {
+  "lat": 37.3362,
+  "lng": -121.8906
+ },
+ "Austin|Texas|US": {
+  "lat": 30.2649,
+  "lng": -97.7474
+ },
+ "Jacksonville|Florida|US": {
+  "lat": 30.3262,
+  "lng": -81.6579
+ },
+ "Columbus|Ohio|US": {
+  "lat": 39.9623,
+  "lng": -83.0007
+ },
+ "Charlotte|North Carolina|US": {
+  "lat": 35.2272,
+  "lng": -80.8431
+ },
+ "Indianapolis|Indiana|US": {
+  "lat": 39.7683,
+  "lng": -86.1584
+ },
+ "San Francisco|California|US": {
+  "lat": 37.7879,
+  "lng": -122.4075
+ },
+ "Oakland|California|US": {
+  "lat": 37.8045,
+  "lng": -122.2714
+ },
+ "Seattle|Washington|US": {
+  "lat": 47.6038,
+  "lng": -122.3301
+ },
+ "Denver|Colorado|US": {
+  "lat": 39.7392,
+  "lng": -104.9849
+ },
+ "Washington|District of Columbia|US": {
+  "lat": 38.8951,
+  "lng": -77.0364
+ },
+ "Nashville|Tennessee|US": {
+  "lat": 36.1623,
+  "lng": -86.7743
+ },
+ "Oklahoma City|Oklahoma|US": {
+  "lat": 35.473,
+  "lng": -97.5171
+ },
+ "El Paso|Texas|US": {
+  "lat": 31.7601,
+  "lng": -106.487
+ },
+ "Boston|Massachusetts|US": {
+  "lat": 42.3588,
+  "lng": -71.0578
+ },
+ "Portland|Oregon|US": {
+  "lat": 45.5202,
+  "lng": -122.6742
+ },
+ "Las Vegas|Nevada|US": {
+  "lat": 36.1674,
+  "lng": -115.1484
+ },
+ "Detroit|Michigan|US": {
+  "lat": 42.3316,
+  "lng": -83.0466
+ },
+ "Memphis|Tennessee|US": {
+  "lat": 35.146,
+  "lng": -90.0518
+ },
+ "Louisville|Kentucky|US": {
+  "lat": 38.2542,
+  "lng": -85.7594
+ },
+ "Baltimore|Maryland|US": {
+  "lat": 39.2909,
+  "lng": -76.6108
+ },
+ "Milwaukee|Wisconsin|US": {
+  "lat": 43.0386,
+  "lng": -87.9091
+ },
+ "Albuquerque|New Mexico|US": {
+  "lat": 35.0841,
+  "lng": -106.651
+ },
+ "Tucson|Arizona|US": {
+  "lat": 32.2229,
+  "lng": -110.9748
+ },
+ "Fresno|California|US": {
+  "lat": 36.7394,
+  "lng": -119.7848
+ },
+ "Sacramento|California|US": {
+  "lat": 38.5811,
+  "lng": -121.4939
+ },
+ "Kansas City|Missouri|US": {
+  "lat": 39.1001,
+  "lng": -94.5781
+ },
+ "Atlanta|Georgia|US": {
+  "lat": 33.7545,
+  "lng": -84.3898
+ },
+ "Miami|Florida|US": {
+  "lat": 25.7742,
+  "lng": -80.1936
+ },
+ "Omaha|Nebraska|US": {
+  "lat": 41.2587,
+  "lng": -95.9384
+ },
+ "Raleigh|North Carolina|US": {
+  "lat": 35.7804,
+  "lng": -78.6391
+ },
+ "Minneapolis|Minnesota|US": {
+  "lat": 44.9773,
+  "lng": -93.2655
+ },
+ "Tulsa|Oklahoma|US": {
+  "lat": 36.1563,
+  "lng": -95.9928
+ },
+ "Tampa|Florida|US": {
+  "lat": 27.945,
+  "lng": -82.4583
+ },
+ "New Orleans|Louisiana|US": {
+  "lat": 29.9575,
+  "lng": -90.0629
+ },
+ "Cleveland|Ohio|US": {
+  "lat": 41.4997,
+  "lng": -81.6937
+ },
+ "Honolulu|Hawaii|US": {
+  "lat": 21.3045,
+  "lng": -157.8557
+ },
+ "Anchorage|Alaska|US": {
+  "lat": 61.2163,
+  "lng": -149.8949
+ },
+ "Pittsburgh|Pennsylvania|US": {
+  "lat": 40.4407,
+  "lng": -80.0026
+ },
+ "Cincinnati|Ohio|US": {
+  "lat": 39.1013,
+  "lng": -84.5127
+ },
+ "St. Louis|Missouri|US": {
+  "lat": 38.6254,
+  "lng": -90.19
+ },
+ "Orlando|Florida|US": {
+  "lat": 28.5421,
+  "lng": -81.379
+ },
+ "Salt Lake City|Utah|US": {
+  "lat": 40.7596,
+  "lng": -111.8868
+ },
+ "Boise|Idaho|US": {
+  "lat": 43.6166,
+  "lng": -116.2009
+ },
+ "Richmond|Virginia|US": {
+  "lat": 37.5385,
+  "lng": -77.4343
+ },
+ "Buffalo|New York|US": {
+  "lat": 42.8864,
+  "lng": -78.8781
+ },
+ "Spokane|Washington|US": {
+  "lat": 47.6572,
+  "lng": -117.4235
+ },
+ "Des Moines|Iowa|US": {
+  "lat": 41.5869,
+  "lng": -93.6249
+ },
+ "Birmingham|Alabama|US": {
+  "lat": 33.5207,
+  "lng": -86.8024
+ },
+ "Reno|Nevada|US": {
+  "lat": 39.5262,
+  "lng": -119.8127
+ },
+ "Santa Cruz|California|US": {
+  "lat": 37.0501,
+  "lng": -121.9906
+ },
+ "Bend|Oregon|US": {
+  "lat": 44.0582,
+  "lng": -121.3153
+ },
+ "Burlington|Vermont|US": {
+  "lat": 44.4762,
+  "lng": -73.2129
+ },
+ "Providence|Rhode Island|US": {
+  "lat": 41.824,
+  "lng": -71.4128
+ },
+ "Asheville|North Carolina|US": {
+  "lat": 35.5954,
+  "lng": -82.5508
+ },
+ "Madison|Wisconsin|US": {
+  "lat": 43.0747,
+  "lng": -89.3842
+ },
+ "Charleston|South Carolina|US": {
+  "lat": 32.7884,
+  "lng": -79.9399
+ },
+ "Savannah|Georgia|US": {
+  "lat": 32.079,
+  "lng": -81.0921
+ },
+ "Long Beach|California|US": {
+  "lat": 33.769,
+  "lng": -118.1916
+ },
+ "Mexico City|Ciudad de México|MX": {
+  "lat": 19.4326,
+  "lng": -99.1332
+ },
+ "Guadalajara|Jalisco|MX": {
+  "lat": 20.6783,
+  "lng": -103.3358
+ },
+ "Monterrey|Nuevo León|MX": {
+  "lat": 25.6802,
+  "lng": -100.3153
+ },
+ "Tijuana|Baja California|MX": {
+  "lat": 32.5365,
+  "lng": -117.0371
+ },
+ "Puebla|Puebla|MX": {
+  "lat": 19.0438,
+  "lng": -98.1982
+ },
+ "Mérida|Yucatán|MX": {
+  "lat": 20.9671,
+  "lng": -89.6237
+ },
+ "Oaxaca|Oaxaca|MX": {
+  "lat": 17.0605,
+  "lng": -96.7254
+ },
+ "Querétaro|Querétaro|MX": {
+  "lat": 20.5923,
+  "lng": -100.3917
+ },
+ "León|Guanajuato|MX": {
+  "lat": 21.122,
+  "lng": -101.683
+ },
+ "Cancún|Quintana Roo|MX": {
+  "lat": 21.1527,
+  "lng": -86.8426
+ },
+ "Puerto Vallarta|Jalisco|MX": {
+  "lat": 20.6407,
+  "lng": -105.2203
+ },
+ "Chihuahua|Chihuahua|MX": {
+  "lat": 28.6369,
+  "lng": -106.0767
+ },
+ "Hermosillo|Sonora|MX": {
+  "lat": 29.0948,
+  "lng": -110.9692
+ },
+ "Ensenada|Baja California|MX": {
+  "lat": 31.8659,
+  "lng": -116.603
+ },
+ "Aguascalientes|Aguascalientes|MX": {
+  "lat": 21.8805,
+  "lng": -102.2967
+ },
+ "San Luis Potosí|San Luis Potosí|MX": {
+  "lat": 22.1516,
+  "lng": -100.9764
+ },
+ "Morelia|Michoacán|MX": {
+  "lat": 19.6546,
+  "lng": -101.2624
+ },
+ "Toluca|México|MX": {
+  "lat": 19.2925,
+  "lng": -99.6569
+ }
+}

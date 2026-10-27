@@ -1,0 +1,2312 @@
+[
+ {
+  "name": "Banff",
+  "region": "Alberta",
+  "country": "CA",
+  "lat": 51.1739,
+  "lng": -115.5797,
+  "metro": false,
+  "slug": "banff",
+  "spots": 1
+ },
+ {
+  "name": "Barrie",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 44.3893,
+  "lng": -79.6901,
+  "metro": true,
+  "slug": "barrie",
+  "spots": 0
+ },
+ {
+  "name": "Bridgewater",
+  "region": "Nova Scotia",
+  "country": "CA",
+  "lat": 44.3849,
+  "lng": -64.5362,
+  "metro": false,
+  "slug": "bridgewater",
+  "spots": 1
+ },
+ {
+  "name": "Calgary",
+  "region": "Alberta",
+  "country": "CA",
+  "lat": 51.0456,
+  "lng": -114.0575,
+  "metro": true,
+  "slug": "calgary",
+  "spots": 10
+ },
+ {
+  "name": "Charlottetown",
+  "region": "Prince Edward Island",
+  "country": "CA",
+  "lat": 46.2354,
+  "lng": -63.1265,
+  "metro": true,
+  "slug": "charlottetown",
+  "spots": 1
+ },
+ {
+  "name": "Chilliwack",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 49.1708,
+  "lng": -121.9645,
+  "metro": false,
+  "slug": "chilliwack",
+  "spots": 1
+ },
+ {
+  "name": "Edmonton",
+  "region": "Alberta",
+  "country": "CA",
+  "lat": 53.5462,
+  "lng": -113.4912,
+  "metro": true,
+  "slug": "edmonton",
+  "spots": 4
+ },
+ {
+  "name": "Fredericton",
+  "region": "New Brunswick",
+  "country": "CA",
+  "lat": 45.9488,
+  "lng": -66.6292,
+  "metro": true,
+  "slug": "fredericton",
+  "spots": 1
+ },
+ {
+  "name": "Halifax",
+  "region": "Nova Scotia",
+  "country": "CA",
+  "lat": 44.6486,
+  "lng": -63.5859,
+  "metro": true,
+  "slug": "halifax",
+  "spots": 1
+ },
+ {
+  "name": "Hamilton",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 43.2561,
+  "lng": -79.8729,
+  "metro": true,
+  "slug": "hamilton",
+  "spots": 1
+ },
+ {
+  "name": "Kamloops",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 50.6758,
+  "lng": -120.3394,
+  "metro": true,
+  "slug": "kamloops",
+  "spots": 2
+ },
+ {
+  "name": "Kelowna",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 49.8879,
+  "lng": -119.4959,
+  "metro": true,
+  "slug": "kelowna",
+  "spots": 0
+ },
+ {
+  "name": "Kingston",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 44.3054,
+  "lng": -76.4284,
+  "metro": true,
+  "slug": "kingston",
+  "spots": 0
+ },
+ {
+  "name": "Kitchener",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 43.4513,
+  "lng": -80.4928,
+  "metro": true,
+  "slug": "kitchener",
+  "spots": 0
+ },
+ {
+  "name": "Lethbridge",
+  "region": "Alberta",
+  "country": "CA",
+  "lat": 49.6946,
+  "lng": -112.8331,
+  "metro": true,
+  "slug": "lethbridge",
+  "spots": 0
+ },
+ {
+  "name": "London",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 42.9837,
+  "lng": -81.2496,
+  "metro": true,
+  "slug": "london",
+  "spots": 3
+ },
+ {
+  "name": "Medicine Hat",
+  "region": "Alberta",
+  "country": "CA",
+  "lat": 50.0246,
+  "lng": -110.6848,
+  "metro": false,
+  "slug": "medicine-hat",
+  "spots": 1
+ },
+ {
+  "name": "Moncton",
+  "region": "New Brunswick",
+  "country": "CA",
+  "lat": 46.0986,
+  "lng": -64.8004,
+  "metro": true,
+  "slug": "moncton",
+  "spots": 1
+ },
+ {
+  "name": "Montreal",
+  "region": "Quebec",
+  "country": "CA",
+  "lat": 45.5032,
+  "lng": -73.5698,
+  "metro": true,
+  "slug": "montreal",
+  "spots": 13
+ },
+ {
+  "name": "Nanaimo",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 49.1639,
+  "lng": -123.9381,
+  "metro": true,
+  "slug": "nanaimo",
+  "spots": 1
+ },
+ {
+  "name": "Ottawa",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 45.4209,
+  "lng": -75.6901,
+  "metro": true,
+  "slug": "ottawa",
+  "spots": 4
+ },
+ {
+  "name": "Penticton",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 49.5,
+  "lng": -119.6133,
+  "metro": false,
+  "slug": "penticton",
+  "spots": 1
+ },
+ {
+  "name": "Quebec City",
+  "region": "Quebec",
+  "country": "CA",
+  "lat": 46.8137,
+  "lng": -71.2084,
+  "metro": true,
+  "slug": "quebec-city",
+  "spots": 2
+ },
+ {
+  "name": "Red Deer",
+  "region": "Alberta",
+  "country": "CA",
+  "lat": 52.2691,
+  "lng": -113.8141,
+  "metro": true,
+  "slug": "red-deer",
+  "spots": 1
+ },
+ {
+  "name": "Regina",
+  "region": "Saskatchewan",
+  "country": "CA",
+  "lat": 50.448,
+  "lng": -104.6159,
+  "metro": true,
+  "slug": "regina",
+  "spots": 0
+ },
+ {
+  "name": "Saint John",
+  "region": "New Brunswick",
+  "country": "CA",
+  "lat": 45.2756,
+  "lng": -66.0663,
+  "metro": false,
+  "slug": "saint-john",
+  "spots": 1
+ },
+ {
+  "name": "Saskatoon",
+  "region": "Saskatchewan",
+  "country": "CA",
+  "lat": 52.1318,
+  "lng": -106.6608,
+  "metro": true,
+  "slug": "saskatoon",
+  "spots": 0
+ },
+ {
+  "name": "Sault Ste. Marie",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 46.5182,
+  "lng": -84.3437,
+  "metro": false,
+  "slug": "sault-ste-marie",
+  "spots": 1
+ },
+ {
+  "name": "Sherbrooke",
+  "region": "Quebec",
+  "country": "CA",
+  "lat": 45.4033,
+  "lng": -71.889,
+  "metro": true,
+  "slug": "sherbrooke",
+  "spots": 0
+ },
+ {
+  "name": "Sicamous",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 50.833,
+  "lng": -118.9804,
+  "metro": false,
+  "slug": "sicamous",
+  "spots": 1
+ },
+ {
+  "name": "Squamish",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 49.6981,
+  "lng": -123.1559,
+  "metro": true,
+  "slug": "squamish",
+  "spots": 2
+ },
+ {
+  "name": "St. John's",
+  "region": "Newfoundland and Labrador",
+  "country": "CA",
+  "lat": 47.5647,
+  "lng": -52.7067,
+  "metro": true,
+  "slug": "st-john-s",
+  "spots": 3
+ },
+ {
+  "name": "Sudbury",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 46.4927,
+  "lng": -80.9912,
+  "metro": true,
+  "slug": "sudbury",
+  "spots": 1
+ },
+ {
+  "name": "Thunder Bay",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 48.4064,
+  "lng": -89.2598,
+  "metro": true,
+  "slug": "thunder-bay",
+  "spots": 1
+ },
+ {
+  "name": "Toronto",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 43.6535,
+  "lng": -79.3839,
+  "metro": true,
+  "slug": "toronto",
+  "spots": 12
+ },
+ {
+  "name": "Trois-Rivières",
+  "region": "Quebec",
+  "country": "CA",
+  "lat": 46.3432,
+  "lng": -72.5428,
+  "metro": true,
+  "slug": "trois-rivieres",
+  "spots": 1
+ },
+ {
+  "name": "Vancouver",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 49.2609,
+  "lng": -123.114,
+  "metro": true,
+  "slug": "vancouver",
+  "spots": 17
+ },
+ {
+  "name": "Vernon",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 50.3584,
+  "lng": -119.0644,
+  "metro": false,
+  "slug": "vernon",
+  "spots": 1
+ },
+ {
+  "name": "Victoria",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 48.4283,
+  "lng": -123.365,
+  "metro": true,
+  "slug": "victoria",
+  "spots": 5
+ },
+ {
+  "name": "Whistler",
+  "region": "British Columbia",
+  "country": "CA",
+  "lat": 50.1172,
+  "lng": -122.9543,
+  "metro": true,
+  "slug": "whistler",
+  "spots": 3
+ },
+ {
+  "name": "Windsor",
+  "region": "Ontario",
+  "country": "CA",
+  "lat": 42.2859,
+  "lng": -82.9781,
+  "metro": true,
+  "slug": "windsor",
+  "spots": 5
+ },
+ {
+  "name": "Winnipeg",
+  "region": "Manitoba",
+  "country": "CA",
+  "lat": 49.8955,
+  "lng": -97.1385,
+  "metro": true,
+  "slug": "winnipeg",
+  "spots": 2
+ },
+ {
+  "name": "Aguascalientes",
+  "region": "Aguascalientes",
+  "country": "MX",
+  "lat": 21.8805,
+  "lng": -102.2967,
+  "metro": true,
+  "slug": "aguascalientes",
+  "spots": 0
+ },
+ {
+  "name": "Ajijic",
+  "region": "Jalisco",
+  "country": "MX",
+  "lat": 20.2967,
+  "lng": -103.2655,
+  "metro": false,
+  "slug": "ajijic",
+  "spots": 3
+ },
+ {
+  "name": "Cancún",
+  "region": "Quintana Roo",
+  "country": "MX",
+  "lat": 21.1527,
+  "lng": -86.8426,
+  "metro": true,
+  "slug": "cancun",
+  "spots": 0
+ },
+ {
+  "name": "Chihuahua",
+  "region": "Chihuahua",
+  "country": "MX",
+  "lat": 28.6369,
+  "lng": -106.0767,
+  "metro": true,
+  "slug": "chihuahua",
+  "spots": 1
+ },
+ {
+  "name": "El Pescadero",
+  "region": "Baja California Sur",
+  "country": "MX",
+  "lat": 23.3588,
+  "lng": -110.1669,
+  "metro": false,
+  "slug": "el-pescadero",
+  "spots": 1
+ },
+ {
+  "name": "Ensenada",
+  "region": "Baja California",
+  "country": "MX",
+  "lat": 31.8659,
+  "lng": -116.603,
+  "metro": true,
+  "slug": "ensenada",
+  "spots": 0
+ },
+ {
+  "name": "Guadalajara",
+  "region": "Jalisco",
+  "country": "MX",
+  "lat": 20.6783,
+  "lng": -103.3358,
+  "metro": true,
+  "slug": "guadalajara",
+  "spots": 4
+ },
+ {
+  "name": "Hermosillo",
+  "region": "Sonora",
+  "country": "MX",
+  "lat": 29.0948,
+  "lng": -110.9692,
+  "metro": true,
+  "slug": "hermosillo",
+  "spots": 1
+ },
+ {
+  "name": "Huatulco",
+  "region": "Oaxaca",
+  "country": "MX",
+  "lat": 15.7817,
+  "lng": -96.1411,
+  "metro": false,
+  "slug": "huatulco",
+  "spots": 1
+ },
+ {
+  "name": "Jiutepec",
+  "region": "Morelos",
+  "country": "MX",
+  "lat": 18.9146,
+  "lng": -99.1641,
+  "metro": false,
+  "slug": "jiutepec",
+  "spots": 1
+ },
+ {
+  "name": "La Paz",
+  "region": "Baja California Sur",
+  "country": "MX",
+  "lat": 24.0587,
+  "lng": -110.2884,
+  "metro": false,
+  "slug": "la-paz",
+  "spots": 1
+ },
+ {
+  "name": "León",
+  "region": "Guanajuato",
+  "country": "MX",
+  "lat": 21.122,
+  "lng": -101.683,
+  "metro": true,
+  "slug": "leon",
+  "spots": 1
+ },
+ {
+  "name": "Mazatlán",
+  "region": "Sinaloa",
+  "country": "MX",
+  "lat": 23.2333,
+  "lng": -106.431,
+  "metro": false,
+  "slug": "mazatlan",
+  "spots": 1
+ },
+ {
+  "name": "Mérida",
+  "region": "Yucatán",
+  "country": "MX",
+  "lat": 20.9671,
+  "lng": -89.6237,
+  "metro": true,
+  "slug": "merida",
+  "spots": 0
+ },
+ {
+  "name": "Mexicali",
+  "region": "Baja California",
+  "country": "MX",
+  "lat": 32.6425,
+  "lng": -115.4792,
+  "metro": false,
+  "slug": "mexicali",
+  "spots": 1
+ },
+ {
+  "name": "Mexico City",
+  "region": "Ciudad de México",
+  "country": "MX",
+  "lat": 19.4326,
+  "lng": -99.1332,
+  "metro": true,
+  "slug": "mexico-city",
+  "spots": 9
+ },
+ {
+  "name": "Monterrey",
+  "region": "Nuevo León",
+  "country": "MX",
+  "lat": 25.6802,
+  "lng": -100.3153,
+  "metro": true,
+  "slug": "monterrey",
+  "spots": 1
+ },
+ {
+  "name": "Morelia",
+  "region": "Michoacán",
+  "country": "MX",
+  "lat": 19.6546,
+  "lng": -101.2624,
+  "metro": true,
+  "slug": "morelia",
+  "spots": 1
+ },
+ {
+  "name": "Oaxaca",
+  "region": "Oaxaca",
+  "country": "MX",
+  "lat": 17.0605,
+  "lng": -96.7254,
+  "metro": true,
+  "slug": "oaxaca",
+  "spots": 0
+ },
+ {
+  "name": "Pachuca",
+  "region": "Hidalgo",
+  "country": "MX",
+  "lat": 20.1183,
+  "lng": -98.7646,
+  "metro": false,
+  "slug": "pachuca",
+  "spots": 1
+ },
+ {
+  "name": "Playa del Carmen",
+  "region": "Quintana Roo",
+  "country": "MX",
+  "lat": 20.6302,
+  "lng": -87.0783,
+  "metro": false,
+  "slug": "playa-del-carmen",
+  "spots": 1
+ },
+ {
+  "name": "Puebla",
+  "region": "Puebla",
+  "country": "MX",
+  "lat": 19.0438,
+  "lng": -98.1982,
+  "metro": true,
+  "slug": "puebla",
+  "spots": 0
+ },
+ {
+  "name": "Puerto Vallarta",
+  "region": "Jalisco",
+  "country": "MX",
+  "lat": 20.6407,
+  "lng": -105.2203,
+  "metro": true,
+  "slug": "puerto-vallarta",
+  "spots": 1
+ },
+ {
+  "name": "Querétaro",
+  "region": "Querétaro",
+  "country": "MX",
+  "lat": 20.5923,
+  "lng": -100.3917,
+  "metro": true,
+  "slug": "queretaro",
+  "spots": 1
+ },
+ {
+  "name": "San José del Cabo",
+  "region": "Baja California Sur",
+  "country": "MX",
+  "lat": 23.0619,
+  "lng": -109.7034,
+  "metro": false,
+  "slug": "san-jose-del-cabo",
+  "spots": 1
+ },
+ {
+  "name": "San Luis Potosí",
+  "region": "San Luis Potosí",
+  "country": "MX",
+  "lat": 22.1516,
+  "lng": -100.9764,
+  "metro": true,
+  "slug": "san-luis-potosi",
+  "spots": 0
+ },
+ {
+  "name": "Tijuana",
+  "region": "Baja California",
+  "country": "MX",
+  "lat": 32.5365,
+  "lng": -117.0371,
+  "metro": true,
+  "slug": "tijuana",
+  "spots": 7
+ },
+ {
+  "name": "Toluca",
+  "region": "México",
+  "country": "MX",
+  "lat": 19.2925,
+  "lng": -99.6569,
+  "metro": true,
+  "slug": "toluca",
+  "spots": 0
+ },
+ {
+  "name": "Troncones",
+  "region": "Guerrero",
+  "country": "MX",
+  "lat": 17.7809,
+  "lng": -101.7222,
+  "metro": false,
+  "slug": "troncones",
+  "spots": 1
+ },
+ {
+  "name": "Valle de Bravo",
+  "region": "Estado de México",
+  "country": "MX",
+  "lat": 19.1909,
+  "lng": -100.1303,
+  "metro": false,
+  "slug": "valle-de-bravo",
+  "spots": 1
+ },
+ {
+  "name": "Xalapa",
+  "region": "Veracruz",
+  "country": "MX",
+  "lat": 19.527,
+  "lng": -96.9283,
+  "metro": false,
+  "slug": "xalapa",
+  "spots": 1
+ },
+ {
+  "name": "Albuquerque",
+  "region": "New Mexico",
+  "country": "US",
+  "lat": 35.0841,
+  "lng": -106.651,
+  "metro": true,
+  "slug": "albuquerque",
+  "spots": 0
+ },
+ {
+  "name": "Anchorage",
+  "region": "Alaska",
+  "country": "US",
+  "lat": 61.2163,
+  "lng": -149.8949,
+  "metro": true,
+  "slug": "anchorage",
+  "spots": 1
+ },
+ {
+  "name": "Ann Arbor",
+  "region": "Michigan",
+  "country": "US",
+  "lat": 42.2845,
+  "lng": -83.7794,
+  "metro": false,
+  "slug": "ann-arbor",
+  "spots": 1
+ },
+ {
+  "name": "Arlington",
+  "region": "Washington",
+  "country": "US",
+  "lat": 48.1662,
+  "lng": -122.1505,
+  "metro": false,
+  "slug": "arlington",
+  "spots": 1
+ },
+ {
+  "name": "Asheville",
+  "region": "North Carolina",
+  "country": "US",
+  "lat": 35.5954,
+  "lng": -82.5508,
+  "metro": true,
+  "slug": "asheville",
+  "spots": 0
+ },
+ {
+  "name": "Ashland",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 42.2018,
+  "lng": -122.7128,
+  "metro": false,
+  "slug": "ashland",
+  "spots": 1
+ },
+ {
+  "name": "Aspen",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.1918,
+  "lng": -106.8168,
+  "metro": false,
+  "slug": "aspen",
+  "spots": 2
+ },
+ {
+  "name": "Athens",
+  "region": "Ohio",
+  "country": "US",
+  "lat": 39.3356,
+  "lng": -82.0758,
+  "metro": false,
+  "slug": "athens",
+  "spots": 1
+ },
+ {
+  "name": "Atlanta",
+  "region": "Georgia",
+  "country": "US",
+  "lat": 33.7545,
+  "lng": -84.3898,
+  "metro": true,
+  "slug": "atlanta",
+  "spots": 2
+ },
+ {
+  "name": "Atlantic Beach",
+  "region": "North Carolina",
+  "country": "US",
+  "lat": 34.6996,
+  "lng": -76.751,
+  "metro": false,
+  "slug": "atlantic-beach",
+  "spots": 1
+ },
+ {
+  "name": "Auburn",
+  "region": "Alabama",
+  "country": "US",
+  "lat": 32.6239,
+  "lng": -85.4421,
+  "metro": false,
+  "slug": "auburn",
+  "spots": 1
+ },
+ {
+  "name": "Austin",
+  "region": "Texas",
+  "country": "US",
+  "lat": 30.2649,
+  "lng": -97.7474,
+  "metro": true,
+  "slug": "austin",
+  "spots": 2
+ },
+ {
+  "name": "Bakersfield",
+  "region": "California",
+  "country": "US",
+  "lat": 35.379,
+  "lng": -119.0431,
+  "metro": false,
+  "slug": "bakersfield",
+  "spots": 1
+ },
+ {
+  "name": "Baltimore",
+  "region": "Maryland",
+  "country": "US",
+  "lat": 39.2909,
+  "lng": -76.6108,
+  "metro": true,
+  "slug": "baltimore",
+  "spots": 2
+ },
+ {
+  "name": "Bemidji",
+  "region": "Minnesota",
+  "country": "US",
+  "lat": 47.49,
+  "lng": -94.8973,
+  "metro": false,
+  "slug": "bemidji",
+  "spots": 1
+ },
+ {
+  "name": "Bend",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 44.0582,
+  "lng": -121.3153,
+  "metro": true,
+  "slug": "bend",
+  "spots": 1
+ },
+ {
+  "name": "Bethlehem",
+  "region": "Pennsylvania",
+  "country": "US",
+  "lat": 40.6124,
+  "lng": -75.3553,
+  "metro": false,
+  "slug": "bethlehem",
+  "spots": 1
+ },
+ {
+  "name": "Birmingham",
+  "region": "Alabama",
+  "country": "US",
+  "lat": 33.5207,
+  "lng": -86.8024,
+  "metro": true,
+  "slug": "birmingham",
+  "spots": 1
+ },
+ {
+  "name": "Boise",
+  "region": "Idaho",
+  "country": "US",
+  "lat": 43.6166,
+  "lng": -116.2009,
+  "metro": true,
+  "slug": "boise",
+  "spots": 2
+ },
+ {
+  "name": "Boston",
+  "region": "Massachusetts",
+  "country": "US",
+  "lat": 42.3588,
+  "lng": -71.0578,
+  "metro": true,
+  "slug": "boston",
+  "spots": 1
+ },
+ {
+  "name": "Breckenridge",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.4965,
+  "lng": -106.0478,
+  "metro": false,
+  "slug": "breckenridge",
+  "spots": 2
+ },
+ {
+  "name": "Bristol",
+  "region": "Connecticut",
+  "country": "US",
+  "lat": 41.6736,
+  "lng": -72.962,
+  "metro": false,
+  "slug": "bristol",
+  "spots": 1
+ },
+ {
+  "name": "Buffalo",
+  "region": "New York",
+  "country": "US",
+  "lat": 42.8864,
+  "lng": -78.8781,
+  "metro": true,
+  "slug": "buffalo",
+  "spots": 1
+ },
+ {
+  "name": "Burlington",
+  "region": "Vermont",
+  "country": "US",
+  "lat": 44.4762,
+  "lng": -73.2129,
+  "metro": true,
+  "slug": "burlington",
+  "spots": 2
+ },
+ {
+  "name": "Carbondale",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.3914,
+  "lng": -107.2034,
+  "metro": false,
+  "slug": "carbondale",
+  "spots": 2
+ },
+ {
+  "name": "Carlsbad",
+  "region": "California",
+  "country": "US",
+  "lat": 33.1183,
+  "lng": -117.2628,
+  "metro": false,
+  "slug": "carlsbad",
+  "spots": 6
+ },
+ {
+  "name": "Charleston",
+  "region": "South Carolina",
+  "country": "US",
+  "lat": 32.7884,
+  "lng": -79.9399,
+  "metro": true,
+  "slug": "charleston-south-carolina",
+  "spots": 0
+ },
+ {
+  "name": "Charleston",
+  "region": "West Virginia",
+  "country": "US",
+  "lat": 38.3567,
+  "lng": -81.6459,
+  "metro": false,
+  "slug": "charleston-west-virginia",
+  "spots": 1
+ },
+ {
+  "name": "Charlotte",
+  "region": "North Carolina",
+  "country": "US",
+  "lat": 35.2272,
+  "lng": -80.8431,
+  "metro": true,
+  "slug": "charlotte",
+  "spots": 1
+ },
+ {
+  "name": "Charlottesville",
+  "region": "Virginia",
+  "country": "US",
+  "lat": 38.045,
+  "lng": -78.4773,
+  "metro": false,
+  "slug": "charlottesville",
+  "spots": 1
+ },
+ {
+  "name": "Cherokee",
+  "region": "North Carolina",
+  "country": "US",
+  "lat": 35.4904,
+  "lng": -83.3118,
+  "metro": false,
+  "slug": "cherokee",
+  "spots": 1
+ },
+ {
+  "name": "Chicago",
+  "region": "Illinois",
+  "country": "US",
+  "lat": 41.8756,
+  "lng": -87.6244,
+  "metro": true,
+  "slug": "chicago",
+  "spots": 3
+ },
+ {
+  "name": "Chico",
+  "region": "California",
+  "country": "US",
+  "lat": 39.7259,
+  "lng": -121.8318,
+  "metro": false,
+  "slug": "chico",
+  "spots": 1
+ },
+ {
+  "name": "Cincinnati",
+  "region": "Ohio",
+  "country": "US",
+  "lat": 39.1013,
+  "lng": -84.5127,
+  "metro": true,
+  "slug": "cincinnati",
+  "spots": 2
+ },
+ {
+  "name": "Cleveland",
+  "region": "Ohio",
+  "country": "US",
+  "lat": 41.4997,
+  "lng": -81.6937,
+  "metro": true,
+  "slug": "cleveland",
+  "spots": 2
+ },
+ {
+  "name": "Columbus",
+  "region": "Ohio",
+  "country": "US",
+  "lat": 39.9623,
+  "lng": -83.0007,
+  "metro": true,
+  "slug": "columbus",
+  "spots": 0
+ },
+ {
+  "name": "Cullman",
+  "region": "Alabama",
+  "country": "US",
+  "lat": 34.1822,
+  "lng": -86.8449,
+  "metro": false,
+  "slug": "cullman",
+  "spots": 1
+ },
+ {
+  "name": "Dacula",
+  "region": "Georgia",
+  "country": "US",
+  "lat": 34.0695,
+  "lng": -83.9055,
+  "metro": false,
+  "slug": "dacula",
+  "spots": 3
+ },
+ {
+  "name": "Dallas",
+  "region": "Texas",
+  "country": "US",
+  "lat": 32.7763,
+  "lng": -96.7969,
+  "metro": true,
+  "slug": "dallas",
+  "spots": 0
+ },
+ {
+  "name": "Dardenne Prairie",
+  "region": "Missouri",
+  "country": "US",
+  "lat": 38.7689,
+  "lng": -90.7635,
+  "metro": false,
+  "slug": "dardenne-prairie",
+  "spots": 2
+ },
+ {
+  "name": "Dayton",
+  "region": "Ohio",
+  "country": "US",
+  "lat": 39.7518,
+  "lng": -84.1869,
+  "metro": false,
+  "slug": "dayton",
+  "spots": 3
+ },
+ {
+  "name": "Daytona Beach",
+  "region": "Florida",
+  "country": "US",
+  "lat": 29.199,
+  "lng": -81.0086,
+  "metro": false,
+  "slug": "daytona-beach",
+  "spots": 1
+ },
+ {
+  "name": "Denver",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.7392,
+  "lng": -104.9849,
+  "metro": true,
+  "slug": "denver",
+  "spots": 8
+ },
+ {
+  "name": "Des Moines",
+  "region": "Iowa",
+  "country": "US",
+  "lat": 41.5869,
+  "lng": -93.6249,
+  "metro": true,
+  "slug": "des-moines",
+  "spots": 1
+ },
+ {
+  "name": "Detroit",
+  "region": "Michigan",
+  "country": "US",
+  "lat": 42.3316,
+  "lng": -83.0466,
+  "metro": true,
+  "slug": "detroit",
+  "spots": 5
+ },
+ {
+  "name": "Duluth",
+  "region": "Minnesota",
+  "country": "US",
+  "lat": 46.7362,
+  "lng": -92.1753,
+  "metro": false,
+  "slug": "duluth",
+  "spots": 1
+ },
+ {
+  "name": "Eastsound",
+  "region": "Washington",
+  "country": "US",
+  "lat": 48.7023,
+  "lng": -122.8985,
+  "metro": false,
+  "slug": "eastsound",
+  "spots": 2
+ },
+ {
+  "name": "El Paso",
+  "region": "Texas",
+  "country": "US",
+  "lat": 31.7601,
+  "lng": -106.487,
+  "metro": true,
+  "slug": "el-paso",
+  "spots": 1
+ },
+ {
+  "name": "Eugene",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 44.0579,
+  "lng": -123.1009,
+  "metro": false,
+  "slug": "eugene",
+  "spots": 1
+ },
+ {
+  "name": "Evansville",
+  "region": "Indiana",
+  "country": "US",
+  "lat": 37.9616,
+  "lng": -87.5724,
+  "metro": false,
+  "slug": "evansville",
+  "spots": 1
+ },
+ {
+  "name": "Fayetteville",
+  "region": "West Virginia",
+  "country": "US",
+  "lat": 38.0567,
+  "lng": -81.0931,
+  "metro": false,
+  "slug": "fayetteville",
+  "spots": 1
+ },
+ {
+  "name": "Flagstaff",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 35.2059,
+  "lng": -111.6004,
+  "metro": false,
+  "slug": "flagstaff",
+  "spots": 2
+ },
+ {
+  "name": "Forks",
+  "region": "Washington",
+  "country": "US",
+  "lat": 47.9554,
+  "lng": -124.3833,
+  "metro": false,
+  "slug": "forks",
+  "spots": 1
+ },
+ {
+  "name": "Fort Collins",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 40.506,
+  "lng": -105.0599,
+  "metro": false,
+  "slug": "fort-collins",
+  "spots": 1
+ },
+ {
+  "name": "Fort Smith",
+  "region": "Arkansas",
+  "country": "US",
+  "lat": 35.3937,
+  "lng": -94.4291,
+  "metro": false,
+  "slug": "fort-smith",
+  "spots": 1
+ },
+ {
+  "name": "Fresno",
+  "region": "California",
+  "country": "US",
+  "lat": 36.7394,
+  "lng": -119.7848,
+  "metro": true,
+  "slug": "fresno",
+  "spots": 0
+ },
+ {
+  "name": "Front Royal",
+  "region": "Virginia",
+  "country": "US",
+  "lat": 38.9215,
+  "lng": -78.2059,
+  "metro": false,
+  "slug": "front-royal",
+  "spots": 1
+ },
+ {
+  "name": "Gainesville",
+  "region": "Florida",
+  "country": "US",
+  "lat": 29.7026,
+  "lng": -82.3858,
+  "metro": false,
+  "slug": "gainesville",
+  "spots": 1
+ },
+ {
+  "name": "Grand Junction",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.0851,
+  "lng": -108.5728,
+  "metro": false,
+  "slug": "grand-junction",
+  "spots": 1
+ },
+ {
+  "name": "Greenville",
+  "region": "South Carolina",
+  "country": "US",
+  "lat": 34.891,
+  "lng": -82.3747,
+  "metro": false,
+  "slug": "greenville",
+  "spots": 1
+ },
+ {
+  "name": "Hagerstown",
+  "region": "Maryland",
+  "country": "US",
+  "lat": 39.6446,
+  "lng": -77.7098,
+  "metro": false,
+  "slug": "hagerstown",
+  "spots": 1
+ },
+ {
+  "name": "Hemet",
+  "region": "California",
+  "country": "US",
+  "lat": 33.7506,
+  "lng": -116.9988,
+  "metro": false,
+  "slug": "hemet",
+  "spots": 1
+ },
+ {
+  "name": "Honolulu",
+  "region": "Hawaii",
+  "country": "US",
+  "lat": 21.3045,
+  "lng": -157.8557,
+  "metro": true,
+  "slug": "honolulu",
+  "spots": 0
+ },
+ {
+  "name": "Houma",
+  "region": "Louisiana",
+  "country": "US",
+  "lat": 29.5813,
+  "lng": -90.7243,
+  "metro": false,
+  "slug": "houma",
+  "spots": 1
+ },
+ {
+  "name": "Houston",
+  "region": "Texas",
+  "country": "US",
+  "lat": 29.7589,
+  "lng": -95.3677,
+  "metro": true,
+  "slug": "houston",
+  "spots": 1
+ },
+ {
+  "name": "Indianapolis",
+  "region": "Indiana",
+  "country": "US",
+  "lat": 39.7683,
+  "lng": -86.1584,
+  "metro": true,
+  "slug": "indianapolis",
+  "spots": 2
+ },
+ {
+  "name": "Jacksonville",
+  "region": "Florida",
+  "country": "US",
+  "lat": 30.3262,
+  "lng": -81.6579,
+  "metro": true,
+  "slug": "jacksonville",
+  "spots": 1
+ },
+ {
+  "name": "Joplin",
+  "region": "Missouri",
+  "country": "US",
+  "lat": 37.1098,
+  "lng": -94.5188,
+  "metro": false,
+  "slug": "joplin",
+  "spots": 1
+ },
+ {
+  "name": "Kailua-Kona",
+  "region": "Hawaii",
+  "country": "US",
+  "lat": 19.6444,
+  "lng": -156.0093,
+  "metro": false,
+  "slug": "kailua-kona",
+  "spots": 1
+ },
+ {
+  "name": "Kansas City",
+  "region": "Missouri",
+  "country": "US",
+  "lat": 39.1001,
+  "lng": -94.5781,
+  "metro": true,
+  "slug": "kansas-city",
+  "spots": 1
+ },
+ {
+  "name": "Knoxville",
+  "region": "Iowa",
+  "country": "US",
+  "lat": 41.3224,
+  "lng": -93.1105,
+  "metro": false,
+  "slug": "knoxville",
+  "spots": 1
+ },
+ {
+  "name": "Lake Forest",
+  "region": "California",
+  "country": "US",
+  "lat": 33.6708,
+  "lng": -117.6603,
+  "metro": false,
+  "slug": "lake-forest",
+  "spots": 2
+ },
+ {
+  "name": "Lansing",
+  "region": "Michigan",
+  "country": "US",
+  "lat": 42.7342,
+  "lng": -84.5041,
+  "metro": false,
+  "slug": "lansing",
+  "spots": 1
+ },
+ {
+  "name": "Las Vegas",
+  "region": "Nevada",
+  "country": "US",
+  "lat": 36.1674,
+  "lng": -115.1484,
+  "metro": true,
+  "slug": "las-vegas",
+  "spots": 6
+ },
+ {
+  "name": "Leavenworth",
+  "region": "Washington",
+  "country": "US",
+  "lat": 47.5885,
+  "lng": -120.6681,
+  "metro": false,
+  "slug": "leavenworth",
+  "spots": 1
+ },
+ {
+  "name": "Lexington",
+  "region": "Kentucky",
+  "country": "US",
+  "lat": 38.0058,
+  "lng": -84.4755,
+  "metro": false,
+  "slug": "lexington",
+  "spots": 2
+ },
+ {
+  "name": "Lincoln City",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 44.9824,
+  "lng": -124.0035,
+  "metro": false,
+  "slug": "lincoln-city",
+  "spots": 2
+ },
+ {
+  "name": "Little Rock",
+  "region": "Arkansas",
+  "country": "US",
+  "lat": 34.7431,
+  "lng": -92.3602,
+  "metro": false,
+  "slug": "little-rock",
+  "spots": 1
+ },
+ {
+  "name": "Loganville",
+  "region": "Georgia",
+  "country": "US",
+  "lat": 33.8856,
+  "lng": -83.9258,
+  "metro": false,
+  "slug": "loganville",
+  "spots": 3
+ },
+ {
+  "name": "Long Beach",
+  "region": "California",
+  "country": "US",
+  "lat": 33.769,
+  "lng": -118.1916,
+  "metro": true,
+  "slug": "long-beach",
+  "spots": 8
+ },
+ {
+  "name": "Long Branch",
+  "region": "New Jersey",
+  "country": "US",
+  "lat": 40.3199,
+  "lng": -73.978,
+  "metro": false,
+  "slug": "long-branch",
+  "spots": 3
+ },
+ {
+  "name": "Los Angeles",
+  "region": "California",
+  "country": "US",
+  "lat": 34.0537,
+  "lng": -118.2428,
+  "metro": true,
+  "slug": "los-angeles",
+  "spots": 10
+ },
+ {
+  "name": "Louisville",
+  "region": "Kentucky",
+  "country": "US",
+  "lat": 38.2542,
+  "lng": -85.7594,
+  "metro": true,
+  "slug": "louisville",
+  "spots": 1
+ },
+ {
+  "name": "Macon",
+  "region": "Georgia",
+  "country": "US",
+  "lat": 32.8315,
+  "lng": -83.6143,
+  "metro": false,
+  "slug": "macon",
+  "spots": 1
+ },
+ {
+  "name": "Madison",
+  "region": "Wisconsin",
+  "country": "US",
+  "lat": 43.0747,
+  "lng": -89.3842,
+  "metro": true,
+  "slug": "madison",
+  "spots": 1
+ },
+ {
+  "name": "Mammoth Lakes",
+  "region": "California",
+  "country": "US",
+  "lat": 37.6403,
+  "lng": -118.9492,
+  "metro": false,
+  "slug": "mammoth-lakes",
+  "spots": 1
+ },
+ {
+  "name": "Marquette",
+  "region": "Michigan",
+  "country": "US",
+  "lat": 46.5569,
+  "lng": -87.3889,
+  "metro": false,
+  "slug": "marquette",
+  "spots": 1
+ },
+ {
+  "name": "Memphis",
+  "region": "Tennessee",
+  "country": "US",
+  "lat": 35.146,
+  "lng": -90.0518,
+  "metro": true,
+  "slug": "memphis",
+  "spots": 1
+ },
+ {
+  "name": "Mesa",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 33.3268,
+  "lng": -111.6309,
+  "metro": false,
+  "slug": "mesa",
+  "spots": 3
+ },
+ {
+  "name": "Miami",
+  "region": "Florida",
+  "country": "US",
+  "lat": 25.7742,
+  "lng": -80.1936,
+  "metro": true,
+  "slug": "miami",
+  "spots": 1
+ },
+ {
+  "name": "Milwaukee",
+  "region": "Wisconsin",
+  "country": "US",
+  "lat": 43.0386,
+  "lng": -87.9091,
+  "metro": true,
+  "slug": "milwaukee",
+  "spots": 3
+ },
+ {
+  "name": "Minneapolis",
+  "region": "Minnesota",
+  "country": "US",
+  "lat": 44.9773,
+  "lng": -93.2655,
+  "metro": true,
+  "slug": "minneapolis",
+  "spots": 2
+ },
+ {
+  "name": "Montauk",
+  "region": "New York",
+  "country": "US",
+  "lat": 41.038,
+  "lng": -71.9429,
+  "metro": false,
+  "slug": "montauk",
+  "spots": 1
+ },
+ {
+  "name": "Montrose",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 38.4649,
+  "lng": -107.8782,
+  "metro": false,
+  "slug": "montrose",
+  "spots": 1
+ },
+ {
+  "name": "Mooresville",
+  "region": "North Carolina",
+  "country": "US",
+  "lat": 35.5927,
+  "lng": -80.8167,
+  "metro": false,
+  "slug": "mooresville",
+  "spots": 1
+ },
+ {
+  "name": "Nashua",
+  "region": "New Hampshire",
+  "country": "US",
+  "lat": 42.7482,
+  "lng": -71.5054,
+  "metro": false,
+  "slug": "nashua",
+  "spots": 1
+ },
+ {
+  "name": "Nashville",
+  "region": "Tennessee",
+  "country": "US",
+  "lat": 36.1623,
+  "lng": -86.7743,
+  "metro": true,
+  "slug": "nashville",
+  "spots": 1
+ },
+ {
+  "name": "New Orleans",
+  "region": "Louisiana",
+  "country": "US",
+  "lat": 29.9575,
+  "lng": -90.0629,
+  "metro": true,
+  "slug": "new-orleans",
+  "spots": 1
+ },
+ {
+  "name": "New York",
+  "region": "New York",
+  "country": "US",
+  "lat": 40.7127,
+  "lng": -74.006,
+  "metro": true,
+  "slug": "new-york",
+  "spots": 10
+ },
+ {
+  "name": "Newark",
+  "region": "Ohio",
+  "country": "US",
+  "lat": 40.0621,
+  "lng": -82.3953,
+  "metro": false,
+  "slug": "newark",
+  "spots": 1
+ },
+ {
+  "name": "North Adams",
+  "region": "Massachusetts",
+  "country": "US",
+  "lat": 42.6915,
+  "lng": -73.1138,
+  "metro": false,
+  "slug": "north-adams",
+  "spots": 1
+ },
+ {
+  "name": "Oakland",
+  "region": "California",
+  "country": "US",
+  "lat": 37.8045,
+  "lng": -122.2714,
+  "metro": true,
+  "slug": "oakland",
+  "spots": 8
+ },
+ {
+  "name": "Ocean City",
+  "region": "Maryland",
+  "country": "US",
+  "lat": 38.3356,
+  "lng": -75.0864,
+  "metro": false,
+  "slug": "ocean-city-maryland",
+  "spots": 1
+ },
+ {
+  "name": "Ocean City",
+  "region": "New Jersey",
+  "country": "US",
+  "lat": 39.2832,
+  "lng": -74.5715,
+  "metro": false,
+  "slug": "ocean-city-new-jersey",
+  "spots": 1
+ },
+ {
+  "name": "Oklahoma City",
+  "region": "Oklahoma",
+  "country": "US",
+  "lat": 35.473,
+  "lng": -97.5171,
+  "metro": true,
+  "slug": "oklahoma-city",
+  "spots": 0
+ },
+ {
+  "name": "Omaha",
+  "region": "Nebraska",
+  "country": "US",
+  "lat": 41.2587,
+  "lng": -95.9384,
+  "metro": true,
+  "slug": "omaha",
+  "spots": 0
+ },
+ {
+  "name": "Orlando",
+  "region": "Florida",
+  "country": "US",
+  "lat": 28.5421,
+  "lng": -81.379,
+  "metro": true,
+  "slug": "orlando",
+  "spots": 0
+ },
+ {
+  "name": "Pacific City",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 45.215,
+  "lng": -123.9662,
+  "metro": false,
+  "slug": "pacific-city",
+  "spots": 2
+ },
+ {
+  "name": "Paris",
+  "region": "Texas",
+  "country": "US",
+  "lat": 33.6427,
+  "lng": -95.5236,
+  "metro": false,
+  "slug": "paris",
+  "spots": 1
+ },
+ {
+  "name": "Parkersburg",
+  "region": "West Virginia",
+  "country": "US",
+  "lat": 39.2591,
+  "lng": -81.5542,
+  "metro": false,
+  "slug": "parkersburg",
+  "spots": 1
+ },
+ {
+  "name": "Pensacola",
+  "region": "Florida",
+  "country": "US",
+  "lat": 30.4199,
+  "lng": -87.2128,
+  "metro": false,
+  "slug": "pensacola",
+  "spots": 1
+ },
+ {
+  "name": "Philadelphia",
+  "region": "Pennsylvania",
+  "country": "US",
+  "lat": 39.9527,
+  "lng": -75.1635,
+  "metro": true,
+  "slug": "philadelphia",
+  "spots": 2
+ },
+ {
+  "name": "Phoenix",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 33.4484,
+  "lng": -112.0741,
+  "metro": true,
+  "slug": "phoenix",
+  "spots": 7
+ },
+ {
+  "name": "Pittsburgh",
+  "region": "Pennsylvania",
+  "country": "US",
+  "lat": 40.4407,
+  "lng": -80.0026,
+  "metro": true,
+  "slug": "pittsburgh",
+  "spots": 1
+ },
+ {
+  "name": "Pompano Beach",
+  "region": "Florida",
+  "country": "US",
+  "lat": 26.2391,
+  "lng": -80.107,
+  "metro": false,
+  "slug": "pompano-beach",
+  "spots": 1
+ },
+ {
+  "name": "Portland",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 45.5202,
+  "lng": -122.6742,
+  "metro": true,
+  "slug": "portland-oregon",
+  "spots": 7
+ },
+ {
+  "name": "Portland",
+  "region": "Maine",
+  "country": "US",
+  "lat": 43.6581,
+  "lng": -70.2845,
+  "metro": false,
+  "slug": "portland-maine",
+  "spots": 1
+ },
+ {
+  "name": "Portsmouth",
+  "region": "New Hampshire",
+  "country": "US",
+  "lat": 43.0576,
+  "lng": -70.7873,
+  "metro": false,
+  "slug": "portsmouth",
+  "spots": 2
+ },
+ {
+  "name": "Prineville",
+  "region": "Oregon",
+  "country": "US",
+  "lat": 44.3043,
+  "lng": -120.8357,
+  "metro": false,
+  "slug": "prineville",
+  "spots": 1
+ },
+ {
+  "name": "Providence",
+  "region": "Rhode Island",
+  "country": "US",
+  "lat": 41.824,
+  "lng": -71.4128,
+  "metro": true,
+  "slug": "providence",
+  "spots": 1
+ },
+ {
+  "name": "Raleigh",
+  "region": "North Carolina",
+  "country": "US",
+  "lat": 35.7804,
+  "lng": -78.6391,
+  "metro": true,
+  "slug": "raleigh",
+  "spots": 2
+ },
+ {
+  "name": "Reno",
+  "region": "Nevada",
+  "country": "US",
+  "lat": 39.5262,
+  "lng": -119.8127,
+  "metro": true,
+  "slug": "reno",
+  "spots": 1
+ },
+ {
+  "name": "Richmond",
+  "region": "Virginia",
+  "country": "US",
+  "lat": 37.5385,
+  "lng": -77.4343,
+  "metro": true,
+  "slug": "richmond",
+  "spots": 1
+ },
+ {
+  "name": "Rochester",
+  "region": "New Hampshire",
+  "country": "US",
+  "lat": 43.3101,
+  "lng": -70.9745,
+  "metro": false,
+  "slug": "rochester-new-hampshire",
+  "spots": 2
+ },
+ {
+  "name": "Rochester",
+  "region": "New York",
+  "country": "US",
+  "lat": 43.1516,
+  "lng": -77.6079,
+  "metro": false,
+  "slug": "rochester-new-york",
+  "spots": 1
+ },
+ {
+  "name": "Sacramento",
+  "region": "California",
+  "country": "US",
+  "lat": 38.5811,
+  "lng": -121.4939,
+  "metro": true,
+  "slug": "sacramento",
+  "spots": 1
+ },
+ {
+  "name": "Salt Lake City",
+  "region": "Utah",
+  "country": "US",
+  "lat": 40.7596,
+  "lng": -111.8868,
+  "metro": true,
+  "slug": "salt-lake-city",
+  "spots": 0
+ },
+ {
+  "name": "San Antonio",
+  "region": "Texas",
+  "country": "US",
+  "lat": 29.4246,
+  "lng": -98.4951,
+  "metro": true,
+  "slug": "san-antonio",
+  "spots": 0
+ },
+ {
+  "name": "San Clemente",
+  "region": "California",
+  "country": "US",
+  "lat": 33.4453,
+  "lng": -117.5847,
+  "metro": false,
+  "slug": "san-clemente",
+  "spots": 3
+ },
+ {
+  "name": "San Diego",
+  "region": "California",
+  "country": "US",
+  "lat": 32.7157,
+  "lng": -117.1638,
+  "metro": true,
+  "slug": "san-diego",
+  "spots": 9
+ },
+ {
+  "name": "San Francisco",
+  "region": "California",
+  "country": "US",
+  "lat": 37.7879,
+  "lng": -122.4075,
+  "metro": true,
+  "slug": "san-francisco",
+  "spots": 8
+ },
+ {
+  "name": "San Jose",
+  "region": "California",
+  "country": "US",
+  "lat": 37.3362,
+  "lng": -121.8906,
+  "metro": true,
+  "slug": "san-jose",
+  "spots": 1
+ },
+ {
+  "name": "Sandwich",
+  "region": "Massachusetts",
+  "country": "US",
+  "lat": 41.6993,
+  "lng": -70.4857,
+  "metro": false,
+  "slug": "sandwich",
+  "spots": 1
+ },
+ {
+  "name": "Santa Barbara",
+  "region": "California",
+  "country": "US",
+  "lat": 34.4133,
+  "lng": -119.6874,
+  "metro": false,
+  "slug": "santa-barbara",
+  "spots": 1
+ },
+ {
+  "name": "Santa Cruz",
+  "region": "California",
+  "country": "US",
+  "lat": 37.0501,
+  "lng": -121.9906,
+  "metro": true,
+  "slug": "santa-cruz",
+  "spots": 3
+ },
+ {
+  "name": "Savannah",
+  "region": "Georgia",
+  "country": "US",
+  "lat": 32.079,
+  "lng": -81.0921,
+  "metro": true,
+  "slug": "savannah",
+  "spots": 1
+ },
+ {
+  "name": "Seattle",
+  "region": "Washington",
+  "country": "US",
+  "lat": 47.6038,
+  "lng": -122.3301,
+  "metro": true,
+  "slug": "seattle",
+  "spots": 9
+ },
+ {
+  "name": "Sedona",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 34.8699,
+  "lng": -111.7853,
+  "metro": false,
+  "slug": "sedona",
+  "spots": 2
+ },
+ {
+  "name": "South Kingstown",
+  "region": "Rhode Island",
+  "country": "US",
+  "lat": 41.4463,
+  "lng": -71.4872,
+  "metro": false,
+  "slug": "south-kingstown",
+  "spots": 2
+ },
+ {
+  "name": "Spokane",
+  "region": "Washington",
+  "country": "US",
+  "lat": 47.6572,
+  "lng": -117.4235,
+  "metro": true,
+  "slug": "spokane",
+  "spots": 2
+ },
+ {
+  "name": "Springdale",
+  "region": "Arkansas",
+  "country": "US",
+  "lat": 36.1869,
+  "lng": -94.1194,
+  "metro": false,
+  "slug": "springdale",
+  "spots": 1
+ },
+ {
+  "name": "Springfield",
+  "region": "Illinois",
+  "country": "US",
+  "lat": 39.781,
+  "lng": -89.6452,
+  "metro": false,
+  "slug": "springfield-illinois",
+  "spots": 1
+ },
+ {
+  "name": "Springfield",
+  "region": "Tennessee",
+  "country": "US",
+  "lat": 36.5155,
+  "lng": -86.8884,
+  "metro": false,
+  "slug": "springfield-tennessee",
+  "spots": 1
+ },
+ {
+  "name": "St. Louis",
+  "region": "Missouri",
+  "country": "US",
+  "lat": 38.6254,
+  "lng": -90.19,
+  "metro": true,
+  "slug": "st-louis",
+  "spots": 0
+ },
+ {
+  "name": "Stamford",
+  "region": "Connecticut",
+  "country": "US",
+  "lat": 41.0632,
+  "lng": -73.546,
+  "metro": false,
+  "slug": "stamford",
+  "spots": 1
+ },
+ {
+  "name": "Tampa",
+  "region": "Florida",
+  "country": "US",
+  "lat": 27.945,
+  "lng": -82.4583,
+  "metro": true,
+  "slug": "tampa",
+  "spots": 2
+ },
+ {
+  "name": "Terre Haute",
+  "region": "Indiana",
+  "country": "US",
+  "lat": 39.3394,
+  "lng": -87.3575,
+  "metro": false,
+  "slug": "terre-haute",
+  "spots": 1
+ },
+ {
+  "name": "Toms River",
+  "region": "New Jersey",
+  "country": "US",
+  "lat": 39.9888,
+  "lng": -74.1844,
+  "metro": false,
+  "slug": "toms-river",
+  "spots": 1
+ },
+ {
+  "name": "Trinidad",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 37.1592,
+  "lng": -104.506,
+  "metro": false,
+  "slug": "trinidad",
+  "spots": 1
+ },
+ {
+  "name": "Tucson",
+  "region": "Arizona",
+  "country": "US",
+  "lat": 32.2229,
+  "lng": -110.9748,
+  "metro": true,
+  "slug": "tucson",
+  "spots": 0
+ },
+ {
+  "name": "Tulsa",
+  "region": "Oklahoma",
+  "country": "US",
+  "lat": 36.1563,
+  "lng": -95.9928,
+  "metro": true,
+  "slug": "tulsa",
+  "spots": 0
+ },
+ {
+  "name": "Vail",
+  "region": "Colorado",
+  "country": "US",
+  "lat": 39.6447,
+  "lng": -106.386,
+  "metro": false,
+  "slug": "vail",
+  "spots": 2
+ },
+ {
+  "name": "Virginia Beach",
+  "region": "Virginia",
+  "country": "US",
+  "lat": 36.8305,
+  "lng": -76.1205,
+  "metro": false,
+  "slug": "virginia-beach",
+  "spots": 1
+ },
+ {
+  "name": "Visalia",
+  "region": "California",
+  "country": "US",
+  "lat": 36.3327,
+  "lng": -119.3034,
+  "metro": false,
+  "slug": "visalia",
+  "spots": 1
+ },
+ {
+  "name": "Washington",
+  "region": "District of Columbia",
+  "country": "US",
+  "lat": 38.8951,
+  "lng": -77.0364,
+  "metro": true,
+  "slug": "washington",
+  "spots": 4
+ },
+ {
+  "name": "Waterloo",
+  "region": "Iowa",
+  "country": "US",
+  "lat": 42.5068,
+  "lng": -92.3479,
+  "metro": false,
+  "slug": "waterloo",
+  "spots": 1
+ },
+ {
+  "name": "Wheeling",
+  "region": "West Virginia",
+  "country": "US",
+  "lat": 40.0486,
+  "lng": -80.6666,
+  "metro": false,
+  "slug": "wheeling",
+  "spots": 1
+ },
+ {
+  "name": "Woodward",
+  "region": "Pennsylvania",
+  "country": "US",
+  "lat": 40.9,
+  "lng": -77.3667,
+  "metro": false,
+  "slug": "woodward",
+  "spots": 1
+ }
+]

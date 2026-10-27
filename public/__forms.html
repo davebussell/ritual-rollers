@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- Netlify Forms: Netlify reads this file at deploy time to register the forms the app posts to.
+     The site's pages are rendered by Next.js, so the forms can't be detected there. Submissions go to
+     Netlify -> Forms and are emailed to the site owner. Keep the field names in step with
+     components/CrewForm.tsx and components/ReportLink.tsx. -->
+<html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Forms</title></head>
+<body>
+  <form name="crew" data-netlify="true" netlify-honeypot="company" hidden>
+    <input name="company"><input name="update"><input name="name"><input name="city"><input name="link">
+    <input name="rides"><input name="who"><input name="meets"><textarea name="about"></textarea><input name="email">
+  </form>
+  <form name="report" data-netlify="true" netlify-honeypot="company" hidden>
+    <input name="company"><input name="what"><input name="url"><textarea name="reason"></textarea>
+  </form>
+</body></html>

@@ -1,12 +1,11 @@
 // The featured spot index: well-known skateparks, plazas, DIYs, street spots, pump tracks, bike
 // parks and BMX tracks across Canada, the US and Mexico, each researched with a source.
 // Data lives in data/spots.json (built by scripts/build-spots.mjs); this module is the shape of an
-// entry plus the browse filters and the finder's matching logic.
+// entry plus lookups and the browse filters.
 
 import raw from '@/data/spots.json'
 import { haversineKm } from '@/lib/geo'
-import { KIND_META, KIND_GROUPS, styleFit, type Kind, type Style } from '@/lib/sports'
-import type { Surface, SpotTraits } from '@/lib/skate'
+import { KIND_META, KIND_GROUPS, styleFit, type Kind, type Style, type Surface } from '@/lib/sports'
 
 export type Country = 'US' | 'CA' | 'MX'
 export type Skill = 'beginner' | 'intermediate' | 'advanced' | 'all'
@@ -38,10 +37,6 @@ export interface IndexedSpot {
 export const SPOTS: IndexedSpot[] = (raw as unknown as IndexedSpot[]).filter(s => KIND_META[s.kind])
 
 export const COUNTRY_LABEL: Record<Country, string> = { US: 'United States', CA: 'Canada', MX: 'Mexico' }
-
-export function traitsOf(spot: Pick<IndexedSpot, 'indoor' | 'lit' | 'surface'>): SpotTraits {
-  return { indoor: spot.indoor, lit: spot.lit, surface: spot.indoor ? 'hard' : spot.surface }
-}
 
 // Broad regions a rider thinks in, grouped from states/provinces
 export const TRAVEL_REGIONS: { id: string; label: string; regions: string[] }[] = [
@@ -111,65 +106,6 @@ export function filterSpots(f: SpotFilters): IndexedSpot[] {
     (!f.ride || s.disciplines.includes(f.ride)) &&
     (!f.indoor || s.indoor)
   ).sort((a, b) => a.name.localeCompare(b.name))
-}
-
-// ── The finder ───────────────────────────────────────────────────────
-// A few answers in, a ranked shortlist out, with the reasons spelled out.
-
-export interface FinderAnswers {
-  ride?: string | null                     // discipline id
-  style?: Style | null
-  skill?: Exclude<Skill, 'all'> | null
-  travelRegion?: string | null
-  near?: { lat: number; lng: number; label: string; radiusKm: number } | null
-  indoor?: boolean
-}
-
-export interface FinderMatch {
-  spot: IndexedSpot
-  score: number
-  reasons: string[]
-  distanceKm: number | null
-}
-
-export function findSpots(a: FinderAnswers, limit = 12): FinderMatch[] {
-  const matches: FinderMatch[] = []
-  for (const spot of SPOTS) {
-    if (a.ride && !spot.disciplines.includes(a.ride)) continue
-    if (a.indoor && !spot.indoor) continue
-    let score = 10
-    const reasons: string[] = [`${KIND_META[spot.kind].label} · ${spot.city}`]
-
-    if (a.style && a.style !== 'any') {
-      if (styleFit(spot.features, spot.kind, a.style)) { score += 6; reasons.push(a.style === 'dirt' ? 'dirt and pump' : a.style === 'tranny' ? 'transition' : 'street') }
-      else score -= 6
-    }
-
-    if (a.skill) {
-      if (spot.skill === 'all' || spot.skill === a.skill) { score += 3; reasons.push(spot.skill === 'all' ? 'suits every level' : `suits ${a.skill}s`) }
-      else if (a.skill === 'beginner' && spot.skill === 'advanced') score -= 6
-      else if (a.skill === 'advanced' && spot.skill === 'beginner') score -= 2
-    }
-
-    let distanceKm: number | null = null
-    if (a.near) {
-      distanceKm = haversineKm(a.near.lat, a.near.lng, spot.lat, spot.lng)
-      if (distanceKm <= a.near.radiusKm) { score += 8 - Math.min(6, distanceKm / (a.near.radiusKm / 6)); reasons.push(`${Math.round(distanceKm)} km from ${a.near.label}`) }
-      else if (distanceKm <= a.near.radiusKm * 2) { score += 1; reasons.push(`${Math.round(distanceKm)} km — a longer haul`) }
-      else score -= 8
-    } else if (a.travelRegion) {
-      if (travelRegionOf(spot) === a.travelRegion) { score += 5; reasons.push(TRAVEL_REGIONS.find(t => t.id === a.travelRegion)?.label ?? '') }
-      else score -= 4
-    }
-
-    if (spot.indoor) reasons.push('indoor')
-    if (spot.confidence === 'high') score += 1
-    matches.push({ spot, score, reasons: reasons.filter(Boolean), distanceKm })
-  }
-
-  return matches
-    .sort((x, y) => y.score - x.score || (x.distanceKm ?? 0) - (y.distanceKm ?? 0) || x.spot.name.localeCompare(y.spot.name))
-    .slice(0, limit)
 }
 
 export const NA_COUNTRIES = new Set<string>(['US', 'CA', 'MX'])
