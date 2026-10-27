@@ -21,7 +21,8 @@ inside bike parks, pump tracks and BMX tracks only (trail maps and the 3D ride, 
 - The 3D ride must say what's generated (trees; rollers, berms and start hills on tracks) and credit OpenStreetMap and
   the elevation tiles. Keep `lib/ride/physics.ts` pure and tested.
 - People rules (Dave, 2026-10-27): accounts 16+ (anyone can browse); contact is public sessions only, no private
-  messages; riders show their city and chosen spots, never where they live; rider pages are noindex.
+  messages; riders show their city and chosen spots, never where they live; rider pages are noindex. Friends (request
+  and accept) see each other's "I'll be here" plans by name; everyone else sees only a count (migration 005).
 - Wheel picker (Dave, 2026-10-27): Board / Skates / Bike in the header; the whole site filters to the pick (cookie
   `rr_wheel`, see README). New features must respect it: filter by `fits()` / `parkFits()` from `lib/wheels.ts`.
 - Samples (`lib/sample.ts`) are always tagged Sample and give way to real entries. Crews must be real groups with a
@@ -31,7 +32,8 @@ inside bike parks, pump tracks and BMX tracks only (trail maps and the 3D ride, 
 - Project `ritual-rollers` (`d7f5ed8e-0d7b-45cd-94b8-a452981b7044`). Linked to this repo, production branch `main`
   (allowed branches: main only), build `npm run build`, publish `.next`. Pull requests get deploy previews.
 - Supabase project `jzswsyvilydebcmtsnsq` (org Clickshift, free plan): accounts and rider profiles, sessions, I'm in,
-  comments (`supabase/migrations/004_riders_and_sessions.sql`; Dave runs migrations in the SQL editor, Claude may not).
+  comments (`supabase/migrations/004_riders_and_sessions.sql`), friends and plans (`005_friends_and_plans.sql`, after 004).
+  Dave runs migrations in the SQL editor; Claude may not.
   The old trips/photos/follows tables are left in place, unused. Drafts 002 and 003 were retired unapplied.
 - Netlify Forms: `crew` (/crews/add) and `report` (session and profile report links), declared in `public/__forms.html`
   because Next renders the pages. Both should email dave@clickshift.ca (check the form notifications in Netlify).

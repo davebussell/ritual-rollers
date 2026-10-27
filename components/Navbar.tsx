@@ -19,6 +19,7 @@ const LINKS = [
 
 export default function Navbar({ wheel }: { wheel: WheelValue | null }) {
   const [user, setUser] = useState<SupaUser | null>(null)
+  const [requests, setRequests] = useState(0)
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
@@ -27,6 +28,11 @@ export default function Navbar({ wheel }: { wheel: WheelValue | null }) {
     const load = (u: SupaUser | null) => {
       const anon = !!(u as (SupaUser & { is_anonymous?: boolean }) | null)?.is_anonymous
       setUser(anon ? null : u)
+      // friend requests waiting (a plain read: it errors quietly until friends are switched on)
+      if (u && !anon) {
+        supabase.from('friendships').select('requester_id').eq('addressee_id', u.id).eq('status', 'pending').limit(20)
+          .then(({ data, error }) => setRequests(error ? 0 : data?.length ?? 0))
+      } else setRequests(0)
     }
     supabase.auth.getUser().then(({ data }) => load(data.user))
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => load(session?.user ?? null))
@@ -65,10 +71,12 @@ export default function Navbar({ wheel }: { wheel: WheelValue | null }) {
           <Link href={user ? '/me' : '/auth/login'}
             className="hidden rounded-full px-3 py-2 text-[15px] font-semibold text-flyer/75 transition-colors hover:text-flyer md:inline-flex">
             {user ? 'Your profile' : 'Sign in'}
+            {requests > 0 && <span className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-fire px-1 text-[12px] font-bold text-flyer" aria-label={`${requests} friend request${requests === 1 ? '' : 's'}`}>{requests}</span>}
           </Link>
           <button type="button" onClick={() => setOpen(o => !o)} aria-expanded={open} aria-controls="phone-menu"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full text-flyer hover:bg-flyer/10 md:hidden">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {!open && requests > 0 && <span className="absolute ml-5 -mt-5 h-2.5 w-2.5 rounded-full bg-fire" aria-hidden="true" />}
             <span className="sr-only">{open ? 'Close menu' : 'Open menu'}</span>
           </button>
         </div>
@@ -83,7 +91,7 @@ export default function Navbar({ wheel }: { wheel: WheelValue | null }) {
                   className={`block py-3 font-display text-xl font-semibold ${current(l.href) ? 'text-curb' : 'text-flyer'}`}>{l.label}</Link>
               </li>
             ))}
-            <li><Link href={user ? '/me' : '/auth/login'} className="block py-3 text-lg font-semibold text-flyer/80">{user ? 'Your profile' : 'Sign in'}</Link></li>
+            <li><Link href={user ? '/me' : '/auth/login'} className="block py-3 text-lg font-semibold text-flyer/80">{user ? 'Your profile' : 'Sign in'}{requests > 0 ? ` (${requests} friend request${requests === 1 ? '' : 's'})` : ''}</Link></li>
           </ul>
           <div className="mt-3"><WheelPicker current={wheel} onDark={false} wide /></div>
           <Link href="/sessions/new" className="btn btn-curb mt-3 w-full">Post a session</Link>
