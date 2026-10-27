@@ -1,5 +1,5 @@
 // Build data/events.json and data/athletes.json from research (research/events/events.json, riders.json; brief in
-// research/events/BRIEF.md). Checks every result has a source link, every rider is tied to at least one sourced
+// research/events/BRIEF.md). A rider's home is kept to the region (anything in brackets is dropped). Checks every result has a source link, every rider is tied to at least one sourced
 // result, links are http(s), and places sit in their country. Prints what it drops.
 //   node scripts/build-events.mjs
 
@@ -53,7 +53,7 @@ for (const a of JSON.parse(readFileSync('research/events/riders.json', 'utf8')))
   if (!BOX[country]) { fail('no country'); continue }
   const lat = Number(a.lat), lng = Number(a.lng)
   athletes.push({
-    slug: a.slug ? slugify(a.slug) : slugify(a.name), name: clean(a.name), disciplines, home: clean(a.home), country,
+    slug: a.slug ? slugify(a.slug) : slugify(a.name), name: clean(a.name), disciplines, home: clean(String(a.home ?? '').replace(/\s*\(.*\)\s*/g, ' ')), country,
     ...(Number.isFinite(lat) && Number.isFinite(lng) ? { lat: +lat.toFixed(4), lng: +lng.toFixed(4), hub: hubOf({ lat, lng }) } : {}),
     about: clean(a.about), results, links: links(a.links), sources: (a.sources ?? []).filter(isUrl),
   })

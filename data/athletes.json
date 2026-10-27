@@ -1,1 +1,1164 @@
-{"built":"","count":0,"athletes":[]}
+{
+ "built": "2026-10-27T21:48:22.106Z",
+ "count": 22,
+ "athletes": [
+  {
+   "slug": "kolby-parks",
+   "name": "Kolby Parks",
+   "disciplines": [
+    "street-luge"
+   ],
+   "home": "Prince Edward County, Ontario",
+   "country": "CA",
+   "lat": 44,
+   "lng": -77.2,
+   "hub": "kingston",
+   "about": "A street and classic luge racer from Prince Edward County who brought IGSA-sanctioned racing to Picton's Pitt Street hill in 2010 and has since raced on four continents. He was the 2018 IDF World Series street luge champion and won the opening round of the 2024 World Cup in Erzincan.",
+   "results": [
+    {
+     "year": 2025,
+     "event": "WDSC world tour (season standings)",
+     "event_slug": null,
+     "class": "Open street luge",
+     "place": 3,
+     "source": "https://www.trillertv.com/video/wdsc-season-review-2025-highlights-2/2pizi/"
+    },
+    {
+     "year": 2024,
+     "event": "World Cup round 1, Erzincan (Türkiye)",
+     "event_slug": null,
+     "class": "Street luge",
+     "place": 1,
+     "source": "https://pictongazette.ca/post/on-course-for-another-world-cup"
+    },
+    {
+     "year": 2019,
+     "event": "Killington World Cup",
+     "event_slug": "killington-downhill-world-cup",
+     "class": "Luge",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/killington-kolby-parks-wins-luge-and-top-skate-racers-prepare-for-a-knife-fight/"
+    },
+    {
+     "year": 2019,
+     "event": "IDF world rankings (season)",
+     "event_slug": null,
+     "class": "Luge",
+     "place": 2,
+     "source": "https://internationaldownhillfederation.org/races/"
+    },
+    {
+     "year": 2019,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Open street luge",
+     "place": 3,
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2018,
+     "event": "IDF World Series (season)",
+     "event_slug": null,
+     "class": "Street luge",
+     "place": 1,
+     "source": "https://en.wikipedia.org/wiki/Street_luge"
+    },
+    {
+     "year": 2016,
+     "event": "Whistler Longboard Festival (IDF World Cup)",
+     "event_slug": "whistler-longboard-festival",
+     "class": "Luge",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+    },
+    {
+     "year": 2016,
+     "event": "L'Ultime Descente, Les Éboulements",
+     "event_slug": "ultime-descente-les-eboulements",
+     "class": "Street luge (speed trial)",
+     "place": 2,
+     "source": "https://wellingtontimes.ca/?p=20539"
+    },
+    {
+     "year": 2012,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Street luge",
+     "place": 2,
+     "source": "https://www.countylive.ca/?p=30318"
+    },
+    {
+     "year": 2011,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Street luge",
+     "place": 2,
+     "source": "https://www.countylive.ca/?p=17766"
+    },
+    {
+     "year": 2010,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Classic luge",
+     "place": 2,
+     "source": "https://www.countylive.ca/?p=7334"
+    },
+    {
+     "year": 2010,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Street luge",
+     "place": 4,
+     "source": "https://www.countylive.ca/?p=7334"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://www.countylive.ca/?p=7334",
+    "https://www.countylive.ca/?p=17766",
+    "https://www.countylive.ca/?p=30318",
+    "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/",
+    "https://wellingtontimes.ca/?p=20539",
+    "https://en.wikipedia.org/wiki/Street_luge",
+    "https://internationaldownhillfederation.org/2019/killington-kolby-parks-wins-luge-and-top-skate-racers-prepare-for-a-knife-fight/",
+    "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/",
+    "https://internationaldownhillfederation.org/races/",
+    "https://pictongazette.ca/post/on-course-for-another-world-cup",
+    "https://www.trillertv.com/video/wdsc-season-review-2025-highlights-2/2pizi/",
+    "https://pictongazette.ca/post/world-street-luge-champ-celebrates-in-wellington",
+    "https://www.countylive.ca/countys-world-street-luge-champion-says-its-about-more-than-just-speed/",
+    "https://www.countylive.ca/pec-gravity-fest-world-class/"
+   ]
+  },
+  {
+   "slug": "ryan-farmer",
+   "name": "Ryan Farmer",
+   "disciplines": [
+    "street-luge"
+   ],
+   "home": "Ferndale, Humboldt County, California",
+   "country": "US",
+   "lat": 40.5762,
+   "lng": -124.2639,
+   "hub": null,
+   "about": "A street luger from California's North Coast and a member of the U.S. downhill team, with a personal best of about 85 mph. He won the IDF street luge title in 2017 and the World Skate Games street luge title in Argentina in 2022, and is a regular on the Maryhill podium.",
+   "results": [
+    {
+     "year": 2024,
+     "event": "World Skate Games, Tortoreto (Italy)",
+     "event_slug": null,
+     "class": "Open street luge",
+     "place": 2,
+     "source": "https://www.worldskate.org/downhill/news-downhill/3704-world-skate-games-day-5-downhill-skateboard,-street-luge,-and-downhill-inline.html"
+    },
+    {
+     "year": 2023,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Open luge",
+     "place": 2,
+     "source": "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness"
+    },
+    {
+     "year": 2022,
+     "event": "World Skate Games, San Juan (Argentina)",
+     "event_slug": null,
+     "class": "Men's street luge",
+     "place": 1,
+     "source": "https://www.skateboarding.worldskate.org/news/1540-world-skate-games-argentina-street-luge-world-championships.html"
+    },
+    {
+     "year": 2019,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Open street luge",
+     "place": 2,
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2017,
+     "event": "IDF World Series (season)",
+     "event_slug": null,
+     "class": "Street luge",
+     "place": 1,
+     "source": "https://en.wikipedia.org/wiki/Street_luge"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://en.wikipedia.org/wiki/Street_luge",
+    "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/",
+    "https://www.skateboarding.worldskate.org/news/1540-world-skate-games-argentina-street-luge-world-championships.html",
+    "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness",
+    "https://www.worldskate.org/downhill/news-downhill/3704-world-skate-games-day-5-downhill-skateboard,-street-luge,-and-downhill-inline.html",
+    "https://www.northcoastjournal.com/life-outdoors/ryan-farmers-need-for-speed-25328281/",
+    "https://www.diariodecuyo.com.ar/noticias/en-punta-negra-se-coronaron-los-campeones-en-inline-downhill-y-el-street-luge-162051.html"
+   ]
+  },
+  {
+   "slug": "sabrina-riffenburgh",
+   "name": "Sabrina Riffenburgh",
+   "disciplines": [
+    "street-luge"
+   ],
+   "home": "United States",
+   "country": "US",
+   "lat": 0,
+   "lng": 0,
+   "hub": null,
+   "about": "An American street luger who has won the women's luge at Maryhill twice. She took silver at the World Skate Games in both 2022 and 2024.",
+   "results": [
+    {
+     "year": 2024,
+     "event": "World Skate Games, Tortoreto (Italy)",
+     "event_slug": null,
+     "class": "Women's street luge",
+     "place": 2,
+     "source": "https://www.worldskate.org/downhill/news-downhill/3704-world-skate-games-day-5-downhill-skateboard,-street-luge,-and-downhill-inline.html"
+    },
+    {
+     "year": 2023,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Women's luge",
+     "place": 1,
+     "source": "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness"
+    },
+    {
+     "year": 2022,
+     "event": "World Skate Games, San Juan (Argentina)",
+     "event_slug": null,
+     "class": "Women's street luge",
+     "place": 2,
+     "source": "https://www.diariodecuyo.com.ar/noticias/en-punta-negra-se-coronaron-los-campeones-en-inline-downhill-y-el-street-luge-162051.html"
+    },
+    {
+     "year": 2019,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Women's street luge",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/",
+    "https://www.diariodecuyo.com.ar/noticias/en-punta-negra-se-coronaron-los-campeones-en-inline-downhill-y-el-street-luge-162051.html",
+    "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness",
+    "https://www.worldskate.org/downhill/news-downhill/3704-world-skate-games-day-5-downhill-skateboard,-street-luge,-and-downhill-inline.html"
+   ]
+  },
+  {
+   "slug": "patrick-switzer",
+   "name": "Patrick Switzer",
+   "disciplines": [
+    "downhill"
+   ],
+   "home": "Burnaby, British Columbia",
+   "country": "CA",
+   "lat": 49.2488,
+   "lng": -122.9805,
+   "hub": "vancouver",
+   "about": "A stand-up downhill skateboarder who was second in the IGSA World Cup in 2010 and won it on points in 2011. He won every Picton Gravity Fest open race from 2010 to 2012 and took Maryhill in 2013.",
+   "results": [
+    {
+     "year": 2013,
+     "event": "Maryhill Festival of Speed",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Open skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/"
+    },
+    {
+     "year": 2012,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Open downhill skateboard",
+     "place": 1,
+     "source": "https://www.countylive.ca/?p=30318"
+    },
+    {
+     "year": 2011,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Open downhill skateboard",
+     "place": 1,
+     "source": "https://www.countylive.ca/?p=17766"
+    },
+    {
+     "year": 2011,
+     "event": "WinSport Canada Cup, Calgary (IGSA World Cup)",
+     "event_slug": "winsport-canada-cup-calgary",
+     "class": "Open downhill skateboard",
+     "place": 1,
+     "source": "https://www.burnabynow.com/local-sports/nows-top-achiever-for-2011-2935758"
+    },
+    {
+     "year": 2011,
+     "event": "IGSA World Cup (season points)",
+     "event_slug": null,
+     "class": "Open downhill skateboard",
+     "place": 1,
+     "source": "https://www.burnabynow.com/local-sports/nows-top-achiever-for-2011-2935758"
+    },
+    {
+     "year": 2010,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Open downhill skateboard",
+     "place": 1,
+     "source": "https://www.countylive.ca/?p=7334"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://www.countylive.ca/?p=7334",
+    "https://www.countylive.ca/?p=17766",
+    "https://www.burnabynow.com/local-sports/nows-top-achiever-for-2011-2935758",
+    "https://www.countylive.ca/?p=30318",
+    "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/"
+   ]
+  },
+  {
+   "slug": "dane-hanna",
+   "name": "Dane Hanna",
+   "disciplines": [
+    "downhill"
+   ],
+   "home": "Pender Harbour, Sunshine Coast, British Columbia",
+   "country": "CA",
+   "lat": 49.6333,
+   "lng": -124.0333,
+   "hub": "nanaimo",
+   "about": "'Danger Dane' is a stand-up downhill skateboarder from Pender Harbour, home of the Attack of Danger Bay race, where he is a regular winner. He won world titles at the 2019 World Roller Games in Barcelona and the 2022 World Skate Games in Argentina.",
+   "results": [
+    {
+     "year": 2022,
+     "event": "World Skate Games, San Juan (Argentina)",
+     "event_slug": null,
+     "class": "Downhill skateboard",
+     "place": 1,
+     "source": "https://amp.cbc.ca/news/canada/british-columbia/all-downhill-for-pender-harbour-b-c-skateboarder-after-2nd-straight-world-title-1.6655008"
+    },
+    {
+     "year": 2019,
+     "event": "Gravity Fest, Munnsville (IDF WQS)",
+     "event_slug": "gravity-fest-munnsville",
+     "class": "Open skate",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    },
+    {
+     "year": 2019,
+     "event": "Killington World Cup",
+     "event_slug": "killington-downhill-world-cup",
+     "class": "Open skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/"
+    },
+    {
+     "year": 2019,
+     "event": "World Roller Games, Barcelona",
+     "event_slug": null,
+     "class": "Men's downhill skateboard",
+     "place": 1,
+     "source": "https://hopkin.storychief.io/dane-hanna-wins-men-s-wrg-downhill-skateboard"
+    },
+    {
+     "year": 2019,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Open skateboard",
+     "place": 3,
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2018,
+     "event": "Devil's Peak Downhill",
+     "event_slug": "devils-peak-downhill-guanella-pass",
+     "class": "Open skateboard",
+     "place": 1,
+     "source": "https://www.coastreporter.net/local-sports/dane-hanna-conquers-the-devil-3408372"
+    },
+    {
+     "year": 2016,
+     "event": "Whistler Longboard Festival (IDF World Cup)",
+     "event_slug": "whistler-longboard-festival",
+     "class": "Open skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/",
+    "https://www.coastreporter.net/local-sports/dane-hanna-conquers-the-devil-3408372",
+    "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/",
+    "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/",
+    "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/",
+    "https://hopkin.storychief.io/dane-hanna-wins-men-s-wrg-downhill-skateboard",
+    "https://amp.cbc.ca/news/canada/british-columbia/all-downhill-for-pender-harbour-b-c-skateboarder-after-2nd-straight-world-title-1.6655008",
+    "https://coastreporter.net/local-sports/bc-longboarder-danger-dane-takes-home-a-second-world-title-6114315"
+   ]
+  },
+  {
+   "slug": "emily-pross",
+   "name": "Emily Pross",
+   "disciplines": [
+    "downhill"
+   ],
+   "home": "Vernon, New Jersey",
+   "country": "US",
+   "lat": 41.1987,
+   "lng": -74.4835,
+   "hub": "new-york",
+   "about": "A downhill skateboarder who learned on the roads around Vernon, New Jersey, and won IDF women's world titles in 2015 and 2016. In 2019 she swept the women's races at Gravity Fest, Killington and Maryhill and won the World Roller Games women's downhill.",
+   "results": [
+    {
+     "year": 2019,
+     "event": "Gravity Fest, Munnsville (IDF WQS)",
+     "event_slug": "gravity-fest-munnsville",
+     "class": "Women's skate",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    },
+    {
+     "year": 2019,
+     "event": "Killington World Cup",
+     "event_slug": "killington-downhill-world-cup",
+     "class": "Women's skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/"
+    },
+    {
+     "year": 2019,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Women's skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2019,
+     "event": "World Roller Games, Barcelona",
+     "event_slug": null,
+     "class": "Women's downhill skateboard",
+     "place": 1,
+     "source": "https://hopkin.storychief.io/emily-pross-wins-women-s-wrg-downhill-skateboard"
+    },
+    {
+     "year": 2019,
+     "event": "IDF world rankings (season)",
+     "event_slug": null,
+     "class": "Women's skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/races/"
+    },
+    {
+     "year": 2019,
+     "event": "Killington World Cup",
+     "event_slug": "killington-downhill-world-cup",
+     "class": "Open skateboard",
+     "place": 3,
+     "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/"
+    },
+    {
+     "year": 2016,
+     "event": "IDF World Series (season)",
+     "event_slug": null,
+     "class": "Women's skateboard",
+     "place": 1,
+     "source": "https://www.berkeleycollege.edu/berkeley-today/2017/04/emily-pross-champion-longboarder-and-student-blazes-her-own-path.html"
+    },
+    {
+     "year": 2016,
+     "event": "Whistler Longboard Festival (IDF World Cup)",
+     "event_slug": "whistler-longboard-festival",
+     "class": "Women's skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+    },
+    {
+     "year": 2015,
+     "event": "IDF World Series (season)",
+     "event_slug": null,
+     "class": "Women's skateboard",
+     "place": 1,
+     "source": "https://www.berkeleycollege.edu/berkeley-today/2017/04/emily-pross-champion-longboarder-and-student-blazes-her-own-path.html"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://www.berkeleycollege.edu/berkeley-today/2017/04/emily-pross-champion-longboarder-and-student-blazes-her-own-path.html",
+    "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/",
+    "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/",
+    "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/",
+    "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/",
+    "https://hopkin.storychief.io/emily-pross-wins-women-s-wrg-downhill-skateboard",
+    "https://internationaldownhillfederation.org/races/"
+   ]
+  },
+  {
+   "slug": "kyle-martin",
+   "name": "Kyle Martin",
+   "disciplines": [
+    "downhill"
+   ],
+   "home": "Canada",
+   "country": "CA",
+   "lat": 0,
+   "lng": 0,
+   "hub": null,
+   "about": "A Canadian masters-class downhill skateboarder who won every masters race on the 2019 IDF North American tour. He finished the 2019 season ranked first in the IDF masters world rankings.",
+   "results": [
+    {
+     "year": 2019,
+     "event": "Gravity Fest, Munnsville (IDF WQS)",
+     "event_slug": "gravity-fest-munnsville",
+     "class": "Masters skate",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    },
+    {
+     "year": 2019,
+     "event": "Killington World Cup",
+     "event_slug": "killington-downhill-world-cup",
+     "class": "Masters skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/"
+    },
+    {
+     "year": 2019,
+     "event": "Tour de Maryhill",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Masters skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2019,
+     "event": "IDF world rankings (season)",
+     "event_slug": null,
+     "class": "Masters skateboard",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/races/"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/",
+    "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/",
+    "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/",
+    "https://internationaldownhillfederation.org/races/"
+   ]
+  },
+  {
+   "slug": "tim-koch",
+   "name": "Tim Koch",
+   "disciplines": [
+    "street-luge"
+   ],
+   "home": "Canada",
+   "country": "CA",
+   "lat": 0,
+   "lng": 0,
+   "hub": null,
+   "about": "A Canadian street luger on the eastern North American circuit, including Picton, Munnsville and Killington. He was third at Picton in 2012 and won the luge at Gravity Fest in Munnsville in 2019.",
+   "results": [
+    {
+     "year": 2019,
+     "event": "Gravity Fest, Munnsville (IDF WQS)",
+     "event_slug": "gravity-fest-munnsville",
+     "class": "Luge",
+     "place": 1,
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    },
+    {
+     "year": 2012,
+     "event": "Prince Edward County Gravity Fest",
+     "event_slug": "pec-gravity-fest-picton",
+     "class": "Street luge",
+     "place": 3,
+     "source": "https://www.countylive.ca/?p=30318"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://www.countylive.ca/?p=30318",
+    "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+   ]
+  },
+  {
+   "slug": "mike-mcintyre",
+   "name": "Mike McIntyre",
+   "disciplines": [
+    "street-luge"
+   ],
+   "home": "United States",
+   "country": "US",
+   "lat": 0,
+   "lng": 0,
+   "hub": null,
+   "about": "An American street luger best known for speed: Wikipedia credits him with a 164.12 km/h street luge world record at L'Ultime Descente in Quebec in September 2016. He also raced IDF World Cups, taking third at Maryhill in 2013.",
+   "results": [
+    {
+     "year": 2016,
+     "event": "L'Ultime Descente, Les Éboulements",
+     "event_slug": "ultime-descente-les-eboulements",
+     "class": "Street luge (speed trial)",
+     "place": 1,
+     "source": "https://wellingtontimes.ca/?p=20539"
+    },
+    {
+     "year": 2013,
+     "event": "Maryhill Festival of Speed",
+     "event_slug": "maryhill-loops-road-races",
+     "class": "Street luge",
+     "place": 3,
+     "source": "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/",
+    "https://wellingtontimes.ca/?p=20539",
+    "https://en.wikipedia.org/wiki/Street_luge"
+   ]
+  },
+  {
+   "slug": "cameron-wood",
+   "name": "Cameron Wood",
+   "disciplines": [
+    "bmx"
+   ],
+   "home": "Phoenix, Arizona",
+   "country": "US",
+   "lat": 33.4484,
+   "lng": -112.074,
+   "hub": "phoenix",
+   "about": "A BMX racer from Phoenix who rides for Mongoose and the USA BMX Foundation. In 2025 he won the elite men's national championship and his second straight USA BMX National No. 1 men's pro title.",
+   "results": [
+    {
+     "year": 2025,
+     "event": "USA Cycling BMX National Championships",
+     "event_slug": "usa-cycling-bmx-nationals-hardesty",
+     "class": "Elite men",
+     "place": 1,
+     "source": "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships"
+    },
+    {
+     "year": 2025,
+     "event": "USA BMX National No. 1 (season title)",
+     "event_slug": "usa-bmx-grand-nationals-tulsa",
+     "class": "Men pro",
+     "place": 1,
+     "source": "https://usacycling.org/article/team-usa-recap-dowell-second-in-bmx-freestyle-world-cup-overall-with-bruce-earning-bronze-in-sakai-wood-claims-second-bmx-national-1-title"
+    },
+    {
+     "year": 2025,
+     "event": "USA BMX SC Gold Cup Finals (Friday)",
+     "event_slug": "usa-bmx-gold-cup-finals-hardesty",
+     "class": "Men pro",
+     "place": 3,
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    },
+    {
+     "year": 2025,
+     "event": "USA BMX SC Gold Cup Finals (Saturday)",
+     "event_slug": "usa-bmx-gold-cup-finals-hardesty",
+     "class": "Men pro",
+     "place": 3,
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships",
+    "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium",
+    "https://usacycling.org/article/team-usa-recap-dowell-second-in-bmx-freestyle-world-cup-overall-with-bruce-earning-bronze-in-sakai-wood-claims-second-bmx-national-1-title"
+   ]
+  },
+  {
+   "slug": "payton-ridenour",
+   "name": "Payton Ridenour",
+   "disciplines": [
+    "bmx"
+   ],
+   "home": "Tulsa, Oklahoma",
+   "country": "US",
+   "lat": 36.1563,
+   "lng": -95.9928,
+   "hub": "tulsa",
+   "about": "A BMX racer from Tulsa, home of USA BMX's national stadium, who won the 2025 elite women's national title there. She also races pump track and won the 2025 world championship qualifier in Sugar Land.",
+   "results": [
+    {
+     "year": 2025,
+     "event": "USA Cycling BMX National Championships",
+     "event_slug": "usa-cycling-bmx-nationals-hardesty",
+     "class": "Elite women",
+     "place": 1,
+     "source": "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships"
+    },
+    {
+     "year": 2025,
+     "event": "UCI Pump Track World Championships qualifier, Sugar Land",
+     "event_slug": "pump-track-worlds-qualifier-sugar-land",
+     "class": "Elite women",
+     "place": 1,
+     "source": "https://www.fatbmx.com/bmx-pumptrack/item/61126-uci-pump-track-world-championships-qualifier-sugar-land-texas"
+    },
+    {
+     "year": 2025,
+     "event": "USA BMX SC Gold Cup Finals (Friday)",
+     "event_slug": "usa-bmx-gold-cup-finals-hardesty",
+     "class": "Women pro",
+     "place": 2,
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    },
+    {
+     "year": 2025,
+     "event": "USA BMX SC Gold Cup Finals (Saturday)",
+     "event_slug": "usa-bmx-gold-cup-finals-hardesty",
+     "class": "Women pro",
+     "place": 2,
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships",
+    "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium",
+    "https://www.fatbmx.com/bmx-pumptrack/item/61126-uci-pump-track-world-championships-qualifier-sugar-land-texas"
+   ]
+  },
+  {
+   "slug": "molly-simpson",
+   "name": "Molly Simpson",
+   "disciplines": [
+    "bmx"
+   ],
+   "home": "Alberta",
+   "country": "CA",
+   "lat": 53.9333,
+   "lng": -116.5765,
+   "hub": null,
+   "about": "A Canadian BMX racer from Alberta who races the USA BMX pro series. She won both women's pro finals at the 2025 SC Gold Cup Finals in Tulsa.",
+   "results": [
+    {
+     "year": 2025,
+     "event": "USA BMX SC Gold Cup Finals (Friday)",
+     "event_slug": "usa-bmx-gold-cup-finals-hardesty",
+     "class": "Women pro",
+     "place": 1,
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    },
+    {
+     "year": 2025,
+     "event": "USA BMX SC Gold Cup Finals (Saturday)",
+     "event_slug": "usa-bmx-gold-cup-finals-hardesty",
+     "class": "Women pro",
+     "place": 1,
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+   ]
+  },
+  {
+   "slug": "daleny-vaughn",
+   "name": "Daleny Vaughn",
+   "disciplines": [
+    "bmx"
+   ],
+   "home": "Tucson, Arizona",
+   "country": "US",
+   "lat": 32.2226,
+   "lng": -110.9747,
+   "hub": "tucson",
+   "about": "An elite BMX racer from Tucson. She was runner-up at the 2025 elite women's national championships and third in Saturday's pro final at the 2025 Gold Cup Finals.",
+   "results": [
+    {
+     "year": 2025,
+     "event": "USA Cycling BMX National Championships",
+     "event_slug": "usa-cycling-bmx-nationals-hardesty",
+     "class": "Elite women",
+     "place": 2,
+     "source": "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships"
+    },
+    {
+     "year": 2025,
+     "event": "USA BMX SC Gold Cup Finals (Saturday)",
+     "event_slug": "usa-bmx-gold-cup-finals-hardesty",
+     "class": "Women pro",
+     "place": 3,
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships",
+    "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+   ]
+  },
+  {
+   "slug": "felicia-stancil",
+   "name": "Felicia Stancil",
+   "disciplines": [
+    "bmx"
+   ],
+   "home": "Chicago area, Illinois",
+   "country": "US",
+   "lat": 41.8756,
+   "lng": -87.6244,
+   "hub": "chicago",
+   "about": "A BMX racer from the Chicago area. She won Team USA's first gold of the Toronto 2015 Pan Am Games in women's BMX, her first major international win.",
+   "results": [
+    {
+     "year": 2015,
+     "event": "Toronto 2015 Pan American Games",
+     "event_slug": "pan-am-games-2015-bmx-toronto",
+     "class": "Women's BMX",
+     "place": 1,
+     "source": "https://archive.teamusa.com/news/2015/july/11/bmxer-felicia-stancil-claims-first-major-international-win-for-team-usas-first-pan-ams-gold.html"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://archive.teamusa.com/news/2015/july/11/bmxer-felicia-stancil-claims-first-major-international-win-for-team-usas-first-pan-ams-gold.html",
+    "https://en.wikipedia.org/wiki/Cycling_at_the_2015_Pan_American_Games_%E2%80%93_Women%27s_BMX"
+   ]
+  },
+  {
+   "slug": "tory-nyhaug",
+   "name": "Tory Nyhaug",
+   "disciplines": [
+    "bmx"
+   ],
+   "home": "Coquitlam, British Columbia",
+   "country": "CA",
+   "lat": 49.2838,
+   "lng": -122.7932,
+   "hub": "vancouver",
+   "about": "A BMX racer from Coquitlam who rode for Canada at the London 2012 and Rio 2016 Olympics. He won Canada's first Pan Am Games BMX medal, a gold at Toronto's Centennial Park track in 2015, after a world championship silver in 2014.",
+   "results": [
+    {
+     "year": 2015,
+     "event": "Toronto 2015 Pan American Games",
+     "event_slug": "pan-am-games-2015-bmx-toronto",
+     "class": "Men's BMX",
+     "place": 1,
+     "source": "https://en.wikipedia.org/wiki/Cycling_at_the_2015_Pan_American_Games_%E2%80%93_Men%27s_BMX"
+    },
+    {
+     "year": 2014,
+     "event": "UCI BMX World Championships",
+     "event_slug": null,
+     "class": "Elite men",
+     "place": 2,
+     "source": "https://amp.cbc.ca/sports/olympics/2.7171/cycling/tory-nyhaug-instant-profile-1.3704841"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://amp.cbc.ca/sports/olympics/2.7171/cycling/tory-nyhaug-instant-profile-1.3704841",
+    "https://en.wikipedia.org/wiki/Cycling_at_the_2015_Pan_American_Games_%E2%80%93_Men%27s_BMX",
+    "https://cyclingcanada.ca/?p=20266"
+   ]
+  },
+  {
+   "slug": "jordy-scott",
+   "name": "Jordy Scott",
+   "disciplines": [
+    "mtb"
+   ],
+   "home": "St. George, Utah",
+   "country": "US",
+   "lat": 37.0965,
+   "lng": -113.5684,
+   "hub": null,
+   "about": "A mountain biker from St. George, Utah, who races the Crankworx gravity and pump track events. At Crankworx Whistler 2025 she won the dual slalom, was second on the pump track and was crowned Queen of Crankworx.",
+   "results": [
+    {
+     "year": 2025,
+     "event": "Crankworx Whistler",
+     "event_slug": "crankworx-whistler",
+     "class": "Dual slalom, women",
+     "place": 1,
+     "source": "https://www.crankworx.com/?p=51234"
+    },
+    {
+     "year": 2025,
+     "event": "Crankworx World Tour (season)",
+     "event_slug": null,
+     "class": "Queen of Crankworx",
+     "place": 1,
+     "source": "https://www.crankworx.com/?p=51305"
+    },
+    {
+     "year": 2025,
+     "event": "Crankworx Whistler",
+     "event_slug": "crankworx-whistler",
+     "class": "Ultimate Pump Track Challenge, women",
+     "place": 2,
+     "source": "https://www.crankworx.com/?p=51305"
+    }
+   ],
+   "links": {
+    "team": "https://www.titlemtb.com/pages/rider-profile-jordy-scott"
+   },
+   "sources": [
+    "https://www.crankworx.com/?p=51234",
+    "https://www.crankworx.com/?p=51305",
+    "https://www.titlemtb.com/pages/rider-profile-jordy-scott"
+   ]
+  },
+  {
+   "slug": "dante-silva",
+   "name": "Dante Silva",
+   "disciplines": [
+    "mtb"
+   ],
+   "home": "Chula Vista, California",
+   "country": "US",
+   "lat": 32.6401,
+   "lng": -117.0842,
+   "hub": "san-diego",
+   "about": "A downhill and dual slalom racer who grew up in Chula Vista and came to mountain biking from BMX. He won the 2024 Monster Energy Pro Downhill Series and took his first Crankworx win in the Whistler dual slalom in 2025.",
+   "results": [
+    {
+     "year": 2025,
+     "event": "Crankworx Whistler",
+     "event_slug": "crankworx-whistler",
+     "class": "Dual slalom, men",
+     "place": 1,
+     "source": "https://www.crankworx.com/?p=51234"
+    },
+    {
+     "year": 2025,
+     "event": "Sea Otter Classic",
+     "event_slug": "sea-otter-classic-dual-slalom",
+     "class": "Dual slalom, pro men",
+     "place": 3,
+     "source": "https://monsterarmy.com/news/2025-Sea-Otter-Dual-Slalom---The-World-Championship-of-Dual-Slalom"
+    },
+    {
+     "year": 2024,
+     "event": "Monster Energy Pro Downhill Series (overall)",
+     "event_slug": null,
+     "class": "Pro men",
+     "place": 1,
+     "source": "https://intensecycles.com/blogs/news/speed-stoke-and-giving-back-get-to-know-dante-silva"
+    }
+   ],
+   "links": {
+    "team": "https://intensecycles.com/blogs/news/speed-stoke-and-giving-back-get-to-know-dante-silva"
+   },
+   "sources": [
+    "https://intensecycles.com/blogs/news/speed-stoke-and-giving-back-get-to-know-dante-silva",
+    "https://monsterarmy.com/news/2025-Sea-Otter-Dual-Slalom---The-World-Championship-of-Dual-Slalom",
+    "https://www.crankworx.com/?p=51234",
+    "https://intensecycles.com/blogs/news/sea-otter-classic-2025-sunshine-shiny-bikes-and-straight-up-racing-chaos"
+   ]
+  },
+  {
+   "slug": "zion-wright",
+   "name": "Zion Wright",
+   "disciplines": [
+    "skateboard"
+   ],
+   "home": "Jupiter, Florida",
+   "country": "US",
+   "lat": 26.9342,
+   "lng": -80.0942,
+   "hub": "pompano-beach",
+   "about": "A park and street skateboarder who grew up in Jupiter, Florida, and was named to the first USA Skateboarding national team in 2019. He won the men's park contest at Dew Tour Des Moines in 2021 on the way to the Tokyo Olympics.",
+   "results": [
+    {
+     "year": 2021,
+     "event": "Dew Tour Des Moines",
+     "event_slug": "dew-tour-des-moines",
+     "class": "Men's park",
+     "place": 1,
+     "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+    },
+    {
+     "year": 2018,
+     "event": "Vans Park Series Pro Tour, Huntington Beach",
+     "event_slug": null,
+     "class": "Men's park",
+     "place": 1,
+     "source": "https://en.wikipedia.org/wiki/Zion_Wright"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zion_Wright",
+    "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+   ]
+  },
+  {
+   "slug": "gavin-bottger",
+   "name": "Gavin Bottger",
+   "disciplines": [
+    "skateboard"
+   ],
+   "home": "United States",
+   "country": "US",
+   "lat": 0,
+   "lng": 0,
+   "hub": null,
+   "about": "An American park skateboarder who has been a fixture of the Dew Tour park finals at Lauridsen Skatepark. He was third there in 2021 and won the men's park final in 2022.",
+   "results": [
+    {
+     "year": 2022,
+     "event": "Dew Tour Des Moines",
+     "event_slug": "dew-tour-des-moines",
+     "class": "Men's park",
+     "place": 1,
+     "source": "https://theberrics.com/winning-runs-2022-dew-tour-finals"
+    },
+    {
+     "year": 2021,
+     "event": "Dew Tour Des Moines",
+     "event_slug": "dew-tour-des-moines",
+     "class": "Men's park",
+     "place": 3,
+     "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/",
+    "https://theberrics.com/winning-runs-2022-dew-tour-finals"
+   ]
+  },
+  {
+   "slug": "nyjah-huston",
+   "name": "Nyjah Huston",
+   "disciplines": [
+    "skateboard"
+   ],
+   "home": "United States",
+   "country": "US",
+   "lat": 0,
+   "lng": 0,
+   "hub": null,
+   "about": "One of the most successful street contest skaters of his generation. He has won Tampa Pro twice, Dew Tour Des Moines street in 2021 and X Games Ventura street in 2024.",
+   "results": [
+    {
+     "year": 2024,
+     "event": "X Games Ventura",
+     "event_slug": "x-games-ventura-2024",
+     "class": "Men's skateboard street",
+     "place": 1,
+     "source": "https://usaskateboarding.com/blogs/news/x-games-ventura-2024-presented-by-sonic-results"
+    },
+    {
+     "year": 2021,
+     "event": "Dew Tour Des Moines",
+     "event_slug": "dew-tour-des-moines",
+     "class": "Men's street",
+     "place": 1,
+     "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+    },
+    {
+     "year": 2020,
+     "event": "Tampa Pro",
+     "event_slug": "tampa-pro",
+     "class": "Pro street",
+     "place": 1,
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    },
+    {
+     "year": 2014,
+     "event": "Tampa Pro",
+     "event_slug": "tampa-pro",
+     "class": "Pro street",
+     "place": 1,
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skatepark_of_Tampa",
+    "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/",
+    "https://usaskateboarding.com/blogs/news/x-games-ventura-2024-presented-by-sonic-results"
+   ]
+  },
+  {
+   "slug": "jagger-eaton",
+   "name": "Jagger Eaton",
+   "disciplines": [
+    "skateboard"
+   ],
+   "home": "Mesa, Arizona",
+   "country": "US",
+   "lat": 33.4152,
+   "lng": -111.8315,
+   "hub": "mesa",
+   "about": "A street skateboarder from Mesa, Arizona, with Olympic medals from both Tokyo and Paris. In April 2026 he won Tampa Pro at Skatepark of Tampa.",
+   "results": [
+    {
+     "year": 2026,
+     "event": "Tampa Pro",
+     "event_slug": "tampa-pro",
+     "class": "Pro street",
+     "place": 1,
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    },
+    {
+     "year": 2024,
+     "event": "Paris 2024 Olympic Games",
+     "event_slug": null,
+     "class": "Men's street",
+     "place": 2,
+     "source": "https://www.olympedia.org/athletes/147458"
+    },
+    {
+     "year": 2021,
+     "event": "Tokyo 2020 Olympic Games",
+     "event_slug": null,
+     "class": "Men's street",
+     "place": 3,
+     "source": "https://www.olympedia.org/athletes/147458"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://www.olympedia.org/athletes/147458",
+    "https://en.wikipedia.org/wiki/Skatepark_of_Tampa",
+    "https://kjzz.org/content/1702299/mesas-jagger-eaton-wins-bronze-inaugural-olympic-skateboarding-competition"
+   ]
+  },
+  {
+   "slug": "ryan-decenzo",
+   "name": "Ryan Decenzo",
+   "disciplines": [
+    "skateboard"
+   ],
+   "home": "Delta, British Columbia",
+   "country": "CA",
+   "lat": 49.0847,
+   "lng": -123.0587,
+   "hub": "vancouver",
+   "about": "A veteran street skateboarder from Delta, B.C., who made his major Games debut at the 2023 Pan Am Games and was named to Canada's street team for the Paris 2024 Olympics. His best-known contest win is street gold at the 2016 X Games.",
+   "results": [
+    {
+     "year": 2016,
+     "event": "X Games",
+     "event_slug": null,
+     "class": "Street",
+     "place": 1,
+     "source": "https://lethbridgenewsnow.com/?p=562432"
+    }
+   ],
+   "links": {},
+   "sources": [
+    "https://lethbridgenewsnow.com/?p=562432"
+   ]
+  }
+ ]
+}

@@ -1,1 +1,2535 @@
-{"built":"","count":0,"events":[]}
+{
+ "built": "2026-10-27T21:48:22.104Z",
+ "count": 42,
+ "events": [
+  {
+   "slug": "pec-gravity-fest-picton",
+   "name": "Prince Edward County Gravity Fest",
+   "disciplines": [
+    "downhill",
+    "street-luge"
+   ],
+   "kind": "race",
+   "place": "Pitt Street hill (York, Pitt and Church streets), Picton",
+   "city": "Picton",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 44.0078,
+   "lng": -77.1413,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2010,
+    2011,
+    2012
+   ],
+   "organiser": "Kolby Parks and the Parks family (PEC Gravity Fest Committee); IGSA-sanctioned (2010 Canadian championships; IGSA NorAm Downhill Series)",
+   "about": "A 1.2 km straw-baled run down the Pitt Street hill in the middle of Picton, with a famous 'Crash Corner' at Pitt and York. Street luger Kolby Parks brought it home to the County in 2010 as the first IGSA-sanctioned race in Ontario, and it ran as a NorAm stop in 2011 and 2012.",
+   "results": [
+    {
+     "year": 2012,
+     "class": "Classic luge",
+     "podium": [
+      "Bob Touchette",
+      "Will Condon",
+      "Bob Lavoie"
+     ],
+     "source": "https://www.countylive.ca/?p=30318"
+    },
+    {
+     "year": 2012,
+     "class": "Open downhill skateboard",
+     "podium": [
+      "Patrick Switzer",
+      "Niko Desmarais",
+      "John Barnet"
+     ],
+     "source": "https://www.countylive.ca/?p=30318"
+    },
+    {
+     "year": 2012,
+     "class": "Street luge",
+     "podium": [
+      "Christian Conaway",
+      "Kolby Parks",
+      "Tim Koch"
+     ],
+     "source": "https://www.countylive.ca/?p=30318"
+    },
+    {
+     "year": 2012,
+     "class": "Women's downhill skateboard",
+     "podium": [
+      "Cindy Zhou",
+      "Andie Leslie",
+      "Michelle Poirier"
+     ],
+     "source": "https://www.countylive.ca/?p=30318"
+    },
+    {
+     "year": 2011,
+     "class": "Open downhill skateboard",
+     "podium": [
+      "Patrick Switzer",
+      "",
+      ""
+     ],
+     "source": "https://www.countylive.ca/?p=17766"
+    },
+    {
+     "year": 2011,
+     "class": "Street luge",
+     "podium": [
+      "",
+      "Kolby Parks",
+      ""
+     ],
+     "source": "https://www.countylive.ca/?p=17766"
+    },
+    {
+     "year": 2010,
+     "class": "Classic luge",
+     "podium": [
+      "Louis-Etienne Bouchard",
+      "Kolby Parks",
+      "Nick Kinnish"
+     ],
+     "source": "https://www.countylive.ca/?p=7334"
+    },
+    {
+     "year": 2010,
+     "class": "Open downhill skateboard",
+     "podium": [
+      "Patrick Switzer",
+      "George Mackenzie",
+      "Maxime Garant Rousseau"
+     ],
+     "source": "https://www.countylive.ca/?p=7334"
+    },
+    {
+     "year": 2010,
+     "class": "Street luge",
+     "podium": [
+      "Louis-Etienne Bouchard",
+      "Bob Touchette",
+      "Nick Kinnish"
+     ],
+     "source": "https://www.countylive.ca/?p=7334"
+    },
+    {
+     "year": 2010,
+     "class": "Women's downhill skateboard",
+     "podium": [
+      "Maggie Dron",
+      "Andi Leslie",
+      "Emilie Hébert"
+     ],
+     "source": "https://www.countylive.ca/?p=7334"
+    }
+   ],
+   "links": {
+    "results": "https://www.countylive.ca/?p=7334"
+   },
+   "source": "https://www.countylive.ca/?p=7334",
+   "hub": "kingston"
+  },
+  {
+   "slug": "maryhill-loops-road-races",
+   "name": "Maryhill Festival of Speed / Tour de Maryhill",
+   "disciplines": [
+    "downhill",
+    "street-luge",
+    "inline"
+   ],
+   "kind": "race",
+   "place": "Maryhill Loops Road, Maryhill",
+   "city": "Maryhill",
+   "region": "Washington",
+   "country": "US",
+   "lat": 45.684,
+   "lng": -120.82,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2013,
+    2019,
+    2023
+   ],
+   "organiser": "International Downhill Federation (2013 Festival of Speed); Maryhill Ratz (Tour de Maryhill, IDF WQS in 2019)",
+   "about": "The hairpins of the Maryhill Loops Road above the Columbia River Gorge are one of the best-known closed-road downhill courses in North America. It has hosted IDF World Cup racing as the Maryhill Festival of Speed and, more recently, the Maryhill Ratz' Tour de Maryhill, a race, skate school and campout that also served as a qualifier for the 2024 World Skate Games.",
+   "results": [
+    {
+     "year": 2023,
+     "class": "Open inline",
+     "podium": [
+      "Gabe Holm",
+      "Derek Macias",
+      "Beatriz Almeida"
+     ],
+     "source": "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness"
+    },
+    {
+     "year": 2023,
+     "class": "Open luge",
+     "podium": [
+      "Mikel Echegaray",
+      "Ryan Farmer",
+      "Frank Williams"
+     ],
+     "source": "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness"
+    },
+    {
+     "year": 2023,
+     "class": "Open skate",
+     "podium": [
+      "Tim Del Rosario",
+      "Daniel Engel",
+      "Chase Hiller"
+     ],
+     "source": "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness"
+    },
+    {
+     "year": 2023,
+     "class": "Women's luge",
+     "podium": [
+      "Sabrina Riffenburgh",
+      "Sam Marsteller",
+      "Angelica Jones"
+     ],
+     "source": "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness"
+    },
+    {
+     "year": 2023,
+     "class": "Women's skate",
+     "podium": [
+      "Alicia Fillback",
+      "Julia Barboza",
+      "Loryn Robertson"
+     ],
+     "source": "https://columbiacommunityconnection.com/the-dalles/maryhill-ratz-skate-for-big-cheese-tour-de-maryhill-highlights-fun-family-mental-health-awareness"
+    },
+    {
+     "year": 2019,
+     "class": "Masters skateboard",
+     "podium": [
+      "Kyle Martin",
+      "Robin McGuirk",
+      "Dennis Manougin"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2019,
+     "class": "Open skateboard",
+     "podium": [
+      "Harry Clarke",
+      "Max Capps",
+      "Dane Hanna"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2019,
+     "class": "Open street luge",
+     "podium": [
+      "Mikel Echegaray",
+      "Ryan Farmer",
+      "Kolby Parks"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2019,
+     "class": "Women's skateboard",
+     "podium": [
+      "Emily Pross",
+      "Teresa Gillcrist",
+      "Nashley Alameda"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2019,
+     "class": "Women's street luge",
+     "podium": [
+      "Sabrina Riffenburgh",
+      "Jenn Butler",
+      "Megan Haver"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+    },
+    {
+     "year": 2013,
+     "class": "Classic luge",
+     "podium": [
+      "Mikel Echegaray Diez",
+      "Keith Henderson",
+      "Jon Huey"
+     ],
+     "source": "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/"
+    },
+    {
+     "year": 2013,
+     "class": "Open skateboard",
+     "podium": [
+      "Patrick Switzer",
+      "Thiago Gomes Lessa",
+      "Zak Maytum"
+     ],
+     "source": "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/"
+    },
+    {
+     "year": 2013,
+     "class": "Street luge",
+     "podium": [
+      "Mikel Echegaray Diez",
+      "Abdil Mahdzan",
+      "Mike McIntyre"
+     ],
+     "source": "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/"
+    },
+    {
+     "year": 2013,
+     "class": "Women's skateboard",
+     "podium": [
+      "Elena Corrigal",
+      "Marie Bougourd",
+      "Katie Neilson"
+     ],
+     "source": "https://internationaldownhillfederation.org/2013/switzer-threepeats-maryhill/"
+    }
+   ],
+   "links": {
+    "results": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/"
+   },
+   "source": "https://internationaldownhillfederation.org/2019/tour-de-maryhill-race-day/",
+   "hub": null
+  },
+  {
+   "slug": "killington-downhill-world-cup",
+   "name": "Killington Downhill World Cup",
+   "disciplines": [
+    "downhill",
+    "street-luge"
+   ],
+   "kind": "race",
+   "place": "Killington (course with Tetanus Corner, Bridge Left and the Super Straight)",
+   "city": "Killington",
+   "region": "Vermont",
+   "country": "US",
+   "lat": 43.6773,
+   "lng": -72.7798,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2017,
+    2018,
+    2019
+   ],
+   "organiser": "Mike Girard (IDF World Cup)",
+   "about": "An IDF World Cup on a steep, rough mountain road at Killington, part of the North American summer tour. Its track records list 2017 and 2018 times, and the 2019 edition was a full World Cup stop.",
+   "results": [
+    {
+     "year": 2019,
+     "class": "Luge",
+     "podium": [
+      "Kolby Parks",
+      "",
+      ""
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/killington-kolby-parks-wins-luge-and-top-skate-racers-prepare-for-a-knife-fight/"
+    },
+    {
+     "year": 2019,
+     "class": "Masters skateboard",
+     "podium": [
+      "Kyle Martin",
+      "",
+      ""
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/"
+    },
+    {
+     "year": 2019,
+     "class": "Open skateboard",
+     "podium": [
+      "Dane Hanna",
+      "Daina Banks",
+      "Emily Pross"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/"
+    },
+    {
+     "year": 2019,
+     "class": "Women's skateboard",
+     "podium": [
+      "Emily Pross",
+      "",
+      ""
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/"
+    }
+   ],
+   "links": {
+    "website": "https://internationaldownhillfederation.org/races/killington-2019/",
+    "results": "https://internationaldownhillfederation.org/races/killington-2019/results/"
+   },
+   "source": "https://internationaldownhillfederation.org/2019/dane-hanna-wins-killington-2019-with-distance/",
+   "hub": null
+  },
+  {
+   "slug": "gravity-fest-munnsville",
+   "name": "Gravity Fest (Munnsville)",
+   "disciplines": [
+    "downhill",
+    "street-luge"
+   ],
+   "kind": "race",
+   "place": "Gravity Fest course, Munnsville",
+   "city": "Munnsville",
+   "region": "New York",
+   "country": "US",
+   "lat": 42.977,
+   "lng": -75.588,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2019
+   ],
+   "organiser": "Mike Girard (IDF World Qualifying Series)",
+   "about": "A World Qualifying Series race in the hills of central New York that opened the 2019 IDF North American tour a fortnight before Killington. The 2019 race was run in the rain and Canadian riders took three of the four classes.",
+   "results": [
+    {
+     "year": 2019,
+     "class": "Luge",
+     "podium": [
+      "Tim Koch",
+      "Ira Hewton",
+      "Yan Triponez"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    },
+    {
+     "year": 2019,
+     "class": "Masters skate",
+     "podium": [
+      "Kyle Martin",
+      "Sean Graves",
+      "Pascal Jean"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    },
+    {
+     "year": 2019,
+     "class": "Open skate",
+     "podium": [
+      "Dane Hanna",
+      "Diego Poncelet",
+      "Chase Hiller"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    },
+    {
+     "year": 2019,
+     "class": "Women's skate",
+     "podium": [
+      "Emily Pross",
+      "Ashley Winecoff",
+      "Teresa Gillcrist"
+     ],
+     "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/"
+    }
+   ],
+   "links": {
+    "website": "https://internationaldownhillfederation.org/races/gravity-fest-2019/"
+   },
+   "source": "https://internationaldownhillfederation.org/2019/canada-rules-the-rain-gravity-fest-wqs-race-day/",
+   "hub": null
+  },
+  {
+   "slug": "ultime-descente-les-eboulements",
+   "name": "L'Ultime Descente",
+   "disciplines": [
+    "street-luge",
+    "downhill"
+   ],
+   "kind": "race",
+   "place": "Les Éboulements hillside, Charlevoix",
+   "city": "Les Éboulements",
+   "region": "Quebec",
+   "country": "CA",
+   "lat": 47.4833,
+   "lng": -70.3167,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2016
+   ],
+   "organiser": "",
+   "about": "A gravity speed trial on the steep hillside road at Les Éboulements in Charlevoix, open to street luges, longboards and gravity cars. In 2016 about 120 riders took part, and Mike McIntyre set a street luge world record of 164.12 km/h there.",
+   "results": [
+    {
+     "year": 2016,
+     "class": "Street luge (speed trial)",
+     "podium": [
+      "Mike McIntyre",
+      "Kolby Parks",
+      ""
+     ],
+     "source": "https://wellingtontimes.ca/?p=20539"
+    }
+   ],
+   "links": {},
+   "source": "https://wellingtontimes.ca/?p=20539",
+   "hub": null
+  },
+  {
+   "slug": "wdsc-utah-olympic-park",
+   "name": "World Downhill Skateboarding Championship: Utah",
+   "disciplines": [
+    "downhill",
+    "street-luge"
+   ],
+   "kind": "race",
+   "place": "Upper road at Utah Olympic Park (about 1.6 km, four hairpins, 7.7% average grade)",
+   "city": "Park City",
+   "region": "Utah",
+   "country": "US",
+   "lat": 40.7116,
+   "lng": -111.5617,
+   "coords": "course",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2025
+   ],
+   "organiser": "World Downhill Skateboarding Championship (WDSC); race director Justin Rolo",
+   "about": "Round four of the 2025 WDSC world tour, raced on one of the highest roads at Utah Olympic Park with a chairlift back to the top. It ran an amateur QS race and a professional CT race over the last weekend of September 2025.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Open skate",
+     "podium": [
+      "Harry Clarke",
+      "Adrien Paynel",
+      "Nick Broms"
+     ],
+     "source": "https://www.trillertv.com/video/wdsc-utah-highlights/2pi1u/"
+    },
+    {
+     "year": 2025,
+     "class": "Open street luge",
+     "podium": [
+      "Andy Lally",
+      "",
+      ""
+     ],
+     "source": "https://www.trillertv.com/video/wdsc-season-review-2025-highlights-2/2pizi/"
+    },
+    {
+     "year": 2025,
+     "class": "Women's skate",
+     "podium": [
+      "Selina Theiler",
+      "Ashley Winecoff",
+      "Sabrina Ambrosi"
+     ],
+     "source": "https://www.trillertv.com/video/wdsc-utah-highlights-2/2pi2c/"
+    },
+    {
+     "year": 2025,
+     "class": "Women's street luge",
+     "podium": [
+      "Tatyana Hill",
+      "",
+      ""
+     ],
+     "source": "https://www.trillertv.com/video/wdsc-utah-highlights-2/2pi2c/"
+    }
+   ],
+   "links": {
+    "website": "https://worlddownhillskateboardingchampionship.com/"
+   },
+   "source": "https://www.parkrecord.com/2025/09/27/professional-downhill-skateboarding-and-street-luge-coming-to-park-city-this-weekend/",
+   "hub": "salt-lake-city"
+  },
+  {
+   "slug": "whistler-longboard-festival",
+   "name": "Whistler Longboard Festival",
+   "disciplines": [
+    "downhill",
+    "street-luge"
+   ],
+   "kind": "festival",
+   "place": "Whistler (IDF World Cup race course)",
+   "city": "Whistler",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 50.1172,
+   "lng": -122.9543,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2016
+   ],
+   "organiser": "",
+   "about": "A longboard festival in Whistler whose race day counted as an IDF World Cup. In 2016 Canadians swept the open podium and Kolby Parks won the luge.",
+   "results": [
+    {
+     "year": 2016,
+     "class": "Luge",
+     "podium": [
+      "Kolby Parks",
+      "",
+      ""
+     ],
+     "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+    },
+    {
+     "year": 2016,
+     "class": "Masters skateboard",
+     "podium": [
+      "Billy Meiners",
+      "Lee Cation",
+      "Rylan English"
+     ],
+     "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+    },
+    {
+     "year": 2016,
+     "class": "Open skateboard",
+     "podium": [
+      "Dane Hanna",
+      "Troy Grenier",
+      "Alex Charleson"
+     ],
+     "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+    },
+    {
+     "year": 2016,
+     "class": "Women's skateboard",
+     "podium": [
+      "Emily Pross",
+      "Paloma Dorado",
+      "Kaylene Beatty"
+     ],
+     "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+    }
+   ],
+   "links": {
+    "results": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/"
+   },
+   "source": "https://internationaldownhillfederation.org/2016/whistler-longboard-festival-day-3-racing/",
+   "hub": "whistler"
+  },
+  {
+   "slug": "attack-of-danger-bay",
+   "name": "Attack of Danger Bay",
+   "disciplines": [
+    "downhill"
+   ],
+   "kind": "festival",
+   "place": "Pender Harbour roads, with an 8 km push race in Egmont that finishes in the ocean",
+   "city": "Pender Harbour",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.6333,
+   "lng": -124.0333,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [],
+   "organiser": "Bricin Striker Lyons (founder and organiser)",
+   "about": "Billed as Canada's largest downhill skateboard race, held over the May long weekend in Pender Harbour on the Sunshine Coast. Alongside the race it runs freeride, a slide contest, skate hockey and an ocean big-air finish, and has reached its 22nd edition.",
+   "results": [],
+   "links": {},
+   "source": "https://coastreporter.net/local-sports/22nd-attack-of-danger-bay-launches-a-full-return-7041111",
+   "hub": "nanaimo"
+  },
+  {
+   "slug": "devils-peak-downhill-guanella-pass",
+   "name": "Devil's Peak Downhill",
+   "disciplines": [
+    "downhill"
+   ],
+   "kind": "race",
+   "place": "Guanella Pass road, near Georgetown",
+   "city": "Georgetown",
+   "region": "Colorado",
+   "country": "US",
+   "lat": 39.7061,
+   "lng": -105.6975,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2017,
+    2018
+   ],
+   "organiser": "Justin Rolo and Venom Skate Products",
+   "about": "A Rocky Mountain downhill race on the Guanella Pass road above Georgetown. The second edition, in August 2018, was won by Canada's Dane Hanna.",
+   "results": [
+    {
+     "year": 2018,
+     "class": "Open skateboard",
+     "podium": [
+      "Dane Hanna",
+      "",
+      ""
+     ],
+     "source": "https://www.coastreporter.net/local-sports/dane-hanna-conquers-the-devil-3408372"
+    }
+   ],
+   "links": {},
+   "source": "https://www.coastreporter.net/local-sports/dane-hanna-conquers-the-devil-3408372",
+   "hub": "breckenridge"
+  },
+  {
+   "slug": "winsport-canada-cup-calgary",
+   "name": "WinSport Canada Cup",
+   "disciplines": [
+    "downhill"
+   ],
+   "kind": "race",
+   "place": "WinSport (Canada Olympic Park), Calgary",
+   "city": "Calgary",
+   "region": "Alberta",
+   "country": "CA",
+   "lat": 51.083,
+   "lng": -114.215,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2011
+   ],
+   "organiser": "IGSA World Cup",
+   "about": "An IGSA World Cup downhill skateboard race in Calgary. In September 2011 it gave Patrick Switzer his fourth World Cup win in a row on the way to the season title.",
+   "results": [
+    {
+     "year": 2011,
+     "class": "Open downhill skateboard",
+     "podium": [
+      "Patrick Switzer",
+      "",
+      ""
+     ],
+     "source": "https://www.burnabynow.com/local-sports/nows-top-achiever-for-2011-2935758"
+    }
+   ],
+   "links": {},
+   "source": "https://www.burnabynow.com/local-sports/nows-top-achiever-for-2011-2935758",
+   "hub": "calgary"
+  },
+  {
+   "slug": "whitcomb-summit-downhill",
+   "name": "Whitcomb Summit Downhill",
+   "disciplines": [
+    "downhill"
+   ],
+   "kind": "race",
+   "place": "Whitcomb Hill Road, near the high point of Route 2",
+   "city": "Florida",
+   "region": "Massachusetts",
+   "country": "US",
+   "lat": 42.6687,
+   "lng": -73.0115,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2019
+   ],
+   "organiser": "Jeff Molongoski and his son",
+   "about": "A first-time downhill race on Whitcomb Hill Road in the Berkshires, near the highest point of the Mohawk Trail (Route 2). Riders came from as far as Spain, Australia and Mexico in 2019.",
+   "results": [
+    {
+     "year": 2019,
+     "class": "Championship race",
+     "podium": [
+      "Tim Delrosario-Rojas",
+      "",
+      ""
+     ],
+     "source": "https://archive.nenc.news/downhill-skateboarders-seek-mellow-70-mph-in-western-massachusetts-competition/"
+    }
+   ],
+   "links": {},
+   "source": "https://archive.nenc.news/downhill-skateboarders-seek-mellow-70-mph-in-western-massachusetts-competition/",
+   "hub": "north-adams"
+  },
+  {
+   "slug": "igsa-california-championship-bonelli-park",
+   "name": "IGSA California Championship (Bonelli Park)",
+   "disciplines": [
+    "downhill",
+    "street-luge"
+   ],
+   "kind": "series",
+   "place": "Via Verde course, Bonelli Park",
+   "city": "San Dimas",
+   "region": "California",
+   "country": "US",
+   "lat": 34.1067,
+   "lng": -117.8067,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2006,
+    2007
+   ],
+   "organiser": "International Gravity Sports Association (IGSA California Downhill Series)",
+   "about": "Southern California's IGSA series raced the Via Verde course at Bonelli Park, with stand-up, street luge and classic luge classes. It hosted the 2006 series finale and the fourth of five 2007 races.",
+   "results": [
+    {
+     "year": 2007,
+     "class": "Classic luge",
+     "podium": [
+      "Justin Tolman",
+      "Christian Conaway",
+      "Scott Peer"
+     ],
+     "source": "https://boardshop.de/boardmag/longboard/artikel/igsa-california-championship-bonelli-park_aid_18789.html"
+    },
+    {
+     "year": 2007,
+     "class": "Open downhill skateboard",
+     "podium": [
+      "John Rogers",
+      "Rick Kludy",
+      "Andrew Sawyer"
+     ],
+     "source": "https://boardshop.de/boardmag/longboard/artikel/igsa-california-championship-bonelli-park_aid_18789.html"
+    },
+    {
+     "year": 2007,
+     "class": "Street luge",
+     "podium": [
+      "Brian Lee",
+      "John Rogers",
+      "Justin Tolman"
+     ],
+     "source": "https://boardshop.de/boardmag/longboard/artikel/igsa-california-championship-bonelli-park_aid_18789.html"
+    },
+    {
+     "year": 2006,
+     "class": "Open downhill skateboard",
+     "podium": [
+      "Brent DeKeyser",
+      "John Rogers",
+      "Roland \"Lit\" Sumile"
+     ],
+     "source": "https://www.boardshop.de/boardmag/longboard/artikel/igsa-california-downhill-series-finale_aid_19137.html"
+    },
+    {
+     "year": 2006,
+     "class": "Street luge",
+     "podium": [
+      "Mike McIntyre",
+      "John Fryer",
+      "Brent DeKeyser"
+     ],
+     "source": "https://www.boardshop.de/boardmag/longboard/artikel/igsa-california-downhill-series-finale_aid_19137.html"
+    }
+   ],
+   "links": {},
+   "source": "https://boardshop.de/boardmag/longboard/artikel/igsa-california-championship-bonelli-park_aid_18789.html",
+   "hub": "los-angeles"
+  },
+  {
+   "slug": "salt-spring-slasher",
+   "name": "Salt Spring Slasher",
+   "disciplines": [
+    "downhill"
+   ],
+   "kind": "festival",
+   "place": "Juniper Place, Salt Spring Island",
+   "city": "Salt Spring Island",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 48.8547,
+   "lng": -123.5084,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2024
+   ],
+   "organiser": "Max Kaye",
+   "about": "A downhill longboard event on Salt Spring Island organised by local street luger Max Kaye. Its 13th annual edition ran on 24-25 August 2024.",
+   "results": [],
+   "links": {},
+   "source": "https://gulfislandsdriftwood.com/?p=79808",
+   "hub": "nanaimo"
+  },
+  {
+   "slug": "crankworx-whistler",
+   "name": "Crankworx Whistler",
+   "disciplines": [
+    "mtb"
+   ],
+   "kind": "festival",
+   "place": "Whistler Mountain Bike Park",
+   "city": "Whistler",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 50.11626,
+   "lng": -122.95109,
+   "coords": "park",
+   "park_id": "r19051528",
+   "spot_slug": "whistler-mountain-bike-park",
+   "years": [
+    2025
+   ],
+   "organiser": "Crankworx",
+   "about": "The biggest week of the Crankworx World Tour, held in the Whistler Mountain Bike Park, with Red Bull Joyride slopestyle, dual slalom, a pump track challenge and downhill. The 2025 edition was the festival's 20th.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Dual slalom, men",
+     "podium": [
+      "Dante Silva",
+      "Austin Warren",
+      "Tegan Cruz"
+     ],
+     "source": "https://www.crankworx.com/?p=51234"
+    },
+    {
+     "year": 2025,
+     "class": "Dual slalom, women",
+     "podium": [
+      "Jordy Scott",
+      "Martha Gill",
+      "Julia Lofqvist Traum"
+     ],
+     "source": "https://www.crankworx.com/?p=51234"
+    },
+    {
+     "year": 2025,
+     "class": "Red Bull Joyride (slopestyle), men",
+     "podium": [
+      "Emil Johansson",
+      "Tim Bringer",
+      "Erik Fedko"
+     ],
+     "source": "https://whistlermountainbike.com/competitions/red-bull-joyride-closes-out-crankworx-whistler-2025-with-historic-performances"
+    },
+    {
+     "year": 2025,
+     "class": "Red Bull Joyride (slopestyle), women",
+     "podium": [
+      "Alma Wiggberg",
+      "Robin Goomes",
+      "Shealen Reno"
+     ],
+     "source": "https://whistlermountainbike.com/competitions/red-bull-joyride-closes-out-crankworx-whistler-2025-with-historic-performances"
+    },
+    {
+     "year": 2025,
+     "class": "Ultimate Pump Track Challenge, men",
+     "podium": [
+      "Niels Bensink",
+      "Eddie Reynolds",
+      "Tegan Cruz"
+     ],
+     "source": "https://www.crankworx.com/?p=51305"
+    },
+    {
+     "year": 2025,
+     "class": "Ultimate Pump Track Challenge, women",
+     "podium": [
+      "Sabina Košárková",
+      "Jordy Scott",
+      "Caroline Buchanan"
+     ],
+     "source": "https://www.crankworx.com/?p=51305"
+    }
+   ],
+   "links": {
+    "website": "https://www.crankworx.com/"
+   },
+   "source": "https://www.crankworx.com/?p=51234",
+   "hub": "whistler"
+  },
+  {
+   "slug": "sea-otter-classic-dual-slalom",
+   "name": "Sea Otter Classic Dual Slalom",
+   "disciplines": [
+    "mtb"
+   ],
+   "kind": "race",
+   "place": "Laguna Seca (Sea Otter Classic venue)",
+   "city": "Monterey",
+   "region": "California",
+   "country": "US",
+   "lat": 36.5844,
+   "lng": -121.7534,
+   "coords": "course",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2003,
+    2025
+   ],
+   "organiser": "Sea Otter Classic",
+   "about": "The dual slalom at the Sea Otter Classic bike festival at Laguna Seca, which bills itself as the 'world championship of dual slalom'. Riders race side by side on twin courses in a knockout format.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Pro men",
+     "podium": [
+      "",
+      "",
+      "Dante Silva"
+     ],
+     "source": "https://monsterarmy.com/news/2025-Sea-Otter-Dual-Slalom---The-World-Championship-of-Dual-Slalom"
+    },
+    {
+     "year": 2003,
+     "class": "Pro men",
+     "podium": [
+      "Cedric Gracia",
+      "Eric Carter",
+      "Karim Amour"
+     ],
+     "source": "https://velo.outsideonline.com/news/mountain/gracia-and-muxlow-take-rainy-dual-slalom-at-sea-otter/?scope=anon"
+    },
+    {
+     "year": 2003,
+     "class": "Pro women",
+     "podium": [
+      "Tai-Lee Muxlow",
+      "Leigh Donovan",
+      "Katrina Miller"
+     ],
+     "source": "https://velo.outsideonline.com/news/mountain/gracia-and-muxlow-take-rainy-dual-slalom-at-sea-otter/?scope=anon"
+    }
+   ],
+   "links": {},
+   "source": "https://monsterarmy.com/news/2025-Sea-Otter-Dual-Slalom---The-World-Championship-of-Dual-Slalom",
+   "hub": "santa-cruz"
+  },
+  {
+   "slug": "red-bull-guanajuato-cerro-abajo",
+   "name": "Red Bull Guanajuato Cerro Abajo",
+   "disciplines": [
+    "mtb"
+   ],
+   "kind": "race",
+   "place": "Alleys and staircases of central Guanajuato, finishing at the Alhóndiga de Granaditas",
+   "city": "Guanajuato",
+   "region": "Guanajuato",
+   "country": "MX",
+   "lat": 21.0182,
+   "lng": -101.2575,
+   "coords": "course",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2023,
+    2024,
+    2025
+   ],
+   "organiser": "Red Bull (Red Bull Cerro Abajo series)",
+   "about": "An urban downhill mountain bike race of about 1.6 km through the historic lanes and stairways of Guanajuato, ending on the esplanade of the Alhóndiga de Granaditas. It is a round of the Red Bull Cerro Abajo series; coordinates are the finish.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Elite men",
+     "podium": [
+      "Juanfer Vélez",
+      "Sebastián Holguín",
+      "Roger Vieira"
+     ],
+     "source": "https://expansion.mx/tendencias/2025/04/30/ford-impulsa-la-adrenalina-en-red-bull-guanajuato-cerro-abajo"
+    },
+    {
+     "year": 2024,
+     "class": "Elite men",
+     "podium": [
+      "Juanfer Vélez",
+      "Sebastián Holguín",
+      "Tomas Slavik"
+     ],
+     "source": "https://redgol.cl/redsport/juanfer-velez-se-corono-campeon-de-red-bull-guanajuato-cerro-abajo-2024"
+    },
+    {
+     "year": 2023,
+     "class": "Elite men",
+     "podium": [
+      "Camilo Sánchez",
+      "Jackson Goldstone",
+      "Felipe Agurto"
+     ],
+     "source": "https://delfino.cr/2023/03/pablo-aguilar-obtiene-destacado-noveno-lugar-en-la-carrera-de-downhill-urbano-guanajuato-cerro-abajo"
+    }
+   ],
+   "links": {},
+   "source": "https://expansion.mx/tendencias/2025/04/30/ford-impulsa-la-adrenalina-en-red-bull-guanajuato-cerro-abajo",
+   "hub": "leon"
+  },
+  {
+   "slug": "taxco-urban-downhill",
+   "name": "Downhill Taxco (Taxco Urban Downhill)",
+   "disciplines": [
+    "mtb"
+   ],
+   "kind": "race",
+   "place": "Streets and stairways of Taxco (about 1,800 m, 300 m drop)",
+   "city": "Taxco",
+   "region": "Guerrero",
+   "country": "MX",
+   "lat": 18.5564,
+   "lng": -99.6047,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2016,
+    2017
+   ],
+   "organiser": "",
+   "about": "An urban downhill race down the narrow streets and steep stairs of the silver town of Taxco, the finale of the Urban Downhill series in 2016. The 2017 sixth edition was 1,800 m long with about 300 m of drop.",
+   "results": [
+    {
+     "year": 2017,
+     "class": "Elite men",
+     "podium": [
+      "Rémy Métailler",
+      "",
+      ""
+     ],
+     "source": "https://www.bbva.com/es/rodar-rodar-descender-triunfar-bbva-bancomer-patrocino-downhill-taxco-2017/"
+    },
+    {
+     "year": 2016,
+     "class": "Elite men",
+     "podium": [
+      "Johannes Fischbach",
+      "Filip Polc",
+      "Bernard Kerr"
+     ],
+     "source": "https://www.velomotion.net/2016/11/johannes-fischbach-wins-urban-downhill-final-in-taxco/"
+    }
+   ],
+   "links": {},
+   "source": "https://www.velomotion.net/2016/11/johannes-fischbach-wins-urban-downhill-final-in-taxco/",
+   "hub": "jiutepec"
+  },
+  {
+   "slug": "pump-track-worlds-qualifier-langford",
+   "name": "UCI Pump Track World Championships qualifier (Langford)",
+   "disciplines": [
+    "bmx",
+    "mtb"
+   ],
+   "kind": "race",
+   "place": "Jordie Lunn Bike Park",
+   "city": "Langford",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 48.44323,
+   "lng": -123.54084,
+   "coords": "park",
+   "park_id": "w1456551006",
+   "spot_slug": "jordie-lunn-bike-park-langford",
+   "years": [
+    2022
+   ],
+   "organiser": "Red Bull UCI Pump Track World Championships (Velosolutions)",
+   "about": "The 2022 Canadian qualifier for the pump track world championships, raced on the asphalt pump track at Jordie Lunn Bike Park. Winners earned a start at the world final.",
+   "results": [
+    {
+     "year": 2022,
+     "class": "Elite men",
+     "podium": [
+      "Niels Bensink",
+      "Ryan Gilchrist",
+      "Josh Gibb"
+     ],
+     "source": "https://www.fatbmx.com/bmx-pumptrack/item/56025-red-bull-uci-world-championships-pump-track-qualifier-canada"
+    },
+    {
+     "year": 2022,
+     "class": "Elite women",
+     "podium": [
+      "Molly Simpson",
+      "Teigen Pascual",
+      "Taylor Smith"
+     ],
+     "source": "https://www.fatbmx.com/bmx-pumptrack/item/56025-red-bull-uci-world-championships-pump-track-qualifier-canada"
+    }
+   ],
+   "links": {
+    "website": "https://pumptrackworldchampionships.com/qualifiers"
+   },
+   "source": "https://www.fatbmx.com/bmx-pumptrack/item/56025-red-bull-uci-world-championships-pump-track-qualifier-canada",
+   "hub": "victoria"
+  },
+  {
+   "slug": "pump-track-worlds-qualifier-sicamous",
+   "name": "UCI Pump Track World Championships qualifier (Sicamous)",
+   "disciplines": [
+    "bmx",
+    "mtb"
+   ],
+   "kind": "race",
+   "place": "Finlayson Park Pump Track",
+   "city": "Sicamous",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 50.83301,
+   "lng": -118.98036,
+   "coords": "park",
+   "park_id": "w1306142705",
+   "spot_slug": "sicamous-pump-track",
+   "years": [
+    2024,
+    2025
+   ],
+   "organiser": "Velosolutions UCI Pump Track World Championships",
+   "about": "Canada's pump track world championship qualifier since 2024, held on the Finlayson Park track in Sicamous. The 2025 qualifier was set for 7 June.",
+   "results": [
+    {
+     "year": 2024,
+     "class": "Elite men",
+     "podium": [
+      "Niels Bensink",
+      "Bas van Steenbergen",
+      "Andrew Towler"
+     ],
+     "source": "https://cyclingbc.net/bmx/2024/09/17/success-at-uci-pump-track-world-championship-qualifier-in-sicamous-bc"
+    },
+    {
+     "year": 2024,
+     "class": "Elite women",
+     "podium": [
+      "Olivia Armstrong",
+      "Karsen Tielen",
+      "Rachelle Nielsen"
+     ],
+     "source": "https://cyclingbc.net/bmx/2024/09/17/success-at-uci-pump-track-world-championship-qualifier-in-sicamous-bc"
+    }
+   ],
+   "links": {
+    "website": "https://pumptrackworldchampionships.com/qualifiers"
+   },
+   "source": "https://cyclingbc.net/bmx/2024/09/17/success-at-uci-pump-track-world-championship-qualifier-in-sicamous-bc",
+   "hub": "sicamous"
+  },
+  {
+   "slug": "pump-track-worlds-qualifier-sugar-land",
+   "name": "UCI Pump Track World Championships qualifier (Sugar Land)",
+   "disciplines": [
+    "bmx",
+    "mtb"
+   ],
+   "kind": "race",
+   "place": "Crown Festival Park pump track",
+   "city": "Sugar Land",
+   "region": "Texas",
+   "country": "US",
+   "lat": 29.6197,
+   "lng": -95.6349,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2024,
+    2025
+   ],
+   "organiser": "Velosolutions UCI Pump Track World Championships",
+   "about": "A US qualifier for the pump track world championships on the Velosolutions track at Crown Festival Park. The 2025 race was the second in a row held there.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Elite men",
+     "podium": [
+      "Tommy Zula",
+      "Alec Bob",
+      "Brady Kincheloe"
+     ],
+     "source": "https://www.fatbmx.com/bmx-pumptrack/item/61126-uci-pump-track-world-championships-qualifier-sugar-land-texas"
+    },
+    {
+     "year": 2025,
+     "class": "Elite women",
+     "podium": [
+      "Payton Ridenour",
+      "Rylie Elkin",
+      "Judith McClain"
+     ],
+     "source": "https://www.fatbmx.com/bmx-pumptrack/item/61126-uci-pump-track-world-championships-qualifier-sugar-land-texas"
+    }
+   ],
+   "links": {
+    "website": "https://pumptrackworldchampionships.com/qualifiers"
+   },
+   "source": "https://www.fatbmx.com/bmx-pumptrack/item/61126-uci-pump-track-world-championships-qualifier-sugar-land-texas",
+   "hub": "houston"
+  },
+  {
+   "slug": "pump-track-worlds-qualifier-erie",
+   "name": "UCI Pump Track World Championships qualifier (Erie)",
+   "disciplines": [
+    "bmx",
+    "mtb"
+   ],
+   "kind": "race",
+   "place": "Revolution Pump Track",
+   "city": "Erie",
+   "region": "Colorado",
+   "country": "US",
+   "lat": 40.0503,
+   "lng": -105.05,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2025
+   ],
+   "organiser": "Velosolutions UCI Pump Track World Championships",
+   "about": "Colorado's pump track world championship qualifier, held on the Revolution Pump Track in Erie a week after the Sugar Land race. It was one of three US qualifiers in 2025.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Elite men",
+     "podium": [
+      "Kenneth Gustafson",
+      "Brady Kincheloe",
+      "Amakye Anderson"
+     ],
+     "source": "https://15.ie/velosolutions-uci-pump-track-texas-colorado-2025/"
+    },
+    {
+     "year": 2025,
+     "class": "Elite women",
+     "podium": [
+      "Maylei Leaneagh",
+      "Hailey Vaughn",
+      "Ashley Kincheloe"
+     ],
+     "source": "https://15.ie/velosolutions-uci-pump-track-texas-colorado-2025/"
+    }
+   ],
+   "links": {
+    "website": "https://pumptrackworldchampionships.com/qualifiers"
+   },
+   "source": "https://15.ie/velosolutions-uci-pump-track-texas-colorado-2025/",
+   "hub": "denver"
+  },
+  {
+   "slug": "usa-bmx-gold-cup-finals-hardesty",
+   "name": "USA BMX SC Gold Cup Finals (Pro Series)",
+   "disciplines": [
+    "bmx"
+   ],
+   "kind": "race",
+   "place": "Hardesty National BMX Stadium",
+   "city": "Tulsa",
+   "region": "Oklahoma",
+   "country": "US",
+   "lat": 36.1563,
+   "lng": -95.9928,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2025
+   ],
+   "organiser": "USA BMX",
+   "about": "USA BMX's pro racing weekend at the Gold Cup Finals, run on the Hardesty National BMX Stadium track in Tulsa. Pros raced on both Friday and Saturday in September 2025.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Men pro (Friday)",
+     "podium": [
+      "Simon Marquart",
+      "Izaac Kennedy",
+      "Cameron Wood"
+     ],
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    },
+    {
+     "year": 2025,
+     "class": "Men pro (Saturday)",
+     "podium": [
+      "Simon Marquart",
+      "Izaac Kennedy",
+      "Cameron Wood"
+     ],
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    },
+    {
+     "year": 2025,
+     "class": "Women pro (Friday)",
+     "podium": [
+      "Molly Simpson",
+      "Payton Ridenour",
+      "Lauren Reynolds"
+     ],
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    },
+    {
+     "year": 2025,
+     "class": "Women pro (Saturday)",
+     "podium": [
+      "Molly Simpson",
+      "Payton Ridenour",
+      "Daleny Vaughn"
+     ],
+     "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium"
+    }
+   ],
+   "links": {},
+   "source": "https://www.flobikes.com/articles/14586397-tulsa-throwdown-usa-bmx-pro-series-at-hardesty-national-bmx-stadium",
+   "hub": "tulsa"
+  },
+  {
+   "slug": "usa-cycling-bmx-nationals-hardesty",
+   "name": "USA Cycling BMX National Championships (Elite)",
+   "disciplines": [
+    "bmx"
+   ],
+   "kind": "race",
+   "place": "Hardesty National BMX Stadium",
+   "city": "Tulsa",
+   "region": "Oklahoma",
+   "country": "US",
+   "lat": 36.1563,
+   "lng": -95.9928,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2025
+   ],
+   "organiser": "USA Cycling, raced within the USA BMX Legacy Nationals",
+   "about": "The national title races for elite, U23 and junior BMX riders, held in May 2025 as part of USA BMX's Legacy Nationals at Hardesty. Winners wear the stars-and-stripes jersey for the year.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Elite men",
+     "podium": [
+      "Cameron Wood",
+      "Drew Polk",
+      "Zachary Vankammen"
+     ],
+     "source": "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships"
+    },
+    {
+     "year": 2025,
+     "class": "Elite women",
+     "podium": [
+      "Payton Ridenour",
+      "Daleny Vaughn",
+      "Lexis Colby"
+     ],
+     "source": "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships"
+    }
+   ],
+   "links": {},
+   "source": "https://usacycling.org/article/cameron-wood-and-payton-ridenour-win-2025-elite-bmx-national-championships",
+   "hub": "tulsa"
+  },
+  {
+   "slug": "usa-bmx-grand-nationals-tulsa",
+   "name": "USA BMX Race of Champions & Grand Nationals",
+   "disciplines": [
+    "bmx"
+   ],
+   "kind": "race",
+   "place": "Expo Square, Tulsa (indoor track)",
+   "city": "Tulsa",
+   "region": "Oklahoma",
+   "country": "US",
+   "lat": 36.1563,
+   "lng": -95.9928,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2024,
+    2025
+   ],
+   "organiser": "USA BMX",
+   "about": "The season-ending 'Grands' over the US Thanksgiving weekend in Tulsa, where USA BMX crowns its national No. 1 riders. The 2024 edition was raced indoors in the Expo Square building.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Men pro (Grands)",
+     "podium": [
+      "Kamren Larsen",
+      "",
+      ""
+     ],
+     "source": "https://usacycling.org/article/team-usa-recap-dowell-second-in-bmx-freestyle-world-cup-overall-with-bruce-earning-bronze-in-sakai-wood-claims-second-bmx-national-1-title"
+    },
+    {
+     "year": 2024,
+     "class": "Women pro (Grands)",
+     "podium": [
+      "",
+      "",
+      "Lauren Reynolds"
+     ],
+     "source": "https://auscycling.org.au/news/jolly-and-reynolds-taste-grands-success-in-tulsa"
+    }
+   ],
+   "links": {},
+   "source": "https://usacycling.org/article/team-usa-recap-dowell-second-in-bmx-freestyle-world-cup-overall-with-bruce-earning-bronze-in-sakai-wood-claims-second-bmx-national-1-title",
+   "hub": "tulsa"
+  },
+  {
+   "slug": "pan-am-games-2015-bmx-toronto",
+   "name": "Toronto 2015 Pan American Games BMX",
+   "disciplines": [
+    "bmx"
+   ],
+   "kind": "race",
+   "place": "Centennial Park Pan Am BMX Centre",
+   "city": "Toronto",
+   "region": "Ontario",
+   "country": "CA",
+   "lat": 43.65493,
+   "lng": -79.59508,
+   "coords": "park",
+   "park_id": "w362862281",
+   "spot_slug": "centennial-park-pan-am-bmx-centre-toronto",
+   "years": [
+    2015
+   ],
+   "organiser": "Toronto 2015 Pan American Games",
+   "about": "The BMX racing events of the 2015 Pan Am Games were held on the purpose-built track in Etobicoke's Centennial Park on 10-11 July 2015. Canada's Tory Nyhaug won the men's race on home soil.",
+   "results": [
+    {
+     "year": 2015,
+     "class": "Men's BMX",
+     "podium": [
+      "Tory Nyhaug",
+      "Alfredo Campo Vintimilla",
+      "Nicholas Long"
+     ],
+     "source": "https://en.wikipedia.org/wiki/Cycling_at_the_2015_Pan_American_Games_%E2%80%93_Men%27s_BMX"
+    },
+    {
+     "year": 2015,
+     "class": "Women's BMX",
+     "podium": [
+      "Felicia Stancil",
+      "Doménica Azuero",
+      "Mariana Díaz"
+     ],
+     "source": "https://en.wikipedia.org/wiki/Cycling_at_the_2015_Pan_American_Games_%E2%80%93_Women%27s_BMX"
+    }
+   ],
+   "links": {},
+   "source": "https://en.wikipedia.org/wiki/Cycling_at_the_2015_Pan_American_Games_%E2%80%93_Men%27s_BMX",
+   "hub": "toronto"
+  },
+  {
+   "slug": "dew-tour-des-moines",
+   "name": "Dew Tour Des Moines",
+   "disciplines": [
+    "skateboard"
+   ],
+   "kind": "contest",
+   "place": "Lauridsen Skatepark",
+   "city": "Des Moines",
+   "region": "Iowa",
+   "country": "US",
+   "lat": 41.59363,
+   "lng": -93.61916,
+   "coords": "park",
+   "park_id": "w923009685",
+   "spot_slug": "lauridsen-skatepark-des-moines",
+   "years": [
+    2021,
+    2022
+   ],
+   "organiser": "Dew Tour",
+   "about": "Dew Tour brought its park and street contests to the new Lauridsen Skatepark on the Des Moines riverfront in May 2021, weeks after the park opened and shortly before the Tokyo Olympics. It returned for a second year in July 2022.",
+   "results": [
+    {
+     "year": 2022,
+     "class": "Men's park",
+     "podium": [
+      "Gavin Bottger",
+      "Luiz Francisco",
+      "Keegan Palmer"
+     ],
+     "source": "https://theberrics.com/winning-runs-2022-dew-tour-finals"
+    },
+    {
+     "year": 2022,
+     "class": "Men's street",
+     "podium": [
+      "Gustavo Ribeiro",
+      "Yuto Horigome",
+      "Kelvin Hoefler"
+     ],
+     "source": "https://theberrics.com/winning-runs-2022-dew-tour-finals"
+    },
+    {
+     "year": 2022,
+     "class": "Women's park",
+     "podium": [
+      "(under 18 at the time; not named)",
+      "Sakura Yosozumi",
+      "(under 18 at the time; not named)"
+     ],
+     "source": "https://theberrics.com/winning-runs-2022-dew-tour-finals"
+    },
+    {
+     "year": 2022,
+     "class": "Women's street",
+     "podium": [
+      "(under 18 at the time; not named)",
+      "Pamela Rosa",
+      "(under 18 at the time; not named)"
+     ],
+     "source": "https://theberrics.com/winning-runs-2022-dew-tour-finals"
+    },
+    {
+     "year": 2021,
+     "class": "Men's park",
+     "podium": [
+      "Zion Wright",
+      "Oskar Rozenberg",
+      "Gavin Bottger"
+     ],
+     "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+    },
+    {
+     "year": 2021,
+     "class": "Men's street",
+     "podium": [
+      "Nyjah Huston",
+      "Yuto Horigome",
+      "Aurelien Giraud"
+     ],
+     "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+    },
+    {
+     "year": 2021,
+     "class": "Women's park",
+     "podium": [
+      "Sakura Yosozumi",
+      "(under 18 at the time; not named)",
+      "(under 18 at the time; not named)"
+     ],
+     "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+    },
+    {
+     "year": 2021,
+     "class": "Women's street",
+     "podium": [
+      "Pamela Rosa",
+      "(under 18 at the time; not named)",
+      "Roos Zwetsloot"
+     ],
+     "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/"
+    }
+   ],
+   "links": {},
+   "source": "https://juicemagazine.com/home/dew-tour-2021-des-moines-iowa-contest-results/",
+   "hub": "des-moines"
+  },
+  {
+   "slug": "tampa-pro",
+   "name": "Tampa Pro",
+   "disciplines": [
+    "skateboard"
+   ],
+   "kind": "contest",
+   "place": "Skatepark of Tampa (SPoT)",
+   "city": "Tampa",
+   "region": "Florida",
+   "country": "US",
+   "lat": 27.9664,
+   "lng": -82.41031,
+   "coords": "park",
+   "park_id": "w524230739",
+   "spot_slug": "skatepark-of-tampa",
+   "years": [
+    1995,
+    1996,
+    1997,
+    1998,
+    1999,
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "organiser": "Skatepark of Tampa",
+   "about": "Skateboarding's longest-running pro street contest, held every spring at Skatepark of Tampa on a street course rebuilt each year. The first winner, in 1995, was Mike Vallely; the 32nd edition ran in April 2026.",
+   "results": [
+    {
+     "year": 2026,
+     "class": "Pro street",
+     "podium": [
+      "Jagger Eaton",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    },
+    {
+     "year": 2025,
+     "class": "Pro street",
+     "podium": [
+      "Sora Shirai",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    },
+    {
+     "year": 2024,
+     "class": "Pro street",
+     "podium": [
+      "Yuto Horigome",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    },
+    {
+     "year": 2023,
+     "class": "Pro street",
+     "podium": [
+      "Yuto Horigome",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    },
+    {
+     "year": 2022,
+     "class": "Pro street",
+     "podium": [
+      "Jamie Foy",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Skatepark_of_Tampa"
+    }
+   ],
+   "links": {
+    "website": "https://skateparkoftampa.com/blogs/events/32nd-annual-tampa-pro"
+   },
+   "source": "https://skateparkoftampa.com/blogs/events/32nd-annual-tampa-pro",
+   "hub": "tampa"
+  },
+  {
+   "slug": "exposure-encinitas",
+   "name": "Exposure",
+   "disciplines": [
+    "skateboard"
+   ],
+   "kind": "contest",
+   "place": "Poods Encinitas Skate Park (2025 and 2026 editions)",
+   "city": "Encinitas",
+   "region": "California",
+   "country": "US",
+   "lat": 33.03398,
+   "lng": -117.28272,
+   "coords": "park",
+   "park_id": "w392680716",
+   "spot_slug": "encinitas-skatepark",
+   "years": [
+    2024,
+    2025,
+    2026
+   ],
+   "organiser": "Exposure (run with The Boardr)",
+   "about": "Billed as the world's largest women's skateboarding contest, Exposure has been held in Encinitas every year since the early 2010s, with bowl, vert and street divisions from amateurs to pros and over-40s. The 2024 edition was its 13th consecutive year.",
+   "results": [
+    {
+     "year": 2024,
+     "class": "Bowl, Golden division",
+     "podium": [
+      "Deise Rivero",
+      "Kallie Lowery",
+      "Jessie Frietze-Armenta"
+     ],
+     "source": "https://juicemagazine.com/home/?p=97694"
+    }
+   ],
+   "links": {
+    "website": "https://theboardr.com/events/4201/Exposure"
+   },
+   "source": "https://juicemagazine.com/home/?p=97694",
+   "hub": "carlsbad"
+  },
+  {
+   "slug": "kona-classic-jacksonville",
+   "name": "Kona Classic",
+   "disciplines": [
+    "skateboard"
+   ],
+   "kind": "contest",
+   "place": "Kona Skatepark",
+   "city": "Jacksonville",
+   "region": "Florida",
+   "country": "US",
+   "lat": 30.32365,
+   "lng": -81.56483,
+   "coords": "park",
+   "park_id": "r8267824",
+   "spot_slug": "kona-skatepark-jacksonville",
+   "years": [
+    2025
+   ],
+   "organiser": "",
+   "about": "A freestyle (flatland) skateboarding contest at Kona Skatepark, with amateur, masters and pro classes. The 2025 edition ran 10-12 January.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Masters freestyle",
+     "podium": [
+      "AJ Kohn",
+      "Mike Rogers",
+      "Kyle McIntosh"
+     ],
+     "source": "https://latetricks.com/?p=3686"
+    },
+    {
+     "year": 2025,
+     "class": "Pro freestyle",
+     "podium": [
+      "Terry Synnott",
+      "Pete Betti",
+      "Bryce Noe"
+     ],
+     "source": "https://latetricks.com/?p=3686"
+    }
+   ],
+   "links": {
+    "results": "https://latetricks.com/?p=3686"
+   },
+   "source": "https://latetricks.com/?p=3686",
+   "hub": "jacksonville"
+  },
+  {
+   "slug": "vans-pool-party-orange",
+   "name": "Vans Pool Party",
+   "disciplines": [
+    "skateboard"
+   ],
+   "kind": "contest",
+   "place": "Combi Bowl, Vans Skatepark",
+   "city": "Orange",
+   "region": "California",
+   "country": "US",
+   "lat": 33.7879,
+   "lng": -117.8531,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2025
+   ],
+   "organiser": "Vans",
+   "about": "A pool contest in the Combi Bowl at the Vans skatepark in Orange, with pro, masters and legends divisions. 2019 was billed as the 15th and final Pool Party at the Combi, but Thrasher covered another 'final' edition in 2025.",
+   "results": [
+    {
+     "year": 2017,
+     "class": "Legends",
+     "podium": [
+      "Steve Caballero",
+      "",
+      ""
+     ],
+     "source": "https://la.thrashermagazine.com/tag/vans-pool-party/"
+    }
+   ],
+   "links": {},
+   "source": "https://la.thrashermagazine.com/tag/vans-pool-party/",
+   "hub": "lake-forest"
+  },
+  {
+   "slug": "x-games-ventura-2024",
+   "name": "X Games Ventura 2024",
+   "disciplines": [
+    "skateboard",
+    "bmx"
+   ],
+   "kind": "contest",
+   "place": "X Games Ventura venue",
+   "city": "Ventura",
+   "region": "California",
+   "country": "US",
+   "lat": 34.2746,
+   "lng": -119.229,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2024
+   ],
+   "organiser": "X Games",
+   "about": "The 2024 summer X Games in Ventura ran skateboard street, park and vert alongside BMX. Only partial skateboard podiums are given here.",
+   "results": [
+    {
+     "year": 2024,
+     "class": "Men's skateboard street",
+     "podium": [
+      "Nyjah Huston",
+      "Braden Hoban",
+      ""
+     ],
+     "source": "https://usaskateboarding.com/blogs/news/x-games-ventura-2024-presented-by-sonic-results"
+    },
+    {
+     "year": 2024,
+     "class": "Men's skateboard vert",
+     "podium": [
+      "Tom Schaar",
+      "",
+      "Jimmy Wilkins"
+     ],
+     "source": "https://usaskateboarding.com/blogs/news/x-games-ventura-2024-presented-by-sonic-results"
+    }
+   ],
+   "links": {},
+   "source": "https://usaskateboarding.com/blogs/news/x-games-ventura-2024-presented-by-sonic-results",
+   "hub": "santa-barbara"
+  },
+  {
+   "slug": "nitro-world-games-salt-lake-city",
+   "name": "Nitro World Games",
+   "disciplines": [
+    "bmx",
+    "skateboard",
+    "inline",
+    "scooter"
+   ],
+   "kind": "contest",
+   "place": "Rice-Eccles Stadium (2016)",
+   "city": "Salt Lake City",
+   "region": "Utah",
+   "country": "US",
+   "lat": 40.76,
+   "lng": -111.8489,
+   "coords": "course",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2016
+   ],
+   "organiser": "Nitro Circus",
+   "about": "Nitro Circus's action-sports games began in July 2016 with big-ramp best-trick contests built inside the University of Utah's Rice-Eccles Stadium. Later editions moved to other Utah venues and abroad.",
+   "results": [
+    {
+     "year": 2016,
+     "class": "BMX best trick",
+     "podium": [
+      "Ryan Williams",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Nitro_World_Games"
+    },
+    {
+     "year": 2016,
+     "class": "BMX triple hit",
+     "podium": [
+      "Colton Walker",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Nitro_World_Games"
+    },
+    {
+     "year": 2016,
+     "class": "Inline best trick",
+     "podium": [
+      "Chris Haffey",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Nitro_World_Games"
+    },
+    {
+     "year": 2016,
+     "class": "Skateboard best trick",
+     "podium": [
+      "Elliot Sloan",
+      "",
+      ""
+     ],
+     "source": "https://en.wikipedia.org/wiki/Nitro_World_Games"
+    }
+   ],
+   "links": {},
+   "source": "https://en.wikipedia.org/wiki/Nitro_World_Games",
+   "hub": "salt-lake-city"
+  },
+  {
+   "slug": "abierto-de-skate-la-ruina-hermosillo",
+   "name": "Primer Abierto de Skate del Parque La Ruina",
+   "disciplines": [
+    "skateboard"
+   ],
+   "kind": "contest",
+   "place": "El Bowl, Parque La Ruina",
+   "city": "Hermosillo",
+   "region": "Sonora",
+   "country": "MX",
+   "lat": 29.09649,
+   "lng": -110.947,
+   "coords": "park",
+   "park_id": null,
+   "spot_slug": "el-bowl-parque-la-ruina-hermosillo",
+   "years": [
+    2024
+   ],
+   "organiser": "",
+   "about": "The first open bowl contest at Parque La Ruina in Hermosillo, on 19-20 April 2024, with men's and women's divisions and riders from Mexico City, Guadalajara, Tijuana and Aguascalientes. Only qualifying scores were found, so no podium is listed.",
+   "results": [],
+   "links": {},
+   "source": "https://www.elimparcial.com/deporte/2024/04/20/arranca-con-exito-primer-abierto-de-skate-del-parque-la-ruina/",
+   "hub": "hermosillo"
+  },
+  {
+   "slug": "veteranos-mexico-skate-jam",
+   "name": "Veteranos Mexico Skate Jam",
+   "disciplines": [
+    "skateboard"
+   ],
+   "kind": "contest",
+   "place": "Rabioso Bowl",
+   "city": "Mexico City",
+   "region": "Ciudad de México",
+   "country": "MX",
+   "lat": 19.4326,
+   "lng": -99.1332,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2018
+   ],
+   "organiser": "",
+   "about": "A bowl jam for veteran skaters at the Rabioso Bowl in Mexico City; the fourth edition ran on 16 December 2018. Bowl location within the city not confirmed, so coordinates are the city centre.",
+   "results": [
+    {
+     "year": 2018,
+     "class": "Veterans",
+     "podium": [
+      "Cuauhtemoc Dimas",
+      "Sectas",
+      "Guille"
+     ],
+     "source": "https://juicemagazine.com/home/?p=70564"
+    }
+   ],
+   "links": {},
+   "source": "https://juicemagazine.com/home/?p=70564",
+   "hub": "mexico-city"
+  },
+  {
+   "slug": "northshore-inline-marathon",
+   "name": "NorthShore Inline Marathon",
+   "disciplines": [
+    "inline"
+   ],
+   "kind": "race",
+   "place": "Highway 61 along Lake Superior, Two Harbors to Duluth (point to point)",
+   "city": "Two Harbors",
+   "region": "Minnesota",
+   "country": "US",
+   "lat": 47.0227,
+   "lng": -91.6707,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    1996,
+    1997,
+    1998,
+    1999,
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "organiser": "NorthShore Inline Marathon Inc.",
+   "about": "A point-to-point inline skating marathon on the Lake Superior shore road from Two Harbors into Duluth, held every September since 1996. It draws elite speed skaters from Colombia and Europe; both course records fell in 2025. Coordinates are the start town.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Marathon, men",
+     "podium": [
+      "Nolan Beddiaf",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/?p=1038"
+    },
+    {
+     "year": 2025,
+     "class": "Marathon, women",
+     "podium": [
+      "Laura Alejandra Perdomo Moreno",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/?p=1038"
+    },
+    {
+     "year": 2024,
+     "class": "Marathon, men",
+     "podium": [
+      "Hamilton Patino",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2024,
+     "class": "Marathon, women",
+     "podium": [
+      "Maria Camila Guerra",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2023,
+     "class": "Marathon, men",
+     "podium": [
+      "Hamilton Patino",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2023,
+     "class": "Marathon, women",
+     "podium": [
+      "Gabriela Rueda",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2022,
+     "class": "Marathon, men",
+     "podium": [
+      "Jose Mejia",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2022,
+     "class": "Marathon, women",
+     "podium": [
+      "Karin Gabriel",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2021,
+     "class": "Marathon, men",
+     "podium": [
+      "Jose Mejia",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2021,
+     "class": "Marathon, women",
+     "podium": [
+      "Lauren O'Donnell",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2019,
+     "class": "Marathon, men",
+     "podium": [
+      "Ewen Fernandez",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    },
+    {
+     "year": 2019,
+     "class": "Marathon, women",
+     "podium": [
+      "Julie Brandt-Glass",
+      "",
+      ""
+     ],
+     "source": "https://northshoreinline.com/nsim-history/"
+    }
+   ],
+   "links": {
+    "website": "https://northshoreinline.com/",
+    "results": "https://northshoreinline.com/nsim-history/"
+   },
+   "source": "https://northshoreinline.com/nsim-history/",
+   "hub": "duluth"
+  },
+  {
+   "slug": "bitter-cold-showdown-royal-oak",
+   "name": "Bitter Cold Showdown",
+   "disciplines": [
+    "inline"
+   ],
+   "kind": "contest",
+   "place": "Modern Skate Park",
+   "city": "Royal Oak",
+   "region": "Michigan",
+   "country": "US",
+   "lat": 42.50273,
+   "lng": -83.11681,
+   "coords": "park",
+   "park_id": "w894312335",
+   "spot_slug": "modern-skate-park-royal-oak",
+   "years": [
+    2009,
+    2013,
+    2023
+   ],
+   "organiser": "Daniel Kinney (founder)",
+   "about": "A winter rollerblading contest and industry trade show that started in Indiana in 2001 and settled at Modern Skate Park in Royal Oak in 2009. After a last edition in February 2013 it came back for an encore in 2023, and a 'BroDown' followed in 2025.",
+   "results": [
+    {
+     "year": 2023,
+     "class": "Open",
+     "podium": [
+      "Luke Naylor",
+      "Julien Cudot",
+      "Joe Atkinson"
+     ],
+     "source": "https://www.rollernews.com/2025/02/27/bittercold-bro-down-2025"
+    }
+   ],
+   "links": {},
+   "source": "https://www.rollernews.com/2025/02/27/bittercold-bro-down-2025",
+   "hub": "detroit"
+  },
+  {
+   "slug": "blading-cup-santa-ana",
+   "name": "The Blading Cup",
+   "disciplines": [
+    "inline"
+   ],
+   "kind": "contest",
+   "place": "Santa Ana (2022 and 2024 editions)",
+   "city": "Santa Ana",
+   "region": "California",
+   "country": "US",
+   "lat": 33.7455,
+   "lng": -117.8677,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2019,
+    2022,
+    2024
+   ],
+   "organiser": "The Blading Cup",
+   "about": "The Blading Cup is a long-running annual aggressive inline contest in Southern California, usually held in autumn, with pro, women's ('Bladies'), open, under-18 and veterans divisions; the 2019 edition drew 160 skaters from 26 countries. Recent editions were held in Santa Ana; the 2024 pro final was rained out.",
+   "results": [
+    {
+     "year": 2022,
+     "class": "Main event (pro)",
+     "podium": [
+      "Nils Jansons",
+      "",
+      ""
+     ],
+     "source": "https://www.oneblademag.com/?p=23470"
+    },
+    {
+     "year": 2019,
+     "class": "Pro",
+     "podium": [
+      "Montre Livingston",
+      "",
+      ""
+     ],
+     "source": "https://be-mag.com/article/blading-cup-2019-winners/"
+    },
+    {
+     "year": 2019,
+     "class": "Veteran's Cup",
+     "podium": [
+      "Aaron Feinberg",
+      "Jon Julio",
+      "Mike Scott"
+     ],
+     "source": "https://be-mag.com/article/blading-cup-2019-winners/"
+    }
+   ],
+   "links": {},
+   "source": "https://be-mag.com/article/blading-cup-2019-winners/",
+   "hub": "lake-forest"
+  },
+  {
+   "slug": "windy-city-riot-chicago",
+   "name": "Windy City Riot",
+   "disciplines": [
+    "inline"
+   ],
+   "kind": "contest",
+   "place": "Chicago street spots (2012 park day at Logan Square / Logan Boulevard Skate Park)",
+   "city": "Chicago",
+   "region": "Illinois",
+   "country": "US",
+   "lat": 41.8756,
+   "lng": -87.6244,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2012,
+    2021,
+    2025
+   ],
+   "organiser": "Collin Martin (since 2004); founded by Travis Conn and Jess Thompson",
+   "about": "A blader-run 'real street' rollerblading contest held at spots around Chicago, which marked its 20th anniversary in 2021. The 2012 edition added a park day at the Logan Square skatepark and a street day on the lakefront 'Slabs'.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Street",
+     "podium": [
+      "Adam Bazydlo",
+      "Jeff Dalnas",
+      "Mike French"
+     ],
+     "source": "https://rollernews.com/tags/contests"
+    },
+    {
+     "year": 2012,
+     "class": "Park, pro/open",
+     "podium": [
+      "Michael Garlinghouse",
+      "Jimmy Spetz",
+      "Ryan Sibbio"
+     ],
+     "source": "https://www.oneblademag.com/?p=6359"
+    },
+    {
+     "year": 2012,
+     "class": "Street",
+     "podium": [
+      "Steve Lerner",
+      "Travis Rhodes",
+      "Michael Froemling"
+     ],
+     "source": "https://www.oneblademag.com/?p=6359"
+    }
+   ],
+   "links": {},
+   "source": "https://www.oneblademag.com/events/celebrating-20-years-of-rioting-in-the-windy-city/",
+   "hub": "chicago"
+  },
+  {
+   "slug": "dc-live-street-contest",
+   "name": "DC Live Street Contest",
+   "disciplines": [
+    "inline"
+   ],
+   "kind": "contest",
+   "place": "Street spots around Washington, DC",
+   "city": "Washington",
+   "region": "District of Columbia",
+   "country": "US",
+   "lat": 38.8951,
+   "lng": -77.0364,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2025
+   ],
+   "organiser": "ButterTV (presenter)",
+   "about": "A live street rollerblading contest held at spots around the US capital. The 2025 edition was filmed and released by ButterTV as 'Federal Cases'.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Street",
+     "podium": [
+      "Jeff Dalnas",
+      "Anddy 'Crxck' Feliciano",
+      "Cody Forrester"
+     ],
+     "source": "https://rollernews.com/tags/contests"
+    }
+   ],
+   "links": {},
+   "source": "https://rollernews.com/tags/contests",
+   "hub": "washington"
+  },
+  {
+   "slug": "metro-card-classic-nyc",
+   "name": "Metro Card Classic",
+   "disciplines": [
+    "inline"
+   ],
+   "kind": "contest",
+   "place": "New York street spots, including the Brooklyn Banks",
+   "city": "New York",
+   "region": "New York",
+   "country": "US",
+   "lat": 40.7127,
+   "lng": -74.006,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2025
+   ],
+   "organiser": "",
+   "about": "A street rollerblading contest across New York City spots, including the Brooklyn Banks. The 2025 edition ran 4-7 September.",
+   "results": [
+    {
+     "year": 2025,
+     "class": "Street",
+     "podium": [
+      "Michael Witzemann",
+      "",
+      ""
+     ],
+     "source": "https://rollernews.com/tags/contests"
+    }
+   ],
+   "links": {},
+   "source": "https://rollernews.com/tags/contests",
+   "hub": "new-york"
+  },
+  {
+   "slug": "carriers-open-frisco",
+   "name": "Carriers Open (U.S. Roller Freestyle Championships)",
+   "disciplines": [
+    "inline"
+   ],
+   "kind": "contest",
+   "place": "Frisco Skate Park, 12895 Honey Grove Dr.",
+   "city": "Frisco",
+   "region": "Texas",
+   "country": "US",
+   "lat": 33.1507,
+   "lng": -96.8236,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2023,
+    2025
+   ],
+   "organiser": "Play Frisco; hosted by Arlo Eisenberg",
+   "about": "A city-run skate park contest for bladers that served as the 2025 U.S. Roller Freestyle Championships, with open, women's ('Bladies') and kids categories. The 2025 edition was on 8 November; no results were published on the page found.",
+   "results": [],
+   "links": {
+    "website": "https://www.friscotexas.gov/1862/Carriers-Open"
+   },
+   "source": "https://www.friscotexas.gov/1862/Carriers-Open",
+   "hub": "dallas"
+  },
+  {
+   "slug": "bc-open-scooter-chilliwack",
+   "name": "Canadian Freestyle Scooter Series: BC Open",
+   "disciplines": [
+    "scooter"
+   ],
+   "kind": "contest",
+   "place": "Chilliwack Landing Skatepark",
+   "city": "Chilliwack",
+   "region": "British Columbia",
+   "country": "CA",
+   "lat": 49.1579,
+   "lng": -121.9515,
+   "coords": "city",
+   "park_id": null,
+   "spot_slug": null,
+   "years": [
+    2026
+   ],
+   "organiser": "Roller Sports Canada (RSC Scootering)",
+   "about": "Described as the first Canadian freestyle scooter competition, the BC Open ran on 4 July 2026 with two 45-second judged runs per rider from beginner to pro. It is part of a national series that also lists an Alberta Open in Calgary; no results were found.",
+   "results": [],
+   "links": {
+    "website": "https://rscscootering.s1.yapla.com/en/evenements/detail/canadian-freestyle-scooter-series-british-columbiachilliwack-landing/89802"
+   },
+   "source": "https://ground.news/article/first-freestyle-scootering-competition-in-bc-set-to-take-over-the-chilliwack-landing-skate-park",
+   "hub": "chilliwack"
+  }
+ ]
+}
