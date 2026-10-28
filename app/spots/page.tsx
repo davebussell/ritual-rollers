@@ -10,7 +10,7 @@ import { WheelNote } from '@/components/WheelPicker'
 
 export const metadata: Metadata = {
   title: 'Skateparks, pump tracks and bike parks across North America',
-  description: 'The best-known skateparks, plazas, DIYs, street spots, pump tracks, BMX tracks and bike parks in Canada, the US and Mexico, with the sessions and riders at each.',
+  description: 'The best-known skateparks, plazas, DIYs, street spots, pump tracks, BMX tracks and bike parks in Canada, the US and Mexico, each in 3D, with photos of people riding them and who’s riding them this week.',
   alternates: { canonical: '/spots' },
 }
 

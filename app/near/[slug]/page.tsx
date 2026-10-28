@@ -8,7 +8,9 @@ import { spotsNear, isFeaturedPark, isNorthAmerica } from '@/lib/spots-index'
 import { parksNear } from '@/lib/parks'
 import { shopsNear } from '@/lib/shops'
 import { companiesNear } from '@/lib/companies'
-import { upcomingSessions } from '@/lib/sessions'
+import { ridingNear } from '@/lib/riding'
+import { eventsNear } from '@/lib/events'
+import { getMe } from '@/lib/me'
 import { geocodePlace, fromSlug, haversineKm } from '@/lib/geo'
 import { getWheel } from '@/lib/wheel-server'
 import { fits, parkFits } from '@/lib/wheels'
@@ -47,7 +49,8 @@ export default async function NearPage({ params }: { params: Promise<{ slug: str
   if (hub) redirect(`/cities/${hub.slug}`)
 
   const { wheel } = await getWheel()
-  const sessions = await upcomingSessions({ near: { lat: place.lat, lng: place.lng, km: RADIUS }, disciplines: wheel?.disciplines, limit: 10 })
+  const me = await getMe()
+  const riding = await ridingNear(place.lat, place.lng, RADIUS, wheel, me?.id ?? null, 10)
   const nearby = CITIES.map(c => ({ c, d: haversineKm(place.lat, place.lng, c.lat, c.lng) }))
     .filter(x => x.d < 200).sort((a, b) => a.d - b.d).slice(0, 6).map(x => ({ slug: x.c.slug, name: x.c.name }))
 
@@ -56,7 +59,8 @@ export default async function NearPage({ params }: { params: Promise<{ slug: str
       title={`${wheel?.doing ?? 'Riding'} near ${place.label.split(',')[0]}`}
       subtitle={place.label}
       point={place}
-      sessions={sessions}
+      riding={riding}
+      events={eventsNear(place.lat, place.lng, 80, wheel)}
       crews={crewsNear(place.lat, place.lng, RADIUS).filter(c => fits(c.disciplines, wheel))}
       spots={spotsNear(place.lat, place.lng, RADIUS).filter(s => fits(s.disciplines, wheel))}
       parks={parksNear(place.lat, place.lng, RADIUS, 400).filter(p => !isFeaturedPark(p) && parkFits(p.kind, wheel)).slice(0, 120)}

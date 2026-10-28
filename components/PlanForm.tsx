@@ -17,11 +17,11 @@ const PARTS: { id: PlanPart; label: string }[] = [
   { id: 'time', label: 'At a time' },
 ]
 
-export function PlanForm({ meId, place, hasPlans }: { meId: string; place: Place; hasPlans: boolean }) {
+export function PlanForm({ meId, place, hasPlans, startOpen = false }: { meId: string; place: Place; hasPlans: boolean; startOpen?: boolean }) {
   const router = useRouter()
   const today = localToday(place.lng)
   const days = Array.from({ length: 8 }, (_, i) => addDays(today, i))
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(startOpen)
   const [day, setDay] = useState(today)
   const [part, setPart] = useState<PlanPart>('afternoon')
   const [at, setAt] = useState('17:00')
@@ -32,7 +32,7 @@ export function PlanForm({ meId, place, hasPlans }: { meId: string; place: Place
   if (!open) {
     return (
       <button type="button" onClick={() => setOpen(true)} className="btn btn-curb">
-        {hasPlans ? 'Add another day' : 'I’ll be here'}
+        {hasPlans ? 'Add another day' : 'Tag it: I’m riding here'}
       </button>
     )
   }

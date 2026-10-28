@@ -1,16 +1,19 @@
 import Link from 'next/link'
 import CitySearch from '@/components/CitySearch'
-import { SessionFlyer, SessionRow } from '@/components/SessionBits'
-import { CrewRow, RiderRow } from '@/components/Rows'
+import FeaturedParks from '@/components/FeaturedParks'
+import { RidingRow } from '@/components/Riding'
+import { CrewRow } from '@/components/Rows'
 import { Empty, SectionHead } from '@/components/bits'
-import { upcomingSessions } from '@/lib/sessions'
-import { ridersFor } from '@/lib/riders'
 import { CITIES, POPULAR, cityBySlug } from '@/lib/cities'
 import { CREWS, type Crew } from '@/lib/crews'
 import { SPOTS } from '@/lib/spots-index'
 import { PARKS } from '@/lib/parks'
 import { KIND_GROUPS, KIND_META } from '@/lib/sports'
-import type { RideSession } from '@/lib/types'
+import { featuredPlaces } from '@/lib/photos'
+import { ATHLETES, EVENTS, eventFits } from '@/lib/events'
+import { AthleteCard, EventRow } from '@/components/EventBits'
+import { ridingEverywhere, placeFits } from '@/lib/riding'
+import { getMe } from '@/lib/me'
 import { getWheel } from '@/lib/wheel-server'
 import { fits, parkFits, type Wheel } from '@/lib/wheels'
 
@@ -30,41 +33,39 @@ function crewMix(n: number, wheel: Wheel | null): Crew[] {
 
 export default async function Home() {
   const { wheel } = await getWheel()
-  const disciplines = wheel?.disciplines
-  const [sessions, riders] = await Promise.all([upcomingSessions({ limit: 40, disciplines }), ridersFor({ disciplines }, 30)])
-  // Range over repetition: different cities and different kinds of session
-  const flyers = spread(spread(sessions, (s: RideSession) => s.title, 40), (s: RideSession) => s.city ?? s.id, 3)
-  const rest = sessions.filter(s => !flyers.includes(s))
-  const list = spread(spread(rest, (s: RideSession) => s.title, 40), (s: RideSession) => s.city ?? s.id, 6)
-    .sort((a, b) => a.starts_at.localeCompare(b.starts_at))
+  const me = await getMe()
+  const { places: riding } = await ridingEverywhere(wheel, me?.id ?? null, 8)
+  const featured = spread(featuredPlaces().filter(f => placeFits(f, wheel)), f => f.city, 12)
   const crews = crewMix(6, wheel)
   const spots = SPOTS.filter(s => fits(s.disciplines, wheel))
   const parks = PARKS.filter(p => parkFits(p.kind, wheel))
   const kinds = KIND_GROUPS.flatMap(g => g.kinds).filter(k => spots.some(s => s.kind === k))
-  const people = spread(riders, r => r.home_city ?? r.username, 4)
   const cityOptions = CITIES.map(c => ({ slug: c.slug, name: c.name, region: c.region }))
   const popular = POPULAR.map(cityBySlug).filter(Boolean)
+  const what = wheel?.id === 'bike' ? 'pump tracks, BMX tracks and bike parks' : wheel ? 'skateparks and pump tracks' : 'skateparks, pump tracks, BMX tracks and bike parks'
+  // The hero shows three parks; the grid below goes on with the next ones rather than repeating them
+  const heroPhotos = featured.length >= 6 ? featured.slice(0, 3) : []
+  const moreParks = featured.slice(heroPhotos.length, heroPhotos.length + 9)
+  // Riders to know: Kolby Parks first (Dave asked for him by name), then the most results
+  const athletes = ATHLETES.filter(a => eventFits(a.disciplines, wheel)).sort((a, b) => Number(b.slug === 'kolby-parks') - Number(a.slug === 'kolby-parks') || b.results.length - a.results.length).slice(0, 3)
+  const races = EVENTS.filter(e => eventFits(e.disciplines, wheel) && e.results.length).sort((a, b) => (b.results[0]?.year ?? 0) - (a.results[0]?.year ?? 0)).slice(0, 6)
 
   return (
     <>
-      {/* Hero: where you ride, and who's going */}
-      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 pb-12 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-16">
+      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 pb-12 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-[1fr_1.05fr] lg:gap-14 lg:pb-16">
         <div className="max-w-xl">
-          <h1 className="h-display text-[40px] sm:text-[56px]">Find people to {wheel?.verb ?? 'ride'} with</h1>
+          <h1 className="h-display text-[40px] sm:text-[56px]">Find a park to {wheel?.verb ?? 'ride'}</h1>
           <p className="mt-5 text-lg leading-relaxed text-asphalt-2 sm:text-xl">
-            {wheel
-              ? `Spots, sessions and crews for ${wheel.lower}, across Canada, the US and Mexico.`
-              : 'Spots, sessions and crews for skateboards, roller and inline skates, scooters, BMX and mountain bikes, across Canada, the US and Mexico.'}
+            {`${(spots.length + parks.length).toLocaleString('en-US')} ${what} across Canada, the US and Mexico. `}
+            See each one in 3D, see people riding it, and tag the one you&apos;re riding next.
           </p>
-          <div className="mt-8">
-            <CitySearch cities={cityOptions} big />
-          </div>
+          <div className="mt-8"><CitySearch cities={cityOptions} big /></div>
           <div className="mt-4 flex flex-wrap gap-2">
             {popular.slice(0, 8).map(c => c && <Link key={c.slug} href={`/cities/${c.slug}`} className="chip">{c.name}</Link>)}
             <Link href="/cities" className="chip">All cities</Link>
           </div>
           <ol className="mt-10 grid gap-4 border-t-2 border-concrete-2 pt-6 text-[15px] sm:grid-cols-3">
-            {[['Pick your city', 'Spots, crews and riders near you.'], ['See who’s going', 'Sessions people have posted, with the time and the spot.'], ['Tap I’m in', 'Then show up and ride. Or post your own.']].map(([t, d], i) => (
+            {[['Find the park', 'Its layout in 3D, the climbs and drops, photos of people riding it.'], ['Tag it', 'Say which day you’re riding it. Everyone sees the count.'], ['Ride with friends', 'Friends see it’s you, and you see where they’re riding.']].map(([t, d], i) => (
               <li key={t} className="flex gap-3 sm:block">
                 <span aria-hidden="true" className="font-display text-[22px] font-bold text-fire">{i + 1}</span>
                 <span><span className="block font-extrabold sm:mt-1">{t}</span><span className="block text-asphalt-2">{d}</span></span>
@@ -72,33 +73,62 @@ export default async function Home() {
             ))}
           </ol>
         </div>
-        <div aria-label="Sessions coming up" className="grid min-w-0 grid-cols-1 gap-7 overflow-x-clip px-1 pt-3 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-9 lg:pt-6">
-          {flyers.map((s, i) => (
-            <div key={s.id} className={i === 2 ? 'sm:col-span-2 sm:mx-auto sm:w-[calc(50%+1rem)]' : ''}>
-              <SessionFlyer s={s} i={i} />
-            </div>
-          ))}
-        </div>
+        {heroPhotos.length === 3 ? (
+          <div className="grid min-w-0 grid-cols-2 gap-3 self-start">
+            {heroPhotos.map((f, i) => (
+              <Link key={f.key} href={f.href} className={`group relative block overflow-hidden rounded-xl bg-concrete-2 ${i === 0 ? 'col-span-2' : ''}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={i === 0 ? f.photo.src : f.photo.thumb} alt={f.photo.caption || f.photo.title} className={`w-full object-cover ${i === 0 ? 'aspect-[16/10]' : 'aspect-square'}`} />
+                <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-asphalt/85 to-transparent px-3 pb-2 pt-8 text-flyer">
+                  <span className="block text-[15px] font-bold">{f.name}</span>
+                  <span className="block text-[11px] opacity-80">{f.photo.year ? `${f.photo.year} · ` : ''}Photo: {f.photo.author} · {f.photo.licence}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="panel h-fit px-4 sm:px-5">
+            <h2 className="pt-4 text-[17px] font-extrabold">Who&apos;s riding this week</h2>
+            <div className="rows">{riding.slice(0, 4).map(p => <RidingRow key={p.key} p={p} />)}</div>
+          </div>
+        )}
       </section>
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 sm:px-6">
-        {/* Sessions */}
+        {moreParks.length > 0 && (
+          <section>
+            <SectionHead title="Parks, ridden" href="/spots" linkLabel="Browse every park">
+              Real photos of people riding real parks, old and new. Every photo is free to share and credited to whoever took it.
+            </SectionHead>
+            <FeaturedParks places={moreParks} />
+          </section>
+        )}
+
+        {(athletes.length > 0 || races.length > 0) && (
+          <section>
+            <SectionHead title="Riders and races" href="/events" linkLabel="All races and contests">
+              Who&apos;s winning down the hills and in the parks, and where the races are held. Every result links to its source.
+            </SectionHead>
+            {athletes.length > 0 && <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">{athletes.map(a => <AthleteCard key={a.slug} a={a} />)}</div>}
+            {races.length > 0 && <div className="rows panel mt-4 px-4 sm:px-5 md:columns-2 md:gap-10 md:[&>*]:break-inside-avoid">{races.map(e => <EventRow key={e.slug} e={e} />)}</div>}
+          </section>
+        )}
+
         <section>
-          <SectionHead title="Sessions coming up" href="/sessions" linkLabel="All sessions">
-            Someone says where and when, others say they&apos;re in. Sessions are public and happen at public spots.
+          <SectionHead title="Who's riding this week" href="/riding" linkLabel="Everywhere">
+            Spots riders have tagged, and when. Everyone sees how many; friends see who.
           </SectionHead>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
-            <div className="rows panel px-4 sm:px-5">{list.map(s => <SessionRow key={s.id} s={s} />)}</div>
+            {riding.length ? <div className="rows panel px-4 sm:px-5">{riding.map(p => <RidingRow key={p.key} p={p} />)}</div> : <Empty>Nobody has tagged a spot yet this week.</Empty>}
             <aside className="panel h-fit p-5">
-              <h3 className="text-[17px] font-extrabold">Going riding anyway?</h3>
-              <p className="mt-1.5 text-[15px] text-asphalt-2">Post it. Say if beginners are welcome. People nearby can tap I&apos;m in.</p>
-              <Link href="/sessions/new" className="btn btn-curb mt-4 w-full">Post a session</Link>
-              <p className="mt-3 text-[13px] text-muted">Accounts are for riders 16 and over. <Link href="/guidelines" className="prose-link">How sessions work</Link></p>
+              <h3 className="text-[17px] font-extrabold">Riding somewhere soon?</h3>
+              <p className="mt-1.5 text-[15px] text-asphalt-2">Tag the park and when. People see how many are heading there; your friends see it&apos;s you.</p>
+              <Link href="/tag" className="btn btn-curb mt-4 w-full">Tag a spot</Link>
+              <p className="mt-3 text-[13px] text-muted">Accounts are for riders 16 and over. <Link href="/guidelines" className="prose-link">How it works</Link></p>
             </aside>
           </div>
         </section>
 
-        {/* Crews */}
         <section>
           <SectionHead title="Crews you can show up to" href="/crews" linkLabel="All crews">
             Skate nights, roller groups, women&apos;s and queer sessions, BMX and bike clubs: real groups, with their own links.
@@ -112,22 +142,9 @@ export default async function Home() {
           )}
         </section>
 
-        {/* Riders */}
         <section>
-          <SectionHead title="Riders looking for people" href="/riders" linkLabel="All riders">
-            New in town, starting late, or just want company. Riders list their city and the spots they ride, never where they live.
-          </SectionHead>
-          <div className="rows panel px-4 sm:px-5 md:columns-2 md:gap-10 md:[&>*]:break-inside-avoid">
-            {people.map(r => <RiderRow key={r.username} r={r} />)}
-          </div>
-          <p className="mt-4 text-[15px]"><Link href="/me" className="prose-link font-semibold">List yourself</Link> <span className="text-muted">so people near you can find you.</span></p>
-        </section>
-
-        {/* Spots */}
-        <section>
-          <SectionHead title="Spots" href="/spots" linkLabel="Browse spots">
-            {spots.length} researched spots worth the trip, plus {parks.length.toLocaleString('en-US')}{' '}
-            {wheel?.id === 'bike' ? 'pump tracks, BMX tracks and bike parks' : wheel ? 'skateparks and pump tracks' : 'skateparks, pump tracks, BMX tracks and bike parks'} from OpenStreetMap.
+          <SectionHead title="Every kind of spot" href="/spots" linkLabel="Browse spots">
+            {spots.length} researched spots worth the trip, plus {parks.length.toLocaleString('en-US')} {what} from OpenStreetMap.
           </SectionHead>
           <div className="flex flex-wrap gap-2">
             {kinds.map(k => (

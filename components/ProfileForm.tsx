@@ -1,7 +1,7 @@
 'use client'
 
 // Your rider profile: the name people see, what you ride, your city and spots, and whether you're open to
-// riding with people. Confirming you're 16 or older is what lets you post and join sessions.
+// riding with people. Confirming you're 16 or older is what lets you tag spots, add friends and post photos.
 
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -48,7 +48,7 @@ export default function ProfileForm({ userId, profile, cities, spots, next }: {
     if (!confirmed) {
       const y = parseInt(birthYear, 10)
       if (!y || !isAdult) { setError('Confirm the year you were born and that you’re 16 or older.'); return }
-      if (year - y < 16) { setError('Accounts are for riders 16 and over. You can still browse spots, sessions and crews.'); return }
+      if (year - y < 16) { setError('Accounts are for riders 16 and over. You can still browse spots, crews and who’s riding.'); return }
     }
     if (!rides.length) { setError('Pick at least one thing you ride.'); return }
     setState('saving')
@@ -98,7 +98,7 @@ export default function ProfileForm({ userId, profile, cities, spots, next }: {
       {!confirmed && (
         <fieldset className="panel p-4">
           <legend className="label px-1">Confirm your age</legend>
-          <p className="text-[15px] text-asphalt-2">Accounts are for riders 16 and over, because sessions mean meeting people in person. We only keep the fact that you confirmed, not your birth year.</p>
+          <p className="text-[15px] text-asphalt-2">Accounts are for riders 16 and over, because tagging spots means meeting people in person. We only keep the fact that you confirmed, not your birth year.</p>
           <div className="mt-3 flex flex-wrap items-center gap-4">
             <select value={birthYear} onChange={e => setBirthYear(e.target.value)} className="field !w-auto" aria-label="Year you were born">
               <option value="">Year you were born</option>
@@ -152,7 +152,7 @@ export default function ProfileForm({ userId, profile, cities, spots, next }: {
 
       <label className="flex items-start gap-3 text-[16px]">
         <input type="checkbox" checked={open} onChange={e => setOpen(e.target.checked)} className="mt-0.5 h-5 w-5 accent-[#1F201C]" />
-        <span><span className="font-bold">List me on Riders.</span> <span className="text-asphalt-2">People in {cityName ?? 'your city'} can see your name, what you ride and your spots, and find you at sessions.</span></span>
+        <span><span className="font-bold">List me on Riders.</span> <span className="text-asphalt-2">People in {cityName ?? 'your city'} can see your name, what you ride and your spots, and add you as a friend.</span></span>
       </label>
 
       {error && <p role="alert" className="rounded-lg bg-fire/10 px-4 py-3 font-semibold text-fire">{error}</p>}

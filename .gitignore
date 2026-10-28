@@ -42,3 +42,9 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# copied from node_modules before dev and build (scripts/copy-maplibre-worker.mjs)
+/public/maplibre/
+
+# downloaded originals for scripts/build-photos.mjs
+/.cache/

@@ -20,8 +20,8 @@ export default function Footer() {
           <ul className="mt-3 space-y-2">
             <li><Link className="hover:text-flyer" href="/spots">Spots</Link></li>
             <li><Link className="hover:text-flyer" href="/cities">Cities</Link></li>
-            <li><Link className="hover:text-flyer" href="/ride">Ride it in 3D</Link></li>
-            <li><Link className="hover:text-flyer" href="/sessions">Sessions</Link></li>
+            <li><Link className="hover:text-flyer" href="/riding">Who&apos;s riding</Link></li>
+            <li><Link className="hover:text-flyer" href="/events">Races and contests</Link></li>
             <li><Link className="hover:text-flyer" href="/crews">Crews</Link></li>
             <li><Link className="hover:text-flyer" href="/riders">Riders</Link></li>
           </ul>
@@ -29,7 +29,7 @@ export default function Footer() {
         <nav aria-label="Take part" className="text-[15px]">
           <p className="font-semibold text-flyer">Take part</p>
           <ul className="mt-3 space-y-2">
-            <li><Link className="hover:text-flyer" href="/sessions/new">Post a session</Link></li>
+            <li><Link className="hover:text-flyer" href="/tag">Tag a spot</Link></li>
             <li><Link className="hover:text-flyer" href="/crews/add">Add your crew</Link></li>
             <li><Link className="hover:text-flyer" href="/guidelines">Riding with people you meet here</Link></li>
           </ul>
