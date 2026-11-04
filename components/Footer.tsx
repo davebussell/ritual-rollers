@@ -40,6 +40,9 @@ export default function Footer() {
           Mapped parks and map tiles © <a className="underline underline-offset-2 hover:text-flyer" href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.
           Accounts are for riders 16 and over.
         </p>
+        <p className="mx-auto max-w-6xl px-4 pb-5 text-[13px] text-flyer/60 sm:px-6">
+          Site by <a className="underline underline-offset-2 hover:text-flyer" href="https://clickshift.ca">Click Shift Marketing</a>
+        </p>
       </div>
     </footer>
   )
